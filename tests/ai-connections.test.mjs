@@ -12,7 +12,8 @@ function environment(){
  return {APP_ORIGIN:origin,data,BUCKET:{
   async get(key){return data.has(key)?{json:async()=>JSON.parse(data.get(key))}:null;},
   async put(key,value,options={}){if(options.onlyIf?.etagDoesNotMatch==='*'&&data.has(key))return null;data.set(key,value);return {key,etag:'test'};},
-  async delete(key){data.delete(key);}
+  async delete(key){data.delete(key);},
+  async list({prefix}){return {objects:[...data.keys()].filter(k=>k.startsWith(prefix)).map(key=>({key})),truncated:false};}
  }};
 }
 const request=(path,options={})=>new Request(origin+path,options);
@@ -88,4 +89,18 @@ test('manual calendar refresh is uncached and respects the per-source cooldown',
   assert.equal(response.headers.get('cache-control'),'no-store');assert.equal(calls,0);
   const normal=await calendarRoute(request('/api/race-calendar'),env,{},now);assert.match(normal.headers.get('cache-control'),/s-maxage=300/);
  }finally{globalThis.fetch=fetchBefore;}
+});
+
+test('connections made before tracking existed are rebuilt once from live OAuth tokens',async()=>{
+ const env=environment(),now=Date.now();
+ const legacy=(redirect,issuedAt,extra={})=>JSON.stringify({clientId:'kbc_legacy',redirectUri:redirect,resource:origin,scope:'mcp:read offline_access',accountGeneration:'0',profile:identity,issuer:origin,issuedAt,expiresAt:issuedAt+30*86400000,...extra});
+ env.data.set('website-auth/oauth/refresh/aaa.json',legacy('https://claude.ai/api/mcp/auth_callback',now-3600000));
+ env.data.set('website-auth/oauth/refresh/bbb.json',legacy('https://chatgpt.com/connector_platform_oauth_redirect',now-7200000,{expiresAt:now-1}));
+ env.data.set('website-auth/oauth/refresh/ccc.json',legacy('https://chatgpt.com/connector_platform_oauth_redirect',now-60000,{profile:{sub:'someone-else',email:'x@example.test'}}));
+ let status=byId(await aiConnectionStatus(env,identity.sub,now));
+ assert.equal(status.claude.state,'connected');assert.equal(status.claude.lastActiveAt,now-3600000);
+ assert.equal(status.chatgpt.state,'none');
+ // Runs once: a later token added without tracking is not rescanned.
+ env.data.set('website-auth/oauth/refresh/ddd.json',legacy('https://chatgpt.com/connector_platform_oauth_redirect',now-1000));
+ assert.equal(byId(await aiConnectionStatus(env,identity.sub,now)).chatgpt.state,'none');
 });

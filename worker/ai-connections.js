@@ -37,10 +37,42 @@ export async function recordAiConnection(env,record,event,now=Date.now()){
  return true;
 }
 
+// Connections made before status tracking existed (2026-11-04 16:41 KST) left no
+// record. Once per account, rebuild it from that account's unexpired OAuth tokens.
+const BACKFILL_SCAN_LIMIT=2000;
+async function backfill(env,sub,stored,generation,now){
+ if(stored?.backfilledAt||typeof env.BUCKET.list!=='function')return stored;
+ const found={};let scanned=0;
+ for(const type of ['refresh','access']){
+  let cursor;
+  do{
+   const page=await env.BUCKET.list({prefix:'website-auth/oauth/'+type+'/',limit:200,...(cursor?{cursor}:{})});
+   for(const item of page.objects||[]){
+    if(++scanned>BACKFILL_SCAN_LIMIT)break;
+    const object=await env.BUCKET.get(item.key),record=object?await object.json().catch(()=>null):null;
+    if(record?.profile?.sub!==sub||!(record.expiresAt>now)||(record.accountGeneration||'0')!==generation)continue;
+    const family=aiClientFamily(record.redirectUri);if(!family)continue;
+    const at=Number(record.issuedAt)||now;
+    found[family]={generation,connectedAt:Math.min(found[family]?.connectedAt??at,at),lastTokenAt:Math.max(found[family]?.lastTokenAt??0,at)};
+   }
+   cursor=page.truncated&&scanned<=BACKFILL_SCAN_LIMIT?page.cursor:undefined;
+  }while(cursor);
+ }
+ const next={...stored,backfilledAt:now};
+ for(const [family,item] of Object.entries(found)){
+  const current=stored?.[family];
+  if(current?.generation===generation&&Math.max(current.lastTokenAt||0,current.lastUsedAt||0)>=item.lastTokenAt)continue;
+  next[family]={...(current?.generation===generation?current:{}),...item};
+ }
+ await env.BUCKET.put(await storageKey(sub),JSON.stringify(next));
+ return next;
+}
+
 export async function aiConnectionStatus(env,sub,now=Date.now()){
  if(!env?.BUCKET||!sub)return null;
  const [object,account]=await Promise.all([env.BUCKET.get(await storageKey(sub)),oauthAccountState(env,sub)]);
- const stored=object?await object.json():{};
+ let stored=object?await object.json():{};
+ if(account.active)stored=await backfill(env,sub,stored,account.generation,now).catch(()=>stored);
  return AI_CLIENTS.map(([id,label])=>{
   const item=stored?.[id];
   if(!item)return {id,label,state:'none'};
