@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {mcpOAuthRoute,authenticateMcpBearer} from '../server/mcp-oauth.js';
-import {aiClientFamily,aiConnectionStatus,recordAiConnection,CONNECTION_ACTIVE_MS} from '../worker/ai-connections.js';
+import {aiClientFamily,aiConnectionStatus,recordAiConnection} from '../worker/ai-connections.js';
 import {invalidateAccountOAuth} from '../worker/oauth-account-state.js';
 import {calendarRoute} from '../worker/calendar-refresh.js';
 
@@ -57,8 +57,8 @@ test('account page status reflects real Claude and ChatGPT OAuth grants, use and
  await mcpOAuthRoute(request('/oauth/revoke',form({token:chatgpt.refresh_token})),env);
  status=byId(await aiConnectionStatus(env,identity.sub));
  assert.equal(status.chatgpt.state,'revoked');assert.equal(status.claude.state,'connected');
- // Old activity expires; account deletion/rejoin invalidates every grant.
- assert.equal(byId(await aiConnectionStatus(env,identity.sub,Date.now()+CONNECTION_ACTIVE_MS+1000)).claude.state,'expired');
+ // Once connected it stays connected however long it is idle; deletion/rejoin invalidates every grant.
+ assert.equal(byId(await aiConnectionStatus(env,identity.sub,Date.now()+365*86400000)).claude.state,'connected');
  await invalidateAccountOAuth(env,identity.sub);
  assert.equal(byId(await aiConnectionStatus(env,identity.sub)).claude.state,'revoked');
 });

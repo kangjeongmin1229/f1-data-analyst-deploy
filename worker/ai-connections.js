@@ -1,14 +1,13 @@
 // Per-account AI connection status for the account page.
 // The AI is identified only by the registered OAuth redirect host, which the
 // authorization server enforces; a self-reported client_name is never trusted.
-// A connection counts as active when the account's current OAuth grant produced
-// a token or a tool call within the refresh-token lifetime. An AI that deletes the
-// connector without calling /oauth/revoke cannot be detected immediately, so the
-// page states the last confirmed activity instead of claiming a live link.
+// Once an AI has connected with the account's current OAuth grant it stays
+// 연결됨 (owner rule, 2026-11-04) until the refresh token is revoked or the account
+// is deleted/rejoined. An AI that removes the connector without calling
+// /oauth/revoke cannot be detected, so the page also shows the last activity.
 import {oauthAccountState} from './oauth-account-state.js';
 
 export const AI_CLIENTS=[['claude','Claude',['claude.ai','claude.com']],['chatgpt','ChatGPT',['chatgpt.com','openai.com']]];
-export const CONNECTION_ACTIVE_MS=30*24*60*60*1000;
 const USE_WRITE_INTERVAL_MS=10*60*1000;
 const recentUse=new Map();
 const digest=async text=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),n=>n.toString(16).padStart(2,'0')).join('');
@@ -79,7 +78,6 @@ export async function aiConnectionStatus(env,sub,now=Date.now()){
   const last=Math.max(item.lastTokenAt||0,item.lastUsedAt||0);
   if(!account.active||item.generation!==account.generation)return {id,label,state:'revoked',lastActiveAt:last||null};
   if(item.revokedAt&&item.revokedAt>=last)return {id,label,state:'revoked',lastActiveAt:last||null};
-  if(now-last>CONNECTION_ACTIVE_MS)return {id,label,state:'expired',lastActiveAt:last||null};
   return {id,label,state:'connected',lastActiveAt:last,lastUsedAt:item.lastUsedAt||null};
  });
 }
