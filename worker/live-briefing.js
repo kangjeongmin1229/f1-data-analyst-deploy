@@ -3,17 +3,18 @@ import {sessionSchedule} from './session-schedule.js';
 
 const kst=(ms,options)=>new Date(ms).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false,...options});
 const sessionLabel=name=>({'Sprint Qualifying':'스프린트 퀄리파잉','Sprint Shootout':'스프린트 퀄리파잉','Sprint':'스프린트','Qualifying':'퀄리파잉','Race':'레이스'})[name]||name;
-// Next official F1 session from the checked-in schedule (Korean time).
-export function nextF1Session(now=Date.now()){
- for(const event of calendarEvents.filter(e=>e.series==='f1')){
+// Next official session of a series from the checked-in schedule (Korean time).
+export function nextSeriesSession(series,now=Date.now()){
+ for(const event of calendarEvents.filter(e=>e.series===series)){
   for(const session of sessionSchedule[event.id]||[]){
-   const at=Date.parse(session.start);
-   if(Number.isFinite(at)&&at>now)return {event:event.name,session:sessionLabel(session.nameEn||session.name),start:session.start,
-    text:`${event.name} ${sessionLabel(session.nameEn||session.name)} · ${kst(at,{month:'numeric',day:'numeric'})} ${kst(at,{hour:'2-digit',minute:'2-digit'})} (한국시간)`};
+   const at=Date.parse(session.start),label=series==='f1'?sessionLabel(session.nameEn||session.name):session.name;
+   if(Number.isFinite(at)&&at>now)return {event:event.name,session:label,start:session.start,
+    text:`${event.name} ${label} · ${kst(at,{month:'numeric',day:'numeric'})} ${kst(at,{hour:'2-digit',minute:'2-digit'})} (한국시간)`};
   }
  }
  return null;
 }
+export const nextF1Session=(now=Date.now())=>nextSeriesSession('f1',now);
 // "3일 전 (11. 2. 07:05)" — how old the saved data is, with its date.
 export function dataAgeText(receivedAt,now=Date.now()){
  const at=Date.parse(receivedAt);if(!Number.isFinite(at))return null;

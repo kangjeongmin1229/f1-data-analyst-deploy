@@ -2,6 +2,7 @@ import {cloudConfigured,cloudRequest} from './live.js';
 import {accountIdentity,sharedLiveAllowed} from './accounts.js';
 import {googleIdentity} from './google-auth.js';
 import {verifyCollectorToken,COLLECTOR_REPOSITORY} from './github-oidc.js';
+import {nextSeriesSession} from './live-briefing.js';
 export const WEC_COLLECTOR_WORKFLOW=COLLECTOR_REPOSITORY+'/.github/workflows/wec-live-collector.yml@refs/heads/main';
 const STORE='wec/live/current.json',WINDOW_ID=/^wec-[a-z0-9-]{3,80}-\d{8}$/,FRESH_SECONDS=90;
 const sessions=['auto','FP1','FP2','FP3','Qualifying','Hyperpole','Race'];
@@ -26,7 +27,7 @@ export async function wecLiveCall(name,args,env){
  let raw;
  try{raw=await cloudRequest(env,name==='wec_discover_live'?'/wec/discover':'/wec/snapshot',name==='wec_discover_live'?'POST':'GET',name==='wec_discover_live'?args:undefined);}
  catch{throw Error('WEC 수집기 연결을 확인하지 못했습니다. 수집 서버의 WEC 코드 배포·브라우저 설치·연결 인증을 확인해 주세요.');}
- return {content:[{type:'text',text:JSON.stringify(publicWecStatus(raw))}],isError:false};
+ return {content:[{type:'text',text:JSON.stringify({...publicWecStatus(raw),next_session:nextSeriesSession('wec')})}],isError:false};
 }
 
 // Same split as F1 (personal-f1.js): crew (and the owner) use the operator's FIAWEC+ account
@@ -73,12 +74,12 @@ function storedFields(raw){
 // and the table itself changed within the last 90 seconds. A login, a link or a still
 // table is never shown as live.
 export function wecLiveView(stored,now=Date.now()){
- if(!stored)return {...publicWecStatus({state:'not_started'}),source:'FIAWEC+ live timing (scheduled reader)'};
+ if(!stored)return {...publicWecStatus({state:'not_started'}),source:'FIAWEC+ live timing (scheduled reader)',next_session:nextSeriesSession('wec',now)};
  const open=Date.parse(stored.window_open)<=now&&now<=Date.parse(stored.window_close);
  const changed=(now-Date.parse(stored.rows_changed_at))/1000;
  const received=(now-Date.parse(stored.received_at))/1000;
  const live=open&&stored.state==='reading'&&stored.records?.length>0&&changed>=0&&changed<=FRESH_SECONDS&&received<=FRESH_SECONDS;
- return {...stored,source:'FIAWEC+ live timing (scheduled reader)',live,
+ return {...stored,source:'FIAWEC+ live timing (scheduled reader)',live,next_session:nextSeriesSession('wec',now),
   table_age_seconds:Number.isFinite(changed)?Math.round(changed):null,received_age_seconds:Number.isFinite(received)?Math.round(received):null,
   verification_note:live?'The timing table changed within the last 90 seconds during the scheduled session window.':'Not live: the window is closed, the table has not changed recently, or the reader has not reached the timing page.'};
 }
@@ -128,5 +129,5 @@ export async function wecLiveAccessCall(name,args,env,access){
  catch{throw Error('WEC 수집기 연결을 확인하지 못했습니다. 잠시 후 다시 시도하세요.');}
  const status=publicWecStatus(raw);
  if(status.state==='credentials_required')status.verification_note='본인 FIAWEC+ 계정 연결이 필요합니다. https://kongboda-motorsports.vercel.app/live 에서 연결하세요(최대 8시간 유지). 선원은 운영자 계정으로 자동 수신합니다.';
- return {content:[{type:'text',text:JSON.stringify({...status,access:'personal FIAWEC+ account'})}],isError:false};
+ return {content:[{type:'text',text:JSON.stringify({...status,access:'personal FIAWEC+ account',next_session:nextSeriesSession('wec')})}],isError:false};
 }
