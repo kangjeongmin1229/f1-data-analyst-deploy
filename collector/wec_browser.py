@@ -1,4 +1,6 @@
-"""FIAWEC+ UI discovery. Never guess a timing endpoint or export auth state."""
+"""FIAWEC+ UI discovery. Never guess a timing endpoint. A saved sign-in (storage state)
+comes only from the owner-approved "FIAWEC+ 연결" flow, where a person signs in."""
+import json
 import os
 import re
 from datetime import datetime, timezone
@@ -11,9 +13,17 @@ SESSIONS = ('auto', 'FP1', 'FP2', 'FP3', 'Qualifying', 'Hyperpole', 'Race')
 
 
 class DiscoveryError(Exception):
-    def __init__(self, code):
+    def __init__(self, code, detail=None):
         self.code = code
+        self.detail = detail  # gate phrase, host and page title only; never page body or URLs
         super().__init__(code)  # No provider errors, credentials or signed URLs.
+
+
+def gate_detail(phrase, url, title):
+    """Enough to tell a real bot check from a harmless 'protected by reCAPTCHA' notice."""
+    host = urlsplit(url).hostname or ''
+    title = re.sub(r'[^\w .:|-]', '', title or '')[:60]
+    return '%s @ %s · %s' % (phrase.lower()[:30], host[:60], title)
 
 
 def utcnow():
@@ -47,13 +57,17 @@ def session_name(text):
     return None
 
 
-def select_session(cards, year, session='auto'):
-    """Current year + positive card-specific live badge; never a replay/duration."""
+def select_session(cards, year, session='auto', event=None, upcoming=False):
+    """Current year + positive card-specific live badge; never a replay/duration.
+    upcoming=True (a scheduled window for one named session) also accepts that session's
+    card before its LIVE badge appears; the livestream page then shows a countdown."""
     candidates = {}
     for card in cards:
         text = card.get('text', '') + ' ' + card.get('url', '')
         years = set(re.findall(r'\b20\d{2}\b', text.replace('-', ' ')))
-        if years != {str(year)}:
+        if years and years != {str(year)}:
+            continue
+        if event and event not in re.sub(r'[^a-z0-9]', '', text.lower()):
             continue
         if re.search(r'replay|highlights|full\s+race|on\s*demand', text, re.I):
             continue
@@ -61,13 +75,13 @@ def select_session(cards, year, session='auto'):
         if not name or (session != 'auto' and name != session):
             continue
         # "Live Timing Pro" in marketing copy is not a session status.
-        if not card.get('live'):
+        if not card.get('live') and not (upcoming and session != 'auto'):
             continue
         url = checked_url(card['url'], hosts={'plus.fiawec.com'})
-        if not re.match(r'^/en/(?:video|live)/[^/]+/?$', urlsplit(url).path):
+        if not re.match(r'^/en/(?:video|live|livestream|session)/[^/]+/?$', urlsplit(url).path):
             continue
         # Prefer the English card; preserve distinct sessions as ambiguity.
-        if name not in candidates or re.search(r'\benglish\b', text, re.I):
+        if name not in candidates or card.get('live') and not candidates[name].get('live') or re.search(r'\benglish\b', text, re.I):
             candidates[name] = {**card, 'url': url, 'session': name}
     if len(candidates) > 1:
         raise DiscoveryError('ambiguous_live_session')
@@ -102,10 +116,20 @@ def normalize_table(headers, rows):
     return [dict(zip(labels, [str(v)[:200] for v in row])) for row in rows if len(row) == len(labels)][:100]
 
 
+def owner_credentials():
+    """The operator's FIAWEC+ account (crew collection). Never used for a personal login."""
+    return (os.environ.get('WEC_USERNAME') or os.environ.get('WEC_EMAIL') or os.environ.get('FIAWEC_USERNAME'),
+            os.environ.get('WEC_PASSWORD') or os.environ.get('FIAWEC_PASSWORD'))
+
+
 class FIAWECBrowser:
-    """Small explicit browser path, with an in-memory cookie jar only."""
-    def __init__(self, browser):
-        self.context = browser.new_context(accept_downloads=False)
+    """Small explicit browser path. Cookies start empty, or from a saved sign-in."""
+    def __init__(self, browser, credentials=None, storage_state=None):
+        # A personal session passes its own (username, password); crew uses the owner's.
+        self.credentials = credentials
+        state = storage_state or os.environ.get('WEC_STORAGE_STATE') or None
+        self.has_state = bool(state)
+        self.context = browser.new_context(accept_downloads=False, **({'storage_state': state} if state else {}))
         self.context.set_default_timeout(12000)
         self.page = self.context.new_page()
         self.context.route('**/*', self._guard)
@@ -122,13 +146,34 @@ class FIAWECBrowser:
                 return route.abort()
         return route.continue_()
 
-    def check_gate(self):
+    def check_gate(self, strict=False):
+        """Stop on a real bot wall. The FIAWEC login page itself mentions 'captcha' (a widget
+        shown only when needed), so that word alone stops a run only after a step failed."""
         text = self.page.locator('body').inner_text(timeout=12000)[:30000]
-        if re.search(r'verify you are human|checking your browser|unusual traffic|captcha|access denied', text, re.I):
-            raise DiscoveryError('human_verification_required')
+        pattern = r'verify you are human|checking your browser|unusual traffic|access denied' + (r'|captcha' if strict else '')
+        found = re.search(pattern, text, re.I)
+        if found:
+            detail = gate_detail(found.group(0), self.page.url, self.page.title())
+            self.capture_gate(detail)
+            raise DiscoveryError('human_verification_required', detail)
         if re.search(r'incorrect password|wrong email|invalid credentials', text, re.I):
             raise DiscoveryError('authentication_failed')
         return text
+
+    def capture_gate(self, detail):
+        """Keep a picture of the bot check for the owner to look at later. Never solves it.
+        Every input is masked so a typed email or password never lands in the image."""
+        try:
+            folder = os.environ.get('WEC_GATE_DIR') or 'gate-captures'
+            os.makedirs(folder, exist_ok=True)
+            base = os.path.join(folder, 'wec-gate-' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
+            self.page.screenshot(path=base + '.png', full_page=True, mask=[self.page.locator('input')], timeout=10000)
+            with open(base + '.json', 'w', encoding='utf-8') as f:
+                json.dump({'captured_at': utcnow(), 'detail': detail}, f, ensure_ascii=False)
+            print('WEC gate captured:', base + '.png', flush=True)
+            return base + '.png'
+        except Exception:
+            return None  # a failed capture must never hide the real stop reason
 
     def goto(self, url):
         checked_url(url, hosts=TIMING_HOSTS | {AUTH_HOST})
@@ -147,10 +192,10 @@ class FIAWECBrowser:
             if self.page.locator('[id^="headlessui-menu-button-"]').count():
                 return
             raise DiscoveryError('authentication_unverified')
-        username = os.environ.get('WEC_USERNAME') or os.environ.get('WEC_EMAIL') or os.environ.get('FIAWEC_USERNAME')
-        password = os.environ.get('WEC_PASSWORD') or os.environ.get('FIAWEC_PASSWORD')
+        username, password = self.credentials or owner_credentials()
         if not username or not password:
-            raise DiscoveryError('credentials_required')
+            # A saved sign-in that no longer works needs the person to connect again.
+            raise DiscoveryError('sign_in_expired' if self.has_state else 'credentials_required')
         login.first.click()
         self.page.get_by_role('button', name=re.compile(r'^Sign in\b')).click()
         self.page.wait_for_url('https://auth.staylive.io/**')
@@ -165,7 +210,7 @@ class FIAWECBrowser:
         try:
             field.wait_for(state='visible')
         except Exception:
-            self.check_gate()
+            self.check_gate(strict=True)
             raise DiscoveryError('authentication_action_required') from None
         if urlsplit(self.page.url).hostname != AUTH_HOST:
             raise DiscoveryError('unapproved_destination')
@@ -175,9 +220,25 @@ class FIAWECBrowser:
             self.page.wait_for_url('https://plus.fiawec.com/**', timeout=25000)
             self.page.locator('[id^="headlessui-menu-button-"]').wait_for(state='visible')
         except Exception:
-            self.check_gate()
+            self.check_gate(strict=True)
             raise DiscoveryError('authentication_action_required') from None
         self.check_gate()
+
+    def next_session_cards(self):
+        """The FIA WEC home page's NEXT SESSIONS cards (recorded flow), each with its own
+        LIVE badge. Other series (ELMS etc.) are filtered by the event name later."""
+        self.goto(HOME)
+        heading = self.page.get_by_text(re.compile(r'^\s*next\s+sessions\s*$', re.I)).first
+        try:
+            heading.wait_for(state='visible')
+        except Exception:
+            return []
+        return heading.evaluate('''h => {
+          let box = h; for (let i = 0; i < 6 && box && !box.querySelector('a[href]'); i++) box = box.parentElement;
+          if (!box) return [];
+          return [...box.querySelectorAll('a[href]')].map(a => ({url: a.href, text: a.innerText,
+            live: [...a.querySelectorAll('*')].some(e => /^(live|live now)$/i.test(e.textContent.trim()))}));
+        }''')
 
     def race_links(self):
         self.goto(HOME)
@@ -240,6 +301,10 @@ class FIAWECBrowser:
                 break
         return self.page.url
 
+    def waiting_for_start(self):
+        text = self.check_gate()
+        return bool(re.search(r'\bto start\b|syncing live timeline', text, re.I))
+
     def read_rows(self):
         self.check_gate()
         for frame in self.page.frames:
@@ -259,14 +324,24 @@ class FIAWECBrowser:
                     return rows
         return []
 
+    def saved_state(self):
+        """Current cookies, so a rotated sign-in is kept for the next session."""
+        return self.context.storage_state()
+
     def close(self):
         self.context.close()
 
 
-def discover(driver, target):
+def discover(driver, target, upcoming=False):
     target = request_target(target)
     driver.authenticate()
     event = re.sub(r'[^a-z0-9]', '', target['event'].lower())
+    selected = select_session(driver.next_session_cards(), target['year'], target['session'], event, upcoming)
+    if selected:
+        result = {'schema_version': 1, 'producer': 'fiawec-browser', 'target': target,
+                  'checked_at': utcnow(), 'auth_state': 'authenticated', 'race_url': None,
+                  'live': False, 'records': [], 'state': 'waiting_for_session'}
+        return open_session(driver, result, selected)
     choices = {}
     for item in driver.race_links():
         url = checked_url(item['url'], hosts={'plus.fiawec.com'})
@@ -284,15 +359,20 @@ def discover(driver, target):
               'checked_at': utcnow(), 'auth_state': 'authenticated',
               'race_url': public_url(race_url), 'session_url': None, 'timing_url': None,
               'live': False, 'records': [], 'state': 'waiting_for_session'}
-    selected = select_session(driver.session_cards(race_url), target['year'], target['session'])
+    selected = select_session(driver.session_cards(race_url), target['year'], target['session'], None, upcoming)
     if not selected:
         return result
+    return open_session(driver, result, selected)
+
+
+def open_session(driver, result, selected):
     result.update(session=selected['session'], session_url=public_url(selected['url']))
     timing = driver.open_timing(selected['url'])
     result.update(state='timing_opened', timing_url=public_url(timing),
                   private_timing_link=public_url(timing) is None,
                   timing_origin='https://' + urlsplit(checked_url(timing)).hostname)
     rows = driver.read_rows()
-    result.update(records=rows, state='snapshot_unverified' if rows else 'timing_layout_unverified')
+    waiting = not rows and driver.waiting_for_start()
+    result.update(records=rows, state='snapshot_unverified' if rows else 'timing_waiting_start' if waiting else 'timing_layout_unverified')
     # A link, login or one table observation never proves a changing live feed.
     return result

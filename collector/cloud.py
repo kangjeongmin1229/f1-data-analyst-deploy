@@ -24,6 +24,8 @@ WEC = None  # Initialized only by serve; F1 recording stays independent.
 TELEMETRY = None
 HISTORY = None
 PERSONAL = None
+PERSONAL_WEC = None  # per-account FIAWEC+ logins, ready with the WEC runtime
+SIGNIN = None  # FIAWEC+ 연결 browsers (wec_signin.py), ready with the WEC runtime
 SUPPORTED_SESSIONS = ('Practice 1', 'Practice 2', 'Practice 3', 'Qualifying',
                       'Sprint Qualifying', 'Sprint Shootout', 'Sprint', 'Race')
 TERMINAL_SESSION_STATUSES = frozenset(('Finished', 'Finalised', 'Cancelled', 'Canceled', 'Aborted'))
@@ -582,6 +584,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply({'error': 'FastF1 standings unavailable'}, 502)
         if self.path == '/wec/snapshot':
             return self.reply(WEC.read() if WEC else {'state': 'not_started', 'live': False, 'records': []})
+        if self.path.startswith('/wec/signin/'):
+            return self.signin('GET')
         if self.path != '/snapshot':
             return self.reply({'error': 'Not found'}, 404)
         return self.current()
@@ -596,6 +600,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply({'error': 'Unauthorized'}, 401)
         if self.path.startswith('/personal/'):
             return self.personal('POST')
+        if self.path.startswith('/wec/signin/'):
+            return self.signin('POST')
         if self.path == '/telemetry/laps':
             try:
                 size = int(self.headers.get('Content-Length', '0'))
@@ -635,6 +641,25 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply({'ok': True})
         return self.reply({'error': 'Not found'}, 404)
 
+    def signin(self, method):
+        """FIAWEC+ 연결: /wec/signin/<account>/<start|frame|input|cancel> (see wec_signin.py)."""
+        if SIGNIN is None:
+            return self.reply({'error': 'WEC runtime not ready'}, 503)
+        parts = self.path.split('/')
+        if len(parts) != 5 or (method == 'GET') != (parts[4] == 'frame'):
+            return self.reply({'error': 'Not found'}, 404)
+        body = None
+        if method == 'POST':
+            try:
+                size = int(self.headers.get('Content-Length', '0'))
+                if not 0 <= size <= 2048:
+                    raise ValueError()
+                body = json.loads(self.rfile.read(size)) if size else {}
+            except (ValueError, TypeError):
+                return self.reply({'error': 'Invalid body'}, 400)
+        result, status = SIGNIN.request(parts[3], parts[4], body)
+        return self.reply(result, status)
+
     def personal(self, method):
         if PERSONAL is None:
             return self.reply({'error': 'Personal collectors unavailable'}, 503)
@@ -652,6 +677,11 @@ class Handler(BaseHTTPRequestHandler):
                     raise ValueError()
             except (ValueError, TypeError):
                 return self.reply({'error': 'Invalid body'}, 400)
+        if parts[3].startswith('wec/'):
+            if PERSONAL_WEC is None:
+                return self.reply({'error': 'WEC runtime not ready'}, 503)
+            result, status = PERSONAL_WEC.request(parts[2], '/' + parts[3], method, body)
+            return self.reply(result, status)
         result, status = PERSONAL.request(parts[2], '/' + parts[3], method, body)
         return self.reply(result, status)
 
@@ -676,13 +706,16 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def prepare_wec():
-    global WEC, WEC_RUNTIME
+    global WEC, WEC_RUNTIME, PERSONAL_WEC, SIGNIN
     WEC_RUNTIME = 'preparing'
     try:
         from wec_install import ensure_browser
-        from wec_runtime import WECManager
+        from wec_runtime import PersonalWEC, WECManager
         WEC_RUNTIME = ensure_browser()
         WEC = WECManager(DATA)
+        PERSONAL_WEC = PersonalWEC()
+        from wec_signin import SignInManager
+        SIGNIN = SignInManager()
     except Exception:
         WEC_RUNTIME = 'unavailable'
         print('WEC runtime unavailable; F1 collector continues independently.', flush=True)
@@ -752,6 +785,8 @@ def main():
         server.server_close()
         if PERSONAL:
             PERSONAL.close()
+        if PERSONAL_WEC:
+            PERSONAL_WEC.close()
         if WEC:
             WEC.close()
     return 0
