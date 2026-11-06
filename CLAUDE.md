@@ -33,5 +33,6 @@ Read AGENTS.md and docs/answer-principles.md first; they are the product rules.
 
 - **Graphify**: a SessionStart hook (`scripts/graphify-hook.mjs`) installs `graphifyy` if needed and rebuilds the code map in `graphify-out/` (AST only, free, not committed). Before grepping or reading many files, run `graphify query "<question>"`, `graphify explain "<name>"` or `graphify path "<A>" "<B>"`. Read raw files only for lines the graph located. Put this rule in subagent prompts that explore code.
 - **Ponytail** (`ponytail@ponytail`, enabled in `.claude/settings.json`): keep changes small, reuse existing code and the standard library. Run `/ponytail-review` on the diff before opening a PR.
+- **Frontend Design** (`frontend-design@claude-plugins-official`, enabled in `.claude/settings.json`): use it for any site UI work (pages, components, layout, styling) so the result looks intentional, not templated. Keep the CI colours and fonts from the About page.
 - **cua-driver** runs on the owner's PC; use it only as a fallback when the built-in browser cannot create or merge a PR.
 - OmniRoute is not used (the site barely calls AI models).
