@@ -1,1 +1,1 @@
-{"source_run": 42355509201, "configs": [{"name": "race", "env": {"RACE_ONLY": "on"}}]}
+{"source_run": 42355509201, "configs": [{"name": "race", "env": {"RACE_ONLY": "on"}}, {"name": "race-k-energy", "env": {"RACE_ONLY": "on", "LAPSIM_RACE_K": "energy"}}]}
