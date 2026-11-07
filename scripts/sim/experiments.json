@@ -1,110 +1,125 @@
 {
- "source_run": 42350255568,
+ "source_run": 42355509201,
  "configs": [
   {
-   "name": "t20",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20"
-   }
-  },
-  {
-   "name": "t20-drag",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_TRACK_DRAG": "on"
-   }
-  },
-  {
-   "name": "t20-drag-resid",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_TRACK_DRAG": "on",
-    "LAPSIM_RESIDUAL": "on",
-    "LAPSIM_BACKTEST": "on"
-   }
-  },
-  {
-   "name": "t20-teams-top3",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_BACKTEST": "on"
-   }
-  },
-  {
-   "name": "t20-teams-top10",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_MAX_POS": "10",
-    "LAPSIM_BACKTEST": "on"
-   }
-  },
-  {
-   "name": "t20-drag-teams-top10-resid",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_TRACK_DRAG": "on",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_RESIDUAL": "on",
-    "LAPSIM_MAX_POS": "10",
-    "LAPSIM_BACKTEST": "on"
-   }
-  },
-  {
-   "name": "t50-drag-resid",
-   "env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_SKIP_WEC": "1",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_WTIME": "50",
-    "LAPSIM_TRACK_DRAG": "on",
-    "LAPSIM_RESIDUAL": "on",
-    "LAPSIM_BACKTEST": "on"
-   }
-  },
-  {
-   "name": "t20-drag-resid-long",
+   "name": "full",
    "env": {
     "LAPSIM_FITTER": "bcd",
     "LAPSIM_SKIP_WEC": "1",
     "LAPSIM_ROUNDS": "5",
-    "LAPSIM_BCD_ITERS": "150",
+    "LAPSIM_BCD_ITERS": "200",
     "LAPSIM_WSECTOR": "2",
     "LAPSIM_WTIME": "20",
     "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on"
+   }
+  },
+  {
+   "name": "full-resid",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_RESIDUAL": "on"
+   }
+  },
+  {
+   "name": "full-resid-l03",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_RESIDUAL": "on",
+    "LAPSIM_RESIDUAL_LAMBDA": "0.3"
+   }
+  },
+  {
+   "name": "full-t50-resid",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "50",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_RESIDUAL": "on"
+   }
+  },
+  {
+   "name": "full-top5-resid",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_MAX_POS": "5",
+    "LAPSIM_RESIDUAL": "on"
+   }
+  },
+  {
+   "name": "full-prior05-resid",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_WPRIOR": "0.5",
+    "LAPSIM_RESIDUAL": "on"
+   }
+  },
+  {
+   "name": "full-prior8",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
+    "LAPSIM_WPRIOR": "8"
+   }
+  },
+  {
+   "name": "full-wide-resid",
+   "env": {
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_ROUNDS": "8",
+    "LAPSIM_BCD_ITERS": "300",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_BACKTEST": "on",
     "LAPSIM_RESIDUAL": "on"
    }
   }
