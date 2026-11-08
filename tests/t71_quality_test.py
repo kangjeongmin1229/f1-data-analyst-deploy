@@ -3,6 +3,9 @@ from pathlib import Path
 import unittest
 import tempfile
 import json
+from unittest.mock import patch
+import io
+import urllib.error
 
 spec = importlib.util.spec_from_file_location('t71', Path(__file__).parents[1] / 'scripts/sim/t71_collect.py')
 t71 = importlib.util.module_from_spec(spec)
@@ -10,6 +13,27 @@ spec.loader.exec_module(t71)
 
 
 class QualityTests(unittest.TestCase):
+    def test_transient_failure_retried_but_policy_denial_not_retried(self):
+        failure = urllib.error.HTTPError('https://example.test', 503, 'Unavailable', {}, None)
+        with patch.object(t71.urllib.request, 'urlopen', side_effect=[failure, io.BytesIO(b'{}')]) as get, patch.object(t71.time, 'sleep') as sleep:
+            self.assertEqual(t71.download('https://example.test'), b'{}')
+            self.assertEqual(get.call_count, 2)
+            sleep.assert_called_once_with(2)
+        denied = urllib.error.HTTPError('https://example.test', 403, 'Blocked by policy', {}, None)
+        with patch.object(t71.urllib.request, 'urlopen', side_effect=denied) as get, patch.object(t71.time, 'sleep') as sleep:
+            with self.assertRaises(urllib.error.HTTPError):
+                t71.download('https://example.test')
+            self.assertEqual(get.call_count, 1)
+            sleep.assert_not_called()
+
+    def test_long_retry_after_does_not_trigger_immediate_retry(self):
+        error = urllib.error.HTTPError('https://example.test', 429, 'Limit', {'Retry-After': '120'}, None)
+        with patch.object(t71.urllib.request, 'urlopen', side_effect=error) as get, patch.object(t71.time, 'sleep') as sleep:
+            with self.assertRaises(urllib.error.HTTPError):
+                t71.download('https://example.test')
+            self.assertEqual(get.call_count, 1)
+            sleep.assert_not_called()
+
     def test_resume_ignores_failures_old_audits_and_partial_lines(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'audit.jsonl'
