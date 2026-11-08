@@ -211,6 +211,30 @@ def completed_records(path, raw_root=None):
     return records
 
 
+def pending_records(selected, outcomes, audit_path):
+    """Interleave new work and least-attempted retries to prevent batch starvation."""
+    attempts = collections.Counter()
+    if audit_path.exists():
+        for line in audit_path.read_text().splitlines():
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(record, dict) and 'id' in record:
+                attempts[record['id']] += 1
+    pending = [r for r in selected if r.get('id') not in outcomes]
+    fresh = [r for r in pending if not attempts[r['id']]]
+    retries = sorted((r for r in pending if attempts[r['id']]),
+                     key=lambda r: attempts[r['id']])
+    result = []
+    for index in range(max(len(fresh), len(retries))):
+        if index < len(fresh):
+            result.append(fresh[index])
+        if index < len(retries):
+            result.append(retries[index])
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--catalogue', required=True)
@@ -223,7 +247,7 @@ def main():
     selected = [r for r in catalogue if metadata_family(r)]
     (root / 'selected-metadata.json').write_text(json.dumps(selected, ensure_ascii=False))
     outcomes = completed_records(root / 'audit.jsonl', root / 'raw')
-    pending = [r for r in selected if r.get('id') not in outcomes]
+    pending = pending_records(selected, outcomes, root / 'audit.jsonl')
     if args.limit:
         pending = pending[:args.limit]
     started = time.time()
