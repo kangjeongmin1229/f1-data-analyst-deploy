@@ -8,6 +8,13 @@ array from the archive API. Raw analysis files, selected metadata, per-session
 audit records and a summary are written under ignored `.cache/lapsim/t71`.
 Run `python3 tests/t71_quality_test.py` for the quality-rule regression checks.
 
+Use `--limit 150` for a bounded resumable batch. The limit applies to pending
+records, not the start of the catalogue. Each completed session writes an audit
+record and an atomic summary checkpoint. Successful current-version audits are
+skipped on resume; failed downloads and older audits are retried. Incomplete log
+lines after interruption are ignored. The execution environment can terminate a
+process, so running a command is not evidence of continuous unattended operation.
+
 The collector uses four download workers, caches successfully parsed JSON, limits
 individual payload size and records SHA-256 provenance. A repeat run reuses raw
 files. Failures are recorded separately; they are never counted as successful fits.
