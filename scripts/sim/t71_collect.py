@@ -45,7 +45,7 @@ def series_family(name):
     s = name.casefold()
     if re.search(r'iracing|esport|virtual|historic|classic|\bivra\b|\bneo\b|\bsco\b|\bvrs\b|\bsim\b', s):
         return None
-    if re.search(r'formula\s*1\b', s):
+    if re.search(r'formula\s*1\b|^f1 testing$', s):
         return 'f1'
     if re.search(r'formula\s*e\b', s):
         return 'fe'
@@ -53,6 +53,8 @@ def series_family(name):
         return 'wec'
     if re.search(r'imsa.*weathertech|^imsa$', s):
         return 'imsa'
+    if re.search(r'\blmp2\b|24 heures du mans|24 hours of le mans|suzuka 10 hours|california 8 hours|\b1006 km\b|gt sports club|thailand supercar gtm|national gt challenge', s):
+        return 'mixed_candidate'
     if re.search(r'blancpain|gt.?world|gtwc|^dtm$|\bnls\b|\bvln\b|nürburgring|nurburgring|igtc|intercontinental gt|bathurst 12|indianapolis 8|kyalami 9|macau|24.*spa|24h series|24h series|british gt|adac gt|international gt open|gt america|gt winter|gt summer|gt sprint|gt cup|gulf 12|sepang|super taikyu|supercar challenge|gt3|super touring|creventic|endurance|gt60', s):
         return 'gt_candidate'
     if re.search(r'european le mans|asian le mans|le mans cup', s):
@@ -62,9 +64,9 @@ def series_family(name):
 
 def session_type(text):
     s = text.casefold()
-    if re.search(r'qualif|hyperpole|superpole|shootout|duel', s):
+    if re.search(r'qualif|hyper\s?pole|super\s?pole|shoot\s?out|duel|\bq[1-3]\b', s):
         return 'qualifying'
-    if re.search(r'practi[cs]e|warm.?up|test|prologue', s):
+    if re.search(r'practi[cs]e|warm.?up|test|prologue|\bfp[1-3]\b', s):
         return 'practice_or_test'
     if re.search(r'\brace\b|\bsprint\b', s):
         return 'race'
