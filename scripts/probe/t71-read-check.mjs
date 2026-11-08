@@ -7,7 +7,7 @@ const API = 'https://archive.timing71.org';
 const SERIES = {f1: /^formula 1$/i, wec: /^(fia )?wec$|world endurance/i, imsa: /imsa weathertech/i, fe: /formula e/i,
   gtwc: /gt world challenge/i, igtc: /bathurst 12|igtc|kyalami 9/i, dtm: /^dtm$/i, nur: /24h n(u|ü)rburgring|^nls$|^vln/i,
   macau: /macau grand prix/i, elms: /european le mans/i, alms: /asian le mans/i};
-const get = async u => { const r = await fetch(u.startsWith(API) ? u : encodeURI(u)); if (!r.ok) throw new Error(`${r.status} ${u}`); return r; };
+const get = async (u, n = 3) => { try { const r = await fetch(u.startsWith(API) ? u : encodeURI(u)); if (!r.ok) throw new Error(`${r.status} ${u}`); return r; } catch (x) { if (n <= 1) throw x; await new Promise(f => setTimeout(f, 3000)); return get(u, n - 1); } };
 const all = [];
 for (let skip = 0; skip < 20000; skip += 500) {
   const page = await (await get(`${API}/replays?filter[order]=startTime%20DESC&filter[limit]=500&filter[skip]=${skip}`)).json();

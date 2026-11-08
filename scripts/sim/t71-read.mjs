@@ -50,7 +50,7 @@ export function readReplay(zipPath) {
     const names = manifest.colSpec.map(c => Array.isArray(c) ? c[0] : c);
     const col = n => names.indexOf(n);
     const C = {num: col('Num'), cls: col('Class'), laps: col('Laps'), last: col('Last'), best: col('Best'),
-      s: [col('S1'), col('S2'), col('S3')], tyre: col('T'), age: col('TA'), vft: col('VFT'), spd: col('Spd'), driver: col('Driver'), state: col('State')};
+      s: names.map((n, i) => /^S\d+$/.test(n) ? i : -1).filter(i => i >= 0), tyre: col('T'), age: col('TA'), vft: col('VFT'), spd: col('Spd'), driver: col('Driver'), state: col('State')};
     const prev = new Map(); const laps = []; const weather = []; let final = null; let lastW = '';
     for (const {t, state} of frames(dir)) {
       final = state;
@@ -78,15 +78,18 @@ export function checkReplay(rep, analysis) {
   const ref = new Map();
   for (const [car, c] of Object.entries(analysis?.cars?.cars || {}))
     for (const st of c.stints || []) for (const l of st.laps || []) ref.set(`${car}:${l.lapNumber}`, l);
+  // Lap numbering may differ by one between the frames' Laps counter and the analysis lapNumber: pick the offset with most equal times.
+  const eq = off => rep.laps.filter(l => { const r = ref.get(`${l.car}:${l.lap + off}`); return r && Math.abs(r.laptime - l.time) < 0.0015; }).length;
+  const offset = [0, 1, -1].reduce((b, o) => eq(o) > eq(b) ? o : b, 0);
   let matched = 0, equal = 0, sumOk = 0, sumN = 0;
   for (const l of rep.laps) {
-    const r = ref.get(`${l.car}:${l.lap}`);
+    const r = ref.get(`${l.car}:${l.lap + offset}`);
     if (r) { matched++; if (Math.abs(r.laptime - l.time) < 0.0015) equal++; l.aflag = r.flag; }
-    if (l.s.every(x => x != null)) { sumN++; if (Math.abs(l.s[0] + l.s[1] + l.s[2] - l.time) <= 0.002) sumOk++; }
+    if (l.s.length && l.s.every(x => x != null)) { sumN++; if (Math.abs(l.s.reduce((a, b) => a + b, 0) - l.time) <= 0.002) sumOk++; }
   }
   const bestOk = Object.entries(rep.best).filter(([car, b]) => b != null).map(([car, b]) => {
     const ts = rep.laps.filter(l => l.car === car).map(l => l.time); return ts.length ? Math.abs(Math.min(...ts) - b) < 0.0015 : null;
   }).filter(x => x != null);
-  return {framesLaps: rep.laps.length, analysisLaps: ref.size, matched, timeEqual: equal, sectorSumOk: sumOk, sectorRows: sumN,
+  return {offset, framesLaps: rep.laps.length, analysisLaps: ref.size, matched, timeEqual: equal, sectorSumOk: sumOk, sectorRows: sumN,
     bestEqual: bestOk.filter(Boolean).length, bestCars: bestOk.length};
 }
