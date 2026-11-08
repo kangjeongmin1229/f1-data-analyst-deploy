@@ -29,9 +29,14 @@ test('every stored line lies between its edges and TUM tracks stay close to the 
   }
 });
 
-test('simulation page shows the racing line panel with corner zoom', async () => {
+test('simulation map draws the dark track, the racing line on it and a chequered finish line (no separate panel)', async () => {
   const html = await (await worker.fetch(new Request('https://example.com/simulation?track=monza'), {})).text();
-  assert.match(html, /class="panel ls-panel ls-line-panel"/);
-  assert.match(html, /data-line-zoom="0 0 \d+ \d+"/);
-  assert.match(html, /class="ls-line-map"/);
+  assert.doesNotMatch(html, /ls-line-panel|data-line-zoom/);
+  const map = html.match(/<svg class="ls-map"[\s\S]*?<\/svg>/)[0];
+  assert.match(map, /class="ls-edge"/);
+  assert.match(map, /class="ls-asphalt"/);
+  assert.equal((map.match(/class="ls-finish-b"/g) || []).length, 2, 'two rows of chequers');
+  assert.match(map, /stroke="color-mix\(in oklab,var\(--ls-fast\)/);
+  // the map colours are defined for both themes (the map ground stays black)
+  assert.match(html, /:root\[data-theme="light"\]\{[^}]*--ls-slow:/);
 });
