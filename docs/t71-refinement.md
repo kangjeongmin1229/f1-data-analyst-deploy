@@ -75,3 +75,58 @@ proxy, and inferred full-stint energy is not measured energy telemetry.
 
 Validation: 24 isolated kernel/refinement/context tests passed. Full Node 22
 regression and independent source validation remain pending.
+
+## Broader 2025 telemetry validation
+
+`ti-fit-inputs.mjs` builds private inputs from an existing TracingInsights season
+checkout. It selects one driver's fastest eligible dry, green, accurately timed
+SOFT qualifying lap per event. Deleted/generated laps, pit laps, unknown flags,
+missing weather, and inconsistent sectors are held with reasons. Weather comes
+from the selected lap, not a later timing snapshot. It does not filter on model
+error. It requires same-year calibration and records geometry year separately.
+
+```bash
+node scripts/sim/ti-fit-inputs.mjs /path/to/2025 2025 PIA suzuka,sakhir,jeddah /path/to/new-input-directory
+node scripts/sim/refine-t71.mjs /path/to/new-input-directory/inputs.json /path/to/new-results
+```
+
+The output directory must not already exist, protecting earlier splits. The
+adapter references telemetry files but does not download or certify their bytes.
+The private telemetry comparison additionally checks finite columns, strict
+time/distance order, lap-duration coverage, source hashes and runtime/model hashes.
+
+The expanded audit reviewed 458 lap records from 24 events and selected 22
+observations with same-year track calibration. The original three tracks were
+training inputs; 19 others were held out of this new selection. Six separate
+parameter-family sweeps (+/-2%, one family at a time) covered 5,412 simulated laps.
+The training-selected +2% lateral-grip candidate worsened holdout lap RMS from
+0.9384225422% to 1.2608472135% and speed-shape RMS from 16.3454 to 16.4292 km/h.
+It remains rejected for production. Five-fold diagnostic reuse also failed to
+improve both lap and speed errors. Earlier calibration may already contain these
+tracks; neither test is an independent full-pipeline validation.
+
+Observed DRS states were checked against the provider's binary conversion in
+its source code. Replacing inferred zones with observed DRS improves some laps
+and worsens others. This is an input diagnostic, not a deployable prediction.
+No observed speed, lap time or sector residual was inserted into model output.
+
+Node 22.23.4: 65 existing lap-simulator tests and three new adapter tests passed.
+The wider suite was blocked by automatic approval review after an unexpected
+collector.test request. It is not reported as passing. Raw telemetry and private
+checkpoints are excluded from this branch; main and Vercel are unchanged.
+
+For a privately re-extracted WEC aggregate, set `LAPSIM_STINT_INPUT` together
+with `LAPSIM_STINT_OUT` to compare it without replacing checked-in data.
+
+The follow-up recovered 15 official race Analysis CSVs (125,805 rows across
+all classes). Re-extraction retained 1,648 Hypercar pit-to-pit segments instead
+of the previous 1,681; 730 complete segments were held for non-green/unknown
+finish-line flags. This does not prove green conditions throughout each lap or
+full refuelling. Four event-year groups (Le Mans and Fuji in both years) lack
+geometry and are now explicitly held rather than silently skipped.
+
+The private refit still has 29 BoP-linked rows over four events and 3.81% rounded
+holdout RMS; estimated rows changed from 26 to 25. It now preserves unrounded
+fit/validation values and each held-out error alongside existing rounded fields.
+No new production calibration is admitted. All 69 focused Node 22 tests pass,
+including private-input/output isolation and reconstruction of the raw RMS.
