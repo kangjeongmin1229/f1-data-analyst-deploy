@@ -1,6 +1,8 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import tempfile
+import json
 
 spec = importlib.util.spec_from_file_location('t71', Path(__file__).parents[1] / 'scripts/sim/t71_collect.py')
 t71 = importlib.util.module_from_spec(spec)
@@ -8,6 +10,17 @@ spec.loader.exec_module(t71)
 
 
 class QualityTests(unittest.TestCase):
+    def test_resume_ignores_failures_old_audits_and_partial_lines(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'audit.jsonl'
+            records = [
+                {'id': 'good', 'status': 'audited_not_fitted', 'audit_version': t71.AUDIT_VERSION},
+                {'id': 'retry', 'status': 'failed', 'audit_version': t71.AUDIT_VERSION},
+                {'id': 'old', 'status': 'audited_not_fitted', 'audit_version': 1},
+            ]
+            path.write_text('\n'.join(map(json.dumps, records)) + '\n{"id":')
+            self.assertEqual(list(t71.completed_records(path)), ['good'])
+
     def test_scope_includes_mixed_gt_events(self):
         for label in ('International GT Open', 'ADAC GT Masters', '24H Series',
                       'Super Taikyu', 'Le Mans Cup', 'GTWorldChEu pwrd by AWS Endurance Cup'):
