@@ -6,7 +6,7 @@
    "series": "Formula 1",
    "description": "Formula 1 Aramco Japanese Grand Prix 2026 - Qualifying",
    "start": "2026-03-28T05:57:20.000Z",
-   "ms": 673,
+   "ms": 571,
    "cols": [
     "Num",
     "State",
@@ -36,10 +36,11 @@
     "Track"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 254,
     "analysisLaps": 204,
-    "matched": 156,
-    "timeEqual": 50,
+    "matched": 204,
+    "timeEqual": 107,
     "sectorSumOk": 177,
     "sectorRows": 254,
     "bestEqual": 17,
@@ -74,7 +75,8 @@
      "cls": null,
      "driver": "BEARMAN, Oliver",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "77",
@@ -96,7 +98,8 @@
      "cls": null,
      "driver": "BOTTAS, Valtteri",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "55",
@@ -118,73 +121,74 @@
      "cls": null,
      "driver": "SAINZ, Carlos",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
    "mismatch": [
     {
-     "car": "30",
-     "lap": 3,
-     "t": 1774677811,
-     "time": 91.785,
+     "car": "55",
+     "lap": 4,
+     "t": 1774678006,
+     "time": 110.289,
      "s": [
-      33.257,
-      40.697,
-      17.831
+      39.815,
+      46.751,
+      23.723
      ],
      "tyre": [
       "S",
       "tyre-soft"
      ],
-     "age": 1,
+     "age": 3,
      "vft": null,
-     "spd": 282,
+     "spd": null,
      "cls": null,
-     "driver": "LAWSON, Liam",
+     "driver": "SAINZ, Carlos",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "41",
-     "lap": 3,
-     "t": 1774677818,
-     "time": 91.634,
+     "car": "23",
+     "lap": 4,
+     "t": 1774678026,
+     "time": 108.46000000000001,
      "s": [
-      33.2,
-      40.763,
-      17.671
+      37.821,
+      45.337,
+      25.302
      ],
      "tyre": [
       "S",
       "tyre-soft"
      ],
-     "age": 1,
+     "age": 3,
      "vft": null,
-     "spd": 287,
+     "spd": null,
      "cls": null,
-     "driver": "LINDBLAD, Arvid",
+     "driver": "ALBON, Alexander",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "18",
-     "lap": 3,
-     "t": 1774677828,
-     "time": 94.408,
+     "car": "14",
+     "lap": 4,
+     "t": 1774678037,
+     "time": 106.995,
      "s": [
-      34.2,
-      41.99,
-      18.218
+      36.952,
+      46.235,
+      23.808
      ],
      "tyre": [
       "S",
       "tyre-soft"
      ],
-     "age": 1,
+     "age": 3,
      "vft": null,
-     "spd": 275,
+     "spd": null,
      "cls": null,
-     "driver": "STROLL, Lance",
+     "driver": "ALONSO, Fernando",
      "flag": "green",
      "pit": false
     }
@@ -257,7 +261,7 @@
    "series": "Formula 1",
    "description": "Formula 1 Heineken Dutch Grand Prix 2026 - Race",
    "start": "2026-08-23T12:56:03.000Z",
-   "ms": 1045,
+   "ms": 841,
    "cols": [
     "Num",
     "State",
@@ -286,10 +290,11 @@
     "Track"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 1345,
     "analysisLaps": 1343,
-    "matched": 1322,
-    "timeEqual": 4,
+    "matched": 1343,
+    "timeEqual": 1343,
     "sectorSumOk": 1318,
     "sectorRows": 1345,
     "bestEqual": 19,
@@ -328,7 +333,8 @@
      "cls": null,
      "driver": "HAMILTON, Lewis",
      "flag": "red",
-     "pit": true
+     "pit": true,
+     "aflag": "red"
     },
     {
      "car": "30",
@@ -350,7 +356,8 @@
      "cls": null,
      "driver": "LAWSON, Liam",
      "flag": "red",
-     "pit": true
+     "pit": true,
+     "aflag": "red"
     },
     {
      "car": "41",
@@ -372,19 +379,20 @@
      "cls": null,
      "driver": "LINDBLAD, Arvid",
      "flag": "red",
-     "pit": true
+     "pit": true,
+     "aflag": "red"
     }
    ],
    "mismatch": [
     {
-     "car": "1",
-     "lap": 2,
-     "t": 1787490420,
-     "time": 123.197,
+     "car": "41",
+     "lap": 4,
+     "t": 1787492441,
+     "time": 1944.785,
      "s": [
-      26.899,
-      40.058,
-      56.24
+      31.802,
+      28.932,
+      61.982
      ],
      "tyre": [
       "M",
@@ -392,55 +400,33 @@
      ],
      "age": 1,
      "vft": null,
-     "spd": 269,
+     "spd": 223,
+     "cls": null,
+     "driver": "LINDBLAD, Arvid",
+     "flag": "green",
+     "pit": false
+    },
+    {
+     "car": "1",
+     "lap": 16,
+     "t": 1787493315,
+     "time": 77.19200000000001,
+     "s": [
+      25.908,
+      28.026,
+      23.258
+     ],
+     "tyre": [
+      "S",
+      "tyre-soft"
+     ],
+     "age": 17,
+     "vft": null,
+     "spd": 306,
      "cls": null,
      "driver": "NORRIS, Lando",
-     "flag": "red",
-     "pit": true
-    },
-    {
-     "car": "12",
-     "lap": 2,
-     "t": 1787490421,
-     "time": 124.294,
-     "s": [
-      26.765,
-      41.318,
-      56.211
-     ],
-     "tyre": [
-      "M",
-      "tyre-med"
-     ],
-     "age": 1,
-     "vft": null,
-     "spd": 266,
-     "cls": null,
-     "driver": "ANTONELLI, Kimi",
-     "flag": "red",
-     "pit": true
-    },
-    {
-     "car": "63",
-     "lap": 2,
-     "t": 1787490424,
-     "time": 126.236,
-     "s": [
-      26.817,
-      40.909,
-      58.51
-     ],
-     "tyre": [
-      "M",
-      "tyre-med"
-     ],
-     "age": 1,
-     "vft": null,
-     "spd": 262,
-     "cls": null,
-     "driver": "RUSSELL, George",
-     "flag": "red",
-     "pit": true
+     "flag": "green",
+     "pit": false
     }
    ],
    "weather": [
@@ -511,7 +497,7 @@
    "series": "FIA World Endurance Championship",
    "description": "6 Hours of Monza - Qualifying - HYPERCAR",
    "start": "2026-11-07T13:57:12.000Z",
-   "ms": 243,
+   "ms": 190,
    "cols": [
     "Num",
     "State",
@@ -545,10 +531,11 @@
     "Pressure"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 79,
     "analysisLaps": 96,
-    "matched": 62,
-    "timeEqual": 0,
+    "matched": 79,
+    "timeEqual": 79,
     "sectorSumOk": 58,
     "sectorRows": 59,
     "bestEqual": 15,
@@ -632,74 +619,7 @@
      "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "15",
-     "lap": 3,
-     "t": 1794060643,
-     "time": 98.723,
-     "s": [
-      31.302,
-      33.617,
-      null
-     ],
-     "tyre": [
-      "S",
-      "tyre-hard"
-     ],
-     "age": "3",
-     "vft": null,
-     "spd": null,
-     "cls": "HYPERCAR",
-     "driver": "VANTHOOR, Dries",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "009",
-     "lap": 4,
-     "t": 1794060731,
-     "time": 96.733,
-     "s": [
-      30.54,
-      32.916,
-      null
-     ],
-     "tyre": [
-      "S",
-      "tyre-hard"
-     ],
-     "age": "3",
-     "vft": null,
-     "spd": null,
-     "cls": "HYPERCAR",
-     "driver": "SØRENSEN, Marco",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "20",
-     "lap": 4,
-     "t": 1794060742,
-     "time": 95.236,
-     "s": [
-      null,
-      32.397,
-      32.525
-     ],
-     "tyre": [
-      "S",
-      "tyre-hard"
-     ],
-     "age": "4",
-     "vft": null,
-     "spd": null,
-     "cls": "HYPERCAR",
-     "driver": "VAN DER LINDE, Sheldon",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": [
     {
      "t": 1794059833,
@@ -737,7 +657,7 @@
    "series": "FIA World Endurance Championship",
    "description": "6 Hours of Monza - Race",
    "start": "2026-11-08T09:57:31.000Z",
-   "ms": 2895,
+   "ms": 2627,
    "cols": [
     "Num",
     "State",
@@ -772,10 +692,11 @@
     "Pressure"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 2013,
     "analysisLaps": 2048,
     "matched": 2013,
-    "timeEqual": 4,
+    "timeEqual": 2013,
     "sectorSumOk": 1533,
     "sectorRows": 1533,
     "bestEqual": 35,
@@ -930,7 +851,7 @@
    "series": "IMSA WeatherTech SportsCar Championship",
    "description": "TireRack.com Battle on the Bricks - Qualifying",
    "start": "2026-09-19T21:02:35.000Z",
-   "ms": 371,
+   "ms": 330,
    "cols": [
     "Num",
     "State",
@@ -958,10 +879,11 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 205,
     "analysisLaps": 205,
-    "matched": 184,
-    "timeEqual": 0,
+    "matched": 205,
+    "timeEqual": 205,
     "sectorSumOk": 199,
     "sectorRows": 205,
     "bestEqual": 20,
@@ -992,7 +914,8 @@
      "cls": "LMP2",
      "driver": "FAYER, Phil",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "73",
@@ -1011,7 +934,8 @@
      "cls": "LMP2",
      "driver": "CUMMING, Chris",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "8",
@@ -1030,68 +954,11 @@
      "cls": "LMP2",
      "driver": "FARANO, John",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "43",
-     "lap": 1,
-     "t": 1789854417,
-     "time": 117.29,
-     "s": [
-      59.103,
-      31.232,
-      26.955
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": "0",
-     "spd": null,
-     "cls": "LMP2",
-     "driver": "CLARKE, Jeremy",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "04",
-     "lap": 1,
-     "t": 1789854419,
-     "time": 118.573,
-     "s": [
-      60.456,
-      31.335,
-      26.782
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": "0",
-     "spd": null,
-     "cls": "LMP2",
-     "driver": "KURTZ, George",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "99",
-     "lap": 1,
-     "t": 1789854420,
-     "time": 119.366,
-     "s": [
-      60.91,
-      31.38,
-      27.076
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": "0",
-     "spd": null,
-     "cls": "LMP2",
-     "driver": "HYETT, PJ",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": [
     {
      "t": 1789851757,
@@ -1142,7 +1009,7 @@
    "series": "IMSA WeatherTech SportsCar Championship",
    "description": "29th Annual Motul Petit Le Mans - Race",
    "start": "2026-10-03T16:07:32.000Z",
-   "ms": 6013,
+   "ms": 5362,
    "cols": [
     "Num",
     "State",
@@ -1169,10 +1036,11 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 8551,
     "analysisLaps": 8548,
-    "matched": 8494,
-    "timeEqual": 11,
+    "matched": 8548,
+    "timeEqual": 8548,
     "sectorSumOk": 8512,
     "sectorRows": 8548,
     "bestEqual": 54,
@@ -1203,7 +1071,8 @@
      "cls": "GTP",
      "driver": "HEINRICH, Laurin",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "23",
@@ -1222,7 +1091,8 @@
      "cls": "GTP",
      "driver": "GUNN, Ross",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "40",
@@ -1241,64 +1111,65 @@
      "cls": "GTP",
      "driver": "DELETRAZ, Louis",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
    "mismatch": [
     {
-     "car": "60",
-     "lap": 1,
-     "t": 1791043929,
-     "time": 80.209,
+     "car": "65",
+     "lap": 22,
+     "t": 1791045783,
+     "time": 82.494,
      "s": [
-      10.139,
-      43.459,
-      26.611
+      10.164,
+      43.465,
+      28.865
      ],
      "tyre": null,
      "age": null,
-     "vft": 97.6,
+     "vft": 68.9,
      "spd": null,
-     "cls": "GTP",
-     "driver": "BLOMQVIST, Tom",
+     "cls": "GTDPRO",
+     "driver": "MIES, Christopher",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "93",
-     "lap": 1,
-     "t": 1791043929,
-     "time": 80.851,
+     "car": "36",
+     "lap": 72,
+     "t": 1791051093,
+     "time": 81.739,
      "s": [
-      10.53,
-      43.614,
-      26.707
+      9.74,
+      42.949,
+      29.05
      ],
      "tyre": null,
      "age": null,
-     "vft": 97.7,
+     "vft": 70.5,
      "spd": null,
-     "cls": "GTP",
-     "driver": "YELLOLY, Nick",
+     "cls": "GTD",
+     "driver": "YOLUC, Salih",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "24",
-     "lap": 1,
-     "t": 1791043930,
-     "time": 81.577,
+     "car": "65",
+     "lap": 85,
+     "t": 1791051774,
+     "time": 81.703,
      "s": [
-      10.948,
-      44.058,
-      26.571
+      9.77,
+      43.351,
+      28.582
      ],
      "tyre": null,
      "age": null,
-     "vft": 97.6,
+     "vft": 52.2,
      "spd": null,
-     "cls": "GTP",
-     "driver": "VAN DER LINDE, Sheldon",
+     "cls": "GTDPRO",
+     "driver": "MIES, Christopher",
      "flag": "green",
      "pit": false
     }
@@ -1353,14 +1224,7 @@
    "series": "ABB FIA Formula E World Championship",
    "description": "Round 14 - 2026 TDK Tokyo E-Prix - Qualifying Duel Final",
    "start": "2026-07-25T07:49:13.000Z",
-   "error": "TypeError: fetch failed"
-  },
-  {
-   "key": "fe",
-   "series": "ABB FIA Formula E World Championship",
-   "description": "Round 17 - 2026 Hankook London E-Prix - Race",
-   "start": "2026-08-16T14:02:36.000Z",
-   "ms": 562,
+   "ms": 28,
    "cols": [
     "Num",
     "State",
@@ -1385,10 +1249,104 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
+    "framesLaps": 2,
+    "analysisLaps": 2,
+    "matched": 2,
+    "timeEqual": 2,
+    "sectorSumOk": 2,
+    "sectorRows": 2,
+    "bestEqual": 2,
+    "bestCars": 2
+   },
+   "tyres": [
+    "null"
+   ],
+   "flags": [
+    "green"
+   ],
+   "sample": [],
+   "mismatch": [],
+   "weather": [
+    {
+     "t": 1784965754,
+     "v": [
+      [
+       30,
+       "°C"
+      ],
+      [
+       40,
+       "°C"
+      ],
+      [
+       73,
+       "%"
+      ],
+      [
+       "20.0",
+       "kph"
+      ]
+     ]
+    },
+    {
+     "t": 1784965763,
+     "v": [
+      [
+       30,
+       "°C"
+      ],
+      [
+       40,
+       "°C"
+      ],
+      [
+       74,
+       "%"
+      ],
+      [
+       "21.0",
+       "kph"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "fe",
+   "series": "ABB FIA Formula E World Championship",
+   "description": "Round 17 - 2026 Hankook London E-Prix - Race",
+   "start": "2026-08-16T14:02:36.000Z",
+   "ms": 452,
+   "cols": [
+    "Num",
+    "State",
+    "Driver",
+    "Team",
+    "Car",
+    "ATK",
+    "Laps",
+    "Gap",
+    "Int",
+    "S1",
+    "S2",
+    "S3",
+    "Last",
+    "Best",
+    "Pits"
+   ],
+   "trackDataSpec": [
+    "Air temp",
+    "Track temp",
+    "Humidity",
+    "Wind speed"
+   ],
+   "check": {
+    "offset": 1,
     "framesLaps": 671,
     "analysisLaps": 671,
-    "matched": 651,
-    "timeEqual": 0,
+    "matched": 671,
+    "timeEqual": 671,
     "sectorSumOk": 671,
     "sectorRows": 671,
     "bestEqual": 20,
@@ -1420,7 +1378,8 @@
      "cls": null,
      "driver": "BARNARD, Taylor",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "37",
@@ -1439,7 +1398,8 @@
      "cls": null,
      "driver": "CASSIDY, Nick",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "13",
@@ -1458,68 +1418,11 @@
      "cls": null,
      "driver": "DA COSTA, António Félix",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "21",
-     "lap": 1,
-     "t": 1786889150,
-     "time": 79.994,
-     "s": [
-      29.039,
-      27.184,
-      23.771
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "DE VRIES, Nyck",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "48",
-     "lap": 1,
-     "t": 1786889151,
-     "time": 80.459,
-     "s": [
-      29.721,
-      26.889,
-      23.849
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "MORTARA, Edoardo",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "94",
-     "lap": 1,
-     "t": 1786889151,
-     "time": 81.005,
-     "s": [
-      30.3,
-      26.753,
-      23.952
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "WEHRLEIN, Pascal",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": [
     {
      "t": 1786888957,
@@ -1570,7 +1473,7 @@
    "series": "GT World Challenge America powered by AWS",
    "description": "Michelin Raceway Road Atlanta - Qualify 1",
    "start": "2026-06-13T21:22:05.000Z",
-   "ms": 143,
+   "ms": 129,
    "cols": [
     "Num",
     "State",
@@ -1596,10 +1499,11 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 174,
     "analysisLaps": 174,
-    "matched": 155,
-    "timeEqual": 0,
+    "matched": 174,
+    "timeEqual": 174,
     "sectorSumOk": 153,
     "sectorRows": 153,
     "bestEqual": 14,
@@ -1674,65 +1578,7 @@
      "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "12",
-     "lap": 1,
-     "t": 1781385969,
-     "time": 68.886,
-     "s": [
-      null,
-      null,
-      31.838
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": "Pro",
-     "driver": "PEREZ COMPANC, Matias",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "34",
-     "lap": 1,
-     "t": 1781385975,
-     "time": 74.649,
-     "s": [
-      null,
-      null,
-      31.873
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": "Pro",
-     "driver": "STEPHENS, Michai",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "27",
-     "lap": 1,
-     "t": 1781385977,
-     "time": 75.909,
-     "s": [
-      null,
-      null,
-      31.751
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": "Pro-Am",
-     "driver": "DASKALOS, Jason",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": [
     {
      "t": 1781385727,
@@ -1783,7 +1629,7 @@
    "series": "GT World Challenge America powered by AWS",
    "description": "Barber Motorsports Park - Race",
    "start": "2026-09-27T17:27:47.000Z",
-   "ms": 1620,
+   "ms": 1277,
    "cols": [
     "Num",
     "State",
@@ -1809,10 +1655,11 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 2196,
     "analysisLaps": 2192,
-    "matched": 2174,
-    "timeEqual": 6,
+    "matched": 2192,
+    "timeEqual": 2192,
     "sectorSumOk": 2134,
     "sectorRows": 2195,
     "bestEqual": 18,
@@ -1844,7 +1691,8 @@
      "cls": "Pro-Am",
      "driver": "COLEMAN, Todd",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "27",
@@ -1863,7 +1711,8 @@
      "cls": "Pro-Am",
      "driver": "DASKALOS, Jason",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "8",
@@ -1882,64 +1731,65 @@
      "cls": "Pro",
      "driver": "MCCANN JR, Michael",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
    "mismatch": [
     {
-     "car": "12",
-     "lap": 1,
-     "t": 1790530269,
-     "time": 85.647,
+     "car": "27",
+     "lap": 17,
+     "t": 1790531711,
+     "time": 84.488,
      "s": [
-      24.195,
-      42.953,
-      18.499
+      23.007,
+      42.951,
+      18.53
      ],
      "tyre": null,
      "age": null,
      "vft": null,
      "spd": null,
-     "cls": "Pro",
-     "driver": "PEREZ COMPANC, Matias",
+     "cls": "Pro-Am",
+     "driver": "DASKALOS, Jason",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "34",
-     "lap": 1,
-     "t": 1790530269,
-     "time": 86.035,
+     "car": "27",
+     "lap": 32,
+     "t": 1790533064,
+     "time": 84.19,
      "s": [
-      24.541,
-      42.923,
-      18.571
+      22.748,
+      42.831,
+      18.611
      ],
      "tyre": null,
      "age": null,
      "vft": null,
      "spd": null,
-     "cls": "Pro",
-     "driver": "STEPHENS, Michai",
+     "cls": "Pro-Am",
+     "driver": "DASKALOS, Jason",
      "flag": "green",
      "pit": false
     },
     {
-     "car": "29",
-     "lap": 1,
-     "t": 1790530271,
-     "time": 87.463,
+     "car": "71",
+     "lap": 56,
+     "t": 1790535397,
+     "time": 83.278,
      "s": [
-      24.858,
-      43.645,
-      18.96
+      22.617,
+      42.287,
+      18.374
      ],
      "tyre": null,
      "age": null,
      "vft": null,
      "spd": null,
-     "cls": "Pro",
-     "driver": "ROTHBERG, Justin",
+     "cls": "Pro-Am",
+     "driver": "LIDDELL, Robin",
      "flag": "green",
      "pit": false
     }
@@ -1994,7 +1844,7 @@
    "series": "IGTC Indianapolis 8 Hour",
    "description": "Indy - Qualify Driver 3",
    "start": "2026-10-09T20:44:01.000Z",
-   "ms": 13,
+   "ms": 10,
    "cols": [
     "Num",
     "State",
@@ -2020,6 +1870,7 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 0,
     "framesLaps": 0,
     "analysisLaps": 0,
     "matched": 0,
@@ -2083,7 +1934,7 @@
    "series": "IGTC Indianapolis 8 Hour",
    "description": "Indy - Race",
    "start": "2026-10-10T16:27:13.000Z",
-   "ms": 5762,
+   "ms": 4759,
    "cols": [
     "Num",
     "State",
@@ -2109,10 +1960,11 @@
     "Wind speed"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 7716,
     "analysisLaps": 7707,
-    "matched": 7680,
-    "timeEqual": 29,
+    "matched": 7707,
+    "timeEqual": 7707,
     "sectorSumOk": 7521,
     "sectorRows": 7716,
     "bestEqual": 27,
@@ -2144,7 +1996,8 @@
      "cls": "Pro-Am",
      "driver": "DASKALOS, Jason",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "28",
@@ -2163,7 +2016,8 @@
      "cls": "Pro-Am",
      "driver": "DYSZELSKI, Danny",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "69",
@@ -2182,57 +2036,20 @@
      "cls": "Pro-Am",
      "driver": "COLEMAN, Todd",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
    "mismatch": [
     {
-     "car": "6",
-     "lap": 1,
-     "t": 1791649997,
-     "time": 88.081,
-     "s": [
-      31.885,
-      29.559,
-      26.637
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": "Pro-Am",
-     "driver": "SEDGWICK, Alex",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "34",
-     "lap": 1,
-     "t": 1791649998,
-     "time": 89.742,
-     "s": [
-      32.796,
-      29.974,
-      26.972
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": "Pro",
-     "driver": "STEPHENS, Michai",
-     "flag": "green",
-     "pit": false
-    },
-    {
      "car": "29",
-     "lap": 1,
-     "t": 1791649998,
-     "time": 90.147,
+     "lap": 27,
+     "t": 1791652564,
+     "time": 86.384,
      "s": [
-      32.513,
-      30.054,
-      27.58
+      29.536,
+      29.895,
+      26.953
      ],
      "tyre": null,
      "age": null,
@@ -2240,6 +2057,44 @@
      "spd": null,
      "cls": "Pro",
      "driver": "ROTHBERG, Justin",
+     "flag": "green",
+     "pit": false
+    },
+    {
+     "car": "27",
+     "lap": 56,
+     "t": 1791655215,
+     "time": 84.743,
+     "s": [
+      28.968,
+      29.225,
+      26.55
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": null,
+     "cls": "Pro-Am",
+     "driver": "BRICHACEK, Wyatt",
+     "flag": "green",
+     "pit": false
+    },
+    {
+     "car": "71",
+     "lap": 58,
+     "t": 1791655419,
+     "time": 85.736,
+     "s": [
+      29.435,
+      29.533,
+      26.768
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": null,
+     "cls": "Pro-Am",
+     "driver": "DAVIS, Andrew",
      "flag": "green",
      "pit": false
     }
@@ -2294,14 +2149,7 @@
    "series": "DTM",
    "description": "08 Hockenheimring - Qualifying 2",
    "start": "2026-10-11T07:28:00.000Z",
-   "error": "TypeError: fetch failed"
-  },
-  {
-   "key": "dtm",
-   "series": "DTM",
-   "description": "08 Hockenheimring - Race 2",
-   "start": "2026-10-11T14:27:21.000Z",
-   "ms": 839,
+   "ms": 245,
    "cols": [
     "Num",
     "State",
@@ -2331,10 +2179,196 @@
     "Pressure"
    ],
    "check": {
+    "offset": 1,
+    "framesLaps": 127,
+    "analysisLaps": 147,
+    "matched": 127,
+    "timeEqual": 119,
+    "sectorSumOk": 115,
+    "sectorRows": 115,
+    "bestEqual": 20,
+    "bestCars": 20
+   },
+   "tyres": [
+    "[\"\",\"\"]"
+   ],
+   "flags": [
+    "green",
+    "chequered"
+   ],
+   "sample": [
+    {
+     "car": "63",
+     "lap": 3,
+     "t": 1791704405,
+     "time": 324.255,
+     "s": [
+      216.417,
+      65.671,
+      42.167
+     ],
+     "tyre": [
+      "",
+      ""
+     ],
+     "age": "",
+     "vft": null,
+     "spd": null,
+     "cls": null,
+     "driver": "BORTOLOTTI, Mirko",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    },
+    {
+     "car": "22",
+     "lap": 2,
+     "t": 1791704427,
+     "time": 449.178,
+     "s": [
+      365.304,
+      50.395,
+      33.479
+     ],
+     "tyre": [
+      "",
+      ""
+     ],
+     "age": "",
+     "vft": null,
+     "spd": null,
+     "cls": null,
+     "driver": "AUER, Lucas",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    },
+    {
+     "car": "11",
+     "lap": 2,
+     "t": 1791704441,
+     "time": 442.085,
+     "s": [
+      356.996,
+      50.493,
+      34.596
+     ],
+     "tyre": [
+      "",
+      ""
+     ],
+     "age": "",
+     "vft": null,
+     "spd": null,
+     "cls": null,
+     "driver": "WITTMANN, Marco",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    }
+   ],
+   "mismatch": [],
+   "weather": [
+    {
+     "t": 1791703681,
+     "v": [
+      [
+       null,
+       "°C"
+      ],
+      [
+       "10.7",
+       "°C"
+      ],
+      [
+       "3.7",
+       "kph"
+      ],
+      [
+       "WSW",
+       ""
+      ],
+      [
+       "85.0",
+       "%"
+      ],
+      [
+       "999.5",
+       "mbar"
+      ]
+     ]
+    },
+    {
+     "t": 1791704544,
+     "v": [
+      [
+       null,
+       "°C"
+      ],
+      [
+       "11.0",
+       "°C"
+      ],
+      [
+       "3.7",
+       "kph"
+      ],
+      [
+       "SW",
+       ""
+      ],
+      [
+       "84.0",
+       "%"
+      ],
+      [
+       "999.5",
+       "mbar"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "dtm",
+   "series": "DTM",
+   "description": "08 Hockenheimring - Race 2",
+   "start": "2026-10-11T14:27:21.000Z",
+   "ms": 699,
+   "cols": [
+    "Num",
+    "State",
+    "Driver",
+    "Team",
+    "Laps",
+    "T",
+    "TA",
+    "Gap",
+    "Int",
+    "S1",
+    "BS1",
+    "S2",
+    "BS2",
+    "S3",
+    "BS3",
+    "Last",
+    "Best",
+    "Pits"
+   ],
+   "trackDataSpec": [
+    "Track Temp",
+    "Air Temp",
+    "Wind Speed",
+    "Wind Dir",
+    "Humidity",
+    "Pressure"
+   ],
+   "check": {
+    "offset": 1,
     "framesLaps": 626,
     "analysisLaps": 646,
-    "matched": 625,
-    "timeEqual": 2,
+    "matched": 626,
+    "timeEqual": 624,
     "sectorSumOk": 464,
     "sectorRows": 464,
     "bestEqual": 19,
@@ -2419,30 +2453,7 @@
      "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "80",
-     "lap": 8,
-     "t": 1791729986,
-     "time": 99.133,
-     "s": [
-      21.569,
-      46.11,
-      31.454
-     ],
-     "tyre": [
-      "",
-      ""
-     ],
-     "age": "",
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "ENGEL, Maro",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": [
     {
      "t": 1791728842,
@@ -2509,7 +2520,7 @@
    "series": "54. ADAC RAVENOL 24h Nürburgring",
    "description": "Nürburgring - Qualifying 3",
    "start": "2026-05-15T10:00:07.000Z",
-   "ms": 2914,
+   "ms": 2897,
    "cols": [
     "Num",
     "State",
@@ -2543,12 +2554,13 @@
     "At"
    ],
    "check": {
+    "offset": 0,
     "framesLaps": 196,
     "analysisLaps": 196,
     "matched": 0,
     "timeEqual": 0,
-    "sectorSumOk": 0,
-    "sectorRows": 195,
+    "sectorSumOk": 194,
+    "sectorRows": 194,
     "bestEqual": 64,
     "bestCars": 93
    },
@@ -2570,7 +2582,13 @@
      "s": [
       44.843,
       46.781,
-      70.791
+      70.791,
+      11.898,
+      117.67,
+      38.318,
+      160.358,
+      21.38,
+      30.529
      ],
      "tyre": null,
      "age": null,
@@ -2589,7 +2607,13 @@
      "s": [
       42.314,
       45.216,
-      67.693
+      67.693,
+      10.891,
+      113.156,
+      35.926,
+      155.62,
+      20.12,
+      29.149
      ],
      "tyre": null,
      "age": null,
@@ -2608,7 +2632,13 @@
      "s": [
       46.369,
       48.571,
-      74.26
+      74.26,
+      12.463,
+      121.38,
+      38.662,
+      166.067,
+      20.935,
+      30.915
      ],
      "tyre": null,
      "age": null,
@@ -2629,7 +2659,13 @@
      "s": [
       43.169,
       45.978,
-      67.853
+      67.853,
+      10.902,
+      114.588,
+      36.12,
+      157.012,
+      20.198,
+      29.285
      ],
      "tyre": null,
      "age": null,
@@ -2648,7 +2684,13 @@
      "s": [
       43.653,
       46.518,
-      69.606
+      69.606,
+      11.174,
+      116.93,
+      37.636,
+      156.329,
+      20.795,
+      30.077
      ],
      "tyre": null,
      "age": null,
@@ -2667,7 +2709,13 @@
      "s": [
       42.303,
       46.562,
-      67.277
+      67.277,
+      10.759,
+      111.14699999999999,
+      36.126,
+      155.266,
+      19.941,
+      29.037
      ],
      "tyre": null,
      "age": null,
@@ -2709,7 +2757,7 @@
    "series": "54. ADAC RAVENOL 24h Nürburgring",
    "description": "Nürburgring - Race",
    "start": "2026-05-16T12:57:51.000Z",
-   "ms": 2333,
+   "ms": 2171,
    "cols": [
     "Num",
     "State",
@@ -2743,6 +2791,7 @@
     "At"
    ],
    "check": {
+    "offset": 0,
     "framesLaps": 0,
     "analysisLaps": 0,
     "matched": 0,
@@ -2786,7 +2835,7 @@
    "series": "72nd Macau Grand Prix",
    "description": "Macau Grand Prix - FIA FR World Cup - Qualifying Race",
    "start": "2025-11-15T08:12:50.000Z",
-   "ms": 540,
+   "ms": 478,
    "cols": [
     "Num",
     "State",
@@ -2811,11 +2860,12 @@
     "Pits"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 259,
     "analysisLaps": 259,
-    "matched": 232,
-    "timeEqual": 0,
-    "sectorSumOk": 0,
+    "matched": 259,
+    "timeEqual": 259,
+    "sectorSumOk": 259,
     "sectorRows": 259,
     "bestEqual": 26,
     "bestCars": 26
@@ -2836,7 +2886,9 @@
      "s": [
       31.616,
       27.897,
-      28.731
+      28.731,
+      31.764,
+      28.603
      ],
      "tyre": null,
      "age": null,
@@ -2845,7 +2897,8 @@
      "cls": null,
      "driver": "DELIGNY Enzo",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "19",
@@ -2855,7 +2908,9 @@
      "s": [
       31.908,
       27.944,
-      28.751
+      28.751,
+      32.063,
+      28.516
      ],
      "tyre": null,
      "age": null,
@@ -2864,7 +2919,8 @@
      "cls": null,
      "driver": "COLNAGHI Mattia",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     },
     {
      "car": "15",
@@ -2874,7 +2930,9 @@
      "s": [
       31.813,
       28.49,
-      28.889
+      28.889,
+      32.074,
+      28.682
      ],
      "tyre": null,
      "age": null,
@@ -2883,68 +2941,11 @@
      "cls": null,
      "driver": "EGOZI James",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "green"
     }
    ],
-   "mismatch": [
-    {
-     "car": "11",
-     "lap": 1,
-     "t": 1763194908,
-     "time": 143.944,
-     "s": [
-      30.8,
-      26.092,
-      27.909
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "SLATER Freddie",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "22",
-     "lap": 1,
-     "t": 1763194908,
-     "time": 145.626,
-     "s": [
-      30.95,
-      27.146,
-      27.963
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "GILTAIRE Evan",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "7",
-     "lap": 1,
-     "t": 1763194908,
-     "time": 146.097,
-     "s": [
-      31.168,
-      27.234,
-      28.188
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "BOYA Mari",
-     "flag": "green",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": []
   },
   {
@@ -2952,7 +2953,7 @@
    "series": "72nd Macau Grand Prix",
    "description": "Macau Grand Prix - FIA FR World Cup - Race",
    "start": "2025-11-16T07:27:52.000Z",
-   "ms": 533,
+   "ms": 470,
    "cols": [
     "Num",
     "State",
@@ -2977,11 +2978,12 @@
     "Pits"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 341,
     "analysisLaps": 341,
-    "matched": 317,
-    "timeEqual": 0,
-    "sectorSumOk": 0,
+    "matched": 341,
+    "timeEqual": 341,
+    "sectorSumOk": 341,
     "sectorRows": 341,
     "bestEqual": 24,
     "bestCars": 24
@@ -3004,7 +3006,9 @@
      "s": [
       31.297,
       28.137,
-      28.615
+      28.615,
+      31.953,
+      42.799
      ],
      "tyre": null,
      "age": null,
@@ -3013,7 +3017,8 @@
      "cls": null,
      "driver": "KATO Taito",
      "flag": "sc",
-     "pit": false
+     "pit": false,
+     "aflag": "sc"
     },
     {
      "car": "15",
@@ -3023,7 +3028,9 @@
      "s": [
       31.732,
       28.165,
-      28.685
+      28.685,
+      31.999,
+      42.925
      ],
      "tyre": null,
      "age": null,
@@ -3032,7 +3039,8 @@
      "cls": null,
      "driver": "EGOZI James",
      "flag": "sc",
-     "pit": false
+     "pit": false,
+     "aflag": "sc"
     },
     {
      "car": "22",
@@ -3042,7 +3050,9 @@
      "s": [
       31.619,
       28.639,
-      28.662
+      28.662,
+      32.398,
+      43.145
      ],
      "tyre": null,
      "age": null,
@@ -3051,68 +3061,11 @@
      "cls": null,
      "driver": "GILTAIRE Evan",
      "flag": "sc",
-     "pit": false
+     "pit": false,
+     "aflag": "sc"
     }
    ],
-   "mismatch": [
-    {
-     "car": "7",
-     "lap": 1,
-     "t": 1763278621,
-     "time": 158.331,
-     "s": [
-      30.695,
-      26.902,
-      28.078
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "BOYA Mari",
-     "flag": "sc",
-     "pit": false
-    },
-    {
-     "car": "11",
-     "lap": 1,
-     "t": 1763278621,
-     "time": 159.16,
-     "s": [
-      30.863,
-      27.064,
-      28.23
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "SLATER Freddie",
-     "flag": "sc",
-     "pit": false
-    },
-    {
-     "car": "5",
-     "lap": 1,
-     "t": 1763278621,
-     "time": 160.123,
-     "s": [
-      31.166,
-      27.187,
-      28.451
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": null,
-     "cls": null,
-     "driver": "DELIGNY Enzo",
-     "flag": "sc",
-     "pit": false
-    }
-   ],
+   "mismatch": [],
    "weather": []
   },
   {
@@ -3120,7 +3073,7 @@
    "series": "European Le Mans Series",
    "description": "4 hours of Portimão - Qualifying - LMGT3",
    "start": "2026-10-09T14:12:59.000Z",
-   "ms": 212,
+   "ms": 187,
    "cols": [
     "Num",
     "State",
@@ -3154,10 +3107,11 @@
     "Pressure"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 94,
     "analysisLaps": 108,
     "matched": 94,
-    "timeEqual": 0,
+    "timeEqual": 94,
     "sectorSumOk": 83,
     "sectorRows": 83,
     "bestEqual": 14,
@@ -3308,7 +3262,7 @@
    "series": "European Le Mans Series",
    "description": "4 hours of Portimão - Race",
    "start": "2026-10-10T13:27:05.000Z",
-   "ms": 6350,
+   "ms": 5873,
    "cols": [
     "Num",
     "State",
@@ -3342,10 +3296,11 @@
     "Pressure"
    ],
    "check": {
+    "offset": 1,
     "framesLaps": 6044,
     "analysisLaps": 6087,
-    "matched": 6039,
-    "timeEqual": 6,
+    "matched": 6040,
+    "timeEqual": 6040,
     "sectorSumOk": 4793,
     "sectorRows": 4793,
     "bestEqual": 45,
@@ -3436,13 +3391,13 @@
    "mismatch": [
     {
      "car": "22",
-     "lap": 5,
-     "t": 1791639480,
-     "time": 93.904,
+     "lap": 4,
+     "t": 1791639385,
+     "time": 93.379,
      "s": [
-      29.446,
-      29.615,
-      34.843
+      29.241,
+      29.387,
+      null
      ],
      "tyre": [
       "",
@@ -3458,13 +3413,13 @@
     },
     {
      "car": "31",
-     "lap": 7,
-     "t": 1791639745,
-     "time": 102.822,
+     "lap": 6,
+     "t": 1791639640,
+     "time": 102.856,
      "s": [
-      32.433,
-      32.087,
-      38.302
+      32.455,
+      32.053,
+      null
      ],
      "tyre": [
       "",
@@ -3480,13 +3435,13 @@
     },
     {
      "car": "59",
-     "lap": 12,
-     "t": 1791640317,
-     "time": 122.29,
+     "lap": 11,
+     "t": 1791640194,
+     "time": 107.289,
      "s": [
-      33.32,
-      33.012,
-      55.958
+      34.06,
+      32.805,
+      40.424
      ],
      "tyre": [
       "",
@@ -3497,7 +3452,7 @@
      "spd": null,
      "cls": "LMGT3",
      "driver": "MATEU, Clément",
-     "flag": "vsc",
+     "flag": "yellow",
      "pit": false
     }
    ],
@@ -3567,14 +3522,7 @@
    "series": "Asian Le Mans Series",
    "description": "4 Hours of Abu Dhabi - Qualifying LMP2",
    "start": "2026-02-07T07:00:11.000Z",
-   "error": "TypeError: fetch failed"
-  },
-  {
-   "key": "alms",
-   "series": "Asian Le Mans Series",
-   "description": "4 Hours of Abu Dhabi - Race 2",
-   "start": "2026-02-08T12:27:06.000Z",
-   "ms": 5962,
+   "ms": 346,
    "cols": [
     "Num",
     "State",
@@ -3606,10 +3554,191 @@
     "Wind direction"
    ],
    "check": {
+    "offset": 1,
+    "framesLaps": 129,
+    "analysisLaps": 129,
+    "matched": 129,
+    "timeEqual": 129,
+    "sectorSumOk": 93,
+    "sectorRows": 93,
+    "bestEqual": 15,
+    "bestCars": 16
+   },
+   "tyres": [
+    "null"
+   ],
+   "flags": [
+    "green",
+    "yellow",
+    "red",
+    "chequered"
+   ],
+   "sample": [
+    {
+     "car": "6",
+     "lap": 1,
+     "t": 1770448642,
+     "time": 141.228,
+     "s": [
+      47.25,
+      50.344,
+      43.634
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": 195.65,
+     "cls": "LMP2",
+     "driver": "FAYER, Phil",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    },
+    {
+     "car": "45",
+     "lap": 1,
+     "t": 1770448644,
+     "time": 143.195,
+     "s": [
+      49.83,
+      50.253,
+      43.112
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": 183.36,
+     "cls": "LMP2",
+     "driver": "TSUJIKO, Yorikatsu",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    },
+    {
+     "car": "3",
+     "lap": 1,
+     "t": 1770448649,
+     "time": 148.595,
+     "s": [
+      50.037,
+      51.173,
+      47.385
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": 168.22,
+     "cls": "LMP2",
+     "driver": "MATTSCHULL, Alexander",
+     "flag": "green",
+     "pit": false,
+     "aflag": "green"
+    }
+   ],
+   "mismatch": [],
+   "weather": [
+    {
+     "t": 1770447611,
+     "v": [
+      [
+       34.7,
+       "°C"
+      ],
+      [
+       25.8,
+       "°C"
+      ],
+      [
+       47,
+       "%"
+      ],
+      [
+       1019.1,
+       "mbar"
+      ],
+      [
+       1.3,
+       "kph"
+      ],
+      [
+       287,
+       "°"
+      ]
+     ]
+    },
+    {
+     "t": 1770447612,
+     "v": [
+      [
+       34.7,
+       "°C"
+      ],
+      [
+       25.8,
+       "°C"
+      ],
+      [
+       47,
+       "%"
+      ],
+      [
+       1019.1,
+       "mbar"
+      ],
+      [
+       1.1,
+       "kph"
+      ],
+      [
+       335,
+       "°"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "key": "alms",
+   "series": "Asian Le Mans Series",
+   "description": "4 Hours of Abu Dhabi - Race 2",
+   "start": "2026-02-08T12:27:06.000Z",
+   "ms": 5396,
+   "cols": [
+    "Num",
+    "State",
+    "Class",
+    "PIC",
+    "Team",
+    "Driver",
+    "Car",
+    "Laps",
+    "Gap",
+    "Int",
+    "S1",
+    "BS1",
+    "S2",
+    "BS2",
+    "S3",
+    "BS3",
+    "Last",
+    "Best",
+    "Spd",
+    "Pits"
+   ],
+   "trackDataSpec": [
+    "Track temp",
+    "Air temp",
+    "Humidity",
+    "Pressure",
+    "Wind speed",
+    "Wind direction"
+   ],
+   "check": {
+    "offset": 1,
     "framesLaps": 3274,
     "analysisLaps": 3270,
-    "matched": 3226,
-    "timeEqual": 4,
+    "matched": 3271,
+    "timeEqual": 3271,
     "sectorSumOk": 2534,
     "sectorRows": 2534,
     "bestEqual": 42,
@@ -3645,7 +3774,8 @@
      "cls": "LMP2",
      "driver": "FAYER, Phil",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "yellow"
     },
     {
      "car": "25",
@@ -3664,7 +3794,8 @@
      "cls": "LMP2",
      "driver": "JENSEN, Michael",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "yellow"
     },
     {
      "car": "47",
@@ -3683,64 +3814,65 @@
      "cls": "LMP2",
      "driver": "MILESI, Charles",
      "flag": "green",
-     "pit": false
+     "pit": false,
+     "aflag": "yellow"
     }
    ],
    "mismatch": [
     {
-     "car": "5",
-     "lap": 1,
-     "t": 1770553911,
-     "time": 105.219,
+     "car": "69",
+     "lap": 14,
+     "t": 1770555879,
+     "time": 115.866,
      "s": [
-      22.256,
-      43.924,
-      39.039
+      24.764,
+      47.478,
+      43.624
      ],
      "tyre": null,
      "age": null,
      "vft": null,
-     "spd": 282.72,
-     "cls": "LMP2",
-     "driver": "RODA, Giorgio",
-     "flag": "green",
-     "pit": false
-    },
-    {
-     "car": "20",
-     "lap": 1,
-     "t": 1770553912,
-     "time": 106.986,
-     "s": [
-      22.961,
-      44.371,
-      39.654
-     ],
-     "tyre": null,
-     "age": null,
-     "vft": null,
-     "spd": 268.66,
-     "cls": "LMP2",
-     "driver": "FALB, John",
+     "spd": 263.41,
+     "cls": "GT",
+     "driver": "MCINTOSH, Anthony",
      "flag": "green",
      "pit": false
     },
     {
      "car": "43",
-     "lap": 1,
-     "t": 1770553913,
-     "time": 107.624,
+     "lap": 65,
+     "t": 1770566356,
+     "time": 103.396,
      "s": [
-      23.322,
-      44.723,
-      39.579
+      21.091,
+      43.373,
+      38.932
      ],
      "tyre": null,
      "age": null,
      "vft": null,
-     "spd": 279.07,
+     "spd": 288,
      "cls": "LMP2",
-     "driver": "KOLOVOS, Georgios",
+     "driver": "SIEGEL, Nolan",
+     "flag": "green",
+     "pit": false
+    },
+    {
+     "car": "20",
+     "lap": 65,
+     "t": 1770566369,
+     "time": 104.61,
+     "s": [
+      21.451,
+      44.563,
+      38.596
+     ],
+     "tyre": null,
+     "age": null,
+     "vft": null,
+     "spd": 287.23,
+     "cls": "LMP2",
+     "driver": "MEGUETOUNIF, Sami",
      "flag": "green",
      "pit": false
     }
