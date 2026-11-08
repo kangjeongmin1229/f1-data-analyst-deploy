@@ -13,6 +13,26 @@ spec.loader.exec_module(t71)
 
 
 class QualityTests(unittest.TestCase):
+    def test_tunnel_denial_stops_but_timeout_does_not(self):
+        for message, denied in [('Tunnel connection failed: 403 Forbidden', True),
+                                ('Network access was blocked by policy', True),
+                                ('timed out', False)]:
+            with tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                (root / 'raw').mkdir()
+                with patch.object(t71, 'download', side_effect=urllib.error.URLError(message)) as call:
+                    r = t71.collect_one({'id': 'a', 'series': 'F1 Testing', 'analysisFilename': 'a.json'}, root)
+                self.assertEqual(r['access_blocked'], denied)
+                self.assertEqual(call.call_count, 1)
+
+    def test_partial_legacy_and_snapshot_remain_held(self):
+        self.assertEqual(t71.audit({}, {'service': {}, 'stint': {}})['schema'], 'legacy')
+        r = t71.audit({}, {'service': {}, 'state': {}})
+        self.assertEqual(r['fit_status'], 'not_admitted')
+        self.assertIn('replay_required', r['pending'])
+        with self.assertRaises(ValueError):
+            t71.audit({}, {})
+
     def test_bounded_batch_interleaves_new_work_and_fair_retries(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'audit.jsonl'
