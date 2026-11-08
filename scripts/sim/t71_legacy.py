@@ -9,12 +9,13 @@ FLAGS = dict(enumerate(('none', 'green', 'white', 'chequered', 'yellow', 'fcy',
 
 
 def decode(data):
-    if not isinstance(data.get('static'), dict) or not isinstance(data.get('stint'), dict):
+    static = data.get('static', {})
+    if not isinstance(static, dict) or not isinstance(data.get('stint'), dict):
         raise ValueError('legacy static/stint dictionaries missing')
     cars = {}
     issues = []
-    for number in sorted(set(data['static']) | set(data['stint'])):
-        row = data['static'].get(number)
+    for number in sorted(set(static) | set(data['stint'])):
+        row = static.get(number)
         if not isinstance(row, list) or len(row) != 3:
             issues.append({'car': number, 'reason': 'invalid_static_row'})
             row = [None, None, None]
