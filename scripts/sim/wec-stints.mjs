@@ -1,10 +1,12 @@
 // Real Hypercar stint lengths from Al Kamel race timing (Analysis CSV of the race): for every car, the
 // laps between two pit stops, kept only for full green stints (no FCY/SC/red flag lap, not the first or
-// last stint). The stint energy (BoP, MJ) divided by these laps is the real driveshaft energy per lap.
+// last stint). BoP energy divided by an inferred full-stint length is a proxy,
+// not a measurement of driveshaft energy or actual refuelling.
 // Writes .cache/lapsim/wec-stints.json: {year: {track: {event, cars: {number: {manufacturer, stints: [laps...]}}}}}
 import {writeFile, mkdir} from 'node:fs/promises';
 import {archive, readDocument} from '../../worker/wec.js';
 import {SERIES, WEC_SEASONS} from '../../worker/lapsim/series.js';
+import {extractStints} from './stint-extraction.mjs';
 
 const CACHE = process.env.LAPSIM_CACHE || '.cache/lapsim', YEARS = (process.env.LAPSIM_STINT_YEARS || '2025,2026').split(',').map(Number);
 const out = {};
@@ -25,12 +27,7 @@ for (const year of YEARS) {
       c.laps.push({lap: +r.LAP_NUMBER, pit: !!r.CROSSING_FINISH_LINE_IN_PIT, flag: r.FLAG_AT_FL});
     }
     for (const c of Object.values(cars)) {
-      c.laps.sort((x, y) => x.lap - y.lap);
-      const stints = []; let cur = [];
-      for (const l of c.laps) { cur.push(l); if (l.pit) { stints.push(cur); cur = []; } }
-      // full green stints only: not the first (race start) or the last (chequered flag) stint
-      c.stints = stints.slice(1).filter(s => s.every(l => ['GF', 'FF'].includes(l.flag) || l.pit)).map(s => s.length);
-      c.allStints = stints.map(s => s.length);
+      Object.assign(c, extractStints(c.laps));
       delete c.laps;
     }
     ((out[year] ||= {})[track] = {event, file: f.title, cars});
