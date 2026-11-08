@@ -2,10 +2,14 @@
   "extraKnownMarketplaces": {
     "ponytail": {
       "source": { "source": "github", "repo": "DietrichGebert/ponytail" }
+    },
+    "nyldn-plugins": {
+      "source": { "source": "github", "repo": "nyldn/claude-octopus" }
     }
   },
   "enabledPlugins": {
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "octo@nyldn-plugins": true
   },
   "hooks": {
     "SessionStart": [
