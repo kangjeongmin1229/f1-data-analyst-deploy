@@ -19,6 +19,17 @@ Legacy format definitions: timing71/livetiming-core commit
 `ae85b4e386e4ce331a24a02a5faff9263f674128`, analysis/data.py,
 analysis/__init__.py and racing.py. Missing per-lap timestamps/numbers/tyres are
 not reconstructed from averages or sequential counters.
+Legacy files missing static car metadata retain their lap arrays with unknown
+class/make and explicit issues. Snapshot-only files are counted separately and
+never expanded into invented lap history. Normalization commits rows only after
+the entire session has parsed, and surfaces decoder issues in its summary.
+Stint intervals outside the recording window remain held: an archive can carry
+earlier sessions, so the filename's session type is not a verified lap assignment.
+
+Run `python3 scripts/sim/t71_coverage.py --catalogue PATH` for an offline ledger of
+every catalogue entry. `coverage.jsonl` distinguishes candidates, cached files,
+and unmatched metadata requiring review. A series-name mismatch is not proof
+that no eligible car competed. This ledger does not claim complete eligible coverage.
 
 Use `--limit 150` for a bounded resumable batch. The limit applies to pending
 records, not the start of the catalogue. Each completed session writes an audit
@@ -72,11 +83,29 @@ review. Do not reject a short recording based on the event's advertised duration
 ## Remaining implementation
 
 Replay ZIP reconstruction is required for sectors, tyre fields and VFT. The current
-collector downloads analysis JSON only. Implement legacy schema decoding against
-Timing71 source definitions; cross-check candidate laps with official results;
+collector downloads analysis JSON only. Extend and validate the existing legacy
+adapter as new schemas appear; cross-check candidate laps with official results;
 establish class/year and track-layout mappings; then calibrate and independently
 validate supported models. Keep raw-physics errors separate from empirical sector
 corrections. Never claim zero error from replaying the calibration references.
 
 Source: Timing71 archive (`https://archive.timing71.org`). Raw records are private
 working evidence and must not be committed or republished with this code.
+
+## Checkpoint: 2026-11-08
+
+The offline inventory accounts for 15,798 catalogue records: 5,154 candidates,
+310 cached candidate files, 4,844 uncached candidates, and 10,644 unmatched
+metadata records still requiring scope review. Normalization reads all 310 cached
+files, yielding 473,822 held lap records and no parse errors; 24 files yield no
+lap history. Class-label candidates include 47,736 LMP2, 6,719 Hypercar, 9,055
+LMGT3 and 7,638 GT3 laps. These are not validated fit counts. Unknown class labels
+and missing conditions still require review. Sixteen Python ingestion tests pass.
+
+The running full-download batch was terminated by an explicit environment policy
+denial for `s3.us-east-005.backblazeb2.com:443`. No environment network-setting
+change tool is exposed in this session. Resume network collection only after the
+destination is permitted through the supported environment configuration; do not
+route the same denied downloads through another proxy or remote executor.
+Offline normalization and coverage work remain available. No model fit or claim
+of continuous background collection is established by this checkpoint.
