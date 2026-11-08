@@ -1,0 +1,18 @@
+name: Probe CarData channels
+on:
+  push:
+    branches: ['probe/**']
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install -y -qq poppler-utils >/dev/null
+      - name: Formula E timing booklet (Mexico 2026)
+        run: |
+          curl -sSL -A "Mozilla/5.0" -o b.pdf "https://zonaeinsider.com/wp-content/uploads/season12/results/mexico/ABB%20FIA%20Formula%20E%20World%20Championship_Mexico_BOOKLET.pdf"
+          pdftotext -layout b.pdf b.txt
+          echo "== pages with titles"; grep -nE "^\s*(Round 02|.*Analysis|.*Attack|.*Energy|.*Classification|.*Chart)" b.txt | head -80
+          echo "== attack / energy lines"; grep -niE "attack|energy|kwh|activation" b.txt | head -80
+          echo "== around first Attack Mode"; n=$(grep -niE "attack mode" b.txt | sed -n '2p' | cut -d: -f1); sed -n "$((n-5)),$((n+45))p" b.txt
