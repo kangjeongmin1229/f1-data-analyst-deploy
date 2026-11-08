@@ -15,6 +15,8 @@ import time
 import urllib.parse
 import urllib.request
 
+AUDIT_VERSION = 2
+
 
 def series_family(name):
     s = name.casefold()
@@ -112,7 +114,7 @@ def collect_one(meta, root):
     filename = ident if re.fullmatch(r'[a-zA-Z0-9-]+', ident) else hashlib.sha256(ident.encode()).hexdigest()
     path = root / 'raw' / (filename + '.json')
     result = {'id': ident, 'series': meta.get('series'), 'description': meta.get('description'),
-              'family': series_family(meta.get('series', ''))}
+              'family': series_family(meta.get('series', '')), 'audit_version': AUDIT_VERSION}
     try:
         if path.exists():
             payload = path.read_bytes()
@@ -140,6 +142,20 @@ def collect_one(meta, root):
     return result
 
 
+def completed_records(path):
+    """The last complete record wins; a killed partial write is not a checkpoint."""
+    records = {}
+    if path.exists():
+        for line in path.read_text().splitlines():
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if record.get('status') == 'audited_not_fitted' and record.get('audit_version') == AUDIT_VERSION:
+                records[record['id']] = record
+    return records
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--catalogue', required=True)
@@ -150,25 +166,36 @@ def main():
     (root / 'raw').mkdir(parents=True, exist_ok=True)
     catalogue = json.loads(Path(args.catalogue).read_text())
     selected = [r for r in catalogue if series_family(r.get('series', ''))]
-    if args.limit:
-        selected = selected[:args.limit]
     (root / 'selected-metadata.json').write_text(json.dumps(selected, ensure_ascii=False))
-    outcomes = []
+    outcomes = completed_records(root / 'audit.jsonl')
+    pending = [r for r in selected if r.get('id') not in outcomes]
+    if args.limit:
+        pending = pending[:args.limit]
     started = time.time()
-    with (root / 'audit.jsonl').open('w') as log, concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        for result in pool.map(lambda m: collect_one(m, root), selected):
+    def checkpoint():
+        values = list(outcomes.values())
+        summary = {'catalogue_records': len(catalogue), 'selected': len(selected),
+                   'processed_unique': len(values),
+                   'status': dict(collections.Counter(r['status'] for r in values)),
+                   'families': dict(collections.Counter(r['family'] for r in values)),
+                   'lap_records': sum(r.get('counts', {}).get('lap_records', 0) for r in values),
+                   'fitted_sessions': 0, 'seconds_this_run': round(time.time() - started, 1)}
+        tmp = root / 'summary.part'
+        tmp.write_text(json.dumps(summary, indent=2))
+        tmp.replace(root / 'summary.json')
+        return summary
+    with (root / 'audit.jsonl').open('a') as log, concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        log.write('\n')  # Separate any truncated final line from the previous run.
+        futures = [pool.submit(collect_one, meta, root) for meta in pending]
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
             log.write(json.dumps(result, ensure_ascii=False) + '\n')
             log.flush()
-            outcomes.append(result)
+            outcomes[result['id']] = result
+            checkpoint()
             if len(outcomes) % 50 == 0:
                 print(json.dumps({'completed': len(outcomes), 'total': len(selected)}), flush=True)
-    summary = {'catalogue_records': len(catalogue), 'selected': len(selected),
-               'status': dict(collections.Counter(r['status'] for r in outcomes)),
-               'families': dict(collections.Counter(r['family'] for r in outcomes)),
-               'lap_records': sum(r.get('counts', {}).get('lap_records', 0) for r in outcomes),
-               'fitted_sessions': 0, 'seconds': round(time.time() - started, 1)}
-    (root / 'summary.json').write_text(json.dumps(summary, indent=2))
-    print(json.dumps(summary), flush=True)
+    print(json.dumps(checkpoint()), flush=True)
 
 
 if __name__ == '__main__':
