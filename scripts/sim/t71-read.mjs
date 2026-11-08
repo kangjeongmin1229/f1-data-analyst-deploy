@@ -8,16 +8,21 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 
 // dictdiffer patch, as in timing71/common diffs.js (add / change / remove on a dotted or array path).
-const node = (o, path, parent) => {
-  let keys = path === '' ? [] : Array.isArray(path) ? [...path] : String(path).split('.');
-  if (parent) keys = keys.slice(0, -1);
-  for (const k of keys) o = o[k] ??= {};
+const node = (o, path, parent, addKey) => {
+  const all = path === '' ? [] : Array.isArray(path) ? [...path] : String(path).split('.');
+  const keys = parent ? all.slice(0, -1) : all;
+  const next = [...all.slice(keys.length), addKey]; // key used after the walk (to pick [] or {})
+  keys.forEach((k, i) => {
+    const after = i + 1 < keys.length ? keys[i + 1] : next[0];
+    if (o[k] == null || typeof o[k] !== 'object') o[k] = /^\d+$/.test(String(after)) ? [] : {};
+    o = o[k];
+  });
   return o;
 };
 export function patch(diff, target) {
   const dest = structuredClone(target);
   for (const [op, path, ch] of diff) {
-    if (op === 'add') { const o = node(dest, path); for (const [k, v] of ch) o[k] = v; }
+    if (op === 'add') { const o = node(dest, path, false, ch[0]?.[0]); for (const [k, v] of ch) o[k] = v; }
     else if (op === 'remove') { const o = node(dest, path); for (const [k] of ch) delete o[k]; }
     else if (op === 'change') { const keys = Array.isArray(path) ? path : String(path).split('.'); node(dest, path, true)[keys.at(-1)] = ch[1]; }
   }

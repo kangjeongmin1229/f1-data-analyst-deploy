@@ -18,6 +18,7 @@ export const kind = d => /no current session|backup feed|\bn\/a\b/i.test(d) ? nu
   : /race|grand prix$|\brennen\b/i.test(d) && !/pre-?race|warm/i.test(d) ? 'R' : null;
 
 const get = async (u, n = 3) => {
+  if (!/^https?:/.test(u)) u = `https://s3.us-east-005.backblazeb2.com/t71-archive/${u}`;
   try { const r = await fetch(u.startsWith(API) ? u : encodeURI(u)); if (!r.ok) throw new Error(`${r.status}`); return r; }
   catch (x) { if (n <= 1) throw x; await new Promise(f => setTimeout(f, 3000)); return get(u, n - 1); }
 };
@@ -78,7 +79,8 @@ async function collect() {
   }
   const pick = all.map(r => ({...r, key: Object.keys(SERIES).find(k => SERIES[k].test(r.series)), kind: kind(r.description || '')}))
     .filter(r => r.key && r.kind && r.startTime >= Date.UTC(2018, 0, 1) / 1e3);
-  const mine = pick.filter((_, i) => i % shards === shard);
+  const only = process.env.T71_MATCH ? new RegExp(process.env.T71_MATCH, 'i') : null;
+  const mine = pick.filter((r, i) => only ? only.test(r.description) : i % shards === shard);
   mkdirSync(join(CACHE, 'sessions'), {recursive: true});
   const log = {listed: all.length, picked: pick.length, shard, done: 0, failed: []};
   for (const r of mine) {
@@ -93,7 +95,7 @@ async function collect() {
         duration: r.duration, cols: rep.manifest.colSpec, weather: weatherOf(rep.manifest.trackDataSpec, rep.weather),
         frameLaps: rep.laps.length, analysis: !!analysis, cars: summarise(rep, analysis)}));
       log.done++;
-    } catch (x) { log.failed.push([r.description, String(x).slice(0, 120)]); }
+    } catch (x) { log.failed.push([r.description, String(x).slice(0, 120), (x.stack || '').split('\n').slice(1, 4).join(' | ').replace(/file:\/\/\S*\//g, '')]); }
   }
   writeFileSync(join(CACHE, `log-${shard}.json`), JSON.stringify(log));
   console.log(`shard ${shard}/${shards}: picked ${pick.length}, mine ${mine.length}, done ${log.done}, failed ${log.failed.length}`);
