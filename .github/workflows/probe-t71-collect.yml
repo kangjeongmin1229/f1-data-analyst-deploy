@@ -1,0 +1,49 @@
+name: Probe Timing71 collect
+on:
+  push:
+    branches: ['probe/t71-collect']
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/sim/t71-collect.mjs
+        env:
+          T71_SHARD: ${{ matrix.shard }}
+          T71_SHARDS: 8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: t71-${{ matrix.shard }}
+          path: |
+            .cache/lapsim/t71/sessions
+            .cache/lapsim/t71/log-*.json
+          retention-days: 7
+  merge:
+    needs: collect
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: t71-*
+          path: .cache/lapsim/t71
+          merge-multiple: true
+      - run: node scripts/sim/t71-collect.mjs merge
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f scripts/sim/data/t71 && git commit -m "Timing71 summary" && git push
