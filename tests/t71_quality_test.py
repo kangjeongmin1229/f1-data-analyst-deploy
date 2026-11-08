@@ -13,6 +13,27 @@ spec.loader.exec_module(t71)
 
 
 class QualityTests(unittest.TestCase):
+    def test_restored_log_cannot_skip_missing_or_changed_evidence(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            raw = root / 'raw'
+            raw.mkdir()
+            payload = b'{}'
+            (raw / 'good.json').write_bytes(payload)
+            (raw / 'changed.json').write_bytes(b'[]')
+            records = [{'id': ident, 'status': 'audited_not_fitted', 'audit_version': t71.AUDIT_VERSION,
+                        'sha256': t71.hashlib.sha256(payload).hexdigest()} for ident in ['good', 'missing', 'changed']]
+            log = root / 'audit.jsonl'
+            log.write_text('\n'.join(map(json.dumps, records)))
+            self.assertEqual(list(t71.completed_records(log, raw)), ['good'])
+
+    def test_relative_source_is_scoped_and_url_encoding_preserved(self):
+        base = 'https://s3.us-east-005.backblazeb2.com/t71-archive/'
+        self.assertEqual(t71.source_url('abc_1.json'), base + 'abc_1.json')
+        self.assertEqual(t71.source_url(base + '2026 race.json'), base + '2026%20race.json')
+        for url in ('../abc.json', 'https://example.com/abc.json', '//example.com/abc.json'):
+            self.assertIsNone(t71.source_url(url))
+
     def test_transient_failure_retried_but_policy_denial_not_retried(self):
         failure = urllib.error.HTTPError('https://example.test', 503, 'Unavailable', {}, None)
         with patch.object(t71.urllib.request, 'urlopen', side_effect=[failure, io.BytesIO(b'{}')]) as get, patch.object(t71.time, 'sleep') as sleep:

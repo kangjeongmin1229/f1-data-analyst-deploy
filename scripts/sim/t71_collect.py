@@ -19,6 +19,18 @@ import urllib.error
 AUDIT_VERSION = 2
 
 
+def source_url(value):
+    """Resolve archive basename records, retaining the original URL in audit logs."""
+    if not isinstance(value, str) or not value:
+        return None
+    if re.fullmatch(r'[a-zA-Z0-9_-]+\.json', value):
+        value = 'https://s3.us-east-005.backblazeb2.com/t71-archive/' + value
+    u = urllib.parse.urlsplit(value)
+    if u.scheme != 'https' or u.hostname != 's3.us-east-005.backblazeb2.com' or not u.path.startswith('/t71-archive/'):
+        return None
+    return urllib.parse.urlunsplit((u.scheme, u.netloc, urllib.parse.quote(urllib.parse.unquote(u.path), safe='/'), u.query, ''))
+
+
 def download(request):
     """Retry transient server failures only; never retry an access-policy denial."""
     for attempt in range(3):
@@ -139,7 +151,9 @@ def collect_one(meta, root):
     filename = ident if re.fullmatch(r'[a-zA-Z0-9-]+', ident) else hashlib.sha256(ident.encode()).hexdigest()
     path = root / 'raw' / (filename + '.json')
     result = {'id': ident, 'series': meta.get('series'), 'description': meta.get('description'),
-              'family': series_family(meta.get('series', '')), 'audit_version': AUDIT_VERSION}
+              'family': series_family(meta.get('series', '')), 'audit_version': AUDIT_VERSION,
+              'original_source_url': meta.get('analysisFilename'),
+              'resolved_source_url': source_url(meta.get('analysisFilename'))}
     try:
         if path.exists():
             payload = path.read_bytes()
@@ -147,10 +161,9 @@ def collect_one(meta, root):
             url = meta.get('analysisFilename')
             if not url:
                 return {**result, 'status': 'missing_analysis_url'}
-            u = urllib.parse.urlsplit(url)
-            if u.scheme != 'https' or u.hostname != 's3.us-east-005.backblazeb2.com' or not u.path.startswith('/t71-archive/'):
+            url = source_url(url)
+            if url is None:
                 return {**result, 'status': 'unrecognized_source_url'}
-            url = urllib.parse.urlunsplit((u.scheme, u.netloc, urllib.parse.quote(urllib.parse.unquote(u.path), safe='/'), u.query, ''))
             request = urllib.request.Request(url, headers={'User-Agent': 'Kongboda-model-validation/1.0'})
             payload = download(request)
             json.loads(payload)  # Never cache an HTML error as analysis.
@@ -159,12 +172,15 @@ def collect_one(meta, root):
             temporary.replace(path)
         result.update(audit(meta, json.loads(payload)))
         result.update(status='audited_not_fitted', sha256=hashlib.sha256(payload).hexdigest(), bytes=len(payload))
+    except urllib.error.HTTPError as error:
+        result.update(status='failed', error=str(error), http_status=error.code,
+                      access_blocked=error.code in (401, 403))
     except Exception as error:
         result.update(status='failed', error=str(error))
     return result
 
 
-def completed_records(path):
+def completed_records(path, raw_root=None):
     """The last complete record wins; a killed partial write is not a checkpoint."""
     records = {}
     if path.exists():
@@ -174,6 +190,12 @@ def completed_records(path):
             except json.JSONDecodeError:
                 continue
             if record.get('status') == 'audited_not_fitted' and record.get('audit_version') == AUDIT_VERSION:
+                if raw_root is not None:
+                    ident = str(record['id'])
+                    name = ident if re.fullmatch(r'[a-zA-Z0-9-]+', ident) else hashlib.sha256(ident.encode()).hexdigest()
+                    raw = raw_root / (name + '.json')
+                    if not raw.is_file() or hashlib.sha256(raw.read_bytes()).hexdigest() != record.get('sha256'):
+                        continue
                 records[record['id']] = record
     return records
 
@@ -189,7 +211,7 @@ def main():
     catalogue = json.loads(Path(args.catalogue).read_text())
     selected = [r for r in catalogue if series_family(r.get('series', ''))]
     (root / 'selected-metadata.json').write_text(json.dumps(selected, ensure_ascii=False))
-    outcomes = completed_records(root / 'audit.jsonl')
+    outcomes = completed_records(root / 'audit.jsonl', root / 'raw')
     pending = [r for r in selected if r.get('id') not in outcomes]
     if args.limit:
         pending = pending[:args.limit]
@@ -208,15 +230,29 @@ def main():
         return summary
     with (root / 'audit.jsonl').open('a') as log, concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         log.write('\n')  # Separate any truncated final line from the previous run.
-        futures = [pool.submit(collect_one, meta, root) for meta in pending]
-        for future in concurrent.futures.as_completed(futures):
-            result = future.result()
-            log.write(json.dumps(result, ensure_ascii=False) + '\n')
-            log.flush()
-            outcomes[result['id']] = result
-            checkpoint()
-            if len(outcomes) % 50 == 0:
-                print(json.dumps({'completed': len(outcomes), 'total': len(selected)}), flush=True)
+        # Do not queue the entire archive: an access denial must stop new requests.
+        remaining = iter(pending)
+        futures = {pool.submit(collect_one, meta, root)
+                   for meta in [next(remaining, None) for _ in range(4)] if meta is not None}
+        blocked = False
+        while futures:
+            done, futures = concurrent.futures.wait(futures, return_when=concurrent.futures.FIRST_COMPLETED)
+            for future in done:
+                result = future.result()
+                log.write(json.dumps(result, ensure_ascii=False) + '\n')
+                log.flush()
+                outcomes[result['id']] = result
+                blocked = blocked or result.get('access_blocked', False)
+                checkpoint()
+                if len(outcomes) % 50 == 0:
+                    print(json.dumps({'completed': len(outcomes), 'total': len(selected)}), flush=True)
+            if not blocked:
+                for _ in range(4 - len(futures)):
+                    meta = next(remaining, None)
+                    if meta is not None:
+                        futures.add(pool.submit(collect_one, meta, root))
+        if blocked:
+            print(json.dumps({'stopped': 'source_access_denied', 'pending_not_submitted': True}), flush=True)
     print(json.dumps(checkpoint()), flush=True)
 
 

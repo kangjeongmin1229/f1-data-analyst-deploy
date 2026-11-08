@@ -133,3 +133,61 @@ Next: verify replay reconstruction against upstream source; recover lap context
 from the five existing replay ZIPs; resolve official session/car mappings and
 regulation eras, then implement and validate the LMP2 vehicle model. Full archive
 coverage, official-result cross-checking and physical calibration remain open.
+
+## Resumed acquisition and replay reconstruction: 2026-11-08, after 22:05 KST
+
+Fresh ordinary HTTPS requests to both the archive API and the documented Backblaze
+host returned HTTP 200. This supersedes the earlier connection-blocked checkpoint
+for this run only. No proxy, execution-host workaround or Vercel change was used.
+The refreshed catalogue contains 15,800 entries, including 5,154 current scope
+candidates. The first resumed 150-item batch added 145 successful analysis audits;
+the remaining five entries had schema/URL problems. Acquisition then resumed the
+remaining candidate queue, with an exclusive filesystem lock and four requests
+in flight. An HTTP 401/403 stops submission of new requests after outstanding
+requests finish. Raw downloads are not model fits.
+
+Three previously held relative analysis filenames were resolved against the
+documented archive storage prefix, downloaded with HTTP 200 and audited. Original
+and resolved source URLs are retained. Unknown hosts and relative traversal paths
+remain rejected. Existing active processes retain their loaded code version;
+the next run picks up this resolver and reuses already cached evidence.
+
+`t71_replay_collect.py` downloads replay ZIPs in bounded resumable batches. It
+checks CRC and manifest version, uses atomic files, retains SHA-256, and stops
+on 401/403/429 or a disk limit. Default batch size is ten; payloads exceeding
+512 MiB and expanded archives exceeding 2 GB are held, not called complete.
+Use a separate `replay-collection.lock` so duplicate replay jobs cannot overlap.
+
+`t71_replay.py` reconstructs keyframes and incremental patches using the v1 wire
+semantics checked against timing71/common commit
+`2fabd83a551a56fc719d271e7695d22016a6bb00`, `src/replay.js` and `src/diffs.js`.
+Array removal preserves holes; it must not shift car identity. Each changed car
+observation preserves raw timing/tyre/energy fields, session flag, weather,
+timestamp, source frame and source hash. Sector fields are not automatically
+assigned to the completed lap. Display colours are not tyre physics.
+
+Actual results: five saved F1/WEC ZIPs plus five newly downloaded FE/IMSA/ELMS/GT
+candidate ZIPs reconstructed successfully: 66,578 frames and 632,096 changed-car
+observations. These are observation counts, not independent lap counts. New
+samples include FE London race and Tokyo qualifying duel; a GT Cup candidate is
+not promoted to FIA GT3. A differential check of 1,000 real cars/session patches
+matched the pinned upstream JavaScript reader. All 26 ingestion/replay tests pass.
+
+Reproduction commands, from the repository root:
+
+```sh
+flock -n .cache/lapsim/t71/collection.lock python3 scripts/sim/t71_collect.py --catalogue .cache/lapsim/t71/catalogue-refreshed.json --limit 150
+flock -n .cache/lapsim/t71/replay-collection.lock python3 scripts/sim/t71_replay_collect.py --limit 10
+python3 scripts/sim/t71_prepare.py
+python3 scripts/sim/t71_lmp2.py
+python3 scripts/sim/t71_replay.py .cache/lapsim/t71/replays/*.zip
+python3 -m unittest discover -s tests -p 't71_*test.py'
+```
+
+Consult current checkpoint summaries for download/normalization counts; collection
+may advance after this document is committed. `normalized-summary.json` covers
+only its latest processing run, not later arrivals. Calibration and independent
+validation remain incomplete. Next: reconcile replay observation time with lap
+identity, verify official results and car/layout/rule-year mappings, then fit
+identifiable parameters and report held-out raw-physics errors. No vehicle
+parameter or production behavior was changed in this acquisition revision.
