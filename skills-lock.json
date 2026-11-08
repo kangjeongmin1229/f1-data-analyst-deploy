@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "bklit-ui": {
+      "source": "bklit/bklit-ui",
+      "sourceType": "github",
+      "skillPath": "skills/bklit-ui/SKILL.md",
+      "computedHash": "ac3fd65a67a46ca81e5f0355c391fe007f7fc1410b9c7dd5077241ef21120383"
+    },
+    "bklit-ui-design": {
+      "source": "bklit/bklit-ui",
+      "sourceType": "github",
+      "skillPath": "skills/bklit-ui-design/SKILL.md",
+      "computedHash": "c4b1cce625b220f378e8e35114d1ad0c44649df47ebb33943fe6879720dfc689"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "acda6bf83f200405aa200eb245448fdc11cfce43d97bc2d9b8bf13a27f362d95"
+    }
+  }
+}
