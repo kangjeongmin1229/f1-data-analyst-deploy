@@ -21,10 +21,19 @@ files. Failures are recorded separately; they are never counted as successful fi
 
 ## Coverage
 
-Series labels nominate candidates, not approved classes. Include Hypercar and GT3
+Series labels nominate candidates, not approved classes. Include Hypercar, LMP2 and GT3
 entries across WEC, IMSA, GTWC/IGTC, DTM, GT Open, ADAC GT Masters, British GT,
 24H Series, NLS/VLN/N24, Macau, Super Taikyu, regional mixed GT competitions,
 ELMS, Asian LMS and Le Mans Cup. F1 and FE remain separate model families.
+LMP2 was added to the work scope on 2026-11-08. Retain LMP2 entries from every
+available race and its practice/qualifying sessions, including mixed WEC/Le Mans,
+ELMS, Asian LMS and IMSA grids. Separate regulation era, chassis, engine, tyre and
+series-specific restrictions. Do not equate LMP3, LMPC, DPi or Hypercar with LMP2.
+The `lmgt3_candidate` acquisition label is a legacy series bucket, not a car-class
+filter: LMP2 cars inside those raw files must be retained and extracted as well.
+Remaining LMP2 tasks: archive coverage ledger, car/class mapping, official timing
+cross-checks, bounded vehicle parameters, lap/sector/speed/stint validation and
+independent event holdouts. LMP2 is requested but not yet implemented/calibrated.
 Older WEC/DTM/IMSA cars must not be treated as current Hypercar/GT3 solely because
 the championship name matches. Porsche GT3 Cup is not automatically FIA GT3.
 The broad candidate filter intentionally includes ambiguous mixed grids for
