@@ -18,6 +18,7 @@ export const kind = d => /no current session|backup feed|\bn\/a\b/i.test(d) ? nu
   : /race|grand prix$|\brennen\b/i.test(d) && !/pre-?race|warm/i.test(d) ? 'R' : null;
 
 const get = async (u, n = 3) => {
+  if (!/^https?:/.test(u)) u = `https://s3.us-east-005.backblazeb2.com/t71-archive/${u}`;
   try { const r = await fetch(u.startsWith(API) ? u : encodeURI(u)); if (!r.ok) throw new Error(`${r.status}`); return r; }
   catch (x) { if (n <= 1) throw x; await new Promise(f => setTimeout(f, 3000)); return get(u, n - 1); }
 };
@@ -42,6 +43,8 @@ export function weatherOf(spec = [], samples = []) {
 export function summarise(rep, analysis) {
   const frame = new Map(rep.laps.map(l => [`${l.car}:${l.lap + 1}`, l]));
   const cars = {};
+  const ts = Object.values(analysis?.cars?.cars || {}).flatMap(c => (c.stints || []).flatMap(st => (st.laps || []).map(l => l.timestamp))).filter(Boolean);
+  const t00 = ts.length ? Math.min(...ts) / 1e3 : rep.laps[0]?.t ?? null; // first completed lap (unix s)
   const src = analysis?.cars?.cars || Object.fromEntries([...new Set(rep.laps.map(l => l.car))].map(c => [c, {stints: [{laps: rep.laps.filter(l => l.car === c).map(l => ({lapNumber: l.lap + 1, laptime: l.time, flag: l.flag}))}]}]));
   for (const [car, c] of Object.entries(src)) {
     const laps = (c.stints || []).flatMap(st => st.laps || []).filter(l => l.laptime > 0);
@@ -59,7 +62,9 @@ export function summarise(rep, analysis) {
       laps: laps.length, green: green.length, greenMedian: r3(median(green.map(l => l.laptime))), byTyre,
       stints: (c.stints || []).filter(st => st.laps?.length).map(st => {
         const g = st.laps.filter(l => l.flag === 'green'); const v = st.laps.map(l => fr(l)?.vft).filter(x => x != null && x !== '');
-        return [st.laps[0].lapNumber, st.laps.at(-1).lapNumber, g.length, r3(median(g.map(l => l.laptime))), tyreName(st.laps.at(-1)), v[0] ?? null, v.at(-1) ?? null, st.driver ?? null];
+        const gb = g.length ? Math.min(...g.map(l => l.laptime)) : null; const t0 = st.laps[0].timestamp;
+        // [first lap, last lap, green laps, green median, tyre, VFT first, VFT last, driver, green best, start (s since session start)]
+        return [st.laps[0].lapNumber, st.laps.at(-1).lapNumber, g.length, r3(median(g.map(l => l.laptime))), tyreName(st.laps.at(-1)), v[0] ?? null, v.at(-1) ?? null, st.driver ?? null, r3(gb), t0 && t00 ? Math.round(t0 / 1e3 - t00) : null];
       })};
   }
   return cars;
@@ -74,7 +79,8 @@ async function collect() {
   }
   const pick = all.map(r => ({...r, key: Object.keys(SERIES).find(k => SERIES[k].test(r.series)), kind: kind(r.description || '')}))
     .filter(r => r.key && r.kind && r.startTime >= Date.UTC(2018, 0, 1) / 1e3);
-  const mine = pick.filter((_, i) => i % shards === shard);
+  const only = process.env.T71_MATCH ? new RegExp(process.env.T71_MATCH, 'i') : null;
+  const mine = pick.filter((r, i) => only ? only.test(r.description) : i % shards === shard);
   mkdirSync(join(CACHE, 'sessions'), {recursive: true});
   const log = {listed: all.length, picked: pick.length, shard, done: 0, failed: []};
   for (const r of mine) {
@@ -89,7 +95,7 @@ async function collect() {
         duration: r.duration, cols: rep.manifest.colSpec, weather: weatherOf(rep.manifest.trackDataSpec, rep.weather),
         frameLaps: rep.laps.length, analysis: !!analysis, cars: summarise(rep, analysis)}));
       log.done++;
-    } catch (x) { log.failed.push([r.description, String(x).slice(0, 120)]); }
+    } catch (x) { log.failed.push([r.description, String(x).slice(0, 120), (x.stack || '').split('\n').slice(1, 4).join(' | ').replace(/file:\/\/\S*\//g, '')]); }
   }
   writeFileSync(join(CACHE, `log-${shard}.json`), JSON.stringify(log));
   console.log(`shard ${shard}/${shards}: picked ${pick.length}, mine ${mine.length}, done ${log.done}, failed ${log.failed.length}`);

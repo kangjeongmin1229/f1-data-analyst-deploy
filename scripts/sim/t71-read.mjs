@@ -8,16 +8,21 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 
 // dictdiffer patch, as in timing71/common diffs.js (add / change / remove on a dotted or array path).
-const node = (o, path, parent) => {
-  let keys = path === '' ? [] : Array.isArray(path) ? [...path] : String(path).split('.');
-  if (parent) keys = keys.slice(0, -1);
-  for (const k of keys) o = o[k] ??= {};
+const node = (o, path, parent, addKey) => {
+  const all = path === '' ? [] : Array.isArray(path) ? [...path] : String(path).split('.');
+  const keys = parent ? all.slice(0, -1) : all;
+  const next = [...all.slice(keys.length), addKey]; // key used after the walk (to pick [] or {})
+  keys.forEach((k, i) => {
+    const after = i + 1 < keys.length ? keys[i + 1] : next[0];
+    if (o[k] == null || typeof o[k] !== 'object') o[k] = /^\d+$/.test(String(after)) ? [] : {};
+    o = o[k];
+  });
   return o;
 };
 export function patch(diff, target) {
   const dest = structuredClone(target);
   for (const [op, path, ch] of diff) {
-    if (op === 'add') { const o = node(dest, path); for (const [k, v] of ch) o[k] = v; }
+    if (op === 'add') { const o = node(dest, path, false, ch[0]?.[0]); for (const [k, v] of ch) o[k] = v; }
     else if (op === 'remove') { const o = node(dest, path); for (const [k] of ch) delete o[k]; }
     else if (op === 'change') { const keys = Array.isArray(path) ? path : String(path).split('.'); node(dest, path, true)[keys.at(-1)] = ch[1]; }
   }
@@ -56,10 +61,13 @@ export function readReplay(zipPath) {
       final = state;
       const td = state.session?.trackData ?? state.trackData;
       if (td && JSON.stringify(td) !== lastW) { lastW = JSON.stringify(td); weather.push({t, v: td}); }
-      for (const row of state.cars || []) {
+      for (const row of Object.values(state.cars || {})) {
+        if (!Array.isArray(row)) continue; // rows removed by a diff leave holes
         const car = String(val(row[C.num]));
-        const n = num(row[C.laps]); const last = num(row[C.last]);
-        const p = prev.get(car); prev.set(car, {n, last});
+        const last = num(row[C.last]); const p = prev.get(car);
+        // No Laps column (some ALMS/VLN feeds): count a lap each time Last changes.
+        const n = C.laps >= 0 ? num(row[C.laps]) : p && last != null && last !== p.last ? p.n + 1 : (p?.n ?? 0);
+        prev.set(car, {n, last});
         if (!p || n == null || p.n == null || n <= p.n || last == null) continue;
         laps.push({car, lap: n, t, time: last, s: C.s.map(i => i < 0 ? null : num(row[i])),
           tyre: C.tyre < 0 ? null : row[C.tyre], age: C.age < 0 ? null : val(row[C.age]),
@@ -68,7 +76,7 @@ export function readReplay(zipPath) {
           flag: state.session?.flagState ?? null, pit: /pit/i.test(String(val(row[C.state])))});
       }
     }
-    const best = Object.fromEntries((final?.cars || []).map(r => [String(val(r[C.num])), num(r[C.best])]));
+    const best = Object.fromEntries(Object.values(final?.cars || {}).filter(Array.isArray).map(r => [String(val(r[C.num])), num(r[C.best])]));
     return {manifest: {colSpec: names, trackDataSpec: manifest.trackDataSpec, name: manifest.name, description: manifest.description}, laps, weather, best};
   } finally { rmSync(dir, {recursive: true, force: true}); }
 }
