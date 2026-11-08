@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -56,6 +57,10 @@ def acquire(meta, root):
     except urllib.error.HTTPError as error:
         return {**result, 'status': 'failed', 'error': str(error), 'http_status': error.code,
                 'stop': error.code in (401, 403, 429)}
+    except urllib.error.URLError as error:
+        denied = bool(re.search(r'Tunnel connection failed: (401|403)\b|blocked by policy', str(error), re.I))
+        return {**result, 'status': 'failed', 'error': str(error),
+                'stop': denied, 'failure_stage': 'connection'}
     except (OSError, ValueError, KeyError, zipfile.BadZipFile) as error:
         return {**result, 'status': 'failed', 'error': str(error)}
     finally:
