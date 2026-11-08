@@ -24,20 +24,32 @@ def explicit_class(label):
     return None
 
 
-def records(meta, data, digest):
-    legacy = 'service' in data and 'static' in data and 'stint' in data
+def records(meta, data, digest, issues=None):
+    if issues is None:
+        issues = []
+    legacy = 'service' in data and 'stint' in data
     if legacy:
         data = decode(data)
+        issues.extend(data['issues'])
+    elif 'service' in data and 'state' in data and 'cars' not in data:
+        issues.append({'reason': 'snapshot_without_lap_history'})
+        return
     cars = data.get('cars', {}).get('cars')
     if not isinstance(cars, dict):
         raise ValueError('unrecognized analysis schema')
     for number, car in cars.items():
         for si, stint in enumerate(car.get('stints', [])):
+            start, _ = normalize_epoch(stint.get('startTime'), meta.get('startTime'), meta.get('duration'))
+            end, _ = normalize_epoch(stint.get('endTime'), meta.get('startTime'), meta.get('duration'))
+            # Archives can carry earlier sessions' stints; never label these by the file title alone.
+            interval_verified = start is not None and end is not None and start <= end
             for li, lap in enumerate(stint.get('laps', [])):
                 source_si = stint.get('source_stint_index', si)
                 source_li = lap.get('source_lap_index', li)
                 group = explicit_class(car.get('raceClass'))
                 reasons = ['official_result_unverified', 'conditions_unverified', 'generation_unverified']
+                if not interval_verified:
+                    reasons.append('stint_session_interval_unverified')
                 if group is None:
                     reasons.append('class_unresolved')
                 value = lap.get('laptime')
@@ -55,9 +67,11 @@ def records(meta, data, digest):
                        'source_sha256': digest, 'source_schema': 'legacy' if legacy else 'current',
                        'series': meta.get('series'), 'description': meta.get('description'),
                        'session_kind': session_type(meta.get('description', '')),
+                       'session_assignment_verified': False,
                        'source_class': car.get('raceClass'), 'class_candidate': group,
                        'make': car.get('make'), 'lap_seconds': value if valid_time else None,
                        'source_lap_number': lap.get('lapNumber'), 'timestamp_ms': timestamp,
+                       'source_timestamp': lap.get('timestamp'),
                        'timestamp_correction': correction if timestamp is not None else None,
                        'flag': lap.get('flag'), 'status': 'held' if valid_time else 'rejected_numeric',
                        'reasons': reasons}
@@ -71,6 +85,7 @@ def main():
     counts = collections.Counter()
     classes = collections.Counter()
     errors = []
+    issues = []
     target = root / 'normalized.jsonl'
     with target.with_suffix('.part').open('w') as out:
         for meta in json.loads((root / 'selected-metadata.json').read_text()):
@@ -81,16 +96,22 @@ def main():
                 continue
             payload = raw.read_bytes()
             try:
-                for row in records(meta, json.loads(payload), hashlib.sha256(payload).hexdigest()):
+                session_issues = []
+                # Validate the whole session before committing any of its rows/counts.
+                rows = list(records(meta, json.loads(payload), hashlib.sha256(payload).hexdigest(), session_issues))
+                for row in rows:
                     out.write(json.dumps(row, ensure_ascii=False) + '\n')
                     counts[row['status']] += 1
                     classes[row['class_candidate'] or 'unresolved'] += 1
                 counts['sessions'] += 1
+                if not rows:
+                    counts['sessions_without_laps'] += 1
+                issues.extend({'session': ident, **issue} for issue in session_issues)
             except (TypeError, ValueError, AttributeError) as error:
                 errors.append({'session': ident, 'error': str(error)})
     target.with_suffix('.part').replace(target)
     report = {'counts': dict(counts), 'class_candidate_laps': dict(classes),
-              'errors': errors, 'fitted_records': 0}
+              'errors': errors, 'issues': issues, 'fitted_records': 0}
     (root / 'normalized-summary.json').write_text(json.dumps(report, indent=2))
     print(json.dumps(report))
 
