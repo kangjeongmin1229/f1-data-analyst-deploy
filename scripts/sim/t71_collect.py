@@ -14,8 +14,31 @@ import re
 import time
 import urllib.parse
 import urllib.request
+import urllib.error
 
 AUDIT_VERSION = 2
+
+
+def download(request):
+    """Retry transient server failures only; never retry an access-policy denial."""
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response:
+                payload = response.read(20_000_001)
+            if len(payload) > 20_000_000:
+                raise ValueError('analysis size exceeds limit')
+            return payload
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                raise
+            retry_after = error.headers.get('Retry-After') if error.headers else None
+            if retry_after and not retry_after.isdigit():
+                raise  # Leave HTTP-date retry scheduling to the next run.
+            delay = max(2 ** (attempt + 1), int(retry_after or 0))
+            if delay > 60:
+                raise  # Respect a long server delay without holding this batch open.
+            error.close()
+            time.sleep(delay)
 
 
 def series_family(name):
@@ -127,10 +150,7 @@ def collect_one(meta, root):
                 return {**result, 'status': 'unrecognized_source_url'}
             url = urllib.parse.urlunsplit((u.scheme, u.netloc, urllib.parse.quote(urllib.parse.unquote(u.path), safe='/'), u.query, ''))
             request = urllib.request.Request(url, headers={'User-Agent': 'Kongboda-model-validation/1.0'})
-            with urllib.request.urlopen(request, timeout=45) as response:
-                payload = response.read(20_000_001)
-            if len(payload) > 20_000_000:
-                raise ValueError('analysis size exceeds limit')
+            payload = download(request)
             json.loads(payload)  # Never cache an HTML error as analysis.
             temporary = path.with_suffix('.part')
             temporary.write_bytes(payload)
