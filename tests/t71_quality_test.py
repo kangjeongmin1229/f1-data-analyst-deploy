@@ -13,6 +13,16 @@ spec.loader.exec_module(t71)
 
 
 class QualityTests(unittest.TestCase):
+    def test_bounded_batch_interleaves_new_work_and_fair_retries(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'audit.jsonl'
+            path.write_text('\n'.join(json.dumps({'id': ident}) for ident in
+                                      ['stuck', 'stuck', 'retry', 'done']) + '\n{"id":')
+            selected = [{'id': ident} for ident in ['stuck', 'retry', 'done', 'new1', 'new2']]
+            queue = t71.pending_records(selected, {'done': {}}, path)
+            self.assertEqual([r['id'] for r in queue], ['new1', 'retry', 'new2', 'stuck'])
+            self.assertEqual(len({r['id'] for r in queue}), 4)
+
     def test_restored_log_cannot_skip_missing_or_changed_evidence(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
