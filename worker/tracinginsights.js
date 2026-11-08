@@ -1,7 +1,7 @@
 // TracingInsights (github.com/TracingInsights/<year>, Apache-2.0): per-session JSON that the
 // project extracts with FastF1 from F1 live timing, usually within about an hour of the
-// session end. It is the primary post-session source for openf1_sessions, openf1_laps and
-// openf1_lap_telemetry because it is free, needs no key and is not locked while another F1
+// session end. It is the primary post-session source for f1_sessions, f1_laps and
+// f1_lap_telemetry because it is free, needs no key and is not locked while another F1
 // session is live (OpenF1's free tier is: every request returns 401 until OpenF1 decides the
 // live session is over). Session keys are the F1 live-timing keys, the same numbers OpenF1
 // uses, so a key found here also works with the OpenF1 race tools later.
@@ -53,7 +53,7 @@ const utc=(local,offset)=>{
  return new Date(t-off).toISOString();
 };
 
-async function eventSessions(year,folder,io){
+export async function eventSessions(year,folder,io){
  const infos=await Promise.all(TI_SESSIONS.map(s=>tiGet(year,[folder,s,'session_info.json'],io).catch(()=>null)));
  const out=[];
  infos.forEach((f,i)=>{
@@ -125,10 +125,16 @@ export async function tiLapTelemetry(where,lap,seconds,io){
  const t=f?.tel;if(!t||!Array.isArray(t.time)||!t.time.length)return {rows:[],scaled:null};
  const end=num(t.time.at(-1)),official=lap.lap_duration;
  const k=!seconds&&Number.isFinite(official)&&end>0&&Math.abs(end-official)>0.02&&Math.abs(end-official)/official<0.05?official/end:1;
- const rows=[];
+ // Distance is re-integrated with the trapezoid rule (mean of the two speeds over each step).
+ // The file's distance column counts each step at its end speed, so across a sample hole in a
+ // braking zone it loses metres and shifts the gap by tenths (2026 São Paulo Q3 RUS T1: ~9 m, ~0.2 s).
+ const rows=[];let dist=0,prev=null;
  for(let i=0;i<t.time.length;i++){
   const e=num(t.time[i]);if(e===null)continue;const el=e*k;if(seconds&&el>seconds)break;
-  rows.push([Number(el.toFixed(3)),Number((num(t.distance?.[i])??0).toFixed(2)),num(t.speed?.[i]),num(t.throttle?.[i]),t.brake?.[i]?1:0,num(t.gear?.[i]),num(t.rpm?.[i])]);
+  const v=num(t.speed?.[i]);
+  if(prev&&e>prev.e&&Number.isFinite(v)&&Number.isFinite(prev.v))dist+=(prev.v+v)/2/3.6*(e-prev.e);
+  if(Number.isFinite(v))prev={e,v};
+  rows.push([Number(el.toFixed(3)),Number(dist.toFixed(2)),v,num(t.throttle?.[i]),t.brake?.[i]?1:0,num(t.gear?.[i]),num(t.rpm?.[i])]);
  }
  return {rows,scaled:k===1?null:{factor:Number(k.toFixed(5)),file_end_s:end,official_lap_s:official}};
 }
