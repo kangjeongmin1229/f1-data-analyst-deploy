@@ -56,3 +56,22 @@ Next: validate lap identity and geometry, add verified same-generation sessions,
 then evaluate small parameter changes against a newly reserved validation set.
 Large model changes require the user's decision; main deployment requires their
 approval. Raw Timing71 inputs and private checkpoints must not be committed.
+
+## WEC historical-input correction
+
+`stint-fit.mjs` now resolves the requested year/class/track calibration rather
+than using the latest car and latest available weather. Its energy cache includes
+the year. Stored event grip is used with the car and weather that were fitted
+together. Missing historical inputs are held with a reason, not substituted from
+a later season. `LAPSIM_STINT_OUT` supports a private diagnostic output without
+rewriting production data.
+
+The offline rerun retained 29 BoP rows across 4 events and 26 estimated rows,
+with zero rows held for missing context in this dataset. The fitted race factor
+changed from about 0.857 to 0.851; event-holdout RMS changed from 3.74% to 3.81%.
+This is a provenance correction, not an accuracy gain. No production parameter
+file was regenerated. Same-year qualifying weather is still a race-weather
+proxy, and inferred full-stint energy is not measured energy telemetry.
+
+Validation: 24 isolated kernel/refinement/context tests passed. Full Node 22
+regression and independent source validation remain pending.
