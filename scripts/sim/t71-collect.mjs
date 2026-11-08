@@ -93,7 +93,7 @@ async function collect() {
       const rep = readReplay(zip);
       writeFileSync(f, JSON.stringify({key: r.key, series: r.series, description: r.description, kind: r.kind, start: r.startTime,
         duration: r.duration, cols: rep.manifest.colSpec, weather: weatherOf(rep.manifest.trackDataSpec, rep.weather),
-        frameLaps: rep.laps.length, analysis: !!analysis, cars: summarise(rep, analysis)}));
+        frameLaps: rep.laps.length, endFlag: rep.endFlag, analysis: !!analysis, cars: summarise(rep, analysis)}));
       log.done++;
     } catch (x) { log.failed.push([r.description, String(x).slice(0, 120), (x.stack || '').split('\n').slice(1, 4).join(' | ').replace(/file:\/\/\S*\//g, '')]); }
   }
