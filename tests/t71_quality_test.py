@@ -47,7 +47,9 @@ class QualityTests(unittest.TestCase):
 
     def test_scope_includes_mixed_gt_events(self):
         for label in ('International GT Open', 'ADAC GT Masters', '24H Series',
-                      'Super Taikyu', 'Le Mans Cup', 'GTWorldChEu pwrd by AWS Endurance Cup'):
+                      'Super Taikyu', 'Le Mans Cup', 'GTWorldChEu pwrd by AWS Endurance Cup',
+                      'Suzuka 10 Hours', 'California 8 Hours', '1006 km', 'LMP2',
+                      'Official Test - 87º Edition des 24 Heures du Mans'):
             self.assertIsNotNone(t71.series_family(label), label)
         self.assertIsNone(t71.series_family('IMSA iRacing Pro Series'))
 
