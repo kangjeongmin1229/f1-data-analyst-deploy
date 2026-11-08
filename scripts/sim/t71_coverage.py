@@ -6,14 +6,14 @@ import json
 from pathlib import Path
 import re
 
-from t71_collect import series_family, session_type
+from t71_collect import metadata_family, session_type
 
 
 def inventory(catalogue, root):
     for meta in catalogue:
         ident = str(meta['id'])
         name = ident if re.fullmatch(r'[a-zA-Z0-9-]+', ident) else hashlib.sha256(ident.encode()).hexdigest()
-        family = series_family(meta.get('series', ''))
+        family = metadata_family(meta)
         yield {'id': ident, 'series': meta.get('series'), 'description': meta.get('description'),
                'family_candidate': family,
                'scope_status': 'candidate' if family else 'metadata_review_required',

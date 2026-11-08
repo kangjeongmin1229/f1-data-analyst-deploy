@@ -74,6 +74,17 @@ def series_family(name):
     return None
 
 
+def metadata_family(meta):
+    """Recognize the verified generic feed without relabelling unrelated support races."""
+    family = series_family(meta.get('series', ''))
+    if family is not None:
+        return family
+    if (meta.get('series', '').strip().casefold() == 'timeservice.nl feed'
+            and re.match(r'^Asian Le Mans Series\s*-', meta.get('description', ''), re.I)):
+        return 'lmgt3_candidate'
+    return None
+
+
 def session_type(text):
     s = text.casefold()
     if re.search(r'qualif|hyper\s?pole|super\s?pole|shoot\s?out|duel|\bq[1-3]\b', s):
@@ -151,7 +162,7 @@ def collect_one(meta, root):
     filename = ident if re.fullmatch(r'[a-zA-Z0-9-]+', ident) else hashlib.sha256(ident.encode()).hexdigest()
     path = root / 'raw' / (filename + '.json')
     result = {'id': ident, 'series': meta.get('series'), 'description': meta.get('description'),
-              'family': series_family(meta.get('series', '')), 'audit_version': AUDIT_VERSION,
+              'family': metadata_family(meta), 'audit_version': AUDIT_VERSION,
               'original_source_url': meta.get('analysisFilename'),
               'resolved_source_url': source_url(meta.get('analysisFilename'))}
     try:
@@ -209,7 +220,7 @@ def main():
     root = Path(args.output)
     (root / 'raw').mkdir(parents=True, exist_ok=True)
     catalogue = json.loads(Path(args.catalogue).read_text())
-    selected = [r for r in catalogue if series_family(r.get('series', ''))]
+    selected = [r for r in catalogue if metadata_family(r)]
     (root / 'selected-metadata.json').write_text(json.dumps(selected, ensure_ascii=False))
     outcomes = completed_records(root / 'audit.jsonl', root / 'raw')
     pending = [r for r in selected if r.get('id') not in outcomes]

@@ -191,3 +191,6 @@ validation remain incomplete. Next: reconcile replay observation time with lap
 identity, verify official results and car/layout/rule-year mappings, then fit
 identifiable parameters and report held-out raw-physics errors. No vehicle
 parameter or production behavior was changed in this acquisition revision.
+
+
+Generic-feed coverage: `metadata_family` includes the 20 catalogue records whose series is `timeservice.nl feed` and whose description starts with `Asian Le Mans Series -`. Original labels remain unchanged. This expands the acquisition candidate queue, not fitting eligibility; unrelated support and virtual series are not promoted by event-name matches.
