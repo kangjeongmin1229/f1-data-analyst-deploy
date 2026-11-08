@@ -194,3 +194,5 @@ parameter or production behavior was changed in this acquisition revision.
 
 
 Generic-feed coverage: `metadata_family` includes the 20 catalogue records whose series is `timeservice.nl feed` and whose description starts with `Asian Le Mans Series -`. Original labels remain unchanged. This expands the acquisition candidate queue, not fitting eligibility; unrelated support and virtual series are not promoted by event-name matches.
+
+Bounded analysis batches interleave never-attempted sessions with least-attempted retries. This prevents cached schema failures and missing URLs at the front of the catalogue from consuming every future batch. Failed evidence remains retained and retryable; this ordering does not change fitting eligibility.
