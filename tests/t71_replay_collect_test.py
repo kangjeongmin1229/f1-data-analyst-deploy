@@ -15,6 +15,14 @@ META = {'id': 'example', 'filename': 'https://s3.us-east-005.backblazeb2.com/t71
 
 
 class DownloadTests(unittest.TestCase):
+    def test_tunnel_denial_stops_without_retry(self):
+        denied = urllib.error.URLError('Tunnel connection failed: 403 Forbidden')
+        with tempfile.TemporaryDirectory() as folder, patch.object(module.urllib.request, 'urlopen', side_effect=denied) as call:
+            r = module.acquire(META, Path(folder))
+            self.assertTrue(r['stop'])
+            self.assertEqual(call.call_count, 1)
+            self.assertEqual(list(Path(folder).glob('*.part')), [])
+
     def test_access_denial_stops_batch_without_retry(self):
         denied = urllib.error.HTTPError(META['filename'], 403, 'Denied', {}, None)
         with tempfile.TemporaryDirectory() as folder, patch.object(module.urllib.request, 'urlopen', side_effect=denied) as call:
