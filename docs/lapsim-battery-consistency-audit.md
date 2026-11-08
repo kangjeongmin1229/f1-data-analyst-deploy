@@ -14,9 +14,12 @@ It does not fit to residuals, return observations or update production parameter
   LMH/LMDh. These include extrapolated class/track combinations, not 130 races.
 - F1 2028 Silverstone has an exported-flow battery deficit of
   863.392710821704 J. The existing test tolerates a 1,000 J deficit.
-- Exact instrumentation of 78 F1 cases finds partially funded acceleration in
+- Exact instrumentation of 78 F1 cases finds post-computation power clipping in
   72 cases, 2,784 segments, up to 28,722.0275659784 J omitted from one segment's
   requested DC energy. This is a numerical diagnostic, not measured energy.
+- Independent discrete force/work reconstruction of the original stored-condition
+  outputs finds 3,474 inconsistent segments across 72 of 78 cases. This includes
+  the start/finish discontinuity; it is not a claim of measured energy loss.
 - A one-joule, zero-recovery boundary fixture can maintain 288 km/h while
   reporting no motor energy, despite drag/rolling demand exceeding ICE power.
 - A private research candidate restricts acceleration before accepting a
