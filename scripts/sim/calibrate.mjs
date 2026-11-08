@@ -64,14 +64,12 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   groups.push({key: year, laps, base, params});
 }
 const t0 = Date.now();
-let joint = await fitAll(groups);
-// clean data (common rule): a lap more than 4% off after the fit is not a normal dry lap
-// (wet track, red flag, wrong lap); drop that season's laps on that track and fit again
+const joint = await fitAll(groups);
+// A large residual is not evidence of a bad observation. Retain these laps in
+// fitting and validation until an independent source establishes an input error.
 const bad = joint.perLap.filter(p => Math.abs(p.dt / p.realLap) > 0.04);
 if (bad.length) {
-  for (const g of groups) { const drop = new Set(bad.filter(p => p.group === g.key).map(p => p.name)); g.laps = g.laps.filter(l => !drop.has(l.name)); }
-  report.push(`Dropped (lap more than 4% off after the first fit): ${[...new Set(bad.map(p => p.group + ' ' + p.name))].join(', ')}`, '');
-  joint = await fitAll(groups);
+  report.push(`Retained for investigation (absolute lap error above 4%; no residual-based exclusion): ${[...new Set(bad.map(p => p.group + ' ' + p.name))].join(', ')}`, '');
 }
 report.push(`F1 joint fit of ${groups.map(g => g.key).join(' and ')}: ${((Date.now() - t0) / 1000).toFixed(0)} s, score ${joint.score.toFixed(3)}.`, '');
 for (const g of groups) {
