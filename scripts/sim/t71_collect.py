@@ -116,9 +116,12 @@ def normalize_epoch(value, start, duration):
 def audit(meta, data):
     cars = data.get('cars', {}).get('cars')
     if not isinstance(cars, dict):
-        if all(k in data for k in ('service', 'lap', 'stint')):
+        if 'service' in data and isinstance(data.get('stint'), dict):
             return {'fit_status': 'not_admitted', 'schema': 'legacy',
                     'pending': ['legacy_schema_adapter', 'car_class_and_generation', 'official_session_crosscheck']}
+        if 'service' in data and 'state' in data:
+            return {'fit_status': 'not_admitted', 'schema': 'snapshot_or_partial_legacy',
+                    'pending': ['lap_history_unavailable_or_unlinked', 'replay_required']}
         raise ValueError('analysis cars schema missing')
     counts = collections.Counter()
     fixes = []
@@ -181,13 +184,19 @@ def collect_one(meta, root):
             temporary = path.with_suffix('.part')
             temporary.write_bytes(payload)
             temporary.replace(path)
+        result.update(sha256=hashlib.sha256(payload).hexdigest(), bytes=len(payload), acquisition_status='cached_json')
         result.update(audit(meta, json.loads(payload)))
         result.update(status='audited_not_fitted', sha256=hashlib.sha256(payload).hexdigest(), bytes=len(payload))
     except urllib.error.HTTPError as error:
         result.update(status='failed', error=str(error), http_status=error.code,
                       access_blocked=error.code in (401, 403))
+    except urllib.error.URLError as error:
+        denied = bool(re.search(r'Tunnel connection failed: (401|403)\b|blocked by policy', str(error), re.I))
+        result.update(status='failed', error=str(error), access_blocked=denied,
+                      failure_stage='connection')
     except Exception as error:
-        result.update(status='failed', error=str(error))
+        result.update(status='failed', error=str(error),
+                      failure_stage='schema' if result.get('acquisition_status') else 'acquisition')
     return result
 
 
