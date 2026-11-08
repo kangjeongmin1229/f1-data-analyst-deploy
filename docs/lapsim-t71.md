@@ -109,3 +109,27 @@ destination is permitted through the supported environment configuration; do not
 route the same denied downloads through another proxy or remote executor.
 Offline normalization and coverage work remain available. No model fit or claim
 of continuous background collection is established by this checkpoint.
+
+## LMP2 extraction checkpoint: 2026-11-08
+
+Run `python3 scripts/sim/t71_lmp2.py` after normalization. The offline extractor
+preserves full normalized LMP2 rows in ignored `lmp2-laps.jsonl` and records each
+session/car in `lmp2-inventory.json`. It does not filter by series bucket or lap
+residual. Source hashes and record identities remain intact. Recording year is
+not regulation year: generation, chassis, engine, tyre and series restrictions
+stay unknown pending official evidence. Session/event splits remain unassigned
+until session identity and overlapping recordings are reconciled; split laps
+from a single event must never leak into both calibration and independent tests.
+
+Actual run: 47,736 LMP2-labelled lap records, 494 session/car pairs, 44 source
+sessions. All remain held. Nineteen ingestion regression tests pass. Raw physics
+and post-correction errors are null (not measured), and fitted records remain zero.
+The two latest audit failures are cached schema failures, not demonstrated
+network download failures; one missing analysis URL and one unrecognized source
+URL also remain unresolved. No new downloads were performed in this run because
+the recorded destination policy denial has no verified permission change.
+
+Next: verify replay reconstruction against upstream source; recover lap context
+from the five existing replay ZIPs; resolve official session/car mappings and
+regulation eras, then implement and validate the LMP2 vehicle model. Full archive
+coverage, official-result cross-checking and physical calibration remain open.
