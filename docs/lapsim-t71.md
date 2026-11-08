@@ -8,6 +8,18 @@ array from the archive API. Raw analysis files, selected metadata, per-session
 audit records and a summary are written under ignored `.cache/lapsim/t71`.
 Run `python3 tests/t71_quality_test.py` for the quality-rule regression checks.
 
+Run `python3 scripts/sim/t71_prepare.py` to normalize available raw files offline.
+It uses `t71_legacy.py` for the verified legacy wire layout and writes ignored
+`normalized.jsonl` plus `normalized-summary.json`. Record identities include the
+source session, car, stint and lap array index; repeated qualifying lap numbers
+are not deduplicated. Explicit class labels nominate LMP2/Hypercar/LMGT3/GT3;
+ambiguous PRO/AM/GTP and GT3 Cup labels remain unresolved. Nothing is fit-ready.
+Test with `python3 tests/t71_legacy_test.py` and `python3 tests/t71_prepare_test.py`.
+Legacy format definitions: timing71/livetiming-core commit
+`ae85b4e386e4ce331a24a02a5faff9263f674128`, analysis/data.py,
+analysis/__init__.py and racing.py. Missing per-lap timestamps/numbers/tyres are
+not reconstructed from averages or sequential counters.
+
 Use `--limit 150` for a bounded resumable batch. The limit applies to pending
 records, not the start of the catalogue. Each completed session writes an audit
 record and an atomic summary checkpoint. Successful current-version audits are
@@ -18,6 +30,8 @@ process, so running a command is not evidence of continuous unattended operation
 The collector uses four download workers, caches successfully parsed JSON, limits
 individual payload size and records SHA-256 provenance. A repeat run reuses raw
 files. Failures are recorded separately; they are never counted as successful fits.
+Transient HTTP 429/500/502/503/504 responses retry at most three attempts with
+backoff and bounded Retry-After handling. Access-policy denial is not retried.
 
 ## Coverage
 
