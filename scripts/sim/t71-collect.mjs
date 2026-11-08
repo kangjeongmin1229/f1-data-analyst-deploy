@@ -42,6 +42,8 @@ export function weatherOf(spec = [], samples = []) {
 export function summarise(rep, analysis) {
   const frame = new Map(rep.laps.map(l => [`${l.car}:${l.lap + 1}`, l]));
   const cars = {};
+  const ts = Object.values(analysis?.cars?.cars || {}).flatMap(c => (c.stints || []).flatMap(st => (st.laps || []).map(l => l.timestamp))).filter(Boolean);
+  const t00 = ts.length ? Math.min(...ts) / 1e3 : rep.laps[0]?.t ?? null; // first completed lap (unix s)
   const src = analysis?.cars?.cars || Object.fromEntries([...new Set(rep.laps.map(l => l.car))].map(c => [c, {stints: [{laps: rep.laps.filter(l => l.car === c).map(l => ({lapNumber: l.lap + 1, laptime: l.time, flag: l.flag}))}]}]));
   for (const [car, c] of Object.entries(src)) {
     const laps = (c.stints || []).flatMap(st => st.laps || []).filter(l => l.laptime > 0);
@@ -59,7 +61,9 @@ export function summarise(rep, analysis) {
       laps: laps.length, green: green.length, greenMedian: r3(median(green.map(l => l.laptime))), byTyre,
       stints: (c.stints || []).filter(st => st.laps?.length).map(st => {
         const g = st.laps.filter(l => l.flag === 'green'); const v = st.laps.map(l => fr(l)?.vft).filter(x => x != null && x !== '');
-        return [st.laps[0].lapNumber, st.laps.at(-1).lapNumber, g.length, r3(median(g.map(l => l.laptime))), tyreName(st.laps.at(-1)), v[0] ?? null, v.at(-1) ?? null, st.driver ?? null];
+        const gb = g.length ? Math.min(...g.map(l => l.laptime)) : null; const t0 = st.laps[0].timestamp;
+        // [first lap, last lap, green laps, green median, tyre, VFT first, VFT last, driver, green best, start (s since session start)]
+        return [st.laps[0].lapNumber, st.laps.at(-1).lapNumber, g.length, r3(median(g.map(l => l.laptime))), tyreName(st.laps.at(-1)), v[0] ?? null, v.at(-1) ?? null, st.driver ?? null, r3(gb), t0 && t00 ? Math.round(t0 / 1e3 - t00) : null];
       })};
   }
   return cars;
