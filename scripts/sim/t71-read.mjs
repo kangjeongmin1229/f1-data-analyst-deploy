@@ -77,7 +77,8 @@ export function readReplay(zipPath) {
       }
     }
     const best = Object.fromEntries(Object.values(final?.cars || {}).filter(Array.isArray).map(r => [String(val(r[C.num])), num(r[C.best])]));
-    return {manifest: {colSpec: names, trackDataSpec: manifest.trackDataSpec, name: manifest.name, description: manifest.description}, laps, weather, best};
+    const endFlag = final?.session?.flagState ?? null; // 'chequered' when the recording reached the end of the session
+    return {endFlag, manifest: {colSpec: names, trackDataSpec: manifest.trackDataSpec, name: manifest.name, description: manifest.description}, laps, weather, best};
   } finally { rmSync(dir, {recursive: true, force: true}); }
 }
 

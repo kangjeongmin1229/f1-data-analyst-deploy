@@ -53,7 +53,8 @@ export function summarise(rep, analysis) {
     const green = laps.filter(l => l.flag === 'green');
     const best = laps.reduce((a, l) => l.laptime < a.laptime ? l : a);
     const bf = fr(best);
-    const tyreName = l => { const t = fr(l)?.tyre; return Array.isArray(t) ? (t[1] || t[0]) : t ?? null; };
+    // Tyre letters (S/M/H/W, one per corner when mixed) match the known WEC allocations 549/549; the colour label does not (44 wrong).
+    const tyreName = l => { const t = fr(l)?.tyre; return (Array.isArray(t) ? t[0] || t[1] : t) || null; };
     const byTyre = {};
     for (const l of green) { const t = tyreName(l); if (t && (!byTyre[t] || l.laptime < byTyre[t])) byTyre[t] = l.laptime; }
     cars[car] = {cls: c.raceClass ?? fr(best)?.cls ?? null, make: c.make ?? null, team: c.teamName ?? null,
@@ -93,7 +94,7 @@ async function collect() {
       const rep = readReplay(zip);
       writeFileSync(f, JSON.stringify({key: r.key, series: r.series, description: r.description, kind: r.kind, start: r.startTime,
         duration: r.duration, cols: rep.manifest.colSpec, weather: weatherOf(rep.manifest.trackDataSpec, rep.weather),
-        frameLaps: rep.laps.length, analysis: !!analysis, cars: summarise(rep, analysis)}));
+        frameLaps: rep.laps.length, endFlag: rep.endFlag, analysis: !!analysis, cars: summarise(rep, analysis)}));
       log.done++;
     } catch (x) { log.failed.push([r.description, String(x).slice(0, 120), (x.stack || '').split('\n').slice(1, 4).join(' | ').replace(/file:\/\/\S*\//g, '')]); }
   }
