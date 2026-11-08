@@ -1,0 +1,3478 @@
+[
+ {
+  "series": "IMSA WeatherTech SportsCar Championship",
+  "description": "TireRack.com Battle on the Bricks - Qualifying",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "1": {
+      "raceNum": "1",
+      "raceClass": "GTDPRO",
+      "teamName": "Paul Miller Racing",
+      "make": "BMW M4 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "2": {
+      "raceNum": "2",
+      "raceClass": "LMP2",
+      "teamName": "United Autosports USA",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "3": {
+      "raceNum": "3",
+      "raceClass": "GTDPRO",
+      "teamName": "Corvette Racing by Pratt Miller Motorsports",
+      "make": "CHEVROLET CORVETTE Z06 GT3.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "4": {
+      "raceNum": "4",
+      "raceClass": "GTDPRO",
+      "teamName": "Corvette Racing by Pratt Miller Motorsports",
+      "make": "CHEVROLET CORVETTE Z06 GT3.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "5": {
+      "raceNum": "5",
+      "raceClass": "GTP",
+      "teamName": "JDC-Miller MotorSports",
+      "make": "PORSCHE 963",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "6": {
+      "raceNum": "6",
+      "raceClass": "GTP",
+      "teamName": "Porsche Penske Motorsport",
+      "make": "PORSCHE 963",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "7": {
+      "raceNum": "7",
+      "raceClass": "GTP",
+      "teamName": "Porsche Penske Motorsport",
+      "make": "PORSCHE 963",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "8": {
+      "raceNum": "8",
+      "raceClass": "LMP2",
+      "teamName": "Tower Motorsports",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "9": {
+      "raceNum": "9",
+      "raceClass": "GTDPRO",
+      "teamName": "Pfaff Motorsports",
+      "make": "LAMBORGHINI TEMERARIO GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "10": {
+      "raceNum": "10",
+      "raceClass": "GTP",
+      "teamName": "Cadillac Wayne Taylor Racing",
+      "make": "CADILLAC V-SERIES.R",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "11": {
+      "raceNum": "11",
+      "raceClass": "LMP2",
+      "teamName": "TDS Racing",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "12": {
+      "raceNum": "12",
+      "raceClass": "GTD",
+      "teamName": "Vasser Sullivan Racing",
+      "make": "LEXUS RC F GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "13": {
+      "raceNum": "13",
+      "raceClass": "GTD",
+      "teamName": "13 Autosport",
+      "make": "CHEVROLET CORVETTE Z06 GT3.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "14": {
+      "raceNum": "14",
+      "raceClass": "GTDPRO",
+      "teamName": "Vasser Sullivan Racing",
+      "make": "LEXUS RC F GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "16": {
+      "raceNum": "16",
+      "raceClass": "GTD",
+      "teamName": "Myers Riley Motorsports",
+      "make": "FORD MUSTANG GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "18": {
+      "raceNum": "18",
+      "raceClass": "LMP2",
+      "teamName": "Era Motorsport",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "22": {
+      "raceNum": "22",
+      "raceClass": "LMP2",
+      "teamName": "United Autosports USA",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "23": {
+      "raceNum": "23",
+      "raceClass": "GTP",
+      "teamName": "ASTON MARTIN THOR Team",
+      "make": "ASTON MARTIN VALKYRIE",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "24": {
+      "raceNum": "24",
+      "raceClass": "GTP",
+      "teamName": "BMW M Team WRT",
+      "make": "BMW M HYBRID V8",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "25": {
+      "raceNum": "25",
+      "raceClass": "GTP",
+      "teamName": "BMW M Team WRT",
+      "make": "BMW M HYBRID V8",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "27": {
+      "raceNum": "27",
+      "raceClass": "GTD",
+      "teamName": "Heart of Racing Team",
+      "make": "ASTON MARTIN VANTAGE GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "31": {
+      "raceNum": "31",
+      "raceClass": "GTP",
+      "teamName": "Cadillac Whelen",
+      "make": "CADILLAC V-SERIES.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "34": {
+      "raceNum": "34",
+      "raceClass": "GTD",
+      "teamName": "Conquest Racing",
+      "make": "FERRARI 296 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "36": {
+      "raceNum": "36",
+      "raceClass": "GTD",
+      "teamName": "DXDT Racing",
+      "make": "CHEVROLET CORVETTE Z06 GT3.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "40": {
+      "raceNum": "40",
+      "raceClass": "GTP",
+      "teamName": "Cadillac Wayne Taylor Racing",
+      "make": "CADILLAC V-SERIES.R",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "43": {
+      "raceNum": "43",
+      "raceClass": "LMP2",
+      "teamName": "Inter Europol Competition",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "45": {
+      "raceNum": "45",
+      "raceClass": "GTD",
+      "teamName": "Wayne Taylor Racing",
+      "make": "LAMBORGHINI HURACAN GT3 EVO2",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "52": {
+      "raceNum": "52",
+      "raceClass": "LMP2",
+      "teamName": "Bryan Herta Autosport with PR1/Mathiasen",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "57": {
+      "raceNum": "57",
+      "raceClass": "GTD",
+      "teamName": "Winward Racing",
+      "make": "MERCEDES-AMG GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "59": {
+      "raceNum": "59",
+      "raceClass": "GTDPRO",
+      "teamName": "RLL Team McLaren",
+      "make": "MCLAREN 720S GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "60": {
+      "raceNum": "60",
+      "raceClass": "GTP",
+      "teamName": "Acura Meyer Shank Racing w/Curb Agajanian",
+      "make": "ACURA ARX-06",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       4,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "64": {
+      "raceNum": "64",
+      "raceClass": "GTDPRO",
+      "teamName": "Ford Racing",
+      "make": "FORD MUSTANG GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "65": {
+      "raceNum": "65",
+      "raceClass": "GTDPRO",
+      "teamName": "Ford Racing",
+      "make": "FORD MUSTANG GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "66": {
+      "raceNum": "66",
+      "raceClass": "GTD",
+      "teamName": "Gradient Racing",
+      "make": "FORD MUSTANG GT3",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "68": {
+      "raceNum": "68",
+      "raceClass": "GTDPRO",
+      "teamName": "Car Blanche",
+      "make": "ASTON MARTIN VANTAGE GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "70": {
+      "raceNum": "70",
+      "raceClass": "GTD",
+      "teamName": "Inception Racing",
+      "make": "FERRARI 296 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "73": {
+      "raceNum": "73",
+      "raceClass": "LMP2",
+      "teamName": "Pratt Miller Motorsports",
+      "make": "ORECA LMP2 07",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "77": {
+      "raceNum": "77",
+      "raceClass": "GTDPRO",
+      "teamName": "AO Racing",
+      "make": "PORSCHE 911 GT3 R (992)",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "81": {
+      "raceNum": "81",
+      "raceClass": "GTD",
+      "teamName": "DragonSpeed",
+      "make": "CHEVROLET CORVETTE Z06 GT3.R",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 1,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "93": {
+      "raceNum": "93",
+      "raceClass": "GTP",
+      "teamName": "Acura Meyer Shank Racing w/Curb Agajanian",
+      "make": "ACURA ARX-06",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     215,
+     {
+      "category": "Race Control",
+      "message": "IMPOUND CARS: 60, 31, 24",
+      "style": "raceControl",
+      "carNum": null,
+      "timestamp": 1789856549333
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     5,
+     {
+      "flag": "none",
+      "startTime": 1789851757550,
+      "startLap": 0,
+      "endTime": 1789854302175,
+      "endLap": 1
+     }
+    ],
+    "leaderLap": 12
+   },
+   "state": {
+    "cars": [
+     44,
+     [
+      18,
+      "60"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 2725.6719999313354,
+     "timeRemain": 0,
+     "flagState": "chequered"
+    },
+    "lastUpdated": 1789857025674,
+    "meta": {}
+   },
+   "manifest": {
+    "name": "IMSA WeatherTech SportsCar Championship",
+    "description": "TireRack.com Battle on the Bricks - Qualifying",
+    "colSpec": [
+     18,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1789851755738
+   },
+   "trackData": {
+    "series": {
+     "Air temp": {
+      "label": "Air temp",
+      "unit": "°C",
+      "data": [
+       5,
+       "object"
+      ]
+     },
+     "Track temp": {
+      "label": "Track temp",
+      "unit": "°C",
+      "data": [
+       4,
+       "object"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       36,
+       "object"
+      ]
+     },
+     "Wind speed": {
+      "label": "Wind speed",
+      "unit": "mph",
+      "data": [
+       72,
+       "object"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1789857025682,
+   "version": 3
+  },
+  "analysisSize": 78952,
+  "carSample": "[\"cars\",{\"1\":{\"raceNum\":\"1\",\"raceClass\":\"GTDPRO\",\"teamName\":\"Paul Miller Racing\",\"make\":\"BMW M4 GT3 EVO\",\"drivers\":[{\"idx\":0,\"car\":\"1\",\"name\":\"VERHAGEN, Neil\"}],\"currentLap\":1,\"stints\":[{\"startLap\":1,\"startTime\":1789851755,\"endLap\":1,\"endTime\":1789853486737,\"car\":\"1\",\"driver\":0,\"laps\":[]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"2\":{\"raceNum\":\"2\",\"raceClass\":\"LMP2\",\"teamName\":\"United Autosports USA\",\"make\":\"ORECA LMP2 07\",\"drivers\":[{\"idx\":0,\"car\":\"2\",\"name\":\"FAYER, Phil\"}],\"currentLap\":12,\"stints\":[{\"startLap\":1,\"startTime\":1789851755,\"endLap\":1,\"endTime\":1789853512403,\"car\":\"2\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1789854337471,\"endLap\":12,\"endTime\":1789855562286,\"car\":\"2\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":130.73,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854431409,\"car\":\"2\"},{\"lapNumber\":3,\"laptime\":84.987,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854516430,\"car\":\"2\"},{\"lapNumber\":4,\"laptime\":81.957,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854598338,\"car\":\"2\"},{\"lapNumber\":5,\"laptime\":79.68,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854677899,\"car\":\"2\"},{\"lapNumber\":6,\"laptime\":79.307,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854757317,\"car\":\"2\"},{\"lapNumber\":7,\"laptime\":79.292,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854836506,\"car\":\"2\"},{\"lapNumber\":8,\"laptime\":79.406,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854916016,\"car\":\"2\"},{\"lapNumber\":9,\"laptime\":79.144,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789854995144,\"car\":\"2\"},{\"lapNumber\":10,\"laptime\":78.83,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855073889,\"car\":\"2\"},{\"lapNumber\":11,\"laptime\":78.693,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855152619,\"car\":\"2\"},{\"lapNumber\":12,\"laptime\":78.896,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855231612,\"car\":\"2\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"3\":{\"raceNum\":\"3\",\"raceClass\":\"GTDPRO\",\"teamName\":\"Corvette Racing by Pratt Miller Motorsports\",\"make\":\"CHEVROLET CORVETTE Z06 GT3.R\",\"drivers\":[{\"idx\":0,\"car\":\"3\",\"name\":\"GARCIA, Antonio\"}],\"currentLap\":1,\"stints\":[{\"startLap\":1,\"startTime\":1789851755,\"endLap\":1,\"endTime\":1789853486737,\"car\":\"3\",\"driver\":0,\"laps\":[]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"4\":{\"raceNum\":\"4\",\"raceClass\":\"GTDPRO\",\"teamName\":\"Corvette Racing by Pratt Miller Motorsports\",\"make\":\"CHEVROLET CORVETTE Z06 GT3.R\",\"drivers\":[{\"idx\":0,\"car\":\"4\",\"name\":\"MILNER, Tommy\"}],\"currentLap\":1,\"stints\":[{\"startLap\":1,\"startTime\":1789851755,\"endLap\":1,\"endTime\":1789853486737,\"car\":\"4\",\"driver\":0,\"laps\":[]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"5\":{\"raceNum\":\"5\",\"raceClass\":\"GTP\",\"teamName\":\"JDC-Miller MotorSports\",\"make\":\"PORSCHE 963\",\"drivers\":[{\"idx\":0,\"car\":\"5\",\"name\":\"VAN DER HELM, Tijmen\"}],\"currentLap\":11,\"stints\":[{\"startLap\":1,\"startTime\":1789851755,\"endLap\":1,\"endTime\":1789855562286,\"car\":\"5\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1789855582003,\"endLap\":1,\"endTime\":1789855667005,\"car\":\"5\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":1394.215,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855695062,\"car\":\"5\"}]},{\"startLap\":2,\"startTime\":1789855736661,\"endLap\":11,\"endTime\":1789856536477,\"car\":\"5\",\"driver\":0,\"laps\":[{\"lapNumber\":3,\"laptime\":124.385,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855819358,\"car\":\"5\"},{\"lapNumber\":4,\"laptime\":80.601,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855900730,\"car\":\"5\"},{\"lapNumber\":5,\"laptime\":78.697,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789855979514,\"car\":\"5\"},{\"lapNumber\":6,\"laptime\":78.403,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789856057932,\"car\":\"5\"},{\"lapNumber\":7,\"laptime\":76.943,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789856134744,\"car\":\"5\"},{\"lapNumber\":8,\"laptime\":84.601,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789856218728,\"car\":\"5\"},{\"lapNumber\":9,\"laptime\":76.421,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789856295725,\"car\":\"5\"},{\"lapNumber\":10,\"laptime\":76.24,\"driver\":0,\"flag\":\"green\",\"timestamp\":1789856371731,\"car\":\"5\"},{\"lapNumber\":11,\"laptime\":76.337,\"driver\":0,\"flag\":",
+  "zipSize": 853236,
+  "manifest": {
+   "name": "IMSA WeatherTech SportsCar Championship",
+   "description": "TireRack.com Battle on the Bricks - Qualifying",
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Class",
+     "class"
+    ],
+    [
+     "S/C",
+     "string",
+     "Subclass / group"
+    ],
+    [
+     "PIC",
+     "numeric",
+     "Position in class"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Car",
+     "text"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "VFT",
+     "numeric",
+     "Virtual Fuel Tank % energy remaining (GTP only)"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "trackDataSpec": [
+    "Air temp",
+    "Track temp",
+    "Humidity",
+    "Wind speed"
+   ],
+   "startTime": 1789851755.738,
+   "uuid": "6f0fcffb-df80-4894-b707-174f2fb47a8f",
+   "version": 1
+  },
+  "frames": 1179,
+  "lastFrame": "{\"cars\":[[\"60\",\"FIN\",\"GTP\",null,1,\"BLOMQVIST, Tom\",\"Acura Meyer Shank Racing w/Curb Agajanian\",\"ACURA ARX-06\",10,\"\",\"\",[25.701,\"sb\"],[25.645,\"sb\"],[23.328,\"sb\"],[100.084,\"\"],[74.674,\"sb\"],[79.7,\"\"],\"2\"],[\"31\",\"FIN\",\"GTP\",null,2,\"AITKEN, Jack\",\"Cadillac Whelen\",\"CADILLAC V-SERIES.R\",10,0.301,0.301,[25.724,\"old\"],[25.815,\"old\"],[23.414,\"old\"],[74.975,\"pb\"],[74.975,\"\"],[78.5,\"\"],\"1\"],[\"24\",\"PIT\",\"GTP\",null,3,\"VANTHOOR, Dries\",\"BMW M Team WRT\",\"BMW M HYBRID V8\",9,0.399,0.098,[25.831,\"old\"],[25.798,\"old\"],[23.419,\"old\"],[75.117,\"\"],[75.073,\"\"],[80.1,\"\"],\"2\"],[\"40\",\"PIT\",\"GTP\",null,4,\"DELETRAZ, Louis\",\"Cadillac Wayne Taylor Racing\",\"CADILLAC V-SERIES.R\",10,0.542,0.143,[25.808,\"old\"],[25.91,\"old\"],[23.437,\"old\"],[75.343,\"\"],[75.216,\"\"],[77.5,\"\"],\"2\"],[\"93\",\"PIT\",\"GTP\",null,5,\"YELLOLY, Nick\",\"Acura Meyer Shank Racing w/Curb Agajanian\",\"ACURA ARX-06\",9,0.542,\"\",[25.798,\"old\"],[25.738,\"old\"],[23.566,\"old\"],[75.216,\"pb\"],[75.216,\"\"],[76.1,\"\"],\"2\"],[\"7\",\"PIT\",\"GTP\",null,6,\"ANDLAUER, Julien\",\"Porsche Penske Motorsport\",\"PORSCHE 963\",8,0.561,0.019,[25.819,\"old\"],[25.9,\"old\"],[23.516,\"old\"],[99.147,\"\"],[75.235,\"\"],[83.2,\"\"],\"1\"],[\"10\",\"PIT\",\"GTP\",null,7,\"ALBUQUERQUE, Filipe\",\"Cadillac Wayne Taylor Racing\",\"CADILLAC V-SERIES.R\",10,0.679,0.118,[25.901,\"old\"],[25.884,\"old\"],[23.481,\"old\"],[75.353,\"pb\"],[75.353,\"\"],[76.2,\"\"],\"2\"],[\"6\",\"PIT\",\"GTP\",null,8,\"ESTRE, Kevin\",\"Porsche Penske Motorsport\",\"PORSCHE 963\",10,0.721,0.042,[25.871,\"old\"],[25.972,\"old\"],[23.509,\"old\"],[109.001,\"\"],[75.395,\"\"],[79.5,\"\"],\"1\"],[\"25\",\"FIN\",\"GTP\",null,9,\"ENG, Philipp\",\"BMW M Team WRT\",\"BMW M HYBRID V8\",10,0.804,0.083,[26.011,\"old\"],[25.883,\"old\"],[23.514,\"old\"],[75.478,\"pb\"],[75.478,\"\"],[77.8,\"\"],\"1\"],[\"23\",\"FIN\",\"GTP\",null,10,\"GUNN, Ross\",\"ASTON MARTIN THOR Team\",\"ASTON MARTIN VALKYRIE\",10,0.904,0.1,[25.971,\"old\"],[25.942,\"old\"],[23.574,\"old\"],[75.578,\"pb\"],[75.578,\"\"],[19.5,\"yellow\"],\"1\"],[\"5\",\"PIT\",\"GTP\",null,11,\"VAN DER HELM, Tijmen\",\"JDC-Miller MotorSports\",\"PORSCHE 963\",10,1.566,0.662,[26.212,\"old\"],[26.22,\"old\"],[23.788,\"old\"],[76.337,\"\"],[76.24,\"\"],[77.9,\"\"],\"2\"],[\"43\",\"PIT\",\"LMP2\",null,1,\"CLARKE, Jeremy\",\"Inter Europol Competition\",\"ORECA LMP2 07\",11,2.881,1.315,[26.519,\"old\"],[26.528,\"old\"],[24.415,\"old\"],[77.724,\"\"],[77.555,\"sb\"],[\"\",\"\"],\"1\"],[\"22\",\"PIT\",\"LMP2\",null,2,\"GOLDBURG, Daniel\",\"United Autosports USA\",\"ORECA LMP2 07\",10,3.039,0.158,[26.66,\"old\"],[26.532,\"old\"],[24.433,\"old\"],[77.83,\"\"],[77.713,\"\"],[\"\",\"\"],\"1\"],[\"99\",\"PIT\",\"LMP2\",null,3,\"HYETT, PJ\",\"AO Racing\",\"ORECA LMP2 07\",10,3.096,0.057,[26.503,\"old\"],[26.558,\"old\"],[24.445,\"old\"],[77.836,\"\"],[77.77,\"\"],[\"\",\"\"],\"1\"],[\"52\",\"PIT\",\"LMP2\",null,4,\"GOIKHBERG, Misha\",\"Bryan Herta Autosport with PR1/Mathiasen\",\"ORECA LMP2 07\",11,3.23,0.134,[26.641,\"old\"],[26.676,\"old\"],[24.479,\"old\"],[77.92,\"\"],[77.904,\"\"],[\"\",\"\"],\"1\"],[\"11\",\"PIT\",\"LMP2\",null,5,\"LUTKE, Tobi\",\"TDS Racing\",\"ORECA LMP2 07\",10,3.278,0.048,[26.626,\"old\"],[26.674,\"old\"],[24.568,\"old\"],[78.654,\"\"],[77.952,\"\"],[\"\",\"\"],\"1\"],[\"04\",\"PIT\",\"LMP2\",null,6,\"KURTZ, George\",\"Crowdstrike Racing by APR\",\"ORECA LMP2 07\",10,3.372,0.094,[26.784,\"old\"],[26.665,\"old\"],[24.597,\"old\"],[81.081,\"\"],[78.046,\"\"],[\"\",\"\"],\"1\"],[\"18\",\"PIT\",\"LMP2\",null,7,\"BOULLE, Nick\",\"Era Motorsport\",\"ORECA LMP2 07\",9,3.451,0.079,[26.81,\"old\"],[26.765,\"old\"],[24.55,\"old\"],[78.125,\"pb\"],[78.125,\"\"],[\"\",\"\"],\"2\"],[\"2\",\"PIT\",\"LMP2\",null,8,\"FAYER, Phil\",\"United Autosports USA\",\"ORECA LMP2 07\",11,4.019,0.568,[26.907,\"old\"],[27.103,\"old\"],[24.683,\"old\"],[78.896,\"\"],[78.693,\"\"],[\"\",\"\"],\"1\"],[\"73\",\"PIT\",\"LMP2\",null,9,\"CUMMING, Chris\",\"Pratt Miller Motorsports\",\"ORECA LMP2 07\",11,4.867,0.848,[27.18,\"old\"],[27.38,\"old\"],[24.981,\"old\"],[79.541,\"pb\"],[79.541,\"\"],[\"\",\"\"],\"1\"],[\"8\",\"PIT\",\"LMP2\",null,10,\"FARANO, John\",\"Tower Motorsports\",\"ORECA LMP2 07\",6,5.699,0.832,[27.33,\"old\"],[27.743,\"old\"],[25.131,\"old\"],[80.715,\"\"],[80.373,\"\"],[\"\",\"\"],\"1\"],[\"1\",\"PIT\",\"GTDPRO\",null,1,\"VERHAGEN, Neil\",\"Paul Miller Racing\",\"BMW M4 GT3 EVO\",0,\"\",\"\",[\"\",\"\"],[\"\",\"\"],[\"\",\"\"],[\"\",\"\"],[\"\",\"\"],[29.9,\"\"],\"0\"],[\"3\",\"PIT\","
+ },
+ {
+  "series": "ABB FIA Formula E World Championship",
+  "description": "Round 14 - 2026 TDK Tokyo E-Prix - Qualifying Duel Final",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "13": {
+      "raceNum": "13",
+      "raceClass": null,
+      "teamName": "Jaguar TCS Racing",
+      "make": "JAGUAR I-TYPE 7",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 2,
+      "stints": [
+       0,
+       "undefined"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "27": {
+      "raceNum": "27",
+      "raceClass": null,
+      "teamName": "Andretti Formula E",
+      "make": "PORSCHE 99X ELECTRIC",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 2,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "48": {
+      "raceNum": "48",
+      "raceClass": null,
+      "teamName": "MAHINDRA RACING",
+      "make": "M12ELECTRO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 2,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     16,
+     {
+      "category": "Timing",
+      "message": "#48 (MORTARA, Edoardo) set a new personal best (1:11.915)",
+      "style": "pb",
+      "carNum": "48",
+      "timestamp": 1784966209637
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     3,
+     {
+      "flag": "green",
+      "startTime": 1784965749243,
+      "startLap": 0,
+      "endTime": 1784965754477,
+      "endLap": 2
+     }
+    ],
+    "leaderLap": 2
+   },
+   "state": {
+    "cars": [
+     2,
+     [
+      15,
+      "27"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 369.86500000953674,
+     "timeRemain": 0,
+     "lapsRemain": 0,
+     "flagState": "green"
+    },
+    "lastUpdated": 1784966409865,
+    "meta": {}
+   },
+   "manifest": {
+    "name": "ABB FIA Formula E World Championship",
+    "description": "Round 14 - 2026 TDK Tokyo E-Prix - Qualifying Duel Final",
+    "colSpec": [
+     15,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1784965753000
+   },
+   "trackData": {
+    "series": {
+     "Air temp": {
+      "label": "Air temp",
+      "unit": "°C",
+      "data": [
+       15,
+       "object"
+      ]
+     },
+     "Track temp": {
+      "label": "Track temp",
+      "unit": "°C",
+      "data": [
+       9,
+       "object"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       230,
+       "object"
+      ]
+     },
+     "Wind speed": {
+      "label": "Wind speed",
+      "unit": "kph",
+      "data": [
+       1366,
+       "object"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1784966409870,
+   "version": 3
+  },
+  "analysisSize": 40967,
+  "carSample": "[\"cars\",{\"13\":{\"raceNum\":\"13\",\"raceClass\":null,\"teamName\":\"Jaguar TCS Racing\",\"make\":\"JAGUAR I-TYPE 7\",\"drivers\":[{\"idx\":0,\"car\":\"13\",\"name\":\"DA COSTA, António Félix\"}],\"currentLap\":2,\"stints\":[],\"state\":\"FIN\",\"isInPit\":false,\"highestSeenFlagThisLap\":0},\"27\":{\"raceNum\":\"27\",\"raceClass\":null,\"teamName\":\"Andretti Formula E\",\"make\":\"PORSCHE 99X ELECTRIC\",\"drivers\":[{\"idx\":0,\"car\":\"27\",\"name\":\"DENNIS, Jake\"}],\"currentLap\":2,\"stints\":[{\"startLap\":2,\"startTime\":1784966195663,\"car\":\"27\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":71.863,\"driver\":0,\"flag\":\"green\",\"timestamp\":1784966195735,\"car\":\"27\"}]}],\"state\":\"FIN\",\"isInPit\":false,\"highestSeenFlagThisLap\":0},\"48\":{\"raceNum\":\"48\",\"raceClass\":null,\"teamName\":\"MAHINDRA RACING\",\"make\":\"M12ELECTRO\",\"drivers\":[{\"idx\":0,\"car\":\"48\",\"name\":\"MORTARA, Edoardo\"}],\"currentLap\":2,\"stints\":[{\"startLap\":2,\"startTime\":1784966209565,\"car\":\"48\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":71.915,\"driver\":0,\"flag\":\"green\",\"timestamp\":1784966209637,\"car\":\"48\"}]}],\"state\":\"FIN\",\"isInPit\":false,\"highestSeenFlagThisLap\":0}}]",
+  "zipSize": 98630,
+  "manifest": {
+   "name": "ABB FIA Formula E World Championship",
+   "description": "Round 14 - 2026 TDK Tokyo E-Prix - Qualifying Duel Final",
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Car",
+     "text"
+    ],
+    [
+     "ATK",
+     "text",
+     "Attack mode remaining"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "trackDataSpec": [
+    "Air temp",
+    "Track temp",
+    "Humidity",
+    "Wind speed"
+   ],
+   "startTime": 1784965753,
+   "uuid": "01f663e3-ae42-4c4f-88e8-1949bb1110f1",
+   "version": 1
+  },
+  "frames": 222,
+  "lastFrame": "{\"cars\":[[\"27\",\"FIN\",\"DENNIS, Jake\",\"Andretti Formula E\",\"PORSCHE 99X ELECTRIC\",[null,\"\"],1,\"\",\"\",[29.768,\"old\"],[19.061,\"sb\"],[23.034,\"sb\"],[71.863,\"sb-new\"],[71.863,\"sb\"],\"0\"],[\"48\",\"FIN\",\"MORTARA, Edoardo\",\"MAHINDRA RACING\",\"M12ELECTRO\",[null,\"\"],1,13.007,13.007,[29.551,\"sb\"],[19.084,\"old\"],[23.28,\"old\"],[71.915,\"pb\"],[71.915,\"\"],\"0\"]],\"session\":{\"flagState\":\"green\",\"trackData\":[[30,\"°C\"],[41,\"°C\"],[74,\"%\"],[\"19.0\",\"kph\"]],\"lapsRemain\":0,\"timeElapsed\":369.86500000953674},\"messages\":[[1784966209637,\"Timing\",\"#48 (MORTARA, Edoardo) set a new personal best (1:11.915)\",\"pb\",\"48\"],[1784966196736,\"Timing\",\"#27 (DENNIS, Jake) set a new overall best (1:11.863)\",\"sb\",\"27\"],[1784966195735,\"Timing\",\"#27 (DENNIS, Jake) set a new personal best (1:11.863)\",\"pb\",\"27\"],[1784966195734,\"Race Control\",\"CHEQUERED FLAG\",\"raceControl\"],[1784966192414,\"Race Control\",\"CHEQUERED FLAG\",\"raceControl\"],[1784966192414,\"Race Control\",\"CHEQUERED FLAG\",\"raceControl\"],[1784966136973,\"Pits\",\"#48 (MORTARA, Edoardo) has resumed\",null],[1784966123995,\"Pits\",\"#27 (DENNIS, Jake) has resumed\",null],[1784966071402,\"Pits\",\"#27 (DENNIS, Jake) is running slowly or stopped\",null],[1784966071402,\"Pits\",\"#48 (MORTARA, Edoardo) is running slowly or stopped\",null],[1784966061683,\"Race Control\",\"PIT EXIT CLOSED\",\"raceControl\"],[1784966057182,\"Race Control\",\"GREEN LIGHT - PIT EXIT OPEN\",\"raceControl\"],[1784966047053,\"Race Control\",\"PIT EXIT CLOSED\",\"raceControl\"],[1784966042094,\"Race Control\",\"GREEN LIGHT - PIT EXIT OPEN\",\"raceControl\"],[1784966040913,\"Track\",\"Green flag - track clear\",\"green\"],[1784965951722,\"Race Control\",\"CAR 27 (DEN) AND CAR 48 (MOR) MAY ENTER FAST LANE NOW\",\"raceControl\",\"27\"],[1784965706989,\"Race Control\",\"FINAL DUEL WILL START AT  16:54 LOCAL TIME\",\"raceControl\"],[1784965660777,\"Timing\",\"#48 (MORTARA, Edoardo) set a new overall best (1:11.889)\",\"sb\",\"48\"],[1784965650591,\"Timing\",\"#13 (DA COSTA, António Félix) set a new overall best (1:11.963)\",\"sb\",\"13\"],[1784965647439,\"Race Control\",\"CHEQUERED FLAG\",\"raceControl\"],[1784965646196,\"Race Control\",\"CHEQUERED FLAG\",\"raceControl\"],[1784965588674,\"Pits\",\"#48 (MORTARA, Edoardo) has resumed\",null],[1784965578134,\"Pits\",\"#13 (DA COSTA, António Félix) has resumed\",null],[1784965575514,\"Pits\",\"#13 (DA COSTA, António Félix) is running slowly or stopped\",null],[1784965575514,\"Pits\",\"#48 (MORTARA, Edoardo) is running slowly or stopped\",null],[1784965519957,\"Timing\",\"#27 (DENNIS, Jake) set a new overall best (1:19.531)\",\"sb\",\"27\"],[1784965518956,\"Timing\",\"#27 (DENNIS, Jake) set a new personal best (1:19.531)\",\"pb\",\"27\"],[1784965514668,\"Race Control\",\"PIT EXIT CLOSED\",\"raceControl\"],[1784965509640,\"Race Control\",\"GREEN LIGHT - PIT EXIT OPEN\",\"raceControl\"],[1784965499315,\"Race Control\",\"PIT EXIT CLOSED\",\"raceControl\"],[1784965494495,\"Race Control\",\"GREEN LIGHT - PIT EXIT OPEN\",\"raceControl\"],[1784965439547,\"Pits\",\"#27 (DENNIS, Jake) has resumed\",null],[1784965382288,\"Pits\",\"#27 (DENNIS, Jake) is running slowly or stopped\",null],[1784965382288,\"Pits\",\"#51 (MÜLLER, Nico) is running slowly or stopped\",null],[1784965373470,\"Race Control\",\"CAR 13 (DAC) AND CAR 48 (MOR) MAY ENTER FAST LANE NOW\",\"raceControl\",\"13\"],[1784965359913,\"Race Control\",\"PIT EXIT CLOSED\",\"raceControl\"],[1784965351706,\"Race Control\",\"GREEN FLAG\",\"raceControl\"],[1784965350704,\"Track\",\"Green flag - track clear\",\"green\"],[1784965329689,\"Race Control\",\"SESSION WILL RESTART AT 16:42:30 LOCAL TIME\",\"raceControl\"],[1784965240629,\"Race Control\",\"CAR 27 (DEN) MAY ENTER FAST LANE NOW\",\"raceControl\",\"27\"],[1784965210586,\"Pits\",\"#27 (DENNIS, Jake) has resumed\",null],[1784965210586,\"Pits\",\"#51 (MÜLLER, Nico) has resumed\",null],[1784965194760,\"Pits\",\"#27 (DENNIS, Jake) is running slowly or stopped\",null],[1784965194602,\"Track\",\"Green flag - track clear\",\"green\"],[1784964884041,\"Timing\",\"#27 (DENNIS, Jake) set a new overall best (2:18.462)\",\"sb\",\"27\"],[1784964883039,\"Timing\",\"#27 (DENNIS, Jake) set a new personal best (2:18.462)\",\"pb\",\"27\"],[1784964839071,\"Pits\",\""
+ },
+ {
+  "series": "DTM",
+  "description": "08 Hockenheimring - Qualifying 2",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "3": {
+      "raceNum": "3",
+      "raceClass": null,
+      "teamName": "Schubert Motorsport",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "7": {
+      "raceNum": "7",
+      "raceClass": null,
+      "teamName": "Comtoyou Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "8": {
+      "raceNum": "8",
+      "raceClass": null,
+      "teamName": "Comtoyou Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "10": {
+      "raceNum": "10",
+      "raceClass": null,
+      "teamName": "Red Bull Team ABT",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "11": {
+      "raceNum": "11",
+      "raceClass": null,
+      "teamName": "Schubert Motorsport",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "14": {
+      "raceNum": "14",
+      "raceClass": null,
+      "teamName": "EMIL FREY RACING",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "16": {
+      "raceNum": "16",
+      "raceClass": null,
+      "teamName": "Doerr Motorsport",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "19": {
+      "raceNum": "19",
+      "raceClass": null,
+      "teamName": "TGI Team by GRT",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "22": {
+      "raceNum": "22",
+      "raceClass": null,
+      "teamName": "Mercedes-AMG Team Landgraf",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "25": {
+      "raceNum": "25",
+      "raceClass": null,
+      "teamName": "Doerr Motorsport",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "29": {
+      "raceNum": "29",
+      "raceClass": null,
+      "teamName": "Land Motorsport",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "36": {
+      "raceNum": "36",
+      "raceClass": null,
+      "teamName": "HRT Ford Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "48": {
+      "raceNum": "48",
+      "raceClass": null,
+      "teamName": "Mercedes-AMG Team MANN-FILTER",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "63": {
+      "raceNum": "63",
+      "raceClass": null,
+      "teamName": "TGI Team by GRT",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "64": {
+      "raceNum": "64",
+      "raceClass": null,
+      "teamName": "HRT Ford Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       1,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "69": {
+      "raceNum": "69",
+      "raceClass": null,
+      "teamName": "EMIL FREY RACING",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "80": {
+      "raceNum": "80",
+      "raceClass": null,
+      "teamName": "Mercedes-AMG Team RAVENOL",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "84": {
+      "raceNum": "84",
+      "raceClass": null,
+      "teamName": "Mercedes-AMG Team Landgraf",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "90": {
+      "raceNum": "90",
+      "raceClass": null,
+      "teamName": "Manthey",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "91": {
+      "raceNum": "91",
+      "raceClass": null,
+      "teamName": "Manthey",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     156,
+     {
+      "category": "Pits",
+      "message": "#48 (GOUNON, Jules) has entered the pits",
+      "style": "pit",
+      "carNum": "48",
+      "timestamp": 1791705236755
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     3,
+     {
+      "flag": "none",
+      "startTime": 1791703680772,
+      "startLap": 0,
+      "endTime": 1791703804167,
+      "endLap": 1
+     }
+    ],
+    "leaderLap": 10
+   },
+   "state": {
+    "cars": [
+     20,
+     [
+      18,
+      "29"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 1799,
+     "timeRemain": 0,
+     "flagState": "chequered"
+    },
+    "lastUpdated": 1791705599691,
+    "meta": {
+     "positions": [
+      0,
+      null
+     ]
+    }
+   },
+   "manifest": {
+    "name": "DTM",
+    "description": "08 Hockenheimring - Qualifying 2",
+    "colSpec": [
+     18,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1791703680002
+   },
+   "trackData": {
+    "series": {
+     "Track Temp": {
+      "label": "Track Temp",
+      "unit": "°C",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Air Temp": {
+      "label": "Air Temp",
+      "unit": "°C",
+      "data": [
+       2,
+       "object"
+      ]
+     },
+     "Wind Speed": {
+      "label": "Wind Speed",
+      "unit": "kph",
+      "data": [
+       1,
+       "object"
+      ]
+     },
+     "Wind Dir": {
+      "label": "Wind Dir",
+      "unit": "",
+      "data": [
+       2,
+       "object"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       2,
+       "object"
+      ]
+     },
+     "Pressure": {
+      "label": "Pressure",
+      "unit": "mbar",
+      "data": [
+       1,
+       "object"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1791705599699,
+   "version": 3
+  },
+  "analysisSize": 50607,
+  "carSample": "[\"cars\",{\"3\":{\"raceNum\":\"3\",\"raceClass\":null,\"teamName\":\"Schubert Motorsport\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"3\",\"name\":\"VAN DER LINDE, Kelvin\"}],\"currentLap\":9,\"stints\":[{\"startLap\":1,\"startTime\":1791703680,\"endLap\":1,\"endTime\":1791704002396,\"car\":\"3\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":204.629,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704010403,\"car\":\"3\"}]},{\"startLap\":2,\"startTime\":1791704332758,\"endLap\":9,\"endTime\":1791705161173,\"car\":\"3\",\"driver\":0,\"laps\":[{\"lapNumber\":3,\"laptime\":433.313,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704441372,\"car\":\"3\"},{\"lapNumber\":4,\"laptime\":103.262,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704546982,\"car\":\"3\"},{\"lapNumber\":5,\"laptime\":98.213,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704642584,\"car\":\"3\"},{\"lapNumber\":6,\"laptime\":97.974,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704742200,\"car\":\"3\"},{\"lapNumber\":7,\"laptime\":100.397,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704841316,\"car\":\"3\"},{\"lapNumber\":8,\"laptime\":97.992,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704939431,\"car\":\"3\"},{\"lapNumber\":9,\"laptime\":97.632,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791705037029,\"car\":\"3\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"7\":{\"raceNum\":\"7\",\"raceClass\":null,\"teamName\":\"Comtoyou Racing\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"7\",\"name\":\"THIIM, Nicki\"}],\"currentLap\":7,\"stints\":[{\"startLap\":1,\"startTime\":1791703680,\"endLap\":1,\"endTime\":1791704041435,\"car\":\"7\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":240.46,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704044437,\"car\":\"7\"}]},{\"startLap\":2,\"startTime\":1791704418350,\"endLap\":7,\"endTime\":1791705159170,\"car\":\"7\",\"driver\":0,\"laps\":[{\"lapNumber\":3,\"laptime\":480.267,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704525960,\"car\":\"7\"},{\"lapNumber\":4,\"laptime\":99.503,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704624062,\"car\":\"7\"},{\"lapNumber\":5,\"laptime\":100.715,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704725680,\"car\":\"7\"},{\"lapNumber\":5,\"laptime\":98.92,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704822798,\"car\":\"7\"},{\"lapNumber\":6,\"laptime\":98.893,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704931423,\"car\":\"7\"},{\"lapNumber\":7,\"laptime\":97.699,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791705022013,\"car\":\"7\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"8\":{\"raceNum\":\"8\",\"raceClass\":null,\"teamName\":\"Comtoyou Racing\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"8\",\"name\":\"BAERT, Nicolas\"}],\"currentLap\":10,\"stints\":[{\"startLap\":2,\"startTime\":1791703978198,\"endLap\":2,\"endTime\":1791704118019,\"car\":\"8\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":174.745,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791703978373,\"car\":\"8\"},{\"lapNumber\":3,\"laptime\":145.018,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704123024,\"car\":\"8\"}]},{\"startLap\":3,\"startTime\":1791704361292,\"endLap\":10,\"endTime\":1791705209727,\"car\":\"8\",\"driver\":0,\"laps\":[{\"lapNumber\":4,\"laptime\":352.354,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704475414,\"car\":\"8\"},{\"lapNumber\":5,\"laptime\":107.922,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704587524,\"car\":\"8\"},{\"lapNumber\":6,\"laptime\":99.873,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704682630,\"car\":\"8\"},{\"lapNumber\":7,\"laptime\":99.91,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704782254,\"car\":\"8\"},{\"lapNumber\":8,\"laptime\":99.303,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704881860,\"car\":\"8\"},{\"lapNumber\":9,\"laptime\":98.625,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791704981972,\"car\":\"8\"},{\"lapNumber\":10,\"laptime\":98.562,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791705080082,\"car\":\"8\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"10\":{\"raceNum\":\"10\",\"raceClass\":null,\"teamName\":\"Red Bull Team ABT\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"10\",\"name\":\"MAPELLI, Marco\"}],\"currentLap\":10,\"stints\":[{\"startLap\":1,\"startTime\":1791703680,\"endLap\":1,\"endTime\":1791703989384,\"car\":\"10\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":188.36,\"driver\":0,\"flag\":\"green\",\"timestamp\":1791703991387,\"car\":\"10\"}]},{\"startLap\":2,\"startTime\":1791704239159,\"endLap\":",
+  "zipSize": 632017,
+  "manifest": {
+   "name": "DTM",
+   "description": "08 Hockenheimring - Qualifying 2",
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "T",
+     "text",
+     "Tyre"
+    ],
+    [
+     "TA",
+     "text",
+     "Tyre age - total laps on these tyres from new"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "BS1",
+     "time",
+     "Best sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "BS2",
+     "time",
+     "Best sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "BS3",
+     "time",
+     "Best sector 3 time"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "trackDataSpec": [
+    "Track Temp",
+    "Air Temp",
+    "Wind Speed",
+    "Wind Dir",
+    "Humidity",
+    "Pressure"
+   ],
+   "startTime": 1791703680.002,
+   "uuid": "3b180b3e-ae07-445d-bba2-3e614d9cb4ab",
+   "version": 1
+  },
+  "frames": 1089,
+  "lastFrame": "{\"cars\":[[\"29\",\"PIT\",[\"BUUS, Bastian\",null],\"Land Motorsport\",8,[\"\",\"\"],\"\",null,null,[21.005,\"pb\"],[21.005,\"old\"],[45.328,\"pb\"],[45.328,\"old\"],[30.59,\"\"],[30.466,\"sb\"],[96.923,\"sb\"],[96.923,\"sb\"],[2,\"\"]],[\"90\",\"PIT\",[\"FELLER, Ricardo\",null],\"Manthey\",6,[\"\",\"\"],\"\",0.006,0.006,[21.068,\"pb\"],[21.068,\"old\"],[45.248,\"sb\"],[45.248,\"sb\"],[30.613,\"pb\"],[30.613,\"old\"],[96.929,\"pb\"],[96.929,\"old\"],[2,\"\"]],[\"80\",\"PIT\",[\"ENGEL, Maro\",null],\"Mercedes-AMG Team RAVENOL\",7,[\"\",\"\"],\"\",0.128,0.122,[21.095,\"pb\"],[21.095,\"old\"],[45.403,\"pb\"],[45.403,\"old\"],[30.553,\"pb\"],[30.553,\"old\"],[97.051,\"pb\"],[97.051,\"old\"],[2,\"\"]],[\"48\",\"PIT\",[\"GOUNON, Jules\",null],\"Mercedes-AMG Team MANN-FILTER\",7,[\"\",\"\"],\"\",0.139,0.011,[21.112,\"pb\"],[21.112,\"old\"],[45.419,\"pb\"],[45.419,\"old\"],[30.531,\"\"],[30.525,\"old\"],[97.062,\"pb\"],[97.062,\"old\"],[2,\"\"]],[\"14\",\"PIT\",[\"CAIROLI, Matteo\",null],\"EMIL FREY RACING\",7,[\"\",\"\"],\"\",0.154,0.015,[21.231,\"old\"],[20.979,\"sb\"],[69.414,\"\"],[45.469,\"old\"],[\"\",\"\"],[30.629,\"old\"],[97.077,\"pb\"],[97.077,\"old\"],[2,\"\"]],[\"69\",\"PIT\",[\"VERMEULEN, Thierry\",null],\"EMIL FREY RACING\",8,[\"\",\"\"],\"\",0.273,0.119,[21.305,\"old\"],[21.034,\"old\"],[45.347,\"pb\"],[45.347,\"old\"],[30.622,\"\"],[30.5,\"old\"],[97.274,\"\"],[97.196,\"old\"],[2,\"\"]],[\"91\",\"PIT\",[\"PREINING, Thomas\",null],\"Manthey\",6,[\"\",\"\"],\"\",0.306,0.033,[21.059,\"pb\"],[21.059,\"old\"],[45.405,\"pb\"],[45.405,\"old\"],[30.765,\"pb\"],[30.765,\"old\"],[97.229,\"pb\"],[97.229,\"old\"],[2,\"\"]],[\"10\",\"PIT\",[\"MAPELLI, Marco\",null],\"Red Bull Team ABT\",9,[\"\",\"\"],\"\",0.31,0.004,[21.065,\"pb\"],[21.065,\"old\"],[45.31,\"pb\"],[45.31,\"old\"],[30.858,\"\"],[30.788,\"old\"],[97.233,\"pb\"],[97.233,\"old\"],[2,\"\"]],[\"16\",\"PIT\",[\"GLOCK, Timo\",null],\"Doerr Motorsport\",6,[\"\",\"\"],\"\",0.327,0.017,[21.728,\"old\"],[21.131,\"old\"],[56.092,\"\"],[45.355,\"old\"],[\"\",\"\"],[30.764,\"old\"],[97.25,\"pb\"],[97.25,\"old\"],[2,\"\"]],[\"25\",\"PIT\",[\"DÖRR, Ben\",null],\"Doerr Motorsport\",7,[\"\",\"\"],\"\",0.502,0.175,[21.147,\"pb\"],[21.147,\"old\"],[45.486,\"pb\"],[45.486,\"old\"],[30.792,\"pb\"],[30.792,\"old\"],[97.425,\"pb\"],[97.425,\"old\"],[2,\"\"]],[\"36\",\"PIT\",[\"MAINI, Arjun\",null],\"HRT Ford Racing\",7,[\"\",\"\"],\"\",0.575,0.073,[21.163,\"pb\"],[21.163,\"old\"],[45.304,\"pb\"],[45.304,\"old\"],[31.031,\"\"],[30.865,\"old\"],[97.498,\"pb\"],[97.498,\"old\"],[1,\"\"]],[\"22\",\"PIT\",[\"AUER, Lucas\",null],\"Mercedes-AMG Team Landgraf\",7,[\"\",\"\"],\"\",0.646,0.071,[21.783,\"old\"],[21.259,\"old\"],[47.452,\"\"],[45.597,\"old\"],[\"\",\"\"],[30.713,\"old\"],[97.569,\"pb\"],[97.569,\"old\"],[2,\"\"]],[\"84\",\"PIT\",[\"KALENDER, Tom\",null],\"Mercedes-AMG Team Landgraf\",8,[\"\",\"\"],\"\",0.691,0.045,[21.202,\"pb\"],[21.202,\"old\"],[45.68,\"pb\"],[45.68,\"old\"],[30.732,\"\"],[30.714,\"old\"],[97.614,\"pb\"],[97.614,\"old\"],[2,\"\"]],[\"3\",\"PIT\",[\"VAN DER LINDE, Kelvin\",null],\"Schubert Motorsport\",8,[\"\",\"\"],\"\",0.709,0.018,[21.142,\"pb\"],[21.142,\"old\"],[45.642,\"pb\"],[45.642,\"old\"],[30.848,\"pb\"],[30.848,\"old\"],[97.632,\"pb\"],[97.632,\"old\"],[2,\"\"]],[\"7\",\"PIT\",[\"THIIM, Nicki\",null],\"Comtoyou Racing\",6,[\"\",\"\"],\"\",0.776,0.067,[21.212,\"pb\"],[21.212,\"old\"],[45.538,\"pb\"],[45.538,\"old\"],[30.949,\"pb\"],[30.949,\"old\"],[97.699,\"pb\"],[97.699,\"old\"],[2,\"\"]],[\"11\",\"PIT\",[\"WITTMANN, Marco\",null],\"Schubert Motorsport\",7,[\"\",\"\"],\"\",0.826,0.05,[21.19,\"pb\"],[21.19,\"old\"],[46.661,\"old\"],[45.678,\"old\"],[32.472,\"\"],[30.823,\"old\"],[97.898,\"\"],[97.749,\"old\"],[2,\"\"]],[\"63\",\"PIT\",[\"BORTOLOTTI, Mirko\",null],\"TGI Team by GRT\",8,[\"\",\"\"],\"\",0.863,0.037,[21.275,\"pb\"],[21.275,\"old\"],[45.575,\"pb\"],[45.575,\"old\"],[30.936,\"pb\"],[30.936,\"old\"],[97.786,\"pb\"],[97.786,\"old\"],[2,\"\"]],[\"64\",\"PIT\",[\"WIEBELHAUS, Finn\",null],\"HRT Ford Racing\",7,[\"\",\"\"],\"\",0.888,0.025,[21.046,\"pb\"],[21.046,\"old\"],[45.639,\"pb\"],[45.639,\"old\"],[31.173,\"\"],[30.864,\"old\"],[97.858,\"\"],[97.811,\"old\"],[1,\"\"]],[\"19\",\"PIT\",[\"PAUL, Maximilian\",null],\"TGI Team by GRT\",9,[\"\",\"\"],\"\",0.956,0.068,[21.368,\"old\"],[21.183,\"old\"],[45.479,\"pb\"],[45.479,\"old\"],[31.032,\"pb\"],[31.032,\"old\"],[97.879,\"pb\"],[97.879,\"old\"],[2,\"\"]],[\"8\",\"PIT\",[\"BAERT, Nicolas\",null],\"Comtoyou Racing\",9,[\"\",\"\"],\"\",1.639,0.683,[21.416,\"pb\"],[21.416,\"old\"],[45.984,\"old\"],[45.917,\"old\"],[31.162,\"\"],"
+ },
+ {
+  "series": "GT World Challenge America powered by AWS",
+  "description": "Michelin Raceway Road Atlanta - Qualify 1",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "6": {
+      "raceNum": "6",
+      "raceClass": "Pro",
+      "teamName": "Dollahite Racing",
+      "make": "FORD MUSTANG GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "8": {
+      "raceNum": "8",
+      "raceClass": "Pro",
+      "teamName": "McCann Racing",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "9": {
+      "raceNum": "9",
+      "raceClass": "Pro-Am",
+      "teamName": "TR3 Racing",
+      "make": "MERCEDES-AMG GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "12": {
+      "raceNum": "12",
+      "raceClass": "Pro",
+      "teamName": "AF Corse USA",
+      "make": "FERRARI 296 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "13": {
+      "raceNum": "13",
+      "raceClass": "Pro-Am",
+      "teamName": "Kellymoss",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "14": {
+      "raceNum": "14",
+      "raceClass": "Pro-Am",
+      "teamName": "Riley Technologies",
+      "make": "BMW M4 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "27": {
+      "raceNum": "27",
+      "raceClass": "Pro-Am",
+      "teamName": "JMF Motorsports",
+      "make": "MERCEDES-AMG GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "28": {
+      "raceNum": "28",
+      "raceClass": "Pro-Am",
+      "teamName": "RS1",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "29": {
+      "raceNum": "29",
+      "raceClass": "Pro",
+      "teamName": "Turner Motorsport",
+      "make": "BMW M4 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "31": {
+      "raceNum": "31",
+      "raceClass": "Pro-Am",
+      "teamName": "Wright Motorsports",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 11,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "32": {
+      "raceNum": "32",
+      "raceClass": "Pro-Am",
+      "teamName": "GMG Racing",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "34": {
+      "raceNum": "34",
+      "raceClass": "Pro",
+      "teamName": "JMF Motorsports",
+      "make": "MERCEDES-AMG GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "69": {
+      "raceNum": "69",
+      "raceClass": "Pro-Am",
+      "teamName": "Archangel Motorsports",
+      "make": "MCLAREN 720S GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "71": {
+      "raceNum": "71",
+      "raceClass": "Pro-Am",
+      "teamName": "Rebel Rock Racing",
+      "make": "ASTON MARTIN VANTAGE AMR GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "88": {
+      "raceNum": "88",
+      "raceClass": "Pro-Am",
+      "teamName": "Kellymoss",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "99": {
+      "raceNum": "99",
+      "raceClass": "Pro-Am",
+      "teamName": "Random Vandals Racing",
+      "make": "BMW M4 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "163": {
+      "raceNum": "163",
+      "raceClass": "Am",
+      "teamName": "AF Corse USA",
+      "make": "FERRARI 296 GT3 EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 6,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "242": {
+      "raceNum": "242",
+      "raceClass": "Pro-Am",
+      "teamName": "Wright Motorsports",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "017": {
+      "raceNum": "017",
+      "raceClass": "Pro-Am",
+      "teamName": "Kellymoss",
+      "make": "PORSCHE 911 GT3-R (992) EVO",
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 12,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     135,
+     {
+      "category": "Pro",
+      "message": "#29 (ROTHBERG, Justin) has entered the pits",
+      "style": "pit",
+      "carNum": "29",
+      "timestamp": 1781386821196
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     3,
+     {
+      "flag": "none",
+      "startTime": 1781385727765,
+      "startLap": 0,
+      "endTime": 1781385901764,
+      "endLap": 1
+     }
+    ],
+    "leaderLap": 12
+   },
+   "state": {
+    "cars": [
+     19,
+     [
+      16,
+      "34"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 1102.9690001010895,
+     "timeRemain": 0,
+     "flagState": "chequered"
+    },
+    "lastUpdated": 1781387002969,
+    "meta": {}
+   },
+   "manifest": {
+    "name": "GT World Challenge America powered by AWS",
+    "description": "Michelin Raceway Road Atlanta - Qualify 1",
+    "colSpec": [
+     16,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1781385725950
+   },
+   "trackData": {
+    "series": {
+     "Air temp": {
+      "label": "Air temp",
+      "unit": "°C",
+      "data": [
+       1,
+       "object"
+      ]
+     },
+     "Track temp": {
+      "label": "Track temp",
+      "unit": "°C",
+      "data": [
+       4,
+       "object"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       51,
+       "object"
+      ]
+     },
+     "Wind speed": {
+      "label": "Wind speed",
+      "unit": "kph",
+      "data": [
+       169,
+       "object"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1781387002978,
+   "version": 3
+  },
+  "analysisSize": 53583,
+  "carSample": "[\"cars\",{\"6\":{\"raceNum\":\"6\",\"raceClass\":\"Pro\",\"teamName\":\"Dollahite Racing\",\"make\":\"FORD MUSTANG GT3 EVO\",\"drivers\":[{\"idx\":0,\"car\":\"6\",\"name\":\"LAWRENCE, Cameron\"}],\"currentLap\":8,\"stints\":[{\"startLap\":1,\"startTime\":1781385725,\"endLap\":1,\"endTime\":1781385727768,\"car\":\"6\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1781385959174,\"endLap\":8,\"endTime\":1781386552092,\"car\":\"6\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":123.878,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386024759,\"car\":\"6\"},{\"lapNumber\":3,\"laptime\":92.935,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386118055,\"car\":\"6\"},{\"lapNumber\":4,\"laptime\":88.951,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386206602,\"car\":\"6\"},{\"lapNumber\":5,\"laptime\":80.678,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386287219,\"car\":\"6\"},{\"lapNumber\":6,\"laptime\":80.721,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386367781,\"car\":\"6\"},{\"lapNumber\":7,\"laptime\":80.741,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386448548,\"car\":\"6\"},{\"lapNumber\":8,\"laptime\":80.989,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386529527,\"car\":\"6\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"8\":{\"raceNum\":\"8\",\"raceClass\":\"Pro\",\"teamName\":\"McCann Racing\",\"make\":\"PORSCHE 911 GT3-R (992) EVO\",\"drivers\":[{\"idx\":0,\"car\":\"8\",\"name\":\"MCCANN JR., Michael\"},{\"idx\":1,\"car\":\"8\",\"name\":\"VANIER, Zachary\"}],\"currentLap\":9,\"stints\":[{\"startLap\":1,\"startTime\":1781385725,\"endLap\":1,\"endTime\":1781385727768,\"car\":\"8\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1781385922629,\"endLap\":8,\"endTime\":1781386505357,\"car\":\"8\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":83.796,\"driver\":1,\"flag\":\"green\",\"timestamp\":1781385985656,\"car\":\"8\"},{\"lapNumber\":3,\"laptime\":86.191,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386071400,\"car\":\"8\"},{\"lapNumber\":4,\"laptime\":81.748,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386152511,\"car\":\"8\"},{\"lapNumber\":5,\"laptime\":81.472,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386234025,\"car\":\"8\"},{\"lapNumber\":6,\"laptime\":85.26,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386319407,\"car\":\"8\"},{\"lapNumber\":7,\"laptime\":80.881,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386400207,\"car\":\"8\"},{\"lapNumber\":8,\"laptime\":81.499,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386482658,\"car\":\"8\"}]},{\"startLap\":8,\"startTime\":1781386584343,\"endLap\":9,\"endTime\":1781386673141,\"car\":\"8\",\"driver\":0,\"laps\":[{\"lapNumber\":9,\"laptime\":164.255,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386646830,\"car\":\"8\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"9\":{\"raceNum\":\"9\",\"raceClass\":\"Pro-Am\",\"teamName\":\"TR3 Racing\",\"make\":\"MERCEDES-AMG GT3 EVO\",\"drivers\":[{\"idx\":0,\"car\":\"9\",\"name\":\"WILLIAMS, Brayton\"}],\"currentLap\":10,\"stints\":[{\"startLap\":1,\"startTime\":1781385725,\"endLap\":1,\"endTime\":1781385727768,\"car\":\"9\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1781385956777,\"endLap\":10,\"endTime\":1781386722229,\"car\":\"9\",\"driver\":0,\"laps\":[{\"lapNumber\":2,\"laptime\":128.678,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386029556,\"car\":\"9\"},{\"lapNumber\":3,\"laptime\":92.784,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386122155,\"car\":\"9\"},{\"lapNumber\":4,\"laptime\":86.965,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386209060,\"car\":\"9\"},{\"lapNumber\":5,\"laptime\":81.751,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386290967,\"car\":\"9\"},{\"lapNumber\":6,\"laptime\":81.542,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386372345,\"car\":\"9\"},{\"lapNumber\":7,\"laptime\":81.596,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386454691,\"car\":\"9\"},{\"lapNumber\":8,\"laptime\":81.366,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386535366,\"car\":\"9\"},{\"lapNumber\":9,\"laptime\":84.52,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386620033,\"car\":\"9\"},{\"lapNumber\":10,\"laptime\":81.408,\"driver\":0,\"flag\":\"green\",\"timestamp\":1781386701409,\"car\":\"9\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"12\":{\"raceNum\":\"12\",\"raceClass\":\"Pro\",\"teamName\":\"AF Corse USA\",\"make\":\"FERRARI 296 GT3 EVO\",\"drivers\":[{\"idx\":0,\"car\":\"12\",\"name\":\"PEREZ COMPANC, Matias\"}],\"currentLap\":10,\"stints\":[{\"startLap\":1,\"startTi",
+  "zipSize": 444343,
+  "manifest": {
+   "name": "GT World Challenge America powered by AWS",
+   "description": "Michelin Raceway Road Atlanta - Qualify 1",
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Class",
+     "class"
+    ],
+    [
+     "PIC",
+     "numeric",
+     "Position in class"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Car",
+     "text"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "trackDataSpec": [
+    "Air temp",
+    "Track temp",
+    "Humidity",
+    "Wind speed"
+   ],
+   "startTime": 1781385725.95,
+   "uuid": "72c8c22a-abe6-4cb6-a926-6ea1c07fdb63",
+   "version": 1
+  },
+  "frames": 690,
+  "lastFrame": "{\"cars\":[[\"34\",\"PIT\",\"Pro\",1,\"STEPHENS, Michai\",\"JMF Motorsports\",\"MERCEDES-AMG GT3 EVO\",9,\"\",\"\",[19.988,\"old\"],[30.795,\"old\"],[29.718,\"old\"],[83.623,\"\"],[80.501,\"sb\"],\"1\"],[\"12\",\"PIT\",\"Pro\",2,\"PEREZ COMPANC, Matias\",\"AF Corse USA\",\"FERRARI 296 GT3 EVO\",9,0.012,0.012,[19.97,\"old\"],[30.646,\"sb\"],[29.646,\"sb\"],[80.513,\"pb\"],[80.513,\"\"],\"2\"],[\"6\",\"PIT\",\"Pro\",3,\"LAWRENCE, Cameron\",\"Dollahite Racing\",\"FORD MUSTANG GT3 EVO\",7,0.177,0.165,[19.958,\"sb\"],[30.856,\"old\"],[29.671,\"old\"],[80.989,\"\"],[80.678,\"\"],\"1\"],[\"8\",\"PIT\",\"Pro\",4,\"MCCANN JR., Michael\",\"McCann Racing\",\"PORSCHE 911 GT3-R (992) EVO\",8,0.38,0.203,[20.142,\"old\"],[30.867,\"old\"],[29.806,\"old\"],[164.255,\"\"],[80.881,\"\"],\"2\"],[\"29\",\"PIT\",\"Pro\",5,\"ROTHBERG, Justin\",\"Turner Motorsport\",\"BMW M4 GT3 EVO\",10,0.726,0.346,[20.223,\"old\"],[31.038,\"old\"],[29.853,\"old\"],[81.615,\"\"],[81.227,\"\"],\"1\"],[\"69\",\"PIT\",\"Pro-Am\",1,\"COLEMAN, Todd\",\"Archangel Motorsports\",\"MCLAREN 720S GT3 EVO\",8,0.794,0.068,[20.042,\"sb\"],[31.299,\"old\"],[29.888,\"sb\"],[81.929,\"\"],[81.295,\"sb\"],\"1\"],[\"9\",\"PIT\",\"Pro-Am\",2,\"WILLIAMS, Brayton\",\"TR3 Racing\",\"MERCEDES-AMG GT3 EVO\",9,0.865,0.071,[20.207,\"old\"],[31.187,\"old\"],[29.933,\"old\"],[81.408,\"\"],[81.366,\"\"],\"1\"],[\"31\",\"FIN\",\"Pro-Am\",3,\"MUSIAL JR., Dave\",\"Wright Motorsports\",\"PORSCHE 911 GT3-R (992) EVO\",10,0.969,0.104,[20.164,\"old\"],[31.181,\"sb\"],[30.042,\"old\"],[82.551,\"\"],[81.47,\"\"],\"0\"],[\"27\",\"PIT\",\"Pro-Am\",4,\"DASKALOS, Jason\",\"JMF Motorsports\",\"MERCEDES-AMG GT3 EVO\",7,1.194,0.225,[20.261,\"old\"],[31.47,\"old\"],[29.949,\"old\"],[81.79,\"\"],[81.695,\"\"],\"1\"],[\"14\",\"PIT\",\"Pro-Am\",5,\"STEWART, Slade\",\"Riley Technologies\",\"BMW M4 GT3 EVO\",10,1.243,0.049,[20.159,\"old\"],[31.381,\"old\"],[29.94,\"old\"],[82.607,\"\"],[81.744,\"\"],\"1\"],[\"28\",\"FIN\",\"Pro-Am\",6,\"MARTINEZ, JP\",\"RS1\",\"PORSCHE 911 GT3-R (992) EVO\",10,1.246,0.003,[20.152,\"old\"],[31.291,\"old\"],[30.245,\"old\"],[81.993,\"\"],[81.747,\"\"],\"0\"],[\"99\",\"PIT\",\"Pro-Am\",7,\"DEBOER, Derek\",\"Random Vandals Racing\",\"BMW M4 GT3 EVO\",7,1.814,0.568,[20.408,\"old\"],[31.59,\"old\"],[30.191,\"old\"],[97.565,\"\"],[82.315,\"\"],\"1\"],[\"32\",\"FIN\",\"Pro-Am\",8,\"WASHINGTON, Kyle\",\"GMG Racing\",\"PORSCHE 911 GT3-R (992) EVO\",11,1.872,0.058,[20.378,\"old\"],[31.749,\"old\"],[30.052,\"old\"],[83.002,\"\"],[82.373,\"\"],\"0\"],[\"13\",\"FIN\",\"Pro-Am\",9,\"PARRIOTT, Todd\",\"Kellymoss\",\"PORSCHE 911 GT3-R (992) EVO\",10,2.157,0.285,[20.307,\"old\"],[32.062,\"old\"],[30.186,\"old\"],[82.658,\"pb\"],[82.658,\"\"],\"0\"],[\"017\",\"FIN\",\"Pro-Am\",10,\"CLARK, Michael\",\"Kellymoss\",\"PORSCHE 911 GT3-R (992) EVO\",11,2.2,0.043,[20.607,\"old\"],[31.75,\"old\"],[30.29,\"old\"],[83.078,\"\"],[82.701,\"\"],\"0\"],[\"71\",\"FIN\",\"Pro-Am\",11,\"DEPEW, Frank\",\"Rebel Rock Racing\",\"ASTON MARTIN VANTAGE AMR GT3 EVO\",11,2.457,0.257,[20.464,\"old\"],[32.111,\"old\"],[30.189,\"old\"],[83.074,\"\"],[82.958,\"\"],\"0\"],[\"163\",\"PIT\",\"Am\",1,\"SCHREIBMAN, Jay\",\"AF Corse USA\",\"FERRARI 296 GT3 EVO\",5,2.489,0.032,[20.626,\"sb\"],[31.992,\"sb\"],[30.295,\"sb\"],[82.99,\"sb\"],[82.99,\"sb\"],\"1\"],[\"242\",\"FIN\",\"Pro-Am\",12,\"LAHLOUH, Therese\",\"Wright Motorsports\",\"PORSCHE 911 GT3-R (992) EVO\",11,2.549,0.06,[20.422,\"old\"],[32.371,\"old\"],[30.176,\"old\"],[84.006,\"\"],[83.05,\"\"],\"0\"],[\"88\",\"FIN\",\"Pro-Am\",13,\"GILLILAND, John\",\"Kellymoss\",\"PORSCHE 911 GT3-R (992) EVO\",11,2.842,0.293,[20.583,\"old\"],[31.913,\"old\"],[30.648,\"old\"],[83.647,\"\"],[83.343,\"\"],\"0\"]],\"session\":{\"flagState\":\"chequered\",\"trackData\":[[33,\"°C\"],[42,\"°C\"],[44,\"%\"],[\"2.0\",\"kph\"]],\"timeRemain\":0,\"timeElapsed\":1040.295000076294},\"messages\":[[1781386821196,\"Pro\",\"#29 (ROTHBERG, Justin) has entered the pits\",\"pit\",\"29\"],[1781386810355,\"Pro-Am\",\"#14 (STEWART, Slade) has entered the pits\",\"pit\",\"14\"],[1781386803532,\"Pro-Am\",\"#13 (PARRIOTT, Todd) set a new personal best (1:22.658)\",\"pb\",\"13\"],[1781386800498,\"Track\",\"Chequered flag\",\"track\"],[1781386797592,\"Pro-Am\",\"#017 (CLARK, Michael) set a new personal best (1:22.701)\",\"pb\",\"017\"],[1781386764510,\"Pro-Am\",\"#71 (DEPEW, Frank) set a new personal best (1:22.958)\",\"pb\",\"71\"],[1781386746801,\"Pro-Am\",\"#242 (LAHLOUH, Therese) set a new personal best (1:23.050)\",\"pb\",\"242\"],[1781386722228"
+ },
+ {
+  "series": "FIA World Endurance Championship",
+  "description": "6 Hours of Monza - Qualifying - HYPERCAR",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "7": {
+      "raceNum": "7",
+      "raceClass": "HYPERCAR",
+      "teamName": "TOYOTA RACING",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "8": {
+      "raceNum": "8",
+      "raceClass": "HYPERCAR",
+      "teamName": "TOYOTA RACING",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "12": {
+      "raceNum": "12",
+      "raceClass": "HYPERCAR",
+      "teamName": "CADILLAC HERTZ TEAM JOTA",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "15": {
+      "raceNum": "15",
+      "raceClass": "HYPERCAR",
+      "teamName": "BMW M TEAM WRT",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "17": {
+      "raceNum": "17",
+      "raceClass": "HYPERCAR",
+      "teamName": "GENESIS MAGMA RACING",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "19": {
+      "raceNum": "19",
+      "raceClass": "HYPERCAR",
+      "teamName": "GENESIS MAGMA RACING",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "20": {
+      "raceNum": "20",
+      "raceClass": "HYPERCAR",
+      "teamName": "BMW M TEAM WRT",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "35": {
+      "raceNum": "35",
+      "raceClass": "HYPERCAR",
+      "teamName": "ALPINE ENDURANCE TEAM",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "36": {
+      "raceNum": "36",
+      "raceClass": "HYPERCAR",
+      "teamName": "ALPINE ENDURANCE TEAM",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "38": {
+      "raceNum": "38",
+      "raceClass": "HYPERCAR",
+      "teamName": "CADILLAC HERTZ TEAM JOTA",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "50": {
+      "raceNum": "50",
+      "raceClass": "HYPERCAR",
+      "teamName": "FERRARI AF CORSE",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "51": {
+      "raceNum": "51",
+      "raceClass": "HYPERCAR",
+      "teamName": "FERRARI AF CORSE",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "83": {
+      "raceNum": "83",
+      "raceClass": "HYPERCAR",
+      "teamName": "AF CORSE",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "93": {
+      "raceNum": "93",
+      "raceClass": "HYPERCAR",
+      "teamName": "PEUGEOT TOTALENERGIES",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "94": {
+      "raceNum": "94",
+      "raceClass": "HYPERCAR",
+      "teamName": "PEUGEOT TOTALENERGIES",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "007": {
+      "raceNum": "007",
+      "raceClass": "HYPERCAR",
+      "teamName": "ASTON MARTIN THOR TEAM",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 8,
+      "stints": [
+       2,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "009": {
+      "raceNum": "009",
+      "raceClass": "HYPERCAR",
+      "teamName": "ASTON MARTIN THOR TEAM",
+      "make": null,
+      "drivers": [
+       2,
+       "object"
+      ],
+      "currentLap": 9,
+      "stints": [
+       3,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     127,
+     {
+      "category": "Race Control",
+      "message": "HYPERPOLE HYPERCARS WILL START AT 15:25",
+      "style": "raceControl",
+      "carNum": null,
+      "timestamp": 1794061278427
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     3,
+     {
+      "flag": "none",
+      "startTime": 1794059833318,
+      "startLap": 0,
+      "endTime": 1794060303845,
+      "endLap": 1
+     }
+    ],
+    "leaderLap": 9
+   },
+   "state": {
+    "cars": [
+     17,
+     [
+      22,
+      "50"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 1033,
+     "timeRemain": 0,
+     "flagState": "chequered"
+    },
+    "lastUpdated": 1794061333815,
+    "meta": {
+     "positions": [
+      1,
+      {
+       "raceNum": "string",
+       "lapNumber": "number",
+       "relativeDistance": "number"
+      }
+     ]
+    }
+   },
+   "manifest": {
+    "name": "FIA World Endurance Championship",
+    "description": "6 Hours of Monza - Qualifying - HYPERCAR",
+    "colSpec": [
+     22,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1794059832746
+   },
+   "trackData": {
+    "series": {
+     "Track Temp": {
+      "label": "Track Temp",
+      "unit": "°C",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Air Temp": {
+      "label": "Air Temp",
+      "unit": "°C",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Wind Speed": {
+      "label": "Wind Speed",
+      "unit": "kph",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Wind Dir": {
+      "label": "Wind Dir",
+      "unit": "",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       0,
+       "undefined"
+      ]
+     },
+     "Pressure": {
+      "label": "Pressure",
+      "unit": "mbar",
+      "data": [
+       0,
+       "undefined"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1794061333822,
+   "version": 3
+  },
+  "analysisSize": 41952,
+  "carSample": "[\"cars\",{\"7\":{\"raceNum\":\"7\",\"raceClass\":\"HYPERCAR\",\"teamName\":\"TOYOTA RACING\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"7\",\"name\":\"CONWAY, Mike\",\"ranking\":\"platinum\"},{\"idx\":1,\"car\":\"7\",\"name\":\"KOBAYASHI, Kamui\",\"ranking\":\"platinum\"}],\"currentLap\":8,\"stints\":[{\"startLap\":1,\"startTime\":1794059832,\"endLap\":1,\"endTime\":1794060244779,\"car\":\"7\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1794060329872,\"endLap\":8,\"endTime\":1794061154133,\"car\":\"7\",\"driver\":1,\"laps\":[{\"lapNumber\":2,\"laptime\":136.071,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060437970,\"car\":\"7\"},{\"lapNumber\":3,\"laptime\":100.891,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060538556,\"car\":\"7\"},{\"lapNumber\":4,\"laptime\":99.167,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060637149,\"car\":\"7\"},{\"lapNumber\":5,\"laptime\":101.62,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060740245,\"car\":\"7\"},{\"lapNumber\":7,\"laptime\":95.734,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060932917,\"car\":\"7\"},{\"lapNumber\":8,\"laptime\":95.065,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794061027011,\"car\":\"7\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"8\":{\"raceNum\":\"8\",\"raceClass\":\"HYPERCAR\",\"teamName\":\"TOYOTA RACING\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"8\",\"name\":\"BUEMI, Sébastien\",\"ranking\":\"platinum\"},{\"idx\":1,\"car\":\"8\",\"name\":\"HIRAKAWA, Ryo\",\"ranking\":\"platinum\"}],\"currentLap\":8,\"stints\":[{\"startLap\":1,\"startTime\":1794059832,\"endLap\":1,\"endTime\":1794060244779,\"car\":\"8\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1794060325368,\"endLap\":8,\"endTime\":1794061248728,\"car\":\"8\",\"driver\":1,\"laps\":[{\"lapNumber\":2,\"laptime\":135.488,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060437970,\"car\":\"8\"},{\"lapNumber\":3,\"laptime\":100.79,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060538556,\"car\":\"8\"},{\"lapNumber\":4,\"laptime\":99.304,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060637149,\"car\":\"8\"},{\"lapNumber\":6,\"laptime\":97.42,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060833331,\"car\":\"8\"},{\"lapNumber\":8,\"laptime\":94.785,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794061023007,\"car\":\"8\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"12\":{\"raceNum\":\"12\",\"raceClass\":\"HYPERCAR\",\"teamName\":\"CADILLAC HERTZ TEAM JOTA\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"12\",\"name\":\"STEVENS, Will\",\"ranking\":\"platinum\"},{\"idx\":1,\"car\":\"12\",\"name\":\"NATO, Norman\",\"ranking\":\"gold\"}],\"currentLap\":8,\"stints\":[{\"startLap\":1,\"startTime\":1794059832,\"endLap\":1,\"endTime\":1794060240775,\"car\":\"12\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1794060365901,\"endLap\":8,\"endTime\":1794061166149,\"car\":\"12\",\"driver\":1,\"laps\":[{\"lapNumber\":2,\"laptime\":183.326,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060486015,\"car\":\"12\"},{\"lapNumber\":3,\"laptime\":102.751,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060589105,\"car\":\"12\"},{\"lapNumber\":4,\"laptime\":98.839,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060688192,\"car\":\"12\"},{\"lapNumber\":5,\"laptime\":96.013,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060782785,\"car\":\"12\"},{\"lapNumber\":6,\"laptime\":94.91,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060878369,\"car\":\"12\"},{\"lapNumber\":7,\"laptime\":94.351,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060973960,\"car\":\"12\"},{\"lapNumber\":8,\"laptime\":95.544,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794061067549,\"car\":\"12\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"15\":{\"raceNum\":\"15\",\"raceClass\":\"HYPERCAR\",\"teamName\":\"BMW M TEAM WRT\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"15\",\"name\":\"MAGNUSSEN, Kevin\",\"ranking\":\"platinum\"},{\"idx\":1,\"car\":\"15\",\"name\":\"VANTHOOR, Dries\",\"ranking\":\"platinum\"}],\"currentLap\":8,\"stints\":[{\"startLap\":1,\"startTime\":1794059832,\"endLap\":1,\"endTime\":1794060240775,\"car\":\"15\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1794060328872,\"endLap\":8,\"endTime\":1794061146125,\"car\":\"15\",\"driver\":1,\"laps\":[{\"lapNumber\":2,\"laptime\":139.751,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060441973,\"car\":\"15\"},{\"lapNumber\":4,\"laptime\":98.723,\"driver\":1,\"flag\":\"green\",\"timestamp\":1794060643653,\"car\":\"15\"},{\"lapNumber\":6,\"laptime\":95.339,\"driver\":1,\"flag\":\"gr",
+  "zipSize": 582348,
+  "manifest": {
+   "name": "FIA World Endurance Championship",
+   "description": "6 Hours of Monza - Qualifying - HYPERCAR",
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Class",
+     "class"
+    ],
+    [
+     "PIC",
+     "numeric",
+     "Position in class"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "T",
+     "text",
+     "Tyre"
+    ],
+    [
+     "TA",
+     "text",
+     "Tyre age - total laps on these tyres from new"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "C.Gap",
+     "delta",
+     "Gap to class leader"
+    ],
+    [
+     "C.Int",
+     "delta",
+     "Interval to class car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "BS1",
+     "time",
+     "Best sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "BS2",
+     "time",
+     "Best sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "BS3",
+     "time",
+     "Best sector 3 time"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "trackDataSpec": [
+    "Track Temp",
+    "Air Temp",
+    "Wind Speed",
+    "Wind Dir",
+    "Humidity",
+    "Pressure"
+   ],
+   "startTime": 1794059832.746,
+   "uuid": "87d0ef87-e5ef-41bd-b211-8f9758c9c9eb",
+   "parameters": {
+    "REFERENCE_PIT_TIME_SECONDS": {
+     "description": "(ELMS/LMC) Minimum time of regulation pit stops, in seconds.\n    Pit count indicator will be red until at least one such stop is made, yellow\n    if one or more such stops have been made but more are required, and green\n    once a competitor has fulfilled their obligations.",
+     "label": "Pit stop reference time",
+     "type": "number",
+     "minimum": 0,
+     "unit": "s"
+    }
+   },
+   "version": 1
+  },
+  "frames": 884,
+  "lastFrame": "{\"cars\":[[\"50\",\"PIT\",\"HYPERCAR\",1,[\"FUOCO, Antonio\",\"platinum\"],\"FERRARI AF CORSE\",8,[\"S\",\"tyre-hard\"],\"8\",\"\",\"\",null,null,[30.042,\"pb\"],[30.042,\"old\"],[31.838,\"pb\"],[31.838,\"old\"],[31.52,\"sb\"],[31.52,\"sb\"],[93.4,\"sb\"],[93.4,\"sb\"],[1,\"\"]],[\"19\",\"PIT\",\"HYPERCAR\",2,[\"JAMINET, Mathieu\",\"platinum\"],\"GENESIS MAGMA RACING\",7,[\"S\",\"tyre-hard\"],\"6\",0.392,0.392,0.392,0.392,[30.162,\"pb\"],[30.162,\"old\"],[31.843,\"old\"],[31.833,\"sb\"],[31.787,\"pb\"],[31.787,\"old\"],[93.792,\"pb\"],[93.792,\"old\"],[1,\"\"]],[\"83\",\"PIT\",\"HYPERCAR\",3,[\"KUBICA, Robert\",\"platinum\"],\"AF CORSE\",7,[\"S\",\"tyre-hard\"],\"7\",0.745,0.353,0.48,0.088,[30.203,\"pb\"],[30.203,\"old\"],[31.984,\"pb\"],[31.984,\"old\"],[31.693,\"pb\"],[31.693,\"old\"],[94.145,\"\"],[94.145,\"old\"],[1,\"\"]],[\"51\",\"PIT\",\"HYPERCAR\",4,[\"GIOVINAZZI, Antonio\",\"platinum\"],\"FERRARI AF CORSE\",8,[\"S\",\"tyre-hard\"],\"8\",0.677,\"\",0.677,0.197,[\"\",\"\"],[30.259,\"old\"],[32.042,\"old\"],[32.022,\"old\"],[31.714,\"pb\"],[31.714,\"old\"],[94.077,\"pb\"],[94.077,\"old\"],[1,\"\"]],[\"38\",\"PIT\",\"HYPERCAR\",5,[\"BAMBER, Earl\",\"platinum\"],\"CADILLAC HERTZ TEAM JOTA\",6,[\"S\",\"tyre-hard\"],\"7\",1.001,0.324,0.777,0.1,[30.036,\"pb\"],[30.036,\"old\"],[32.049,\"pb\"],[32.049,\"old\"],[\"\",\"\"],[32.233,\"old\"],[94.401,\"pb\"],[94.401,\"old\"],[1,\"\"]],[\"94\",\"PIT\",\"HYPERCAR\",6,[\"POURCHAIRE, Théo\",\"platinum\"],\"PEUGEOT TOTALENERGIES\",7,[\"S\",\"tyre-hard\"],\"7\",0.835,\"\",0.835,0.058,[\"\",\"\"],[29.962,\"old\"],[\"\",\"invalid\"],[32.211,\"old\"],[\"\",\"invalid\"],[31.976,\"old\"],[94.896,\"\"],[94.235,\"old\"],[1,\"\"]],[\"20\",\"PIT\",\"HYPERCAR\",7,[\"VAN DER LINDE, Sheldon\",\"platinum\"],\"BMW M TEAM WRT\",7,[\"S\",\"tyre-hard\"],\"7\",0.855,0.02,0.855,0.02,[30.051,\"pb\"],[30.051,\"old\"],[32.377,\"pb\"],[32.377,\"old\"],[31.827,\"pb\"],[31.827,\"old\"],[94.255,\"pb\"],[94.255,\"old\"],[0,\"\"]],[\"36\",\"PIT\",\"HYPERCAR\",8,[\"MARTINS, Victor\",\"gold\"],\"ALPINE ENDURANCE TEAM\",7,[\"S\",\"tyre-hard\"],\"7\",0.865,0.01,0.865,0.01,[30.208,\"pb\"],[30.208,\"old\"],[32.039,\"pb\"],[32.039,\"old\"],[32.018,\"\"],[32.005,\"old\"],[94.265,\"pb\"],[94.265,\"old\"],[1,\"\"]],[\"12\",\"PIT\",\"HYPERCAR\",9,[\"NATO, Norman\",\"gold\"],\"CADILLAC HERTZ TEAM JOTA\",7,[\"S\",\"tyre-hard\"],\"7\",0.951,0.086,0.951,0.086,[30.981,\"old\"],[30.289,\"old\"],[32.359,\"old\"],[32.059,\"old\"],[32.204,\"\"],[32.003,\"old\"],[95.544,\"\"],[94.351,\"old\"],[1,\"\"]],[\"93\",\"PIT\",\"HYPERCAR\",10,[\"CASSIDY, Nick\",\"platinum\"],\"PEUGEOT TOTALENERGIES\",6,[\"S\",\"tyre-hard\"],\"6\",1.222,0.271,0.964,0.013,[30.14,\"pb\"],[30.14,\"old\"],[32.303,\"pb\"],[32.303,\"old\"],[31.921,\"pb\"],[31.921,\"old\"],[94.622,\"pb\"],[94.622,\"old\"],[0,\"\"]],[\"35\",\"PIT\",\"HYPERCAR\",11,[\"MILESI, Charles\",\"gold\"],\"ALPINE ENDURANCE TEAM\",6,[\"S\",\"tyre-hard\"],\"7\",1.038,\"\",1.038,0.074,[30.362,\"old\"],[30.308,\"old\"],[32.319,\"old\"],[32,\"old\"],[32.064,\"\"],[31.913,\"old\"],[94.438,\"pb\"],[94.438,\"old\"],[1,\"\"]],[\"009\",\"FIN\",\"HYPERCAR\",12,[\"SØRENSEN, Marco\",\"platinum\"],\"ASTON MARTIN THOR TEAM\",8,[\"S\",\"tyre-hard\"],\"8\",1.092,0.054,1.092,0.054,[30.157,\"old\"],[30.04,\"old\"],[32.125,\"pb\"],[32.125,\"old\"],[32.259,\"pb\"],[32.259,\"old\"],[94.541,\"\"],[94.492,\"old\"],[1,\"\"]],[\"17\",\"PIT\",\"HYPERCAR\",13,[\"JAUBERT, Mathys\",\"silver\"],\"GENESIS MAGMA RACING\",6,[\"S\",\"tyre-hard\"],\"7\",1.167,0.075,1.167,0.075,[29.924,\"sb\"],[29.924,\"sb\"],[34.941,\"\"],[32.256,\"old\"],[\"\",\"\"],[31.887,\"old\"],[95.919,\"\"],[94.567,\"old\"],[1,\"\"]],[\"007\",\"PIT\",\"HYPERCAR\",14,[\"TINCKNELL, Harry\",\"platinum\"],\"ASTON MARTIN THOR TEAM\",7,[\"S\",\"tyre-hard\"],\"7\",1.227,0.06,1.227,0.06,[30.322,\"pb\"],[30.322,\"old\"],[32.138,\"pb\"],[32.138,\"old\"],[32.167,\"pb\"],[32.167,\"old\"],[94.627,\"pb\"],[94.627,\"old\"],[1,\"\"]],[\"8\",\"PIT\",\"HYPERCAR\",15,[\"HIRAKAWA, Ryo\",\"platinum\"],\"TOYOTA RACING\",7,[\"S\",\"tyre-hard\"],\"8\",1.334,0.107,1.334,0.107,[30.206,\"pb\"],[30.206,\"old\"],[32.531,\"old\"],[32.272,\"old\"],[32.049,\"\"],[32.025,\"old\"],[94.785,\"\"],[94.734,\"old\"],[1,\"\"]],[\"7\",\"PIT\",\"HYPERCAR\",16,[\"KOBAYASHI, Kamui\",\"platinum\"],\"TOYOTA RACING\",7,[\"S\",\"tyre-hard\"],\"7\",1.665,0.331,1.665,0.331,[30.399,\"pb\"],[30.399,\"old\"],[32.507,\"pb\"],[32.507,\"old\"],[32.159,\"pb\"],[32.159,\"old\"],[95.065,\"pb\"],[95.065,\"old\"],[1,\"\"]],[\"15\",\"PIT\",\"HYPERCAR\",17,[\"VANTHOOR, Dries\",\"platinum\"],\"BMW M TEAM WRT\",7,[\"S\",\""
+ },
+ {
+  "series": "Formula 1",
+  "description": "Formula 1 Aramco Japanese Grand Prix 2026 - Qualifying",
+  "analysisShape": {
+   "cars": {
+    "cars": {
+     "1": {
+      "raceNum": "1",
+      "raceClass": null,
+      "teamName": "McLaren",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 21,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "3": {
+      "raceNum": "3",
+      "raceClass": null,
+      "teamName": "Red Bull Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 13,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "5": {
+      "raceNum": "5",
+      "raceClass": null,
+      "teamName": "Audi",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 21,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "6": {
+      "raceNum": "6",
+      "raceClass": null,
+      "teamName": "Red Bull Racing",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 18,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "10": {
+      "raceNum": "10",
+      "raceClass": null,
+      "teamName": "Alpine",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 19,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "11": {
+      "raceNum": "11",
+      "raceClass": null,
+      "teamName": "Cadillac",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 7,
+      "stints": [
+       4,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "12": {
+      "raceNum": "12",
+      "raceClass": null,
+      "teamName": "Mercedes",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 16,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "14": {
+      "raceNum": "14",
+      "raceClass": null,
+      "teamName": "Aston Martin",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       5,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "16": {
+      "raceNum": "16",
+      "raceClass": null,
+      "teamName": "Ferrari",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 19,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "18": {
+      "raceNum": "18",
+      "raceClass": null,
+      "teamName": "Aston Martin",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       5,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "23": {
+      "raceNum": "23",
+      "raceClass": null,
+      "teamName": "Williams",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       5,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "27": {
+      "raceNum": "27",
+      "raceClass": null,
+      "teamName": "Audi",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 15,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "30": {
+      "raceNum": "30",
+      "raceClass": null,
+      "teamName": "Racing Bulls",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 16,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "31": {
+      "raceNum": "31",
+      "raceClass": null,
+      "teamName": "Haas F1 Team",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 16,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "41": {
+      "raceNum": "41",
+      "raceClass": null,
+      "teamName": "Racing Bulls",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 22,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "43": {
+      "raceNum": "43",
+      "raceClass": null,
+      "teamName": "Alpine",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 13,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "44": {
+      "raceNum": "44",
+      "raceClass": null,
+      "teamName": "Ferrari",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 21,
+      "stints": [
+       6,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "55": {
+      "raceNum": "55",
+      "raceClass": null,
+      "teamName": "Williams",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 16,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "63": {
+      "raceNum": "63",
+      "raceClass": null,
+      "teamName": "Mercedes",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 22,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "77": {
+      "raceNum": "77",
+      "raceClass": null,
+      "teamName": "Cadillac",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       5,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     },
+     "81": {
+      "raceNum": "81",
+      "raceClass": null,
+      "teamName": "McLaren",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 21,
+      "stints": [
+       7,
+       "object"
+      ],
+      "state": "PIT",
+      "isInPit": true,
+      "highestSeenFlagThisLap": 0
+     },
+     "87": {
+      "raceNum": "87",
+      "raceClass": null,
+      "teamName": "Haas F1 Team",
+      "make": null,
+      "drivers": [
+       1,
+       "object"
+      ],
+      "currentLap": 10,
+      "stints": [
+       4,
+       "object"
+      ],
+      "state": "FIN",
+      "isInPit": false,
+      "highestSeenFlagThisLap": 0
+     }
+    }
+   },
+   "messages": {
+    "messages": [
+     320,
+     {
+      "category": "Race Control",
+      "message": "FIA STEWARDS: Q2 INCIDENT INVOLVING CAR 44 (HAM) NO FURTHER ACTION - FAILING TO FOLLOW RACE DIRECTORS INSTRUCTIONS - MAXIMUM DELTA TIME",
+      "style": "raceControl",
+      "carNum": "44",
+      "timestamp": 1774681412000
+     }
+    ]
+   },
+   "session": {
+    "flagStats": [
+     10,
+     {
+      "flag": "none",
+      "startTime": 1774677441254,
+      "startLap": 0,
+      "endTime": 1774677602490,
+      "endLap": 1
+     }
+    ],
+    "leaderLap": 22
+   },
+   "state": {
+    "cars": [
+     22,
+     [
+      17,
+      "12"
+     ]
+    ],
+    "session": {
+     "timeElapsed": 0,
+     "timeRemain": 0,
+     "flagState": "green"
+    },
+    "lastUpdated": 1774681414602
+   },
+   "manifest": {
+    "name": "Formula 1",
+    "description": "Formula 1 Aramco Japanese Grand Prix 2026 - Qualifying",
+    "colSpec": [
+     17,
+     [
+      3,
+      "Num"
+     ]
+    ],
+    "startTime": 1774677440674
+   },
+   "trackData": {
+    "series": {
+     "Track Temp": {
+      "label": "Track Temp",
+      "unit": "°C",
+      "data": [
+       54,
+       "object"
+      ]
+     },
+     "Air Temp": {
+      "label": "Air Temp",
+      "unit": "°C",
+      "data": [
+       35,
+       "object"
+      ]
+     },
+     "Wind Speed": {
+      "label": "Wind Speed",
+      "unit": " m/s",
+      "data": [
+       65,
+       "object"
+      ]
+     },
+     "Direction": {
+      "label": "Direction",
+      "unit": "°",
+      "data": [
+       67,
+       "object"
+      ]
+     },
+     "Humidity": {
+      "label": "Humidity",
+      "unit": "%",
+      "data": [
+       64,
+       "object"
+      ]
+     },
+     "Pressure": {
+      "label": "Pressure",
+      "unit": " mbar",
+      "data": [
+       34,
+       "object"
+      ]
+     }
+    }
+   },
+   "latestTimestamp": 1774681414608,
+   "version": 3
+  },
+  "analysisSize": 105198,
+  "carSample": "[\"cars\",{\"1\":{\"raceNum\":\"1\",\"raceClass\":null,\"teamName\":\"McLaren\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"1\",\"name\":\"NORRIS, Lando\"}],\"currentLap\":21,\"stints\":[{\"startLap\":1,\"startTime\":1774677440,\"endLap\":1,\"endTime\":1774677441393,\"car\":\"1\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1774677797575,\"endLap\":6,\"endTime\":1774678321490,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":4,\"laptime\":90.676,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774677996988,\"car\":\"1\"},{\"lapNumber\":5,\"laptime\":120.425,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678117405,\"car\":\"1\"},{\"lapNumber\":6,\"laptime\":90.401,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678207805,\"car\":\"1\"},{\"lapNumber\":6,\"laptime\":114.852,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678322729,\"car\":\"1\"}]},{\"startLap\":6,\"startTime\":1774678534514,\"endLap\":9,\"endTime\":1774678849262,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":8,\"laptime\":320.873,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678643564,\"car\":\"1\"},{\"lapNumber\":9,\"laptime\":90.53399999999999,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678734244,\"car\":\"1\"},{\"lapNumber\":9,\"laptime\":116.497,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678850696,\"car\":\"1\"}]},{\"startLap\":9,\"startTime\":1774679273622,\"endLap\":12,\"endTime\":1774679575834,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":11,\"laptime\":524.158,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679374904,\"car\":\"1\"},{\"lapNumber\":12,\"laptime\":89.795,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679464490,\"car\":\"1\"},{\"lapNumber\":12,\"laptime\":113.456,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679578137,\"car\":\"1\"}]},{\"startLap\":12,\"startTime\":1774679737789,\"endLap\":15,\"endTime\":1774680054879,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":14,\"laptime\":271.032,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679848965,\"car\":\"1\"},{\"lapNumber\":15,\"laptime\":90.101,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679938994,\"car\":\"1\"},{\"lapNumber\":15,\"laptime\":117.191,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774680056409,\"car\":\"1\"}]},{\"startLap\":15,\"startTime\":1774680490852,\"endLap\":18,\"endTime\":1774680789838,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":17,\"laptime\":536.254,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774680592777,\"car\":\"1\"},{\"lapNumber\":18,\"laptime\":89.40899999999999,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774680682187,\"car\":\"1\"},{\"lapNumber\":18,\"laptime\":109.25,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774680791286,\"car\":\"1\"}]},{\"startLap\":18,\"startTime\":1774680992179,\"endLap\":21,\"endTime\":1774681303736,\"car\":\"1\",\"driver\":0,\"laps\":[{\"lapNumber\":20,\"laptime\":306.172,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774681097653,\"car\":\"1\"},{\"lapNumber\":21,\"laptime\":89.757,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774681187123,\"car\":\"1\"},{\"lapNumber\":21,\"laptime\":118.844,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774681306246,\"car\":\"1\"}]}],\"state\":\"PIT\",\"isInPit\":true,\"highestSeenFlagThisLap\":0},\"3\":{\"raceNum\":\"3\",\"raceClass\":null,\"teamName\":\"Red Bull Racing\",\"make\":null,\"drivers\":[{\"idx\":0,\"car\":\"3\",\"name\":\"VERSTAPPEN, Max\"}],\"currentLap\":13,\"stints\":[{\"startLap\":1,\"startTime\":1774677440,\"endLap\":1,\"endTime\":1774677441393,\"car\":\"3\",\"driver\":0,\"laps\":[]},{\"startLap\":1,\"startTime\":1774677859810,\"endLap\":4,\"endTime\":1774678164555,\"car\":\"3\",\"driver\":0,\"laps\":[{\"lapNumber\":4,\"laptime\":90.726,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678055208,\"car\":\"3\"},{\"lapNumber\":4,\"laptime\":111.52799999999999,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678166708,\"car\":\"3\"}]},{\"startLap\":4,\"startTime\":1774678376222,\"endLap\":7,\"endTime\":1774678676064,\"car\":\"3\",\"driver\":0,\"laps\":[{\"lapNumber\":6,\"laptime\":311.446,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678478211,\"car\":\"3\"},{\"lapNumber\":7,\"laptime\":90.519,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678568461,\"car\":\"3\"},{\"lapNumber\":7,\"laptime\":108.449,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774678677590,\"car\":\"3\"}]},{\"startLap\":7,\"startTime\":1774679144152,\"endLap\":10,\"endTime\":1774679442954,\"car\":\"3\",\"driver\":0,\"laps\":[{\"lapNumber\":9,\"laptime\":566.487,\"driver\":0,\"flag\":\"green\",\"timestamp\":1774679243423,\"car\":\"3\"},{\"lapNumber\":10,\"lap",
+  "zipSize": 1631965,
+  "manifest": {
+   "colSpec": [
+    [
+     "Num",
+     "text",
+     "Car number"
+    ],
+    [
+     "State",
+     "text"
+    ],
+    [
+     "Driver",
+     "text"
+    ],
+    [
+     "Team",
+     "text"
+    ],
+    [
+     "Laps",
+     "numeric"
+    ],
+    [
+     "T",
+     "text",
+     "Tyre"
+    ],
+    [
+     "TS",
+     "text",
+     "Tyre stint - laps on these tyres since last stop"
+    ],
+    [
+     "TA",
+     "text",
+     "Tyre age - total laps on these tyres from new"
+    ],
+    [
+     "Gap",
+     "delta",
+     "Gap to leader"
+    ],
+    [
+     "Int",
+     "delta",
+     "Interval to car in front"
+    ],
+    [
+     "S1",
+     "time",
+     "Sector 1 time"
+    ],
+    [
+     "S2",
+     "time",
+     "Sector 2 time"
+    ],
+    [
+     "S3",
+     "time",
+     "Sector 3 time"
+    ],
+    [
+     "Spd",
+     "numeric",
+     "Last lap speed"
+    ],
+    [
+     "Last",
+     "laptime",
+     "Last lap time"
+    ],
+    [
+     "Best",
+     "laptime",
+     "Best lap time"
+    ],
+    [
+     "Pits",
+     "numeric"
+    ]
+   ],
+   "name": "Formula 1",
+   "description": "Formula 1 Aramco Japanese Grand Prix 2026 - Qualifying",
+   "trackDataSpec": [
+    "Track Temp",
+    "Air Temp",
+    "Wind Speed",
+    "Direction",
+    "Humidity",
+    "Pressure",
+    "Track"
+   ],
+   "startTime": 1774677440.674,
+   "uuid": "4d495150-4ea6-4e72-ac4f-5cf2e42c1d02",
+   "version": 1
+  },
+  "frames": 2855,
+  "lastFrame": "{\"cars\":[[\"12\",\"PIT\",\"ANTONELLI, Kimi\",\"Mercedes\",15,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[40.038,\"\"],[45.332,\"\"],[31.092,\"\"],\"184\",[116.462,\"\"],[88.77799999999999,\"sb\"],5],[\"63\",\"PIT\",\"RUSSELL, George\",\"Mercedes\",21,[\"S\",\"tyre-soft\"],3,3,\"+0.298\",\"+0.298\",[47.089,\"\"],[51.41,\"\"],[28.858,\"\"],\"208\",[127.357,\"\"],[89.076,\"old\"],6],[\"81\",\"PIT\",\"PIASTRI, Oscar\",\"McLaren\",20,[\"S\",\"tyre-soft\"],3,3,\"+0.354\",\"+0.056\",[41.77,\"\"],[48.504,\"\"],[28.271,\"\"],\"218\",[118.545,\"\"],[89.132,\"old\"],6],[\"16\",\"PIT\",\"LECLERC, Charles\",\"Ferrari\",18,[\"S\",\"tyre-soft\"],2,2,\"+0.627\",\"+0.273\",[43.821,\"\"],[53.573,\"\"],[17.803,\"old\"],\"209\",[89.405,\"pb\"],[89.405,\"old\"],5],[\"1\",\"PIT\",\"NORRIS, Lando\",\"McLaren\",20,[\"S\",\"tyre-soft\"],3,3,\"+0.631\",\"+0.004\",[40.706,\"\"],[49.839,\"\"],[28.299,\"\"],\"199\",[118.844,\"\"],[89.40899999999999,\"old\"],6],[\"44\",\"PIT\",\"HAMILTON, Lewis\",\"Ferrari\",20,[\"S\",\"tyre-soft\"],3,3,\"+0.789\",\"+0.158\",[44.848,\"\"],[54.116,\"\"],[28.951,\"\"],\"209\",[127.915,\"\"],[89.56700000000001,\"old\"],5],[\"10\",\"PIT\",\"GASLY, Pierre\",\"Alpine\",18,[\"S\",\"tyre-soft\"],3,3,\"+0.913\",\"+0.124\",[43.846,\"\"],[51.231,\"\"],[31.271,\"\"],\"204\",[126.348,\"\"],[89.691,\"old\"],6],[\"6\",\"PIT\",\"HADJAR, Isack\",\"Red Bull Racing\",17,[\"S\",\"tyre-soft\"],2,2,\"+1.200\",\"+0.287\",[32.18,\"\"],[53.319,\"\"],[31.189,\"\"],\"204\",[116.688,\"\"],[89.97800000000001,\"old\"],6],[\"5\",\"PIT\",\"BORTOLETO, Gabriel\",\"Audi\",20,[\"S\",\"tyre-soft\"],3,3,\"+1.496\",\"+0.296\",[42.753,\"\"],[53.079,\"\"],[34.707,\"\"],\"163\",[130.539,\"\"],[90.274,\"old\"],6],[\"41\",\"PIT\",\"LINDBLAD, Arvid\",\"Racing Bulls\",21,[\"S\",\"tyre-soft\"],3,3,\"+1.541\",\"+0.045\",[41.654,\"\"],[47.643,\"\"],[33.502,\"\"],\"193\",[122.799,\"\"],[90.319,\"old\"],6],[\"3\",\"FIN\",\"VERSTAPPEN, Max\",\"Red Bull Racing\",12,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[42.613,\"old\"],[46.828,\"old\"],[25.095,\"old\"],\"227\",[null,\"\"],[90.262,\"old\"],4],[\"31\",\"FIN\",\"OCON, Esteban\",\"Haas F1 Team\",15,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[43.157,\"old\"],[49.886,\"old\"],[27.191,\"old\"],\"209\",[null,\"\"],[90.309,\"old\"],4],[\"27\",\"FIN\",\"HULKENBERG, Nico\",\"Audi\",14,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[40.371,\"old\"],[44.979,\"old\"],[23.944,\"old\"],\"231\",[null,\"\"],[90.387,\"old\"],4],[\"30\",\"FIN\",\"LAWSON, Liam\",\"Racing Bulls\",15,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[40.038,\"old\"],[46.174,\"old\"],[28.592,\"old\"],\"191\",[null,\"\"],[90.495,\"old\"],4],[\"43\",\"FIN\",\"COLAPINTO, Franco\",\"Alpine\",12,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[38.35,\"old\"],[46.992,\"old\"],[25.44,\"old\"],\"267\",[null,\"\"],[90.627,\"old\"],4],[\"55\",\"FIN\",\"SAINZ, Carlos\",\"Williams\",15,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[45.418,\"old\"],[50.109,\"old\"],[26.106,\"old\"],\"216\",[null,\"\"],[91.033,\"old\"],5],[\"23\",\"FIN\",\"ALBON, Alexander\",\"Williams\",9,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[40.789,\"old\"],[54.409,\"old\"],[26.168,\"old\"],\"237\",[null,\"\"],[91.088,\"old\"],3],[\"87\",\"FIN\",\"BEARMAN, Oliver\",\"Haas F1 Team\",9,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[48.2,\"old\"],[50.393,\"old\"],[26.287,\"old\"],\"216\",[null,\"\"],[91.09,\"old\"],2],[\"11\",\"FIN\",\"PEREZ, Sergio\",\"Cadillac\",6,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[46.504,\"old\"],[47.406,\"old\"],[28.423,\"old\"],\"186\",[null,\"\"],[92.206,\"old\"],2],[\"77\",\"FIN\",\"BOTTAS, Valtteri\",\"Cadillac\",9,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[41.43,\"old\"],[46.816,\"old\"],[26.174,\"old\"],\"233\",[null,\"\"],[92.33,\"old\"],3],[\"14\",\"FIN\",\"ALONSO, Fernando\",\"Aston Martin\",9,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[41.49,\"old\"],[48.215,\"old\"],[29.326,\"old\"],\"211\",[null,\"\"],[92.646,\"old\"],3],[\"18\",\"FIN\",\"STROLL, Lance\",\"Aston Martin\",9,[\"S\",\"tyre-soft\"],3,3,\"\",\"\",[40.136,\"old\"],[48.268,\"old\"],[26.749,\"old\"],\"208\",[null,\"\"],[92.92,\"old\"],3]],\"session\":{\"flagState\":\"chequered\",\"timeRemain\":0,\"pauseClocks\":true,\"trackData\":[[\"26.1\",\"°C\"],[\"16.4\",\"°C\"],[\"1.6\",\" m/s\"],[\"92\",\"°\"],[\"55.4\",\"%\"],[\"1008.7\",\" mbar\"],\"Dry\"]},\"messages\":[[1774681374714,\"Pits\",\"#16 (LECLERC, Charles) has entered the pits\",\"pit\",\"16\"],[1774681366706,\"Pits\",\"#10 (GASLY, Pierre) has entered the pits\",\"pit\",\"10\"],[1774681354944,\"Pits\",\"#41 (LINDBLAD, Arvid) has entered the pits\",\"pit\",\"41\"],[1774681351252,\"Pits\",\"#5 (BORTOLETO, Gabriel) has entered the pits\",\"pit\",\"5\"],[1774681338854,\"Pits\",\"#44 (HAMILTON, Lewis) has entered the pits\",\"pit\",\"44\""
+ }
+]
