@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-09T00:16:37.271Z",
+ "generatedAt": "2026-11-09T00:20:18.589Z",
  "a": 4.806,
  "k": 0.01776,
  "test": {
@@ -8,9 +8,9 @@
   "rmsC": 3.97,
   "oldAssumptionRmsC": 5.37,
   "t71": {
-   "sessions": 195,
-   "unseenRmsC": 16.94,
-   "candidateRmsC": 3.98,
+   "sessions": 189,
+   "unseenRmsC": 4.96,
+   "candidateRmsC": 3.97,
    "gate": "rejected: worse on held-out rows",
    "used": false
   }
