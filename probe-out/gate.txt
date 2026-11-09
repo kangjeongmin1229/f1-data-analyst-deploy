@@ -1,0 +1,2 @@
+- Timing71 wec practice: 21 sessions, end error 0.827% → 0.8849%, rejected: worse on held-out rows
+- Timing71 wec qualifying: 25 sessions, end error 1.2345% → 1.9461%, rejected: worse on held-out rows

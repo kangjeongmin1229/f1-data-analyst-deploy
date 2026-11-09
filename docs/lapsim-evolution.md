@@ -1,13 +1,13 @@
 # Track evolution
 
-Generated 2026-11-07T22:17:19.086Z.
+Generated 2026-11-09T00:28:36.567Z.
 
 Holdout: each session curve predicted without itself — from the same track in other seasons when available, else from the other tracks of the same series and session type. Curve error = RMS gap between predicted and measured lap-time change over the session; end error = gap at the last minute. "No model" = assuming the track does not change.
 
 | Series | Session | Sessions | Gain % | τ min | Curve error % | End error % | No model, end % |
 |---|---|---|---|---|---|---|---|
 | f1 | practice | 386 | 3.70 | 87.5 | 5.9005 | 1.4539 | 1.7475 |
-| f1 | qualifying | 169 | 1.80 | 20 | 1.1254 | 1.0106 | 1.8465 |
+| f1 | qualifying | 169 | 1.80 | 20 | 1.1184 | 0.9891 | 1.8465 |
 | wec | practice | 37 | -0.54 | 15 | 0.6798 | 0.827 | 0.8915 |
 | wec | qualifying | 30 | 8.42 | 150 | 0.7853 | 1.2345 | 1.15 |
 
@@ -830,3 +830,65 @@ Holdout: each session curve predicted without itself — from the same track in 
 - wec-2026-monza-hyperpole-lmgt3.json: 35 push laps, 10 cars, end -1.7546%, fit RMS 0.2856%
 - wec-2026-monza-qualifying-hypercar.json: 54 push laps, 17 cars, end -1.535%, fit RMS 0.344%
 - wec-2026-monza-hyperpole-hypercar.json: 27 push laps, 10 cars, end -1.6767%, fit RMS 0.2382%
+- t71-wec-2023-fuji-6 hours of fuji - race-1694311079.json: few laps
+- t71-wec-2023-fuji-p3-1694222273.json: 255 push laps, 36 cars, end -1.0738%, fit RMS 0.5525%
+- t71-wec-2023-fuji-qhypercar-1694237823.json: 124 push laps, 33 cars, end -25.523%, fit RMS 0.3739%
+- t71-wec-2023-le-mans-p1-1686139631.json: 81 push laps, 33 cars, end -0.0064%, fit RMS 0.4505%
+- t71-wec-2023-le-mans-p3-1686229061.json: 287 push laps, 51 cars, end 0.2088%, fit RMS 0.5304%
+- t71-wec-2023-le-mans-p4-1686254224.json: 75 push laps, 34 cars, end -2.4225%, fit RMS 0.3154%
+- t71-wec-2023-le-mans-q-1686157043.json: few laps
+- t71-wec-2023-monza-6 hours of monza - race-1688898426.json: few laps
+- t71-wec-2023-monza-p3-1688805740.json: 344 push laps, 36 cars, end 0.2841%, fit RMS 0.5593%
+- t71-wec-2023-monza-qgt-1688819846.json: 31 push laps, 12 cars, end -3.5731%, fit RMS 0.2874%
+- t71-wec-2023-portimao-6 hours of portimão - race-1681642677.json: 1683 push laps, 37 cars, end 0.0071%, fit RMS 0.4801%
+- t71-wec-2023-portimao-p3-1681552666.json: 235 push laps, 36 cars, end 0.0002%, fit RMS 0.5643%
+- t71-wec-2023-sakhir-bahrain 2023 - race-1699095425.json: 592 push laps, 36 cars, end 1.3611%, fit RMS 0.3585%
+- t71-wec-2023-sebring-p2-1678912199.json: 369 push laps, 37 cars, end 0.1616%, fit RMS 0.5449%
+- t71-wec-2023-sebring-qhypercar-1679005672.json: 101 push laps, 30 cars, end -0.4845%, fit RMS 0.2822%
+- t71-wec-2023-spa-francorchamps-p3-1682672271.json: 83 push laps, 26 cars, end 0.1997%, fit RMS 0.5787%
+- t71-wec-2023-spa-francorchamps-qhypercar-1682693822.json: 46 push laps, 19 cars, end -37.4397%, fit RMS 0.3206%
+- t71-wec-2023-spa-francorchamps-totalenergies 6 hours of spa-francorchamps - race-1682764963.json: 775 push laps, 37 cars, end 0.3%, fit RMS 0.5139%
+- t71-wec-2024-austin-hpgt-1725135400.json: few laps
+- t71-wec-2024-austin-lone star le mans (cota) - race-1725214253.json: 3446 push laps, 36 cars, end -0.4432%, fit RMS 0.4701%
+- t71-wec-2024-austin-p1-1725039437.json: 429 push laps, 36 cars, end -0.2532%, fit RMS 0.5749%
+- t71-wec-2024-austin-p2-1725055648.json: 553 push laps, 36 cars, end 0.0762%, fit RMS 0.527%
+- t71-wec-2024-austin-p3-1725119846.json: 401 push laps, 36 cars, end -0.0887%, fit RMS 0.5077%
+- t71-wec-2024-austin-qgt-1725134257.json: 45 push laps, 17 cars, end -185.1386%, fit RMS 0.3274%
+- t71-wec-2024-austin-qhypercar-1725136838.json: 25 push laps, 12 cars, end 0.5281%, fit RMS 0.2517%
+- t71-wec-2024-fuji-6 hours of fuji - race-1726365459.json: 3514 push laps, 36 cars, end 0.3348%, fit RMS 0.4608%
+- t71-wec-2024-fuji-hpgt-1726292415.json: 36 push laps, 10 cars, end -0.0671%, fit RMS 0.2847%
+- t71-wec-2024-fuji-hphypercar-1726294815.json: few laps
+- t71-wec-2024-fuji-p3-1726276625.json: 273 push laps, 34 cars, end 0.4306%, fit RMS 0.4663%
+- t71-wec-2024-fuji-qgt-1726291031.json: 57 push laps, 16 cars, end -2.4449%, fit RMS 0.2282%
+- t71-wec-2024-fuji-qhypercar-1726293431.json: 44 push laps, 17 cars, end 0.1034%, fit RMS 0.1757%
+- t71-wec-2024-imola-6 hours of imola - race-1713697075.json: 2714 push laps, 37 cars, end 0.2761%, fit RMS 0.5109%
+- t71-wec-2024-imola-p1-1713520670.json: 201 push laps, 35 cars, end -1.0179%, fit RMS 0.5518%
+- t71-wec-2024-imola-p3-1713604021.json: 367 push laps, 37 cars, end -5.9432%, fit RMS 0.5246%
+- t71-wec-2024-imola-qgt-1713616925.json: 69 push laps, 18 cars, end -0.9064%, fit RMS 0.2548%
+- t71-wec-2024-interlagos-hpgt-1720893050.json: 26 push laps, 9 cars, end -1.2339%, fit RMS 0.3742%
+- t71-wec-2024-interlagos-hphypercar-1720895209.json: 26 push laps, 10 cars, end 47.723%, fit RMS 0.3709%
+- t71-wec-2024-interlagos-p1-1720791739.json: 83 push laps, 25 cars, end -7.7232%, fit RMS 0.4597%
+- t71-wec-2024-interlagos-p2-1720805245.json: 759 push laps, 36 cars, end 0.5436%, fit RMS 0.503%
+- t71-wec-2024-interlagos-p3-1720877242.json: 384 push laps, 36 cars, end 0.7341%, fit RMS 0.4949%
+- t71-wec-2024-interlagos-qgt-1720891666.json: 55 push laps, 17 cars, end -0.1005%, fit RMS 0.274%
+- t71-wec-2024-interlagos-qhypercar-1720894066.json: 45 push laps, 18 cars, end -0.0149%, fit RMS 0.2564%
+- t71-wec-2024-interlagos-rolex 6 hours of são paulo - race-1720967253.json: 1844 push laps, 36 cars, end 0.6197%, fit RMS 0.4456%
+- t71-wec-2024-le-mans-24 hours of le mans - race-1718459822.json: 4271 push laps, 62 cars, end -0.0384%, fit RMS 0.4747%
+- t71-wec-2024-le-mans-hp-1718302373.json: 67 push laps, 22 cars, end -1.3099%, fit RMS 0.2251%
+- t71-wec-2024-le-mans-p4-1718310476.json: 210 push laps, 50 cars, end 1.0922%, fit RMS 0.524%
+- t71-wec-2024-lusail-hpgt-1709300278.json: 29 push laps, 10 cars, end -0.382%, fit RMS 0.1607%
+- t71-wec-2024-lusail-p1-1709198121.json: 572 push laps, 37 cars, end -1.6229%, fit RMS 0.534%
+- t71-wec-2024-lusail-p2-1709217113.json: 466 push laps, 37 cars, end -2.7608%, fit RMS 0.5038%
+- t71-wec-2024-lusail-qatar airways qatar 1812 km - race-1709366250.json: 4877 push laps, 37 cars, end -0.469%, fit RMS 0.4373%
+- t71-wec-2024-lusail-qgt-1709297876.json: 54 push laps, 16 cars, end -0.9223%, fit RMS 0.342%
+- t71-wec-2024-sakhir-bapco energies 8 hours of bahrain - race-1730545067.json: 2144 push laps, 36 cars, end 0.018%, fit RMS 0.461%
+- t71-wec-2024-sakhir-hpgt-1730466724.json: few laps
+- t71-wec-2024-sakhir-hphypercar-1730469123.json: few laps
+- t71-wec-2024-sakhir-p1-1730366153.json: 254 push laps, 36 cars, end 2.0357%, fit RMS 0.4778%
+- t71-wec-2024-sakhir-p2-1730384826.json: 343 push laps, 34 cars, end 1.0961%, fit RMS 0.4641%
+- t71-wec-2024-sakhir-p3-1730451470.json: 317 push laps, 35 cars, end 1.9043%, fit RMS 0.3804%
+- t71-wec-2024-sakhir-qgt-1730465880.json: 36 push laps, 15 cars, end -0.5564%, fit RMS 0.3648%
+- t71-wec-2024-sakhir-qhypercar-1730468221.json: few laps
+- t71-wec-2024-spa-francorchamps-totalenergies 6 hours of spa-francorchamps - race-1715425069.json: 968 push laps, 37 cars, end 0.1224%, fit RMS 0.5057%
+- Timing71 wec practice: 21 sessions, end error 0.827% → 0.8849%, rejected: worse on held-out rows
+- Timing71 wec qualifying: 25 sessions, end error 1.2345% → 1.9461%, rejected: worse on held-out rows

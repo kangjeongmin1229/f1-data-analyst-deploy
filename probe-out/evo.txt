@@ -1,0 +1,12 @@
+# Track evolution
+
+Generated 2026-11-09T00:28:36.567Z.
+
+Holdout: each session curve predicted without itself — from the same track in other seasons when available, else from the other tracks of the same series and session type. Curve error = RMS gap between predicted and measured lap-time change over the session; end error = gap at the last minute. "No model" = assuming the track does not change.
+
+| Series | Session | Sessions | Gain % | τ min | Curve error % | End error % | No model, end % |
+|---|---|---|---|---|---|---|---|
+| f1 | practice | 386 | 3.70 | 87.5 | 5.9005 | 1.4539 | 1.7475 |
+| f1 | qualifying | 169 | 1.80 | 20 | 1.1184 | 0.9891 | 1.8465 |
+| wec | practice | 37 | -0.54 | 15 | 0.6798 | 0.827 | 0.8915 |
+| wec | qualifying | 30 | 8.42 | 150 | 0.7853 | 1.2345 | 1.15 |
