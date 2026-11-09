@@ -1,4 +1,69 @@
-[{"name":"A","env":{"LAPSIM_TRACK_DRAG":"on"}},
- {"name":"B","env":{"LAPSIM_TRACK_DRAG":"off"}},
- {"name":"C","env":{"LAPSIM_TRACK_DRAG":"off","LAPSIM_GRIP_LO":"0.9","LAPSIM_GRIP_HI":"1.1"}},
- {"name":"D","env":{"LAPSIM_TRACK_DRAG":"off","LAPSIM_GRIP_LO":"0.95","LAPSIM_GRIP_HI":"1.05"}}]
+[
+{
+"name": "A",
+"env": {
+"LAPSIM_TRACK_DRAG": "on"
+}
+},
+{
+"name": "B",
+"env": {
+"LAPSIM_TRACK_DRAG": "off"
+}
+},
+{
+"name": "C",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_GRIP_LO": "0.9",
+"LAPSIM_GRIP_HI": "1.1"
+}
+},
+{
+"name": "D",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_GRIP_LO": "0.95",
+"LAPSIM_GRIP_HI": "1.05"
+}
+},
+{
+"name": "E",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_KV": "on"
+}
+},
+{
+"name": "F",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_AXLE": "on"
+}
+},
+{
+"name": "G",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_AXLE": "on",
+"LAPSIM_KV": "on"
+}
+},
+{
+"name": "H",
+"env": {
+"LAPSIM_TRACK_DRAG": "on",
+"LAPSIM_AXLE": "on",
+"LAPSIM_KV": "on"
+}
+},
+{
+"name": "I",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_AXLE": "on",
+"LAPSIM_KV": "on",
+"LAPSIM_LOADEXP": "0.75"
+}
+}
+]

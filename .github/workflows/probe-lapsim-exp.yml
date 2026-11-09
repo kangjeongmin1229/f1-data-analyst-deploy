@@ -44,6 +44,8 @@ jobs:
           node scripts/sim/calibrate.mjs > /tmp/cal.log 2>&1 || (tail -50 /tmp/cal.log; exit 1)
           grep -E "WARNING|holdout|rejected|accepted" /tmp/cal.log | tail -60 || true
           node scripts/sim/exp-summary.mjs ${{ matrix.name }}
+          node scripts/sim/validate.mjs ${{ matrix.name }} > /dev/null || echo validate failed
+          node scripts/sim/intervals.mjs $PWD/worker/lapsim/calibration-data.js > probe-out/intervals-${{ matrix.name }}.json || true
           cp worker/lapsim/calibration-data.js probe-out/cal-${{ matrix.name }}.js
           tail -200 /tmp/cal.log > probe-out/log-${{ matrix.name }}.txt
       - uses: actions/upload-artifact@v4
