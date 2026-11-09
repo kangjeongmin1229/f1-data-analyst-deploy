@@ -1,0 +1,53 @@
+name: Probe evolution with Timing71
+on:
+  push:
+    branches: ['probe/t71-evo']
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/sim/t71-collect.mjs
+        env:
+          T71_SHARD: ${{ matrix.shard }}
+          T71_SHARDS: 4
+          T71_EVO: '1'
+          T71_KEYS: wec
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evo-${{ matrix.shard }}
+          path: .cache/lapsim/t71/evolution
+          retention-days: 3
+  fit:
+    needs: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --omit=dev --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: evo-*
+          path: .cache/t71evo
+          merge-multiple: true
+      - run: node scripts/sim/fetch-evolution.mjs
+        timeout-minutes: 150
+      - run: mkdir -p probe-out && ls .cache/t71evo | wc -l > probe-out/t71evo-count.txt && LAPSIM_T71_EVO=.cache/t71evo node scripts/sim/evolution-fit.mjs | tee probe-out/evo.txt
+      - if: always()
+        run: |
+          grep -h "Timing71" docs/lapsim-evolution.md > probe-out/gate.txt || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f probe-out worker/lapsim/evolution-data.js docs/lapsim-evolution.md && git commit -m "evolution probe result" && git push
