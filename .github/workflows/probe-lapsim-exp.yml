@@ -35,6 +35,7 @@ jobs:
           mkdir -p /tmp/in && git --work-tree=/tmp/in checkout FETCH_HEAD -- probe-out
           cat /tmp/in/probe-out/lapsim-inputs.tgz.part-* | tar xzf -
           ls -la .cache/lapsim
+          node -e "const fs=require('fs');const W=JSON.parse(fs.readFileSync('scripts/sim/data/wet-sessions.json','utf8')).wec;const w=JSON.parse(fs.readFileSync('.cache/lapsim/wec.json','utf8'));let n=0;for(const s of w)if(s.weather&&W[s.year+' '+s.track]){s.weather.rain=true;n++}fs.writeFileSync('.cache/lapsim/wec.json',JSON.stringify(w));console.log('wet',n)"
       - name: Calibrate
         run: |
           export LAPSIM_FITTER=bcd LAPSIM_ROUNDS=5 LAPSIM_BCD_ITERS=200 LAPSIM_WTIME=20 LAPSIM_WSECTOR=2 LAPSIM_TEAMS=on LAPSIM_WPRIOR=8
