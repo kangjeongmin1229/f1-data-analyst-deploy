@@ -1,0 +1,15 @@
+# Subtest: WEC sector correction: every raced dry session of the calibrated season reproduces the real best lap
+ok 63 - WEC sector correction: every raced dry session of the calibrated season reproduces the real best lap
+  ---
+  duration_ms: 788.64779
+  type: 'test'
+  ...
+1..63
+# tests 63
+# suites 0
+# pass 63
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5957.241803
