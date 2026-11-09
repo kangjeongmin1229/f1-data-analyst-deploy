@@ -1,0 +1,33 @@
+name: Probe lapsim data export
+on:
+  push:
+    branches: ['probe/lapsim-export']
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch OpenF1 qualifying data
+        timeout-minutes: 200
+        env:
+          LAPSIM_TRACE_DRIVERS: '10'
+        run: node scripts/sim/fetch-openf1.mjs "2023,2024,2025,2026"
+      - run: node scripts/sim/tune-geometry.mjs
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: node scripts/sim/fetch-wec.mjs
+      - run: node scripts/sim/energy-docs.mjs && node scripts/sim/rule-params.mjs || true
+      - name: Export derived inputs (split under 90 MB)
+        if: always()
+        run: |
+          mkdir -p probe-out
+          tar czf - .cache/lapsim/traces.json .cache/lapsim/wec.json worker/lapsim/tracks-data.js $(ls .cache/lapsim/races.json 2>/dev/null) | split -b 90m - probe-out/lapsim-inputs.tgz.part-
+          ls -la probe-out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f probe-out && git commit -m "lapsim inputs export" && git push
