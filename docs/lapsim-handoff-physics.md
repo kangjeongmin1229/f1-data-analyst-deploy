@@ -290,7 +290,7 @@ Held-out RMS error (%), track left out. ✓ = accepted by the gate vs A, ≈ = b
 | D grip 0.95–1.05, no drag | 1.78 ✗ | 1.31 ✗ | 2.42 ✗ | 2.08 ✗ | 2.92 ✗ | 1.06 ✓ | 0.94 ✓ | 1.61 ✗ | 1.60 ✗ | 1.92 ✗ |
 | E no drag + vertical curvature | 0.89 ✗ | 1.27 ✗ | 1.52 ✗ | 1.73 ✗ | 2.02 ✗ | 1.02 ✓ | 1.14 ✓ | 1.55 ≈ | 1.06 ✗ | 1.51 ≈ |
 | **J no drag + banking** | 0.90 ✗ | 1.37 ✗ | 1.38 ≈ | 1.30 ≈ | 1.81 ≈ | 1.10 ✓ | 1.13 ✓ | 1.39 ✓ | 1.12 ✗ | **1.36 ✓** |
-| B no drag | running at handoff time | | | | | | | | | |
+| B no drag | 0.90 ✗ | 1.28 ✗ | 1.57 ✗ | 1.24 ≈ | 1.73 ≈ | 1.04 ✓ | 1.07 ✓ | 1.37 ≈ | 1.07 ✗ | **1.35 ✓** |
 | F, G, H, I axle model | running at handoff time (slow; 340 min limit) | | | | | | | | | |
 
 Per-event WEC BoP (Hypercar 2025): rejected in every variant (e.g. A: LMH 1.42 → 1.94 %, LMDh 1.41 → 1.44 %).
@@ -322,8 +322,9 @@ artifacts `exp-<X>`.
    - Because LMH 2025 got worse, the pipeline chooses **per class-season**: transfer factors only where the
      held-out error is not higher (`gripSource` in calibration-data, line in the report). LMH 2025 keeps the F1
      factors. This re-tests automatically on every `lapsim-data` run.
-   - When B finishes: compare B vs J on WEC. If B is as good, regenerate the transfer file from B (simpler:
-     no banking dependency).
+   - B (no drag, no banking) vs J on WEC: 1.345 vs 1.358 % pooled — the banking adds nothing for WEC (Zandvoort is
+     not a WEC track). Optional clean-up: regenerate the transfer file from B (`node scripts/sim/transfer-grip.mjs
+     cal-B.js`), run a WEC-only refit (`LAPSIM_ONLY=wec`) and keep it only if the gate says not worse.
 3. Banking: keep the code and the Zandvoort data (physically right, explains a track factor); do not switch it
    on for F1 production until it passes the F1 gate in a run together with the car-model work (§6.1).
 4. Vertical curvature from the smoothed grade: rejected for F1; revisit with better z (§6.2).
