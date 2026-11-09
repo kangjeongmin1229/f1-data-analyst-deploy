@@ -79,3 +79,62 @@ over stint start time, removes track evolution and fuel); car mean removed; resi
 
 Stint-to-stint noise (~1.4%) is far larger than any compound step. The page keeps
 "not measured, lap unchanged". No further variants were tried (that would tune on the test set).
+
+## J6 — Stints (2026-11-09)
+
+**Full-stint rule.** Timing71 marks local yellows as `yellow`; Al Kamel's flag column only marks
+full-course neutralisations. A full stint is therefore "no FCY / VSC / SC / Code 60 / red lap"
+(local yellows are racing laps). With this rule Timing71 and Al Kamel give the same full stint (±1 lap)
+for **68 / 80** Hypercar cars in 2025–2026; the other 12 are cases where Timing71 finds no full stint
+(stricter), never a different value. Stint lengths themselves are identical in both sources.
+
+**Duplicates.** Two archive replays can share series, description and minute; session files are now named
+by the archive's own file name, duplicates are dropped at merge (more laps kept), unreadable files skipped.
+
+**Stint energy fit with 2024 rows** (`scripts/sim/t71-stints.mjs` → `scripts/sim/data/t71-wec-stints.json`,
+used by `stint-fit.mjs` for events with no Al Kamel file; 2024 BoP stint energy from the eight FIA
+decisions, see `docs/lapsim-wec-bop.md`):
+
+| Rows (leave one event out) | Previous model (k from 2025 only) | Candidate (k from 2024 + 2025) |
+|---|---|---|
+| 2024: 30 rows, 4 events — **never used to fit the previous model** | **3.04 %** | 3.11 % |
+| 2025: 29 rows, 4 events | 3.74 % | 3.58 % |
+| All | 3.40 % | 3.35 % |
+
+Gate: **rejected (gain within noise)** → model unchanged (k = 0.857). The unseen-season test (3.04 % on 2024)
+is shown on the page under the stint table.
+
+**IMSA GTP energy per lap from VFT** (`scripts/sim/t71-imsa-vft.mjs` → `scripts/sim/data/t71-imsa-vft.json`):
+a measurement, not a model. Stints with no full-course lap, ≥10 laps, starting on a full virtual tank
+(VFT ≥85 %) and ending ≤40 %; % per lap = ΔVFT / (laps − 1), median per car. Examples (median %/lap of the
+stint energy): Road Atlanta 2024 2.27, 2025 2.25; Indianapolis 2025 2.16, 2026 2.26; Sebring 2025 3.32;
+Daytona 2026 3.28; Road America 2026 3.66 (× 912 MJ BoP ≈ 33 MJ/lap). Turning this into the lap-simulator
+energy model needs IMSA track geometry (step 9). VFT exists from late 2024 (21 races).
+
+## Fits round 2 (2026-11-09)
+
+Every candidate below went through the held-out gate. Only accepted changes reach the page.
+
+| Candidate | Test | Result |
+|---|---|---|
+| WEC class fits + Timing71 2023–24 qualifying bests (half weight; `t71-wec-extra.json`, 11 rows) | leave-one-track-out on each calibrated season, **inside `calibrate.mjs`** (real pipeline: top-3 Al Kamel laps) | **all 6 class-seasons rejected** — LMH 2025 3.80→3.76 % (noise), 2026 1.28→1.42 %; LMDh 2025 3.87→4.01 %, 2026 1.40→1.42 %; LMGT3 2025 2.22→2.15 % (noise), 2026 1.48→1.45 % (noise). Model unchanged. A simplified local experiment (best car only, `t71-wec-pool.mjs`) had accepted 2025; the pipeline gate shows it does not hold with the real inputs. The gate stays in `calibrate.mjs` and re-tests on every run. `LAPSIM_ONLY=wec` refits WEC alone (F1 kept). |
+| GT3 transfer: WEC LMGT3 car vs GTWC / DTM / IGTC qualifying (`t71-gt3.mjs`) | one pace factor per series, leave one track out | **not enough data**: 4 usable sessions on simulator tracks (GTWC Europe in the archive is mostly 2018–19; GTWC America meets our tracks only at COTA). A GT3 class needs new track geometry. |
+| Track temperature + 189 Timing71 sessions of other series at the same circuits (F1 replays excluded) | leave-one-event-out on the F1 events | **rejected** (3.97 → 3.97 °C). Unseen-series test of the current model: **4.96 °C** on those sessions (recorded in `tracktemp-data.js`). First run showed 16.9 °C: some feeds store missing weather as 0 or garbage (air 255 °C); values outside air 1–45 °C / track 1–70 °C are now dropped in the collector. |
+| LMGT3 full-stint lengths (`t71-lmgt3-stints.mjs`) | measurement | table per event and brand (e.g. Le Mans 11 laps for all, Bahrain ~25, Interlagos ~33). No fuel model: per-car fuel capacity is not published with the BoP. Some 2025–26 feeds have no car make. |
+| Track evolution + 60 Timing71 WEC practice/qualifying tables 2021–24 (`t71-collect.mjs` with `T71_EVO=1`) | same-track-other-season holdout on the Al Kamel sessions only | **rejected**: practice end error 0.827 → 0.885 %, qualifying 1.235 → 1.946 %. WEC evolution stays off; F1 unchanged (WEC-only session-name matching). |
+
+## Step 1a — wet session hidden in the data (2026-11-09)
+
+COTA 2025 WEC qualifying/Hyperpole ran on a wet track (official reports), but the Al Kamel weather shows no
+rain. It was fitted as a dry session: Hypercar laps 5 % slower than 2026 and speed traps 241–259 km/h
+(~300 in 2026). Now listed in `scripts/sim/data/wet-sessions.json` with sources and skipped like any wet session.
+`calibrate.mjs` warns when a class speed trap is under 90 % of the same class at that track in other years.
+
+| WEC 2025 holdout (track left out) | Before | After |
+|---|---|---|
+| LMH | 3.80 % | 1.54 % |
+| LMDh | 3.87 % | 1.61 % |
+| LMGT3 | 2.22 % | 2.14 % |
+
+F1 and all 2026 cars unchanged (identical). Note for step 3: Hypercar ClA sits at its upper bound (7.0) and
+LMGT3 at 3.5 in every fit — the fit compensates for missing physics.
