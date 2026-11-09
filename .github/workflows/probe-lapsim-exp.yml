@@ -4,6 +4,7 @@ on:
   push:
     branches: ['probe/lapsim-exp']
     paths-ignore: ['probe-out/**']
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
