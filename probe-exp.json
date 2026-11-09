@@ -1,0 +1,4 @@
+[{"name":"A","env":{"LAPSIM_TRACK_DRAG":"on"}},
+ {"name":"B","env":{"LAPSIM_TRACK_DRAG":"off"}},
+ {"name":"C","env":{"LAPSIM_TRACK_DRAG":"off","LAPSIM_GRIP_LO":"0.9","LAPSIM_GRIP_HI":"1.1"}},
+ {"name":"D","env":{"LAPSIM_TRACK_DRAG":"off","LAPSIM_GRIP_LO":"0.95","LAPSIM_GRIP_HI":"1.05"}}]
