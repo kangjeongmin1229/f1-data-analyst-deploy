@@ -65,5 +65,12 @@
 "LAPSIM_KV": "on",
 "LAPSIM_LOADEXP": "0.75"
 }
+},
+{
+"name": "J",
+"env": {
+"LAPSIM_TRACK_DRAG": "off",
+"LAPSIM_BANK": "on"
+}
 }
 ]
