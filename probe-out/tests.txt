@@ -1,0 +1,15 @@
+# Subtest: sector correction: a raced track reproduces the real pole sectors in its weather
+ok 62 - sector correction: a raced track reproduces the real pole sectors in its weather
+  ---
+  duration_ms: 13.596805
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3996.671895

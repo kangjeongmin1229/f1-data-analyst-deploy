@@ -1,0 +1,100 @@
+# Lap simulator calibration
+
+Generated 2026-11-09. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
+
+WEC lmh 2025: Timing71 rows 3 — holdout 3.80% → 3.76%, rejected: gain within noise
+## WEC Hypercar LMH 2025
+
+18 laps on 6 tracks, fit score 16.273. Holdout (one track left out at a time): 3.80% RMS over 6 laps.
+
+Car: grip μy 1.507, downforce ClA 7.00 m², drag CdA 1.049 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.359 | 101.407 | +3.048 | 291.9 | 291.3 | 1.0759 |
+| imola | 88.920 | 88.775 | -0.145 | 311.2 | 302.1 | 1.1543 |
+| spa-francorchamps | 119.617 | 122.317 | +2.700 | 312.3 | 305.7 | 1.0059 |
+| interlagos | 82.948 | 83.888 | +0.940 | 282.6 | 301.6 | 0.9602 |
+| austin | 117.655 | 111.349 | -6.306 | – | 302.5 | 1.0008 |
+| sakhir | 106.826 | 108.057 | +1.231 | 293.7 | 296.1 | 0.901 |
+
+WEC lmh 2026: Timing71 rows 3 — holdout 1.28% → 1.42%, rejected: worse on held-out rows
+## WEC Hypercar LMH 2026
+
+18 laps on 6 tracks, fit score 1.510. Holdout (one track left out at a time): 1.28% RMS over 6 laps.
+
+Car: grip μy 1.513, downforce ClA 6.76 m², drag CdA 0.958 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.088 | 88.470 | -1.618 | 310.4 | 312.9 | 1.1543 |
+| spa-francorchamps | 120.653 | 121.927 | +1.274 | 312.3 | 311.3 | 1.0059 |
+| interlagos | 83.387 | 83.208 | -0.179 | – | 314.2 | 0.9602 |
+| austin | 112.020 | 112.692 | +0.672 | 300 | 306 | 1.0008 |
+| catalunya | 90.336 | 89.657 | -0.679 | 305.9 | 307.2 | 0.9994 |
+| monza | 93.364 | 93.988 | +0.624 | 314 | 309.9 | 0.9853 |
+
+WEC lmdh 2025: Timing71 rows 3 — holdout 3.87% → 4.01%, rejected: worse on held-out rows
+## WEC Hypercar LMDh 2025
+
+18 laps on 6 tracks, fit score 17.874. Holdout (one track left out at a time): 3.87% RMS over 6 laps.
+
+Car: grip μy 1.497, downforce ClA 7.00 m², drag CdA 1.065 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.495 | 101.793 | +3.298 | 294.3 | 290.3 | 1.0759 |
+| imola | 89.885 | 89.058 | -0.827 | 308.6 | 301 | 1.1543 |
+| spa-francorchamps | 120.246 | 122.845 | +2.599 | 310.5 | 304.5 | 1.0059 |
+| interlagos | 82.570 | 84.246 | +1.676 | 276.2 | 300.6 | 0.9602 |
+| austin | 118.155 | 111.740 | -6.415 | – | 301.8 | 1.0008 |
+| sakhir | 107.543 | 108.489 | +0.946 | 290.5 | 295.2 | 0.901 |
+
+WEC lmdh 2026: Timing71 rows 3 — holdout 1.40% → 1.42%, rejected: worse on held-out rows
+## WEC Hypercar LMDh 2026
+
+18 laps on 6 tracks, fit score 1.803. Holdout (one track left out at a time): 1.40% RMS over 6 laps.
+
+Car: grip μy 1.524, downforce ClA 6.57 m², drag CdA 0.946 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.419 | 88.433 | -1.986 | 310.4 | 313.9 | 1.1543 |
+| spa-francorchamps | 120.696 | 121.949 | +1.253 | 315 | 312.3 | 1.0059 |
+| interlagos | 83.041 | 83.205 | +0.164 | – | 315.1 | 0.9602 |
+| austin | 112.074 | 112.659 | +0.585 | 301.7 | 306.6 | 1.0008 |
+| catalunya | 90.166 | 89.668 | -0.498 | 306.8 | 307.8 | 0.9994 |
+| monza | 93.460 | 93.914 | +0.454 | 314.9 | 311 | 0.9853 |
+
+WEC lmgt3 2025: Timing71 rows 5 — holdout 2.22% → 2.15%, rejected: gain within noise
+## WEC LMGT3 2025
+
+18 laps on 6 tracks, fit score 6.636. Holdout (one track left out at a time): 2.22% RMS over 6 laps.
+
+Car: grip μy 1.562, downforce ClA 3.50 m², drag CdA 1.260 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 113.861 | 116.011 | +2.150 | 252.9 | 251.5 | 1.0759 |
+| imola | 102.326 | 101.149 | -1.177 | 267.3 | 263.3 | 1.1543 |
+| spa-francorchamps | 137.732 | 140.544 | +2.812 | 263.6 | 250.5 | 1.0059 |
+| interlagos | 93.849 | 93.997 | +0.148 | 253.7 | 256.9 | 0.9602 |
+| austin | 127.645 | 124.840 | -2.805 | 251.7 | 261.7 | 1.0008 |
+| sakhir | 121.661 | 120.368 | -1.293 | 254.4 | 256.3 | 0.901 |
+
+WEC lmgt3 2026: Timing71 rows 5 — holdout 1.48% → 1.45%, rejected: gain within noise
+## WEC LMGT3 2026
+
+18 laps on 6 tracks, fit score 3.560. Holdout (one track left out at a time): 1.48% RMS over 6 laps.
+
+Car: grip μy 1.618, downforce ClA 3.50 m², drag CdA 1.283 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 101.181 | 100.329 | -0.852 | 260 | 264.4 | 1.1543 |
+| spa-francorchamps | 136.612 | 139.030 | +2.418 | 262.4 | 251.6 | 1.0059 |
+| interlagos | 93.350 | 92.466 | -0.884 | 250.8 | 264.8 | 0.9602 |
+| austin | 125.103 | 124.337 | -0.766 | 252.9 | 259.7 | 1.0008 |
+| catalunya | 100.933 | 100.786 | -0.147 | 255.9 | 258.3 | 0.9994 |
+| monza | 107.065 | 107.498 | +0.433 | 268 | 260.8 | 0.9853 |
+
