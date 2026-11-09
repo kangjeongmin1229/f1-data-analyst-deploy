@@ -1,0 +1,25 @@
+name: Probe WEC calibration with Timing71 rows
+on:
+  push:
+    branches: ['probe/t71-calib']
+permissions:
+  contents: write
+jobs:
+  calib:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: node scripts/sim/fetch-wec.mjs
+      - run: mkdir -p probe-out && LAPSIM_ONLY=wec node scripts/sim/calibrate.mjs | tee probe-out/calib.txt
+      - run: node --test tests/lapsim*.test.mjs 2>&1 | tail -15 | tee probe-out/tests.txt
+      - if: always()
+        run: |
+          cp .cache/lapsim/wec.json probe-out/ 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f probe-out worker/lapsim/calibration-data.js && git commit -m "WEC calibration probe result" && git push
