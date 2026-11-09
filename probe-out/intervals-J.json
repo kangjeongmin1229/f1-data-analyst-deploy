@@ -1,0 +1,208 @@
+{
+ "method": "range learned from the other season of the same group, tested on this season's held-out laps",
+ "groups": {
+  "f1/2025": {
+   "rows": 20,
+   "learnedFrom": [
+    "2026"
+   ],
+   "learned": {
+    "meanPct": -0.393,
+    "rmsPct": 1.371,
+    "sdPct": 1.363
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.371,
+    "cover1": 0.9,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": -0.393,
+    "sigmaPct": 1.411,
+    "cover1": 0.85,
+    "cover2": 1
+   }
+  },
+  "f1/2026": {
+   "rows": 14,
+   "learnedFrom": [
+    "2025"
+   ],
+   "learned": {
+    "meanPct": -0.105,
+    "rmsPct": 0.901,
+    "sdPct": 0.918
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 0.901,
+    "cover1": 0.57,
+    "cover2": 0.93
+   },
+   "candidate": {
+    "centrePct": -0.105,
+    "sigmaPct": 0.94,
+    "cover1": 0.57,
+    "cover2": 0.93
+   }
+  },
+  "wec-lmh/2025": {
+   "rows": 5,
+   "learnedFrom": [
+    "2026"
+   ],
+   "learned": {
+    "meanPct": 0.033,
+    "rmsPct": 1.096,
+    "sdPct": 1.2
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.096,
+    "cover1": 0.6,
+    "cover2": 0.8
+   },
+   "candidate": {
+    "centrePct": 0.033,
+    "sigmaPct": 1.296,
+    "cover1": 0.6,
+    "cover2": 1
+   }
+  },
+  "wec-lmh/2026": {
+   "rows": 6,
+   "learnedFrom": [
+    "2025"
+   ],
+   "learned": {
+    "meanPct": 0.059,
+    "rmsPct": 1.382,
+    "sdPct": 1.544
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.382,
+    "cover1": 0.67,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": 0.059,
+    "sigmaPct": 1.691,
+    "cover1": 1,
+    "cover2": 1
+   }
+  },
+  "wec-lmdh/2025": {
+   "rows": 5,
+   "learnedFrom": [
+    "2026"
+   ],
+   "learned": {
+    "meanPct": 0.048,
+    "rmsPct": 1.134,
+    "sdPct": 1.241
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.134,
+    "cover1": 0.6,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": 0.048,
+    "sigmaPct": 1.341,
+    "cover1": 0.6,
+    "cover2": 1
+   }
+  },
+  "wec-lmdh/2026": {
+   "rows": 6,
+   "learnedFrom": [
+    "2025"
+   ],
+   "learned": {
+    "meanPct": -0.122,
+    "rmsPct": 1.298,
+    "sdPct": 1.444
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.298,
+    "cover1": 0.67,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": -0.122,
+    "sigmaPct": 1.582,
+    "cover1": 0.83,
+    "cover2": 1
+   }
+  },
+  "wec-lmgt3/2025": {
+   "rows": 5,
+   "learnedFrom": [
+    "2026"
+   ],
+   "learned": {
+    "meanPct": -0.114,
+    "rmsPct": 1.393,
+    "sdPct": 1.521
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.393,
+    "cover1": 0.2,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": -0.114,
+    "sigmaPct": 1.643,
+    "cover1": 0.4,
+    "cover2": 1
+   }
+  },
+  "wec-lmgt3/2026": {
+   "rows": 6,
+   "learnedFrom": [
+    "2025"
+   ],
+   "learned": {
+    "meanPct": -0.08,
+    "rmsPct": 1.808,
+    "sdPct": 2.019
+   },
+   "current": {
+    "centrePct": 0,
+    "sigmaPct": 1.808,
+    "cover1": 0.67,
+    "cover2": 1
+   },
+   "candidate": {
+    "centrePct": -0.08,
+    "sigmaPct": 2.212,
+    "cover1": 0.83,
+    "cover2": 1
+   }
+  }
+ },
+ "all": {
+  "current": {
+   "rows": 67,
+   "cover1": 0.67,
+   "cover2": 0.97,
+   "meanNll": 0.785
+  },
+  "candidate": {
+   "rows": 67,
+   "cover1": 0.73,
+   "cover2": 0.99,
+   "meanNll": 0.79
+  }
+ },
+ "gate": {
+  "reason": "rejected: worse on held-out rows",
+  "accept": false,
+  "n": 67
+ }
+}

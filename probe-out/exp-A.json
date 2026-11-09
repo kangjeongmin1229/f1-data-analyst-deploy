@@ -1,0 +1,193 @@
+{
+ "name": "A",
+ "f1": {
+  "2025": {
+   "holdoutPct": 0.86,
+   "inSamplePct": 0.419
+  },
+  "2026": {
+   "holdoutPct": 1.16,
+   "inSamplePct": 0.747
+  }
+ },
+ "wec": {
+  "lmh/2025": {
+   "holdoutPct": 1.42,
+   "bop": {
+    "laps": 15,
+    "refKg": 1048.7,
+    "refKW": 500.9,
+    "previousRmsPct": 1.42,
+    "candidateRmsPct": 1.94,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.42,
+    "candidateRmsPct": 1.39,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 0.89,
+   "car": {
+    "muY": 1.5658956627680212,
+    "clA": 6.999949505199019,
+    "cdA": 1.0885928602570953
+   }
+  },
+  "lmh/2026": {
+   "holdoutPct": 1.62,
+   "bop": null,
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.62,
+    "candidateRmsPct": 1.57,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 1.088,
+   "car": {
+    "muY": 1.5480646713949093,
+    "clA": 6.084661877213884,
+    "cdA": 0.9680885428029637
+   }
+  },
+  "lmdh/2025": {
+   "holdoutPct": 1.41,
+   "bop": {
+    "laps": 15,
+    "refKg": 1045.1,
+    "refKW": 505.6,
+    "previousRmsPct": 1.41,
+    "candidateRmsPct": 1.44,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.41,
+    "candidateRmsPct": 1.37,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 1.115,
+   "car": {
+    "muY": 1.5563534158176173,
+    "clA": 7,
+    "cdA": 1.0997896557114446
+   }
+  },
+  "lmdh/2026": {
+   "holdoutPct": 1.44,
+   "bop": null,
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.44,
+    "candidateRmsPct": 1.61,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "inSamplePct": 1.106,
+   "car": {
+    "muY": 1.5449346409662041,
+    "clA": 6.141588658569415,
+    "cdA": 0.9547585215064344
+   }
+  },
+  "lmgt3/2025": {
+   "holdoutPct": 1.99,
+   "bop": null,
+   "pooled": {
+    "extraRows": 5,
+    "previousRmsPct": 2.11,
+    "candidateRmsPct": 1.99,
+    "reason": "accepted: held-out error lower beyond noise",
+    "used": true
+   },
+   "inSamplePct": 1.287,
+   "car": {
+    "muY": 1.5824960671954458,
+    "clA": 3.5,
+    "cdA": 1.2843526169933153
+   }
+  },
+  "lmgt3/2026": {
+   "holdoutPct": 1.59,
+   "bop": null,
+   "pooled": {
+    "extraRows": 5,
+    "previousRmsPct": 1.59,
+    "candidateRmsPct": 1.58,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 1.035,
+   "car": {
+    "muY": 1.6135509453050367,
+    "clA": 3.499256040975591,
+    "cdA": 1.3
+   }
+  }
+ },
+ "trackGrip": {
+  "sakhir": 0.894,
+  "jeddah": 1.217,
+  "baku": 1.0092,
+  "miami": 0.9375,
+  "monte-carlo": 0.9406,
+  "spielberg": 1.0344,
+  "hungaroring": 0.9536,
+  "monza": 0.9961,
+  "singapore": 0.9554,
+  "suzuka": 1.0344,
+  "lusail": 1.0823,
+  "austin": 0.9947,
+  "mexico-city": 0.9212,
+  "las-vegas": 0.9521,
+  "yas-marina-circuit": 1.0874,
+  "shanghai": 1.0397,
+  "imola": 1.1519,
+  "catalunya": 1.0118,
+  "zandvoort": 1.09,
+  "melbourne": 1.1027,
+  "montreal": 0.9781,
+  "silverstone": 0.9221,
+  "spa-francorchamps": 1.007,
+  "interlagos": 0.981,
+  "madring": 1.0885,
+  "kuala-lumpur": 0.9833
+ },
+ "trackDrag": {
+  "sakhir": 1.1214,
+  "jeddah": 1.0147,
+  "baku": 0.8692,
+  "miami": 1.0251,
+  "monte-carlo": 1.1186,
+  "spielberg": 1.0895,
+  "hungaroring": 1.1166,
+  "monza": 1.0123,
+  "singapore": 1.0354,
+  "suzuka": 1.1066,
+  "lusail": 1.0767,
+  "austin": 1.0099,
+  "mexico-city": 1.0516,
+  "las-vegas": 0.9045,
+  "yas-marina-circuit": 0.9935,
+  "shanghai": 0.9415,
+  "imola": 1.0713,
+  "catalunya": 1.1402,
+  "zandvoort": 1.1496,
+  "melbourne": 1.0625,
+  "montreal": 1.0354,
+  "silverstone": 1.0634,
+  "spa-francorchamps": 0.998,
+  "interlagos": 1.0318,
+  "madring": 1.1333,
+  "kuala-lumpur": 1.1273
+ },
+ "gripRange": [
+  0.894,
+  1.217
+ ]
+}

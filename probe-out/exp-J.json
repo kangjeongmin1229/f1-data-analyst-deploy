@@ -1,0 +1,166 @@
+{
+ "name": "J",
+ "f1": {
+  "2025": {
+   "holdoutPct": 0.9,
+   "inSamplePct": 0.414
+  },
+  "2026": {
+   "holdoutPct": 1.37,
+   "inSamplePct": 0.665
+  }
+ },
+ "wec": {
+  "lmh/2025": {
+   "holdoutPct": 1.38,
+   "bop": {
+    "laps": 15,
+    "refKg": 1048.7,
+    "refKW": 500.9,
+    "previousRmsPct": 1.38,
+    "candidateRmsPct": 1.75,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.62,
+    "candidateRmsPct": 1.38,
+    "reason": "accepted: held-out error lower beyond noise",
+    "used": true
+   },
+   "inSamplePct": 0.879,
+   "car": {
+    "muY": 1.5696803545463331,
+    "clA": 7,
+    "cdA": 1.0888455547049298
+   }
+  },
+  "lmh/2026": {
+   "holdoutPct": 1.1,
+   "bop": null,
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.1,
+    "candidateRmsPct": 1.16,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "inSamplePct": 0.795,
+   "car": {
+    "muY": 1.5336457735569333,
+    "clA": 6.397329389452333,
+    "cdA": 0.9682962294108147
+   }
+  },
+  "lmdh/2025": {
+   "holdoutPct": 1.3,
+   "bop": {
+    "laps": 15,
+    "refKg": 1045.1,
+    "refKW": 505.6,
+    "previousRmsPct": 1.3,
+    "candidateRmsPct": 1.66,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.3,
+    "candidateRmsPct": 1.34,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "inSamplePct": 1.05,
+   "car": {
+    "muY": 1.5614273561857126,
+    "clA": 7,
+    "cdA": 1.1061563553763916
+   }
+  },
+  "lmdh/2026": {
+   "holdoutPct": 1.13,
+   "bop": null,
+   "pooled": {
+    "extraRows": 3,
+    "previousRmsPct": 1.13,
+    "candidateRmsPct": 1.07,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 0.822,
+   "car": {
+    "muY": 1.5454903935188709,
+    "clA": 6.195030651537113,
+    "cdA": 0.9581138005818187
+   }
+  },
+  "lmgt3/2025": {
+   "holdoutPct": 1.81,
+   "bop": null,
+   "pooled": {
+    "extraRows": 5,
+    "previousRmsPct": 1.81,
+    "candidateRmsPct": 1.86,
+    "reason": "rejected: worse on held-out rows",
+    "used": false
+   },
+   "inSamplePct": 1.11,
+   "car": {
+    "muY": 1.589893564983508,
+    "clA": 3.5,
+    "cdA": 1.281149094727873
+   }
+  },
+  "lmgt3/2026": {
+   "holdoutPct": 1.39,
+   "bop": null,
+   "pooled": {
+    "extraRows": 5,
+    "previousRmsPct": 1.39,
+    "candidateRmsPct": 1.32,
+    "reason": "rejected: gain within noise",
+    "used": false
+   },
+   "inSamplePct": 0.862,
+   "car": {
+    "muY": 1.6244365580422016,
+    "clA": 3.5,
+    "cdA": 1.2996356784189789
+   }
+  }
+ },
+ "trackGrip": {
+  "sakhir": 0.8825,
+  "jeddah": 1.2258,
+  "baku": 1.0441,
+  "miami": 0.935,
+  "monte-carlo": 0.9353,
+  "spielberg": 1.0206,
+  "hungaroring": 0.948,
+  "monza": 0.993,
+  "singapore": 0.9527,
+  "suzuka": 1.0193,
+  "lusail": 1.0719,
+  "austin": 0.993,
+  "mexico-city": 0.9164,
+  "las-vegas": 0.9814,
+  "yas-marina-circuit": 1.0908,
+  "shanghai": 1.0565,
+  "imola": 1.1377,
+  "catalunya": 0.9912,
+  "zandvoort": 1.0025,
+  "melbourne": 1.0994,
+  "montreal": 0.9769,
+  "silverstone": 0.9104,
+  "spa-francorchamps": 1.0221,
+  "interlagos": 0.9805,
+  "madring": 1.0696,
+  "kuala-lumpur": 0.9626
+ },
+ "trackDrag": {},
+ "gripRange": [
+  0.8825,
+  1.2258
+ ]
+}
