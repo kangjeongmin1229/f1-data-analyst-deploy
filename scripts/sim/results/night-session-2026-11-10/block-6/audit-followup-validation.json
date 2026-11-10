@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-10T16:21:50.833896+00:00",
+  "fullTests": {
+    "pass": 432,
+    "total": 432
+  },
+  "auditRegressionTests": {
+    "pass": 2,
+    "total": 2
+  },
+  "productionWecReproduction": {
+    "n": 33,
+    "maxAbsErrorSec": 0
+  },
+  "sourceFiles": {
+    "scripts/sim/verify-wec-reproduction.mjs": "9b7fd70a6a2f2957e5d2814cdfe0f7008383879efebb4195498f921495a191a3",
+    "tests/lapsim-wec-session-scope.test.mjs": "589dd1f4fd840c59730bdab3fc5b341ee031b25b93c30f49551ecef3791399a7"
+  }
+}
