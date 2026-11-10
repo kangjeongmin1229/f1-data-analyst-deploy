@@ -5,6 +5,7 @@ import {readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {objectiveTrace} from './objective-trace.mjs';
 import {wecNmStop} from './wec-nm-stop.mjs';
+import {splitWecSessions} from './wec-session-scope.mjs';
 import {gate} from './gate.mjs';
 import {join} from 'node:path';
 import {lapsimTracks} from '../../worker/lapsim/tracks-data.js';
@@ -198,9 +199,10 @@ if (s26 && !ONLY_WEC) {
 // WEC classes, same rules: BoP values fixed; drag, downforce and tyre grip fitted to the best
 // qualifying/Hyperpole laps (lap time + speed trap). Track factors are shared from the F1 fit.
 const series = {};
-const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]'));
+const wecRows = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]'));
+const {dry: wec} = splitWecSessions(wecRows);
 const t71Extra = existsSync('scripts/sim/data/t71-wec-extra.json') ? JSON.parse(await readFile('scripts/sim/data/t71-wec-extra.json', 'utf8')).rows : [];
-const wecYears = new Set(wec.map(w => +w.year));
+const wecYears = new Set(wecRows.map(w => +w.year));
 // Track factors for WEC: by default the F1 fit's own grip. worker/lapsim/transfer-grip-data.js (if present) holds
 // factors from an F1 fit WITHOUT per-track drag, which transfer better to other cars (gate 2026-11-09, docs/lapsim-handoff-physics.md §5).
 // LAPSIM_WEC_GRIP=f1 forces the F1 fit's own grip.
@@ -208,16 +210,16 @@ const TRANSFER = E.LAPSIM_WEC_GRIP === 'f1' ? null : await import('../../worker/
 const f1GripOwn = id => Object.keys(seasons).sort().reverse().map(y => seasons[y]?.tracks?.[id]?.grip).find(g => g != null) ?? null;
 const transferGrip = id => TRANSFER?.grip[id] ?? null;
 // Fail before the first fit if the frozen table is incomplete.
-if (WEC_TIMING.sectors) for (const w of wec.filter(w => tracks[w.track] && !w.weather?.rain && f1GripOwn(w.track) != null))
+if (WEC_TIMING.sectors) for (const w of wec.filter(w => tracks[w.track] && f1GripOwn(w.track) != null))
   w.laps.forEach((l, i) => rowEligibility(WEC_ELIGIBILITY, w, i));
 for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
   for (const year of [...new Set(wec.map(w => w.year))].sort()) {
-    const sessions = wec.filter(w => w.cls === cls && w.year === year && tracks[w.track] && !w.weather?.rain && f1GripOwn(w.track) != null);
+    const sessions = wec.filter(w => w.cls === cls && w.year === year && tracks[w.track] && f1GripOwn(w.track) != null);
     let f1Grip = f1GripOwn;
     // data check: a class speed trap far below the same class at the same track in other years hints at a wet or
     // unusual session that the timing does not mark (add it to scripts/sim/data/wet-sessions.json after checking)
     for (const w of sessions) {
-      const other = wec.filter(x => x.cls === cls && x.track === w.track && x.year !== w.year && !x.weather?.rain).map(x => x.laps[0]?.topSpeedKph).filter(Number.isFinite).sort((a, b) => a - b);
+      const other = wec.filter(x => x.cls === cls && x.track === w.track && x.year !== w.year).map(x => x.laps[0]?.topSpeedKph).filter(Number.isFinite).sort((a, b) => a - b);
       const v = w.laps[0]?.topSpeedKph, med = other[other.length >> 1];
       if (Number.isFinite(v) && med && v < 0.9 * med) report.push(`WARNING WEC ${cls} ${year} ${w.track}: best-lap speed trap ${v} km/h vs ${med} km/h in other years — check for a wet or unusual session`);
     }

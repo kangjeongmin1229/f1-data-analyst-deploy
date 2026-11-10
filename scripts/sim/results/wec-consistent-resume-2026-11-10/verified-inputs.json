@@ -1,0 +1,50 @@
+{
+  "archive": {
+    "sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
+    "matched": true
+  },
+  "archiveGeometry": {
+    "sha256": "4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1",
+    "matched": true
+  },
+  "archiveTraces": {
+    "sha256": "0ad9c18d303a748d77f499e032f554b7b9c545c4d2966e40cb52661ee13621ef",
+    "matched": true
+  },
+  "rawWec": {
+    "sha256": "aa40cae3646ea33a3d1692c0f523196a4716bd707b84b38476bcf96da9d54626",
+    "matched": true
+  },
+  "geometry": {
+    "sha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "matched": true
+  },
+  "seed": {
+    "sha256": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "matched": true
+  },
+  "oldB": {
+    "sha256": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "matched": true
+  },
+  "timing71": {
+    "sha256": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76",
+    "matched": true
+  },
+  "distanceOverride": {
+    "sha256": "80ff0b78f71faa2cc53cc245391fd3767ebeb0ad5c88700181b4b88bd0509338",
+    "matched": true
+  },
+  "projectionAudit": {
+    "sha256": "1346e22304cf40e9d666b05ac1fd6fbed84bb7942a23fffe24a1565ab2e36ec4",
+    "matched": true
+  },
+  "acceptedToleranceResult": {
+    "sha256": "50da3458e3142356c413b5a09c0f948ac70901ebb6c8eeb618f6574f4d7d7d84",
+    "matched": true
+  },
+  "excludedWec": {
+    "sha256": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+    "matched": true
+  }
+}

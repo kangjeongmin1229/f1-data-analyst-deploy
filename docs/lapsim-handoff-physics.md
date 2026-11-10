@@ -1483,3 +1483,26 @@ R = 1e-4 with cap 2000 is accepted as the standard for all future WEC experiment
 The candidate and pass check are unchanged: repository geometry everywhere; rebuild B using production F1 settings with per-track drag off; refit WEC at R. Compare the current-configuration control and candidate at R, with frozen production replay separately identified. Report held-out RMS, n, fitted cars, bound hits, choices, dry raced-session reproduction and Interlagos replay per class-season. Pass requires exact dry reproduction, unchanged F1 seasons and pooled WEC no worse. No adoption, model PR, merge or Vercel action.
 
 **Execution interruption:** the connected PC environment became unavailable while applying the shared-exclusion edit. The edit tool returned "Transport closed"; the subsequent shell check returned "No usable execution environment is available." Local edit persistence is unverified. No new test run or candidate restart is claimed. GitHub remains available, so this documentation update is saved to PR #154. On reconnection, inspect local files before applying edits again, add and run the exclusion regression test, verify frozen dry reproduction, and restart in fresh isolated directories while preserving the prior stopped artifacts. The earlier completed tolerance results remain valid; there is no new candidate result yet.
+
+
+## 20. GitHub-only restart: shared dry scope and consistent candidate (2026-11-10)
+
+Fresh checkout of PR #154 at df3d65819db9be74f5941ddda83d1b0a94a00841. Read canonical main AGENTS.md and physics rules first, then handoff sections 14–19 and PR #155 at 34451d4bd01b14df57e8fa0ef2fd0d2b37a5cefd. The latest handoff, the WEC tolerance stop implementation and section 5.1 convergence rule are present. No prior-PC files were used. The pinned archive downloaded from its recorded GitHub URL and matched SHA-256; all input checks are recorded in verified-inputs.json. The committed distance override and original measurements reproduce the prepared trace checksum before fitting. Node 22.23.4 is used.
+
+Calibration and the historical audit now call the same splitWecSessions function, which reads wet-sessions.json and also excludes rain-marked rows. The integration test runs both real entry points on a small fixture, then changes the manual list and confirms both scopes change together. Raw observations and production pole tables are unchanged. Historical reproduction requires exact equality at the public result precision; the existing production test thresholds are unchanged.
+
+| Frozen production group | Dry rows | Largest absolute reproduction error s | Wet rows excluded |
+|---|---:|---:|---:|
+| LMH 2025 | 5 | 0.000 | 1 (Austin) |
+| LMH 2026 | 6 | 0.000 | 0 |
+| LMDh 2025 | 5 | 0.000 | 1 (Austin) |
+| LMDh 2026 | 6 | 0.000 | 0 |
+| LMGT3 2025 | 5 | 0.000 | 1 (Austin) |
+| LMGT3 2026 | 6 | 0.000 | 0 |
+| Total | 33 | 0.000 | 3 |
+
+Preflight: 427/427 offline tests pass; build and artifact validation pass. The first full-suite attempt could not import missing dependencies; after npm ci from the unchanged lockfile, all tests passed. This was an environment setup failure, not a reproduction failure. Section 5.1 already contains the requested factor-100, <0.02 pp and no-choice-flip rule, so no duplicate rule was added.
+
+Execution declaration remains section 18.3: repository geometry for both arms; current B for control; production-settings F1 B rebuild without per-track drag for candidate; unchanged production F1 seasons/projections restored for WEC; R=1e-4, cap 2000 in both arms. Frozen production replay is separate. Timing flags stay off. The saved estimate remains 3–4 hours for B plus WEC; no shorter fit is substituted. Fresh output is .cache/wec-consistent-resume; prior partial artifacts are preserved. Run prepare-wec-consistent.mjs with the pinned archive, then run-wec-consistent.mjs. No adoption, model PR, merge or Vercel action.
+
+At this checkpoint the candidate has not started. Results will be added here after completion or a stop condition.

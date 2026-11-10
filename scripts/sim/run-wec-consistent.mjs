@@ -6,14 +6,14 @@ import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {sha256} from './wec-eligibility.mjs';
-const root=process.cwd(),out=resolve('.cache/wec-consistent'),old=resolve('.cache/wec-sector-run/baseline');
-const artifact=resolve('scripts/sim/results/wec-consistent-2026-11-10');
+const root=process.cwd(),out=resolve('.cache/wec-consistent-resume'),old=resolve('.cache/wec-sector-run/baseline');
+const artifact=resolve('scripts/sim/results/wec-consistent-resume-2026-11-10');
 const clean=Object.fromEntries(Object.entries(process.env).filter(([k])=>!k.startsWith('LAPSIM_')));
 const load=async p=>(await import(pathToFileURL(p).href)).lapsimCalibration;
 const production=await load(resolve('.cache/wec-experiment/production.js'));
 const rule=JSON.parse(await readFile('.cache/wec-tolerance/results.json','utf8'));
 assert.ok(rule.proceedToCandidate,'STOP: tolerance comparison did not establish R');
-const patch=JSON.parse(await readFile(join(artifact,'interlagos-distance-override.json'),'utf8'));
+const patch=JSON.parse(await readFile('scripts/sim/results/wec-consistent-2026-11-10/interlagos-distance-override.json','utf8'));
 const geometry=await readFile('worker/lapsim/tracks-data.js');assert.equal(sha256(geometry),patch.geometrySha256);
 const archivedTraces=await readFile(join(old,'.cache/lapsim/traces.json'));
 const traces=JSON.parse(archivedTraces);
@@ -35,6 +35,8 @@ const manifest={at:new Date().toISOString(),inputs,bEnv,wecEnv,R:'1e-4, cap 2000
  control:'Repository geometry + current B; current configuration refit at R, not frozen production cars',candidate:'Repository geometry + rebuilt B; refit at R',
  pass:'Raced sessions reproduce, F1 seasons/projections unchanged, pooled WEC no worse. Existing statistical gate also reported unchanged.',adopt:false,estimate:'B 3–4 hours plus WEC fitting; control may run beside B',
  traceAudit:'40 Interlagos distance arrays replaced; every other measurement and all 845 other traces unchanged. Only three dry 2025 Interlagos rows enter the F1 fit.'};
+await mkdir(out); // Refuse reuse and preserve the original interrupted run.
+await mkdir(artifact,{recursive:true});
 for(const name of ['B','control','candidate']){
  const dir=join(out,name);await mkdir(dir); // Refuse reuse of an existing run.
  await cp(join(root,'scripts/sim'),join(dir,'scripts/sim'),{recursive:true,filter:p=>!p.replaceAll('\\','/').includes('/scripts/sim/results')});
@@ -64,6 +66,7 @@ async function wec(name){
  await command(name,'validate',['scripts/sim/validate.mjs',name]);
  await copyFile(join(out,name,'probe-out/validate-'+name+'.json'),join(out,'validate-'+name+'.json'));
  await command(name,'reproduction',['--import','./.cache/no-external-network.mjs','--test','--test-name-pattern=reproduc','tests/lapsim.test.mjs'],{KONGBODA_FEATURES:'all'});
+ await command(name,'historical-reproduction',['scripts/sim/verify-wec-reproduction.mjs','.',join(out,name+'-historical-reproduction.json')]);
 }
 try{
  await Promise.all([wec('control'),(async()=>{
