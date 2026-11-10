@@ -1,0 +1,435 @@
+{
+  "checks": {
+    "ds": {
+      "equal": true,
+      "rebuilt": 5.000419160848654,
+      "existing": 5.000419160848654
+    },
+    "length": {
+      "equal": true,
+      "rebuilt": 4230,
+      "existing": 4230
+    },
+    "sectors": {
+      "equal": true
+    },
+    "kappa": {
+      "equal": true
+    },
+    "grade": {
+      "equal": true
+    }
+  },
+  "quality": {
+    "rebuilt": {
+      "laps": 14,
+      "points": 3707,
+      "alignRms": null,
+      "mirror": null
+    },
+    "existing": {
+      "laps": 14,
+      "points": 3707,
+      "alignRms": 8,
+      "mirror": false
+    }
+  },
+  "telemetry": [
+    {
+      "driver": 4,
+      "keys": [],
+      "points": 272,
+      "originalPoints": 272,
+      "changedDistances": 255
+    },
+    {
+      "driver": 12,
+      "keys": [],
+      "points": 258,
+      "originalPoints": 258,
+      "changedDistances": 244
+    },
+    {
+      "driver": 16,
+      "keys": [],
+      "points": 264,
+      "originalPoints": 264,
+      "changedDistances": 250
+    },
+    {
+      "driver": 81,
+      "keys": [],
+      "points": 264,
+      "originalPoints": 264,
+      "changedDistances": 246
+    },
+    {
+      "driver": 6,
+      "keys": [],
+      "points": 263,
+      "originalPoints": 263,
+      "changedDistances": 250
+    },
+    {
+      "driver": 63,
+      "keys": [],
+      "points": 261,
+      "originalPoints": 261,
+      "changedDistances": 247
+    },
+    {
+      "driver": 30,
+      "keys": [],
+      "points": 270,
+      "originalPoints": 270,
+      "changedDistances": 255
+    },
+    {
+      "driver": 87,
+      "keys": [],
+      "points": 261,
+      "originalPoints": 261,
+      "changedDistances": 247
+    },
+    {
+      "driver": 10,
+      "keys": [],
+      "points": 263,
+      "originalPoints": 263,
+      "changedDistances": 248
+    },
+    {
+      "driver": 27,
+      "keys": [],
+      "points": 269,
+      "originalPoints": 269,
+      "changedDistances": 250
+    }
+  ],
+  "allTelemetry": [
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 1,
+      "differences": [],
+      "n": 265,
+      "changedDistances": 247
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 16,
+      "differences": [],
+      "n": 265,
+      "changedDistances": 250
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 18,
+      "differences": [],
+      "n": 265,
+      "changedDistances": 248
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 14,
+      "differences": [],
+      "n": 266,
+      "changedDistances": 250
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 44,
+      "differences": [],
+      "n": 249,
+      "changedDistances": 233
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 63,
+      "differences": [],
+      "n": 270,
+      "changedDistances": 253
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 4,
+      "differences": [],
+      "n": 270,
+      "changedDistances": 253
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 55,
+      "differences": [],
+      "n": 271,
+      "changedDistances": 254
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 11,
+      "differences": [],
+      "n": 253,
+      "changedDistances": 237
+    },
+    {
+      "year": 2023,
+      "session": 9304,
+      "driver": 81,
+      "differences": [],
+      "n": 269,
+      "changedDistances": 255
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 4,
+      "differences": [],
+      "n": 324,
+      "changedDistances": 307
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 63,
+      "differences": [],
+      "n": 326,
+      "changedDistances": 308
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 22,
+      "differences": [],
+      "n": 322,
+      "changedDistances": 303
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 31,
+      "differences": [],
+      "n": 325,
+      "changedDistances": 307
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 30,
+      "differences": [],
+      "n": 318,
+      "changedDistances": 305
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 16,
+      "differences": [],
+      "n": 329,
+      "changedDistances": 311
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 23,
+      "differences": [],
+      "n": 310,
+      "changedDistances": 292
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 81,
+      "differences": [],
+      "n": 312,
+      "changedDistances": 292
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 14,
+      "differences": [],
+      "n": 323,
+      "changedDistances": 305
+    },
+    {
+      "year": 2024,
+      "session": 9627,
+      "driver": 18,
+      "differences": [],
+      "n": 330,
+      "changedDistances": 311
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 4,
+      "differences": [],
+      "n": 272,
+      "changedDistances": 255
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 12,
+      "differences": [],
+      "n": 258,
+      "changedDistances": 244
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 16,
+      "differences": [],
+      "n": 264,
+      "changedDistances": 250
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 81,
+      "differences": [],
+      "n": 264,
+      "changedDistances": 246
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 6,
+      "differences": [],
+      "n": 263,
+      "changedDistances": 250
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 63,
+      "differences": [],
+      "n": 261,
+      "changedDistances": 247
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 30,
+      "differences": [],
+      "n": 270,
+      "changedDistances": 255
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 87,
+      "differences": [],
+      "n": 261,
+      "changedDistances": 247
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 10,
+      "differences": [],
+      "n": 263,
+      "changedDistances": 248
+    },
+    {
+      "year": 2025,
+      "session": 9865,
+      "driver": 27,
+      "differences": [],
+      "n": 269,
+      "changedDistances": 250
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 1,
+      "differences": [],
+      "n": 330,
+      "changedDistances": 311
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 63,
+      "differences": [],
+      "n": 335,
+      "changedDistances": 316
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 12,
+      "differences": [],
+      "n": 329,
+      "changedDistances": 310
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 16,
+      "differences": [],
+      "n": 332,
+      "changedDistances": 313
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 30,
+      "differences": [],
+      "n": 333,
+      "changedDistances": 313
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 27,
+      "differences": [],
+      "n": 340,
+      "changedDistances": 317
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 6,
+      "differences": [],
+      "n": 335,
+      "changedDistances": 312
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 87,
+      "differences": [],
+      "n": 335,
+      "changedDistances": 313
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 14,
+      "differences": [],
+      "n": 344,
+      "changedDistances": 326
+    },
+    {
+      "year": 2026,
+      "session": 11408,
+      "driver": 23,
+      "differences": [],
+      "n": 341,
+      "changedDistances": 319
+    }
+  ],
+  "nonInterlagosRowsUnchanged": 845,
+  "totalRows": 885,
+  "fittedInterlagosRows": 3,
+  "repositoryTracesSha256": "36a1f55ac59e73f05abf4144ea08d1c2cdb7d8b78854d7de19e99a83f4f64413"
+}

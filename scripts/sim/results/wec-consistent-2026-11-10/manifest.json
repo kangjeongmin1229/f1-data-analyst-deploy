@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-10T11:19:02.214Z",
+  "inputs": {
+    "geometry": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "traces": "36a1f55ac59e73f05abf4144ea08d1c2cdb7d8b78854d7de19e99a83f4f64413",
+    "archiveTraces": "0ad9c18d303a748d77f499e032f554b7b9c545c4d2966e40cb52661ee13621ef",
+    "seed": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "wec": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+    "oldB": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "timing71": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76"
+  },
+  "bEnv": {
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_TRACK_DRAG": "off",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_WPRIOR": "8"
+  },
+  "wecEnv": {
+    "LAPSIM_ONLY": "wec",
+    "LAPSIM_ITERS": "70",
+    "LAPSIM_HOLDOUT_ITERS": "25",
+    "LAPSIM_WEC_NM_TOL": "1e-4",
+    "LAPSIM_WEC_NM_CAP": "2000",
+    "LAPSIM_WEC_TRAP_POSITION": "off",
+    "LAPSIM_WEC_SECTORS": "off"
+  },
+  "R": "1e-4, cap 2000",
+  "control": "Repository geometry + current B; current configuration refit at R, not frozen production cars",
+  "candidate": "Repository geometry + rebuilt B; refit at R",
+  "pass": "Raced sessions reproduce, F1 seasons/projections unchanged, pooled WEC no worse. Existing statistical gate also reported unchanged.",
+  "adopt": false,
+  "estimate": "B 3–4 hours plus WEC fitting; control may run beside B",
+  "traceAudit": "40 Interlagos distance arrays replaced; every other measurement and all 845 other traces unchanged. Only three dry 2025 Interlagos rows enter the F1 fit."
+}
