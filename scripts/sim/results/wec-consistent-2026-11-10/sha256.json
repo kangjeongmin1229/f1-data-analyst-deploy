@@ -10,5 +10,6 @@
   "projection-audit.json": "1346e22304cf40e9d666b05ac1fd6fbed84bb7942a23fffe24a1565ab2e36ec4",
   "reproduction-frozen.json": "f3ce814c0314edb52daa5e276177eec5b1bbcfaa70efe412b58eb12063c9fd45",
   "reproduction-scope-audit.json": "8fea8c2e0ea477f2e224f0cebb22609d5ffceda309922f50c097593f2c737c08",
-  "stopped.json": "51987ccee1840b061d3dca2534ccca94bece78be634fa490928a4c619981b6d3"
+  "stopped.json": "51987ccee1840b061d3dca2534ccca94bece78be634fa490928a4c619981b6d3",
+  "final-pr.png": "951596f9f2a7fda40b2b77cf989035293a8eab458b1f7e38c81313af229e26ac"
 }
