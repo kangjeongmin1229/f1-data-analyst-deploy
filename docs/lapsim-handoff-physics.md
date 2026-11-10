@@ -1543,3 +1543,14 @@ Evidence: [wec-consistent-resume-2026-11-10](../scripts/sim/results/wec-consiste
 **One decision needed:** may B use more rounds to meet the existing F1 convergence rule, with every other setting unchanged? Do not restart or change the fixed round setting before that decision. WEC R remains accepted, b2 stays rejected, trap/aero-ratio experiments remain on hold, and the three deferred geometry sources remain unchanged.
 
 Final verification after the audit inventory guard: 427/427 offline tests pass. Build and artifact validation had already passed; no application or build source changed afterward. Compressed final test output is final-tests.log.gz.
+
+
+## 22. B main-fit continuation and consistent candidate (2026-11-10)
+
+Owner approval supersedes section 21's stop: only B's round count may increase. The main fit stops after at least five rounds when its last score decrease is nonnegative and strictly below 1%, with a cap of ten. Existing warm-start variables (`xs`, `factors`, `adj`) continue one round at a time; a regression test verifies exact agreement with an uninterrupted fit. The interrupted run had no saved fit state, so one required B rerun starts from the original inputs. Full round states and scores are saved after each round. The existing outlier removal rule is unchanged.
+
+B exports only track grips; no held-out folds are needed for this export. They are not run and no held-out convergence is claimed. All other B settings remain fixed at the section 21 values. A round-five table saved during this required run supplies a secondary WEC arm only if its outlier exclusions match the final first-pass exclusions; otherwise that arm is skipped because it would require another B run.
+
+Declared arms: control = current production configuration refit at R with the existing B table; candidate = rebuilt converged B table and WEC at R; secondary = saved round-five B and WEC at R if available. All use repository geometry and the unchanged production F1 seasons/projections. R stays tolerance 1e-4, cap 2000, timing flags off. The pinned archive, all source inputs, trace reprojection, production seed and accepted tolerance evidence are hash-checked before fitting. No values are adopted. Production F1 is inspected from existing GitHub Actions logs only.
+
+Results: pending this declared run. Evidence directory: `scripts/sim/results/wec-consistent-rounds-2026-11-10/`.

@@ -3,6 +3,7 @@
 // build-geometry.mjs); writes worker/lapsim/calibration-data.js and docs/lapsim-report.md.
 import {readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
+import {fitBTransferRounds, badTracks, transferCalibration} from './b-transfer-rounds.mjs';
 import {objectiveTrace} from './objective-trace.mjs';
 import {wecNmStop} from './wec-nm-stop.mjs';
 import {splitWecSessions} from './wec-session-scope.mjs';
@@ -34,7 +35,17 @@ const BCD = {rounds: Number(E.LAPSIM_ROUNDS || 4), iters: Number(E.LAPSIM_BCD_IT
   trackDrag: E.LAPSIM_TRACK_DRAG === 'on', teams: E.LAPSIM_TEAMS === 'on', residual: E.LAPSIM_RESIDUAL === 'on', residualLambda: Number(E.LAPSIM_RESIDUAL_LAMBDA || 1), wPrior: Number(E.LAPSIM_WPRIOR || 2), log: m => console.log(m)};
 const MAX_POS = Number(E.LAPSIM_MAX_POS || 3);
 const HOLDOUT_YEARS = (E.LAPSIM_HOLDOUT_YEARS || '2025,2026').split(',').map(Number);
-const fitAll = gs => FITTER === 'bcd' ? fitJointBCD(gs, BCD) : fitJoint(gs, {iters: ITERS, wTime: WTIME});
+const B_TRANSFER_ONLY = E.LAPSIM_B_TRANSFER_ONLY === 'on';
+const bPhases = [];
+const fitAll = async gs => {
+  if (B_TRANSFER_ONLY) {
+    if (FITTER !== 'bcd' || E.LAPSIM_SKIP_WEC !== '1' || BCD.trackDrag || BCD.rounds !== 5 || BCD.iters !== 200 || BCD.wTime !== 20 || BCD.wSector !== 2 || BCD.wPrior !== 8 || !BCD.teams) throw new Error('Unexpected B transfer settings');
+    const phase = await fitBTransferRounds(gs, BCD, `.cache/b-rounds/phase-${bPhases.length + 1}`);
+    bPhases.push(phase);
+    return phase.fit;
+  }
+  return FITTER === 'bcd' ? fitJointBCD(gs, BCD) : fitJoint(gs, {iters: ITERS, wTime: WTIME});
+};
 const holdoutOf = (gs, key) => FITTER === 'bcd' ? holdoutBCD(gs, key, {...BCD, rounds: Math.max(2, BCD.rounds - 1)}) : holdoutJoint(gs, key, {iters: HOLDOUT_ITERS, wTime: WTIME});
 const GRIP_LIMITS = E.LAPSIM_GRIP_LO ? [Number(E.LAPSIM_GRIP_LO), Number(E.LAPSIM_GRIP_HI)] : FITTER === 'bcd' ? [0.7, 1.3] : [0.85, 1.15];
 BCD.lo = GRIP_LIMITS[0]; BCD.hi = GRIP_LIMITS[1];
@@ -105,6 +116,20 @@ if (bad.length) {
   for (const g of groups) { const drop = new Set(bad.filter(p => p.group === g.key).map(p => p.name)); g.laps = g.laps.filter(l => !drop.has(l.name)); }
   report.push(`Dropped (lap more than 4% off after the first fit): ${[...new Set(bad.map(p => p.group + ' ' + p.name))].join(', ')}`, '');
   joint = await fitAll(groups);
+}
+if (B_TRANSFER_ONLY) {
+  // The transfer exporter reads only fitted track grips. No held-out fits are needed.
+  const first = bPhases[0], last = bPhases.at(-1);
+  const secondaryAvailable = JSON.stringify(badTracks(first.round5)) === JSON.stringify(badTracks(first.fit));
+  const emit = async (path, fit) => writeFile(path, `export const lapsimCalibration = ${JSON.stringify(transferCalibration(fit), null, 2)};\n`);
+  await emit('worker/lapsim/calibration-data.js', joint);
+  if (secondaryAvailable) await emit('.cache/b-rounds/round-5-calibration.js', last.round5);
+  await writeFile('.cache/b-rounds/summary.json', JSON.stringify({
+    phases: bPhases.map(p => p.rounds), converged: true, heldout: 'Not run: transfer-table export needs only the main fit',
+    round5BadTracks: badTracks(first.round5), finalBadTracks: badTracks(first.fit), secondaryAvailable,
+    secondaryReason: secondaryAvailable ? 'Round-five snapshots saved during the required rerun; same outlier exclusion set' : 'Round-five outlier exclusions differ; a separate rerun would be needed, so skipped'
+  }, null, 2) + '\n');
+  process.exit(0);
 }
 report.push(`F1 joint fit of ${groups.map(g => g.key).join(' and ')}: ${((Date.now() - t0) / 1000).toFixed(0)} s, score ${joint.score.toFixed(3)}.`, '');
 for (const g of groups) {
