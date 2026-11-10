@@ -14,6 +14,7 @@ import {fitModelHierarchy,carForModel,MODEL_STOP,MODEL_SHRINK} from './wec-model
 import {simulateLap} from '../../worker/lapsim/engine.js';
 import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
 import {gate} from './gate.mjs';
+import assert from 'node:assert/strict';
 const [cls,yearText,outArg]=process.argv.slice(2),year=Number(yearText),out=resolve(outArg);
 await mkdir(out,{recursive:true});
 const tracks=Object.fromEntries(Object.entries(lapsimTracks).map(([k,v])=>[k,trackFromData(v)]));
@@ -35,7 +36,13 @@ const rows=sessions.flatMap(w=>w.cars.map((c,i)=>{
 if(rows.some(l=>!Number.isFinite(l.grip)))throw Error('Missing frozen track factor');
 const def=SERIES.wec.classes[cls],base={...structuredClone(def.prior),linkMu:true};
 const params=Object.entries(def.bounds).map(([key,[min,max]])=>({key,path:key,base:base[key],step:.08,min,max}));
-const result={group:`wec-${cls}/${year}`,settings:{stop:MODEL_STOP,shrink:MODEL_SHRINK,gripSource:source},nCars:rows.length,nTracks:sessions.length,folds:[],complete:false};
+const initial={group:`wec-${cls}/${year}`,settings:{stop:MODEL_STOP,shrink:MODEL_SHRINK,gripSource:source},nCars:rows.length,nTracks:sessions.length,folds:[],complete:false};
+const result=process.env.LAPSIM_MODEL_RESUME==='on'?JSON.parse(readFileSync(join(out,'result.json'))):initial;
+if(result!==initial){
+ for(const key of ['group','settings','nCars','nTracks'])assert.deepEqual(result[key],initial[key],'Resume checkpoint differs: '+key);
+ assert.ok(result.main?.pass&&result.folds.every(f=>f.pass),'Only completed, converged fits may be reused');
+ if(result.complete)process.exit(0);
+}
 const save=()=>writeFileSync(join(out,'result.json'),JSON.stringify(result,null,2)+'\n');
 function patchRows(train,test=[]){
  const known=train.filter(l=>l.bop),kg=known.reduce((s,l)=>s+l.bop.kg,0)/(known.length||1),kw=known.reduce((s,l)=>s+l.bop.kW,0)/(known.length||1);
@@ -50,7 +57,7 @@ function fitPair(train,label){
  const model=fitModelHierarchy(train,base,params,{enabled:true,controlFit:control,stop:MODEL_STOP,trace:trace('models')});
  return {control,model,ends,pass:!ends.models.capHit};
 }
-const mainRows=patchRows(rows),main=fitPair(mainRows.train,'main');
+const mainRows=patchRows(rows),main=result.main||fitPair(mainRows.train,'main');
 result.main={...main,refKg:mainRows.refKg,refKW:mainRows.refKW};save();
 if(!main.pass){result.parked='Main fit reached the iteration cap; held-out folds not run';save();process.exit(0);}
 function evaluate(l,fit){const c=carForModel(fit,l.model),car=l.patch?l.patch(c):c;const sim=simulateLap(withGrip(l.track,l.grip),car,conditionsFromWeather(l.weather||{})).lapTime;return {track:l.name,model:l.model,entry:l.entry,realSec:l.lapSeconds,simSec:sim,pct:(sim/l.lapSeconds-1)*100,classBest:l.classBest};}
@@ -59,6 +66,8 @@ for(const kind of ['track','model']){
  for(const hidden of values){
   const select=l=>(kind==='track'?l.name:l.model)===hidden;
   const prepared=patchRows(rows.filter(l=>!select(l)),rows.filter(select));
+  const saved=result.folds.find(f=>f.kind===kind&&f.hidden===hidden);
+  if(saved){assert.equal(saved.trainRows,prepared.train.length);assert.deepEqual(saved.trainModels,[...new Set(prepared.train.map(l=>l.model))]);continue;}
   const pair=fitPair(prepared.train,`${kind}:${hidden}`);
   const fold={kind,hidden,trainRows:prepared.train.length,trainModels:[...new Set(prepared.train.map(l=>l.model))],convergence:pair.ends,pass:pair.pass,errors:[]};
   if(pair.pass){

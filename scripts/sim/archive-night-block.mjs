@@ -5,7 +5,7 @@ import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 const block=process.argv[2],folders={2:'vegas-fit',3:'wec-fit',4:'models-fit',5:'gears',6:'core-review'};
 if(!folders[block])throw Error('Expected block 2, 3, 4, 5 or 6');
-const source=resolve('.cache/night-session',folders[block]),out=resolve('scripts/sim/results/night-session-2026-11-10','block-'+block);
+const source=process.argv[3]?resolve(process.argv[3]):resolve('.cache/night-session',folders[block]),out=resolve('scripts/sim/results/night-session-2026-11-10','block-'+block);
 await mkdir(out,{recursive:true});
 const files={},hash=b=>createHash('sha256').update(b).digest('hex');
 async function save(from,name){let bytes=await readFile(from),target=name;if(/\.jsonl$|\.log$|\.stderr$/.test(name)||bytes.length>100000){bytes=gzipSync(bytes);target+='.gz';}await mkdir(join(out,target,'..'),{recursive:true});await writeFile(join(out,target),bytes);files[target]={sha256:hash(bytes),bytes:bytes.length,sourceSha256:hash(await readFile(from))};}
