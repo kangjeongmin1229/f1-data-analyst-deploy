@@ -29,7 +29,8 @@ const tr = trackFromData(lapsimTracks.interlagos);
 function replay(season) {
   const t = season.tracks.interlagos;
   const simSec = simulateLap(withGrip(tr, t.grip), season.car, conditionsFromWeather(t.weather || {})).lapTime;
-  return {realSec: t.realLap, simSec, errorSec: simSec - t.realLap, errorPct: (simSec / t.realLap - 1) * 100};
+  return {realSec: t.realLap, simSec, errorSec: simSec - t.realLap, errorPct: (simSec / t.realLap - 1) * 100, savedFitErrorSec: t.errorSec,
+    definition: 'Season car with saved track grip and weather; no raced-session correction or per-event BoP patch'};
 }
 for (const [name, c] of Object.entries(cal)) {
   assert.deepEqual(c.seasons, frozen.seasons, 'STOP 5.3: F1 seasons changed');
