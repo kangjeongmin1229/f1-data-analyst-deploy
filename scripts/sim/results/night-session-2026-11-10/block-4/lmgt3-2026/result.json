@@ -1,0 +1,2483 @@
+{
+  "group": "wec-lmgt3/2026",
+  "settings": {
+    "stop": {
+      "tolerance": 0.0001,
+      "cap": 2000,
+      "window": 10
+    },
+    "shrink": {
+      "lambda": 8,
+      "logScale": 0.1
+    },
+    "gripSource": "transfer"
+  },
+  "nCars": 107,
+  "nTracks": 6,
+  "folds": [
+    {
+      "kind": "track",
+      "hidden": "austin",
+      "trainRows": 89,
+      "trainModels": [
+        "McLaren 720S LMGT3 Evo",
+        "Lexus RC F LMGT3",
+        "BMW M4 LMGT3 Evo",
+        "Corvette Z06 LMGT3.R",
+        "Mercedes-AMG LMGT3",
+        "Ferrari 296 LMGT3 Evo",
+        "Porsche 911 GT3 R LMGT3",
+        "Ford Mustang LMGT3",
+        "Aston Martin Vantage AMR LMGT3"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 105,
+          "objective": 4.1296456547936975,
+          "x": [
+            0.011574798107618248,
+            0.91655516857155,
+            0.3677201709737601
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007274145466473758,
+          "relativeObjectiveChange": 0.000003874429006728541
+        },
+        "models": {
+          "event": "end",
+          "iteration": 2000,
+          "objective": 3.9767166328256063,
+          "x": [
+            0.0098149452644502,
+            0.9160375220020007,
+            0.36280728057813005,
+            -0.001040473337715453,
+            0.0003498854956323691,
+            0.00020691426463979027,
+            -0.0029928760948910154,
+            0.0002554148762891676,
+            0.00221790459552418,
+            0.0021790567685865724,
+            0.0006644052777396632,
+            -0.0035255308011317636,
+            -0.007186474969667435,
+            0.00019117316123662574,
+            0.0032132531157576466,
+            0.010586014586245376,
+            0.0002935955315548858,
+            -0.0035736580831110492,
+            0.017608650761923594,
+            0.0003467637593367014,
+            -0.0038939582080088292,
+            -0.007494431788338007,
+            -0.00005926603728382868,
+            0.004256158371032116,
+            -0.006264727234451728,
+            0.000008675299821596731,
+            0.0006962079920610881,
+            -0.0024356050388744206,
+            -0.00044026592218019734,
+            0.0012344684285721037
+          ],
+          "stopReason": "cap",
+          "capHit": true,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00017832306822472487,
+          "relativeObjectiveChange": 0
+        }
+      },
+      "pass": false,
+      "errors": []
+    }
+  ],
+  "complete": false,
+  "main": {
+    "control": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.3,
+        "clALow": 3.5,
+        "cdALow": 1.3,
+        "muX": 1.4631477657457814,
+        "muY": 1.5640545082110078,
+        "muXTrac": 1.5136011369783946,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "perTrack": [
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": 0.6176877452349601,
+          "simLap": 101.79868774523496,
+          "realLap": 101.181,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260,
+          "meta": {
+            "event": "IMOLA",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": 0.39168774523496097,
+          "simLap": 101.79868774523496,
+          "realLap": 101.407,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260.7,
+          "meta": {
+            "event": "IMOLA",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": 0.25368774523495574,
+          "simLap": 101.79868774523496,
+          "realLap": 101.545,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260.7,
+          "meta": {
+            "event": "IMOLA",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": 0.20768774523494926,
+          "simLap": 101.79868774523496,
+          "realLap": 101.59100000000001,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260,
+          "meta": {
+            "event": "IMOLA",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": 0.15668774523496154,
+          "simLap": 101.79868774523496,
+          "realLap": 101.642,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 262.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.013312254765040166,
+          "simLap": 101.79868774523496,
+          "realLap": 101.812,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 259.4,
+          "meta": {
+            "event": "IMOLA",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.2933122547650413,
+          "simLap": 101.79868774523496,
+          "realLap": 102.092,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260.7,
+          "meta": {
+            "event": "IMOLA",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.4313122547650323,
+          "simLap": 101.79868774523496,
+          "realLap": 102.22999999999999,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 257.5,
+          "meta": {
+            "event": "IMOLA",
+            "car": "21",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.4663122547650431,
+          "simLap": 101.79868774523496,
+          "realLap": 102.265,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 257.5,
+          "meta": {
+            "event": "IMOLA",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.6363122547650448,
+          "simLap": 101.79868774523496,
+          "realLap": 102.435,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 261.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.240312254765044,
+          "simLap": 101.79868774523496,
+          "realLap": 103.039,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 262.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.294312254765046,
+          "simLap": 101.79868774523496,
+          "realLap": 103.093,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260.7,
+          "meta": {
+            "event": "IMOLA",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.307312254765037,
+          "simLap": 101.79868774523496,
+          "realLap": 103.106,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 257.5,
+          "meta": {
+            "event": "IMOLA",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.4423122547650422,
+          "simLap": 101.79868774523496,
+          "realLap": 103.241,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260,
+          "meta": {
+            "event": "IMOLA",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.4823122547650485,
+          "simLap": 101.79868774523496,
+          "realLap": 103.281,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 262,
+          "meta": {
+            "event": "IMOLA",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.537312254765041,
+          "simLap": 101.79868774523496,
+          "realLap": 103.336,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 258.8,
+          "meta": {
+            "event": "IMOLA",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.723312254765034,
+          "simLap": 101.79868774523496,
+          "realLap": 103.52199999999999,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 260,
+          "meta": {
+            "event": "IMOLA",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -2.200312254765038,
+          "simLap": 101.79868774523496,
+          "realLap": 103.999,
+          "shift": 0,
+          "rho": 1.1783198532823862,
+          "vMaxSim": 263.4114976987107,
+          "vMaxReal": 256.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 3.311548850198079,
+          "simLap": 139.92354885019807,
+          "realLap": 136.612,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 262.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 3.1175488501980624,
+          "simLap": 139.92354885019807,
+          "realLap": 136.806,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 3.0995488501980617,
+          "simLap": 139.92354885019807,
+          "realLap": 136.824,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 2.9555488501980847,
+          "simLap": 139.92354885019807,
+          "realLap": 136.968,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 2.886548850198068,
+          "simLap": 139.92354885019807,
+          "realLap": 137.037,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.7,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 2.6605488501980687,
+          "simLap": 139.92354885019807,
+          "realLap": 137.263,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 257.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "21",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 2.5675488501980794,
+          "simLap": 139.92354885019807,
+          "realLap": 137.356,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 263,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 2.3915488501980633,
+          "simLap": 139.92354885019807,
+          "realLap": 137.532,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 259.2,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.8575488501980715,
+          "simLap": 139.92354885019807,
+          "realLap": 138.066,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.6725488501980692,
+          "simLap": 139.92354885019807,
+          "realLap": 138.251,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 262.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.0135488501980774,
+          "simLap": 139.92354885019807,
+          "realLap": 138.91,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 259.9,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.937548850198084,
+          "simLap": 139.92354885019807,
+          "realLap": 138.986,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.7,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.8215488501980701,
+          "simLap": 139.92354885019807,
+          "realLap": 139.102,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 257.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.7535488501980581,
+          "simLap": 139.92354885019807,
+          "realLap": 139.17000000000002,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 261.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.7305488501980619,
+          "simLap": 139.92354885019807,
+          "realLap": 139.193,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 258.6,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.46254885019806125,
+          "simLap": 139.92354885019807,
+          "realLap": 139.461,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 262.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.23354885019807625,
+          "simLap": 139.92354885019807,
+          "realLap": 139.69,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 257.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.14254885019806807,
+          "simLap": 139.92354885019807,
+          "realLap": 139.781,
+          "shift": 0,
+          "rho": 1.169753704109929,
+          "vMaxSim": 250.7823710306523,
+          "vMaxReal": 256.8,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.44996350138329433,
+          "simLap": 92.9000364986167,
+          "realLap": 93.35,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 250.8,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.6489635013833066,
+          "simLap": 92.9000364986167,
+          "realLap": 93.549,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 256.7,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.86396350138331,
+          "simLap": 92.9000364986167,
+          "realLap": 93.76400000000001,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 256.1,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.8659635013832911,
+          "simLap": 92.9000364986167,
+          "realLap": 93.76599999999999,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 250.8,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.8729635013832961,
+          "simLap": 92.9000364986167,
+          "realLap": 93.773,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 255.5,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.9079635013832927,
+          "simLap": 92.9000364986167,
+          "realLap": 93.80799999999999,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 254.9,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.9729635013832905,
+          "simLap": 92.9000364986167,
+          "realLap": 93.87299999999999,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 254.3,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.1689635013833026,
+          "simLap": 92.9000364986167,
+          "realLap": 94.069,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 254.9,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.3079635013832984,
+          "simLap": 92.9000364986167,
+          "realLap": 94.208,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 254.3,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.380963501383306,
+          "simLap": 92.9000364986167,
+          "realLap": 94.281,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 257.9,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.0129635013832967,
+          "simLap": 92.9000364986167,
+          "realLap": 94.913,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 249.6,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.1029635013833,
+          "simLap": 92.9000364986167,
+          "realLap": 95.003,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 250.2,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.211963501383295,
+          "simLap": 92.9000364986167,
+          "realLap": 95.112,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 251.9,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.234963501383291,
+          "simLap": 92.9000364986167,
+          "realLap": 95.13499999999999,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 245.7,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.305963501383303,
+          "simLap": 92.9000364986167,
+          "realLap": 95.206,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 255.5,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.3109635013832985,
+          "simLap": 92.9000364986167,
+          "realLap": 95.211,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 239.2,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.3309635013832946,
+          "simLap": 92.9000364986167,
+          "realLap": 95.231,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 255.5,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "21",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -2.3619635013833005,
+          "simLap": 92.9000364986167,
+          "realLap": 95.262,
+          "shift": 0,
+          "rho": 1.067876691359104,
+          "vMaxSim": 264.1206827114475,
+          "vMaxReal": 248.5,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 1.0947459051477466,
+          "simLap": 126.19774590514774,
+          "realLap": 125.103,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 252.9,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.913745905147735,
+          "simLap": 126.19774590514774,
+          "realLap": 125.284,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 251.7,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.714745905147737,
+          "simLap": 126.19774590514774,
+          "realLap": 125.483,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 251.7,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.714745905147737,
+          "simLap": 126.19774590514774,
+          "realLap": 125.483,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 250.6,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.5437459051477447,
+          "simLap": 126.19774590514774,
+          "realLap": 125.654,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 253.5,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.4327459051477405,
+          "simLap": 126.19774590514774,
+          "realLap": 125.765,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 250,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "21",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.3097459051477358,
+          "simLap": 126.19774590514774,
+          "realLap": 125.888,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 250,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.22874590514774695,
+          "simLap": 126.19774590514774,
+          "realLap": 125.969,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 250.6,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.004745905147743201,
+          "simLap": 126.19774590514774,
+          "realLap": 126.193,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 251.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -0.06725409485225953,
+          "simLap": 126.19774590514774,
+          "realLap": 126.265,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 251.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.0642540948522594,
+          "simLap": 126.19774590514774,
+          "realLap": 127.262,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 248.3,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.2452540948522568,
+          "simLap": 126.19774590514774,
+          "realLap": 127.443,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 246,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.2812540948522582,
+          "simLap": 126.19774590514774,
+          "realLap": 127.479,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 248.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.3612540948522565,
+          "simLap": 126.19774590514774,
+          "realLap": 127.559,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 251.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.4242540948522588,
+          "simLap": 126.19774590514774,
+          "realLap": 127.622,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 252.3,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.6812540948522638,
+          "simLap": 126.19774590514774,
+          "realLap": 127.879,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 249.4,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -1.9302540948522449,
+          "simLap": 126.19774590514774,
+          "realLap": 128.128,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 247.1,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": -2.6662540948522633,
+          "simLap": 126.19774590514774,
+          "realLap": 128.864,
+          "shift": 0,
+          "rho": 1.1050010652719011,
+          "vMaxSim": 258.7881421081164,
+          "vMaxReal": 247.1,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 1.6939409589309093,
+          "simLap": 102.6269409589309,
+          "realLap": 100.93299999999999,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 255.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 1.5719409589308952,
+          "simLap": 102.6269409589309,
+          "realLap": 101.055,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 255.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 1.228940958930906,
+          "simLap": 102.6269409589309,
+          "realLap": 101.398,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 256.5,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "21",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 1.1799409589308993,
+          "simLap": 102.6269409589309,
+          "realLap": 101.447,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 257.1,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 1.001940958930902,
+          "simLap": 102.6269409589309,
+          "realLap": 101.625,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 254.1,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.9289409589308946,
+          "simLap": 102.6269409589309,
+          "realLap": 101.69800000000001,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 258.4,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.7329409589308966,
+          "simLap": 102.6269409589309,
+          "realLap": 101.894,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 259,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.670940958930899,
+          "simLap": 102.6269409589309,
+          "realLap": 101.956,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 255.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.5449409589309084,
+          "simLap": 102.6269409589309,
+          "realLap": 102.082,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 256.5,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.40494095893089366,
+          "simLap": 102.6269409589309,
+          "realLap": 102.22200000000001,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 259,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.49705904106909315,
+          "simLap": 102.6269409589309,
+          "realLap": 103.124,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 259.6,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.5420590410690949,
+          "simLap": 102.6269409589309,
+          "realLap": 103.169,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 255.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.7050590410690916,
+          "simLap": 102.6269409589309,
+          "realLap": 103.332,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 254.7,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.8860590410691032,
+          "simLap": 102.6269409589309,
+          "realLap": 103.513,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 252.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.8910590410690986,
+          "simLap": 102.6269409589309,
+          "realLap": 103.518,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 256.5,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -1.3480590410690922,
+          "simLap": 102.6269409589309,
+          "realLap": 103.975,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 257.8,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -1.7610590410691032,
+          "simLap": 102.6269409589309,
+          "realLap": 104.388,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 252.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -2.028059041069099,
+          "simLap": 102.6269409589309,
+          "realLap": 104.655,
+          "shift": 0,
+          "rho": 1.1822448647204884,
+          "vMaxSim": 257.12127915031004,
+          "vMaxReal": 251.7,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 1.3415515740890527,
+          "simLap": 108.40655157408905,
+          "realLap": 107.065,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 268,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "23",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.8835515740890543,
+          "simLap": 108.40655157408905,
+          "realLap": 107.523,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 264.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "78",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.8695515740890443,
+          "simLap": 108.40655157408905,
+          "realLap": 107.537,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 274.1,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "33",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.8115515740890515,
+          "simLap": 108.40655157408905,
+          "realLap": 107.595,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 266.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "77",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.6735515740890463,
+          "simLap": 108.40655157408905,
+          "realLap": 107.733,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 266.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "87",
+            "model": "Lexus RC F LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.6465515740890595,
+          "simLap": 108.40655157408905,
+          "realLap": 107.75999999999999,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 268,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "27",
+            "model": "Aston Martin Vantage AMR LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.6385515740890497,
+          "simLap": 108.40655157408905,
+          "realLap": 107.768,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 269.3,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "88",
+            "model": "Ford Mustang LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.36955157408904427,
+          "simLap": 108.40655157408905,
+          "realLap": 108.037,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 265.4,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "61",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.3225515740890472,
+          "simLap": 108.40655157408905,
+          "realLap": 108.084,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 269.3,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "91",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Hyperpole LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.03344842591094732,
+          "simLap": 108.40655157408905,
+          "realLap": 108.44,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 274.1,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "34",
+            "model": "Corvette Z06 LMGT3.R",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -1.8354484259109398,
+          "simLap": 108.40655157408905,
+          "realLap": 110.24199999999999,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 266,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "69",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -2.4134484259109428,
+          "simLap": 108.40655157408905,
+          "realLap": 110.82,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 268,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "92",
+            "model": "Porsche 911 GT3 R LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -2.6404484259109466,
+          "simLap": 108.40655157408905,
+          "realLap": 111.047,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 260.9,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "32",
+            "model": "BMW M4 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -2.7834484259109473,
+          "simLap": 108.40655157408905,
+          "realLap": 111.19,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 265.4,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "79",
+            "model": "Mercedes-AMG LMGT3",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -2.878448425910946,
+          "simLap": 108.40655157408905,
+          "realLap": 111.285,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 268.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "58",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -2.9084484259109473,
+          "simLap": 108.40655157408905,
+          "realLap": 111.315,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 266,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "54",
+            "model": "Ferrari 296 LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -3.176448425910948,
+          "simLap": 108.40655157408905,
+          "realLap": 111.583,
+          "shift": 0,
+          "rho": 1.2318490465846712,
+          "vMaxSim": 259.9075236673463,
+          "vMaxReal": 266.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "10",
+            "model": "McLaren 720S LMGT3 Evo",
+            "session": "Qualifying LMGT3"
+          }
+        }
+      ],
+      "score": 3.9515135615210717,
+      "x": [
+        0.009026562381973914,
+        0.9163402149820935,
+        0.36779202992743126
+      ]
+    },
+    "model": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.297259534722268,
+        "clALow": 3.5,
+        "cdALow": 1.297259534722268,
+        "muX": 1.4614025045993768,
+        "muY": 1.5621888842269203,
+        "muXTrac": 1.5117956944131488,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "modelCars": {
+        "Aston Martin Vantage AMR LMGT3": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.2990912064679918,
+          "clALow": 3.5,
+          "cdALow": 1.2990912064679918,
+          "muX": 1.4688722024199892,
+          "muY": 1.570173733621368,
+          "muXTrac": 1.5195229680206788,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "BMW M4 LMGT3 Evo": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.499858591024935,
+          "cdA": 1.3,
+          "clALow": 3.499858591024935,
+          "cdALow": 1.3,
+          "muX": 1.4558717400256624,
+          "muY": 1.5562766876136394,
+          "muXTrac": 1.506074213819651,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Corvette Z06 LMGT3.R": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.4993017350606337,
+          "cdA": 1.2939583884575097,
+          "clALow": 3.4993017350606337,
+          "cdALow": 1.2939583884575097,
+          "muX": 1.4553539833727382,
+          "muY": 1.5557232236053409,
+          "muXTrac": 1.5055386034890395,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Ferrari 296 LMGT3 Evo": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.3,
+          "clALow": 3.5,
+          "cdALow": 1.3,
+          "muX": 1.4529357175043727,
+          "muY": 1.5531381807805364,
+          "muXTrac": 1.5030369491424547,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Ford Mustang LMGT3": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.2949435411266415,
+          "clALow": 3.5,
+          "cdALow": 1.2949435411266415,
+          "muX": 1.4764449669997581,
+          "muY": 1.5782687578273278,
+          "muXTrac": 1.527356862413543,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Lexus RC F LMGT3": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.294058898677778,
+          "clALow": 3.5,
+          "cdALow": 1.294058898677778,
+          "muX": 1.4812765629475382,
+          "muY": 1.5834335672887478,
+          "muXTrac": 1.532355065118143,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "McLaren 720S LMGT3 Evo": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.3,
+          "clALow": 3.5,
+          "cdALow": 1.3,
+          "muX": 1.4551612400427947,
+          "muY": 1.555517187631953,
+          "muXTrac": 1.5053392138373738,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Mercedes-AMG LMGT3": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.498165687741478,
+          "cdA": 1.3,
+          "clALow": 3.498165687741478,
+          "cdALow": 1.3,
+          "muX": 1.4530886653931856,
+          "muY": 1.5533016767996124,
+          "muXTrac": 1.503195171096399,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Porsche 911 GT3 R LMGT3": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {},
+          "label": "LMGT3",
+          "mass": 1400,
+          "wheelbase": 2.7,
+          "cogHeight": 0.42,
+          "rearWeight": 0.52,
+          "rearAero": 0.5,
+          "clA": 3.5,
+          "cdA": 1.2998263474807488,
+          "clALow": 3.5,
+          "cdALow": 1.2998263474807488,
+          "muX": 1.460054006498332,
+          "muY": 1.5607473862568377,
+          "muXTrac": 1.510400696377585,
+          "pIce": 380000,
+          "vMax": 83.33333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        }
+      },
+      "x": [
+        0.007833037776650065,
+        0.9163546418127068,
+        0.3656145048462427,
+        0.005098302887786092,
+        0.00007403419664448645,
+        0.0014109588666429244,
+        -0.00379173895656256,
+        -0.00010431331906146985,
+        0.002112412392481479,
+        -0.004147435633891233,
+        -0.0002634341105659826,
+        -0.002547950923897802,
+        -0.00581045182170103,
+        0.00008831907103471878,
+        0.0021170537458430143,
+        0.010240554693771373,
+        0.0006885185790995476,
+        -0.0017868925729226256,
+        0.013507664322967482,
+        0.0001701932807682034,
+        -0.0024702773930305255,
+        -0.004279881826699136,
+        0.00011934987903777756,
+        0.002132580057959738,
+        -0.005705189188769234,
+        -0.0005881365380282252,
+        0.002113457961170093,
+        -0.0009231684207468862,
+        0.00023506076049424672,
+        0.0019766874956616384
+      ],
+      "score": 3.8381302464173648,
+      "models": [
+        "Aston Martin Vantage AMR LMGT3",
+        "BMW M4 LMGT3 Evo",
+        "Corvette Z06 LMGT3.R",
+        "Ferrari 296 LMGT3 Evo",
+        "Ford Mustang LMGT3",
+        "Lexus RC F LMGT3",
+        "McLaren 720S LMGT3 Evo",
+        "Mercedes-AMG LMGT3",
+        "Porsche 911 GT3 R LMGT3"
+      ],
+      "convergence": {
+        "event": "end",
+        "iteration": 1929,
+        "objective": 3.8381302464173648,
+        "x": [
+          0.007833037776650065,
+          0.9163546418127068,
+          0.3656145048462427,
+          0.005098302887786092,
+          0.00007403419664448645,
+          0.0014109588666429244,
+          -0.00379173895656256,
+          -0.00010431331906146985,
+          0.002112412392481479,
+          -0.004147435633891233,
+          -0.0002634341105659826,
+          -0.002547950923897802,
+          -0.00581045182170103,
+          0.00008831907103471878,
+          0.0021170537458430143,
+          0.010240554693771373,
+          0.0006885185790995476,
+          -0.0017868925729226256,
+          0.013507664322967482,
+          0.0001701932807682034,
+          -0.0024702773930305255,
+          -0.004279881826699136,
+          0.00011934987903777756,
+          0.002132580057959738,
+          -0.005705189188769234,
+          -0.0005881365380282252,
+          0.002113457961170093,
+          -0.0009231684207468862,
+          0.00023506076049424672,
+          0.0019766874956616384
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00009746451622450998,
+        "relativeObjectiveChange": 0
+      },
+      "shrink": {
+        "lambda": 8,
+        "logScale": 0.1
+      }
+    },
+    "ends": {
+      "base": {
+        "event": "end",
+        "iteration": 116,
+        "objective": 3.9515135615210717,
+        "x": [
+          0.009026562381973914,
+          0.9163402149820935,
+          0.36779202992743126
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00006719163968160746,
+        "relativeObjectiveChange": 0.000001678223292694313
+      },
+      "models": {
+        "event": "end",
+        "iteration": 1929,
+        "objective": 3.8381302464173648,
+        "x": [
+          0.007833037776650065,
+          0.9163546418127068,
+          0.3656145048462427,
+          0.005098302887786092,
+          0.00007403419664448645,
+          0.0014109588666429244,
+          -0.00379173895656256,
+          -0.00010431331906146985,
+          0.002112412392481479,
+          -0.004147435633891233,
+          -0.0002634341105659826,
+          -0.002547950923897802,
+          -0.00581045182170103,
+          0.00008831907103471878,
+          0.0021170537458430143,
+          0.010240554693771373,
+          0.0006885185790995476,
+          -0.0017868925729226256,
+          0.013507664322967482,
+          0.0001701932807682034,
+          -0.0024702773930305255,
+          -0.004279881826699136,
+          0.00011934987903777756,
+          0.002132580057959738,
+          -0.005705189188769234,
+          -0.0005881365380282252,
+          0.002113457961170093,
+          -0.0009231684207468862,
+          0.00023506076049424672,
+          0.0019766874956616384
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00009746451622450998,
+        "relativeObjectiveChange": 0
+      }
+    },
+    "pass": true,
+    "refKg": null,
+    "refKW": null
+  },
+  "parked": "track fold reached cap: austin"
+}

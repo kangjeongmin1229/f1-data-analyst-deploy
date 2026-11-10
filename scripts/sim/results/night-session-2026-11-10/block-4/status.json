@@ -1,32 +1,67 @@
 {
-  "at": "2026-11-10T16:12:04.403759+00:00",
-  "snapshot": "Completed Hypercar checkpoint. Optional LMGT3 is still running in the original time box.",
+  "at": "2026-11-10T16:21:44.175Z",
   "timedOut": false,
-  "control": {
-    "code": 0,
-    "preserved": true
-  },
   "groups": [
     {
       "label": "lmh-2025",
       "code": 0,
-      "complete": true
-    },
-    {
-      "label": "lmh-2026",
-      "code": 0,
-      "complete": true
+      "preserved": true
     },
     {
       "label": "lmdh-2025",
       "code": 0,
-      "complete": true
+      "preserved": true
     },
     {
       "label": "lmdh-2026",
       "code": 0,
-      "complete": true
+      "signal": null,
+      "resumed": true
+    },
+    {
+      "label": "lmh-2026",
+      "code": 0,
+      "signal": null,
+      "resumed": true
     }
   ],
-  "gt3": []
+  "control": {
+    "label": "production",
+    "code": 0,
+    "preserved": true,
+    "completedGroups": 6
+  },
+  "gt3": [
+    {
+      "label": "lmgt3-2025",
+      "code": 0,
+      "signal": null,
+      "resumed": false
+    },
+    {
+      "label": "lmgt3-2026",
+      "code": 0,
+      "signal": null,
+      "resumed": false
+    }
+  ],
+  "interruption": {
+    "lostSessionId": 1755,
+    "lastObservedAt": "2026-11-10T16:02:25Z",
+    "originalLogHashes": {
+      "lmh-2025/objectives.jsonl": "941beb1eda3252149e16043d02d48a5507382c46b339d29c065cd45952ecda16",
+      "lmh-2026/objectives.jsonl": "03283fce1377a5b72543b0ed0d7a79068aadde2a22080c11e31d947621c42ad5",
+      "lmdh-2025/objectives.jsonl": "b997d6d1071529fca9ae325f7a11601dc6918d7c4446dd737cc6df4dd0bc1551",
+      "lmdh-2026/objectives.jsonl": "4fef7f59ffa6999b91f59b24e075ece5959dc7f5be8a96a03478e32e9566ee38"
+    },
+    "reason": "Execution handle no longer exists; incomplete group logs stopped advancing; no final status file",
+    "restartLimit": 1,
+    "deadlineUnchanged": true
+  },
+  "integrity": {
+    "at": "2026-11-10T16:21:44.204Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  }
 }

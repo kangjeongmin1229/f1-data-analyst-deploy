@@ -1,0 +1,11 @@
+{
+  "base": "309fdfd8e214c5089072bcc5c06e51892bf63790",
+  "changedCoreFiles": 40,
+  "coreFilesAbove100KB": 0,
+  "resultDirectoriesInCorePR": 0,
+  "productionRuntimeAndGateUnchanged": 45,
+  "handoffStatusLines": 62,
+  "testsPassed": 432,
+  "fullTestLog": "final-tests.log",
+  "buildValidation": "Passed at core split; subsequent changes only audit script, its test and docs"
+}

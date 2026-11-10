@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-11-10T14:18:17.106313+00:00",
+  "startHead": "ca18431050c3bc9df0e48ff4fee7a76546b87d48",
+  "baseline": "current production; consistent candidate failed pooled WEC check",
+  "blocks": {
+    "0": {
+      "status": "done",
+      "reason": "All arms completed before this instruction; no restart needed; candidate pooled RMS is worse. Production stays baseline."
+    },
+    "2": {
+      "status": "parked",
+      "startedAt": "2026-11-10T14:26:59.668149+00:00",
+      "budgetMinutes": 90,
+      "completedAt": "2026-11-10T15:56:59.771Z",
+      "result": "Time box ended; two of eight held-out folds complete per arm; no final calibration; later dry Vegas row worse; no adoption"
+    },
+    "3": {
+      "status": "done",
+      "startedAt": "2026-11-10T14:30:20Z",
+      "budgetMinutes": 100,
+      "result": "Both BoP and sector2 rejected; no cap hits; dry reproduction exact; production unchanged"
+    },
+    "5": {
+      "status": "done",
+      "startedAt": "2026-11-10T14:48:21.558510+00:00",
+      "budgetMinutes": 60,
+      "result": "41 whole-team folds; measurement only; no production change"
+    },
+    "4": {
+      "status": "done",
+      "startedAt": "2026-11-10T14:52:28.990596+00:00",
+      "budgetMinutes": 120,
+      "completedAt": "2026-11-10T16:21:44.175Z",
+      "result": "Hypercar complete but fails no-worse-class check; optional LMGT3 parked after two cap hits; no model PR"
+    },
+    "6": {
+      "status": "done",
+      "startedAt": "2026-11-10T15:25:35.797767+00:00",
+      "budgetMinutes": 30,
+      "completedAt": "2026-11-10T15:37:38.468287+00:00",
+      "result": "PR 154 reduced to reusable code, tests, tables, docs; ready for review; full history on experiment branch"
+    },
+    "1": {
+      "status": "done",
+      "result": "Working rules updated as authorized"
+    }
+  },
+  "completedAt": "2026-11-10T16:21:44.175Z",
+  "activeRuns": []
+}

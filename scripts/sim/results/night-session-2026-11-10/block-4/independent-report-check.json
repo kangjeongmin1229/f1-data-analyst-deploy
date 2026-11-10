@@ -49,6 +49,14 @@
       "classBestCandidateRmsPct": 1.2068084672536201,
       "hiddenModelBaseRmsPct": 0.8737339337640124,
       "hiddenModelCandidateRmsPct": 0.8749981076303284
+    },
+    "lmgt3-2025": {
+      "complete": false,
+      "foldsSaved": 0
+    },
+    "lmgt3-2026": {
+      "complete": false,
+      "foldsSaved": 1
     }
   }
 }
