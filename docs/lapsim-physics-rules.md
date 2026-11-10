@@ -212,7 +212,7 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 | F1 only / WEC only | `LAPSIM_SKIP_WEC=1` / `LAPSIM_ONLY=wec` |
 | Fit length | `LAPSIM_ROUNDS`, `LAPSIM_BCD_ITERS` |
 | Model flags | `LAPSIM_TRACK_DRAG`, `LAPSIM_AXLE`, `LAPSIM_LOADEXP`, `LAPSIM_ROLLFRONT`, `LAPSIM_KV`, `LAPSIM_BANK`, `LAPSIM_GRIP_LO`, `LAPSIM_GRIP_HI`, `LAPSIM_WEC_GRIP` |
-| WEC timing experiments (off by default, require `LAPSIM_ONLY=wec`) | `LAPSIM_WEC_TRAP_POSITION=on`, `LAPSIM_WEC_SECTORS=on`; `LAPSIM_WEC_SECTOR_WEIGHT=2` is the approved primary weight, `1` and `4` sensitivity only. Verified year-specific positions: `scripts/sim/data/wec-timing-positions.json`. |
+| WEC timing experiments (off by default, require `LAPSIM_ONLY=wec`) | `LAPSIM_WEC_TRAP_POSITION=on`, `LAPSIM_WEC_SECTORS=on`; `LAPSIM_WEC_SECTOR_WEIGHT=2` is the approved primary weight, `1` and `4` sensitivity only. Verified year-specific positions: `scripts/sim/data/wec-timing-positions.json`. Sector runs also require `LAPSIM_WEC_ELIGIBILITY=<fixed JSON>` prepared once with production values. |
 | Parallel experiment | Edit `scripts/sim/experiments.json` (common settings and one entry per variant), push to a `lapsim-exp/<name>` branch. Workflow `lapsim-experiment.yml` runs every variant and a compare job. Do not open a PR from that branch to `main`. |
 | Compare | `node scripts/sim/exp-compare.mjs base.js cand1.js cand2.js` |
 | Corner, trap and braking check | `node scripts/sim/validate.mjs <name>` writes `probe-out/validate-<name>.json` |
@@ -220,6 +220,12 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 
 A new flag must be read in `calibrate.mjs` from the environment in the same way as the existing flags, and listed in this table.
 
+
+#### WEC sector eligibility and isolated experiment
+
+Owner-approved revision (2026-11-10): scale official sector distances by model length / official length; accept ratios from 0.98 to 1.02 inclusive. Measured sectors must be positive and sum to the lap within 0.002 s. Before any fit, `prepare-wec-eligibility.mjs` uses the production class car, saved track grip and measured weather on the best dry lap for each class-track-year. Each sector share must differ by at most 3 percentage points. Any failed class excludes the entire track-year; an invalid lower-ranked lap excludes only that row. The persisted table is shared by b2, b1 and b4, with input hashes checked before fitting. F1 sector points are never changed.
+
+`run-wec-timing.mjs prepare <PR149 reproduction snapshot> <original source snapshot>` creates isolated folders and the fixed table. Run `baseline` first (exact production reproduction and flags-off byte identity), then `sectors`, then `diagnostic`. Primary weight is 2; weights 1 and 4 are sensitivity only. Trap stays off and aero ratio is not implemented. The manifest is `scripts/sim/wec-timing-experiment.json`. These commands never install a candidate in production.
 
 #### Verified WEC production recipe — PR #149
 

@@ -1,21 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "baseCommit": "309fdfd8e214c5089072bcc5c06e51892bf63790",
   "inputUrl": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
   "inputSha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
-  "geometry": "Use production worker/lapsim/tracks-data.js; do not replace it with the older archive geometry.",
+  "geometry": "PR #149 historical recipe: archive geometry in isolated runs only; production geometry remains unchanged.",
   "commonEnv": {
     "LAPSIM_ONLY": "wec",
     "LAPSIM_ITERS": "70",
-    "LAPSIM_HOLDOUT_ITERS": "25",
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_ROUNDS": "5",
-    "LAPSIM_BCD_ITERS": "200",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_TRACK_DRAG": "on",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_WPRIOR": "8"
+    "LAPSIM_HOLDOUT_ITERS": "25"
   },
   "effectiveWecWeights": {
     "lap": 2,
@@ -33,28 +25,10 @@
       }
     },
     {
-      "name": "a",
-      "decisionEligible": true,
-      "env": {
-        "LAPSIM_WEC_TRAP_POSITION": "on",
-        "LAPSIM_WEC_SECTORS": "off",
-        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
-      }
-    },
-    {
       "name": "b2",
       "decisionEligible": true,
       "env": {
         "LAPSIM_WEC_TRAP_POSITION": "off",
-        "LAPSIM_WEC_SECTORS": "on",
-        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
-      }
-    },
-    {
-      "name": "ab2",
-      "decisionEligible": true,
-      "env": {
-        "LAPSIM_WEC_TRAP_POSITION": "on",
         "LAPSIM_WEC_SECTORS": "on",
         "LAPSIM_WEC_SECTOR_WEIGHT": "2"
       }
@@ -76,85 +50,145 @@
         "LAPSIM_WEC_SECTORS": "on",
         "LAPSIM_WEC_SECTOR_WEIGHT": "4"
       }
-    },
-    {
-      "name": "ab1",
-      "decisionEligible": false,
-      "env": {
-        "LAPSIM_WEC_TRAP_POSITION": "on",
-        "LAPSIM_WEC_SECTORS": "on",
-        "LAPSIM_WEC_SECTOR_WEIGHT": "1"
-      }
-    },
-    {
-      "name": "ab4",
-      "decisionEligible": false,
-      "env": {
-        "LAPSIM_WEC_TRAP_POSITION": "on",
-        "LAPSIM_WEC_SECTORS": "on",
-        "LAPSIM_WEC_SECTOR_WEIGHT": "4"
-      }
     }
   ],
   "pass": {
-    "baselineMaxDifferencePP": 0.05,
+    "baselineMaxDifferencePP": 0,
     "pooledWecGate": "accepted",
     "noWorseClassSeason": true,
     "f1": "byte-identical seasons and projections",
     "newBoundHits": 0,
     "reproductionPct": 0,
     "screenMinutes": 60,
-    "convergenceScoreFallPct": 1
+    "convergenceScoreFallPct": 1,
+    "baselineComparison": "Exact model JSON, excluding generatedAt"
   },
   "coverage": [
     {
       "class": "lmh",
       "year": 2025,
-      "alKamelLaps": 15,
-      "sectorTerms": 0,
-      "positionedTraps": 0
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
     },
     {
       "class": "lmh",
       "year": 2026,
-      "alKamelLaps": 18,
-      "sectorTerms": 0,
-      "positionedTraps": 0
-    },
-    {
-      "class": "lmdh",
-      "year": 2025,
-      "alKamelLaps": 15,
-      "sectorTerms": 0,
-      "positionedTraps": 0
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
     },
     {
       "class": "lmdh",
       "year": 2026,
-      "alKamelLaps": 18,
-      "sectorTerms": 0,
-      "positionedTraps": 0
-    },
-    {
-      "class": "lmgt3",
-      "year": 2025,
-      "alKamelLaps": 15,
-      "sectorTerms": 0,
-      "positionedTraps": 0
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
     },
     {
       "class": "lmgt3",
       "year": 2026,
-      "alKamelLaps": 18,
-      "sectorTerms": 0,
-      "positionedTraps": 0
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
     }
   ],
   "limitations": [
-    "All fitted layouts differ from official lengths by more than 0.5%; no sector observation is eligible.",
     "No numeric trap distance verified for fitted layouts. Le Mans map has one, but no geometry is fitted.",
     "No sensitivity weight may be selected using held-out results.",
     "WEC corner-speed observations are unavailable.",
-    "The production WEC Nelder-Mead fitter uses 70/25 iterations, not the F1 BCD rounds. Convergence must not be inferred from the F1 settings."
-  ]
+    "The production WEC Nelder-Mead fitter uses 70/25 iterations, not the F1 BCD rounds. Convergence must not be inferred from the F1 settings.",
+    "With n=5 or 6, a gain below about 0.1 pp is not established, even if the gate accepts. An Interlagos geometry change moved LMDh 2025 by 0.37 pp.",
+    "Trap experiment is held; aero ratio is not implemented.",
+    "Convergence at 140/50 is a diagnostic only and cannot become the baseline."
+  ],
+  "diagnostic": {
+    "name": "baseline140",
+    "env": {
+      "LAPSIM_ITERS": "140",
+      "LAPSIM_HOLDOUT_ITERS": "50"
+    },
+    "decisionEligible": false
+  },
+  "eligibility": {
+    "lengthTolerancePct": 2,
+    "shareLimitPP": 3,
+    "sectorSumToleranceSec": 0.002,
+    "reference": "production car, saved grip, measured weather; best dry lap per class-track-year; any failed class excludes entire track-year",
+    "reuse": "One artifact, input hashes checked before every sector fit",
+    "minimumHeldOutTracksWithSectors": 4,
+    "sha256": "72e2e2e866bbf2c964a7d774692f6db02bfd88d1e946252cd8b960ea05c0ad13"
+  },
+  "inputHashes": {
+    "geometry": "4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1",
+    "wec": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+    "production": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "transfer": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "timing71": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76"
+  }
 }

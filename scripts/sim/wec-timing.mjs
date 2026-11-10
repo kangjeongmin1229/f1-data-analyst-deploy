@@ -1,5 +1,5 @@
 // WEC observations only. Never changes the shared F1 track or guesses a timing position.
-export const LENGTH_TOLERANCE = 0.005;
+export const LENGTH_TOLERANCE = 0.02;
 // Three sectors and a lap are published to 0.001 s: allow their combined rounding error.
 export const SECTOR_SUM_TOLERANCE = 0.002;
 const finite = Number.isFinite;
@@ -23,7 +23,7 @@ export function checkTiming(mapping, track, lapSeconds, sectors) {
   const ends = [mapping.s1EndM, mapping.s2EndM];
   if (!ends.every(finite) || !(ends[0] > 0 && ends[1] > ends[0] && ends[1] < official))
     out.sectorReason = 'invalid sector distances';
-  else if (!lengthOK) out.sectorReason = 'layout length differs by more than 0.5%';
+  else if (!lengthOK) out.sectorReason = 'layout length differs by more than 2%';
   else if (!Array.isArray(sectors) || sectors.length !== 3 || !sectors.every(v => finite(v) && v > 0))
     out.sectorReason = 'missing or invalid measured sectors';
   else if (!finite(lapSeconds) || Math.abs(sectors.reduce((a, b) => a + b, 0) - lapSeconds) > SECTOR_SUM_TOLERANCE + 1e-10)
@@ -33,18 +33,18 @@ export function checkTiming(mapping, track, lapSeconds, sectors) {
     out.trapReason = 'no verified numeric trap distance';
   else if (mapping.trapDistanceM < 0 || mapping.trapDistanceM >= official)
     out.trapReason = 'invalid trap distance';
-  else if (!lengthOK) out.trapReason = 'layout length differs by more than 0.5%';
+  else if (!lengthOK) out.trapReason = 'layout length differs by more than 2%';
   else out.trapDistance = mapping.trapDistanceM * length / official;
   return out;
 }
 
-export function applyWecTiming(lap, measured, mapping, {trapPosition = false, sectors = false, sectorWeight = 2} = {}) {
+export function applyWecTiming(lap, measured, mapping, {trapPosition = false, sectors = false, sectorWeight = 2, eligibility = null} = {}) {
   if (!trapPosition && !sectors) return lap;
   if (sectors && ![1, 2, 4].includes(sectorWeight)) throw new Error('WEC sector weight must be 1, 2 or 4');
   const check = checkTiming(mapping, lap.track, lap.lapSeconds, measured.sectors);
   const out = {...lap};
   const hasTrap = trapPosition && check.trapDistance !== null && finite(measured.topSpeedKph) && measured.topSpeedKph > 0;
-  const hasSectors = sectors && check.sectorEnds !== null;
+  const hasSectors = sectors && check.sectorEnds !== null && eligibility?.eligible === true;
   if (hasTrap) { out.trapDistance = check.trapDistance; out.trapKph = measured.topSpeedKph; }
   if (hasSectors) {
     // Per-series copy; trackFromData's F1 sector points remain untouched.
@@ -52,7 +52,7 @@ export function applyWecTiming(lap, measured, mapping, {trapPosition = false, se
     out.sectors = measured.sectors.slice(); out.wSector = sectorWeight;
   }
   out.timing = {sectorUsed: hasSectors, trapPositionUsed: hasTrap,
-    sectorReason: sectors ? check.sectorReason : 'flag off',
+    sectorReason: sectors ? check.sectorReason || (hasSectors ? null : eligibility?.reason || 'no fixed production eligibility') : 'flag off',
     trapReason: trapPosition ? check.trapReason || (hasTrap ? null : 'missing measured trap') : 'flag off',
     lengthErrorPct: check.lengthErrorPct, sourceUrl: mapping?.sourceUrl ?? null,
     trapSourceUrl: hasTrap ? mapping.trapSourceUrl : null};

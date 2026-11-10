@@ -33,11 +33,11 @@ test('mapping lookup requires exact series, year and track and rejects duplicate
   assert.throws(() => timingMapping({...table, rows: [mapping, mapping]}, 'wec', 'test', 2025), /Duplicate/);
 });
 
-test('0.5% length limit is inclusive; excess disables coordinates without changing geometry', () => {
-  assert.ok(checkTiming(mapping, {...track, ds: 10.05}, 60, measured.sectors).sectorEnds);
-  const c = checkTiming(mapping, {...track, ds: 10.05001}, 60, measured.sectors);
+test('2% length limit is inclusive; excess disables coordinates without changing geometry', () => {
+  assert.ok(checkTiming(mapping, {...track, ds: 10.2}, 60, measured.sectors).sectorEnds);
+  const c = checkTiming(mapping, {...track, ds: 10.20001}, 60, measured.sectors);
   assert.equal(c.sectorEnds, null); assert.equal(c.trapDistance, null);
-  assert.match(c.sectorReason, /0.5%/);
+  assert.match(c.sectorReason, /2%/);
 });
 
 test('sectors must be positive, finite and sum to the same lap within rounding tolerance', () => {
@@ -66,11 +66,11 @@ test('verified trap bypasses the 92% filter and uses interpolated point speed', 
 
 test('sector flag copies WEC boundaries without mutating shared F1 points', () => {
   const before = JSON.stringify(track);
-  const l = applyWecTiming(lap, measured, mapping, {sectors: true});
+  const l = applyWecTiming(lap, measured, mapping, {eligibility: {eligible: true}, sectors: true});
   assert.notEqual(l.track, track); assert.deepEqual(l.track.sectors, [200, 600]);
   assert.equal(JSON.stringify(track), before); assert.equal(l.trapKph, null);
   assert.deepEqual(track.sectors, [300, 700]);
-  assert.throws(() => applyWecTiming(lap, measured, mapping, {sectors: true, sectorWeight: 3}), /weight/);
+  assert.throws(() => applyWecTiming(lap, measured, mapping, {eligibility: {eligible: true}, sectors: true, sectorWeight: 3}), /weight/);
 });
 
 test('sector interpolation conserves the lap and handles fractional and final cells', () => {
@@ -80,14 +80,14 @@ test('sector interpolation conserves the lap and handles fractional and final ce
 
 test('approved weights 1, 2, 4 change only the sector squared-error term', () => {
   for (const weight of [1, 2, 4]) {
-    const l = applyWecTiming(lap, measured, mapping, {sectors: true, sectorWeight: weight});
+    const l = applyWecTiming(lap, measured, mapping, {eligibility: {eligible: true}, sectors: true, sectorWeight: weight});
     const e = lapError(l.track, car, env, null, 60, l);
     close(e.score, 2 * e.dt ** 2 + weight * e.simSectors.reduce((s, x, i) => s + (x - measured.sectors[i]) ** 2, 0));
   }
 });
 
 test('fitSeason and holdout pass WEC observations into training with fixed lap/trap weights', () => {
-  const rows = ['a', 'b', 'c'].map(name => ({...applyWecTiming(lap, measured, mapping, {sectors: true, trapPosition: true}), name}));
+  const rows = ['a', 'b', 'c'].map(name => ({...applyWecTiming(lap, measured, mapping, {eligibility: {eligible: true}, sectors: true, trapPosition: true}), name}));
   const fit = fitSeason(rows, car, [], {iters: 1});
   const expected = lapError(rows[0].track, car, env, null, 60, rows[0]);
   close(fit.score, expected.score); assert.equal(fit.perTrack[0].simTrapKph, expected.simTrapKph);

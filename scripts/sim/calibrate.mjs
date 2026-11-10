@@ -17,6 +17,7 @@ import {fitJointBCD, holdoutBCD, backtestBCD, poleMult} from './joint-bcd.mjs';
 import {SERIES} from '../../worker/lapsim/series.js';
 import {lapsimWecBop} from '../../worker/lapsim/wec-bop-data.js';
 import {applyWecTiming, timingMapping} from './wec-timing.mjs';
+import {eligibilityInputs, verifyEligibility, rowEligibility} from './wec-eligibility.mjs';
 
 const CACHE = process.env.LAPSIM_CACHE || '.cache/lapsim';
 const ITERS = Number(process.env.LAPSIM_ITERS || 70), HOLDOUT_ITERS = Number(process.env.LAPSIM_HOLDOUT_ITERS || 25);
@@ -42,6 +43,9 @@ const WEC_TIMING_ON = WEC_TIMING.trapPosition || WEC_TIMING.sectors;
 if (WEC_TIMING_ON && !ONLY_WEC) throw new Error('WEC timing experiments require LAPSIM_ONLY=wec');
 if (WEC_TIMING.sectors && ![1, 2, 4].includes(WEC_TIMING.sectorWeight)) throw new Error('WEC sector weight must be 1, 2 or 4');
 const WEC_POSITIONS = WEC_TIMING_ON ? JSON.parse(await readFile('scripts/sim/data/wec-timing-positions.json', 'utf8')) : null;
+// A shared, precomputed production check: never recompute eligibility with fitted cars.
+if (WEC_TIMING.sectors && !E.LAPSIM_WEC_ELIGIBILITY) throw new Error('WEC sectors require LAPSIM_WEC_ELIGIBILITY prepared before fitting');
+const WEC_ELIGIBILITY = WEC_TIMING.sectors ? verifyEligibility(JSON.parse(await readFile(E.LAPSIM_WEC_ELIGIBILITY, 'utf8')), eligibilityInputs('.', CACHE)) : null;
 const prevCal = ONLY_WEC ? (await import('../../worker/lapsim/calibration-data.js')).lapsimCalibration : null;
 const traces = ONLY_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'traces.json'), 'utf8'));
 const tracks = Object.fromEntries(Object.entries(lapsimTracks).map(([id, d]) => [id, trackFromData(d)]));
@@ -199,6 +203,9 @@ const wecYears = new Set(wec.map(w => +w.year));
 const TRANSFER = E.LAPSIM_WEC_GRIP === 'f1' ? null : await import('../../worker/lapsim/transfer-grip-data.js').then(m => m.lapsimTransferGrip).catch(() => null);
 const f1GripOwn = id => Object.keys(seasons).sort().reverse().map(y => seasons[y]?.tracks?.[id]?.grip).find(g => g != null) ?? null;
 const transferGrip = id => TRANSFER?.grip[id] ?? null;
+// Fail before the first fit if the frozen table is incomplete.
+if (WEC_TIMING.sectors) for (const w of wec.filter(w => tracks[w.track] && !w.weather?.rain && f1GripOwn(w.track) != null))
+  w.laps.forEach((l, i) => rowEligibility(WEC_ELIGIBILITY, w, i));
 for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
   for (const year of [...new Set(wec.map(w => w.year))].sort()) {
     const sessions = wec.filter(w => w.cls === cls && w.year === year && tracks[w.track] && !w.weather?.rain && f1GripOwn(w.track) != null);
@@ -215,7 +222,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const medTrap = traps[Math.floor(traps.length / 2)];
     const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => applyWecTiming({name: w.track, track: tracks[w.track], lapSeconds: l.lap, trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null,
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session}},
-      l, timingMapping(WEC_POSITIONS, 'wec', w.track, w.year), WEC_TIMING)));
+      l, timingMapping(WEC_POSITIONS, 'wec', w.track, w.year), WEC_TIMING.sectors ? {...WEC_TIMING, eligibility: rowEligibility(WEC_ELIGIBILITY, w, i)} : WEC_TIMING)));
     let laps = lapsWith(f1Grip);
     if (WEC_TIMING_ON) {
       report.push(`WEC timing ${cls}/${year}: ${JSON.stringify({laps: laps.length, sectorTerms: laps.filter(l => l.timing.sectorUsed).length, positionedTraps: laps.filter(l => l.timing.trapPositionUsed).length, sectorWeight: WEC_TIMING.sectorWeight})}`);
