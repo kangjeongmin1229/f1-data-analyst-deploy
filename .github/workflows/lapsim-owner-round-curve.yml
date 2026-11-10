@@ -1,0 +1,39 @@
+name: LapSim owner F1 round curve
+on:
+  push:
+    branches: ['exp/lapsim-owner-diagnostics-2026-11-11']
+    paths: ['.github/workflows/lapsim-owner-round-curve.yml']
+permissions:
+  contents: read
+concurrency:
+  group: lapsim-owner-round-curve
+  cancel-in-progress: false
+jobs:
+  curve:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        rounds: [3, 4, 5, 6]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Download pinned inputs
+        run: |
+          mkdir -p .cache round-output
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+      - name: Fixed rounds and original production fold rule
+        run: |
+          set -o pipefail
+          node scripts/sim/owner-round-curve.mjs '${{ matrix.rounds }}' 2>&1 | tee round-output/job.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: f1-rounds-${{ matrix.rounds }}
+          path: round-output/
+          retention-days: 30
