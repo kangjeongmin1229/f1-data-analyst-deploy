@@ -1,0 +1,85 @@
+{
+  "interlagos": [
+    {
+      "session": 9304,
+      "year": 2023,
+      "rain": true
+    },
+    {
+      "session": 9627,
+      "year": 2024,
+      "rain": true
+    },
+    {
+      "session": 9865,
+      "year": 2025,
+      "rain": false
+    },
+    {
+      "session": 11408,
+      "year": 2026,
+      "rain": true
+    }
+  ],
+  "las-vegas": [
+    {
+      "session": 9314,
+      "year": 2023,
+      "rain": false
+    },
+    {
+      "session": 9640,
+      "year": 2024,
+      "rain": false
+    },
+    {
+      "session": 9854,
+      "year": 2025,
+      "rain": true
+    }
+  ],
+  "montreal": [
+    {
+      "session": 9106,
+      "year": 2023,
+      "rain": true
+    },
+    {
+      "session": 9527,
+      "year": 2024,
+      "rain": true
+    },
+    {
+      "session": 9959,
+      "year": 2025,
+      "rain": false
+    },
+    {
+      "session": 11287,
+      "year": 2026,
+      "rain": true
+    }
+  ],
+  "zandvoort": [
+    {
+      "session": 9145,
+      "year": 2023,
+      "rain": true
+    },
+    {
+      "session": 9578,
+      "year": 2024,
+      "rain": false
+    },
+    {
+      "session": 9916,
+      "year": 2025,
+      "rain": false
+    },
+    {
+      "session": 11349,
+      "year": 2026,
+      "rain": true
+    }
+  ]
+}

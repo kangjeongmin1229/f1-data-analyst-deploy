@@ -1,0 +1,9 @@
+{
+  "name": "280-200",
+  "main": 280,
+  "folds": 200,
+  "logging": true,
+  "startedAt": "2026-11-10T09:07:47.740Z",
+  "seconds": 1430.624,
+  "validationSeconds": 0.805
+}

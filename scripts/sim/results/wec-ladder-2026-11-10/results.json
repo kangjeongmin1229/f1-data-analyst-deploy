@@ -1,0 +1,5733 @@
+{
+  "objectiveChanges": [
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 4.2490552410535445,
+      "to": 4.2490552410535445,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 2.079566191432129,
+      "to": 2.079566191432129,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 5.617028899994347,
+      "to": 5.617028899994347,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 5.971425505835732,
+      "to": 5.971425505835732,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 5.288344059794624,
+      "to": 5.288344059794624,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 4.4789297347367665,
+      "to": 4.4789297347367665,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 1.694700469341094,
+      "to": 1.6946884277634477,
+      "dropPct": 0.0007105431233532173
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 5.3175164037761755,
+      "to": 5.3175164037761755,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 5.905478756516125,
+      "to": 5.905478756516125,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 5.3282649352223945,
+      "to": 5.3282649352223945,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 1.4506630101545015,
+      "to": 1.4506630101545015,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 1.4909579398977908,
+      "to": 1.4909579398977908,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 0.9172325218373173,
+      "to": 0.9171012851676258,
+      "dropPct": 0.014307895388251396
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 1.7811614333158972,
+      "to": 1.7811614333158972,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 1.5673381438769358,
+      "to": 1.5673381438769358,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 1.1675305488422338,
+      "to": 1.1675267006275631,
+      "dropPct": 0.00032960291056321014
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 0.6261059464993352,
+      "to": 0.6261048012295709,
+      "dropPct": 0.0001829194836193568
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 1.0909153925508253,
+      "to": 1.0909153925508253,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 0.7744972078536616,
+      "to": 0.7744972078536616,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 0.9291629532023031,
+      "to": 0.9291629532023031,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 0.9311441657191383,
+      "to": 0.9311441657191383,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 1.1064979796778662,
+      "to": 1.1064979796778662,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 4.148536328263405,
+      "to": 4.148536328263405,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 3.5179392929865614,
+      "to": 3.5179392929865614,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 5.628836320883262,
+      "to": 5.628836320883262,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 5.816820771444082,
+      "to": 5.816820771444082,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 5.698571840907063,
+      "to": 5.698571840907063,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 3.8180878835429484,
+      "to": 3.8180878835429484,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 2.726078000104613,
+      "to": 2.7260735633215156,
+      "dropPct": 0.0001627533437117729
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 4.504010886810788,
+      "to": 4.50400913835258,
+      "dropPct": 0.000038820026247257295
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 5.373308112109595,
+      "to": 5.373308112109595,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 4.9478008388742065,
+      "to": 4.9478008388742065,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 1.903385173961302,
+      "to": 1.9033746898955914,
+      "dropPct": 0.0005508115674060118
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 1.9533062851270162,
+      "to": 1.9533062851270162,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 0.8474543714829725,
+      "to": 0.8474543714829725,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 2.1571163599928695,
+      "to": 2.1571163599928695,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 1.9345560554774008,
+      "to": 1.9345560554774008,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 1.4804603526098454,
+      "to": 1.4804603526098454,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 0.8283461463028393,
+      "to": 0.8283461463028393,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 1.2267988860313688,
+      "to": 1.2267988860313688,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 0.5798149323264611,
+      "to": 0.5798149323264611,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 1.204209511626722,
+      "to": 1.204209511626722,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 1.0065316090024394,
+      "to": 1.0065316090024394,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 1.1453418599054583,
+      "to": 1.1453418599054583,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 4.108381484499925,
+      "to": 4.108367893614784,
+      "dropPct": 0.0003308087428621921
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 5.06469355023803,
+      "to": 5.06469355023803,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 4.576797594805477,
+      "to": 4.576755490239072,
+      "dropPct": 0.0009199569247447847
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 3.1729118754988948,
+      "to": 3.1729118754988948,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 3.008525852353556,
+      "to": 2.803980631104336,
+      "dropPct": 6.798852038755293
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 2.5494127324136286,
+      "to": 2.5494100428864566,
+      "dropPct": 0.00010549594963141363
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 2.6138541083118425,
+      "to": 2.6138541083118425,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "from": 2.3404725504683994,
+      "to": 2.340446425175681,
+      "dropPct": 0.00111624008208409
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "from": 2.582361800324468,
+      "to": 2.582361800324468,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 2.09439298882335,
+      "to": 2.0943789662581587,
+      "dropPct": 0.0006695288451623201
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 3.618672791259195,
+      "to": 3.618672791259195,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 4.163231283561559,
+      "to": 4.163230620270316,
+      "dropPct": 0.000015932125726341484
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 3.813141689608375,
+      "to": 3.8129531028867425,
+      "dropPct": 0.004945704539294401
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 3.1537115228932877,
+      "to": 3.153701306850646,
+      "dropPct": 0.00032393713145479334
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 4.042158094050514,
+      "to": 3.771910336660567,
+      "dropPct": 6.685729531155974
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 1.7168329445354453,
+      "to": 1.7168329445354453,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "from": 3.0324556740485495,
+      "to": 3.032454063434992,
+      "dropPct": 0.00005311251773332863
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "from": 3.4227890190750143,
+      "to": 3.4227852542121635,
+      "dropPct": 0.00010999400868200296
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "from": 3.306184192098129,
+      "to": 3.306184192098129,
+      "dropPct": 0
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "from": 2.0448667291741183,
+      "to": 2.0364474803202,
+      "dropPct": 0.4117260422794734
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "from": 2.98447102044912,
+      "to": 2.9844519223085495,
+      "dropPct": 0.0006399171055597762
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "from": 2.364426679665074,
+      "to": 2.3644113420317177,
+      "dropPct": 0.0006486829762229333
+    }
+  ],
+  "criterion": "Every group absolute change <0.02 pp and no pooled/bop/gripSource flips between adjacent rungs.",
+  "sameMainChecks": [
+    {
+      "group": "wec-lmh/2025",
+      "sameChoices": true,
+      "carIdentical": true
+    },
+    {
+      "group": "wec-lmh/2026",
+      "sameChoices": true,
+      "carIdentical": true
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "sameChoices": true,
+      "carIdentical": true
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "sameChoices": true,
+      "carIdentical": true
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "sameChoices": true,
+      "carIdentical": true
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "sameChoices": false,
+      "carIdentical": false
+    }
+  ],
+  "smallestPassingRung": null,
+  "rows": [
+    {
+      "rung": "70/25",
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "rmsPct": 1.43249275934466,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0868240124603838,
+        "clALow": 7,
+        "cdALow": 1.0868240124603838,
+        "muX": 1.4343471210021914,
+        "muY": 1.5688171635961465,
+        "muXTrac": 1.5239938160648279,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "f1"
+      },
+      "laps": 15,
+      "score": 4.912,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "70/25",
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "rmsPct": 1.0408591181385975,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.630405814294147,
+        "cdA": 0.9636821172691825,
+        "clALow": 6.630405814294147,
+        "cdALow": 0.9636821172691825,
+        "muX": 1.388028529682916,
+        "muY": 1.518156204340689,
+        "muXTrac": 1.474780312788098,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 0.956,
+      "bounds": [],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "70/25",
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "rmsPct": 1.2383372052620576,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0994041361289832,
+        "clALow": 7,
+        "cdALow": 1.0994041361289832,
+        "muX": 1.427359969347544,
+        "muY": 1.5611749664738763,
+        "muXTrac": 1.5165699674317654,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": true,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 3.924,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "70/25",
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "rmsPct": 1.0705984668543438,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.44683866334923,
+        "cdA": 0.9537951707438306,
+        "clALow": 6.44683866334923,
+        "cdALow": 0.9537951707438306,
+        "muX": 1.3975743835507506,
+        "muY": 1.5285969820086334,
+        "muXTrac": 1.4849227825226723,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 1.057,
+      "bounds": [],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "70/25",
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "rmsPct": 1.733497568782021,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2861956929450995,
+        "clALow": 3.5,
+        "cdALow": 1.2861956929450995,
+        "muX": 1.4878218397065406,
+        "muY": 1.5904302424449228,
+        "muXTrac": 1.539126041075732,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 2.584,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "70/25",
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "rmsPct": 1.3699545604555015,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.3,
+        "clALow": 3.5,
+        "cdALow": 1.3,
+        "muX": 1.5116042469125606,
+        "muY": 1.615852815665151,
+        "muXTrac": 1.5637285312888558,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 2.88,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        },
+        {
+          "parameter": "cdA",
+          "value": 1.3,
+          "side": "upper",
+          "limit": 1.3,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 435.5
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "rmsPct": 1.0762345598821854,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0863121406851322,
+        "clALow": 7,
+        "cdALow": 1.0863121406851322,
+        "muX": 1.434393321484387,
+        "muY": 1.5688676953735479,
+        "muXTrac": 1.5240429040771608,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "f1"
+      },
+      "laps": 15,
+      "score": 4.912,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "rmsPct": 1.0457490623966792,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.63501034044184,
+        "cdA": 0.9636513300107293,
+        "clALow": 6.63501034044184,
+        "cdALow": 0.9636513300107293,
+        "muX": 1.3877486067703408,
+        "muY": 1.5178500386550602,
+        "muXTrac": 1.4744828946934871,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 0.956,
+      "bounds": [],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "rmsPct": 1.2594211228799377,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.1047987047772687,
+        "clALow": 7,
+        "cdALow": 1.1047987047772687,
+        "muX": 1.4263605767783372,
+        "muY": 1.560081880851306,
+        "muXTrac": 1.5155081128269827,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 4.511,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "rmsPct": 0.9769331701053253,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.44683866334923,
+        "cdA": 0.9537951707438306,
+        "clALow": 6.44683866334923,
+        "cdALow": 0.9537951707438306,
+        "muX": 1.3975743835507506,
+        "muY": 1.5285969820086334,
+        "muXTrac": 1.4849227825226723,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 1.057,
+      "bounds": [],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "rmsPct": 1.3342719664114966,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.286063074327983,
+        "clALow": 3.5,
+        "cdALow": 1.286063074327983,
+        "muX": 1.4877030413821066,
+        "muY": 1.5903032511325967,
+        "muXTrac": 1.5390031462573515,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 2.584,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "140/50",
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "rmsPct": 1.2702175424700928,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2843891082385004,
+        "clALow": 3.5,
+        "cdALow": 1.2843891082385004,
+        "muX": 1.5152444453453733,
+        "muY": 1.619744062265744,
+        "muXTrac": 1.5674942538055587,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "f1"
+      },
+      "laps": 18,
+      "score": 3.529,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1108.3
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "rmsPct": 1.07681007783718,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.093457543226591,
+        "clALow": 7,
+        "cdALow": 1.093457543226591,
+        "muX": 1.4350379802467599,
+        "muY": 1.5695727908948935,
+        "muXTrac": 1.5247278540121822,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 4.813,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "rmsPct": 1.061336388688055,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.63501034044184,
+        "cdA": 0.9636513300107293,
+        "clALow": 6.63501034044184,
+        "cdALow": 0.9636513300107293,
+        "muX": 1.3877486067703408,
+        "muY": 1.5178500386550602,
+        "muXTrac": 1.4744828946934871,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 0.956,
+      "bounds": [],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "rmsPct": 1.270149632341778,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.1047987047772687,
+        "clALow": 7,
+        "cdALow": 1.1047987047772687,
+        "muX": 1.4263605767783372,
+        "muY": 1.560081880851306,
+        "muXTrac": 1.5155081128269827,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 4.511,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "rmsPct": 0.9839824257474096,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.44683866334923,
+        "cdA": 0.9537951707438306,
+        "clALow": 6.44683866334923,
+        "cdALow": 0.9537951707438306,
+        "muX": 1.3975743835507506,
+        "muY": 1.5285969820086334,
+        "muXTrac": 1.4849227825226723,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 1.057,
+      "bounds": [],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "rmsPct": 1.3534810620201594,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.286063074327983,
+        "clALow": 3.5,
+        "cdALow": 1.286063074327983,
+        "muX": 1.4877030413821066,
+        "muY": 1.5903032511325967,
+        "muXTrac": 1.5390031462573515,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 2.584,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "rmsPct": 1.1959553652643675,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2843891082385004,
+        "clALow": 3.5,
+        "cdALow": 1.2843891082385004,
+        "muX": 1.5152444453453733,
+        "muY": 1.619744062265744,
+        "muXTrac": 1.5674942538055587,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "f1"
+      },
+      "laps": 18,
+      "score": 3.529,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1380.641
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "rmsPct": 1.0763040776427866,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.093457543226591,
+        "clALow": 7,
+        "cdALow": 1.093457543226591,
+        "muX": 1.4350379802467599,
+        "muY": 1.5695727908948935,
+        "muXTrac": 1.5247278540121822,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 4.813,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1430.624
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "rmsPct": 1.061336388688055,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.63501034044184,
+        "cdA": 0.9636513300107293,
+        "clALow": 6.63501034044184,
+        "cdALow": 0.9636513300107293,
+        "muX": 1.3877486067703408,
+        "muY": 1.5178500386550602,
+        "muXTrac": 1.4744828946934871,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 0.956,
+      "bounds": [],
+      "totalRungSeconds": 1430.624
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "rmsPct": 1.2697946907380957,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.1047987047772687,
+        "clALow": 7,
+        "cdALow": 1.1047987047772687,
+        "muX": 1.4263605767783372,
+        "muY": 1.560081880851306,
+        "muXTrac": 1.5155081128269827,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": false,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 4.511,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1430.624
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "rmsPct": 0.9839824257474096,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.44683866334923,
+        "cdA": 0.9537951707438306,
+        "clALow": 6.44683866334923,
+        "cdALow": 0.9537951707438306,
+        "muX": 1.3975743835507506,
+        "muY": 1.5285969820086334,
+        "muXTrac": 1.4849227825226723,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 18,
+      "score": 1.057,
+      "bounds": [],
+      "totalRungSeconds": 1430.624
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "rmsPct": 1.3531574564584852,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.286063074327983,
+        "clALow": 3.5,
+        "cdALow": 1.286063074327983,
+        "muX": 1.4877030413821066,
+        "muY": 1.5903032511325967,
+        "muXTrac": 1.5390031462573515,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": false,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 15,
+      "score": 2.584,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1430.624
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "rmsPct": 1.0344527316442325,
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2952874499720965,
+        "clALow": 3.5,
+        "cdALow": 1.2952874499720965,
+        "muX": 1.5042736259231424,
+        "muY": 1.608016634607497,
+        "muXTrac": 1.5561451302653198,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "choices": {
+        "pooled": true,
+        "bop": null,
+        "gripSource": "transfer"
+      },
+      "laps": 23,
+      "score": 2.775,
+      "bounds": [
+        {
+          "parameter": "clA",
+          "value": 3.5,
+          "side": "upper",
+          "limit": 3.5,
+          "outside": false
+        }
+      ],
+      "totalRungSeconds": 1430.624
+    }
+  ],
+  "pooled": [
+    {
+      "rung": "70/25",
+      "n": 33,
+      "rmsPct": 1.3210499437139318,
+      "seconds": 435.5
+    },
+    {
+      "rung": "140/50",
+      "n": 33,
+      "rmsPct": 1.162444825908516,
+      "seconds": 1108.3
+    },
+    {
+      "rung": "280/100",
+      "n": 33,
+      "rmsPct": 1.1569729124747639,
+      "seconds": 1380.641
+    },
+    {
+      "rung": "280/200",
+      "n": 33,
+      "rmsPct": 1.1281214395671904,
+      "seconds": 1430.624
+    }
+  ],
+  "transitions": [
+    {
+      "from": "70/25",
+      "to": "140/50",
+      "pass": false,
+      "groups": [
+        {
+          "group": "wec-lmh/2025",
+          "deltaPP": -0.3562581994624745,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "f1"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "f1"
+          },
+          "pass": false
+        },
+        {
+          "group": "wec-lmh/2026",
+          "deltaPP": 0.004889944258081647,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmdh/2025",
+          "deltaPP": 0.021083917617880088,
+          "choiceFlipped": true,
+          "from": {
+            "pooled": true,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "pass": false
+        },
+        {
+          "group": "wec-lmdh/2026",
+          "deltaPP": -0.09366529674901847,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": false
+        },
+        {
+          "group": "wec-lmgt3/2025",
+          "deltaPP": -0.3992256023705245,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": false
+        },
+        {
+          "group": "wec-lmgt3/2026",
+          "deltaPP": -0.09973701798540868,
+          "choiceFlipped": true,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "f1"
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "from": "140/50",
+      "to": "280/100",
+      "pass": false,
+      "groups": [
+        {
+          "group": "wec-lmh/2025",
+          "deltaPP": 0.0005755179549946643,
+          "choiceFlipped": true,
+          "from": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "f1"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "pass": false
+        },
+        {
+          "group": "wec-lmh/2026",
+          "deltaPP": 0.015587326291375714,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmdh/2025",
+          "deltaPP": 0.010728509461840341,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmdh/2026",
+          "deltaPP": 0.007049255642084251,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmgt3/2025",
+          "deltaPP": 0.019209095608662796,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmgt3/2026",
+          "deltaPP": -0.07426217720572525,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "f1"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "f1"
+          },
+          "pass": false
+        }
+      ]
+    },
+    {
+      "from": "280/100",
+      "to": "280/200",
+      "pass": false,
+      "groups": [
+        {
+          "group": "wec-lmh/2025",
+          "deltaPP": -0.0005060001943935077,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmh/2026",
+          "deltaPP": 0,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmdh/2025",
+          "deltaPP": -0.00035494160368232386,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": false,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmdh/2026",
+          "deltaPP": 0,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmgt3/2025",
+          "deltaPP": -0.00032360556167421173,
+          "choiceFlipped": false,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "to": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": true
+        },
+        {
+          "group": "wec-lmgt3/2026",
+          "deltaPP": -0.16150263362013506,
+          "choiceFlipped": true,
+          "from": {
+            "pooled": false,
+            "bop": null,
+            "gripSource": "f1"
+          },
+          "to": {
+            "pooled": true,
+            "bop": null,
+            "gripSource": "transfer"
+          },
+          "pass": false
+        }
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.98024682453766,
+      "final": 4.2490552410535445,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 7.0579907705690665,
+      "final": 2.079566191432129,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 8.891326306433657,
+      "final": 5.617028899994347,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 10.017651490527411,
+      "final": 5.971425505835732,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.730896837384869,
+      "final": 5.288344059794624,
+      "iterations": 78,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.289117635053852,
+      "final": 4.4789297347367665,
+      "iterations": 99,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.944511512095709,
+      "final": 1.694700469341094,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 7.4372911482265955,
+      "final": 5.3175164037761755,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 10.426792720576723,
+      "final": 5.905478756516125,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 9.068950422357053,
+      "final": 5.3282649352223945,
+      "iterations": 67,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 7.7093252363367695,
+      "final": 4.44444442808775,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 8.425072323828182,
+      "final": 3.8140046494687376,
+      "iterations": 85,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.903633135701819,
+      "final": 1.5448538155565696,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 6.1436111343663775,
+      "final": 4.508221608296536,
+      "iterations": 68,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.046987470438795,
+      "final": 5.182622072948432,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 7.448938553670743,
+      "final": 4.488408643835722,
+      "iterations": 98,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 11.642941617007665,
+      "final": 5.8581370941289945,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.76236793597355,
+      "final": 1.9668273278018498,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 9.764838067297415,
+      "final": 7.039417523855308,
+      "iterations": 93,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 12.271712042344447,
+      "final": 7.049805757445746,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 10.01038507161267,
+      "final": 6.269772990641699,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 8.561309086637209,
+      "final": 4.813219254179204,
+      "iterations": 111,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 3.5008692806078257,
+      "final": 1.4506630101545015,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 3.4968797606787794,
+      "final": 1.4909579398977908,
+      "iterations": 61,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.8174320212166846,
+      "final": 0.9172325218373173,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 3.466175608566202,
+      "final": 1.7811614333158972,
+      "iterations": 84,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 3.238343322817969,
+      "final": 1.5673381438769358,
+      "iterations": 74,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.3601886130354401,
+      "final": 1.1675305488422338,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.600120972269708,
+      "final": 0.6261059464993352,
+      "iterations": 100,
+      "lastStepDropPct": 0.00004826321867080091
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.654738365374634,
+      "final": 1.0909153925508253,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.2467793474970437,
+      "final": 0.7744972078536616,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.011597785707365,
+      "final": 0.9291629532023031,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.331923421810692,
+      "final": 0.9311441657191383,
+      "iterations": 68,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.354347770049618,
+      "final": 1.1064979796778662,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.4494533707183868,
+      "final": 1.1496185403275956,
+      "iterations": 75,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.3737638176331126,
+      "final": 1.4052402457358593,
+      "iterations": 48,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.033797969401787,
+      "final": 1.0718723959515044,
+      "iterations": 53,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 1.8713005059867125,
+      "final": 1.1259135996511103,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.1047513646631604,
+      "final": 1.2569126680586866,
+      "iterations": 55,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 2.124695478726819,
+      "final": 1.0277245206974919,
+      "iterations": 63,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.3825782830020563,
+      "final": 1.291009136334598,
+      "iterations": 65,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmh/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 2.2754220908507747,
+      "final": 0.9559209023306399,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.588722004714702,
+      "final": 4.148536328263405,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 7.735083835682036,
+      "final": 3.5179392929865614,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 8.827205559947142,
+      "final": 5.628836320883262,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.990428447918118,
+      "final": 5.816820771444082,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 9.347005154184798,
+      "final": 5.698571840907063,
+      "iterations": 79,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 9.124909268410967,
+      "final": 3.8180878835429484,
+      "iterations": 93,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 5.78180756064765,
+      "final": 2.726078000104613,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 6.660408198463609,
+      "final": 4.504010886810788,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.050893027871407,
+      "final": 5.373308112109595,
+      "iterations": 75,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.711333831973132,
+      "final": 4.9478008388742065,
+      "iterations": 79,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 7.045871061112039,
+      "final": 4.148652912492997,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 7.422378688841263,
+      "final": 3.2440050004998775,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.99005860236321,
+      "final": 2.4256968529777616,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 5.450777832883377,
+      "final": 3.8107289835904408,
+      "iterations": 74,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 7.858098033979576,
+      "final": 4.716907556128684,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 7.091518339690995,
+      "final": 4.142061911926917,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 8.987745442497848,
+      "final": 4.182107003530819,
+      "iterations": 88,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 5.386390130265227,
+      "final": 2.901140443558539,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 7.162873583796845,
+      "final": 5.311037361814588,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.46505940659487,
+      "final": 5.7850185328313835,
+      "iterations": 85,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.878961413400368,
+      "final": 5.510833999864205,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 7.865870377473353,
+      "final": 4.510981170114376,
+      "iterations": 95,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 4.00438951824861,
+      "final": 1.903385173961302,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 3.985994603738132,
+      "final": 1.9533062851270162,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.965922201940458,
+      "final": 0.8474543714829725,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.135103797533526,
+      "final": 2.1571163599928695,
+      "iterations": 66,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 3.5832514937545494,
+      "final": 1.9345560554774008,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.7620077615668635,
+      "final": 1.4804603526098454,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.8189209413242793,
+      "final": 0.8283461463028393,
+      "iterations": 84,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.823018983813962,
+      "final": 1.2267988860313688,
+      "iterations": 76,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.1699790579698703,
+      "final": 0.5798149323264611,
+      "iterations": 53,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.5646162175212384,
+      "final": 1.204209511626722,
+      "iterations": 62,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.379182406030892,
+      "final": 1.0065316090024394,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.5202316334260355,
+      "final": 1.1453418599054583,
+      "iterations": 76,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.592680382156974,
+      "final": 1.1430268202960578,
+      "iterations": 61,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.4545585482720442,
+      "final": 1.348580228603541,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 1.9103586100686343,
+      "final": 0.7433501422987685,
+      "iterations": 50,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.2910807628312777,
+      "final": 1.2885049425737438,
+      "iterations": 65,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.084694733452819,
+      "final": 1.1592659780486387,
+      "iterations": 56,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 2.2758490930790205,
+      "final": 1.0658450407176532,
+      "iterations": 64,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.4105249789247294,
+      "final": 1.2149132725262228,
+      "iterations": 46,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmdh/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 2.45079587335129,
+      "final": 1.05661344137268,
+      "iterations": 62,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 13.364828471676462,
+      "final": 4.108381484499925,
+      "iterations": 100,
+      "lastStepDropPct": 0.001411398481654089
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 14.14402319519663,
+      "final": 5.06469355023803,
+      "iterations": 86,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 14.650059716888643,
+      "final": 4.576797594805477,
+      "iterations": 100,
+      "lastStepDropPct": 0.001801842555170996
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 12.312776529374617,
+      "final": 3.1729118754988948,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 16.109936586386784,
+      "final": 3.008525852353556,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 11.908816305148946,
+      "final": 2.5494127324136286,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 11.182740307314404,
+      "final": 2.6138541083118425,
+      "iterations": 81,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 12.359096002209654,
+      "final": 2.3404725504683994,
+      "iterations": 100,
+      "lastStepDropPct": 0.0006377697244053925
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 11.92278238907862,
+      "final": 2.582361800324468,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 15.022283852502452,
+      "final": 2.09439298882335,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 10.733705728389491,
+      "final": 2.4083598677043474,
+      "iterations": 98,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 9.68064960015045,
+      "final": 2.330615798407621,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 9.15539963828256,
+      "final": 2.279244890503483,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 10.310538091140266,
+      "final": 1.949880072982112,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.67231652765489,
+      "final": 2.396418637789432,
+      "iterations": 81,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 11.624178218549808,
+      "final": 1.8188708878113864,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 12.479143771250815,
+      "final": 2.5836366271473206,
+      "iterations": 82,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 12.997081479618183,
+      "final": 3.618672791259195,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 13.720894899058159,
+      "final": 4.163231283561559,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 12.404543821509998,
+      "final": 3.813141689608375,
+      "iterations": 100,
+      "lastStepDropPct": 0.0014165957921982203
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 11.466318230668072,
+      "final": 3.1537115228932877,
+      "iterations": 100,
+      "lastStepDropPct": 0.00004065035771195975
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 14.229615714162664,
+      "final": 4.042158094050514,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 13.274767863348092,
+      "final": 1.7168329445354453,
+      "iterations": 92,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 12.395093598792647,
+      "final": 3.0324556740485495,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 12.973132979911242,
+      "final": 3.4227890190750143,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 12.139294683799571,
+      "final": 3.306184192098129,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 10.249768766186172,
+      "final": 2.0448667291741183,
+      "iterations": 100,
+      "lastStepDropPct": 0.3827310996626396
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 13.503546445635582,
+      "final": 2.98447102044912,
+      "iterations": 100,
+      "lastStepDropPct": 0.00006171175272873472
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 13.7037229937623,
+      "final": 2.364426679665074,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 11.388194679194191,
+      "final": 3.7449515912090288,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 11.408038663376553,
+      "final": 3.9759662647434406,
+      "iterations": 88,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.570330818086852,
+      "final": 3.726229474996766,
+      "iterations": 100,
+      "lastStepDropPct": 0.007823987228160748
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 10.11388766281543,
+      "final": 3.3406857436656363,
+      "iterations": 100,
+      "lastStepDropPct": 0.00004557591760423887
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 11.642276826047254,
+      "final": 3.623813893392432,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 11.78957927470493,
+      "final": 3.6288232244624647,
+      "iterations": 98,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 11.157361088131678,
+      "final": 3.319378175872727,
+      "iterations": 81,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 7,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 11.073443386594002,
+      "final": 2.102251015343829,
+      "iterations": 84,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/100",
+      "group": "wec-lmgt3/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 13.015537001394195,
+      "final": 3.52949166149081,
+      "iterations": 116,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.98024682453766,
+      "final": 4.2490552410535445,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 7.0579907705690665,
+      "final": 2.079566191432129,
+      "iterations": 101,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 8.891326306433657,
+      "final": 5.617028899994347,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 10.017651490527411,
+      "final": 5.971425505835732,
+      "iterations": 102,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.730896837384869,
+      "final": 5.288344059794624,
+      "iterations": 78,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.289117635053852,
+      "final": 4.4789297347367665,
+      "iterations": 99,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.944511512095709,
+      "final": 1.6946884277634477,
+      "iterations": 112,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 7.4372911482265955,
+      "final": 5.3175164037761755,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 10.426792720576723,
+      "final": 5.905478756516125,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 9.068950422357053,
+      "final": 5.3282649352223945,
+      "iterations": 67,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 7.7093252363367695,
+      "final": 4.44276136278894,
+      "iterations": 144,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 8.425072323828182,
+      "final": 3.8140046494687376,
+      "iterations": 85,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.903633135701819,
+      "final": 1.5448538155565696,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 6.1436111343663775,
+      "final": 4.508221608296536,
+      "iterations": 68,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.046987470438795,
+      "final": 5.182622072948432,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 7.448938553670743,
+      "final": 4.488408643835722,
+      "iterations": 98,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 11.642941617007665,
+      "final": 5.8581370941289945,
+      "iterations": 101,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.76236793597355,
+      "final": 1.9668264098053967,
+      "iterations": 103,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 9.764838067297415,
+      "final": 7.039417523855308,
+      "iterations": 93,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 12.271712042344447,
+      "final": 7.049805757445746,
+      "iterations": 101,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "bop",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 10.01038507161267,
+      "final": 6.269772990641699,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 8.561309086637209,
+      "final": 4.813219254179204,
+      "iterations": 111,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 3.5008692806078257,
+      "final": 1.4506630101545015,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 3.4968797606787794,
+      "final": 1.4909579398977908,
+      "iterations": 61,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.8174320212166846,
+      "final": 0.9171012851676258,
+      "iterations": 144,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 3.466175608566202,
+      "final": 1.7811614333158972,
+      "iterations": 84,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 3.238343322817969,
+      "final": 1.5673381438769358,
+      "iterations": 74,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.3601886130354401,
+      "final": 1.1675267006275631,
+      "iterations": 111,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.600120972269708,
+      "final": 0.6261048012295709,
+      "iterations": 104,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.654738365374634,
+      "final": 1.0909153925508253,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.2467793474970437,
+      "final": 0.7744972078536616,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.011597785707365,
+      "final": 0.9291629532023031,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.331923421810692,
+      "final": 0.9311441657191383,
+      "iterations": 68,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.354347770049618,
+      "final": 1.1064979796778662,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.4494533707183868,
+      "final": 1.1496185403275956,
+      "iterations": 75,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.3737638176331126,
+      "final": 1.4052402457358593,
+      "iterations": 48,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.033797969401787,
+      "final": 1.0718723959515044,
+      "iterations": 53,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 1.8713005059867125,
+      "final": 1.1259135996511103,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.1047513646631604,
+      "final": 1.2569126680586866,
+      "iterations": 55,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 2.124695478726819,
+      "final": 1.0277245206974919,
+      "iterations": 63,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.3825782830020563,
+      "final": 1.291009136334598,
+      "iterations": 65,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmh/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 2.2754220908507747,
+      "final": 0.9559209023306399,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.588722004714702,
+      "final": 4.148536328263405,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 7.735083835682036,
+      "final": 3.5179392929865614,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 8.827205559947142,
+      "final": 5.628836320883262,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.990428447918118,
+      "final": 5.816820771444082,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 9.347005154184798,
+      "final": 5.698571840907063,
+      "iterations": 79,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 9.124909268410967,
+      "final": 3.8180878835429484,
+      "iterations": 93,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 5.78180756064765,
+      "final": 2.7260735633215156,
+      "iterations": 108,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 6.660408198463609,
+      "final": 4.50400913835258,
+      "iterations": 105,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.050893027871407,
+      "final": 5.373308112109595,
+      "iterations": 75,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.711333831973132,
+      "final": 4.9478008388742065,
+      "iterations": 79,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 7.045871061112039,
+      "final": 4.148652912492997,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 7.422378688841263,
+      "final": 3.2440050004998775,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.99005860236321,
+      "final": 2.4256968529777616,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 5.450777832883377,
+      "final": 3.8107289835904408,
+      "iterations": 74,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 7.858098033979576,
+      "final": 4.716907556128684,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 7.091518339690995,
+      "final": 4.142061911926917,
+      "iterations": 87,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 8.987745442497848,
+      "final": 4.182107003530819,
+      "iterations": 88,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 5.386390130265227,
+      "final": 2.901140443558539,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 7.162873583796845,
+      "final": 5.311037361814588,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.46505940659487,
+      "final": 5.7850185328313835,
+      "iterations": 85,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "bop",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 8.878961413400368,
+      "final": 5.510833999864205,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 7.865870377473353,
+      "final": 4.510981170114376,
+      "iterations": 95,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 4.00438951824861,
+      "final": 1.9033746898955914,
+      "iterations": 111,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 3.985994603738132,
+      "final": 1.9533062851270162,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.965922201940458,
+      "final": 0.8474543714829725,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 4.135103797533526,
+      "final": 2.1571163599928695,
+      "iterations": 66,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 3.5832514937545494,
+      "final": 1.9345560554774008,
+      "iterations": 71,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.7620077615668635,
+      "final": 1.4804603526098454,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.8189209413242793,
+      "final": 0.8283461463028393,
+      "iterations": 84,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.823018983813962,
+      "final": 1.2267988860313688,
+      "iterations": 76,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 2.1699790579698703,
+      "final": 0.5798149323264611,
+      "iterations": 53,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.5646162175212384,
+      "final": 1.204209511626722,
+      "iterations": 62,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.379182406030892,
+      "final": 1.0065316090024394,
+      "iterations": 73,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.5202316334260355,
+      "final": 1.1453418599054583,
+      "iterations": 76,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 2.592680382156974,
+      "final": 1.1430268202960578,
+      "iterations": 61,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 2.4545585482720442,
+      "final": 1.348580228603541,
+      "iterations": 72,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 1.9103586100686343,
+      "final": 0.7433501422987685,
+      "iterations": 50,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 2.2910807628312777,
+      "final": 1.2885049425737438,
+      "iterations": 65,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 2.084694733452819,
+      "final": 1.1592659780486387,
+      "iterations": 56,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 2.2758490930790205,
+      "final": 1.0658450407176532,
+      "iterations": 64,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 1.4105249789247294,
+      "final": 1.2149132725262228,
+      "iterations": 46,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmdh/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 2.45079587335129,
+      "final": 1.05661344137268,
+      "iterations": 62,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 13.364828471676462,
+      "final": 4.108367893614784,
+      "iterations": 120,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 14.14402319519663,
+      "final": 5.06469355023803,
+      "iterations": 86,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 14.650059716888643,
+      "final": 4.576755490239072,
+      "iterations": 126,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 12.312776529374617,
+      "final": 3.1729118754988948,
+      "iterations": 83,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 16.109936586386784,
+      "final": 2.803980631104336,
+      "iterations": 168,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 11.908816305148946,
+      "final": 2.5494100428864566,
+      "iterations": 120,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 11.182740307314404,
+      "final": 2.6138541083118425,
+      "iterations": 81,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 12.359096002209654,
+      "final": 2.340446425175681,
+      "iterations": 114,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 11.92278238907862,
+      "final": 2.582361800324468,
+      "iterations": 100,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 15.022283852502452,
+      "final": 2.0943789662581587,
+      "iterations": 116,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 10.733705728389491,
+      "final": 2.4083598677043474,
+      "iterations": 98,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 9.68064960015045,
+      "final": 2.330615798407621,
+      "iterations": 101,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 9.15539963828256,
+      "final": 2.279244890503483,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 10.310538091140266,
+      "final": 1.949880072982112,
+      "iterations": 89,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 9.67231652765489,
+      "final": 2.396418637789432,
+      "iterations": 81,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 11.624178218549808,
+      "final": 1.8188673496551884,
+      "iterations": 108,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2025",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 12.479143771250815,
+      "final": 2.5836366271473206,
+      "iterations": 82,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 12.997081479618183,
+      "final": 3.618672791259195,
+      "iterations": 96,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 13.720894899058159,
+      "final": 4.163230620270316,
+      "iterations": 104,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 12.404543821509998,
+      "final": 3.8129531028867425,
+      "iterations": 123,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 11.466318230668072,
+      "final": 3.153701306850646,
+      "iterations": 112,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 14.229615714162664,
+      "final": 3.771910336660567,
+      "iterations": 153,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "f1",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 13.274767863348092,
+      "final": 1.7168329445354453,
+      "iterations": 92,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 12.395093598792647,
+      "final": 3.032454063434992,
+      "iterations": 108,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 12.973132979911242,
+      "final": 3.4227852542121635,
+      "iterations": 112,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 12.139294683799571,
+      "final": 3.306184192098129,
+      "iterations": 94,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 10.249768766186172,
+      "final": 2.0364474803202,
+      "iterations": 145,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 4,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 13.503546445635582,
+      "final": 2.9844519223085495,
+      "iterations": 116,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "transfer",
+      "fold": 5,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 13.7037229937623,
+      "final": 2.3644113420317177,
+      "iterations": 115,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 0,
+      "heldOut": [
+        "austin"
+      ],
+      "restart": 0,
+      "initial": 10.667350329080412,
+      "final": 3.0243099801943503,
+      "iterations": 132,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 1,
+      "heldOut": [
+        "catalunya"
+      ],
+      "restart": 0,
+      "initial": 10.597030909199297,
+      "final": 3.153762006079915,
+      "iterations": 124,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 2,
+      "heldOut": [
+        "imola"
+      ],
+      "restart": 0,
+      "initial": 10.214422010400705,
+      "final": 3.1526084996790242,
+      "iterations": 160,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 3,
+      "heldOut": [
+        "interlagos"
+      ],
+      "restart": 0,
+      "initial": 8.738949579870562,
+      "final": 2.0555386920561167,
+      "iterations": 154,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 4,
+      "heldOut": [
+        "lusail"
+      ],
+      "restart": 0,
+      "initial": 10.979687992545044,
+      "final": 2.880051843916252,
+      "iterations": 86,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 5,
+      "heldOut": [
+        "monza"
+      ],
+      "restart": 0,
+      "initial": 10.994841008492553,
+      "final": 2.8230589178982646,
+      "iterations": 99,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 6,
+      "heldOut": [
+        "sakhir"
+      ],
+      "restart": 0,
+      "initial": 10.753516098990788,
+      "final": 2.778642564428545,
+      "iterations": 97,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "pooled",
+      "fold": 7,
+      "heldOut": [
+        "spa-francorchamps"
+      ],
+      "restart": 0,
+      "initial": 11.14497341958759,
+      "final": 1.8802731158480142,
+      "iterations": 158,
+      "lastStepDropPct": 0
+    },
+    {
+      "rung": "280/200",
+      "group": "wec-lmgt3/2026",
+      "candidate": "main",
+      "fold": null,
+      "heldOut": [],
+      "restart": 0,
+      "initial": 10.532056603894777,
+      "final": 2.7747231068271403,
+      "iterations": 136,
+      "lastStepDropPct": 0
+    }
+  ],
+  "f1Unchanged": true,
+  "adopted": false,
+  "b2Rejudged": false,
+  "runtimeNote": "Seconds are total wall time per rung, repeated per group. Group wall times were not instrumented; reused 70/25 and 140/50 have no objective logs. Parallel-run times include CPU contention.",
+  "errorNote": "RMS is reconstructed from saved fold errorSec (rounded to 0.001 s), not the two-decimal saved RMS. This precision is sufficient for the 0.02 pp criterion."
+}

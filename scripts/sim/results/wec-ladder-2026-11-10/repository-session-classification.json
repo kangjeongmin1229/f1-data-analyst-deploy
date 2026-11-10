@@ -1,0 +1,262 @@
+[
+  {
+    "track": "sakhir",
+    "year": 2025,
+    "session": 10010,
+    "geometryLaps": 10,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "jeddah",
+    "year": 2025,
+    "session": 10018,
+    "geometryLaps": 10,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "imola",
+    "year": 2025,
+    "session": 9983,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "interlagos",
+    "year": 2025,
+    "session": 9865,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "las-vegas",
+    "year": 2025,
+    "session": 9854,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      true
+    ]
+  },
+  {
+    "track": "lusail",
+    "year": 2025,
+    "session": 9846,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "yas-marina-circuit",
+    "year": 2025,
+    "session": 9835,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "melbourne",
+    "year": 2026,
+    "session": 11230,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "shanghai",
+    "year": 2026,
+    "session": 11241,
+    "geometryLaps": 14,
+    "traceCount": 9,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "suzuka",
+    "year": 2026,
+    "session": 11249,
+    "geometryLaps": 14,
+    "traceCount": 7,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "miami",
+    "year": 2026,
+    "session": 11276,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "montreal",
+    "year": 2026,
+    "session": 11287,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      true
+    ]
+  },
+  {
+    "track": "monte-carlo",
+    "year": 2026,
+    "session": 11295,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "catalunya",
+    "year": 2026,
+    "session": 11303,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "spielberg",
+    "year": 2026,
+    "session": 11311,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "silverstone",
+    "year": 2026,
+    "session": 11322,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "spa-francorchamps",
+    "year": 2026,
+    "session": 11330,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "hungaroring",
+    "year": 2026,
+    "session": 11338,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "zandvoort",
+    "year": 2026,
+    "session": 11349,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      true
+    ]
+  },
+  {
+    "track": "monza",
+    "year": 2026,
+    "session": 11357,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "madring",
+    "year": 2026,
+    "session": 11365,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "baku",
+    "year": 2026,
+    "session": 11373,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "kuala-lumpur",
+    "year": 2026,
+    "session": 11730,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "singapore",
+    "year": 2026,
+    "session": 11384,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "austin",
+    "year": 2026,
+    "session": 11392,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  },
+  {
+    "track": "mexico-city",
+    "year": 2026,
+    "session": 11400,
+    "geometryLaps": 14,
+    "traceCount": 10,
+    "rain": [
+      false
+    ]
+  }
+]

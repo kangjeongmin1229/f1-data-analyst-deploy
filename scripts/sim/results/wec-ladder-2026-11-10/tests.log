@@ -1,0 +1,2777 @@
+(node:63732) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:45028) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: account cards share an evenly spaced container; compact live key registration follows deletion and generic MCP credentials stay unavailable
+ok 1 - account cards share an evenly spaced container; compact live key registration follows deletion and generic MCP credentials stay unavailable
+  ---
+  duration_ms: 122.1061
+  type: 'test'
+  ...
+# Subtest: member roster enforces current membership and returns only display names and self markers
+ok 2 - member roster enforces current membership and returns only display names and self markers
+  ---
+  duration_ms: 29.5774
+  type: 'test'
+  ...
+# (node:41060) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: verified dual identities link to the existing ChatGPT site account; unlink keeps current login
+ok 3 - verified dual identities link to the existing ChatGPT site account; unlink keeps current login
+  ---
+  duration_ms: 79.2688
+  type: 'test'
+  ...
+# Subtest: deletion requires confirmation, deletes only linked personal records and revokes old Google sessions
+ok 4 - deletion requires confirmation, deletes only linked personal records and revokes old Google sessions
+  ---
+  duration_ms: 110.9245
+  type: 'test'
+  ...
+# Subtest: later single-provider logins reuse the linked account without a second simultaneous session
+ok 5 - later single-provider logins reuse the linked account without a second simultaneous session
+  ---
+  duration_ms: 22.0533
+  type: 'test'
+  ...
+# Subtest: preferences enforce one team AND up to two distinct drivers and persist across linked logins
+ok 6 - preferences enforce one team AND up to two distinct drivers and persist across linked logins
+  ---
+  duration_ms: 36.1323
+  type: 'test'
+  ...
+# Subtest: one WEC manufacturer can coexist with F1 preferences and survives subsequent F1 changes
+ok 7 - one WEC manufacturer can coexist with F1 preferences and survives subsequent F1 changes
+  ---
+  duration_ms: 8.633
+  type: 'test'
+  ...
+# Subtest: F1 and WEC preferences save together; invalid WEC leaves both unchanged
+ok 8 - F1 and WEC preferences save together; invalid WEC leaves both unchanged
+  ---
+  duration_ms: 6.0738
+  type: 'test'
+  ...
+# Subtest: Korean display names use family-first order without rewriting ambiguous or foreign names
+ok 9 - Korean display names use family-first order without rewriting ambiguous or foreign names
+  ---
+  duration_ms: 0.8717
+  type: 'test'
+  ...
+# Subtest: localized profile names prefer available real Latin names without romanizing Hangul
+ok 10 - localized profile names prefer available real Latin names without romanizing Hangul
+  ---
+  duration_ms: 0.5872
+  type: 'test'
+  ...
+# Subtest: linked profiles preserve Latin name when a later login supplies Hangul
+ok 11 - linked profiles preserve Latin name when a later login supplies Hangul
+  ---
+  duration_ms: 4.3521
+  type: 'test'
+  ...
+# Subtest: preference save returns JSON then independently reloads all fields for the same account
+ok 12 - preference save returns JSON then independently reloads all fields for the same account
+  ---
+  duration_ms: 5.4691
+  type: 'test'
+  ...
+# Subtest: live key is server-verified, rate limited, scoped to account and preserved across linking
+ok 13 - live key is server-verified, rate limited, scoped to account and preserved across linking
+  ---
+  duration_ms: 33.4553
+  type: 'test'
+  ...
+# Subtest: Firebase site deletion clears current site session and returns to a working account page
+ok 14 - Firebase site deletion clears current site session and returns to a working account page
+  ---
+  duration_ms: 4.415
+  type: 'test'
+  ...
+# Subtest: simultaneous first logins claim one provider identity and remove the losing account
+ok 15 - simultaneous first logins claim one provider identity and remove the losing account
+  ---
+  duration_ms: 4.4155
+  type: 'test'
+  ...
+# Subtest: a ChatGPT-only legacy account is reached by the first Google login with the same email
+ok 16 - a ChatGPT-only legacy account is reached by the first Google login with the same email
+  ---
+  duration_ms: 3.2196
+  type: 'test'
+  ...
+# Subtest: crew key lock: 5 wrong locks 5 minutes, each later wrong locks 10 minutes, success resets
+ok 17 - crew key lock: 5 wrong locks 5 minutes, each later wrong locks 10 minutes, success resets
+  ---
+  duration_ms: 28.573
+  type: 'test'
+  ...
+# Subtest: crew key is stored hashed and accepts phone keyboard capitalisation and spaces
+ok 18 - crew key is stored hashed and accepts phone keyboard capitalisation and spaces
+  ---
+  duration_ms: 9.3812
+  type: 'test'
+  ...
+# (node:15940) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: only the main-branch collector workflow token is accepted
+ok 19 - only the main-branch collector workflow token is accepted
+  ---
+  duration_ms: 542.1144
+  type: 'test'
+  ...
+# Subtest: actions push stores snapshots and marks finished windows
+ok 20 - actions push stores snapshots and marks finished windows
+  ---
+  duration_ms: 46.2354
+  type: 'test'
+  ...
+# Subtest: the final push is saved even right after another push
+ok 21 - the final push is saved even right after another push
+  ---
+  duration_ms: 10.4055
+  type: 'test'
+  ...
+# (node:60024) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: AI family comes only from the enforced redirect host, never the client name
+ok 22 - AI family comes only from the enforced redirect host, never the client name
+  ---
+  duration_ms: 3.0699
+  type: 'test'
+  ...
+# Subtest: account page status reflects real Claude and ChatGPT OAuth grants, use and revocation
+ok 23 - account page status reflects real Claude and ChatGPT OAuth grants, use and revocation
+  ---
+  duration_ms: 120.9059
+  type: 'test'
+  ...
+# ai-connection-record-failed token
+# Subtest: a storage failure in status tracking never blocks token issuance
+ok 24 - a storage failure in status tracking never blocks token issuance
+  ---
+  duration_ms: 34.9674
+  type: 'test'
+  ...
+# Subtest: account page lists both AIs with their verified state and a refresh link
+ok 25 - account page lists both AIs with their verified state and a refresh link
+  ---
+  duration_ms: 210.2289
+  type: 'test'
+  ...
+# Subtest: manual calendar refresh is uncached and respects the per-source cooldown
+ok 26 - manual calendar refresh is uncached and respects the per-source cooldown
+  ---
+  duration_ms: 16.2207
+  type: 'test'
+  ...
+# (node:22924) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: visitors who are not signed in always follow the device setting
+ok 27 - visitors who are not signed in always follow the device setting
+  ---
+  duration_ms: 31.5294
+  type: 'test'
+  ...
+# Subtest: a signed-in account mode is applied on every page before paint
+ok 28 - a signed-in account mode is applied on every page before paint
+  ---
+  duration_ms: 66.2353
+  type: 'test'
+  ...
+# Subtest: the account stores the chosen mode and rejects unknown values
+ok 29 - the account stores the chosen mode and rejects unknown values
+  ---
+  duration_ms: 52.1067
+  type: 'test'
+  ...
+# (node:57340) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: best-lap sum/identity validation, reconnect retention, superseded/deleted lap rejection, session archive, authentication and MCP routing
+# Subtest: tests\\best-laps.test.mjs
+ok 6 - tests\\best-laps.test.mjs
+  ---
+  duration_ms: 2175.6783
+  type: 'test'
+  ...
+# (node:64212) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: step 4 is one hidden, copyable setup prompt per AI and no separate briefing step
+ok 31 - step 4 is one hidden, copyable setup prompt per AI and no separate briefing step
+  ---
+  duration_ms: 54.429
+  type: 'test'
+  ...
+# Subtest: step 4 is translated, hidden prompts included
+ok 32 - step 4 is translated, hidden prompts included
+  ---
+  duration_ms: 14.1138
+  type: 'test'
+  ...
+# Subtest: setup prompt asks F1/WEC (multi-select), schedules only picked series and offers the rest later
+ok 33 - setup prompt asks F1/WEC (multi-select), schedules only picked series and offers the rest later
+  ---
+  duration_ms: 0.4593
+  type: 'test'
+  ...
+# Subtest: setup prompt runs as numbered stages and waits after each user click
+ok 34 - setup prompt runs as numbered stages and waits after each user click
+  ---
+  duration_ms: 0.6516
+  type: 'test'
+  ...
+# Subtest: F1 and WEC scheduled tasks share one card rule
+ok 35 - F1 and WEC scheduled tasks share one card rule
+  ---
+  duration_ms: 0.5208
+  type: 'test'
+  ...
+# (node:40280) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a WEC window routes to WEC, an F1 session to F1, otherwise nothing live
+ok 36 - a WEC window routes to WEC, an F1 session to F1, otherwise nothing live
+  ---
+  duration_ms: 53.5337
+  type: 'test'
+  ...
+# Subtest: every WEC card gives the FIAWEC+ live timing link (no account connection)
+ok 37 - every WEC card gives the FIAWEC+ live timing link (no account connection)
+  ---
+  duration_ms: 4.5322
+  type: 'test'
+  ...
+# Subtest: WEC card explains flags with their reasons from the race log
+ok 38 - WEC card explains flags with their reasons from the race log
+  ---
+  duration_ms: 8.0667
+  type: 'test'
+  ...
+# Subtest: off-schedule F1 data (failover drill) is never a session result
+ok 39 - off-schedule F1 data (failover drill) is never a session result
+  ---
+  duration_ms: 4.7204
+  type: 'test'
+  ...
+# Subtest: connector tells the model: card first, no F1 during WEC, one FIAWEC+ connection link
+ok 40 - connector tells the model: card first, no F1 during WEC, one FIAWEC+ connection link
+  ---
+  duration_ms: 23.6321
+  type: 'test'
+  ...
+# Subtest: setup prompt books one calendar-timed task per series that re-books itself
+ok 41 - setup prompt books one calendar-timed task per series that re-books itself
+  ---
+  duration_ms: 48.6481
+  type: 'test'
+  ...
+# Subtest: F1 card follows the WEC order: situation, flag reasons, pace, favourite drivers; standings on request
+ok 42 - F1 card follows the WEC order: situation, flag reasons, pace, favourite drivers; standings on request
+  ---
+  duration_ms: 4.8964
+  type: 'test'
+  ...
+# Subtest: already registered users get quick setup: briefing and scheduled tasks without questions
+ok 43 - already registered users get quick setup: briefing and scheduled tasks without questions
+  ---
+  duration_ms: 0.5358
+  type: 'test'
+  ...
+# Subtest: the analysis section follows the session: qualifying sectors, practice sims and long runs, race vs car ahead
+ok 44 - the analysis section follows the session: qualifying sectors, practice sims and long runs, race vs car ahead
+  ---
+  duration_ms: 26.7399
+  type: 'test'
+  ...
+# Subtest: setup offers both sign-ins early with a skip option
+ok 45 - setup offers both sign-ins early with a skip option
+  ---
+  duration_ms: 1.2761
+  type: 'test'
+  ...
+# Subtest: a card outside a live session never shows an old lap count as the headline
+ok 46 - a card outside a live session never shows an old lap count as the headline
+  ---
+  duration_ms: 1.274
+  type: 'test'
+  ...
+# (node:34268) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a stale or partial refresh record never drops checked-in events or sessions
+ok 47 - a stale or partial refresh record never drops checked-in events or sessions
+  ---
+  duration_ms: 7.7085
+  type: 'test'
+  ...
+# Subtest: a more complete refreshed timetable replaces a shorter checked-in one
+ok 48 - a more complete refreshed timetable replaces a shorter checked-in one
+  ---
+  duration_ms: 0.5753
+  type: 'test'
+  ...
+# Subtest: every event in the week after the calendar review has a session timetable
+ok 49 - every event in the week after the calendar review has a session timetable
+  ---
+  duration_ms: 2.2378
+  type: 'test'
+  ...
+# Subtest: the public calendar keeps S찾o Paulo and Homestead sessions even with an old saved record
+ok 50 - the public calendar keeps S찾o Paulo and Homestead sessions even with an old saved record
+  ---
+  duration_ms: 25.1055
+  type: 'test'
+  ...
+# (node:52300) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: account and core tools come first in tools/list
+ok 51 - account and core tools come first in tools/list
+  ---
+  duration_ms: 67.6736
+  type: 'test'
+  ...
+# Subtest: authorization-code exchange always returns a refresh token
+ok 52 - authorization-code exchange always returns a refresh token
+  ---
+  duration_ms: 6.902
+  type: 'test'
+  ...
+# Subtest: removed Hyprace tools are rejected as unknown
+ok 53 - removed Hyprace tools are rejected as unknown
+  ---
+  duration_ms: 3.1845
+  type: 'test'
+  ...
+# Subtest: tools without a required list (kongboda_list_crew) do not crash argument validation
+ok 54 - tools without a required list (kongboda_list_crew) do not crash argument validation
+  ---
+  duration_ms: 3.2501
+  type: 'test'
+  ...
+# Subtest: live snapshot keeps large raw topics out of the default response
+ok 55 - live snapshot keeps large raw topics out of the default response
+  ---
+  duration_ms: 6.6014
+  type: 'test'
+  ...
+# Subtest: saved sessions whose collector stopped early are labelled ended, not in progress
+ok 56 - saved sessions whose collector stopped early are labelled ended, not in progress
+  ---
+  duration_ms: 4.8757
+  type: 'test'
+  ...
+# Subtest: NLS event list has one entry per event with the descriptive title
+ok 57 - NLS event list has one entry per event with the descriptive title
+  ---
+  duration_ms: 3.4346
+  type: 'test'
+  ...
+# (node:7392) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: private cloud proxy, same-origin protection, secret filtering, storage, stop and upstream failure
+# PASS: F1 live reads use pushed data only
+# Subtest: tests\\cloud.test.mjs
+ok 11 - tests\\cloud.test.mjs
+  ---
+  duration_ms: 570.6234
+  type: 'test'
+  ...
+# (node:40648) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: baton: a host F1 refuses (403) never publishes or does post-session data while another host is alive
+ok 59 - baton: a host F1 refuses (403) never publishes or does post-session data while another host is alive
+  ---
+  duration_ms: 7.4527
+  type: 'test'
+  ...
+# Subtest: rehearsal: Google Cloud blocked mid-session hands the baton to the PC at once, and back only if the PC fails
+ok 60 - rehearsal: Google Cloud blocked mid-session hands the baton to the PC at once, and back only if the PC fails
+  ---
+  duration_ms: 9.5184
+  type: 'test'
+  ...
+# Subtest: rehearsal: Google Cloud blocked before the session never holds the baton; post-session data goes to the PC
+ok 61 - rehearsal: Google Cloud blocked before the session never holds the baton; post-session data goes to the PC
+  ---
+  duration_ms: 3.3572
+  type: 'test'
+  ...
+# Subtest: rehearsal: Google Cloud server crashes mid-session (no more beats) -> PC publishes within 15 s
+ok 62 - rehearsal: Google Cloud server crashes mid-session (no more beats) -> PC publishes within 15 s
+  ---
+  duration_ms: 4.4955
+  type: 'test'
+  ...
+# (node:40996) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: baton: two hosts record, one publishes; failover is sticky and retires the silent host
+ok 63 - baton: two hosts record, one publishes; failover is sticky and retires the silent host
+  ---
+  duration_ms: 28.0883
+  type: 'test'
+  ...
+# Subtest: built-in hosts come first and keep their code key
+ok 64 - built-in hosts come first and keep their code key
+  ---
+  duration_ms: 1.4194
+  type: 'test'
+  ...
+# Subtest: end to end: register, approve, baton gating, failover and hand-back
+ok 65 - end to end: register, approve, baton gating, failover and hand-back
+  ---
+  duration_ms: 564.2113
+  type: 'test'
+  ...
+# Subtest: hosts without heartbeats (older collector code) are not gated
+ok 66 - hosts without heartbeats (older collector code) are not gated
+  ---
+  duration_ms: 61.9597
+  type: 'test'
+  ...
+# Subtest: only the listed collector admin manages hosts
+ok 67 - only the listed collector admin manages hosts
+  ---
+  duration_ms: 34.0563
+  type: 'test'
+  ...
+# Subtest: admin writes need the site origin
+ok 68 - admin writes need the site origin
+  ---
+  duration_ms: 1.4463
+  type: 'test'
+  ...
+# Subtest: link codes expire and linking needs a signed-in account
+ok 69 - link codes expire and linking needs a signed-in account
+  ---
+  duration_ms: 49.1197
+  type: 'test'
+  ...
+# Subtest: public collector status: numbers for everyone, owners only for crew and registered people
+ok 70 - public collector status: numbers for everyone, owners only for crew and registered people
+  ---
+  duration_ms: 4.8589
+  type: 'test'
+  ...
+# Subtest: shared F1 login: only the owner host shares; only approved crew hosts receive; tokens expire
+ok 71 - shared F1 login: only the owner host shares; only approved crew hosts receive; tokens expire
+  ---
+  duration_ms: 407.3054
+  type: 'test'
+  ...
+# (node:41492) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: registered host keys are well-formed public keys
+ok 72 - registered host keys are well-formed public keys
+  ---
+  duration_ms: 21.1151
+  type: 'test'
+  ...
+# Subtest: a signed home host can push; tampering and unknown hosts are rejected
+ok 73 - a signed home host can push; tampering and unknown hosts are rejected
+  ---
+  duration_ms: 265.795
+  type: 'test'
+  ...
+# Subtest: signature check is exact on the signed message
+ok 74 - signature check is exact on the signed message
+  ---
+  duration_ms: 24.2248
+  type: 'test'
+  ...
+# Subtest: bearer requests are left to the existing OIDC handler
+ok 75 - bearer requests are left to the existing OIDC handler
+  ---
+  duration_ms: 1.6595
+  type: 'test'
+  ...
+# Subtest: a hosting rewrite may add query parameters; signed ones must still match
+ok 76 - a hosting rewrite may add query parameters; signed ones must still match
+  ---
+  duration_ms: 11.2757
+  type: 'test'
+  ...
+# (node:65100) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: install helper tool is read-only and asks for the OS when unknown
+ok 77 - install helper tool is read-only and asks for the OS when unknown
+  ---
+  duration_ms: 2.2191
+  type: 'test'
+  ...
+# Subtest: windows and mac guides give steps, commands and never handle passwords
+ok 78 - windows and mac guides give steps, commands and never handle passwords
+  ---
+  duration_ms: 0.7505
+  type: 'test'
+  ...
+# Subtest: my collectors are added for a signed-in account
+ok 79 - my collectors are added for a signed-in account
+  ---
+  duration_ms: 22.7562
+  type: 'test'
+  ...
+# Subtest: one-file installer downloads the kit script and installs
+ok 80 - one-file installer downloads the kit script and installs
+  ---
+  duration_ms: 8.6288
+  type: 'test'
+  ...
+# Subtest: kit downloads are served with the right types
+ok 81 - kit downloads are served with the right types
+  ---
+  duration_ms: 9.857
+  type: 'test'
+  ...
+# (node:48032) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: buffered multi-document transactions roll back errors, conditional writes and deletions together
+ok 82 - buffered multi-document transactions roll back errors, conditional writes and deletions together
+  ---
+  duration_ms: 6.1787
+  type: 'test'
+  ...
+# Subtest: concurrent preference changes preserve other fields and crew access under the actual transaction adapter
+ok 83 - concurrent preference changes preserve other fields and crew access under the actual transaction adapter
+  ---
+  duration_ms: 211.3491
+  type: 'test'
+  ...
+# Subtest: account link failure leaves both accounts and identity mappings intact
+ok 84 - account link failure leaves both accounts and identity mappings intact
+  ---
+  duration_ms: 199.9196
+  type: 'test'
+  ...
+# Subtest: shared published cache survives another worker, labels failed updates and expires exactly after 24 hours
+ok 85 - shared published cache survives another worker, labels failed updates and expires exactly after 24 hours
+  ---
+  duration_ms: 1.9846
+  type: 'test'
+  ...
+# Subtest: this-device logout does not revoke other devices; all-device logout verifies identity and revokes only that user
+ok 86 - this-device logout does not revoke other devices; all-device logout verifies identity and revokes only that user
+  ---
+  duration_ms: 9.8373
+  type: 'test'
+  ...
+# Subtest: calendar parsers reject ambiguous times, keep source identity and clear stale sessions after date changes
+ok 87 - calendar parsers reject ambiguous times, keep source identity and clear stale sessions after date changes
+  ---
+  duration_ms: 6.5543
+  type: 'test'
+  ...
+# Subtest: automatic calendar refresh persists verified updates and refuses expired or unverified data
+ok 88 - automatic calendar refresh persists verified updates and refuses expired or unverified data
+  ---
+  duration_ms: 52.4602
+  type: 'test'
+  ...
+# (node:46720) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# cpu savings: ok
+# Subtest: tests\\cpu-savings.test.mjs
+ok 17 - tests\\cpu-savings.test.mjs
+  ---
+  duration_ms: 12989.0859
+  type: 'test'
+  ...
+# (node:64560) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Deployment subscription request events/subscribe owner false
+# Deployment subscription rejected: Only the Site owner can manage deployment subscriptions
+# Deployment subscription request events/subscribe owner true
+# Subtest: owner-only crew subscriptions deliver only identifiers, deduplicate and retain failures
+ok 90 - owner-only crew subscriptions deliver only identifiers, deduplicate and retain failures
+  ---
+  duration_ms: 71.5649
+  type: 'test'
+  ...
+# (node:52340) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: registered crew read one shared collector through ChatGPT MCP and Google website login
+ok 91 - registered crew read one shared collector through ChatGPT MCP and Google website login
+  ---
+  duration_ms: 214.8147
+  type: 'test'
+  ...
+# (node:56928) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: crew roster is owner-only, excludes deleted members and secrets, and preserves pagination
+ok 92 - crew roster is owner-only, excludes deleted members and secrets, and preserves pagination
+  ---
+  duration_ms: 13.2884
+  type: 'test'
+  ...
+# (node:23148) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: demo summaries remain traceable to the plotted samples and preserve all telemetry channels
+ok 93 - demo summaries remain traceable to the plotted samples and preserve all telemetry channels
+  ---
+  duration_ms: 3.5702
+  type: 'test'
+  ...
+# (node:12008) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: qualifying examples expose binary braking and a bounded comparison-minus-reference delta
+ok 94 - qualifying examples expose binary braking and a bounded comparison-minus-reference delta
+  ---
+  duration_ms: 10.6192
+  type: 'test'
+  ...
+# (node:50392) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Deployment subscription request events/subscribe owner false
+# Deployment subscription rejected: Only the Site owner can manage deployment subscriptions
+# Deployment subscription request events/subscribe owner true
+# Deployment subscription request events/subscribe owner true
+# Deployment subscription request events/subscribe owner true
+# Deployment subscription rejected: Invalid subscription lifetime
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment OIDC stage signature Error
+# Deployment authentication rejected: Token verification failed
+# Deployment subscription request events/unsubscribe owner true
+# Deployment subscription request events/subscribe owner true
+# Deployment callback verification failed http_302 Error
+# Deployment subscription rejected: Callback verification failed
+# Deployment subscription request events/unsubscribe owner true
+# PASS: owner-only subscriptions, callback restrictions/signatures, idempotency, OIDC signature/claims, deduplication, unsubscribe, discovery
+# Subtest: tests\\deploy-events.test.mjs
+ok 23 - tests\\deploy-events.test.mjs
+  ---
+  duration_ms: 2724.6274
+  type: 'test'
+  ...
+# (node:30564) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: titles are sorted into alert categories; routine documents are skipped
+ok 96 - titles are sorted into alert categories; routine documents are skipped
+  ---
+  duration_ms: 5.9974
+  type: 'test'
+  ...
+# Subtest: the current weekend comes from the calendar
+ok 97 - the current weekend comes from the calendar
+  ---
+  duration_ms: 1.2863
+  type: 'test'
+  ...
+# Subtest: new documents become Claude-written alerts and reach every device once
+ok 98 - new documents become Claude-written alerts and reach every device once
+  ---
+  duration_ms: 240.6027
+  type: 'test'
+  ...
+# Subtest: without an AI key important documents still alert with the title only
+ok 99 - without an AI key important documents still alert with the title only
+  ---
+  duration_ms: 14.862
+  type: 'test'
+  ...
+# Subtest: summary parsing keeps limits and falls back safely
+ok 100 - summary parsing keeps limits and falls back safely
+  ---
+  duration_ms: 1.2863
+  type: 'test'
+  ...
+# Subtest: owner-only AI key, public throttled run, browser assets
+ok 101 - owner-only AI key, public throttled run, browser assets
+  ---
+  duration_ms: 17.5426
+  type: 'test'
+  ...
+# Subtest: alerts stay off public pages; the connector lists the new tools
+ok 102 - alerts stay off public pages; the connector lists the new tools
+  ---
+  duration_ms: 69.635
+  type: 'test'
+  ...
+# (node:2008) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: English pages contain no untranslated Korean UI text
+ok 103 - English pages contain no untranslated Korean UI text
+  ---
+  duration_ms: 1096.6565
+  type: 'test'
+  ...
+# Subtest: the homepage examples are fully English on the English page, not word-substituted
+ok 104 - the homepage examples are fully English on the English page, not word-substituted
+  ---
+  duration_ms: 29.4569
+  type: 'test'
+  ...
+# Subtest: homepage examples open on a random tab and the server marks the chosen tab
+ok 105 - homepage examples open on a random tab and the server marks the chosen tab
+  ---
+  duration_ms: 107.6793
+  type: 'test'
+  ...
+# Subtest: page scripts are content-versioned so a deploy is never hidden by a cached script
+ok 106 - page scripts are content-versioned so a deploy is never hidden by a cached script
+  ---
+  duration_ms: 13.1497
+  type: 'test'
+  ...
+# (node:48652) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: generic external MCP credentials cannot be issued or accepted
+ok 107 - generic external MCP credentials cannot be issued or accepted
+  ---
+  duration_ms: 56.5726
+  type: 'test'
+  ...
+# Subtest: legacy credential records can be removed but cannot authenticate
+ok 108 - legacy credential records can be removed but cannot authenticate
+  ---
+  duration_ms: 9.5158
+  type: 'test'
+  ...
+# Subtest: credential endpoint keeps origin checks and fails closed for registered accounts
+ok 109 - credential endpoint keeps origin checks and fails closed for registered accounts
+  ---
+  duration_ms: 8.9275
+  type: 'test'
+  ...
+# Subtest: official ChatGPT MCP remains available
+ok 110 - official ChatGPT MCP remains available
+  ---
+  duration_ms: 22.1297
+  type: 'test'
+  ...
+# (node:41712) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: switched off: home shows only this week in motorsport, menu Home, Simulator, F1, WEC and Kongboda AI; simulator entry under the intro; the intro and the name moved to the home; /about redirects home
+ok 111 - switched off: home shows only this week in motorsport, menu Home, Simulator, F1, WEC and Kongboda AI; simulator entry under the intro; the intro and the name moved to the home; /about redirects home
+  ---
+  duration_ms: 121.6449
+  type: 'test'
+  ...
+# (node:13336) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: FIA archive, briefing/recall/version filtering, regulation year, PDF text/pages, HTML, pagination, size limits and redirect allowlist.
+# Subtest: tests\\fia.test.mjs
+ok 28 - tests\\fia.test.mjs
+  ---
+  duration_ms: 676.8307
+  type: 'test'
+  ...
+# (node:61144) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: first-party auth handler stays off until the OAuth redirect URI is registered
+ok 113 - first-party auth handler stays off until the OAuth redirect URI is registered
+  ---
+  duration_ms: 1.9396
+  type: 'test'
+  ...
+# Subtest: other hosts keep the configured firebaseapp.com domain
+ok 114 - other hosts keep the configured firebaseapp.com domain
+  ---
+  duration_ms: 0.4614
+  type: 'test'
+  ...
+# Subtest: vercel proxies /__/auth before the app catch-all
+ok 115 - vercel proxies /__/auth before the app catch-all
+  ---
+  duration_ms: 2.0527
+  type: 'test'
+  ...
+# Subtest: login script detects in-app browsers and keeps redirect first-party only
+ok 116 - login script detects in-app browsers and keeps redirect first-party only
+  ---
+  duration_ms: 36.842
+  type: 'test'
+  ...
+# (node:53884) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Firebase session uses the Google provider subject for legacy account continuity
+ok 117 - Firebase session uses the Google provider subject for legacy account continuity
+  ---
+  duration_ms: 2.1393
+  type: 'test'
+  ...
+# Subtest: cross-site Google login is limited to the MCP OAuth return flow
+ok 118 - cross-site Google login is limited to the MCP OAuth return flow
+  ---
+  duration_ms: 0.5513
+  type: 'test'
+  ...
+# Subtest: Firebase session failures expose only a stable diagnostic code
+ok 119 - Firebase session failures expose only a stable diagnostic code
+  ---
+  duration_ms: 7.8111
+  type: 'test'
+  ...
+# Subtest: Firebase website identity is separate from ChatGPT platform identity
+ok 120 - Firebase website identity is separate from ChatGPT platform identity
+  ---
+  duration_ms: 3.2338
+  type: 'test'
+  ...
+# (node:53652) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Firestore bucket preserves JSON, optimistic writes and prefix pagination
+ok 121 - Firestore bucket preserves JSON, optimistic writes and prefix pagination
+  ---
+  duration_ms: 34.3951
+  type: 'test'
+  ...
+# Subtest: Firestore bucket rejects oversized values and cross-prefix cursors
+ok 122 - Firestore bucket rejects oversized values and cross-prefix cursors
+  ---
+  duration_ms: 1.8505
+  type: 'test'
+  ...
+# (node:18676) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: gateway tools are listed and never change shape
+ok 123 - gateway tools are listed and never change shape
+  ---
+  duration_ms: 73.8975
+  type: 'test'
+  ...
+# Subtest: kongboda_tools returns the live server catalog, filterable
+ok 124 - kongboda_tools returns the live server catalog, filterable
+  ---
+  duration_ms: 8.8157
+  type: 'test'
+  ...
+# Subtest: kongboda_call runs a current tool with the same validation
+ok 125 - kongboda_call runs a current tool with the same validation
+  ---
+  duration_ms: 11.7093
+  type: 'test'
+  ...
+# Subtest: kongboda_call refuses tools that change data and needs login
+ok 126 - kongboda_call refuses tools that change data and needs login
+  ---
+  duration_ms: 4.8022
+  type: 'test'
+  ...
+# Subtest: old tool names (openf1_*, fastf1_*, wec_discover_live) still run as the renamed tools
+ok 127 - old tool names (openf1_*, fastf1_*, wec_discover_live) still run as the renamed tools
+  ---
+  duration_ms: 14.2821
+  type: 'test'
+  ...
+# (node:61588) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Google setup fails closed, reserved provider routes remain untouched and return paths cannot escape
+ok 128 - Google setup fails closed, reserved provider routes remain untouched and return paths cannot escape
+  ---
+  duration_ms: 50.7327
+  type: 'test'
+  ...
+# Subtest: OIDC state, nonce, signature, audience, expiry and browser session are enforced
+ok 129 - OIDC state, nonce, signature, audience, expiry and browser session are enforced
+  ---
+  duration_ms: 466.9267
+  type: 'test'
+  ...
+# (node:31984) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: shared website script safely skips examples on other pages
+ok 130 - shared website script safely skips examples on other pages
+  ---
+  duration_ms: 1.9096
+  type: 'test'
+  ...
+# Subtest: homepage carries ten sourced reconstructions per tab and preserves measured telemetry
+ok 131 - homepage carries ten sourced reconstructions per tab and preserves measured telemetry
+  ---
+  duration_ms: 7.7447
+  type: 'test'
+  ...
+# (node:41300) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: set-up read back from trap speed and sector split
+ok 132 - set-up read back from trap speed and sector split
+  ---
+  duration_ms: 917.3155
+  type: 'test'
+  ...
+# Subtest: a new LMDh car starts from its chassis family, with the first-season step
+ok 133 - a new LMDh car starts from its chassis family, with the first-season step
+  ---
+  duration_ms: 0.9631
+  type: 'test'
+  ...
+# (node:54276) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: one braking zone: speeds, deceleration, and regen taken on its own axle
+ok 134 - one braking zone: speeds, deceleration, and regen taken on its own axle
+  ---
+  duration_ms: 3.5192
+  type: 'test'
+  ...
+# Subtest: fit on Brembo figures: pedal load per g and held-out errors are reported
+ok 135 - fit on Brembo figures: pedal load per g and held-out errors are reported
+  ---
+  duration_ms: 0.3896
+  type: 'test'
+  ...
+# Subtest: brake panel shows Brembo real figures next to the model for F1
+ok 136 - brake panel shows Brembo real figures next to the model for F1
+  ---
+  duration_ms: 373.6201
+  type: 'test'
+  ...
+# Subtest: pressure build-up lengthens a zone by v0*t/2 and t/2; small speed drops are not braking zones
+ok 137 - pressure build-up lengthens a zone by v0*t/2 and t/2; small speed drops are not braking zones
+  ---
+  duration_ms: 0.692
+  type: 'test'
+  ...
+# (node:43692) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: lineTrack turns a circle into constant curvature at even spacing
+ok 138 - lineTrack turns a circle into constant curvature at even spacing
+  ---
+  duration_ms: 6.0943
+  type: 'test'
+  ...
+# Subtest: every car line stays inside the track width and is never slower than the least-curvature line
+ok 139 - every car line stays inside the track width and is never slower than the least-curvature line
+  ---
+  duration_ms: 13.2689
+  type: 'test'
+  ...
+# Subtest: the racing line is drawn on the track map, with on/off, qualifying/race and zoom controls
+ok 140 - the racing line is drawn on the track map, with on/off, qualifying/race and zoom controls
+  ---
+  duration_ms: 689.661
+  type: 'test'
+  ...
+# (node:64788) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: simulator cascade: series first, then the rules/classes of that series only
+ok 141 - simulator cascade: series first, then the rules/classes of that series only
+  ---
+  duration_ms: 522.2976
+  type: 'test'
+  ...
+# (node:11752) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: evolution: all inputs 0 leaves the lap unchanged
+ok 142 - evolution: all inputs 0 leaves the lap unchanged
+  ---
+  duration_ms: 4.4276
+  type: 'test'
+  ...
+# Subtest: evolution: rubber and drying make laps faster over the session, warm-up laps are slower
+ok 143 - evolution: rubber and drying make laps faster over the session, warm-up laps are slower
+  ---
+  duration_ms: 0.6909
+  type: 'test'
+  ...
+# Subtest: evolution: a measured curve replaces the formula
+ok 144 - evolution: a measured curve replaces the formula
+  ---
+  duration_ms: 0.608
+  type: 'test'
+  ...
+# Subtest: evolution: lapsim tool adds the block only when asked and keeps the lap result
+ok 145 - evolution: lapsim tool adds the block only when asked and keeps the lap result
+  ---
+  duration_ms: 427.492
+  type: 'test'
+  ...
+# (node:31640) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:50780) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:40664) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:65756) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: physical diagnostics use signed, equal-track corner bias and trap RMS without mutating inputs
+ok 146 - physical diagnostics use signed, equal-track corner bias and trap RMS without mutating inputs
+  ---
+  duration_ms: 5.14
+  type: 'test'
+  ...
+# Subtest: WEC reports traps from calibrated tracks, missing corners and the position caveat
+ok 147 - WEC reports traps from calibrated tracks, missing corners and the position caveat
+  ---
+  duration_ms: 19.1341
+  type: 'test'
+  ...
+# Subtest: all F1 fit parameters use source bounds, including season-relative power
+ok 148 - all F1 fit parameters use source bounds, including season-relative power
+  ---
+  duration_ms: 1.0193
+  type: 'test'
+  ...
+# Subtest: bound detection separates interior, near-bound, outside and unavailable values
+ok 149 - bound detection separates interior, near-bound, outside and unavailable values
+  ---
+  duration_ms: 0.3908
+  type: 'test'
+  ...
+# Subtest: report-only F1 limits stay identical to calibrate.mjs without importing the fitter
+ok 150 - report-only F1 limits stay identical to calibrate.mjs without importing the fitter
+  ---
+  duration_ms: 16.0108
+  type: 'test'
+  ...
+# Subtest: missing validation is explicit and missing data never becomes zero or a pass
+ok 151 - missing validation is explicit and missing data never becomes zero or a pass
+  ---
+  duration_ms: 1.0096
+  type: 'test'
+  ...
+# Subtest: malformed, duplicate, mismatched and unknown validation inputs fail clearly
+ok 152 - malformed, duplicate, mismatched and unknown validation inputs fail clearly
+  ---
+  duration_ms: 2.4082
+  type: 'test'
+  ...
+# Subtest: paired physical comparison excludes unmatched or missing measurements per metric
+ok 153 - paired physical comparison excludes unmatched or missing measurements per metric
+  ---
+  duration_ms: 1.4924
+  type: 'test'
+  ...
+# Subtest: new bound hits are per parameter and side; absent baseline does not mean no old hits
+ok 154 - new bound hits are per parameter and side; absent baseline does not mean no old hits
+  ---
+  duration_ms: 2.422
+  type: 'test'
+  ...
+# Subtest: default CLI output remains byte-identical to the original report format
+ok 155 - default CLI output remains byte-identical to the original report format
+  ---
+  duration_ms: 439.3756
+  type: 'test'
+  ...
+# Subtest: physics CLI emits parseable per-variant JSON, SHA-256 inputs and unchanged lap gate
+ok 156 - physics CLI emits parseable per-variant JSON, SHA-256 inputs and unchanged lap gate
+  ---
+  duration_ms: 846.7371
+  type: 'test'
+  ...
+# Subtest: physics CLI rejects incomplete pairs, missing files and invalid JSON without a partial report
+ok 157 - physics CLI rejects incomplete pairs, missing files and invalid JSON without a partial report
+  ---
+  duration_ms: 1081.1211
+  type: 'test'
+  ...
+# (node:53820) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: gate accepts a clearly better model
+ok 158 - gate accepts a clearly better model
+  ---
+  duration_ms: 2.2855
+  type: 'test'
+  ...
+# Subtest: gate rejects a worse model
+ok 159 - gate rejects a worse model
+  ---
+  duration_ms: 1.0559
+  type: 'test'
+  ...
+# Subtest: gate rejects a gain inside the noise
+ok 160 - gate rejects a gain inside the noise
+  ---
+  duration_ms: 0.4746
+  type: 'test'
+  ...
+# Subtest: gate rejects too few rows
+ok 161 - gate rejects too few rows
+  ---
+  duration_ms: 0.3703
+  type: 'test'
+  ...
+# Subtest: gateByGroup keeps the new model only where it helps
+ok 162 - gateByGroup keeps the new model only where it helps
+  ---
+  duration_ms: 0.8229
+  type: 'test'
+  ...
+# (node:27516) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: observer preserves optimizer result and exact objective call sequence
+ok 163 - observer preserves optimizer result and exact objective call sequence
+  ---
+  duration_ms: 5.3345
+  type: 'test'
+  ...
+# Subtest: fold logs identify held-out tracks and do not change predictions
+ok 164 - fold logs identify held-out tracks and do not change predictions
+  ---
+  duration_ms: 37.8005
+  type: 'test'
+  ...
+# Subtest: file logging is opt-in, valid JSONL, and refuses to overwrite evidence
+ok 165 - file logging is opt-in, valid JSONL, and refuses to overwrite evidence
+  ---
+  duration_ms: 44.8521
+  type: 'test'
+  ...
+# (node:28100) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: qualifying split: three ordered windows, Q3 best is the quickest, held-out error beats evolution alone
+ok 166 - qualifying split: three ordered windows, Q3 best is the quickest, held-out error beats evolution alone
+  ---
+  duration_ms: 1.9564
+  type: 'test'
+  ...
+# Subtest: evolution panel lists Q1/Q2/Q3 with the real segment bests; M챕t챕o-France forecast is a condition option
+ok 167 - evolution panel lists Q1/Q2/Q3 with the real segment bests; M챕t챕o-France forecast is a condition option
+  ---
+  duration_ms: 551.8209
+  type: 'test'
+  ...
+# Subtest: forecast track temperature uses the fit on real session weather (better than the old assumption)
+ok 168 - forecast track temperature uses the fit on real session weather (better than the old assumption)
+  ---
+  duration_ms: 166.9382
+  type: 'test'
+  ...
+# (node:34900) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: race fit recovers fuel slope, compound offset and wear
+ok 169 - race fit recovers fuel slope, compound offset and wear
+  ---
+  duration_ms: 26.6062
+  type: 'test'
+  ...
+# Subtest: safety-car laps are removed and strategies need two compounds
+ok 170 - safety-car laps are removed and strategies need two compounds
+  ---
+  duration_ms: 110.5936
+  type: 'test'
+  ...
+# (node:19052) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: min-curvature line stays in the corridor and cuts the corner of a square-ish loop
+ok 171 - min-curvature line stays in the corridor and cuts the corner of a square-ish loop
+  ---
+  duration_ms: 102.1286
+  type: 'test'
+  ...
+# Subtest: every stored line lies between its edges and TUM tracks stay close to the TUM optimal line
+ok 172 - every stored line lies between its edges and TUM tracks stay close to the TUM optimal line
+  ---
+  duration_ms: 34.7082
+  type: 'test'
+  ...
+# Subtest: simulation page draws the racing line on the track map
+ok 173 - simulation page draws the racing line on the track map
+  ---
+  duration_ms: 279.504
+  type: 'test'
+  ...
+# (node:64348) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 2027 values: new value of a marked-up issue
+ok 174 - 2027 values: new value of a marked-up issue
+  ---
+  duration_ms: 3.544
+  type: 'test'
+  ...
+# Subtest: 2028 values come only from the approved-changes appendix
+ok 175 - 2028 values come only from the approved-changes appendix
+  ---
+  duration_ms: 1.2673
+  type: 'test'
+  ...
+# Subtest: Formula E Gen4 values from the English column
+ok 176 - Formula E Gen4 values from the English column
+  ---
+  duration_ms: 1.3312
+  type: 'test'
+  ...
+# Subtest: a value outside its range is not applied
+ok 177 - a value outside its range is not applied
+  ---
+  duration_ms: 0.3605
+  type: 'test'
+  ...
+# Subtest: FIA Power Unit Information: recharge limits by session from column positions
+ok 178 - FIA Power Unit Information: recharge limits by session from column positions
+  ---
+  duration_ms: 51.6741
+  type: 'test'
+  ...
+# Subtest: a missing approved-changes section keeps the previous 2028 values
+ok 179 - a missing approved-changes section keeps the previous 2028 values
+  ---
+  duration_ms: 0.58
+  type: 'test'
+  ...
+# Subtest: the approved-changes section is read where it is, not where the contents page names it
+ok 180 - the approved-changes section is read where it is, not where the contents page names it
+  ---
+  duration_ms: 0.7893
+  type: 'test'
+  ...
+# (node:60380) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: energy flow per point adds up to the lap energy totals
+ok 181 - energy flow per point adds up to the lap energy totals
+  ---
+  duration_ms: 190.9537
+  type: 'test'
+  ...
+# Subtest: battery panel: F1 2026 checks against the per-event limit, Hypercar shows the window it needs
+ok 182 - battery panel: F1 2026 checks against the per-event limit, Hypercar shows the window it needs
+  ---
+  duration_ms: 568.0488
+  type: 'test'
+  ...
+# Subtest: 2026 F1: the battery never goes outside its usable window on any track
+ok 183 - 2026 F1: the battery never goes outside its usable window on any track
+  ---
+  duration_ms: 607.9299
+  type: 'test'
+  ...
+# (node:14120) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: driveshaft energy: constant speed on a flat loop is drag + rolling resistance only
+ok 184 - driveshaft energy: constant speed on a flat loop is drag + rolling resistance only
+  ---
+  duration_ms: 4.7057
+  type: 'test'
+  ...
+# Subtest: stint model: race factor in a physical range, held-out error reported, 2025 rows carry the real BoP
+ok 185 - stint model: race factor in a physical range, held-out error reported, 2025 rows carry the real BoP
+  ---
+  duration_ms: 0.8787
+  type: 'test'
+  ...
+# Subtest: simulation page shows the Hypercar stint energy panel on WEC tracks
+ok 186 - simulation page shows the Hypercar stint energy panel on WEC tracks
+  ---
+  duration_ms: 464.9889
+  type: 'test'
+  ...
+# (node:55312) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: TracingInsights event names map to the track ids (2026 Barcelona and Spanish GPs)
+ok 187 - TracingInsights event names map to the track ids (2026 Barcelona and Spanish GPs)
+  ---
+  duration_ms: 2.1125
+  type: 'test'
+  ...
+# (node:11544) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: WEC uses transfer track factors only where the held-out error is not worse
+ok 188 - WEC uses transfer track factors only where the held-out error is not worse
+  ---
+  duration_ms: 1.8014
+  type: 'test'
+  ...
+# (node:13728) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: each series offers only the tyres it really has
+ok 189 - each series offers only the tyres it really has
+  ---
+  duration_ms: 1437.6715
+  type: 'test'
+  ...
+# Subtest: Pirelli nominations are C-numbers, hard to soft, and name the race strategies
+ok 190 - Pirelli nominations are C-numbers, hard to soft, and name the race strategies
+  ---
+  duration_ms: 133.6906
+  type: 'test'
+  ...
+# Subtest: compound gaps: measured events reproduce exactly, others follow the C-step model, hard never quicker than medium
+ok 191 - compound gaps: measured events reproduce exactly, others follow the C-step model, hard never quicker than medium
+  ---
+  duration_ms: 234.9028
+  type: 'test'
+  ...
+# Subtest: WEC tyre table: only known compound names, Hyperpole tyre is one of the event slicks
+ok 192 - WEC tyre table: only known compound names, Hyperpole tyre is one of the event slicks
+  ---
+  duration_ms: 1.2004
+  type: 'test'
+  ...
+# (node:57164) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: input fingerprints support an absolute cache path outside the source root
+ok 193 - input fingerprints support an absolute cache path outside the source root
+  ---
+  duration_ms: 51.6516
+  type: 'test'
+  ...
+# Subtest: 3 pp boundary is inclusive; excess and non-finite shares fail
+ok 194 - 3 pp boundary is inclusive; excess and non-finite shares fail
+  ---
+  duration_ms: 0.893
+  type: 'test'
+  ...
+# Subtest: production simulation runs once per class-track-year and candidates reuse the same decisions
+ok 195 - production simulation runs once per class-track-year and candidates reuse the same decisions
+  ---
+  duration_ms: 4.8954
+  type: 'test'
+  ...
+# Subtest: one failed production class or missing reference excludes every class on the track-year
+ok 196 - one failed production class or missing reference excludes every class on the track-year
+  ---
+  duration_ms: 1.4133
+  type: 'test'
+  ...
+# Subtest: bad lower-ranked sector sum excludes that row; wet sessions are excluded before simulation
+ok 197 - bad lower-ranked sector sum excludes that row; wet sessions are excluded before simulation
+  ---
+  duration_ms: 0.8629
+  type: 'test'
+  ...
+# Subtest: changed inputs or missing rows fail before fitting; no fixed decision fails closed
+ok 198 - changed inputs or missing rows fail before fitting; no fixed decision fails closed
+  ---
+  duration_ms: 1.6481
+  type: 'test'
+  ...
+# (node:35672) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: both flags off preserve the original object and every output byte
+ok 199 - both flags off preserve the original object and every output byte
+  ---
+  duration_ms: 13.2368
+  type: 'test'
+  ...
+# Subtest: mapping lookup requires exact series, year and track and rejects duplicates
+ok 200 - mapping lookup requires exact series, year and track and rejects duplicates
+  ---
+  duration_ms: 1.2764
+  type: 'test'
+  ...
+# Subtest: 2% length limit is inclusive; excess disables coordinates without changing geometry
+ok 201 - 2% length limit is inclusive; excess disables coordinates without changing geometry
+  ---
+  duration_ms: 1.0301
+  type: 'test'
+  ...
+# Subtest: sectors must be positive, finite and sum to the same lap within rounding tolerance
+ok 202 - sectors must be positive, finite and sum to the same lap within rounding tolerance
+  ---
+  duration_ms: 0.5988
+  type: 'test'
+  ...
+# Subtest: unknown and invalid positions retain the original trap filter result
+ok 203 - unknown and invalid positions retain the original trap filter result
+  ---
+  duration_ms: 0.706
+  type: 'test'
+  ...
+# Subtest: verified trap bypasses the 92% filter and uses interpolated point speed
+ok 204 - verified trap bypasses the 92% filter and uses interpolated point speed
+  ---
+  duration_ms: 15.8699
+  type: 'test'
+  ...
+# Subtest: sector flag copies WEC boundaries without mutating shared F1 points
+ok 205 - sector flag copies WEC boundaries without mutating shared F1 points
+  ---
+  duration_ms: 1.9793
+  type: 'test'
+  ...
+# Subtest: sector interpolation conserves the lap and handles fractional and final cells
+ok 206 - sector interpolation conserves the lap and handles fractional and final cells
+  ---
+  duration_ms: 0.4569
+  type: 'test'
+  ...
+# Subtest: approved weights 1, 2, 4 change only the sector squared-error term
+ok 207 - approved weights 1, 2, 4 change only the sector squared-error term
+  ---
+  duration_ms: 5.4258
+  type: 'test'
+  ...
+# Subtest: fitSeason and holdout pass WEC observations into training with fixed lap/trap weights
+ok 208 - fitSeason and holdout pass WEC observations into training with fixed lap/trap weights
+  ---
+  duration_ms: 26.9326
+  type: 'test'
+  ...
+# Subtest: positioned trap reports do not compare different definitions as matched residuals
+ok 209 - positioned trap reports do not compare different definitions as matched residuals
+  ---
+  duration_ms: 3.7517
+  type: 'test'
+  ...
+# Subtest: checked-in table has unique identities, valid official distances and source hashes
+ok 210 - checked-in table has unique identities, valid official distances and source hashes
+  ---
+  duration_ms: 2.5612
+  type: 'test'
+  ...
+# (node:57392) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 2026 ERS-K power limit follows the C5.2.8 speed taper
+ok 211 - 2026 ERS-K power limit follows the C5.2.8 speed taper
+  ---
+  duration_ms: 3.0006
+  type: 'test'
+  ...
+# Subtest: air density: sea level and Mexico City qualifying
+ok 212 - air density: sea level and Mexico City qualifying
+  ---
+  duration_ms: 1.1054
+  type: 'test'
+  ...
+# Subtest: tailwind sign: wind from the south pushes a car heading north
+ok 213 - tailwind sign: wind from the south pushes a car heading north
+  ---
+  duration_ms: 0.4434
+  type: 'test'
+  ...
+# Subtest: engine: stadium lap is sensible and responds to mass, power, grip and air
+ok 214 - engine: stadium lap is sensible and responds to mass, power, grip and air
+  ---
+  duration_ms: 51.9566
+  type: 'test'
+  ...
+# Subtest: engine: headwind on the main straight costs top speed, tailwind adds it
+ok 215 - engine: headwind on the main straight costs top speed, tailwind adds it
+  ---
+  duration_ms: 10.6833
+  type: 'test'
+  ...
+# Subtest: 2026 car clips: no ERS-K above 345 km/h and the energy budget holds
+ok 216 - 2026 car clips: no ERS-K above 345 km/h and the energy budget holds
+  ---
+  duration_ms: 4.1626
+  type: 'test'
+  ...
+# Subtest: FIA notes: circuit changes are read, classified and mapped to corners
+ok 217 - FIA notes: circuit changes are read, classified and mapped to corners
+  ---
+  duration_ms: 11.5703
+  type: 'test'
+  ...
+# Subtest: geometry: curvature of a smoothed noisy circle
+ok 218 - geometry: curvature of a smoothed noisy circle
+  ---
+  duration_ms: 23.4105
+  type: 'test'
+  ...
+# Subtest: geometry: alignment recovers a known rotation
+ok 219 - geometry: alignment recovers a known rotation
+  ---
+  duration_ms: 122.6929
+  type: 'test'
+  ...
+# Subtest: cars: 2027 and 2028 apply the power-unit changes in the regulations
+ok 220 - cars: 2027 and 2028 apply the power-unit changes in the regulations
+  ---
+  duration_ms: 1.5798
+  type: 'test'
+  ...
+# Subtest: stored tracks decode to typed arrays
+ok 221 - stored tracks decode to typed arrays
+  ---
+  duration_ms: 0.8756
+  type: 'test'
+  ...
+# Subtest: lapsim_simulate tool answers from the stored tracks
+ok 222 - lapsim_simulate tool answers from the stored tracks
+  ---
+  duration_ms: 311.5131
+  type: 'test'
+  ...
+# Subtest: track names resolve from ids, names, Grand Prix names and aliases
+ok 223 - track names resolve from ids, names, Grand Prix names and aliases
+  ---
+  duration_ms: 7.5225
+  type: 'test'
+  ...
+# Subtest: FIA notes: lists, distances, numbered items, raised kerbs and sentences
+ok 224 - FIA notes: lists, distances, numbered items, raised kerbs and sentences
+  ---
+  duration_ms: 2.5654
+  type: 'test'
+  ...
+# Subtest: track resolver avoids partial-word matches
+ok 225 - track resolver avoids partial-word matches
+  ---
+  duration_ms: 1.4505
+  type: 'test'
+  ...
+# Subtest: common calibration: timing-only laps with shared track factors recover a WEC car
+ok 226 - common calibration: timing-only laps with shared track factors recover a WEC car
+  ---
+  duration_ms: 6512.7668
+  type: 'test'
+  ...
+# Subtest: uncertainty: projections are wider than the calibrated season
+ok 227 - uncertainty: projections are wider than the calibrated season
+  ---
+  duration_ms: 12.0056
+  type: 'test'
+  ...
+# Subtest: FIA notes: the race director signature is not a change
+ok 228 - FIA notes: the race director signature is not a change
+  ---
+  duration_ms: 0.3891
+  type: 'test'
+  ...
+# Subtest: sector correction: a raced track reproduces the real pole sectors in its weather
+ok 229 - sector correction: a raced track reproduces the real pole sectors in its weather
+  ---
+  duration_ms: 40.6962
+  type: 'test'
+  ...
+# Subtest: WEC sector correction: every raced dry session of the calibrated season reproduces the real best lap
+ok 230 - WEC sector correction: every raced dry session of the calibrated season reproduces the real best lap
+  ---
+  duration_ms: 2929.5325
+  type: 'test'
+  ...
+# Subtest: F1 sector correction: every raced dry session of 2025 and 2026 reproduces the real pole (TracingInsights table)
+ok 231 - F1 sector correction: every raced dry session of 2025 and 2026 reproduces the real pole (TracingInsights table)
+  ---
+  duration_ms: 4954.6488
+  type: 'test'
+  ...
+# Subtest: series cars: every raced session on a simulator track reproduces the real best lap (Timing71 table)
+ok 232 - series cars: every raced session on a simulator track reproduces the real best lap (Timing71 table)
+  ---
+  duration_ms: 255.5558
+  type: 'test'
+  ...
+# (node:24244) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: recent receipt cannot disguise 35-minute-old source, missing/initial clocks or future clocks
+ok 233 - recent receipt cannot disguise 35-minute-old source, missing/initial clocks or future clocks
+  ---
+  duration_ms: 4.0283
+  type: 'test'
+  ...
+# Subtest: collector pushes archive CPU history, expose summary and refuse stale generated times and sequences
+ok 234 - collector pushes archive CPU history, expose summary and refuse stale generated times and sequences
+  ---
+  duration_ms: 81.9477
+  type: 'test'
+  ...
+# Subtest: diagnostic schema bounds data, session identity and numeric measurements
+ok 235 - diagnostic schema bounds data, session identity and numeric measurements
+  ---
+  duration_ms: 1.2138
+  type: 'test'
+  ...
+# Subtest: a concurrent newer write wins and an older upload reports conflict
+ok 236 - a concurrent newer write wins and an older upload reports conflict
+  ---
+  duration_ms: 98.4766
+  type: 'test'
+  ...
+# Subtest: a CPU-history storage failure does not block otherwise valid timing
+ok 237 - a CPU-history storage failure does not block otherwise valid timing
+  ---
+  duration_ms: 3.0721
+  type: 'test'
+  ...
+# Subtest: Vercel request CPU survives in bucket and has an explicit process-only scope
+ok 238 - Vercel request CPU survives in bucket and has an explicit process-only scope
+  ---
+  duration_ms: 3.5849
+  type: 'test'
+  ...
+# (node:21152) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a busy session writes the shared document at most once every 5 seconds
+ok 239 - a busy session writes the shared document at most once every 5 seconds
+  ---
+  duration_ms: 3702.9955
+  type: 'test'
+  ...
+# Subtest: F1 live reads never call the old pull server
+ok 240 - F1 live reads never call the old pull server
+  ---
+  duration_ms: 0.5787
+  type: 'test'
+  ...
+# Subtest: successful public standings and results may be cached briefly; waiting or errors never
+ok 241 - successful public standings and results may be cached briefly; waiting or errors never
+  ---
+  duration_ms: 7.8829
+  type: 'test'
+  ...
+# Standings initial fetch unavailable imsa default
+# (node:58436) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: live snapshot validation, credential rejection, freshness, auth, same-origin upload, storage and MCP read
+# Subtest: tests\\live.test.mjs
+ok 57 - tests\\live.test.mjs
+  ---
+  duration_ms: 3740.493
+  type: 'test'
+  ...
+# (node:14952) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: localisation never substitutes UI words inside names, records or unknown prose
+ok 243 - localisation never substitutes UI words inside names, records or unknown prose
+  ---
+  duration_ms: 1.9541
+  type: 'test'
+  ...
+# Subtest: HTML translation protects code, user text and record subtrees
+ok 244 - HTML translation protects code, user text and record subtrees
+  ---
+  duration_ms: 3.2484
+  type: 'test'
+  ...
+# Subtest: English resources and first-use instructions have complete authored translations
+ok 245 - English resources and first-use instructions have complete authored translations
+  ---
+  duration_ms: 39.9509
+  type: 'test'
+  ...
+# Subtest: English account interface preserves names and explains the exact deletion confirmation
+ok 246 - English account interface preserves names and explains the exact deletion confirmation
+  ---
+  duration_ms: 13.221
+  type: 'test'
+  ...
+# (node:54364) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: caller-provided identity and Claude labels never authenticate external MCP
+ok 247 - caller-provided identity and Claude labels never authenticate external MCP
+  ---
+  duration_ms: 4.9226
+  type: 'test'
+  ...
+# (node:42124) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: view initializes and acknowledges exactly once after the host response
+ok 248 - view initializes and acknowledges exactly once after the host response
+  ---
+  duration_ms: 11.6513
+  type: 'test'
+  ...
+# Subtest: no-session result renders without waiting for a live race
+ok 249 - no-session result renders without waiting for a live race
+  ---
+  duration_ms: 1.7396
+  type: 'test'
+  ...
+# Subtest: host errors and missing responses show a UI connection error
+ok 250 - host errors and missing responses show a UI connection error
+  ---
+  duration_ms: 3.1554
+  type: 'test'
+  ...
+# Subtest: unsupported host protocol never announces readiness
+ok 251 - unsupported host protocol never announces readiness
+  ---
+  duration_ms: 1.5434
+  type: 'test'
+  ...
+# Subtest: legacy ChatGPT tool output remains readable if bridge initialization times out
+ok 252 - legacy ChatGPT tool output remains readable if bridge initialization times out
+  ---
+  duration_ms: 1.9144
+  type: 'test'
+  ...
+# (node:988) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: MCP app fixes
+# Subtest: tests\\mcp-app-fixes.test.mjs
+ok 61 - tests\\mcp-app-fixes.test.mjs
+  ---
+  duration_ms: 577.2441
+  type: 'test'
+  ...
+# (node:4004) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: MCP Apps resource, concise briefing, stale guard, inline rendering and size handshake.
+# Subtest: tests\\mcp-app.test.mjs
+ok 62 - tests\\mcp-app.test.mjs
+  ---
+  duration_ms: 2256.6428
+  type: 'test'
+  ...
+# (node:62116) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Claude-compatible initialization preserves the requested supported protocol and advertises MCP Apps
+ok 255 - Claude-compatible initialization preserves the requested supported protocol and advertises MCP Apps
+  ---
+  duration_ms: 31.058
+  type: 'test'
+  ...
+# Subtest: modern UI resource reads have the required complete discriminator
+ok 256 - modern UI resource reads have the required complete discriminator
+  ---
+  duration_ms: 12.4415
+  type: 'test'
+  ...
+# Subtest: modern catalog results are complete and legacy results retain their wire shape
+ok 257 - modern catalog results are complete and legacy results retain their wire shape
+  ---
+  duration_ms: 66.8131
+  type: 'test'
+  ...
+# Subtest: unknown UI resources remain RPC errors in the modern protocol
+ok 258 - unknown UI resources remain RPC errors in the modern protocol
+  ---
+  duration_ms: 4.8109
+  type: 'test'
+  ...
+# (node:45588) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: metadata advertises OAuth 2.1 PKCE, DCR, refresh tokens and the canonical resource
+ok 259 - metadata advertises OAuth 2.1 PKCE, DCR, refresh tokens and the canonical resource
+  ---
+  duration_ms: 5.6795
+  type: 'test'
+  ...
+# Subtest: ChatGPT DCR, Google consent, PKCE, refresh rotation and revocation work end to end
+ok 260 - ChatGPT DCR, Google consent, PKCE, refresh rotation and revocation work end to end
+  ---
+  duration_ms: 76.9188
+  type: 'test'
+  ...
+# Subtest: Claude DCR, Google consent, PKCE, refresh rotation and revocation work end to end
+ok 261 - Claude DCR, Google consent, PKCE, refresh rotation and revocation work end to end
+  ---
+  duration_ms: 80.7698
+  type: 'test'
+  ...
+# Subtest: DCR rejects arbitrary callbacks and token exchange rejects the wrong resource
+ok 262 - DCR rejects arbitrary callbacks and token exchange rejects the wrong resource
+  ---
+  duration_ms: 2.3575
+  type: 'test'
+  ...
+# Subtest: a stale, replaced or reused approval shows the consent page again instead of an error
+ok 263 - a stale, replaced or reused approval shows the consent page again instead of an error
+  ---
+  duration_ms: 31.581
+  type: 'test'
+  ...
+# Subtest: the consent page lets the browser follow the redirect back to Claude and ChatGPT
+ok 264 - the consent page lets the browser follow the redirect back to Claude and ChatGPT
+  ---
+  duration_ms: 5.0429
+  type: 'test'
+  ...
+# (node:48932) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# mcp-catalog persistence-failed
+# mcp-catalog persistence-failed
+# mcp-catalog persistence-failed
+# Subtest: catalog version persistence failures do not throw
+ok 265 - catalog version persistence failures do not throw
+  ---
+  duration_ms: 44.0991
+  type: 'test'
+  ...
+# mcp-catalog persistence-failed
+# Subtest: tools/list still returns the static catalog when storage fails
+ok 266 - tools/list still returns the static catalog when storage fails
+  ---
+  duration_ms: 26.3086
+  type: 'test'
+  ...
+# Subtest: Vercel adapter streams SSE chunks before the stream closes
+ok 267 - Vercel adapter streams SSE chunks before the stream closes
+  ---
+  duration_ms: 8734.7997
+  type: 'test'
+  ...
+# Subtest: Vercel adapter cancels the stream when the client disconnects
+ok 268 - Vercel adapter cancels the stream when the client disconnects
+  ---
+  duration_ms: 32.0449
+  type: 'test'
+  ...
+# (node:51236) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: stream signals a changed catalog and ignores an unchanged one
+ok 269 - stream signals a changed catalog and ignores an unchanged one
+  ---
+  duration_ms: 63.9443
+  type: 'test'
+  ...
+# (node:37532) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: MCP initialization, 35 tool discovery, authorization, argument bounds, notifications.
+# Subtest: tests\\mcp.test.mjs
+ok 67 - tests\\mcp.test.mjs
+  ---
+  duration_ms: 2406.6535
+  type: 'test'
+  ...
+# (node:66068) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: missing display name never exposes email in header and reference-only GTWC is not offered as analysis
+ok 271 - missing display name never exposes email in header and reference-only GTWC is not offered as analysis
+  ---
+  duration_ms: 32.2586
+  type: 'test'
+  ...
+# Subtest: verified display names replace header emails; encoded ChatGPT names decode safely
+ok 272 - verified display names replace header emails; encoded ChatGPT names decode safely
+  ---
+  duration_ms: 79.5962
+  type: 'test'
+  ...
+# (node:41328) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: both groups remain visible and each series has its own explanation
+ok 273 - both groups remain visible and each series has its own explanation
+  ---
+  duration_ms: 91.9838
+  type: 'test'
+  ...
+# Subtest: account controls use platform top-level auth and never accept an external return path
+ok 274 - account controls use platform top-level auth and never accept an external return path
+  ---
+  duration_ms: 40.8579
+  type: 'test'
+  ...
+# Subtest: team marks follow explicit affiliations and preserve unknown driver identities
+ok 275 - team marks follow explicit affiliations and preserve unknown driver identities
+  ---
+  duration_ms: 17.246
+  type: 'test'
+  ...
+# Subtest: all published IMSA manufacturer marks and distinct F1 teams have local assets
+ok 276 - all published IMSA manufacturer marks and distinct F1 teams have local assets
+  ---
+  duration_ms: 28.0157
+  type: 'test'
+  ...
+# Subtest: Google availability is explicit and website identities never masquerade as platform login
+ok 277 - Google availability is explicit and website identities never masquerade as platform login
+  ---
+  duration_ms: 18.5138
+  type: 'test'
+  ...
+# (node:52860) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: deletion revokes old grants after rejoin without changing another account or crew records
+ok 278 - deletion revokes old grants after rejoin without changing another account or crew records
+  ---
+  duration_ms: 45.5098
+  type: 'test'
+  ...
+# Subtest: real bearer and refresh endpoints reject grants revoked by account deletion
+ok 279 - real bearer and refresh endpoints reject grants revoked by account deletion
+  ---
+  duration_ms: 64.9764
+  type: 'test'
+  ...
+# (node:67764) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: six read-only race tools
+ok 280 - six read-only race tools
+  ---
+  duration_ms: 4.2746
+  type: 'test'
+  ...
+# Subtest: race control: SC, red flag and VSC periods with laps; penalties and track limits
+ok 281 - race control: SC, red flag and VSC periods with laps; penalties and track limits
+  ---
+  duration_ms: 16.7953
+  type: 'test'
+  ...
+# Subtest: gaps are measured at the line; the pair view finds the pass
+ok 282 - gaps are measured at the line; the pair view finds the pass
+  ---
+  duration_ms: 18.6138
+  type: 'test'
+  ...
+# Subtest: strategy: stops under VSC and red flag are labelled; clean pace and head-to-head
+ok 283 - strategy: stops under VSC and red flag are labelled; clean pace and head-to-head
+  ---
+  duration_ms: 7.0276
+  type: 'test'
+  ...
+# Subtest: result: classification with grid and places gained
+ok 284 - result: classification with grid and places gained
+  ---
+  duration_ms: 4.1957
+  type: 'test'
+  ...
+# Subtest: weather summary and radio links
+ok 285 - weather summary and radio links
+  ---
+  duration_ms: 5.0346
+  type: 'test'
+  ...
+# Subtest: telemetry summary finds corners and braking points
+ok 286 - telemetry summary finds corners and braking points
+  ---
+  duration_ms: 1.3868
+  type: 'test'
+  ...
+# (node:48804) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tools are read-only and named for post-session use
+ok 287 - tools are read-only and named for post-session use
+  ---
+  duration_ms: 3.9081
+  type: 'test'
+  ...
+# Subtest: race start: lap 1 with seconds starts 3 s early and asks OpenF1 only for that window
+ok 288 - race start: lap 1 with seconds starts 3 s early and asks OpenF1 only for that window
+  ---
+  duration_ms: 20.4221
+  type: 'test'
+  ...
+# Subtest: default lap is the best timed lap (pit-out laps never count)
+ok 289 - default lap is the best timed lap (pit-out laps never count)
+  ---
+  duration_ms: 23.3241
+  type: 'test'
+  ...
+# Subtest: sessions are found by place
+ok 290 - sessions are found by place
+  ---
+  duration_ms: 3.3886
+  type: 'test'
+  ...
+# Subtest: cache: a repeated question does not call OpenF1 again; 429 is retried then reported
+ok 291 - cache: a repeated question does not call OpenF1 again; 429 is retried then reported
+  ---
+  duration_ms: 3.5707
+  type: 'test'
+  ...
+# Subtest: settled session: one driver question fills the cache for every driver for 30 min
+ok 292 - settled session: one driver question fills the cache for every driver for 30 min
+  ---
+  duration_ms: 12.596
+  type: 'test'
+  ...
+# Subtest: running or just-finished session is kept only 1 min
+ok 293 - running or just-finished session is kept only 1 min
+  ---
+  duration_ms: 3.4382
+  type: 'test'
+  ...
+# Subtest: cache is capped by size; oversized answers are not kept
+ok 294 - cache is capped by size; oversized answers are not kept
+  ---
+  duration_ms: 712.7061
+  type: 'test'
+  ...
+# Subtest: bad driver numbers are refused
+ok 295 - bad driver numbers are refused
+  ---
+  duration_ms: 0.8311
+  type: 'test'
+  ...
+# Subtest: telemetry rows integrate distance from speed
+ok 296 - telemetry rows integrate distance from speed
+  ---
+  duration_ms: 0.9158
+  type: 'test'
+  ...
+# (node:50924) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: crew stays shared, personal storage isolates users even without key hash
+ok 297 - crew stays shared, personal storage isolates users even without key hash
+  ---
+  duration_ms: 206.0439
+  type: 'test'
+  ...
+# Subtest: personal cloud path cannot fall back to shared; login CSRF and crew login rejected
+ok 298 - personal cloud path cannot fall back to shared; login CSRF and crew login rejected
+  ---
+  duration_ms: 14.4992
+  type: 'test'
+  ...
+# (node:35760) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: FIA review is shared policy; an empty personal field does not erase user-saved text
+ok 299 - FIA review is shared policy; an empty personal field does not erase user-saved text
+  ---
+  duration_ms: 6.1783
+  type: 'test'
+  ...
+# Subtest: website and AI share private instructions; defaults, account isolation, stale edits and clearing
+ok 300 - website and AI share private instructions; defaults, account isolation, stale edits and clearing
+  ---
+  duration_ms: 304.4328
+  type: 'test'
+  ...
+# Subtest: concurrent writes cannot overwrite each other and account deletion removes personal text
+ok 301 - concurrent writes cannot overwrite each other and account deletion removes personal text
+  ---
+  duration_ms: 23.469
+  type: 'test'
+  ...
+# (node:48108) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: MCP reads current account preferences through the official ChatGPT plugin without leaking another account
+ok 302 - MCP reads current account preferences through the official ChatGPT plugin without leaking another account
+  ---
+  duration_ms: 151.0218
+  type: 'test'
+  ...
+# (node:53392) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: actual exported previews retain valid inline JavaScript, including regex replacement tokens
+ok 303 - actual exported previews retain valid inline JavaScript, including regex replacement tokens
+  ---
+  duration_ms: 7957.7492
+  type: 'test'
+  ...
+# (node:36368) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: public reads keep HTTP errors available to caller and parse the body
+ok 304 - public reads keep HTTP errors available to caller and parse the body
+  ---
+  duration_ms: 26.0012
+  type: 'test'
+  ...
+# Subtest: deadline covers a body stalled after headers, and is distinct from selection cancellation
+ok 305 - deadline covers a body stalled after headers, and is distinct from selection cancellation
+  ---
+  duration_ms: 16.0608
+  type: 'test'
+  ...
+# Subtest: a successful read removes its cancellation subscription
+ok 306 - a successful read removes its cancellation subscription
+  ---
+  duration_ms: 1.6342
+  type: 'test'
+  ...
+# Subtest: both public assets can execute in a single document without duplicate lexical declarations
+ok 307 - both public assets can execute in a single document without duplicate lexical declarations
+  ---
+  duration_ms: 2063.4679
+  type: 'test'
+  ...
+# (node:34676) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: R2 import plan keeps durable objects and excludes transient credentials
+ok 308 - R2 import plan keeps durable objects and excludes transient credentials
+  ---
+  duration_ms: 4.8642
+  type: 'test'
+  ...
+# Subtest: R2 import plan rejects a modified body hash
+ok 309 - R2 import plan rejects a modified body hash
+  ---
+  duration_ms: 1.2819
+  type: 'test'
+  ...
+# (node:15048) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: compact session labels preserve class and round while shortening qualifying and hyperpole
+ok 310 - compact session labels preserve class and round while shortening qualifying and hyperpole
+  ---
+  duration_ms: 4.2613
+  type: 'test'
+  ...
+# Subtest: saved language overrides country; country overrides browser language
+ok 311 - saved language overrides country; country overrides browser language
+  ---
+  duration_ms: 14.381
+  type: 'test'
+  ...
+# Subtest: English pages preserve URLs and expose the English mark; home calendar follows the main introduction and championship choices
+ok 312 - English pages preserve URLs and expose the English mark; home calendar follows the main introduction and championship choices
+  ---
+  duration_ms: 94.2596
+  type: 'test'
+  ...
+# Subtest: week boundaries use Monday inclusive and next Monday exclusive, across month/year
+ok 313 - week boundaries use Monday inclusive and next Monday exclusive, across month/year
+  ---
+  duration_ms: 9.3816
+  type: 'test'
+  ...
+# Subtest: calendar records are sourced and event-level with safe optional measurements
+ok 314 - calendar records are sourced and event-level with safe optional measurements
+  ---
+  duration_ms: 108.3372
+  type: 'test'
+  ...
+# Subtest: weekly schedule excludes completed events but preserves a Sunday race running into Monday
+ok 315 - weekly schedule excludes completed events but preserves a Sunday race running into Monday
+  ---
+  duration_ms: 36.2989
+  type: 'test'
+  ...
+# Subtest: Monza and both Motegi rounds expose complete sourced sessions with explicit timezone and end
+ok 316 - Monza and both Motegi rounds expose complete sourced sessions with explicit timezone and end
+  ---
+  duration_ms: 14.963
+  type: 'test'
+  ...
+# (node:57544) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: F1 classification preserves published penalty order, time gaps, laps and retirement status
+ok 317 - F1 classification preserves published penalty order, time gaps, laps and retirement status
+  ---
+  duration_ms: 4.4041
+  type: 'test'
+  ...
+# Subtest: stints count race laps, retain same-compound changes and use FreshTyre rather than tyre lifetime
+ok 318 - stints count race laps, retain same-compound changes and use FreshTyre rather than tyre lifetime
+  ---
+  duration_ms: 4.3377
+  type: 'test'
+  ...
+# Subtest: WEC race selection excludes live Hour N snapshots and support races, keeps amended classifications
+ok 319 - WEC race selection excludes live Hour N snapshots and support races, keeps amended classifications
+  ---
+  duration_ms: 1.4504
+  type: 'test'
+  ...
+# Subtest: WEC class gaps are relative to the selected class, with leading-zero numbers and retired cars retained
+ok 320 - WEC class gaps are relative to the selected class, with leading-zero numbers and retired cars retained
+  ---
+  duration_ms: 2.8028
+  type: 'test'
+  ...
+# Subtest: WEC totals deduplicate analysis rows, count visits once and withhold incomplete pit times
+ok 321 - WEC totals deduplicate analysis rows, count visits once and withhold incomplete pit times
+  ---
+  duration_ms: 1.2239
+  type: 'test'
+  ...
+# Subtest: race panels sit between calendar and championship points on F1 and WEC only; scripts parse in both languages
+ok 322 - race panels sit between calendar and championship points on F1 and WEC only; scripts parse in both languages
+  ---
+  duration_ms: 81.4679
+  type: 'test'
+  ...
+# Subtest: race results rejects foreign sources, invalid seasons, arbitrary classes and methods before fetching
+ok 323 - race results rejects foreign sources, invalid seasons, arbitrary classes and methods before fetching
+  ---
+  duration_ms: 4.4598
+  type: 'test'
+  ...
+# Subtest: missing optional tyre archives do not prevent a complete F1 classification from loading
+ok 324 - missing optional tyre archives do not prevent a complete F1 classification from loading
+  ---
+  duration_ms: 9.3912
+  type: 'test'
+  ...
+# Subtest: F1 sessions from TracingInsights: qualifying ranks by last segment, race uses laps and finish time
+ok 325 - F1 sessions from TracingInsights: qualifying ranks by last segment, race uses laps and finish time
+  ---
+  duration_ms: 3.9514
+  type: 'test'
+  ...
+# Subtest: WEC non-race sessions: one classification per session folder, gaps inside the selected class
+ok 326 - WEC non-race sessions: one classification per session folder, gaps inside the selected class
+  ---
+  duration_ms: 3.8373
+  type: 'test'
+  ...
+# (node:38484) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Dakar and Macau appear in their event weeks with plain identity labels, without analysis support
+ok 327 - Dakar and Macau appear in their event weeks with plain identity labels, without analysis support
+  ---
+  duration_ms: 29.0922
+  type: 'test'
+  ...
+# Subtest: Giorgio Piola is discoverable and technical interpretation remains separate from official evidence
+ok 328 - Giorgio Piola is discoverable and technical interpretation remains separate from official evidence
+  ---
+  duration_ms: 14.9136
+  type: 'test'
+  ...
+# Subtest: official F1 Unlocked membership is linked without claiming all timing is free
+ok 329 - official F1 Unlocked membership is linked without claiming all timing is free
+  ---
+  duration_ms: 9.03
+  type: 'test'
+  ...
+# Subtest: homepage keeps at least fifteen distinct example questions
+ok 330 - homepage keeps at least fifteen distinct example questions
+  ---
+  duration_ms: 0.6162
+  type: 'test'
+  ...
+# (node:53508) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: research provenance, held-source exclusion, lookup, linear scenario arithmetic, freshness, live integration and authenticated MCP
+# Subtest: tests\\research.test.mjs
+ok 82 - tests\\research.test.mjs
+  ---
+  duration_ms: 2889.9239
+  type: 'test'
+  ...
+# (node:55316) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# rules noticeboards ok
+# Subtest: tests\\rules.test.mjs
+ok 83 - tests\\rules.test.mjs
+  ---
+  duration_ms: 2780.9398
+  type: 'test'
+  ...
+# (node:46680) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:46680) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# Subtest: schedule-only series have verified sessions and plain local labels but no analysis routes
+ok 333 - schedule-only series have verified sessions and plain local labels but no analysis routes
+  ---
+  duration_ms: 175.9368
+  type: 'test'
+  ...
+# (node:59432) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: official sources reject foreign URLs, credentials and private paths
+ok 334 - official sources reject foreign URLs, credentials and private paths
+  ---
+  duration_ms: 2.8003
+  type: 'test'
+  ...
+# Subtest: endurance points use total, preserve ties and normalize cross-year title whitespace
+ok 335 - endurance points use total, preserve ties and normalize cross-year title whitespace
+  ---
+  duration_ms: 2.7803
+  type: 'test'
+  ...
+# Subtest: NLS tied ranks continue over pages and class ranks stay labelled
+ok 336 - NLS tied ranks continue over pages and class ranks stay labelled
+  ---
+  duration_ms: 1.126
+  type: 'test'
+  ...
+# Subtest: IMSA preserves leading-zero car numbers and uses published net totals
+ok 337 - IMSA preserves leading-zero car numbers and uses published net totals
+  ---
+  duration_ms: 0.7546
+  type: 'test'
+  ...
+# Subtest: FE reads cumulative points instead of race pts and requires all categories
+ok 338 - FE reads cumulative points instead of race pts and requires all categories
+  ---
+  duration_ms: 7.5078
+  type: 'test'
+  ...
+# (node:53476) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Mexico FP1 badge begins ten minutes before scheduled start and ends on time, independent of device timezone
+ok 339 - Mexico FP1 badge begins ten minutes before scheduled start and ends on time, independent of device timezone
+  ---
+  duration_ms: 2.3636
+  type: 'test'
+  ...
+# Subtest: published ends override standard duration; WEC races span midnight; unknown starts are not invented LIVE windows
+ok 340 - published ends override standard duration; WEC races span midnight; unknown starts are not invented LIVE windows
+  ---
+  duration_ms: 49.9134
+  type: 'test'
+  ...
+# Subtest: home exposes independent F1/WEC badge anchors and client updates row states without rebuilding cards
+ok 341 - home exposes independent F1/WEC badge anchors and client updates row states without rebuilding cards
+  ---
+  duration_ms: 42.6736
+  type: 'test'
+  ...
+# Subtest: visible session badges distinguish published schedule phases from feed connectivity
+ok 342 - visible session badges distinguish published schedule phases from feed connectivity
+  ---
+  duration_ms: 1.1533
+  type: 'test'
+  ...
+# Subtest: calendar client uses text series names and never blindly rewrites record or user text
+ok 343 - calendar client uses text series names and never blindly rewrites record or user text
+  ---
+  duration_ms: 24.2283
+  type: 'test'
+  ...
+# (node:58232) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: F1 schedule rows without *_date_utc use the local time plus gmt_offset
+ok 344 - F1 schedule rows without *_date_utc use the local time plus gmt_offset
+  ---
+  duration_ms: 26.2095
+  type: 'test'
+  ...
+# Subtest: an official refresh without session times keeps the checked-in sessions
+ok 345 - an official refresh without session times keeps the checked-in sessions
+  ---
+  duration_ms: 2.3849
+  type: 'test'
+  ...
+# Subtest: series whose official refresh failed still show the checked-in schedule, marked unverified
+ok 346 - series whose official refresh failed still show the checked-in schedule, marked unverified
+  ---
+  duration_ms: 46.0551
+  type: 'test'
+  ...
+# Subtest: calendar status uses a readable local time, not a raw ISO stamp
+ok 347 - calendar status uses a readable local time, not a raw ISO stamp
+  ---
+  duration_ms: 55.8182
+  type: 'test'
+  ...
+# Subtest: sign-in is Google only on every host; no ChatGPT sign-in or account-link buttons
+ok 348 - sign-in is Google only on every host; no ChatGPT sign-in or account-link buttons
+  ---
+  duration_ms: 49.1788
+  type: 'test'
+  ...
+# Subtest: the MCP address is shown on the guide only after Google sign-in; the home links to the guide only
+ok 349 - the MCP address is shown on the guide only after Google sign-in; the home links to the guide only
+  ---
+  duration_ms: 34.5164
+  type: 'test'
+  ...
+# Subtest: the guide is a four-step setup ending in one copyable setup prompt per AI, shows the same example cards as the home, and drops clutter
+ok 350 - the guide is a four-step setup ending in one copyable setup prompt per AI, shows the same example cards as the home, and drops clutter
+  ---
+  duration_ms: 26.9679
+  type: 'test'
+  ...
+# Subtest: IMSA categories read as class and kind, not Al Kamel file names
+ok 351 - IMSA categories read as class and kind, not Al Kamel file names
+  ---
+  duration_ms: 2.1289
+  type: 'test'
+  ...
+# Subtest: the public calendar response can be cached by the CDN for a few minutes
+ok 352 - the public calendar response can be cached by the CDN for a few minutes
+  ---
+  duration_ms: 8.7796
+  type: 'test'
+  ...
+# Subtest: the daily refresh also pre-loads standings for official-record series
+ok 353 - the daily refresh also pre-loads standings for official-record series
+  ---
+  duration_ms: 2.7488
+  type: 'test'
+  ...
+# Subtest: the PC collector guide points at the current site
+ok 354 - the PC collector guide points at the current site
+  ---
+  duration_ms: 39.8973
+  type: 'test'
+  ...
+# Subtest: signed-in users see the MCP address; crew are told they connect automatically
+ok 355 - signed-in users see the MCP address; crew are told they connect automatically
+  ---
+  duration_ms: 36.6615
+  type: 'test'
+  ...
+# Subtest: home post-race cards drop the support label; a standalone qualifying is spelled out
+ok 356 - home post-race cards drop the support label; a standalone qualifying is spelled out
+  ---
+  duration_ms: 41.505
+  type: 'test'
+  ...
+# Subtest: WEC manufacturer marks use their own colours while F1 colours stay
+ok 357 - WEC manufacturer marks use their own colours while F1 colours stay
+  ---
+  duration_ms: 85.9168
+  type: 'test'
+  ...
+# Subtest: the public guide never mentions crew; only signed-in crew see their own status
+ok 358 - the public guide never mentions crew; only signed-in crew see their own status
+  ---
+  duration_ms: 46.2217
+  type: 'test'
+  ...
+# (node:7720) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: public pages have distinct localized metadata and describe supported analysis accurately
+ok 359 - public pages have distinct localized metadata and describe supported analysis accurately
+  ---
+  duration_ms: 2.789
+  type: 'test'
+  ...
+# Subtest: metadata replacement removes obsolete head tags while preserving unrelated markup
+ok 360 - metadata replacement removes obsolete head tags while preserving unrelated markup
+  ---
+  duration_ms: 2.8181
+  type: 'test'
+  ...
+# Subtest: language comes from the root html element rather than an English CSS selector
+ok 361 - language comes from the root html element rather than an English CSS selector
+  ---
+  duration_ms: 1.1497
+  type: 'test'
+  ...
+# Subtest: account, display and unknown routes are not indexed
+ok 362 - account, display and unknown routes are not indexed
+  ---
+  duration_ms: 0.6865
+  type: 'test'
+  ...
+# Subtest: sitemap contains each supported public route once and excludes account pages
+ok 363 - sitemap contains each supported public route once and excludes account pages
+  ---
+  duration_ms: 0.9152
+  type: 'test'
+  ...
+# Subtest: robots points to the deployment sitemap and rejects non-web origins
+ok 364 - robots points to the deployment sitemap and rejects non-web origins
+  ---
+  duration_ms: 0.8297
+  type: 'test'
+  ...
+# (node:19440) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: homepage offers a direct setup path before examples and separates the calendar
+ok 365 - homepage offers a direct setup path before examples and separates the calendar
+  ---
+  duration_ms: 68.2557
+  type: 'test'
+  ...
+# Subtest: public pages render championship names without third-party logo image requests
+ok 366 - public pages render championship names without third-party logo image requests
+  ---
+  duration_ms: 210.075
+  type: 'test'
+  ...
+# Subtest: public static assets can be cached but personalized HTML remains private
+ok 367 - public static assets can be cached but personalized HTML remains private
+  ---
+  duration_ms: 13.4898
+  type: 'test'
+  ...
+# Subtest: large recorded telemetry is loaded only on pages that display examples
+ok 368 - large recorded telemetry is loaded only on pages that display examples
+  ---
+  duration_ms: 32.1855
+  type: 'test'
+  ...
+# Subtest: bad public URLs have a usable 404 page without intercepting APIs
+ok 369 - bad public URLs have a usable 404 page without intercepting APIs
+  ---
+  duration_ms: 7.5708
+  type: 'test'
+  ...
+# Subtest: initial load avoids a same-URL reload and account names are translation-protected
+ok 370 - initial load avoids a same-URL reload and account names are translation-protected
+  ---
+  duration_ms: 82.0425
+  type: 'test'
+  ...
+# (node:58384) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# PASS: FastF1 live routing, old tools removed, Hyprace removed, FIA preserved, no stale/missing-feed fallback
+# Subtest: tests\\source-routing.test.mjs
+ok 90 - tests\\source-routing.test.mjs
+  ---
+  duration_ms: 4440.2488
+  type: 'test'
+  ...
+# (node:27088) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: durable standings remain immediately readable while a sleeping collector fails
+ok 372 - durable standings remain immediately readable while a sleeping collector fails
+  ---
+  duration_ms: 12.3822
+  type: 'test'
+  ...
+# Subtest: F1 first visit returns fresh database totals and persists them for another worker
+ok 373 - F1 first visit returns fresh database totals and persists them for another worker
+  ---
+  duration_ms: 5.0635
+  type: 'test'
+  ...
+# Subtest: select latest round, never blend older categories and prefer final documents
+ok 374 - select latest round, never blend older categories and prefer final documents
+  ---
+  duration_ms: 2.1395
+  type: 'test'
+  ...
+# Subtest: Al Kamel PDF totals are distinct from pole/race points and tied drivers remain separate
+ok 375 - Al Kamel PDF totals are distinct from pole/race points and tied drivers remain separate
+  ---
+  duration_ms: 2.5263
+  type: 'test'
+  ...
+# Subtest: standings rejects arbitrary provider URLs and methods without fetching
+ok 376 - standings rejects arbitrary provider URLs and methods without fetching
+  ---
+  duration_ms: 2.5906
+  type: 'test'
+  ...
+# Subtest: Al Kamel gzipped manifests are decoded before parsing
+ok 377 - Al Kamel gzipped manifests are decoded before parsing
+  ---
+  duration_ms: 84.7924
+  type: 'test'
+  ...
+# Subtest: FastF1 database normalization preserves current round, exact totals, teams and full table
+ok 378 - FastF1 database normalization preserves current round, exact totals, teams and full table
+  ---
+  duration_ms: 1.3063
+  type: 'test'
+  ...
+# (node:50476) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: distance delta stays inside common distance and refuses missing coverage
+ok 379 - distance delta stays inside common distance and refuses missing coverage
+  ---
+  duration_ms: 3.0382
+  type: 'test'
+  ...
+# Subtest: FastF1 lap telemetry tool is gone: completed sessions are OpenF1 only
+ok 380 - FastF1 lap telemetry tool is gone: completed sessions are OpenF1 only
+  ---
+  duration_ms: 22.4154
+  type: 'test'
+  ...
+# Subtest: shared snapshot storage never retains high-frequency telemetry copies
+ok 381 - shared snapshot storage never retains high-frequency telemetry copies
+  ---
+  duration_ms: 6.7636
+  type: 'test'
+  ...
+# Subtest: FastF1 post-session history is retired: collectors are told it is done and uploads are dropped
+ok 382 - FastF1 post-session history is retired: collectors are told it is done and uploads are dropped
+  ---
+  duration_ms: 17.7821
+  type: 'test'
+  ...
+# (node:23088) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: calendar names map to TracingInsights folders
+ok 383 - calendar names map to TracingInsights folders
+  ---
+  duration_ms: 4.3554
+  type: 'test'
+  ...
+# Subtest: sessions: "Brazil" finds S찾o Paulo qualifying while OpenF1 is locked
+ok 384 - sessions: "Brazil" finds S찾o Paulo qualifying while OpenF1 is locked
+  ---
+  duration_ms: 71.7859
+  type: 'test'
+  ...
+# Subtest: laps: best lap skips deleted laps and carries the qualifying segment
+ok 385 - laps: best lap skips deleted laps and carries the qualifying segment
+  ---
+  duration_ms: 10.1151
+  type: 'test'
+  ...
+# Subtest: telemetry: unknown session key is found by scanning events; time axis is scaled to the official lap
+ok 386 - telemetry: unknown session key is found by scanning events; time axis is scaled to the official lap
+  ---
+  duration_ms: 70.2809
+  type: 'test'
+  ...
+# Subtest: falls back to OpenF1 when TracingInsights has not published the session
+ok 387 - falls back to OpenF1 when TracingInsights has not published the session
+  ---
+  duration_ms: 10.1119
+  type: 'test'
+  ...
+# Subtest: OpenF1 401 (live lock) says what to use instead
+ok 388 - OpenF1 401 (live lock) says what to use instead
+  ---
+  duration_ms: 1.3963
+  type: 'test'
+  ...
+# Subtest: telemetry: official turn numbers come with the samples and label the corner summary
+ok 389 - telemetry: official turn numbers come with the samples and label the corner summary
+  ---
+  duration_ms: 15.5249
+  type: 'test'
+  ...
+# Subtest: telemetry from OpenF1 says when official turns are missing
+ok 390 - telemetry from OpenF1 says when official turns are missing
+  ---
+  duration_ms: 9.4813
+  type: 'test'
+  ...
+# Subtest: telemetry distance is trapezoid-integrated from speed, not the file distance column, and holes are listed
+ok 391 - telemetry distance is trapezoid-integrated from speed, not the file distance column, and holes are listed
+  ---
+  duration_ms: 13.7883
+  type: 'test'
+  ...
+# Subtest: shared rule: telemetry gap uses trapezoid distance and checks sample holes
+ok 392 - shared rule: telemetry gap uses trapezoid distance and checks sample holes
+  ---
+  duration_ms: 10.5441
+  type: 'test'
+  ...
+# (node:41340) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: the Race Director signature name is not read as a circuit change
+ok 393 - the Race Director signature name is not read as a circuit change
+  ---
+  duration_ms: 10.8907
+  type: 'test'
+  ...
+# (node:21168) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: aes128gcm payload decrypts on the browser side
+ok 394 - aes128gcm payload decrypts on the browser side
+  ---
+  duration_ms: 103.1845
+  type: 'test'
+  ...
+# Subtest: VAPID header is a valid ES256 JWT for the push service origin
+ok 395 - VAPID header is a valid ES256 JWT for the push service origin
+  ---
+  duration_ms: 16.6448
+  type: 'test'
+  ...
+# Subtest: only real push services are accepted and expired devices are removed
+ok 396 - only real push services are accepted and expired devices are removed
+  ---
+  duration_ms: 292.0448
+  type: 'test'
+  ...
+# (node:66572) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: each registered championship card reaches its working page and unknown routes stay 404
+ok 397 - each registered championship card reaches its working page and unknown routes stay 404
+  ---
+  duration_ms: 245.0371
+  type: 'test'
+  ...
+# Subtest: home introduction and local logo/script work without changing data authentication
+ok 398 - home introduction and local logo/script work without changing data authentication
+  ---
+  duration_ms: 150.1053
+  type: 'test'
+  ...
+# (node:68092) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a saved FIAWEC+ sign-in is encrypted per account and only that account can read it
+ok 399 - a saved FIAWEC+ sign-in is encrypted per account and only that account can read it
+  ---
+  duration_ms: 94.586
+  type: 'test'
+  ...
+# Subtest: crew use the owner connection unless they connect their own account
+ok 400 - crew use the owner connection unless they connect their own account
+  ---
+  duration_ms: 14.7011
+  type: 'test'
+  ...
+# Subtest: remote sign-in runs on the site: start wakes the browser, taps are queued encrypted, cookies never reach the page
+ok 401 - remote sign-in runs on the site: start wakes the browser, taps are queued encrypted, cookies never reach the page
+  ---
+  duration_ms: 395.2011
+  type: 'test'
+  ...
+# Subtest: sign-in browser: runs queued taps, saves the cookies encrypted once the account menu shows
+ok 402 - sign-in browser: runs queued taps, saves the cookies encrypted once the account menu shows
+  ---
+  duration_ms: 28.3644
+  type: 'test'
+  ...
+# Subtest: the scheduled reader gets the owner sign-in with its workflow token and can save refreshed cookies
+ok 403 - the scheduled reader gets the owner sign-in with its workflow token and can save refreshed cookies
+  ---
+  duration_ms: 12.0466
+  type: 'test'
+  ...
+# Subtest: a lapsed connection alerts the Google account that connected it, once per lapse
+ok 404 - a lapsed connection alerts the Google account that connected it, once per lapse
+  ---
+  duration_ms: 199.4021
+  type: 'test'
+  ...
+# Subtest: the site admin (collector host owner) connects FIAWEC+ for the crew, from the site or an AI
+ok 405 - the site admin (collector host owner) connects FIAWEC+ for the crew, from the site or an AI
+  ---
+  duration_ms: 10.5845
+  type: 'test'
+  ...
+# (node:12660) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: WEC push is accepted only from the WEC workflow token and stores a sanitised table
+ok 406 - WEC push is accepted only from the WEC workflow token and stores a sanitised table
+  ---
+  duration_ms: 63.831
+  type: 'test'
+  ...
+# Subtest: WEC is live only while the window is open and the table keeps changing
+ok 407 - WEC is live only while the window is open and the table keeps changing
+  ---
+  duration_ms: 0.7435
+  type: 'test'
+  ...
+# Subtest: personal WEC calls go to the account own collector path; crew read the scheduled reader
+ok 408 - personal WEC calls go to the account own collector path; crew read the scheduled reader
+  ---
+  duration_ms: 4.2864
+  type: 'test'
+  ...
+# Subtest: WEC login route: same-origin, personal accounts only, password forwarded once and never echoed
+ok 409 - WEC login route: same-origin, personal accounts only, password forwarded once and never echoed
+  ---
+  duration_ms: 8.7004
+  type: 'test'
+  ...
+# Subtest: blocked WEC access gives the live timing link, and WEC uses the shared card rule
+ok 410 - blocked WEC access gives the live timing link, and WEC uses the shared card rule
+  ---
+  duration_ms: 1.5113
+  type: 'test'
+  ...
+# Subtest: a stored blocked snapshot still points to the live timing link
+ok 411 - a stored blocked snapshot still points to the live timing link
+  ---
+  duration_ms: 0.7066
+  type: 'test'
+  ...
+# (node:63120) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: WEC status does not disclose credentials, signed URLs or assert live
+ok 412 - WEC status does not disclose credentials, signed URLs or assert live
+  ---
+  duration_ms: 4.4524
+  type: 'test'
+  ...
+# Subtest: WEC discovery uses existing authenticated collector and status is a separate read
+ok 413 - WEC discovery uses existing authenticated collector and status is a separate read
+  ---
+  duration_ms: 11.2849
+  type: 'test'
+  ...
+# Subtest: MCP requires existing visitor authentication for WEC discovery
+ok 414 - MCP requires existing visitor authentication for WEC discovery
+  ---
+  duration_ms: 58.962
+  type: 'test'
+  ...
+# Subtest: WEC discovery is routed through MCP and rejects unexpected parameters
+ok 415 - WEC discovery is routed through MCP and rejects unexpected parameters
+  ---
+  duration_ms: 22.544
+  type: 'test'
+  ...
+# (node:22392) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: round evidence is distinct from a supplier range and next-season allocation
+ok 416 - round evidence is distinct from a supplier range and next-season allocation
+  ---
+  duration_ms: 3.2339
+  type: 'test'
+  ...
+# (node:44728) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CSV preserves quoted fields, leading zero car IDs, laps, flags and paging
+ok 417 - CSV preserves quoted fields, leading zero car IDs, laps, flags and paging
+  ---
+  duration_ms: 3.4707
+  type: 'test'
+  ...
+# Subtest: Al Kamel URL checks reject unrelated hosts, credentials, private paths and redirected access
+ok 418 - Al Kamel URL checks reject unrelated hosts, credentials, private paths and redirected access
+  ---
+  duration_ms: 10.7761
+  type: 'test'
+  ...
+# Subtest: MCP discovers WEC archive, routes files only to Al Kamel and reports upstream errors
+ok 419 - MCP discovers WEC archive, routes files only to Al Kamel and reports upstream errors
+  ---
+  duration_ms: 88.5649
+  type: 'test'
+  ...
+1..419
+# tests 419
+# suites 0
+# pass 419
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21441.6223

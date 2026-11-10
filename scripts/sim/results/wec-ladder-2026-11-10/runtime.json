@@ -1,0 +1,29 @@
+[
+  {
+    "name": "identity70",
+    "main": 70,
+    "folds": 25,
+    "logging": false,
+    "startedAt": "2026-11-10T09:07:47.714Z",
+    "seconds": 474.955,
+    "validationSeconds": 0.916
+  },
+  {
+    "name": "280-100",
+    "main": 280,
+    "folds": 100,
+    "logging": true,
+    "startedAt": "2026-11-10T09:07:47.732Z",
+    "seconds": 1380.641,
+    "validationSeconds": 0.826
+  },
+  {
+    "name": "280-200",
+    "main": 280,
+    "folds": 200,
+    "logging": true,
+    "startedAt": "2026-11-10T09:07:47.740Z",
+    "seconds": 1430.624,
+    "validationSeconds": 0.805
+  }
+]

@@ -1217,3 +1217,170 @@ Checks: original-source/full-production baseline identity passed (only generated
 Artifacts are in [scripts/sim/results/wec-sectors-2026-11-10](../scripts/sim/results/wec-sectors-2026-11-10/): all variant calibrations and logs, validation JSON, gate/physical comparisons, frozen eligibility, input/source hashes, exact baseline/byte checks, geometry replay, and test log. These are research outputs, not runtime model data. Full metadata and unrounded numbers are in results.json. The experiment manifest and the prepare/run/report/replay commands are committed with the code.
 
 The code PR remains unmerged with flags off. No model PR, production geometry/calibration change, Vercel action, or deployment was performed. The next decision belongs to the owner: choose a geometry strategy before any production-model change.
+
+## 17. WEC convergence ladder, geometry guard and consistent-baseline plan — 2026-11-10
+
+### 17.1 A — fix the measurement settings first
+
+**Result: none of the tested rungs meets the declared convergence check. No fitted value is adopted. b2 remains rejected and has not been judged again.**
+
+This is deterministic iteration sensitivity, not variation between random runs. The owner approved the four-rung baseline ladder, including one exception to the 60-minute budget if needed. The stop is 280/200 even if it does not converge. The specific diagnostic criterion is: every class-season changes by less than 0.02 percentage points from the preceding rung and no pooled.used, bop.used or gripSource.used choice flips. The production gate itself is unchanged.
+
+Inputs are the exact section 5.2 PR #149 recipe: archive geometry, original production seed, B transfer factors, existing wet exclusions and Timing71 rows. Input hashes are in the saved manifest. All runs are WEC only; all timing and physics flags are off; lap/trap weights stay at 2/0.5. There are 99 dry Al Kamel laps before optional Timing71 selection; n is 5 per class in 2025 and 6 in 2026. The two higher rungs ran in parallel. Their main-iteration limit is identical at 280; their held-out limits are 100 and 200.
+
+The completed 70/25 and 140/50 runs were reused as authorized. An additional logging-off 70/25 run took 474.955 s plus 0.916 s validation and exactly reproduced production. Calibration, calibration stdout, validation JSON and validation stdout were byte-identical to the original-source control. F1 seasons and projections are unchanged in every rung.
+
+| Rung (main/folds) | Pooled WEC RMS % | n | Fit wall time s |
+|---|---|---|---|
+| 70/25 | 1.321050 | 33 | 435.500 |
+| 140/50 | 1.162445 | 33 | 1108.300 |
+| 280/100 | 1.156973 | 33 | 1380.641 |
+| 280/200 | 1.128121 | 33 | 1430.624 |
+
+Run times are total wall time per rung, including parallel CPU contention. Separate per-group wall times were not instrumented. The older two runs have no per-iteration log; no history is invented for them.
+
+| Rung | Class / season | Held-out RMS % | n | Fitted laps | muY | ClA | CdA | Bound hits | pooled | bop | gripSource |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 70/25 | lmh/2025 | 1.432493 | 5 | 15 | 1.568817 | 7.000000 | 1.086824 | clA upper | no | no | f1 |
+| 70/25 | lmh/2026 | 1.040859 | 6 | 18 | 1.518156 | 6.630406 | 0.963682 | none | no | n/a | transfer |
+| 70/25 | lmdh/2025 | 1.238337 | 5 | 18 | 1.561175 | 7.000000 | 1.099404 | clA upper | yes | no | transfer |
+| 70/25 | lmdh/2026 | 1.070598 | 6 | 18 | 1.528597 | 6.446839 | 0.953795 | none | no | n/a | transfer |
+| 70/25 | lmgt3/2025 | 1.733498 | 5 | 15 | 1.590430 | 3.500000 | 1.286196 | clA upper | no | n/a | transfer |
+| 70/25 | lmgt3/2026 | 1.369955 | 6 | 18 | 1.615853 | 3.500000 | 1.300000 | clA upper; cdA upper | no | n/a | transfer |
+| 140/50 | lmh/2025 | 1.076235 | 5 | 15 | 1.568868 | 7.000000 | 1.086312 | clA upper | no | no | f1 |
+| 140/50 | lmh/2026 | 1.045749 | 6 | 18 | 1.517850 | 6.635010 | 0.963651 | none | no | n/a | transfer |
+| 140/50 | lmdh/2025 | 1.259421 | 5 | 15 | 1.560082 | 7.000000 | 1.104799 | clA upper | no | no | transfer |
+| 140/50 | lmdh/2026 | 0.976933 | 6 | 18 | 1.528597 | 6.446839 | 0.953795 | none | no | n/a | transfer |
+| 140/50 | lmgt3/2025 | 1.334272 | 5 | 15 | 1.590303 | 3.500000 | 1.286063 | clA upper | no | n/a | transfer |
+| 140/50 | lmgt3/2026 | 1.270218 | 6 | 18 | 1.619744 | 3.500000 | 1.284389 | clA upper | no | n/a | f1 |
+| 280/100 | lmh/2025 | 1.076810 | 5 | 15 | 1.569573 | 7.000000 | 1.093458 | clA upper | no | no | transfer |
+| 280/100 | lmh/2026 | 1.061336 | 6 | 18 | 1.517850 | 6.635010 | 0.963651 | none | no | n/a | transfer |
+| 280/100 | lmdh/2025 | 1.270150 | 5 | 15 | 1.560082 | 7.000000 | 1.104799 | clA upper | no | no | transfer |
+| 280/100 | lmdh/2026 | 0.983982 | 6 | 18 | 1.528597 | 6.446839 | 0.953795 | none | no | n/a | transfer |
+| 280/100 | lmgt3/2025 | 1.353481 | 5 | 15 | 1.590303 | 3.500000 | 1.286063 | clA upper | no | n/a | transfer |
+| 280/100 | lmgt3/2026 | 1.195955 | 6 | 18 | 1.619744 | 3.500000 | 1.284389 | clA upper | no | n/a | f1 |
+| 280/200 | lmh/2025 | 1.076304 | 5 | 15 | 1.569573 | 7.000000 | 1.093458 | clA upper | no | no | transfer |
+| 280/200 | lmh/2026 | 1.061336 | 6 | 18 | 1.517850 | 6.635010 | 0.963651 | none | no | n/a | transfer |
+| 280/200 | lmdh/2025 | 1.269795 | 5 | 15 | 1.560082 | 7.000000 | 1.104799 | clA upper | no | no | transfer |
+| 280/200 | lmdh/2026 | 0.983982 | 6 | 18 | 1.528597 | 6.446839 | 0.953795 | none | no | n/a | transfer |
+| 280/200 | lmgt3/2025 | 1.353157 | 5 | 15 | 1.590303 | 3.500000 | 1.286063 | clA upper | no | n/a | transfer |
+| 280/200 | lmgt3/2026 | 1.034453 | 6 | 23 | 1.608017 | 3.500000 | 1.295287 | clA upper | yes | n/a | transfer |
+
+Errors above are reconstructed from stored held-out errors rounded to 0.001 s, rather than the saved RMS rounded to two decimals. Full car values are in results.json. The comparison is level B (class-unseen) and does not measure a wholly unseen track.
+
+| Transition | Group | Delta error pp | Choice flips | Pass (<0.02 pp and no flip) |
+|---|---|---|---|---|
+| 70/25 to 140/50 | lmh/2025 | -0.356258 | none | no |
+| 70/25 to 140/50 | lmh/2026 | +0.004890 | none | yes |
+| 70/25 to 140/50 | lmdh/2025 | +0.021084 | {"pooled":true,"bop":false,"gripSource":"transfer"} to {"pooled":false,"bop":false,"gripSource":"transfer"} | no |
+| 70/25 to 140/50 | lmdh/2026 | -0.093665 | none | no |
+| 70/25 to 140/50 | lmgt3/2025 | -0.399226 | none | no |
+| 70/25 to 140/50 | lmgt3/2026 | -0.099737 | {"pooled":false,"bop":null,"gripSource":"transfer"} to {"pooled":false,"bop":null,"gripSource":"f1"} | no |
+| 140/50 to 280/100 | lmh/2025 | +0.000576 | {"pooled":false,"bop":false,"gripSource":"f1"} to {"pooled":false,"bop":false,"gripSource":"transfer"} | no |
+| 140/50 to 280/100 | lmh/2026 | +0.015587 | none | yes |
+| 140/50 to 280/100 | lmdh/2025 | +0.010729 | none | yes |
+| 140/50 to 280/100 | lmdh/2026 | +0.007049 | none | yes |
+| 140/50 to 280/100 | lmgt3/2025 | +0.019209 | none | yes |
+| 140/50 to 280/100 | lmgt3/2026 | -0.074262 | none | no |
+| 280/100 to 280/200 | lmh/2025 | -0.000506 | none | yes |
+| 280/100 to 280/200 | lmh/2026 | +0.000000 | none | yes |
+| 280/100 to 280/200 | lmdh/2025 | -0.000355 | none | yes |
+| 280/100 to 280/200 | lmdh/2026 | +0.000000 | none | yes |
+| 280/100 to 280/200 | lmgt3/2025 | -0.000324 | none | yes |
+| 280/100 to 280/200 | lmgt3/2026 | -0.161503 | {"pooled":false,"bop":null,"gripSource":"f1"} to {"pooled":true,"bop":null,"gripSource":"transfer"} | no |
+
+For 280/100 versus 280/200, unchanged choices are also checked to give exactly identical main-fit car values. A changed selection can change the main-fit training rows or track factors despite the same iteration limit. This is reported rather than hidden.
+
+Optional logging uses LAPSIM_OBJECTIVE_LOG=<new JSONL path>. It records the objective before each Nelder–Mead iteration and at exit, by class-season, candidate (F1 grip, transfer grip, pooled Timing71, BoP or main), fold and start. There is one initial start and no restart loop in the current optimizer; every record therefore has restart: 0. No restart was added. The observer adds no objective evaluations and writes no stdout; tests compare the exact objective-call sequence and prediction bytes with logging on and off. Existing log paths are refused to protect evidence.
+
+All objective histories for the new rungs are saved in compact lossless form with metadata, columns, final vectors and raw JSONL hashes. A small change in the final optimizer step alone is not used as proof of convergence. The predeclared adjacent-rung rule above is the decision rule.
+
+Validation: 419/419 offline tests passed, including raced-session reproduction. Build and artifact validation passed. Runtime model files, bounds and gate are unchanged. Artifacts: [wec-ladder-2026-11-10](../scripts/sim/results/wec-ladder-2026-11-10/). Commands: node scripts/sim/run-wec-ladder.mjs, then node scripts/sim/report-wec-ladder.mjs and node scripts/sim/archive-wec-ladder.mjs. The runner refuses to overwrite a prior run directory.
+
+The limiting group is LMGT3 2026: RMS changes from 1.195955% at 280/100 to 1.034453% at 280/200 (-0.161503 pp). gripSource changes from f1 to transfer; pooled.used changes from false to true; fitted laps rise from 18 to 23. The other five groups change by at most 0.000506 pp without a choice flip. There is no converged rung for all six groups. No run beyond 280/200 is authorized or performed. In unchanged F1-grip candidate folds, the objective still falls by 6.799% for LMGT3 2025/Spa and 6.686% for LMGT3 2026/Monza between 100 and 200 iterations. The full fold histories therefore also show why a flat-looking pooled number is insufficient.
+
+### 17.2 B — weather confirmed; guard blocked by a requirement conflict
+
+Direct OpenF1 requests on 10 November 2026 returned HTTP 200. Session metadata confirms both are Interlagos Qualifying sessions. The existing pipeline marks a session as rain when any session weather observation has rainfall > 0; these counts use that exact criterion, not an inference from slow laps.
+
+| Geometry source | Session | OpenF1 weather rows | Rows with rainfall > 0 | Classification |
+|---|---|---|---|---|
+| Interlagos archive, 2026 | [11408](https://api.openf1.org/v1/sessions?session_key=11408) | 160 | 106 | wet |
+| Interlagos repository, 2025 | [9865](https://api.openf1.org/v1/sessions?session_key=9865) | 82 | 0 | dry by the pipeline criterion |
+
+Weather sources: [11408](https://api.openf1.org/v1/weather?session_key=11408), [9865](https://api.openf1.org/v1/weather?session_key=9865). Response hashes, observation windows and counts are saved in geometry-weather-evidence.json. All 10 cached derived traces for 11408 have rain=true; all 10 for 9865 have rain=false. The archive is not a dry-session source.
+
+**Owner decision now applies: retain the repository Interlagos geometry (9865/2025), one geometry for every series. The per-series geometry option in section 16 is rejected. No geometry data has been changed.**
+
+At canonical main 309fdfd8, [build-geometry.mjs](https://github.com/MisterKinn/f1-data-analyst/blob/309fdfd8e214c5089072bcc5c06e51892bf63790/scripts/sim/build-geometry.mjs) chooses the maximum year per circuit before inspecting session weather. With the currently available sessions, it selects 11408/2026. The [Lap simulator data workflow](https://github.com/MisterKinn/f1-data-analyst/blob/309fdfd8e214c5089072bcc5c06e51892bf63790/.github/workflows/lapsim-data.yml) fetches 2023–2026 and invokes tune-geometry, which invokes this builder. Thus the next successful rebuild with these inputs would generate the unwanted Interlagos replacement.
+
+**Publication detail:** the scheduled/manual workflow pushes a lapsim/refresh-YYYYMMDD branch, not main; a push-triggered run writes its lapsim/** branch. The current workflow does not itself publish this geometry to production. This is an unreviewed geometry change waiting in generated refresh output if it is later merged without review, not an automatic direct-main change. The schedule is Tuesday 12:17 Korea time. The workflow was inspected, not edited or triggered.
+
+A repository-wide audit then found that three existing production track geometries already point to rain-marked sessions. Direct OpenF1 rainfall requests confirmed the cached labels:
+
+| Existing track | Current source | Rain observations / all | Latest dry source in the pinned trace inventory |
+|---|---|---|---|
+| Las Vegas | 9854 / 2025 | 34 / 85 | 9640 / 2024 |
+| Montreal | 11287 / 2026 | 1 / 76 | 9959 / 2025 |
+| Zandvoort | 11349 / 2026 | 5 / 77 | 9916 / 2025 |
+
+Sources: [9854 weather](https://api.openf1.org/v1/weather?session_key=9854), [11287 weather](https://api.openf1.org/v1/weather?session_key=11287), [11349 weather](https://api.openf1.org/v1/weather?session_key=11349). A rain-marked session does not establish that every selected lap was wet; the requested guard is based on the session flag, and must still exclude these sessions. The dry alternatives above are inventory classifications, not newly rebuilt geometries.
+
+**Stop under section 5.3:** a successful dry-only rebuild for every track cannot also reproduce today's entire repository geometry byte for byte. These three source identities must change or the tracks must disappear; even identical coordinates would still change year/session metadata. Keeping the old wet-source geometry silently would be an undocumented exception to the requested all-track exclusion. Installing replacement geometry would be an unapproved model change. Neither was done.
+
+There is also a reproducibility limitation: the pinned archive contains derived tracks/traces, not index.json and the raw session position files. Fresh fetches choose 14 geometry drivers only for the latest year, but 10 trace drivers for older years in this workflow. Interlagos 9865's current geometry used 14 laps. Filtering only in build-geometry after a fresh fetch could therefore leave fewer fallback laps and no year-specific MultiViewer corners. A successful byte-identical dry rebuild cannot be claimed from the available derived archive alone.
+
+**Concrete guard proposal for owner review (not implemented):** preflight every indexed session against its rain marker, raw rainfall samples and the series-appropriate wet-sessions.json entries. Skip wet candidates. If that exclusion would invalidate an existing track's source and require replacing its geometry, abort before writing either tracks or traces, list the affected tracks, and leave both files byte-identical. Do not grandfather wet sessions or install older dry geometry silently. A separate model review would approve replacements and their complete raw inputs.
+
+Proposed tests for the separate small guard PR: rain-marked exclusion; wet-list exclusion even with rain=false; latest eligible dry selection across several circuits; all-wet input; rejected rebuild leaves both output hashes unchanged; dry-only fixture produces byte-identical output. **No guard implementation or separate guard PR was opened after discovering this conflict. Owner confirmation of fail-closed behavior is required before continuing B.**
+
+### 17.3 C — conditional plan only; no consistent re-baseline run
+
+This records the requested plan and its blockers. It is not a run authorization. There is no converged all-group rung from A, so M/H below is deliberately unset. It must not default to 280/200. The geometry guard conflict above also remains open.
+
+Inputs for the future paired experiment:
+
+- Pin canonical production commit 309fdfd8 and the original production calibration (SHA-256 47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586).
+- Use the single repository tracks-data.js for every arm and series: SHA-256 fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb. Do not adopt the archive geometry or a per-series override.
+- Keep the recorded PR #149 WEC, wet exclusions, Timing71 and BoP inputs unchanged. Existing B table SHA-256 b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705 is the control table. The rebuilt B table gets a new recorded hash, not a guessed one.
+- Rebuild F1 speed traces on the same repository geometry from the complete original raw inputs before rebuilding B. The archive traces were projected onto archive geometry; simply copying them would leave another geometry mismatch. Recover/pin the required raw positions and corner files first; do not substitute a reduced driver sample. If exact trace/geometry reproduction is unavailable, stop before fitting.
+- Keep production F1 car values, shared track factors, model bounds and all objective weights unchanged in the deployed reference. B's experimental F1 fit supplies transfer factors only and is never installed as the production F1 model.
+
+| Arm | Geometry | Transfer factors | WEC fit and held-out settings | Role |
+|---|---|---|---|---|
+| Frozen production reference | repository | current B | saved production cars; fixed-value replay | actual production errors and physical diagnostics, not a new held-out fit |
+| Control re-evaluation | repository | current B | same owner-approved converged M/H | current production inputs re-evaluated at a common numerical setting |
+| Consistent candidate | repository | B rebuilt on repository geometry and matching traces | identical M/H | candidate for comparison; never installed by the experiment |
+
+This separates frozen-production replay from refitted held-out evaluation. Both fit arms use identical geometry, source rows, selection procedure, M/H and weights except the transfer table under test. Their held-out folds are refitted at the same converged setting; the old stored 70/25 RMS is not used as the numerical gate baseline. Changes from the frozen production car values are reported separately. This interpretation of the paired baseline must be approved before execution; no claim of exact historical production reproduction is made for a refit on different geometry/settings.
+
+Proposed commands in isolated snapshots, after input reconstruction and after M/H has been approved (POSIX notation; clear every other LAPSIM_* override):
+
+```sh
+# Rebuild B from matching repository geometry/traces. This is not a production F1 replacement.
+LAPSIM_SKIP_WEC=1 LAPSIM_FITTER=bcd LAPSIM_ROUNDS=5 LAPSIM_BCD_ITERS=200 \
+LAPSIM_WTIME=20 LAPSIM_WSECTOR=2 LAPSIM_TRACK_DRAG=off LAPSIM_TEAMS=on LAPSIM_WPRIOR=8 \
+node scripts/sim/calibrate.mjs
+# Save the resulting B calibration as an artifact, then in the candidate snapshot:
+node scripts/sim/transfer-grip.mjs B-repository-geometry.js 'B rebuilt on pinned repository geometry'
+# Restore the unchanged production F1 seed in both WEC snapshots before the next command.
+# M and H remain unset: A did not establish a converged rung.
+: "${M:?No approved converged main-iteration setting}"
+: "${H:?No approved converged fold-iteration setting}"
+LAPSIM_ONLY=wec LAPSIM_ITERS="$M" LAPSIM_HOLDOUT_ITERS="$H" \
+LAPSIM_WEC_TRAP_POSITION=off LAPSIM_WEC_SECTORS=off LAPSIM_OBJECTIVE_LOG=objectives.jsonl \
+node scripts/sim/calibrate.mjs
+node scripts/sim/validate.mjs control-or-candidate
+node scripts/sim/exp-compare.mjs control.js candidate.js
+```
+
+Before these shell commands, enforce non-empty validated M/H and all pinned hashes; the calibration script otherwise defaults empty variables to 70/25. Run the two WEC arms in parallel only after B is built and their inputs are frozen. Do not choose another iteration count or transfer setting from candidate held-out results. Report pooled and per-class-season held-out results, n, all car values and bounds, selection flips, corner/trap diagnostics, unchanged F1 replay, and current-production versus candidate Interlagos errors. Acceptance needs the unchanged gate on pooled WEC, no class-season worse, F1 unchanged, and the physical checks; a sub-0.1 pp gain at n=5/6 remains unestablished. A model PR requires a separate owner review of that result.
+
+Runtime estimate, not a promise: the historical B job took about 3 h 36 min on GitHub Actions; allow roughly 3–4 h for its reconstruction/fit, plus data recovery. The new WEC 280/100 and 280/200 runs took 23.0 and 23.8 min wall time in parallel on this PC. A future converged M/H is unknown, so the WEC phase has no firm estimate; 25–40 min at comparable cost is only a planning range. Overall allow approximately 3.5–5 h plus input recovery, subject to the final settings. This would require its own budget approval; the one-time exception granted for A is not reused. No part of this re-baseline experiment was run.
+
+### 17.4 Open questions — not tasks or additional run authorizations
+
+- Hypercar 2025 trap RMS is about 10–12 km/h versus about 3.4 km/h in 2026, and 2025 downforce is at its upper bound. Per-event BoP was rejected at 70/25. Once the measurement settings are stable, would a separately controlled BoP re-test explain the difference? The current lap-maximum/trap mismatch still limits the physical interpretation. No separate BoP re-test was started.
+- All WEC classes are too fast at Interlagos on both geometries, up to about 1.5 s for LMGT3. The shared Interlagos factor is supported by one dry F1 season only. Does that factor transfer across classes, or does it absorb another missing effect? This is an open question, not authorization to change the factor.
+
+Disposition: A stopped at the approved ceiling; B stopped at the explicit requirement conflict; C is a blocked conditional plan. Diagnostic code and results are backed up in PR #154. No production geometry/calibration change, model PR, merge, workflow trigger or Vercel action was performed.
