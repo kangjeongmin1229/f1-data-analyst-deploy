@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-11-10T14:30:32.066Z",
+  "deadline": "2026-11-10T15:56:59.668Z",
+  "sentinel": {
+    "at": "2026-11-10T14:30:32.065Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  },
+  "source": {
+    "createdAt": "2026-11-10T14:30:19.786Z",
+    "sourceSession": 9640,
+    "geometryDrivers": 14,
+    "traceDrivers": 10,
+    "tuning": {
+      "posK": 0.4,
+      "kappaK": 0.8,
+      "sigma": 7,
+      "curvatureSmooth": 6,
+      "sigmaMin": 3,
+      "ds": 5
+    },
+    "replaced": 30,
+    "otherTracesUnchanged": 855,
+    "otherTracksUnchanged": true,
+    "sourceHashes": {
+      "fetcher": "a730496369f910af7b9a6c236936a3d4f7a1c6ef1e7743dbb1d11ed48ca57778",
+      "builder": "6f46cf7a0fff898328ac7972d7729fa97f817fb2f5a1a7a74afae48df0bfbc7b"
+    },
+    "inputs": {
+      "candidate-tracks.js": "548689d2b7b80776a8eb3d4226f68f369f917b27f6057dd1cbe522026a001489",
+      "candidate-traces.json": "8f5310041235787766a68659975a225f370e2c767f1090d53bdf27df56346e43",
+      "input/index.json": "dd1b920044848edd1182695749b9b827089f9ea4ace75bfb7d05f78df8256722",
+      "input/circuits.json": "5cc5aa9f1eca8fe8ce04f376110b263104440837aef217f75a120cc9ef192fd5",
+      "input/f1-circuits.geojson": "e67145ddbe5581863839c9fd4303b86db2b3c0e3465e98142912f4126a5a2c5d",
+      "input/sessions/2023-las-vegas.json": "00be332774fdcc86d9c7b34d35fa04fae2f39103d4d547868f134a4bac54edbf",
+      "input/sessions/2024-las-vegas.json": "c08ae9aa6ca87eb92ba77acbec00b5e9db3a73b76968c86f008670ba381e5a18",
+      "input/sessions/2025-las-vegas.json": "d561f83d9cc74f08abdf169297fb263c841d5a90965164555174e0e24b77339a"
+    }
+  },
+  "settings": {
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_WPRIOR": "8",
+    "LAPSIM_BCD_CONVERGENCE": "on"
+  },
+  "control": "Repository geometry and pinned matching traces",
+  "candidate": "Only Las Vegas geometry and distance projections from session 9640",
+  "pass": "No worse held-out F1 2025 or 2026, no worse dry Vegas rows, exact raced reproduction, every main/fold converged; no cap hits"
+}

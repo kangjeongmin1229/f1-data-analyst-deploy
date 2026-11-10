@@ -1,0 +1,1019 @@
+{
+  "manifest": {
+    "startedAt": "2026-11-10T14:30:32.066Z",
+    "deadline": "2026-11-10T15:56:59.668Z",
+    "sentinel": {
+      "at": "2026-11-10T14:30:32.065Z",
+      "productionFiles": 45,
+      "pinnedInputs": 12,
+      "pass": true
+    },
+    "source": {
+      "createdAt": "2026-11-10T14:30:19.786Z",
+      "sourceSession": 9640,
+      "geometryDrivers": 14,
+      "traceDrivers": 10,
+      "tuning": {
+        "posK": 0.4,
+        "kappaK": 0.8,
+        "sigma": 7,
+        "curvatureSmooth": 6,
+        "sigmaMin": 3,
+        "ds": 5
+      },
+      "replaced": 30,
+      "otherTracesUnchanged": 855,
+      "otherTracksUnchanged": true,
+      "sourceHashes": {
+        "fetcher": "a730496369f910af7b9a6c236936a3d4f7a1c6ef1e7743dbb1d11ed48ca57778",
+        "builder": "6f46cf7a0fff898328ac7972d7729fa97f817fb2f5a1a7a74afae48df0bfbc7b"
+      },
+      "inputs": {
+        "candidate-tracks.js": "548689d2b7b80776a8eb3d4226f68f369f917b27f6057dd1cbe522026a001489",
+        "candidate-traces.json": "8f5310041235787766a68659975a225f370e2c767f1090d53bdf27df56346e43",
+        "input/index.json": "dd1b920044848edd1182695749b9b827089f9ea4ace75bfb7d05f78df8256722",
+        "input/circuits.json": "5cc5aa9f1eca8fe8ce04f376110b263104440837aef217f75a120cc9ef192fd5",
+        "input/f1-circuits.geojson": "e67145ddbe5581863839c9fd4303b86db2b3c0e3465e98142912f4126a5a2c5d",
+        "input/sessions/2023-las-vegas.json": "00be332774fdcc86d9c7b34d35fa04fae2f39103d4d547868f134a4bac54edbf",
+        "input/sessions/2024-las-vegas.json": "c08ae9aa6ca87eb92ba77acbec00b5e9db3a73b76968c86f008670ba381e5a18",
+        "input/sessions/2025-las-vegas.json": "d561f83d9cc74f08abdf169297fb263c841d5a90965164555174e0e24b77339a"
+      }
+    },
+    "settings": {
+      "LAPSIM_SKIP_WEC": "1",
+      "LAPSIM_FITTER": "bcd",
+      "LAPSIM_ROUNDS": "5",
+      "LAPSIM_BCD_ITERS": "200",
+      "LAPSIM_WTIME": "20",
+      "LAPSIM_WSECTOR": "2",
+      "LAPSIM_TRACK_DRAG": "on",
+      "LAPSIM_TEAMS": "on",
+      "LAPSIM_WPRIOR": "8",
+      "LAPSIM_BCD_CONVERGENCE": "on"
+    },
+    "control": "Repository geometry and pinned matching traces",
+    "candidate": "Only Las Vegas geometry and distance projections from session 9640",
+    "pass": "No worse held-out F1 2025 or 2026, no worse dry Vegas rows, exact raced reproduction, every main/fold converged; no cap hits"
+  },
+  "status": {
+    "at": "2026-11-10T15:56:59.771Z",
+    "timedOut": true,
+    "statuses": [
+      {
+        "arm": "control",
+        "code": null,
+        "signal": "SIGTERM"
+      },
+      {
+        "arm": "candidate",
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    ],
+    "complete": false,
+    "integrity": {
+      "at": "2026-11-10T15:56:59.787Z",
+      "productionFiles": 45,
+      "pinnedInputs": 12,
+      "pass": true
+    }
+  },
+  "arms": {
+    "control": {
+      "rounds": [
+        {
+          "name": "fit-1.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 66
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            36.527708112386904,
+            27.802205893039286,
+            25.91149794115614,
+            25.186932492377103,
+            24.930900518711404,
+            24.73806466389734
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.7734813055362136
+        },
+        {
+          "name": "fit-2.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 48
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            36.88675551834142,
+            29.156028760136135,
+            27.243705978158424,
+            26.230496287976816,
+            25.951925743586493,
+            25.739488317344442
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.8185805875872264
+        },
+        {
+          "name": "fit-3.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 48
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            34.78562210560017,
+            28.070719407879427,
+            26.47756654831811,
+            25.763740270341874,
+            25.545718978765024
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.8462330752023102
+        }
+      ],
+      "mainConverged": true,
+      "capHits": 0,
+      "heldout": [
+        {
+          "year": 2025,
+          "n": 11,
+          "complete": false,
+          "rmsPct": 0.6227450459381715,
+          "folds": [
+            {
+              "fold": 0,
+              "complete": true,
+              "rounds": 6,
+              "capHit": false
+            },
+            {
+              "fold": 1,
+              "complete": true,
+              "rounds": 5,
+              "capHit": false
+            },
+            {
+              "fold": 2,
+              "complete": false
+            },
+            {
+              "fold": 3,
+              "complete": false
+            }
+          ],
+          "errors": [
+            {
+              "track": "monza",
+              "realSec": 78.792,
+              "simSec": 78.45483099185539,
+              "errorSec": -0.33716900814461326,
+              "pct": -0.42792289590899424
+            },
+            {
+              "track": "singapore",
+              "realSec": 89.158,
+              "simSec": 88.96147303569575,
+              "errorSec": -0.19652696430425465,
+              "pct": -0.2204254966511776
+            },
+            {
+              "track": "austin",
+              "realSec": 92.51,
+              "simSec": 91.78556305107563,
+              "errorSec": -0.724436948924378,
+              "pct": -0.7830904214943035
+            },
+            {
+              "track": "mexico-city",
+              "realSec": 75.586,
+              "simSec": 75.3752480268365,
+              "errorSec": -0.2107519731634966,
+              "pct": -0.27882408536434866
+            },
+            {
+              "track": "yas-marina-circuit",
+              "realSec": 82.207,
+              "simSec": 81.6735885044655,
+              "errorSec": -0.5334114955344944,
+              "pct": -0.6488638382795786
+            },
+            {
+              "track": "sakhir",
+              "realSec": 89.841,
+              "simSec": 88.93195305059933,
+              "errorSec": -0.9090469494006612,
+              "pct": -1.0118397495582854
+            },
+            {
+              "track": "jeddah",
+              "realSec": 87.294,
+              "simSec": 87.57254954502832,
+              "errorSec": 0.2785495450283264,
+              "pct": 0.31909357461947785
+            },
+            {
+              "track": "miami",
+              "realSec": 86.204,
+              "simSec": 85.98204004369394,
+              "errorSec": -0.22195995630605125,
+              "pct": -0.25748220071696304
+            },
+            {
+              "track": "catalunya",
+              "realSec": 71.546,
+              "simSec": 70.72624289297175,
+              "errorSec": -0.8197571070282521,
+              "pct": -1.1457762936128546
+            },
+            {
+              "track": "spa-francorchamps",
+              "realSec": 100.562,
+              "simSec": 100.90065956832508,
+              "errorSec": 0.3386595683250846,
+              "pct": 0.336766938132782
+            },
+            {
+              "track": "zandvoort",
+              "realSec": 68.662,
+              "simSec": 69.04061934801965,
+              "errorSec": 0.37861934801964026,
+              "pct": 0.5514248755055684
+            }
+          ]
+        },
+        {
+          "year": 2026,
+          "n": 0,
+          "complete": false,
+          "rmsPct": null,
+          "folds": [
+            {
+              "fold": 0,
+              "complete": false
+            },
+            {
+              "fold": 1,
+              "complete": false
+            },
+            {
+              "fold": 2,
+              "complete": false
+            },
+            {
+              "fold": 3,
+              "complete": false
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "vegas": [
+        {
+          "year": 2023,
+          "session": 9314,
+          "wet": false,
+          "realSec": 92.726,
+          "simSec": 93.00982644915914,
+          "errorSec": 0.283826449159136,
+          "cornerMinBiasKph": -6.899623996763907,
+          "nCorners": 8,
+          "trapErrorKph": 6.6032023814194645,
+          "grip": 0.9471015820671289,
+          "drag": 0.900731094618407
+        },
+        {
+          "year": 2024,
+          "session": 9640,
+          "wet": false,
+          "realSec": 92.312,
+          "simSec": 92.16889123632916,
+          "errorSec": -0.14310876367083836,
+          "cornerMinBiasKph": -0.6429824289076068,
+          "nCorners": 7,
+          "trapErrorKph": -1.754201519297112,
+          "grip": 0.9471015820671289,
+          "drag": 0.900731094618407
+        },
+        {
+          "year": 2025,
+          "session": 9854,
+          "wet": true,
+          "realSec": 107.934,
+          "simSec": 91.94760167243145,
+          "errorSec": -15.986398327568551,
+          "cornerMinBiasKph": 18.338003701001078,
+          "nCorners": 8,
+          "trapErrorKph": 16.597495472852472,
+          "grip": 0.9471015820671289,
+          "drag": 0.900731094618407
+        }
+      ],
+      "factors": {
+        "grip": 0.9471015820671289,
+        "drag": 0.900731094618407
+      },
+      "cars": {
+        "2023": {
+          "label": "2023",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 7.124835134586876,
+          "cdA": 1.3325246841895542,
+          "clALow": 4.6,
+          "cdALow": 0.813879880537804,
+          "muX": 1.591942456875325,
+          "muY": 1.7849051789208192,
+          "muXTrac": 1.881386539943566,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476000,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2024": {
+          "label": "2024",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 8,
+          "cdA": 1.2715692601149882,
+          "clALow": 4.6,
+          "cdALow": 0.8727253004137567,
+          "muX": 1.564356685843764,
+          "muY": 1.7539756780672506,
+          "muXTrac": 1.8487851741789938,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476000,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2025": {
+          "label": "2025",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 8,
+          "cdA": 1.2720009811091486,
+          "clALow": 4.6,
+          "cdALow": 0.8232134714792011,
+          "muX": 1.5919048283471935,
+          "muY": 1.7848629893589747,
+          "muXTrac": 1.881342069864865,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476000,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2026": {
+          "label": "2026",
+          "mass": 776,
+          "wheelbase": 3.4,
+          "cogHeight": 0.3,
+          "clA": 4.270363869034053,
+          "cdA": 1.2629244127485602,
+          "clALow": 2.6,
+          "cdALow": 0.7393892783216847,
+          "muX": 1.7319416049012133,
+          "muY": 1.9418739206468152,
+          "muXTrac": 2.046840078519616,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 370343.6294795002,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2026",
+            "pMax": 350000,
+            "socWindow": 4000000,
+            "rechargeMax": 8500000,
+            "regenMax": 350000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "linkMu": true
+        }
+      },
+      "bounds": {
+        "2023": [
+          {
+            "parameter": "pIce",
+            "value": 476000,
+            "side": "lower",
+            "limit": 476000,
+            "outside": false
+          }
+        ],
+        "2024": [
+          {
+            "parameter": "clA",
+            "value": 8,
+            "side": "upper",
+            "limit": 8,
+            "outside": false
+          },
+          {
+            "parameter": "pIce",
+            "value": 476000,
+            "side": "lower",
+            "limit": 476000,
+            "outside": false
+          }
+        ],
+        "2025": [
+          {
+            "parameter": "clA",
+            "value": 8,
+            "side": "upper",
+            "limit": 8,
+            "outside": false
+          },
+          {
+            "parameter": "pIce",
+            "value": 476000,
+            "side": "lower",
+            "limit": 476000,
+            "outside": false
+          }
+        ],
+        "2026": []
+      },
+      "complete": false,
+      "prediction2026": {
+        "lapSec": 93.87529427107322,
+        "weatherFrom": 2024,
+        "date": "2026-11-23T06:00:00+00:00",
+        "grip": 0.9471015820671289,
+        "drag": 0.900731094618407
+      }
+    },
+    "candidate": {
+      "rounds": [
+        {
+          "name": "fit-1.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 66
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            36.97609176632869,
+            28.341503078099404,
+            26.164278101610115,
+            25.40577965523971,
+            25.129316024858287,
+            24.9823865580603
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.5846934578428001
+        },
+        {
+          "name": "fit-2.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 48
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            37.548181167271366,
+            28.653218514842454,
+            26.641697812413508,
+            26.16897070923778,
+            25.970289352918623
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.7592249558711934
+        },
+        {
+          "name": "fit-3.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 48
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            35.3329389656841,
+            28.247491045691397,
+            26.371263027449505,
+            25.64961321915491,
+            25.377565348285437,
+            25.252140828308352
+          ],
+          "converged": true,
+          "capHit": false,
+          "lastDecreasePct": 0.49423385677758963
+        },
+        {
+          "name": "fit-4.json",
+          "groups": [
+            {
+              "key": 2023,
+              "laps": 45
+            },
+            {
+              "key": 2024,
+              "laps": 54
+            },
+            {
+              "key": 2025,
+              "laps": 51
+            },
+            {
+              "key": 2026,
+              "laps": 50
+            }
+          ],
+          "scores": [
+            36.732243553092204
+          ],
+          "converged": false,
+          "capHit": false,
+          "lastDecreasePct": null
+        }
+      ],
+      "mainConverged": true,
+      "capHits": 0,
+      "heldout": [
+        {
+          "year": 2025,
+          "n": 11,
+          "complete": false,
+          "rmsPct": 0.641319127046357,
+          "folds": [
+            {
+              "fold": 0,
+              "complete": true,
+              "rounds": 5,
+              "capHit": false
+            },
+            {
+              "fold": 1,
+              "complete": true,
+              "rounds": 6,
+              "capHit": false
+            },
+            {
+              "fold": 2,
+              "complete": false,
+              "rounds": 1,
+              "capHit": false
+            },
+            {
+              "fold": 3,
+              "complete": false
+            }
+          ],
+          "errors": [
+            {
+              "track": "monza",
+              "realSec": 78.792,
+              "simSec": 78.47782555313535,
+              "errorSec": -0.314174446864655,
+              "pct": -0.39873901774882814
+            },
+            {
+              "track": "singapore",
+              "realSec": 89.158,
+              "simSec": 88.92322749582249,
+              "errorSec": -0.2347725041775135,
+              "pct": -0.26332186026774007
+            },
+            {
+              "track": "austin",
+              "realSec": 92.51,
+              "simSec": 91.81307566083527,
+              "errorSec": -0.6969243391647382,
+              "pct": -0.7533502747429921
+            },
+            {
+              "track": "mexico-city",
+              "realSec": 75.586,
+              "simSec": 75.33987674687724,
+              "errorSec": -0.24612325312276084,
+              "pct": -0.32562015865736926
+            },
+            {
+              "track": "yas-marina-circuit",
+              "realSec": 82.207,
+              "simSec": 81.65915447141512,
+              "errorSec": -0.5478455285848725,
+              "pct": -0.666421993972377
+            },
+            {
+              "track": "sakhir",
+              "realSec": 89.841,
+              "simSec": 88.94607593936612,
+              "errorSec": -0.8949240606338691,
+              "pct": -0.9961198791574755
+            },
+            {
+              "track": "jeddah",
+              "realSec": 87.294,
+              "simSec": 87.34041329024328,
+              "errorSec": 0.04641329024327945,
+              "pct": 0.053168935142489104
+            },
+            {
+              "track": "miami",
+              "realSec": 86.204,
+              "simSec": 85.93992358914048,
+              "errorSec": -0.2640764108595164,
+              "pct": -0.3063389295850705
+            },
+            {
+              "track": "catalunya",
+              "realSec": 71.546,
+              "simSec": 70.82921710572927,
+              "errorSec": -0.7167828942707359,
+              "pct": -1.001849012202971
+            },
+            {
+              "track": "spa-francorchamps",
+              "realSec": 100.562,
+              "simSec": 101.46808211241722,
+              "errorSec": 0.9060821124172236,
+              "pct": 0.9010183890706402
+            },
+            {
+              "track": "zandvoort",
+              "realSec": 68.662,
+              "simSec": 69.0212256305129,
+              "errorSec": 0.3592256305128956,
+              "pct": 0.5231796780066134
+            }
+          ]
+        },
+        {
+          "year": 2026,
+          "n": 0,
+          "complete": false,
+          "rmsPct": null,
+          "folds": [
+            {
+              "fold": 0,
+              "complete": false
+            },
+            {
+              "fold": 1,
+              "complete": false
+            },
+            {
+              "fold": 2,
+              "complete": false
+            },
+            {
+              "fold": 3,
+              "complete": false
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "vegas": [
+        {
+          "year": 2023,
+          "session": 9314,
+          "wet": false,
+          "realSec": 92.726,
+          "simSec": 92.9910020357506,
+          "errorSec": 0.265002035750598,
+          "cornerMinBiasKph": -7.7515772988010525,
+          "nCorners": 8,
+          "trapErrorKph": 2.2374301451979477,
+          "grip": 0.932802508605206,
+          "drag": 0.9405538194945741
+        },
+        {
+          "year": 2024,
+          "session": 9640,
+          "wet": false,
+          "realSec": 92.312,
+          "simSec": 92.16645756332255,
+          "errorSec": -0.14554243667744515,
+          "cornerMinBiasKph": -2.8327943496617953,
+          "nCorners": 7,
+          "trapErrorKph": -6.699283434760616,
+          "grip": 0.932802508605206,
+          "drag": 0.9405538194945741
+        },
+        {
+          "year": 2025,
+          "session": 9854,
+          "wet": true,
+          "realSec": 107.934,
+          "simSec": 92.03995400686419,
+          "errorSec": -15.894045993135805,
+          "cornerMinBiasKph": 17.136179073717322,
+          "nCorners": 8,
+          "trapErrorKph": 10.460581404184381,
+          "grip": 0.932802508605206,
+          "drag": 0.9405538194945741
+        }
+      ],
+      "factors": {
+        "grip": 0.932802508605206,
+        "drag": 0.9405538194945741
+      },
+      "cars": {
+        "2023": {
+          "label": "2023",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 6.923201447607089,
+          "cdA": 1.3454815729224585,
+          "clALow": 4.6,
+          "cdALow": 0.8241144013581234,
+          "muX": 1.6080406508719054,
+          "muY": 1.8029546691594092,
+          "muXTrac": 1.900411678303161,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476010.00430018466,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2024": {
+          "label": "2024",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 8,
+          "cdA": 1.2519726156295112,
+          "clALow": 4.6,
+          "cdALow": 0.886181572480556,
+          "muX": 1.5592690253678523,
+          "muY": 1.7482713314730467,
+          "muXTrac": 1.8427724845256435,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476000,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2025": {
+          "label": "2025",
+          "mass": 806,
+          "wheelbase": 3.6,
+          "cogHeight": 0.3,
+          "clA": 7.9985661497686795,
+          "cdA": 1.2511489096744943,
+          "clALow": 4.6,
+          "cdALow": 0.8473781733929231,
+          "muX": 1.5871695751213062,
+          "muY": 1.7795537660451013,
+          "muXTrac": 1.8757458615069986,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 476000,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2014",
+            "pMax": 120000,
+            "deployMax": 4000000
+          },
+          "linkMu": true
+        },
+        "2026": {
+          "label": "2026",
+          "mass": 776,
+          "wheelbase": 3.4,
+          "cogHeight": 0.3,
+          "clA": 4.1125032039176626,
+          "cdA": 1.1717044986359972,
+          "clALow": 2.6,
+          "cdALow": 0.8592119903978388,
+          "muX": 1.7449875237626777,
+          "muY": 1.9565011630066387,
+          "muXTrac": 2.062257982628619,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "cRoll": 0.012,
+          "etaDrive": 0.96,
+          "etaErs": 0.95,
+          "pIce": 370661.33896939777,
+          "vMax": 105.55555555555556,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "ers": {
+            "rule": "f1-2026",
+            "pMax": 350000,
+            "socWindow": 4000000,
+            "rechargeMax": 8500000,
+            "regenMax": 350000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "linkMu": true
+        }
+      },
+      "bounds": {
+        "2023": [],
+        "2024": [
+          {
+            "parameter": "clA",
+            "value": 8,
+            "side": "upper",
+            "limit": 8,
+            "outside": false
+          },
+          {
+            "parameter": "pIce",
+            "value": 476000,
+            "side": "lower",
+            "limit": 476000,
+            "outside": false
+          }
+        ],
+        "2025": [
+          {
+            "parameter": "pIce",
+            "value": 476000,
+            "side": "lower",
+            "limit": 476000,
+            "outside": false
+          }
+        ],
+        "2026": []
+      },
+      "complete": false,
+      "prediction2026": {
+        "lapSec": 94.49113618704916,
+        "weatherFrom": 2024,
+        "date": "2026-11-23T06:00:00+00:00",
+        "grip": 0.932802508605206,
+        "drag": 0.9405538194945741
+      }
+    }
+  },
+  "checks": {
+    "complete": false,
+    "converged": false,
+    "noCapHits": true,
+    "heldoutNotWorse": false,
+    "dryVegasNotWorse": false,
+    "reproduction": false
+  },
+  "pass": false,
+  "adopted": false,
+  "integrity": {
+    "at": "2026-11-10T15:57:50.469Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  },
+  "notes": [
+    "Checkpoint replay only, no refit. Partial held-out RMS is not an acceptance result.",
+    "Wet Vegas rows are diagnostics only and excluded from the declared dry-row pass.",
+    "Trap error is simulated lap maximum minus measured trace maximum.",
+    "Reproduction is unverified for the unfinished fitted candidates; false here is a missing acceptance check, not a production reproduction failure. The separate current-production audit reproduces all 39 dry F1 rows exactly."
+  ]
+}

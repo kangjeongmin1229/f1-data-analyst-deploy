@@ -1,0 +1,23 @@
+[
+ {
+  "file": "2023-las-vegas.json",
+  "year": 2023,
+  "circuit_key": 152,
+  "circuit": "Las Vegas",
+  "session_key": 9314
+ },
+ {
+  "file": "2024-las-vegas.json",
+  "year": 2024,
+  "circuit_key": 152,
+  "circuit": "Las Vegas",
+  "session_key": 9640
+ },
+ {
+  "file": "2025-las-vegas.json",
+  "year": 2025,
+  "circuit_key": 152,
+  "circuit": "Las Vegas",
+  "session_key": 9854
+ }
+]

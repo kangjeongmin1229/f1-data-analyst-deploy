@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-10T15:56:59.771Z",
+  "timedOut": true,
+  "statuses": [
+    {
+      "arm": "control",
+      "code": null,
+      "signal": "SIGTERM"
+    },
+    {
+      "arm": "candidate",
+      "code": null,
+      "signal": "SIGTERM"
+    }
+  ],
+  "complete": false,
+  "integrity": {
+    "at": "2026-11-10T15:56:59.787Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  }
+}
