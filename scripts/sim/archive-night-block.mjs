@@ -12,7 +12,16 @@ async function save(from,name){let bytes=await readFile(from),target=name;if(/\.
 for(const name of await readdir(source)){const path=join(source,name);if((await stat(path)).isFile()&&!name.endsWith('.stderr')&&name!=='report.log')await save(path,name);else if((await stat(path)).isFile()&&(await stat(path)).size)await save(path,name);}
 if(block==='2'){
  for(const arm of ['control','candidate'])for(const name of await readdir(join(source,arm,'.cache/f1-convergence')))await save(join(source,arm,'.cache/f1-convergence',name),arm+'/'+name);
- for(const name of ['manifest.json','candidate-tracks.js','candidate-traces.json'])await save(join('.cache/night-session/vegas',name),'geometry/'+name);
+ const sourceDir='.cache/night-session/vegas',manifest=JSON.parse(await readFile(join(sourceDir,'manifest.json')));
+ for(const [name,expected]of Object.entries(manifest.inputs)){if(hash(await readFile(join(sourceDir,name)))!==expected)throw Error('HARD STOP: Vegas archive input hash mismatch '+name);await save(join(sourceDir,name),'geometry/'+name);}
+ await save(join(sourceDir,'manifest.json'),'geometry/manifest.json');
+ const status=JSON.parse(await readFile(join(source,'status.json')));
+ if(status.complete)for(const arm of ['control','candidate'])await save(join(source,arm,'worker/lapsim/calibration-data.js'),arm+'/calibration-data.js');
+}
+if(block==='5'){
+ const manifest=JSON.parse(await readFile(join(source,'measurement-inputs.json')));
+ await save(join(source,'input/index.json'),'input/index.json');
+ for(const [name,expected]of Object.entries(manifest.inputs)){const file=join(source,'input/sessions',name);if(hash(await readFile(file))!==expected)throw Error('HARD STOP: gear archive input hash mismatch '+name);await save(file,'input/sessions/'+name);}
 }
 if(block==='4'){
  const status=JSON.parse(await readFile(join(source,'status.json')));

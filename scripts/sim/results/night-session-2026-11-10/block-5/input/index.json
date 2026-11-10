@@ -1,0 +1,30 @@
+[
+ {
+  "file": "2023-monza.json",
+  "year": 2023,
+  "circuit_key": 39,
+  "circuit": "Monza",
+  "session_key": 9153
+ },
+ {
+  "file": "2024-monza.json",
+  "year": 2024,
+  "circuit_key": 39,
+  "circuit": "Monza",
+  "session_key": 9586
+ },
+ {
+  "file": "2025-monza.json",
+  "year": 2025,
+  "circuit_key": 39,
+  "circuit": "Monza",
+  "session_key": 9908
+ },
+ {
+  "file": "2026-monza.json",
+  "year": 2026,
+  "circuit_key": 39,
+  "circuit": "Monza",
+  "session_key": 11357
+ }
+]

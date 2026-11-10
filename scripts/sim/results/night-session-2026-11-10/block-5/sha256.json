@@ -19,6 +19,31 @@
       "sha256": "65844faff48921b14385fc81ce774515812abb9370c3d3782cda14835e7f059c",
       "bytes": 11433,
       "sourceSha256": "cff2d4a0dfdb83f13dfbd4cc371cc44e75d999d92f0e970877ae13523fc93cae"
+    },
+    "input/index.json": {
+      "sha256": "eba1cfe4517b5ca4a5eba23a58ceaaa3893360f7b347a463926daa614c3975da",
+      "bytes": 471,
+      "sourceSha256": "eba1cfe4517b5ca4a5eba23a58ceaaa3893360f7b347a463926daa614c3975da"
+    },
+    "input/sessions/2023-monza.json.gz": {
+      "sha256": "7c525f9caef1ae2f46fb5b878f2799774107020d72fa58fe6095c076af98d9b1",
+      "bytes": 142985,
+      "sourceSha256": "09505309eff589f5a5c78c9afffe972525616431df6ce0ecf52a59e5d460acc4"
+    },
+    "input/sessions/2024-monza.json.gz": {
+      "sha256": "9f08d049c7b624aeef21b0231fb73d8177daa7a57ab1e89c2c14b3fb98f18430",
+      "bytes": 144306,
+      "sourceSha256": "616707a40ba449c6c5ddcb5bf028fd93238da4abc76cbd462f476d4f42318d0e"
+    },
+    "input/sessions/2025-monza.json.gz": {
+      "sha256": "516f3b96f62c014fb75f035177e379be79166d980f58d99cc36ebdcb46906b0e",
+      "bytes": 138923,
+      "sourceSha256": "d874fa9bd7fce9016c8736cc2d03574baabe158deadf9f3a905f8522fa27a149"
+    },
+    "input/sessions/2026-monza.json.gz": {
+      "sha256": "7205db9de3e3e31766badcbdf7fe12e969ddc689dd93b9319305b8d5c4728a0c",
+      "bytes": 73441,
+      "sourceSha256": "55ee2a316c9c267ebebc05b9732fa8b9192da76bbe04fba2ce7d365032ffbeb2"
     }
   }
 }
