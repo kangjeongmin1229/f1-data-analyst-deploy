@@ -212,6 +212,7 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 | F1 only / WEC only | `LAPSIM_SKIP_WEC=1` / `LAPSIM_ONLY=wec` |
 | Fit length | `LAPSIM_ROUNDS`, `LAPSIM_BCD_ITERS` |
 | Model flags | `LAPSIM_TRACK_DRAG`, `LAPSIM_AXLE`, `LAPSIM_LOADEXP`, `LAPSIM_ROLLFRONT`, `LAPSIM_KV`, `LAPSIM_BANK`, `LAPSIM_GRIP_LO`, `LAPSIM_GRIP_HI`, `LAPSIM_WEC_GRIP` |
+| WEC tolerance stopping (off by default) | `LAPSIM_WEC_NM_TOL`, `LAPSIM_WEC_NM_CAP` (default cap 2000); main and folds, objective change plus simplex size. See the declared diagnostic below. |
 | WEC objective diagnostics (off by default) | `LAPSIM_OBJECTIVE_LOG=<new JSONL path>` logs objective iterations and final values by group, candidate, fold and restart. Current WEC fit has one initial start (`restart: 0`) and no restarts. Adds no objective evaluations and writes no stdout. |
 | WEC timing experiments (off by default, require `LAPSIM_ONLY=wec`) | `LAPSIM_WEC_TRAP_POSITION=on`, `LAPSIM_WEC_SECTORS=on`; `LAPSIM_WEC_SECTOR_WEIGHT=2` is the approved primary weight, `1` and `4` sensitivity only. Verified year-specific positions: `scripts/sim/data/wec-timing-positions.json`. Sector runs also require `LAPSIM_WEC_ELIGIBILITY=<fixed JSON>` prepared once with production values. |
 | Parallel experiment | Edit `scripts/sim/experiments.json` (common settings and one entry per variant), push to a `lapsim-exp/<name>` branch. Workflow `lapsim-experiment.yml` runs every variant and a compare job. Do not open a PR from that branch to `main`. |
@@ -221,6 +222,12 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 
 A new flag must be read in `calibrate.mjs` from the environment in the same way as the existing flags, and listed in this table.
 
+
+#### Optional WEC tolerance stopping (owner-approved diagnostic, 2026-11-10)
+
+LAPSIM_WEC_NM_TOL enables a WEC-only Nelder–Mead stop rule for the main fit and every F1/transfer/pooled/BoP held-out fold. Both conditions must hold: the relative change in the best objective across 10 iterations is below the tolerance, and the largest coordinate distance from the best simplex vertex is below it. Coordinates are the existing log parameters; relative objective change divides by max(1, absolute current best). LAPSIM_WEC_NM_CAP is the iteration ceiling (default 2000). The rule replaces the old objective-spread-only stop only when enabled. Unset means exactly the previous behavior, including the 70/25 defaults. F1 fits do not receive this option.
+
+The declared diagnostic compares 1e-4 and 1e-6 (100 times apart), cap 2000, on pinned PR #149 inputs with all timing flags off and unchanged weights. Pass: every group changes by less than 0.02 percentage points, with no pooled/bop/gripSource choice flip. Use the looser tolerance as R if all groups pass or only LMGT3 2026 fails; otherwise stop. Total step budget is 90 minutes. Do not adopt values or re-judge b2. Objective logs record iterations, cap hits, final simplex size, full-precision candidate/selected errors and group runtime. There is one deterministic initial simplex, labeled restart 0; no new restarts are introduced.
 
 #### WEC sector eligibility and isolated experiment
 

@@ -1384,3 +1384,38 @@ Runtime estimate, not a promise: the historical B job took about 3 h 36 min on G
 - All WEC classes are too fast at Interlagos on both geometries, up to about 1.5 s for LMGT3. The shared Interlagos factor is supported by one dry F1 season only. Does that factor transfer across classes, or does it absorb another missing effect? This is an open question, not authorization to change the factor.
 
 Disposition: A stopped at the approved ceiling; B stopped at the explicit requirement conflict; C is a blocked conditional plan. Diagnostic code and results are backed up in PR #154. No production geometry/calibration change, model PR, merge, workflow trigger or Vercel action was performed.
+
+
+## 18. Owner decisions: geometry guard, tolerance yardstick, consistent candidate (2026-11-10)
+
+This section supersedes the blocked disposition in section 17. The owner authorized these steps in order, with no adoption, model PR, merge or Vercel action. b2 remains rejected; trap and aero-ratio experiments remain on hold.
+
+### 18.1 Geometry guard
+
+Separate draft PR: https://github.com/MisterKinn/f1-data-analyst/pull/155 . It chooses the latest session with zero rain observations for each track, retaining existing geometry with a named warning if no eligible source exists. Missing weather is not zero-rain evidence. The owner explicitly deferred Las Vegas, Montreal and Zandvoort. Existing source identities retain their existing geometry bytes. Fetching also obtains full geometry-driver positions and matching-year corners for older sources. Trace projection uses the retained source, driver count and original projection settings.
+
+All 26 repository geometry records are byte-identical in the builder retention integration fixture; Interlagos remains session 9865. Six guard tests pass, including all three requested cases. The first PR commit also passed the GitHub test check. This is not a claim that the complete raw telemetry pipeline was rerun. Detailed evidence and source links are in the separate PR's docs/lapsim-geometry-guard.md.
+
+| Track | Source / year | Rain observations | Latest verified zero-rain alternative | Source fastest classified lap vs nearby dry pole | Decision |
+|---|---|---|---|---|---|
+| Las Vegas | 9854 / 2025 | 34/85 = 40% | 9640 / 2024: 0/98 | 107.934 vs 92.312 s (2024), 92.726 s (2023); +16.92% vs 2024 | Not dry-pole pace; retain under owner hold |
+| Montreal | 11287 / 2026 | 1/76 = 1.32% | 9959 / 2025: 0/85 | 72.578 vs 70.899 s (2025); +2.37% | Dry-like pace plausible, not proven across 2026 car rules; retain |
+| Zandvoort | 11349 / 2026 | 5/77 = 6.49% | 9916 / 2025: 0/78 | 71.163 vs 68.662 s (2025), 69.673 s (2024); +3.64% vs 2025 | Dry-like pace plausible, not proof of a dry session; retain |
+
+Sources are OpenF1 weather?session_key=ID and session_result?session_key=ID under https://api.openf1.org/v1/ (queried 2026-11-10). The comparison uses minimum classified qualifying segment time and the pole winner's Q3 time, not unfiltered/deleted laps. Interlagos 11408 has 106/160 rain observations (66.25%); 9865 has 0/82. Without the guard, the next existing workflow would build from 11408 and push a refresh branch for review. It does not automatically replace main. No workflow was manually triggered.
+
+### 18.2 Tolerance diagnostic — declaration before fitting
+
+Two baseline variants, 1e-4 and 1e-6, factor 100 apart, use a cap of 2000 for both main fits and all folds. Stop only when the best-objective change over 10 iterations / max(1, absolute current best) and the largest log-parameter coordinate distance from the best simplex vertex are both below the tolerance. One deterministic initial simplex; no new restarts. The old rule remains unchanged when LAPSIM_WEC_NM_TOL is unset. LAPSIM_WEC_NM_CAP defaults to 2000.
+
+Inputs are the exact PR #149 archive geometry, production seed and B transfer table, with the section 5.2 hashes checked before each isolated run. WEC only; timing flags off; lap weight 2 and trap weight 0.5. The looser tolerance is predeclared as R, never selected by held-out error. Stability requires all group RMS differences below 0.02 pp and no pooled/bop/gripSource flip. If only LMGT3 2026 fails, retain the owner's unstable label for that group and continue for the other five; if more than one fails, stop before the candidate. The step budget is 90 minutes. The runner uses 85 minutes after implementation/testing time and runs both tolerances plus an unset-flag 70/25 byte-identity control in parallel.
+
+Command: node scripts/sim/run-wec-tolerance.mjs ; then node scripts/sim/report-wec-tolerance.mjs . The manifest and full-precision objective logs are under .cache/wec-tolerance during execution. No production file is overwritten. The full offline test suite passed 425/425, including raced-session reproduction. Results pending at this checkpoint; no convergence or candidate acceptance is claimed.
+
+LMGT3 2026's **production** car is at ClA=3.5 and CdA=1.3. Earlier higher-iteration fits had CdA slightly inside its bound. Later tables must show actual bound hits rather than assume every fitted candidate remains at both bounds.
+
+### 18.3 Consistent candidate
+
+Authorized after step 2 establishes R (or only LMGT3 2026 remains unstable). Repository geometry everywhere; rebuild B with production F1 settings and per-track drag off; restore unchanged production F1 seasons before WEC fitting. Current control and candidate are both measured at R. The candidate is not adopted. Pass requires raced-session reproduction, unchanged F1 seasons and pooled WEC no worse. The geometry/projection inputs must match; archive Interlagos traces cannot silently be reused on repository geometry.
+
+A prior geometry-only difference moved LMDh 2025 by 0.37 pp. With n=5 or 6, an apparent gain below about 0.1 pp remains unestablished even if the gate accepts it. This caution will be repeated next to the result. The two open questions in section 17.4 remain questions, not additional experiments.

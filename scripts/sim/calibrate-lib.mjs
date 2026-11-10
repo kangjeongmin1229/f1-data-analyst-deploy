@@ -5,6 +5,7 @@
 import {simulateLap} from '../../worker/lapsim/engine.js';
 import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
 import {sectorTimes} from './wec-timing.mjs';
+import {simplexSize} from './wec-nm-stop.mjs';
 
 // Real trace -> arrays on the track's distance scale. The trace distance is speed-integrated,
 // so it is stretched to the track length; shift (m) aligns the timing line with the track start.
@@ -115,17 +116,24 @@ export function fitGrip(track, car, env, obs, lapTime, lo = 0.85, hi = 1.15, opt
 }
 
 // Nelder–Mead on a parameter vector (minimisation)
-export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace} = {}) {
+export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace, stop} = {}) {
   const n = x0.length;
   let pts = [x0.slice()];
   for (let i = 0; i < n; i++) { const p = x0.slice(); p[i] = p[i] + (Array.isArray(step) ? step[i] : step); pts.push(p); }
   let vals = pts.map(f);
   let completed = 0;
-  for (let it = 0; it < iters; it++) {
+  const limit = stop?.cap ?? iters, history = [];
+  let reason = 'cap', change = Infinity;
+  for (let it = 0; it < limit; it++) {
     const order = vals.map((v, i) => i).sort((a, b) => vals[a] - vals[b]);
     pts = order.map(i => pts[i]); vals = order.map(i => vals[i]);
     trace?.({event: 'iteration', iteration: it, objective: vals[0], spread: vals[n] - vals[0]});
-    if (Math.abs(vals[n] - vals[0]) < tol) break;
+    if (stop) {
+      history.push(vals[0]);
+      if (history.length > stop.window + 1) history.shift();
+      change = history.length === stop.window + 1 ? Math.abs(history[0] - vals[0]) / Math.max(1, Math.abs(vals[0])) : Infinity;
+      if (change < stop.tolerance && simplexSize(pts) < stop.tolerance) { reason = 'tolerance'; break; }
+    } else if (Math.abs(vals[n] - vals[0]) < tol) break;
     completed = it + 1;
     const c = new Array(n).fill(0);
     for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) c[j] += pts[i][j] / n;
@@ -141,7 +149,9 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace} 
     }
   }
   const best = vals.indexOf(Math.min(...vals));
-  trace?.({event: 'end', iteration: completed, objective: vals[best], x: pts[best].slice()});
+  trace?.({event: 'end', iteration: completed, objective: vals[best], x: pts[best].slice(),
+    ...(stop ? {stopReason: reason, capHit: reason === 'cap', cap: limit, tolerance: stop.tolerance,
+      simplexSize: simplexSize(pts, best), relativeObjectiveChange: Number.isFinite(change) ? change : null} : {})});
   return {x: pts[best], value: vals[best]};
 }
 
@@ -149,7 +159,7 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace} 
 // The car parameters are optimised in log space around the base values.
 // A lap with a fixed track factor (l.grip, e.g. shared from F1) is not given its own grip fit;
 // a lap with l.trapKph is also scored on top speed.
-export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, trace} = {}) {
+export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, trace, stop} = {}) {
   const prepared = laps.map(l => {
     const env = conditionsFromWeather(l.weather || {}, l.conditionOptions);
     const lapSeconds = l.lapSeconds ?? l.trace.lap_seconds;
@@ -193,7 +203,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
     ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector})}
     : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector}));
   const x0 = params.map(() => 0);
-  const result = nelderMead(objective, x0, {step: params.map(p => p.step ?? 0.08), iters, trace});
+  const result = nelderMead(objective, x0, {step: params.map(p => p.step ?? 0.08), iters, trace, stop});
   const car = build(result.x);
   const perTrack = prepared.map(l => {
     const r = evalLap(l, car);

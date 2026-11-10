@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-10T10:13:10.709Z",
+  "inputs": {
+    "geometry": "4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1",
+    "wec": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+    "production": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "transfer": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "timing71": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76"
+  },
+  "rungs": [
+    {
+      "name": "identity70",
+      "main": 70,
+      "folds": 25,
+      "logging": false
+    },
+    {
+      "name": "loose",
+      "main": 70,
+      "folds": 25,
+      "logging": true,
+      "tolerance": "1e-4"
+    },
+    {
+      "name": "tight",
+      "main": 70,
+      "folds": 25,
+      "logging": true,
+      "tolerance": "1e-6"
+    }
+  ],
+  "cap": 2000,
+  "objectiveChangeWindow": 10,
+  "simplexMeasure": "max coordinate distance from best vertex in log parameters",
+  "objectiveMeasure": "absolute best-objective change across 10 iterations / max(1, abs(current best))",
+  "convergence": "Every group absolute RMS change <0.02 pp and no pooled/bop/gripSource choice flips between the two tolerances.",
+  "only": "wec",
+  "timingFlags": "off",
+  "weights": {
+    "lap": 2,
+    "trap": 0.5
+  },
+  "adopt": false,
+  "rejudgeB2": false,
+  "budget": "90 minutes for step 2; this runner has 85 minutes remaining. No ladder extension."
+}
