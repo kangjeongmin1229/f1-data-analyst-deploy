@@ -1,0 +1,99 @@
+name: LapSim owner checkpoint resume
+on:
+  push:
+    branches: ['exp/lapsim-owner-jobs-2026-11-11']
+    paths: ['.github/workflows/lapsim-owner-resume.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: lapsim-owner-checkpoints-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  f1:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [control, candidate]
+        year: [2025, 2026]
+        fold: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Prepare pinned archives
+        run: |
+          mkdir -p .cache
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+      - name: Resume one fold from its checkpoint
+        run: |
+          set -o pipefail
+          mkdir -p owner-output
+          node scripts/sim/owner-f1-actions.mjs fold '${{ matrix.arm }}' '${{ matrix.year }}' '${{ matrix.fold }}' 2>&1 | tee owner-output/job.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: f1-${{ matrix.arm }}-${{ matrix.year }}-${{ matrix.fold }}
+          path: owner-output/
+          retention-days: 30
+  wec:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [control, bop, sector2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Prepare pinned archives
+        run: |
+          mkdir -p .cache
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+      - name: WEC confirmation at R
+        run: |
+          set -o pipefail
+          mkdir -p owner-output
+          node scripts/sim/owner-f1-actions.mjs wec '${{ matrix.arm }}' 2>&1 | tee owner-output/job.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wec-${{ matrix.arm }}
+          path: owner-output/
+          retention-days: 30
+  summary:
+    if: always() && github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    needs: [f1, wec]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: downloaded-results
+      - name: Summarize completion without claiming acceptance
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,os
+          files=list(pathlib.Path('downloaded-results').rglob('status.json'))
+          rows=[(str(p),json.loads(p.read_text())) for p in files]
+          result={'sourceCommit':os.environ['GITHUB_SHA'],'expectedJobs':19,'reportedJobs':len(rows),'allJobsReportedComplete':len(rows)==19 and all(s.get('complete') for _,s in rows),'accepted':False,'next':'Export paired F1 calibrations from all checkpoints, run exact dry reproduction and physical checks, then paired gates. Inspect WEC cap hits and class-season gates. No production adoption.','jobs':dict(rows)}
+          pathlib.Path('job-summary.json').write_text(json.dumps(result,indent=2)+'\n')
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:
+            f.write('# Checkpoint job results\n\nScientific acceptance is not established by job completion.\n\n')
+            f.write('| Job | Complete | Rounds | Stop |\n|---|---|---:|---|\n')
+            for p,s in rows:f.write(f"| {p} | {s.get('complete')} | {s.get('rounds','')} | {s.get('stopReason','')} |\n")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: checkpoint-job-summary
+          path: job-summary.json
+          retention-days: 30
