@@ -154,7 +154,8 @@
     "scripts/sim/data/t71-wec-pool.json": "4e6d9feaadd148fc0c76caab9e2bb96b93dd8f8cb51b0256b3a29070bb1dd1b8",
     "scripts/sim/data/t71-wec-extra.json": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76",
     "scripts/sim/data/banking.json": "99f86b13be72bcd9b10fe3c130c709ef6a429b9553f46e3b17a645eca012df80",
-    "scripts/sim/results/wec-sectors-2026-11-10/eligibility.json": "72e2e2e866bbf2c964a7d774692f6db02bfd88d1e946252cd8b960ea05c0ad13"
+    "scripts/sim/results/wec-sectors-2026-11-10/eligibility.json": "72e2e2e866bbf2c964a7d774692f6db02bfd88d1e946252cd8b960ea05c0ad13",
+    "scripts/sim/owner-wec-eligibility.json": "7f7a91620cf845b5b19d408e8f376e35d48370632a2675871061ea4bc094c6f6"
   },
   "inputArchive": {
     "url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
@@ -201,5 +202,5 @@
       "LAPSIM_WEC_SECTOR_WEIGHT": "2"
     }
   },
-  "wecEligibility": "scripts/sim/results/wec-sectors-2026-11-10/eligibility.json"
+  "wecEligibility": "scripts/sim/owner-wec-eligibility.json"
 }
