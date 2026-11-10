@@ -1,5 +1,5 @@
 // Archive derived experiment evidence only; raw timing/telemetry stays outside git.
-import {readFile, writeFile, mkdir, readdir, copyFile} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, readdir} from 'node:fs/promises';
 import {gzipSync} from 'node:zlib';
 import {join, resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
@@ -16,8 +16,14 @@ for (const name of await readdir(dir)) {
   if (/\.(log|stderr|jsonl)$/.test(name)) await writeFile(join(out, name + '.gz'), gzipSync(bytes));
   else await writeFile(join(out, name), bytes);
 }
-await copyFile('.cache/reproduction-dry.json', join(out, 'reproduction-frozen-dry.json'));
-await copyFile('.cache/f1-dry-reproduction.json', join(out, 'reproduction-frozen-f1.json'));
+// Frozen audits are already pinned in GitHub; no file from the earlier PC is needed.
+const previous = 'scripts/sim/results/wec-consistent-resume-2026-11-10';
+const previousHashes = JSON.parse(await readFile(join(previous, 'sha256.json'), 'utf8'));
+for (const name of ['reproduction-frozen-dry.json','reproduction-frozen-f1.json']) {
+  const bytes = await readFile(join(previous, name));
+  assert.equal(sha256(bytes), previousHashes[name], `Frozen audit hash mismatch: ${name}`);
+  await writeFile(join(out, name), bytes);
+}
 // Compare each runtime model file and the gate with the checked-out PR starting point.
 const files = execFileSync('git', ['ls-tree', '-r', '--name-only', 'df3d65819db9be74f5941ddda83d1b0a94a00841', 'worker/lapsim'], {encoding: 'utf8'}).trim().split('\n');
 files.push('scripts/sim/gate.mjs');

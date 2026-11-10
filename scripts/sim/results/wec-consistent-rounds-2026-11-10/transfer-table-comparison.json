@@ -1,0 +1,188 @@
+{
+  "dragOff": true,
+  "withinOriginalBounds": true,
+  "rows": [
+    {
+      "track": "austin",
+      "current": 0.9966,
+      "round5": 0.994,
+      "final": 0.9932,
+      "finalMinusRound5": -0.0008000000000000229
+    },
+    {
+      "track": "baku",
+      "current": 1.0434,
+      "round5": 1.0525,
+      "final": 1.0452,
+      "finalMinusRound5": -0.007300000000000084
+    },
+    {
+      "track": "catalunya",
+      "current": 0.99,
+      "round5": 0.9965,
+      "final": 0.9919,
+      "finalMinusRound5": -0.0046000000000000485
+    },
+    {
+      "track": "hungaroring",
+      "current": 0.9457,
+      "round5": 0.9498,
+      "final": 0.9451,
+      "finalMinusRound5": -0.0046999999999999265
+    },
+    {
+      "track": "imola",
+      "current": 1.1358,
+      "round5": 1.1365,
+      "final": 1.1455,
+      "finalMinusRound5": 0.008999999999999897
+    },
+    {
+      "track": "interlagos",
+      "current": 0.9823,
+      "round5": 0.9623,
+      "final": 0.9655,
+      "finalMinusRound5": 0.0031999999999999806
+    },
+    {
+      "track": "jeddah",
+      "current": 1.2195,
+      "round5": 1.223,
+      "final": 1.2401,
+      "finalMinusRound5": 0.017099999999999893
+    },
+    {
+      "track": "kuala-lumpur",
+      "current": 0.9686,
+      "round5": 0.9753,
+      "final": 0.9626,
+      "finalMinusRound5": -0.012699999999999934
+    },
+    {
+      "track": "las-vegas",
+      "current": 0.9814,
+      "round5": 0.9844,
+      "final": 0.9826,
+      "finalMinusRound5": -0.0018000000000000238
+    },
+    {
+      "track": "lusail",
+      "current": 1.0727,
+      "round5": 1.0719,
+      "final": 1.0744,
+      "finalMinusRound5": 0.0024999999999999467
+    },
+    {
+      "track": "madring",
+      "current": 1.0685,
+      "round5": 1.0722,
+      "final": 1.0649,
+      "finalMinusRound5": -0.007300000000000084
+    },
+    {
+      "track": "melbourne",
+      "current": 1.0952,
+      "round5": 1.0964,
+      "final": 1.0994,
+      "finalMinusRound5": 0.0029999999999998916
+    },
+    {
+      "track": "mexico-city",
+      "current": 0.9188,
+      "round5": 0.9201,
+      "final": 0.9145,
+      "finalMinusRound5": -0.005600000000000049
+    },
+    {
+      "track": "miami",
+      "current": 0.9341,
+      "round5": 0.9352,
+      "final": 0.9369,
+      "finalMinusRound5": 0.0016999999999999238
+    },
+    {
+      "track": "monte-carlo",
+      "current": 0.9362,
+      "round5": 0.9369,
+      "final": 0.9341,
+      "finalMinusRound5": -0.0027999999999999137
+    },
+    {
+      "track": "montreal",
+      "current": 0.9754,
+      "round5": 0.9795,
+      "final": 0.9789,
+      "finalMinusRound5": -0.0006000000000000449
+    },
+    {
+      "track": "monza",
+      "current": 0.9907,
+      "round5": 0.9961,
+      "final": 0.9975,
+      "finalMinusRound5": 0.0014000000000000679
+    },
+    {
+      "track": "sakhir",
+      "current": 0.8804,
+      "round5": 0.8848,
+      "final": 0.8829,
+      "finalMinusRound5": -0.0019000000000000128
+    },
+    {
+      "track": "shanghai",
+      "current": 1.0503,
+      "round5": 1.0565,
+      "final": 1.058,
+      "finalMinusRound5": 0.0015000000000000568
+    },
+    {
+      "track": "silverstone",
+      "current": 0.9082,
+      "round5": 0.9145,
+      "final": 0.9114,
+      "finalMinusRound5": -0.0030999999999999917
+    },
+    {
+      "track": "singapore",
+      "current": 0.954,
+      "round5": 0.9544,
+      "final": 0.9517,
+      "finalMinusRound5": -0.0027000000000000357
+    },
+    {
+      "track": "spa-francorchamps",
+      "current": 1.0246,
+      "round5": 1.0216,
+      "final": 1.0215,
+      "finalMinusRound5": -0.00009999999999998899
+    },
+    {
+      "track": "spielberg",
+      "current": 1.0209,
+      "round5": 1.0295,
+      "final": 1.0246,
+      "finalMinusRound5": -0.0049000000000001265
+    },
+    {
+      "track": "suzuka",
+      "current": 1.0117,
+      "round5": 1.0149,
+      "final": 1.0198,
+      "finalMinusRound5": 0.0049000000000001265
+    },
+    {
+      "track": "yas-marina-circuit",
+      "current": 1.0916,
+      "round5": 1.0909,
+      "final": 1.0928,
+      "finalMinusRound5": 0.0019000000000000128
+    },
+    {
+      "track": "zandvoort",
+      "current": 1.0696,
+      "round5": 1.0681,
+      "final": 1.0699,
+      "finalMinusRound5": 0.0018000000000000238
+    }
+  ]
+}
