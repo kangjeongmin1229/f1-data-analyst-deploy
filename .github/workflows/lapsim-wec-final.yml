@@ -1,0 +1,47 @@
+name: LapSim WEC final comparison
+on:
+  push:
+    branches: ['exp/lapsim-owner-jobs-2026-11-11']
+    paths: ['.github/workflows/lapsim-wec-final.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  compare:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: kangjeongmin1229/f1-data-analyst-deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Wait for existing WEC jobs
+        run: |
+          for i in $(seq 1 160); do
+            gh api repos/$GH_REPO/actions/runs/42913368752/jobs?per_page=100 > /tmp/main.json
+            gh api repos/$GH_REPO/actions/runs/42913698920/jobs?per_page=100 > /tmp/recovery.json
+            if jq -e '[.jobs[] | select(.name == "wec (control)" or .name == "wec (bop)")] | length == 2 and all(.[]; .status == "completed")' /tmp/main.json && jq -e '[.jobs[] | select(.name == "wec (sector2)")] | length == 1 and all(.[]; .status == "completed")' /tmp/recovery.json; then
+              jq -e '[.jobs[] | select(.name == "wec (control)" or .name == "wec (bop)")] | all(.[]; .conclusion == "success")' /tmp/main.json
+              jq -e '[.jobs[] | select(.name == "wec (sector2)")] | all(.[]; .conclusion == "success")' /tmp/recovery.json
+              exit 0
+            fi
+            date -Is
+            sleep 60
+          done
+          exit 1
+      - name: Download original control and BoP plus recovered sector result
+        run: |
+          gh run download 42913368752 -p wec-control -p wec-bop -D wec-results
+          gh run download 42913698920 -p wec-sector2 -D wec-results/wec-sector2
+      - run: node scripts/sim/owner-compare-wec.mjs wec-results
+      - run: cat wec-comparison/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-wec-comparison
+          path: wec-comparison/
+          retention-days: 30
