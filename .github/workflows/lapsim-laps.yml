@@ -1,0 +1,129 @@
+name: Lap simulator all-laps dataset
+
+# One row per lap from F1 (TracingInsights), WEC (Al Kamel) and Timing71. Rows stay in artifacts and the
+# Actions cache; only counts and derived tables are committed back to the branch. Push to lapsim-laps/**.
+on:
+  push:
+    branches: ['lapsim-laps/**']
+    paths-ignore: ['scripts/sim/data/laps/**', 'docs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: lapsim-laps-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cache-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Actions caches and recent Timing71 runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out
+          gh api --paginate "repos/${{ github.repository }}/actions/caches?per_page=100" --jq '.actions_caches[] | {key, ref, size_in_bytes, created_at, last_accessed_at}' | jq -s . > out/caches.json || echo '[]' > out/caches.json
+          gh api "repos/${{ github.repository }}/actions/workflows/lapsim-t71.yml/runs?per_page=10" --jq '[.workflow_runs[] | {id, head_branch, conclusion, created_at}]' > out/t71-runs.json || echo '[]' > out/t71-runs.json
+          gh api --paginate "repos/${{ github.repository }}/actions/artifacts?per_page=100" --jq '.artifacts[] | select(.name|test("^t71")) | {name, size_in_bytes, expired, created_at, expires_at, run: .workflow_run.id}' | jq -s . > out/t71-artifacts.json || echo '[]' > out/t71-artifacts.json
+          jq 'length' out/caches.json out/t71-artifacts.json
+      - uses: actions/upload-artifact@v4
+        with: {name: probe, path: out}
+  f1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node scripts/sim/laps/build-f1.mjs .cache/lapsim/ti-all
+      - run: sha256sum .cache/lapsim/laps/*.ndjson > .cache/lapsim/laps/f1-sha256.txt
+      - uses: actions/upload-artifact@v4
+        with: {name: laps-f1, path: .cache/lapsim/laps, retention-days: 30}
+  wec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: node scripts/sim/laps/build-wec.mjs
+      - run: sha256sum .cache/lapsim/laps/*.ndjson > .cache/lapsim/laps/wec-sha256.txt
+      - uses: actions/upload-artifact@v4
+        with: {name: laps-wec, path: .cache/lapsim/laps, retention-days: 30}
+  t71:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node scripts/sim/laps/build-t71.mjs
+        env:
+          T71_SHARD: ${{ matrix.shard }}
+          T71_SHARDS: 16
+      - run: rm -f .cache/lapsim/laps/t71/r-*.zip
+      - uses: actions/upload-artifact@v4
+        with: {name: 'laps-t71-${{ matrix.shard }}', path: .cache/lapsim/laps/t71, retention-days: 30}
+  early:
+    needs: [cache-probe, f1, wec]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {name: laps-f1, path: got}
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: {name: laps-wec, path: got}
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: {name: probe, path: got}
+        continue-on-error: true
+      - run: |
+          mkdir -p scripts/sim/data/laps
+          cp got/*-counts.json got/*sha256.txt got/caches.json got/t71-runs.json got/t71-artifacts.json scripts/sim/data/laps/ 2>/dev/null || true
+          echo "{\"run\": \"${{ github.run_id }}\", \"sha\": \"${{ github.sha }}\", \"wec\": \"${{ needs.wec.result }}\", \"f1\": \"${{ needs.f1.result }}\", \"probe\": \"${{ needs.cache-probe.result }}\"}" > scripts/sim/data/laps/run-early.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sim/data/laps
+          git diff --cached --quiet || (git commit -m "All-laps dataset: F1 and WEC counts, cache probe" && git pull --rebase && git push)
+  merge:
+    needs: [cache-probe, f1, wec, t71]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'laps-t71-*', path: .cache/lapsim/laps/t71, merge-multiple: true}
+      - uses: actions/download-artifact@v4
+        with: {name: laps-f1, path: .cache/lapsim/laps}
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: {name: laps-wec, path: .cache/lapsim/laps}
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: {name: probe, path: probe}
+        continue-on-error: true
+      - run: node --max-old-space-size=12000 scripts/sim/laps/build-t71.mjs merge
+      - run: |
+          cd .cache/lapsim/laps && sha256sum t71/*.ndjson *.ndjson > all-sha256.txt || true
+      - uses: actions/upload-artifact@v4
+        with: {name: laps-all, path: '.cache/lapsim/laps', retention-days: 30}
+      - name: Commit counts only
+        run: |
+          mkdir -p scripts/sim/data/laps
+          cp .cache/lapsim/laps/*-counts.json .cache/lapsim/laps/*sha256.txt scripts/sim/data/laps/ 2>/dev/null || true
+          cp probe/*.json scripts/sim/data/laps/ 2>/dev/null || true
+          echo "{\"run\": \"${{ github.run_id }}\", \"sha\": \"${{ github.sha }}\"}" > scripts/sim/data/laps/run.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sim/data/laps
+          git diff --cached --quiet || (git commit -m "All-laps dataset: counts, hashes, cache probe" && git pull --rebase && git push)
