@@ -1,0 +1,37 @@
+name: LapSim sector input recovery
+on:
+  push:
+    branches: ['exp/lapsim-owner-jobs-2026-11-11']
+    paths: ['.github/workflows/lapsim-sector-recovery.yml']
+permissions:
+  contents: read
+jobs:
+  wec:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [sector2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Prepare pinned archives
+        run: |
+          mkdir -p .cache
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+      - name: WEC confirmation at R
+        run: |
+          set -o pipefail
+          mkdir -p owner-output
+          node scripts/sim/owner-f1-actions.mjs wec '${{ matrix.arm }}' 2>&1 | tee owner-output/job.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wec-${{ matrix.arm }}
+          path: owner-output/
+          retention-days: 30
