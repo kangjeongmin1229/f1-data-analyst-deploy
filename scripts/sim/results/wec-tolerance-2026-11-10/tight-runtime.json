@@ -1,0 +1,10 @@
+{
+  "name": "tight",
+  "main": 70,
+  "folds": 25,
+  "logging": true,
+  "tolerance": "1e-6",
+  "startedAt": "2026-11-10T10:13:13.159Z",
+  "seconds": 3260.58,
+  "validationSeconds": 1.165
+}

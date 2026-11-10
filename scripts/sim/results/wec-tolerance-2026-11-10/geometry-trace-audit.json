@@ -1,0 +1,298 @@
+{
+  "source": "Pinned archive traces.json; rain is any observation in the session, not only the lap.",
+  "sha256": "0ad9c18d303a748d77f499e032f554b7b9c545c4d2966e40cb52661ee13621ef",
+  "rows": [
+    {
+      "track": "sakhir",
+      "source": 10010,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "jeddah",
+      "source": 10018,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "imola",
+      "source": 9983,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "interlagos",
+      "source": 9865,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": [
+        {
+          "session": 11408,
+          "year": 2026,
+          "rain": true
+        }
+      ]
+    },
+    {
+      "track": "las-vegas",
+      "source": 9854,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        true
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "lusail",
+      "source": 9846,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "yas-marina-circuit",
+      "source": 9835,
+      "year": 2025,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "melbourne",
+      "source": 11230,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "shanghai",
+      "source": 11241,
+      "year": 2026,
+      "sourceTraceRows": 9,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "suzuka",
+      "source": 11249,
+      "year": 2026,
+      "sourceTraceRows": 7,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "miami",
+      "source": 11276,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "montreal",
+      "source": 11287,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        true
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "monte-carlo",
+      "source": 11295,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "catalunya",
+      "source": 11303,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "spielberg",
+      "source": 11311,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "silverstone",
+      "source": 11322,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "spa-francorchamps",
+      "source": 11330,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "hungaroring",
+      "source": 11338,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "zandvoort",
+      "source": 11349,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        true
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "monza",
+      "source": 11357,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "madring",
+      "source": 11365,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "baku",
+      "source": 11373,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "kuala-lumpur",
+      "source": 11730,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "singapore",
+      "source": 11384,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "austin",
+      "source": 11392,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    },
+    {
+      "track": "mexico-city",
+      "source": 11400,
+      "year": 2026,
+      "sourceTraceRows": 10,
+      "sourceRainFlags": [
+        false
+      ],
+      "sourceHasWeather": true,
+      "newerSessions": []
+    }
+  ]
+}

@@ -1394,7 +1394,7 @@ This section supersedes the blocked disposition in section 17. The owner authori
 
 Separate draft PR: https://github.com/MisterKinn/f1-data-analyst/pull/155 . It chooses the latest session with zero rain observations for each track, retaining existing geometry with a named warning if no eligible source exists. Missing weather is not zero-rain evidence. The owner explicitly deferred Las Vegas, Montreal and Zandvoort. Existing source identities retain their existing geometry bytes. Fetching also obtains full geometry-driver positions and matching-year corners for older sources. Trace projection uses the retained source, driver count and original projection settings.
 
-All 26 repository geometry records are byte-identical in the builder retention integration fixture; Interlagos remains session 9865. Six guard tests pass, including all three requested cases. The first PR commit also passed the GitHub test check. This is not a claim that the complete raw telemetry pipeline was rerun. Detailed evidence and source links are in the separate PR's docs/lapsim-geometry-guard.md.
+All 26 repository geometry records are byte-identical in the builder retention integration fixture; Interlagos remains session 9865. Six guard tests pass, including all three requested cases. The latest guard commit, 34451d4bd01b14df57e8fa0ef2fd0d2b37a5cefd, passed the GitHub test check. This is not a claim that the complete raw telemetry pipeline was rerun. Detailed evidence and source links are in the separate PR's docs/lapsim-geometry-guard.md.
 
 | Track | Source / year | Rain observations | Latest verified zero-rain alternative | Source fastest classified lap vs nearby dry pole | Decision |
 |---|---|---|---|---|---|
@@ -1410,12 +1410,43 @@ Two baseline variants, 1e-4 and 1e-6, factor 100 apart, use a cap of 2000 for bo
 
 Inputs are the exact PR #149 archive geometry, production seed and B transfer table, with the section 5.2 hashes checked before each isolated run. WEC only; timing flags off; lap weight 2 and trap weight 0.5. The looser tolerance is predeclared as R, never selected by held-out error. Stability requires all group RMS differences below 0.02 pp and no pooled/bop/gripSource flip. If only LMGT3 2026 fails, retain the owner's unstable label for that group and continue for the other five; if more than one fails, stop before the candidate. The step budget is 90 minutes. The runner uses 85 minutes after implementation/testing time and runs both tolerances plus an unset-flag 70/25 byte-identity control in parallel.
 
-Command: node scripts/sim/run-wec-tolerance.mjs ; then node scripts/sim/report-wec-tolerance.mjs . The manifest and full-precision objective logs are under .cache/wec-tolerance during execution. No production file is overwritten. The full offline test suite passed 425/425, including raced-session reproduction. Results pending at this checkpoint; no convergence or candidate acceptance is claimed.
+Command: node scripts/sim/run-wec-tolerance.mjs ; then node scripts/sim/report-wec-tolerance.mjs . The manifest and full-precision objective logs are under .cache/wec-tolerance during execution. No production file is overwritten. The full offline test suite passed 425/425, including raced-session reproduction. **Completed: all six groups pass. R = 1e-4, cap 2000.** Pooled RMS is 1.128290926% at R and 1.128032900% at 1e-6 (n=33). Runtime is 2189.383 s and 3260.580 s, respectively, in parallel with the identity control. The maximum group change is 0.001060723 pp; there are no choice flips, main cap hits or fold cap hits. This is within the 90-minute step budget.
+
+| Group | Tolerance | RMS % | n / fitted laps | muY / ClA / CdA | Bound hits | pooled / bop / gripSource | Main iterations | Fold iterations min–max / total | Cap-hit folds / attempts | Seconds |
+|---|---|---:|---|---|---|---|---:|---|---|---:|
+| wec-lmh/2025 | 1e-4 (R) | 1.076057 | 5 / 15 | 1.569600 / 7.000000 / 1.093433 | clA upper | false / false / transfer | 86 | 71–139 / 1978 | 0 / 21 | 542.7 |
+| wec-lmh/2026 | 1e-4 (R) | 1.061361 | 6 / 18 | 1.517814 / 6.635400 / 0.963661 | none | false / not available / transfer | 94 | 57–116 / 1515 | 0 / 19 | 504.7 |
+| wec-lmdh/2025 | 1e-4 (R) | 1.270997 | 5 / 15 | 1.560082 / 7.000000 / 1.104771 | clA upper | false / false / transfer | 83 | 70–108 / 1812 | 0 / 21 | 405.2 |
+| wec-lmdh/2026 | 1e-4 (R) | 0.983821 | 6 / 18 | 1.528665 / 6.445898 / 0.953756 | none | false / not available / transfer | 80 | 65–112 / 1539 | 0 / 19 | 513.2 |
+| wec-lmgt3/2025 | 1e-4 (R) | 1.353040 | 5 / 15 | 1.590291 / 3.500000 / 1.286130 | clA upper | false / not available / transfer | 84 | 83–164 / 1646 | 0 / 16 | 88.1 |
+| wec-lmgt3/2026 | 1e-4 (R) | 1.034709 | 6 / 23 | 1.607948 / 3.500000 / 1.295448 | clA upper | true / not available / transfer | 124 | 83–156 / 2236 | 0 / 20 | 134.3 |
+| wec-lmh/2025 | 1e-6 | 1.075763 | 5 / 15 | 1.569541 / 7.000000 / 1.093527 | clA upper | false / false / transfer | 158 | 107–211 / 2994 | 0 / 21 | 826.0 |
+| wec-lmh/2026 | 1e-6 | 1.061814 | 6 / 18 | 1.517698 / 6.637300 / 0.963595 | none | false / not available / transfer | 170 | 91–196 / 2712 | 0 / 19 | 815.1 |
+| wec-lmdh/2025 | 1e-6 | 1.269937 | 5 / 15 | 1.560087 / 7.000000 / 1.104788 | clA upper | false / false / transfer | 137 | 110–183 / 2795 | 0 / 21 | 678.2 |
+| wec-lmdh/2026 | 1e-6 | 0.983578 | 6 / 18 | 1.528661 / 6.445959 / 0.953750 | none | false / not available / transfer | 106 | 92–217 / 2359 | 0 / 19 | 629.3 |
+| wec-lmgt3/2025 | 1e-6 | 1.353058 | 5 / 15 | 1.590309 / 3.500000 / 1.286084 | clA upper | false / not available / transfer | 124 | 122–220 / 2364 | 0 / 16 | 80.5 |
+| wec-lmgt3/2026 | 1e-6 | 1.034249 | 6 / 23 | 1.608032 / 3.500000 / 1.295257 | clA upper | true / not available / transfer | 174 | 122–247 / 3555 | 0 / 20 | 230.1 |
+
+| Group | Tight minus loose (pp) | Choice flip | Stable |
+|---|---:|---|---|
+| wec-lmh/2025 | -0.000294415 | false | true |
+| wec-lmh/2026 | 0.000452628 | false | true |
+| wec-lmdh/2025 | -0.001060723 | false | true |
+| wec-lmdh/2026 | -0.000242746 | false | true |
+| wec-lmgt3/2025 | 0.000017565 | false | true |
+| wec-lmgt3/2026 | -0.000459710 | false | true |
+
+Iterations and cap counts include every F1/transfer/pooled/BoP candidate fold, not only selected folds. Full precision and all candidate errors are preserved in scripts/sim/results/wec-tolerance-2026-11-10/results.json. LMGT3 2026 is stable under the two tested tolerances; both choose pooled + transfer. Its new CdA is inside its bound, while ClA remains at 3.5. Thus the conditional unstable exception is not needed. This does not prove a unique physical solution.
+
+Unset-flag control reproduced production exactly except generatedAt and matched the original-source calibration, validation JSON and stdout byte-for-byte. Runtime bootstrap stderr has a process ID and is excluded from byte comparisons. The gate and all 44 production runtime files remain unchanged. Identity hashes, tests, validation, full objective logs (lossless gzip) and source hashes are archived alongside the results. The latest code checkpoint also passed GitHub tests.
 
 LMGT3 2026's **production** car is at ClA=3.5 and CdA=1.3. Earlier higher-iteration fits had CdA slightly inside its bound. Later tables must show actual bound hits rather than assume every fitted candidate remains at both bounds.
 
 ### 18.3 Consistent candidate
 
-Authorized after step 2 establishes R (or only LMGT3 2026 remains unstable). Repository geometry everywhere; rebuild B with production F1 settings and per-track drag off; restore unchanged production F1 seasons before WEC fitting. Current control and candidate are both measured at R. The candidate is not adopted. Pass requires raced-session reproduction, unchanged F1 seasons and pooled WEC no worse. The geometry/projection inputs must match; archive Interlagos traces cannot silently be reused on repository geometry.
+Step 2 established R for all six groups. The following comparison was declared before candidate fitting. Repository geometry everywhere; rebuild B with production F1 settings and per-track drag off; restore unchanged production F1 seasons before WEC fitting. Current control and candidate are both measured at R. The candidate is not adopted. Pass requires raced-session reproduction, unchanged F1 seasons and pooled WEC no worse. The geometry/projection inputs must match; archive Interlagos traces cannot silently be reused on repository geometry.
 
 A prior geometry-only difference moved LMDh 2025 by 0.37 pp. With n=5 or 6, an apparent gain below about 0.1 pp remains unestablished even if the gate accepts it. This caution will be repeated next to the result. The two open questions in section 17.4 remain questions, not additional experiments.
+
+
+Step 3 execution declaration: current-configuration control = repository geometry + current B, refit/measured at R; candidate = repository geometry + rebuilt B, refit/measured at R. Frozen production cars are replayed separately and are not confused with the refitted control. B uses LAPSIM_SKIP_WEC=1 LAPSIM_FITTER=bcd LAPSIM_ROUNDS=5 LAPSIM_BCD_ITERS=200 LAPSIM_WTIME=20 LAPSIM_WSECTOR=2 LAPSIM_TRACK_DRAG=off LAPSIM_TEAMS=on LAPSIM_WPRIOR=8; all other LAPSIM variables cleared. Run calibrate.mjs then transfer-grip.mjs on its isolated artifact. B rebuild estimated 3–4 hours from the historical job, followed by WEC fits at R. Timing flags off; WEC lap/trap weights remain 2/0.5. F1 production seasons/projections are restored unchanged before either WEC fit. Any telemetry projection replacement must match the same original measured laps and reproduce the retained geometry; no new fitting rows are silently added.

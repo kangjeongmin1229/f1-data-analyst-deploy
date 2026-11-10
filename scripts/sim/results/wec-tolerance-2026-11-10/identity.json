@@ -1,0 +1,20 @@
+{
+  "productionExactExceptDate": true,
+  "calibrationSha256": "5d612afc8b13dc8018dba1718b9610d3b3e760821f3a4cb41eb6aaf17f10b5b0",
+  "stdoutSha256": "f02d6bfd89f152ebd7ab8d9a345416a9e9df1b1107e3c28c263d4f8bd268b433",
+  "validation": [
+    {
+      "file": "validate-identity70.json",
+      "identical": true,
+      "bytes": 24754,
+      "sha256": "202cedcac00754065e5e1ffbdb4066d35cdd836652d13c54241d49e0362d25c1"
+    },
+    {
+      "file": "identity70-validate.log",
+      "identical": true,
+      "bytes": 2038,
+      "sha256": "464c43ba25eb4503924f2a46cfed8c6e026b042192998c1ab6e7df1359a06d66"
+    }
+  ],
+  "runtimeFilesUnchanged": 44
+}

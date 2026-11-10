@@ -24,6 +24,11 @@ for (const [a, b] of [['.cache/wec-tolerance-tests.log', 'tests.log'],
   ['.cache/wec-tolerance-build.log', 'build.log'], ['.cache/wec-tolerance-validate-artifact.log', 'artifact-validation.log']]) {
   await copyFile(a, join(target, b)); hashes[b] = hash(await readFile(a));
 }
+const completed = JSON.parse(await readFile(join(source, 'runtime.json'), 'utf8'));
+const progress = {at: new Date().toISOString(), complete: true, runs: completed, results: 'results.json'};
+await writeFile(join(target, 'progress.json'), JSON.stringify(progress, null, 2) + '\n');
+for (const file of ['progress.json', 'geometry-source-evidence.json', 'geometry-trace-audit.json', 'geometry-pr.png'])
+  hashes[file] = hash(await readFile(join(target, file)));
 const code = {};
 for (const name of ['calibrate.mjs', 'calibrate-lib.mjs', 'wec-nm-stop.mjs', 'gate.mjs', 'objective-trace.mjs']) {
   const a = await readFile(join(source, 'loose/scripts/sim', name));

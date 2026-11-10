@@ -1,0 +1,104 @@
+{
+ "f1/2023": {
+  "tracks": 15,
+  "lapRmsPct": 0.506,
+  "sectorRmsPct": 2.207,
+  "cornerRmsKph": 21.083,
+  "cornerBiasKph": -11.645,
+  "trapRmsKph": 6.597,
+  "trapBiasKph": -1.918,
+  "brakeRmsM": 56.513,
+  "brakeBiasM": 28.232,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2024": {
+  "tracks": 18,
+  "lapRmsPct": 0.509,
+  "sectorRmsPct": 2.637,
+  "cornerRmsKph": 23.702,
+  "cornerBiasKph": -12.973,
+  "trapRmsKph": 10.324,
+  "trapBiasKph": -7.388,
+  "brakeRmsM": 58.087,
+  "brakeBiasM": 35.332,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2025": {
+  "tracks": 22,
+  "lapRmsPct": 0.355,
+  "sectorRmsPct": 2.505,
+  "cornerRmsKph": 23.127,
+  "cornerBiasKph": -13.006,
+  "trapRmsKph": 7.657,
+  "trapBiasKph": -4.751,
+  "brakeRmsM": 62.548,
+  "brakeBiasM": 35.376,
+  "holdout2025to2026Pct": 0.84
+ },
+ "f1/2026": {
+  "tracks": 17,
+  "lapRmsPct": 0.497,
+  "sectorRmsPct": 3.848,
+  "cornerRmsKph": 21.888,
+  "cornerBiasKph": -14.322,
+  "trapRmsKph": 14.13,
+  "trapBiasKph": 7.996,
+  "brakeRmsM": 68.412,
+  "brakeBiasM": 40.021,
+  "holdout2025to2026Pct": 0.9
+ },
+ "wec-lmh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 0.883,
+  "trapRmsKph": 10.137,
+  "trapBiasKph": -1.32,
+  "f1ToWecHoldoutPct": 1.08,
+  "clA": 7,
+  "muY": 1.57
+ },
+ "wec-lmh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.751,
+  "trapRmsKph": 3.366,
+  "trapBiasKph": 0.54,
+  "f1ToWecHoldoutPct": 1.06,
+  "clA": 6.637,
+  "muY": 1.518
+ },
+ "wec-lmdh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.033,
+  "trapRmsKph": 11.958,
+  "trapBiasKph": 0.24,
+  "f1ToWecHoldoutPct": 1.27,
+  "clA": 7,
+  "muY": 1.56
+ },
+ "wec-lmdh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.776,
+  "trapRmsKph": 3.411,
+  "trapBiasKph": 0.12,
+  "f1ToWecHoldoutPct": 0.98,
+  "clA": 6.446,
+  "muY": 1.529
+ },
+ "wec-lmgt3/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.077,
+  "trapRmsKph": 5.804,
+  "trapBiasKph": -3.06,
+  "f1ToWecHoldoutPct": 1.35,
+  "clA": 3.5,
+  "muY": 1.59
+ },
+ "wec-lmgt3/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.859,
+  "trapRmsKph": 8.358,
+  "trapBiasKph": 1.117,
+  "f1ToWecHoldoutPct": 1.03,
+  "clA": 3.5,
+  "muY": 1.608
+ }
+}

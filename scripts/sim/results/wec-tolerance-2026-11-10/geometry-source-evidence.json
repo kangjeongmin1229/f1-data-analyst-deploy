@@ -1,0 +1,109 @@
+{
+  "queried": "2026-11-10",
+  "sources": [
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=11287",
+      "sha256": "3d4c56e2e7b178604eed6dc44df32b63d8f3a3912c81f66194a8c044e8c18b8b",
+      "observations": 22,
+      "fastestClassified": 72.578,
+      "poleQ3": 72.578
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=11349",
+      "sha256": "9d19a6f3a09895af2439080550e3a957672791aa9a0e0678bc19c05a0a515912",
+      "observations": 22,
+      "fastestClassified": 71.163,
+      "poleQ3": 71.163
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9314",
+      "sha256": "f007fe27aeac64bb3d16b3d9c86fdee5db3d11313668621131a335f742e465e5",
+      "observations": 20,
+      "fastestClassified": 92.726,
+      "poleQ3": 92.726
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9578",
+      "sha256": "e447811f0fc93500086ded2e59b9d556418d647dfe7a8b682576b040574e7242",
+      "observations": 19,
+      "fastestClassified": 69.673,
+      "poleQ3": 69.673
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9640",
+      "sha256": "af6bfb3a2584132ce0dec5e1ed1b35dcc9979b50b2870da46ccdac11f9acd817",
+      "observations": 20,
+      "fastestClassified": 92.312,
+      "poleQ3": 92.312
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9854",
+      "sha256": "794e550f66f34d58903f0c5172222e00bfb600f31cf10111772fea9f5047613f",
+      "observations": 20,
+      "fastestClassified": 107.934,
+      "poleQ3": 107.934
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9916",
+      "sha256": "e9f5110526d1c77cc722a5dbd6e17e20598c8141b6c943c204b133502306dc4c",
+      "observations": 20,
+      "fastestClassified": 68.662,
+      "poleQ3": 68.662
+    },
+    {
+      "url": "https://api.openf1.org/v1/session_result?session_key=9959",
+      "sha256": "a20aeffb58f9a77478ed19198727f00a23f748f53f75f4f3f39820963d17213e",
+      "observations": 20,
+      "fastestClassified": 70.899,
+      "poleQ3": 70.899
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=11287",
+      "sha256": "f8359db84b130a5cdcfd242fa0abb3ef5878fbebf4dfb292ba19e5a2043fb616",
+      "observations": 76,
+      "rainObservations": 1
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=11349",
+      "sha256": "e14b1289476c31c4b13d5db2fead01bde86da829b644d3a8b7a9acdca7ac720b",
+      "observations": 77,
+      "rainObservations": 5
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=11408",
+      "sha256": "a5b932d4fc85c166286fc58fec1ba1067f7ccbd791b1d82d5e21d84fe9ea46b2",
+      "observations": 160,
+      "rainObservations": 106
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=9640",
+      "sha256": "89da3cecb2af51a64a38fb8069e6c5a918f1db763e86935c48d2d94b59cd0e19",
+      "observations": 98,
+      "rainObservations": 0
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=9854",
+      "sha256": "49edf62661f47039d1bbd6d310f4ea34e99f1e4a44a55eca853243320c10f68d",
+      "observations": 85,
+      "rainObservations": 34
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=9865",
+      "sha256": "8f746d1368a7fd3d1f6986b25daea532e949a13b9d9716fe7ab3a3b864fa786d",
+      "observations": 82,
+      "rainObservations": 0
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=9916",
+      "sha256": "45e4527caa34de55c8de9c4f28542b94eb4b0fe04621f5f7516a1647ce229fa4",
+      "observations": 78,
+      "rainObservations": 0
+    },
+    {
+      "url": "https://api.openf1.org/v1/weather?session_key=9959",
+      "sha256": "33a80bf312a5e3c8f76f7e781cd79ea7a230f440b76fbc6d65af26812aa5f41e",
+      "observations": 85,
+      "rainObservations": 0
+    }
+  ]
+}
