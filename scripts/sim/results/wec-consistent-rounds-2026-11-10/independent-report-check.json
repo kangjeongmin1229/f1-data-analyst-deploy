@@ -1,0 +1,13 @@
+{
+  "independentReportChecks": "pass",
+  "arms": 3,
+  "heldOutRowsPerArm": 33,
+  "BStopsAtFirstEligibleRound": 7,
+  "pass": {
+    "dryReproduction": true,
+    "f1Unchanged": true,
+    "pooledWecNotWorse": false,
+    "noCapHits": true,
+    "declaredCandidatePass": false
+  }
+}

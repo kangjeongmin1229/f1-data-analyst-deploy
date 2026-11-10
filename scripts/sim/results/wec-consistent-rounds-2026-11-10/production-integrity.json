@@ -1,0 +1,230 @@
+{
+  "unchanged": true,
+  "files": [
+    {
+      "path": "worker/lapsim/atmosphere.js",
+      "sha256": "4f79c02e439b218142a690372343d92f5393614ab389f4a95ea8028b7007f584",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/brake-data.js",
+      "sha256": "1b6c7e0abbf64575192fcd99fc6613e4d91dac9fa143f3162a2caafc0e9f456e",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/brakes.js",
+      "sha256": "9b3ca709d6a443fe35a7be556edd0393fc0b655755bd455cb4f7edb11123eb15",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/calibration-data.js",
+      "sha256": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/car-lines-data.js",
+      "sha256": "3c588830bf2c5cd8bdbfffa2709cee078287b81b3be2cdca14e76ab0cac032e9",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/cars.js",
+      "sha256": "825e9ca86a319bd726f4503a1cdb0b9fe34d27e43470820dd259fd378fb10bcd",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/change-effects-data.js",
+      "sha256": "7f7f8bd43631aaefd8c47e9be3cbf0f4cb479191cf74cd5a33ea241bf70a8145",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/compound-gap-data.js",
+      "sha256": "b408cd5f6212fa8a3390c89baf3f2ab3e628d483ee483e0f937edec7b4d078d2",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/compounds-data.js",
+      "sha256": "eccbda51d8ba2b1991672ac04ac050a3f1bc877c6c851fa10a1aa709da174859",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/energy-docs-data.js",
+      "sha256": "881cb73d1a5ea98d7676bf5688a761515dba1184a470b27190fc517309ebc466",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/energy-limits.js",
+      "sha256": "6c24a81c740c8a2447dfbba41f51d0e3996dad656d9027dbe8388728b67795ab",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/engine.js",
+      "sha256": "316c210968687ce9f18e506cfac09605a946d71c14a4974246f7762b9f33e33b",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/evolution-data.js",
+      "sha256": "68424c91ec78f02c7d5883877a865697422257ad33682e45bfdff33450b625e4",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/evolution.js",
+      "sha256": "ca75cd22ddf281a1e98bfa29f801af599a20774e30c84ff22b4b75120a39b100",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/f1-poles-data.js",
+      "sha256": "e193e1233fdd32d8527512b302556b4d93bc18729db62b50bc62035e704cc6ca",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/geometry.js",
+      "sha256": "61401adab10c325ff9dbc8e227f97792d649d688369353bdc45a4188755f65f9",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/hypercar-setup.js",
+      "sha256": "ad9e77e60e919cfeae79fd83572624f6a860bf04c8eb711616c390ad309fd132",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/kernel.js",
+      "sha256": "4db5d60be6b9f50335ed3bff0f69082a1d0e682a6a716dca71d79f7a88a4916c",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/live-energy.js",
+      "sha256": "9afde9aab30d5998ee737323b4d7ac21d36f6306da197b1885afa9ad9bf9580f",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/names.js",
+      "sha256": "f469749aa9e4289710633c128f4791f4fe02bb5a7de34e8e825a798dcdc73de1",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/pole-trend.js",
+      "sha256": "b1bf6526e4ad553ed32ca79f022d52fe552f0bb7ca461091be16ad9bd6023dce",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/pu-info.js",
+      "sha256": "e89b031a199dd005702ed4def3e02f66b12a20b03942d14d786709b01a7a715e",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/qsplit-data.js",
+      "sha256": "0f48c4bd15d53adc0135bbe8302840597d6204284d59c9d3e8f030f5cc7df1c2",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/race-data.js",
+      "sha256": "6cc9a6e18ea64e90dc046b4734759ba2b271da711949c0dc3f09823c48786063",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/race-pace.js",
+      "sha256": "37c91d9b9545571ae6c5f84741a6f9031f9ea5e5a26e81d98619830af7b2d135",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/racing-line.js",
+      "sha256": "c331f71db3ddb85765bd74f73ee597480100ce81f1b2d21672b155e734fa21b7",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/racing-lines-data.js",
+      "sha256": "7de4c4509b9dd2bbd16d44771b3be5b6847ac7abf4c701701acf3b9afe3e09ca",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/rules-data.js",
+      "sha256": "98eb0e03aca0ef59fe203c041be47ab1dbc1d0f3f3ffbddf6a0b583fdb6e272f",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/scenario.js",
+      "sha256": "6289ee574a2d11a8f3a8b573bc6d2451b3c09161ad1cfd18780687bdd5afbeff",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/series-poles-data.js",
+      "sha256": "3fb7292e47482b2895f74c9ad6fc0adb9664f8bb5731e8a770993ae14cb1b9dc",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/series.js",
+      "sha256": "570f0c8ef4d36097c835bcd61f1199200c563f9363db3bda18222642174993c4",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/stint-data.js",
+      "sha256": "c28529bd7bfaf327d1c91a37549441959c01dad557675408ed36c49fa50ef5ea",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/stint-energy.js",
+      "sha256": "cceeee09f0c5664923cc28abd2c5b9bf199cf55cf492e98d2baf89252d34656d",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/tool.js",
+      "sha256": "57131a80d12e9aec8f4a40a4a6d62c32ba809449e7903749f5bb106cf5821799",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/track-changes-data.js",
+      "sha256": "e116c243cc1d02cd4709e224a912439376ffd229d54fa686892fa692f09d4c14",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/track-changes.js",
+      "sha256": "9281988cfc295aaa934e92e626e3e8b7000e75dff927720ea9ec87107fecb0dd",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/track-coords.js",
+      "sha256": "a45f2d5782dab3d2af3cca9367d0b7fefcbb93b83fd927037c442bc8e0fe1679",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/tracks-data.js",
+      "sha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/tracks.js",
+      "sha256": "16481d62950a0cef1781734b55b257db13f268a52ffaff9e4bcacfc36dca1402",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/tracktemp-data.js",
+      "sha256": "9db14ed0b902275e0f89be97703581ec6076fecfcdb3428cd6cd4b53905b3ae7",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/transfer-grip-data.js",
+      "sha256": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/wec-bop-data.js",
+      "sha256": "915dd6fa6c50b58ce6e12aad2d8a9b153a6b01f8331f13e51e21e735ed029c5e",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/wec-poles-data.js",
+      "sha256": "417a356063e6342eaf8ad48f77aa9d1ec07f4e77bc8b59588ff6c9c8f316a553",
+      "unchanged": true
+    },
+    {
+      "path": "worker/lapsim/wec-tyres-data.js",
+      "sha256": "26523bcdb8d154d282b73133a1c38f054cfbb34e474863e6d62c9a624e48e7a0",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/sim/gate.mjs",
+      "sha256": "97ec415ea3168ae5823c13855c0de45f456f12d439858bfbbf56f6140fc3c7b3",
+      "unchanged": true
+    }
+  ]
+}

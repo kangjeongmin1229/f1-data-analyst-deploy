@@ -1,0 +1,92 @@
+[
+  {
+    "name": "control",
+    "label": "calibrate",
+    "startedAt": "2026-11-10T12:54:25.289Z",
+    "seconds": 1381.802
+  },
+  {
+    "name": "control",
+    "label": "validate",
+    "startedAt": "2026-11-10T13:17:27.096Z",
+    "seconds": 0.698
+  },
+  {
+    "name": "control",
+    "label": "reproduction",
+    "startedAt": "2026-11-10T13:17:27.798Z",
+    "seconds": 3.435
+  },
+  {
+    "name": "control",
+    "label": "historical-reproduction",
+    "startedAt": "2026-11-10T13:17:31.233Z",
+    "seconds": 1.367
+  },
+  {
+    "name": "B",
+    "label": "calibrate",
+    "startedAt": "2026-11-10T12:54:25.293Z",
+    "seconds": 1521.008
+  },
+  {
+    "name": "B",
+    "label": "transfer",
+    "startedAt": "2026-11-10T13:19:46.302Z",
+    "seconds": 0.045
+  },
+  {
+    "name": "B",
+    "label": "transfer-round-5",
+    "startedAt": "2026-11-10T13:19:46.348Z",
+    "seconds": 0.052
+  },
+  {
+    "name": "secondary",
+    "label": "calibrate",
+    "startedAt": "2026-11-10T13:19:46.402Z",
+    "seconds": 1326.336
+  },
+  {
+    "name": "secondary",
+    "label": "validate",
+    "startedAt": "2026-11-10T13:41:52.741Z",
+    "seconds": 0.685
+  },
+  {
+    "name": "secondary",
+    "label": "reproduction",
+    "startedAt": "2026-11-10T13:41:53.427Z",
+    "seconds": 3.353
+  },
+  {
+    "name": "secondary",
+    "label": "historical-reproduction",
+    "startedAt": "2026-11-10T13:41:56.781Z",
+    "seconds": 1.362
+  },
+  {
+    "name": "candidate",
+    "label": "calibrate",
+    "startedAt": "2026-11-10T13:19:46.401Z",
+    "seconds": 1337.772
+  },
+  {
+    "name": "candidate",
+    "label": "validate",
+    "startedAt": "2026-11-10T13:42:04.177Z",
+    "seconds": 0.609
+  },
+  {
+    "name": "candidate",
+    "label": "reproduction",
+    "startedAt": "2026-11-10T13:42:04.786Z",
+    "seconds": 3.347
+  },
+  {
+    "name": "candidate",
+    "label": "historical-reproduction",
+    "startedAt": "2026-11-10T13:42:08.133Z",
+    "seconds": 1.362
+  }
+]

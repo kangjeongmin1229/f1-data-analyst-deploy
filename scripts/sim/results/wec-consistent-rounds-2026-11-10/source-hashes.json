@@ -1,0 +1,15 @@
+{
+  "node": "v22.23.4",
+  "sources": {
+    "calibrate.mjs": "d1f6285c5f3979bf89207964dda0e40ec545d96c36ec8552b8634af7039f67a1",
+    "calibrate-lib.mjs": "db6e88285524c9886774b1be44c18c2600d56dd32d4ac4bed9339127c87c7d3f",
+    "wec-nm-stop.mjs": "1f7b6babd8c4ee297ed3c5949a30f713b9ff2baf365a43d1a3fbacc4b4cb7099",
+    "wec-session-scope.mjs": "60189679e35a8203846a923f6e051f99b9cbf63481c51f9e3bd5d93526423cdf",
+    "verify-wec-reproduction.mjs": "387d77ff9666f3f2ee12ab4fad6c986e320546048bfa359fc49105baabadf8ee",
+    "run-wec-consistent.mjs": "9c68266498e720697b714b7973cbfef59a5bb1a579150d262524ab9822d6b165",
+    "report-wec-consistent.mjs": "2a5b1fc7f6e3815008544b55e3ca6fabe0b53631fb6fc8e99ce4e1aa730d3dc4",
+    "joint-bcd.mjs": "a47bbaef27bfc85abb33181ab88c12c90289c79b97b860901dd3ae01263e0854",
+    "b-transfer-rounds.mjs": "45f27da6d9193e55d7ccf7c721e7f0a00162f41ec61f918b449dfc0714533fbb",
+    "transfer-grip.mjs": "3106503d7acfe4995cfb9e0562bbc40eeccebcf21c6613dbae031863caeb27ea"
+  }
+}

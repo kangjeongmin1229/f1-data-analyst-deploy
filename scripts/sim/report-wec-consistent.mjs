@@ -22,6 +22,8 @@ const load = async p => (await import(pathToFileURL(resolve(p)).href)).lapsimCal
 const frozen = await load('worker/lapsim/calibration-data.js');
 const cal = {control: await load(join(dir, 'control.js')), candidate: await load(join(dir, 'candidate.js'))};
 if (existsSync(join(dir, 'secondary.js'))) cal.secondary = await load(join(dir, 'secondary.js'));
+const bRounds = json(join(dir, 'B-rounds.json'));
+const round5Converged = bRounds.phases.every(p => { const r = p.find(r => r.round === 5); return r && r.decreasePct >= 0 && r.decreasePct < 1; });
 const rows = [], physics = {}, audits = {}, events = {};
 const choices = s => ({pooled: s.pooled?.used ?? null, bop: s.bop?.used ?? null, gripSource: s.gripSource?.used ?? null});
 const rms = a => Math.sqrt(a.reduce((s, x) => s + x * x, 0) / a.length);
@@ -76,10 +78,13 @@ if (cal.secondary) {
   const c = errors('secondary');
   assert.deepEqual(a.map(e => e.key), c.map(e => e.key));
   secondary = {n: c.length, rmsPct: rms(c.map(e => e.pct)),
+    pass: {dryReproduction: audits.secondary.pass && audits.secondary.maxAbsErrorSec === 0, f1Unchanged: true, pooledWecNotWorse: rms(c.map(e => e.pct)) <= pooled.controlRmsPct, noCapHits: rows.filter(r => r.variant === 'secondary').every(r => !r.mainCapHit && r.foldIterations.capHits === 0), bMainConverged: round5Converged},
+    status: round5Converged ? 'Diagnostic round-five arm' : 'Diagnostic arm only: the round-five B fit fails the agreed convergence rule',
     deltaVsControlPP: rms(c.map(e => e.pct)) - pooled.controlRmsPct,
     deltaFinalVsRound5PP: pooled.candidateRmsPct - rms(c.map(e => e.pct)),
     gate: gate(a.map(e => e.pct), c.map(e => e.pct)),
     groups: rows.filter(r => r.variant === 'secondary').map(r => ({group:r.group,
+      gate: (() => { const base = rows.find(a => a.variant === 'control' && a.group === r.group); const prior = new Map(base.heldout.map(e => [e.name,e.pct])); return gate(r.heldout.map(e => prior.get(e.name)),r.heldout.map(e => e.pct)); })(),
       deltaVsControlPP: r.rmsPct - rows.find(a => a.variant === 'control' && a.group === r.group).rmsPct,
       deltaFinalVsRound5PP: rows.find(a => a.variant === 'candidate' && a.group === r.group).rmsPct - r.rmsPct}))};
 }
@@ -104,7 +109,8 @@ const pass = {dryReproduction: Object.values(audits).every(r => r.pass && r.maxA
   noCapHits: rows.every(r => !r.mainCapHit && r.foldIterations.capHits === 0)};
 const result = {setting: {tolerance: 1e-4, cap: 2000}, manifest: json(join(dir, 'manifest.json')),
   pass: {...pass, declaredCandidatePass: pass.dryReproduction && pass.f1Unchanged && pass.pooledWecNotWorse && pass.noCapHits},
-  pooled, secondary, bRounds: json(join(dir,'B-rounds.json')), groups, rows, f1, audits, physics, physicalComparison: comparePhysical(physics.control, physics.candidate),
+  pooled, secondary, bRounds, groups, rows, f1, audits, physics, physicalComparison: comparePhysical(physics.control, physics.candidate),
+  secondaryPhysicalComparison: cal.secondary ? comparePhysical(physics.control, physics.secondary) : null,
   savedRoundedComparison: compare(cal.control, cal.candidate),
   runtimes: json(join(dir, 'runtime.json')), adopted: false,
   hashes: Object.fromEntries(['control.js','candidate.js','B-repository-geometry.js','rebuilt-B.js',...(cal.secondary?['secondary.js','round-5-B.js']:[])].map(p => [p,sha256(readFileSync(join(dir,p)))])),
