@@ -1,0 +1,36 @@
+{
+  "scoresMatchStoppedRunAtLoggedPrecision": true,
+  "firstFive": [
+    {
+      "round": 1,
+      "score": 37.3312524292892,
+      "decreasePct": null,
+      "interlagosGrip": 0.9476056425148596
+    },
+    {
+      "round": 2,
+      "score": 28.86119770160273,
+      "decreasePct": 22.688911237923186,
+      "interlagosGrip": 0.9535714630174131
+    },
+    {
+      "round": 3,
+      "score": 27.096892536407395,
+      "decreasePct": 6.11306981587032,
+      "interlagosGrip": 0.9586178544201266
+    },
+    {
+      "round": 4,
+      "score": 26.543546563698463,
+      "decreasePct": 2.0421012186746372,
+      "interlagosGrip": 0.9613609913522407
+    },
+    {
+      "round": 5,
+      "score": 26.18674218139016,
+      "decreasePct": 1.344222715122319,
+      "interlagosGrip": 0.962344598438297
+    }
+  ],
+  "tableInterlagosRounded": 0.9623
+}
