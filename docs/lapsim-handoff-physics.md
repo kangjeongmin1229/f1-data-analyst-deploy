@@ -1554,3 +1554,23 @@ B exports only track grips; no held-out folds are needed for this export. They a
 Declared arms: control = current production configuration refit at R with the existing B table; candidate = rebuilt converged B table and WEC at R; secondary = saved round-five B and WEC at R if available. All use repository geometry and the unchanged production F1 seasons/projections. R stays tolerance 1e-4, cap 2000, timing flags off. The pinned archive, all source inputs, trace reprojection, production seed and accepted tolerance evidence are hash-checked before fitting. No values are adopted. Production F1 is inspected from existing GitHub Actions logs only.
 
 Results: pending this declared run. Evidence directory: `scripts/sim/results/wec-consistent-rounds-2026-11-10/`.
+
+### 22.1 Existing production F1 log: convergence report only
+
+Recovered [run 42398451242, job 128480815235](https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/42398451242/job/128480815235). It used drag on and the production settings. Its generated commit `b47dce48cde2e47920866938612d922e93f7b73e` has exactly the same F1 seasons and projections as production source `9fb675e2cb60de4ee5e2d395af5acabf45740e73` and this branch's frozen production. This identity was checked on the full objects, not inferred from similar scores. Scores below have the original log's four-decimal precision. No F1 fit was rerun.
+
+| Production F1 check | Previous round score | Final round score | Decrease | Rule result |
+|---|---:|---:|---:|---|
+| Main, rounds 4 → 5 | 23.9813 | 23.6060 | 1.56497% | Fails |
+| Held-out fold 1, rounds 3 → 4 | 25.4832 | 24.6638 | 3.21545% | Fails |
+| Held-out fold 2, rounds 3 → 4 | 24.4686 | 23.8289 | 2.61437% | Fails |
+| Held-out fold 3, rounds 3 → 4 | 24.3002 | 23.5678 | 3.01397% | Fails |
+| Held-out fold 4, rounds 3 → 4 | 24.2573 | 23.7102 | 2.25540% | Fails |
+| Held-out fold 5, rounds 3 → 4 | 24.8383 | 24.1357 | 2.82870% | Fails |
+| Held-out fold 6, rounds 3 → 4 | 24.8380 | 23.9704 | 3.49303% | Fails |
+| Held-out fold 7, rounds 3 → 4 | 23.6660 | 22.8794 | 3.32376% | Fails |
+| Held-out fold 8, rounds 3 → 4 | 24.0839 | 23.3470 | 3.05972% | Fails |
+
+`production-f1-convergence.json` records all round scores, source hashes and identity checks; `production-f1-log-excerpt.txt` preserves the relevant original log lines. This is report only. The owner will decide any later F1 action.
+
+Before the new fit, the full offline test suite passed 429/429, including the shared wet-scope regression and exact warm-start parity test. Build and artifact validation passed. R, all pinned input hashes and the latest handoff were checked before starting.

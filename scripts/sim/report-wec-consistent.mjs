@@ -1,5 +1,5 @@
 // Read-only paired report. Uses full-precision logged predictions; never adopts a fit.
-import {readFileSync, writeFileSync} from 'node:fs';
+import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 import {resolve, join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
@@ -15,12 +15,13 @@ import {lapMult} from './joint-bcd.mjs';
 import {rechargeLimitMJ} from '../../worker/lapsim/energy-limits.js';
 import {sha256} from './wec-eligibility.mjs';
 
-const dir = resolve(process.argv[2] || '.cache/wec-consistent-resume');
+const dir = resolve(process.argv[2] || '.cache/wec-consistent-rounds');
 const json = p => JSON.parse(readFileSync(p, 'utf8'));
 assert.equal(json(join(dir, 'complete.json')).complete, true, 'Incomplete experiment');
 const load = async p => (await import(pathToFileURL(resolve(p)).href)).lapsimCalibration;
 const frozen = await load('worker/lapsim/calibration-data.js');
 const cal = {control: await load(join(dir, 'control.js')), candidate: await load(join(dir, 'candidate.js'))};
+if (existsSync(join(dir, 'secondary.js'))) cal.secondary = await load(join(dir, 'secondary.js'));
 const rows = [], physics = {}, audits = {}, events = {};
 const choices = s => ({pooled: s.pooled?.used ?? null, bop: s.bop?.used ?? null, gripSource: s.gripSource?.used ?? null});
 const rms = a => Math.sqrt(a.reduce((s, x) => s + x * x, 0) / a.length);
@@ -69,6 +70,18 @@ const a = errors('control'), b = errors('candidate');
 assert.deepEqual(a.map(e => e.key), b.map(e => e.key));
 const pooled = {n: a.length, controlRmsPct: rms(a.map(e => e.pct)), candidateRmsPct: rms(b.map(e => e.pct)),
   gate: gate(a.map(e => e.pct), b.map(e => e.pct))};
+let secondary = null;
+if (cal.secondary) {
+  const c = errors('secondary');
+  assert.deepEqual(a.map(e => e.key), c.map(e => e.key));
+  secondary = {n: c.length, rmsPct: rms(c.map(e => e.pct)),
+    deltaVsControlPP: rms(c.map(e => e.pct)) - pooled.controlRmsPct,
+    deltaFinalVsRound5PP: pooled.candidateRmsPct - rms(c.map(e => e.pct)),
+    gate: gate(a.map(e => e.pct), c.map(e => e.pct)),
+    groups: rows.filter(r => r.variant === 'secondary').map(r => ({group:r.group,
+      deltaVsControlPP: r.rmsPct - rows.find(a => a.variant === 'control' && a.group === r.group).rmsPct,
+      deltaFinalVsRound5PP: rows.find(a => a.variant === 'candidate' && a.group === r.group).rmsPct - r.rmsPct}))};
+}
 const f1Held = heldOut(frozen), traces = json(join(dir, 'control/.cache/lapsim/traces.json'));
 const f1 = Object.entries(frozen.seasons).map(([year, s]) => {
   const h = Object.entries(f1Held).filter(([k]) => k.startsWith(`f1/${year}|`)).map(([,v]) => v);
@@ -90,10 +103,10 @@ const pass = {dryReproduction: Object.values(audits).every(r => r.pass && r.maxA
   noCapHits: rows.every(r => !r.mainCapHit && r.foldIterations.capHits === 0)};
 const result = {setting: {tolerance: 1e-4, cap: 2000}, manifest: json(join(dir, 'manifest.json')),
   pass: {...pass, declaredCandidatePass: pass.dryReproduction && pass.f1Unchanged && pass.pooledWecNotWorse && pass.noCapHits},
-  pooled, groups, rows, f1, audits, physics, physicalComparison: comparePhysical(physics.control, physics.candidate),
+  pooled, secondary, bRounds: json(join(dir,'B-rounds.json')), groups, rows, f1, audits, physics, physicalComparison: comparePhysical(physics.control, physics.candidate),
   savedRoundedComparison: compare(cal.control, cal.candidate),
   runtimes: json(join(dir, 'runtime.json')), adopted: false,
-  hashes: Object.fromEntries(['control.js','candidate.js','B-repository-geometry.js','rebuilt-B.js'].map(p => [p,sha256(readFileSync(join(dir,p)))])),
+  hashes: Object.fromEntries(['control.js','candidate.js','B-repository-geometry.js','rebuilt-B.js',...(cal.secondary?['secondary.js','round-5-B.js']:[])].map(p => [p,sha256(readFileSync(join(dir,p)))])),
   notes: ['Full-precision objective logs supply held-out errors; exp-compare also reports the saved rounded rows.',
     'Control is current production inputs refitted at R on repository geometry; frozen production replay is separate.',
     'With n=5/6, a gain below about 0.1 pp is unestablished even if the gate accepts. No model adoption.',

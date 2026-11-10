@@ -5,8 +5,8 @@ import {join, resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {sha256} from './wec-eligibility.mjs';
-const dir = resolve(process.argv[2] || '.cache/wec-consistent-resume');
-const out = 'scripts/sim/results/wec-consistent-resume-2026-11-10';
+const dir = resolve(process.argv[2] || '.cache/wec-consistent-rounds');
+const out = 'scripts/sim/results/wec-consistent-rounds-2026-11-10';
 const result = JSON.parse(await readFile(join(dir, 'results.json'), 'utf8'));
 assert.equal(JSON.parse(await readFile(join(dir, 'complete.json'), 'utf8')).complete, true);
 await mkdir(out, {recursive: true});
@@ -29,7 +29,7 @@ for (const path of files) {
   integrity.push({path, sha256: sha256(after), unchanged: true});
 }
 await writeFile(join(out, 'production-integrity.json'), JSON.stringify({unchanged: true, files: integrity}, null, 2) + '\n');
-const sourcePaths = ['calibrate.mjs','calibrate-lib.mjs','wec-nm-stop.mjs','wec-session-scope.mjs','verify-wec-reproduction.mjs','run-wec-consistent.mjs','report-wec-consistent.mjs','joint-bcd.mjs','transfer-grip.mjs'];
+const sourcePaths = ['calibrate.mjs','calibrate-lib.mjs','wec-nm-stop.mjs','wec-session-scope.mjs','verify-wec-reproduction.mjs','run-wec-consistent.mjs','report-wec-consistent.mjs','joint-bcd.mjs','b-transfer-rounds.mjs','transfer-grip.mjs'];
 const sources = {};
 for (const name of sourcePaths) sources[name] = sha256(await readFile(join('scripts/sim', name)));
 await writeFile(join(out, 'source-hashes.json'), JSON.stringify({node: process.version, sources}, null, 2) + '\n');

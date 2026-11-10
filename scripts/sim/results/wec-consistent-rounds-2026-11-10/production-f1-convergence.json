@@ -1,0 +1,142 @@
+{
+  "source": "Existing GitHub Actions log only; no production F1 rerun",
+  "run": 42398451242,
+  "job": 128480815235,
+  "url": "https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/42398451242/job/128480815235",
+  "generatedCommit": "b47dce48cde2e47920866938612d922e93f7b73e",
+  "productionSourceCommit": "9fb675e2cb60de4ee5e2d395af5acabf45740e73",
+  "seasonsAndProjectionsMatchExactly": true,
+  "seasonsSha256": "2b380c8e187e871206f7af452aa10aa7008ab04bb86e512dced125b14a465329",
+  "projectionsSha256": "c9e8c380318ec7c12feedfb2ea8ec9438ecccfc5b60a10ee178cbcfba439c887",
+  "precision": "Scores printed to four decimal places in original log",
+  "main": {
+    "scores": [
+      35.096,
+      26.6869,
+      24.6415,
+      23.9813,
+      23.606
+    ],
+    "lastTwo": [
+      23.9813,
+      23.606
+    ],
+    "decreasePct": 1.5649693719689894,
+    "converged": false
+  },
+  "folds": [
+    {
+      "scores": [
+        35.2424,
+        27.3412,
+        25.4832,
+        24.6638
+      ],
+      "lastTwo": [
+        25.4832,
+        24.6638
+      ],
+      "decreasePct": 3.215451748603008,
+      "converged": false
+    },
+    {
+      "scores": [
+        33.1374,
+        26.1741,
+        24.4686,
+        23.8289
+      ],
+      "lastTwo": [
+        24.4686,
+        23.8289
+      ],
+      "decreasePct": 2.614371071495704,
+      "converged": false
+    },
+    {
+      "scores": [
+        34.7069,
+        26.2268,
+        24.3002,
+        23.5678
+      ],
+      "lastTwo": [
+        24.3002,
+        23.5678
+      ],
+      "decreasePct": 3.0139669632348784,
+      "converged": false
+    },
+    {
+      "scores": [
+        34.4336,
+        25.8718,
+        24.2573,
+        23.7102
+      ],
+      "lastTwo": [
+        24.2573,
+        23.7102
+      ],
+      "decreasePct": 2.255403528010126,
+      "converged": false
+    },
+    {
+      "scores": [
+        35.8736,
+        26.8743,
+        24.8383,
+        24.1357
+      ],
+      "lastTwo": [
+        24.8383,
+        24.1357
+      ],
+      "decreasePct": 2.8286960057652912,
+      "converged": false
+    },
+    {
+      "scores": [
+        36.2659,
+        27.4536,
+        24.838,
+        23.9704
+      ],
+      "lastTwo": [
+        24.838,
+        23.9704
+      ],
+      "decreasePct": 3.4930348659312322,
+      "converged": false
+    },
+    {
+      "scores": [
+        34.2689,
+        25.6764,
+        23.666,
+        22.8794
+      ],
+      "lastTwo": [
+        23.666,
+        22.8794
+      ],
+      "decreasePct": 3.32375559874926,
+      "converged": false
+    },
+    {
+      "scores": [
+        35.0598,
+        26.0204,
+        24.0839,
+        23.347
+      ],
+      "lastTwo": [
+        24.0839,
+        23.347
+      ],
+      "decreasePct": 3.0597203941222086,
+      "converged": false
+    }
+  ],
+  "allConverged": false
+}
