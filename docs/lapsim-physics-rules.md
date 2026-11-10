@@ -215,6 +215,8 @@ WEC historical reproduction must use the same exclusion list as the fit: `wet-se
 
 ### 5.2 Commands
 
+Full experiment runners, pinned result manifests and archived outputs are on the [experiment branch](https://github.com/kangjeongmin1229/f1-data-analyst-deploy/tree/exp/lapsim-physics-night-2026-11-10). Commands that use those files must run from that branch. The core review branch keeps only reusable code, tests, derived tables and summaries.
+
 | Purpose | Command or place |
 |---|---|
 | Tests | `node --test tests/*.test.mjs` (Node 22), then `npm run build` and `npm run validate` |

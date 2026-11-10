@@ -3,8 +3,8 @@ import {readFile,writeFile,mkdir,readdir,stat,copyFile} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
-const block=process.argv[2],folders={2:'vegas-fit',3:'wec-fit',4:'models-fit',5:'gears'};
-if(!folders[block])throw Error('Expected block 2, 3, 4 or 5');
+const block=process.argv[2],folders={2:'vegas-fit',3:'wec-fit',4:'models-fit',5:'gears',6:'core-review'};
+if(!folders[block])throw Error('Expected block 2, 3, 4, 5 or 6');
 const source=resolve('.cache/night-session',folders[block]),out=resolve('scripts/sim/results/night-session-2026-11-10','block-'+block);
 await mkdir(out,{recursive:true});
 const files={},hash=b=>createHash('sha256').update(b).digest('hex');
@@ -15,6 +15,8 @@ if(block==='2'){
  for(const name of ['manifest.json','candidate-tracks.js','candidate-traces.json'])await save(join('.cache/night-session/vegas',name),'geometry/'+name);
 }
 if(block==='4'){
+ const status=JSON.parse(await readFile(join(source,'status.json')));
+ if(status.control?.code===0)await save(join(source,'production/worker/lapsim/calibration-data.js'),'production.js');
  for(const dir of await readdir(source)){if(!/^lm(h|dh|gt3)-\d+$/.test(dir))continue;for(const name of await readdir(join(source,dir)))if((await stat(join(source,dir,name))).isFile())await save(join(source,dir,name),dir+'/'+name);}
  await save('.cache/night-session/wec-sources/all-car-inventory.json','all-car-inventory.json');
 }

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "core-build.log.gz": {
+      "sha256": "a31481093cac008e79cdae6b0d44476ca82714f69fdca5b254d2218d986ce64a",
+      "bytes": 178,
+      "sourceSha256": "7c1c70b578a57b240266a2ec3720511258c1275360a5f0611dd380cc326e70ec"
+    },
+    "core-tests.log.gz": {
+      "sha256": "7d8ee6d08c46354b67afff134b202ae9aca60eec123b3a3a01f25ae8797218fa",
+      "bytes": 22683,
+      "sourceSha256": "63ae94ca60fc245b3a77c08250848976c1a345efe1f7333cc9149f117e0eae87"
+    },
+    "core-validate.log.gz": {
+      "sha256": "ca8514ae1b92230b50014092f44d78aecc4948b989213e0438fe76b8991a58d1",
+      "bytes": 191,
+      "sourceSha256": "12950a2497517d75276c353469c26444f57f794f526e1e02472cd8cf7d75076d"
+    },
+    "review-manifest.json": {
+      "sha256": "535404989ac09a2aeefae5e43e1a05556c993ce87da8ba8a120a8f0ce4672543",
+      "bytes": 4458,
+      "sourceSha256": "535404989ac09a2aeefae5e43e1a05556c993ce87da8ba8a120a8f0ce4672543"
+    }
+  }
+}
