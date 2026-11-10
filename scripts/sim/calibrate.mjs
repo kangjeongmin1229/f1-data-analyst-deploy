@@ -3,6 +3,7 @@
 // build-geometry.mjs); writes worker/lapsim/calibration-data.js and docs/lapsim-report.md.
 import {readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
+import {objectiveTrace} from './objective-trace.mjs';
 import {gate} from './gate.mjs';
 import {join} from 'node:path';
 import {lapsimTracks} from '../../worker/lapsim/tracks-data.js';
@@ -24,6 +25,7 @@ const ITERS = Number(process.env.LAPSIM_ITERS || 70), HOLDOUT_ITERS = Number(pro
 // experiment knobs (defaults are the published settings)
 const WTIME = Number(process.env.LAPSIM_WTIME || 2);
 const E = process.env;
+const objectiveLog = objectiveTrace(E.LAPSIM_OBJECTIVE_LOG);
 const FITTER = E.LAPSIM_FITTER || 'nm';
 const BCD = {rounds: Number(E.LAPSIM_ROUNDS || 4), iters: Number(E.LAPSIM_BCD_ITERS || 150), wTime: WTIME, wSector: Number(E.LAPSIM_WSECTOR || 0),
   trackDrag: E.LAPSIM_TRACK_DRAG === 'on', teams: E.LAPSIM_TEAMS === 'on', residual: E.LAPSIM_RESIDUAL === 'on', residualLambda: Number(E.LAPSIM_RESIDUAL_LAMBDA || 1), wPrior: Number(E.LAPSIM_WPRIOR || 2), log: m => console.log(m)};
@@ -231,12 +233,13 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
     const params = Object.entries(def.bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi}));
-    let h = holdout(laps, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip});
+    const traceFor = candidate => objectiveLog ? event => objectiveLog({group: `wec-${cls}/${year}`, candidate, restart: 0, ...event}) : undefined;
+    let h = holdout(laps, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip, trace: traceFor('f1')});
     // Transfer track factors (F1 fit without per-track drag): used for this class-season only when its
     // leave-one-track-out error is not higher than with the F1 fit's own factors (never worse); gate verdict recorded.
     let gripSource = {used: 'f1'};
     if (TRANSFER && sessions.every(w => transferGrip(w.track) != null)) {
-      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip});
+      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip, trace: traceFor('transfer')});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(ht.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       const use = g.rmsNew <= g.rmsCur;
@@ -250,7 +253,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       .map(r => ({name: r.track, track: tracks[r.track], lapSeconds: r.lap, trapKph: r.trapKph, weight: 0.5, grip: f1Grip(r.track), weather: r.weather || {}, meta: {event: 'Timing71', car: '', manufacturer: '', session: ''}}));
     let pooled = null;
     if (extra.length) {
-      const h2 = holdout([...laps, ...extra], base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip});
+      const h2 = holdout([...laps, ...extra], base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip, trace: traceFor('pooled')});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       pooled = {extraRows: extra.length, previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
@@ -264,14 +267,14 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     if (cls !== 'lmgt3' && withBop.length >= laps.length * 0.8) {
       const kg0 = withBop.reduce((a, l) => a + bopOf(l).kg, 0) / withBop.length, kw0 = withBop.reduce((a, l) => a + bopOf(l).kW, 0) / withBop.length;
       const cand = laps.map(l => { const b = bopOf(l); return b?.kg ? {...l, patch: car => ({...car, mass: car.mass + b.kg - kg0, pIce: car.pIce * b.kW / kw0})} : l; });
-      const h2 = holdout(cand, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip});
+      const h2 = holdout(cand, base, params, {iters: HOLDOUT_ITERS, folds: 99, gripFor: l => l.grip, trace: traceFor('bop')});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       bop = {laps: withBop.length, refKg: +kg0.toFixed(1), refKW: +kw0.toFixed(1), previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
       report.push(`WEC ${cls} ${year}: per-event BoP — holdout ${g.rmsCur.toFixed(2)}% → ${g.rmsNew.toFixed(2)}%, ${g.reason}`);
       if (g.accept) { laps.splice(0, laps.length, ...cand); h = h2; }
     }
-    const fit = fitSeason(laps, base, params, {iters: ITERS});
+    const fit = fitSeason(laps, base, params, {iters: ITERS, trace: traceFor('main')});
     const car = fit.car; delete car.linkMu;
     const perTrack = {};
     for (const p of fit.perTrack) if (!perTrack[p.name] && p.meta?.event !== 'Timing71') {

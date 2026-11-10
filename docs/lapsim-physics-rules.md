@@ -212,6 +212,7 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 | F1 only / WEC only | `LAPSIM_SKIP_WEC=1` / `LAPSIM_ONLY=wec` |
 | Fit length | `LAPSIM_ROUNDS`, `LAPSIM_BCD_ITERS` |
 | Model flags | `LAPSIM_TRACK_DRAG`, `LAPSIM_AXLE`, `LAPSIM_LOADEXP`, `LAPSIM_ROLLFRONT`, `LAPSIM_KV`, `LAPSIM_BANK`, `LAPSIM_GRIP_LO`, `LAPSIM_GRIP_HI`, `LAPSIM_WEC_GRIP` |
+| WEC objective diagnostics (off by default) | `LAPSIM_OBJECTIVE_LOG=<new JSONL path>` logs objective iterations and final values by group, candidate, fold and restart. Current WEC fit has one initial start (`restart: 0`) and no restarts. Adds no objective evaluations and writes no stdout. |
 | WEC timing experiments (off by default, require `LAPSIM_ONLY=wec`) | `LAPSIM_WEC_TRAP_POSITION=on`, `LAPSIM_WEC_SECTORS=on`; `LAPSIM_WEC_SECTOR_WEIGHT=2` is the approved primary weight, `1` and `4` sensitivity only. Verified year-specific positions: `scripts/sim/data/wec-timing-positions.json`. Sector runs also require `LAPSIM_WEC_ELIGIBILITY=<fixed JSON>` prepared once with production values. |
 | Parallel experiment | Edit `scripts/sim/experiments.json` (common settings and one entry per variant), push to a `lapsim-exp/<name>` branch. Workflow `lapsim-experiment.yml` runs every variant and a compare job. Do not open a PR from that branch to `main`. |
 | Compare | `node scripts/sim/exp-compare.mjs base.js cand1.js cand2.js` |

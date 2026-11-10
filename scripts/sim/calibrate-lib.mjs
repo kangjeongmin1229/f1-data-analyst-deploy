@@ -115,15 +115,18 @@ export function fitGrip(track, car, env, obs, lapTime, lo = 0.85, hi = 1.15, opt
 }
 
 // Nelder–Mead on a parameter vector (minimisation)
-export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6} = {}) {
+export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace} = {}) {
   const n = x0.length;
   let pts = [x0.slice()];
   for (let i = 0; i < n; i++) { const p = x0.slice(); p[i] = p[i] + (Array.isArray(step) ? step[i] : step); pts.push(p); }
   let vals = pts.map(f);
+  let completed = 0;
   for (let it = 0; it < iters; it++) {
     const order = vals.map((v, i) => i).sort((a, b) => vals[a] - vals[b]);
     pts = order.map(i => pts[i]); vals = order.map(i => vals[i]);
+    trace?.({event: 'iteration', iteration: it, objective: vals[0], spread: vals[n] - vals[0]});
     if (Math.abs(vals[n] - vals[0]) < tol) break;
+    completed = it + 1;
     const c = new Array(n).fill(0);
     for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) c[j] += pts[i][j] / n;
     const xr = c.map((cj, j) => cj + (cj - pts[n][j])), fr = f(xr);
@@ -138,6 +141,7 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6} = {}) {
     }
   }
   const best = vals.indexOf(Math.min(...vals));
+  trace?.({event: 'end', iteration: completed, objective: vals[best], x: pts[best].slice()});
   return {x: pts[best], value: vals[best]};
 }
 
@@ -145,7 +149,7 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6} = {}) {
 // The car parameters are optimised in log space around the base values.
 // A lap with a fixed track factor (l.grip, e.g. shared from F1) is not given its own grip fit;
 // a lap with l.trapKph is also scored on top speed.
-export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}} = {}) {
+export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, trace} = {}) {
   const prepared = laps.map(l => {
     const env = conditionsFromWeather(l.weather || {}, l.conditionOptions);
     const lapSeconds = l.lapSeconds ?? l.trace.lap_seconds;
@@ -189,7 +193,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
     ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector})}
     : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector}));
   const x0 = params.map(() => 0);
-  const result = nelderMead(objective, x0, {step: params.map(p => p.step ?? 0.08), iters});
+  const result = nelderMead(objective, x0, {step: params.map(p => p.step ?? 0.08), iters, trace});
   const car = build(result.x);
   const perTrack = prepared.map(l => {
     const r = evalLap(l, car);
@@ -212,7 +216,8 @@ export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, ...
     const test = new Set(names.filter((_, i) => i % k === f));
     const train = laps.filter(l => !test.has(l.name));
     if (new Set(train.map(l => l.name)).size < 2) continue;
-    const fit = fitSeason(train, base, params, {...opts, iters});
+    const trace = opts.trace ? event => opts.trace({...event, fold: f, heldOut: [...test], trainTracks: [...new Set(train.map(l => l.name))]}) : undefined;
+    const fit = fitSeason(train, base, params, {...opts, iters, trace});
     for (const l of laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
       const g = gripFor(l); if (g == null) continue;
       const res = simulateLap(withGrip(l.track, g), l.patch ? l.patch(fit.car) : fit.car, conditionsFromWeather(l.weather || {}));
