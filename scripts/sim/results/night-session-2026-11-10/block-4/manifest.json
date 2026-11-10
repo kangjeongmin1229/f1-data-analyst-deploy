@@ -1,0 +1,40 @@
+{
+  "declaredAt": "2026-11-10T14:53:46.094Z",
+  "deadline": "2026-11-10T16:52:28.990Z",
+  "inputs": {
+    "scripts/sim/data/wec-model-identities.json": "6b119c953a5614e9918519d4629538fd0d2fb023f649d485fc7a7c7c0c07cb44",
+    "scripts/sim/data/wec-bop-verified-2025.json": "4c01dfc03ec9234d953fdd4def31e52d0c4786de24e525a45aa6041d00b6a666"
+  },
+  "settings": {
+    "tolerance": 0.0001,
+    "cap": 2000,
+    "shrinkLambda": 8,
+    "logDifferenceScale": 0.1,
+    "step": 0.08
+  },
+  "baseline": "Fresh production top-three R control, plus matched all-car class-only control",
+  "candidate": "Same all-car rows and fixed event inputs; class base + shrunk model differences",
+  "adopt": false,
+  "preflight": {
+    "at": "2026-11-10T15:09:52.045Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  },
+  "startedAt": "2026-11-10T15:09:52.045Z",
+  "resume": {
+    "at": "2026-11-10T16:04:02.595Z",
+    "reason": "Execution handle no longer exists; incomplete group logs stopped advancing; no final status file",
+    "attempt": 1,
+    "originalDirectory": "models-fit",
+    "originalLogs": {
+      "lmh-2025/objectives.jsonl": "941beb1eda3252149e16043d02d48a5507382c46b339d29c065cd45952ecda16",
+      "lmh-2026/objectives.jsonl": "03283fce1377a5b72543b0ed0d7a79068aadde2a22080c11e31d947621c42ad5",
+      "lmdh-2025/objectives.jsonl": "b997d6d1071529fca9ae325f7a11601dc6918d7c4446dd737cc6df4dd0bc1551",
+      "lmdh-2026/objectives.jsonl": "4fef7f59ffa6999b91f59b24e075ece5959dc7f5be8a96a03478e32e9566ee38"
+    },
+    "runnerSha256": "e5430547ed5e81c23df12afc50a30a72d7276f3326b5897e3a8c2fba4db505e7",
+    "completedFoldsPreserved": true,
+    "deadlineUnchanged": true
+  }
+}

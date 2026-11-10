@@ -1,0 +1,257 @@
+{
+  "pass": true,
+  "n": 39,
+  "maxAbsErrorSec": 0,
+  "rows": [
+    {
+      "year": 2025,
+      "n": 22,
+      "maxAbsErrorSec": 0,
+      "errors": [
+        {
+          "track": "melbourne",
+          "realSec": 75.096,
+          "simSec": 75.096,
+          "errorSec": 0
+        },
+        {
+          "track": "shanghai",
+          "realSec": 90.641,
+          "simSec": 90.641,
+          "errorSec": 0
+        },
+        {
+          "track": "suzuka",
+          "realSec": 86.983,
+          "simSec": 86.983,
+          "errorSec": 0
+        },
+        {
+          "track": "sakhir",
+          "realSec": 89.841,
+          "simSec": 89.841,
+          "errorSec": 0
+        },
+        {
+          "track": "jeddah",
+          "realSec": 87.294,
+          "simSec": 87.294,
+          "errorSec": 0
+        },
+        {
+          "track": "miami",
+          "realSec": 86.204,
+          "simSec": 86.204,
+          "errorSec": 0
+        },
+        {
+          "track": "imola",
+          "realSec": 74.67,
+          "simSec": 74.67,
+          "errorSec": 0
+        },
+        {
+          "track": "monte-carlo",
+          "realSec": 69.954,
+          "simSec": 69.954,
+          "errorSec": 0
+        },
+        {
+          "track": "catalunya",
+          "realSec": 71.546,
+          "simSec": 71.546,
+          "errorSec": 0
+        },
+        {
+          "track": "montreal",
+          "realSec": 70.899,
+          "simSec": 70.899,
+          "errorSec": 0
+        },
+        {
+          "track": "spielberg",
+          "realSec": 63.971,
+          "simSec": 63.971,
+          "errorSec": 0
+        },
+        {
+          "track": "silverstone",
+          "realSec": 84.892,
+          "simSec": 84.892,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 100.562,
+          "simSec": 100.562,
+          "errorSec": 0
+        },
+        {
+          "track": "hungaroring",
+          "realSec": 75.372,
+          "simSec": 75.372,
+          "errorSec": 0
+        },
+        {
+          "track": "zandvoort",
+          "realSec": 68.662,
+          "simSec": 68.662,
+          "errorSec": 0
+        },
+        {
+          "track": "monza",
+          "realSec": 78.792,
+          "simSec": 78.792,
+          "errorSec": 0
+        },
+        {
+          "track": "singapore",
+          "realSec": 89.158,
+          "simSec": 89.158,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 92.51,
+          "simSec": 92.51,
+          "errorSec": 0
+        },
+        {
+          "track": "mexico-city",
+          "realSec": 75.586,
+          "simSec": 75.586,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 69.511,
+          "simSec": 69.511,
+          "errorSec": 0
+        },
+        {
+          "track": "lusail",
+          "realSec": 79.387,
+          "simSec": 79.387,
+          "errorSec": 0
+        },
+        {
+          "track": "yas-marina-circuit",
+          "realSec": 82.207,
+          "simSec": 82.207,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "n": 17,
+      "maxAbsErrorSec": 0,
+      "errors": [
+        {
+          "track": "melbourne",
+          "realSec": 78.518,
+          "simSec": 78.518,
+          "errorSec": 0
+        },
+        {
+          "track": "shanghai",
+          "realSec": 92.064,
+          "simSec": 92.064,
+          "errorSec": 0
+        },
+        {
+          "track": "suzuka",
+          "realSec": 88.778,
+          "simSec": 88.778,
+          "errorSec": 0
+        },
+        {
+          "track": "miami",
+          "realSec": 87.798,
+          "simSec": 87.798,
+          "errorSec": 0
+        },
+        {
+          "track": "monte-carlo",
+          "realSec": 72.051,
+          "simSec": 72.051,
+          "errorSec": 0
+        },
+        {
+          "track": "catalunya",
+          "realSec": 74.679,
+          "simSec": 74.679,
+          "errorSec": 0
+        },
+        {
+          "track": "spielberg",
+          "realSec": 66.113,
+          "simSec": 66.113,
+          "errorSec": 0
+        },
+        {
+          "track": "silverstone",
+          "realSec": 88.111,
+          "simSec": 88.111,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 104.361,
+          "simSec": 104.361,
+          "errorSec": 0
+        },
+        {
+          "track": "hungaroring",
+          "realSec": 77.207,
+          "simSec": 77.207,
+          "errorSec": 0
+        },
+        {
+          "track": "monza",
+          "realSec": 81.786,
+          "simSec": 81.786,
+          "errorSec": 0
+        },
+        {
+          "track": "madring",
+          "realSec": 91.824,
+          "simSec": 91.824,
+          "errorSec": 0
+        },
+        {
+          "track": "baku",
+          "realSec": 102.526,
+          "simSec": 102.526,
+          "errorSec": 0
+        },
+        {
+          "track": "kuala-lumpur",
+          "realSec": 95.13,
+          "simSec": 95.13,
+          "errorSec": 0
+        },
+        {
+          "track": "singapore",
+          "realSec": 91.373,
+          "simSec": 91.373,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 94.035,
+          "simSec": 94.035,
+          "errorSec": 0
+        },
+        {
+          "track": "mexico-city",
+          "realSec": 76.514,
+          "simSec": 76.514,
+          "errorSec": 0
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "productionFilesWritten": false
+}

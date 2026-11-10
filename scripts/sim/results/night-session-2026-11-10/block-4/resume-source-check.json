@@ -1,0 +1,7 @@
+{
+  "sourceFiles": 626,
+  "onlyChanged": [
+    "scripts/sim/run-wec-model-group.mjs"
+  ],
+  "allPhysicsHelpersAndInputDataIdentical": true
+}

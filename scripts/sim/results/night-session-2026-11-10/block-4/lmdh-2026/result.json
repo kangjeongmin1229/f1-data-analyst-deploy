@@ -1,0 +1,2753 @@
+{
+  "group": "wec-lmdh/2026",
+  "settings": {
+    "stop": {
+      "tolerance": 0.0001,
+      "cap": 2000,
+      "window": 10
+    },
+    "shrink": {
+      "lambda": 8,
+      "logScale": 0.1
+    },
+    "gripSource": "transfer"
+  },
+  "nCars": 48,
+  "nTracks": 6,
+  "folds": [
+    {
+      "kind": "track",
+      "hidden": "austin",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 98,
+          "objective": 1.0494535412083699,
+          "x": [
+            -0.17296918490068908,
+            0.722136937980463,
+            -0.11174627654767016
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008460810405634678,
+          "relativeObjectiveChange": 0.000002247434606376692
+        },
+        "models": {
+          "event": "end",
+          "iteration": 394,
+          "objective": 0.9981672447432863,
+          "x": [
+            -0.1726014867376967,
+            0.7215835383815074,
+            -0.11187341535658714,
+            0.002983140476299986,
+            0.0005467514775662788,
+            0.00023251992209415446,
+            -0.005699570782314448,
+            -0.0012214085431023324,
+            0.0005355098112575221,
+            0.004045319635355407,
+            0.0005551312350472353,
+            -0.0019617539079264884,
+            -0.002905584795420269,
+            -0.00029733626265295,
+            0.0014723972335440316
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009974631790741172,
+          "relativeObjectiveChange": 0.000006219018203856841
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "austin",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 112.074,
+            "simSec": 114.00654179612872,
+            "pct": 1.7243444475335101,
+            "classBest": true
+          },
+          "models": {
+            "track": "austin",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 112.074,
+            "simSec": 113.82157461843532,
+            "pct": 1.5593042261678125,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 112.445,
+            "simSec": 114.00654179612872,
+            "pct": 1.3887160799757492,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 112.445,
+            "simSec": 113.7568662240189,
+            "pct": 1.1666736840401315,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 112.457,
+            "simSec": 114.00654179612872,
+            "pct": 1.3778971483577873,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 112.457,
+            "simSec": 114.16193644123483,
+            "pct": 1.5160785377831942,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 112.84100000000001,
+            "simSec": 114.00654179612872,
+            "pct": 1.0329062983567283,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 112.84100000000001,
+            "simSec": 114.32703858315065,
+            "pct": 1.3169314195643933,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "catalunya",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 76,
+          "objective": 1.4252588590516804,
+          "x": [
+            -0.1362147662532512,
+            0.613170876451266,
+            -0.07799756485485466
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008879402209149845,
+          "relativeObjectiveChange": 2.5895758175477008e-8
+        },
+        "models": {
+          "event": "end",
+          "iteration": 338,
+          "objective": 1.3531225997272547,
+          "x": [
+            -0.1396782553420453,
+            0.6285764718881008,
+            -0.07687100758627519,
+            0.006281344390369479,
+            0.0010855302435462083,
+            0.0005019532871249817,
+            -0.0035712526285266244,
+            -0.0007600204206485192,
+            0.0006867462185627031,
+            0.002640197637289318,
+            0.0006252841718850111,
+            -0.0027308968290759646,
+            -0.005270355835098149,
+            -0.0011062009670210157,
+            0.0018119272149438653
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008943640476810621,
+          "relativeObjectiveChange": 0
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "17",
+            "realSec": 90.166,
+            "simSec": 90.62511250607592,
+            "pct": 0.5091858417540118,
+            "classBest": true
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "17",
+            "realSec": 90.166,
+            "simSec": 90.87373522494717,
+            "pct": 0.7849247221205058,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.72200000000001,
+            "simSec": 90.62511250607592,
+            "pct": -0.10679602954529743,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.72200000000001,
+            "simSec": 90.29906230977458,
+            "pct": -0.46619088007916476,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.78399999999999,
+            "simSec": 90.62511250607592,
+            "pct": -0.17501706680039808,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.78399999999999,
+            "simSec": 90.46664701046947,
+            "pct": -0.3495692958346397,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 91.571,
+            "simSec": 90.62511250607592,
+            "pct": -1.0329552958077026,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 91.571,
+            "simSec": 90.78587375599113,
+            "pct": -0.8573961669184227,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "imola",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 79,
+          "objective": 0.8165520138099069,
+          "x": [
+            -0.1191279248828905,
+            0.5528859177659136,
+            -0.0888670232371755
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008995919756449311,
+          "relativeObjectiveChange": 1.6096503663298733e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 435,
+          "objective": 0.7529243582758032,
+          "x": [
+            -0.12331957468317009,
+            0.5695229086268219,
+            -0.08901007970303715,
+            0.004959046166459533,
+            0.0009392189760534585,
+            0.0003634365361472973,
+            -0.006305670893665412,
+            -0.0015155673021745382,
+            0.0009963649669978065,
+            0.0029539545760935747,
+            0.0009367108408468879,
+            -0.0019717964210426995,
+            -0.0012249319039595885,
+            -0.0004131924489393033,
+            0.0004279422352491295
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007979029549698424,
+          "relativeObjectiveChange": 0.000001803919980392088
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.419,
+            "simSec": 89.16715662590929,
+            "pct": -1.3844915052043438,
+            "classBest": true
+          },
+          "models": {
+            "track": "imola",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.419,
+            "simSec": 89.07283083777747,
+            "pct": -1.4888122653673674,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.42,
+            "simSec": 89.16715662590929,
+            "pct": -1.385582143431452,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.42,
+            "simSec": 89.01813778959678,
+            "pct": -1.5503895270993384,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 90.576,
+            "simSec": 89.16715662590929,
+            "pct": -1.5554267952776812,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 90.576,
+            "simSec": 89.39746250193313,
+            "pct": -1.3011586933258878,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 91.258,
+            "simSec": 89.16715662590929,
+            "pct": -2.291134337910883,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 91.258,
+            "simSec": 89.22443000720733,
+            "pct": -2.2283744907763303,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "interlagos",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 85,
+          "objective": 1.3727768932827162,
+          "x": [
+            -0.11704853743085938,
+            0.5425183808215974,
+            -0.0688323144760393
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.000097301367147834,
+          "relativeObjectiveChange": 0.00004417025000380544
+        },
+        "models": {
+          "event": "end",
+          "iteration": 1566,
+          "objective": 1.3207935102005608,
+          "x": [
+            -0.11830176955102426,
+            0.543122203105112,
+            -0.07142018078799633,
+            0.005419875317502558,
+            0.0009994144634538206,
+            0.0005368469497658873,
+            -0.005148862498696298,
+            -0.00099910971231252,
+            0.0002050923703156028,
+            0.00244326605220373,
+            0.0009689224856645854,
+            -0.002184142639148499,
+            -0.0016789826942159814,
+            -0.000555444655514123,
+            0.0010230683368040272
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000967359386947475,
+          "relativeObjectiveChange": 3.919770031290528e-8
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 83.041,
+            "simSec": 82.64443850243752,
+            "pct": -0.4775490391041415,
+            "classBest": true
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 83.041,
+            "simSec": 82.57601776683562,
+            "pct": -0.5599429596998773,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 83.108,
+            "simSec": 82.64443850243752,
+            "pct": -0.5577820397103528,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 83.108,
+            "simSec": 82.4775739681983,
+            "pct": -0.7585623908669459,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 83.135,
+            "simSec": 82.64443850243752,
+            "pct": -0.5900781831508772,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 83.135,
+            "simSec": 82.87065884607458,
+            "pct": -0.3179661441335524,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 83.34100000000001,
+            "simSec": 82.64443850243752,
+            "pct": -0.8357969037598334,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 83.34100000000001,
+            "simSec": 82.744793560574,
+            "pct": -0.7153819121752947,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "monza",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 67,
+          "objective": 1.2414992206154807,
+          "x": [
+            -0.13096355555058675,
+            0.5936088589042853,
+            -0.05478390176962885
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00006888459719134321,
+          "relativeObjectiveChange": 0.000003266577172411677
+        },
+        "models": {
+          "event": "end",
+          "iteration": 368,
+          "objective": 1.1800838151676767,
+          "x": [
+            -0.13394371749600625,
+            0.6051112005594232,
+            -0.05547826326838898,
+            0.006142614722311698,
+            0.001324141533272475,
+            0.0008443822384648109,
+            -0.004547595655744398,
+            -0.0011726694736422607,
+            -0.00021717453971926417,
+            0.00207618048214106,
+            0.0006585218106477653,
+            -0.0018640552504410632,
+            -0.003536617149598542,
+            -0.0007483881581831059,
+            0.001348439652240681
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009253468303190016,
+          "relativeObjectiveChange": 5.977720190821265e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "monza",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 93.46000000000001,
+            "simSec": 94.34961761255794,
+            "pct": 0.9518699042990963,
+            "classBest": true
+          },
+          "models": {
+            "track": "monza",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 93.46000000000001,
+            "simSec": 94.47838175770941,
+            "pct": 1.0896445085698758,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 93.541,
+            "simSec": 94.34961761255794,
+            "pct": 0.8644526064056857,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 93.541,
+            "simSec": 94.26975493670483,
+            "pct": 0.7790754179502368,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 93.858,
+            "simSec": 94.34961761255794,
+            "pct": 0.5237887154615706,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 93.858,
+            "simSec": 94.15628973172487,
+            "pct": 0.31780959718390456,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 94.255,
+            "simSec": 94.34961761255794,
+            "pct": 0.10038471440023677,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 94.255,
+            "simSec": 94.50262009215493,
+            "pct": 0.2627129512014603,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "spa-francorchamps",
+      "trainRows": 40,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 111,
+          "objective": 1.2464119401393219,
+          "x": [
+            -0.07658048425688188,
+            0.327276173855803,
+            -0.05037932290023028
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000677463700334835,
+          "relativeObjectiveChange": 3.6506042258885505e-8
+        },
+        "models": {
+          "event": "end",
+          "iteration": 856,
+          "objective": 1.2078859006767524,
+          "x": [
+            -0.08538652192463478,
+            0.3697871681801473,
+            -0.05134419468759591,
+            0.0050719376426448005,
+            0.0009401640299696763,
+            0.00059576196171873,
+            -0.006055858167060469,
+            -0.0012875642208073014,
+            0.000573611647968254,
+            -0.0008170122396566916,
+            -0.0003877537047324686,
+            -0.001192939339943317,
+            0.0017777323656177743,
+            0.0006908156371043632,
+            0.00010093611840305381
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000903683245593867,
+          "relativeObjectiveChange": 1.933368416831812e-8
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 120.696,
+            "simSec": 122.4237203773665,
+            "pct": 1.4314644871134874,
+            "classBest": true
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 120.696,
+            "simSec": 122.3914932873963,
+            "pct": 1.4047634448501212,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 120.731,
+            "simSec": 122.4237203773665,
+            "pct": 1.4020594357426752,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 120.731,
+            "simSec": 122.07735347470926,
+            "pct": 1.1151679972080553,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 121.317,
+            "simSec": 122.4237203773665,
+            "pct": 0.9122549827035753,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 121.317,
+            "simSec": 122.68807108622562,
+            "pct": 1.1301557788484962,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 121.824,
+            "simSec": 122.4237203773665,
+            "pct": 0.4922842603809485,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 121.824,
+            "simSec": 122.24990462639235,
+            "pct": 0.3496065031458162,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Alpine A424",
+      "trainRows": 36,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 76,
+          "objective": 1.295165631556492,
+          "x": [
+            -0.15162118690667703,
+            0.6619037964817592,
+            -0.08549072555249429
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008791537452579323,
+          "relativeObjectiveChange": 0.000006563130497269735
+        },
+        "models": {
+          "event": "end",
+          "iteration": 658,
+          "objective": 1.2616954086591579,
+          "x": [
+            -0.14942634778322111,
+            0.6510256464139617,
+            -0.08559827856600094,
+            -0.003419302728376352,
+            -0.0009263979307159885,
+            0.0005506395111624801,
+            0.003966722635135252,
+            0.0010186860325025046,
+            -0.00185005065634145,
+            -0.000420963320952376,
+            -0.00003960288559329727,
+            0.0013066848306109659
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007502121973212983,
+          "relativeObjectiveChange": 1.319282604580906e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.42,
+            "simSec": 89.42294287972734,
+            "pct": -1.1026953331924938,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.42,
+            "simSec": 89.43391123931254,
+            "pct": -1.0905648757879471,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 120.731,
+            "simSec": 121.81453291580823,
+            "pct": 0.8974769659890525,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 120.731,
+            "simSec": 121.84590446261856,
+            "pct": 0.9234616317421063,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 83.108,
+            "simSec": 82.9161581142269,
+            "pct": -0.2308344392514594,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 83.108,
+            "simSec": 82.9236374159622,
+            "pct": -0.22183494252996372,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 112.074,
+            "simSec": 113.62161033599229,
+            "pct": 1.3808825740067254,
+            "classBest": true
+          },
+          "models": {
+            "track": "austin",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 112.074,
+            "simSec": 113.62771055799355,
+            "pct": 1.386325604505556,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.72200000000001,
+            "simSec": 90.7424332233775,
+            "pct": 0.022522897838994638,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Alpine A424",
+            "entry": "35",
+            "realSec": 90.72200000000001,
+            "simSec": 90.77134483042971,
+            "pct": 0.05439125066655226,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 93.858,
+            "simSec": 94.27738176397666,
+            "pct": 0.44682580491450796,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Alpine A424",
+            "entry": "36",
+            "realSec": 93.858,
+            "simSec": 94.29087715125546,
+            "pct": 0.46120432062846106,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "BMW M Hybrid V8",
+      "trainRows": 36,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 73,
+          "objective": 1.3436059843727604,
+          "x": [
+            -0.1322863812999756,
+            0.6028687040682945,
+            -0.07805745025337407
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008720862128686058,
+          "relativeObjectiveChange": 4.6473260073514414e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 238,
+          "objective": 1.31032667111622,
+          "x": [
+            -0.13598463340742917,
+            0.6181135719595848,
+            -0.07936839485842512,
+            0.003613776818539324,
+            0.000700619627057846,
+            0.0006903041851164264,
+            0.000450789413616192,
+            0.00021142958011355386,
+            -0.0017941615633749498,
+            -0.004070779516325495,
+            -0.0008862524667555093,
+            0.0011211219490122062
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008568723438062698,
+          "relativeObjectiveChange": 5.401436110810835e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 90.576,
+            "simSec": 89.26696848330793,
+            "pct": -1.445229991048469,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 90.576,
+            "simSec": 89.26817623389022,
+            "pct": -1.4438965797891057,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 121.317,
+            "simSec": 121.64475109499281,
+            "pct": 0.2701608966532376,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 121.317,
+            "simSec": 121.62657319550048,
+            "pct": 0.2551770943070464,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 83.135,
+            "simSec": 82.70279834225326,
+            "pct": -0.5198793020349424,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 83.135,
+            "simSec": 82.71298286472347,
+            "pct": -0.507628718682307,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 112.84100000000001,
+            "simSec": 113.27132091870759,
+            "pct": 0.38135156433174444,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "BMW M Hybrid V8",
+            "entry": "15",
+            "realSec": 112.84100000000001,
+            "simSec": 113.29465423008925,
+            "pct": 0.40202960811162036,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 91.571,
+            "simSec": 90.56331232274147,
+            "pct": -1.1004441114092156,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 91.571,
+            "simSec": 90.55123943139259,
+            "pct": -1.113628297831637,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 94.255,
+            "simSec": 94.16501582572688,
+            "pct": -0.0954688602971876,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "BMW M Hybrid V8",
+            "entry": "20",
+            "realSec": 94.255,
+            "simSec": 94.15790457810883,
+            "pct": -0.10301355035930992,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Cadillac V-Series.R",
+      "trainRows": 36,
+      "trainModels": [
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 84,
+          "objective": 1.2651013346745787,
+          "x": [
+            -0.12530950416171993,
+            0.5639355112527329,
+            -0.06580284031395565
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009331065477002909,
+          "relativeObjectiveChange": 5.689551267521942e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 428,
+          "objective": 1.2073080329185741,
+          "x": [
+            -0.128065132560627,
+            0.5740097535452275,
+            -0.06762918270721677,
+            0.005975549267953769,
+            0.0012260388418766505,
+            -0.0001235528329571843,
+            -0.004511889514245908,
+            -0.0012517265373207893,
+            -0.00026708601073902906,
+            -0.0013111257046324338,
+            -0.00039206826168649146,
+            0.00031766193739014175
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000981031475555394,
+          "relativeObjectiveChange": 9.13886914599972e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.419,
+            "simSec": 89.37364506189537,
+            "pct": -1.156123091501371,
+            "classBest": true
+          },
+          "models": {
+            "track": "imola",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.419,
+            "simSec": 89.38241352049525,
+            "pct": -1.146425507365434,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 120.696,
+            "simSec": 121.86963822521192,
+            "pct": 0.9723919808543036,
+            "classBest": true
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 120.696,
+            "simSec": 121.86971375877118,
+            "pct": 0.9724545625134029,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 83.041,
+            "simSec": 82.78809513751449,
+            "pct": -0.304554211155339,
+            "classBest": true
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 83.041,
+            "simSec": 82.80500542461205,
+            "pct": -0.28419043049571213,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 112.445,
+            "simSec": 113.3685911234146,
+            "pct": 0.8213714468536804,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 112.445,
+            "simSec": 113.39926966510906,
+            "pct": 0.8486546001236661,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.78399999999999,
+            "simSec": 90.72756459972851,
+            "pct": -0.06216447862121832,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Cadillac V-Series.R",
+            "entry": "12",
+            "realSec": 90.78399999999999,
+            "simSec": 90.73405831817462,
+            "pct": -0.05501154589506729,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 93.541,
+            "simSec": 94.31718483557171,
+            "pct": 0.829780348266218,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Cadillac V-Series.R",
+            "entry": "38",
+            "realSec": 93.541,
+            "simSec": 94.31704131622554,
+            "pct": 0.8296269189184802,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Genesis GMR-001-Hypercar",
+      "trainRows": 36,
+      "trainModels": [
+        "Cadillac V-Series.R",
+        "Alpine A424",
+        "BMW M Hybrid V8"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 81,
+          "objective": 1.0531553014385973,
+          "x": [
+            -0.13398459773060822,
+            0.6048672623678204,
+            -0.08048244623731503
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00006177388919748061,
+          "relativeObjectiveChange": 6.511918104785001e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 230,
+          "objective": 0.9938603361197422,
+          "x": [
+            -0.13765522726857338,
+            0.6177697076946737,
+            -0.08269303759385108,
+            0.0046195252315123754,
+            0.0009463923973227041,
+            0.0008977689874858343,
+            -0.005905562629078251,
+            -0.001413134695581847,
+            0.0007385393250277279,
+            0.0014708197502871197,
+            0.0004572137468018407,
+            -0.001556397451019423
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007827456024100954,
+          "relativeObjectiveChange": 0.0000012062900051068581
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 91.258,
+            "simSec": 89.29779063333142,
+            "pct": -2.147986331794016,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 91.258,
+            "simSec": 89.3123213752191,
+            "pct": -2.1320636270583337,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 121.824,
+            "simSec": 121.69035105741398,
+            "pct": -0.10970657882356516,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 121.824,
+            "simSec": 121.69596766038387,
+            "pct": -0.10509615479390444,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 83.34100000000001,
+            "simSec": 82.74180808169709,
+            "pct": -0.7189641572610372,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 83.34100000000001,
+            "simSec": 82.76706391504194,
+            "pct": -0.6886599452347153,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 112.457,
+            "simSec": 113.33303796101369,
+            "pct": 0.7789981601978413,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 112.457,
+            "simSec": 113.37868343177716,
+            "pct": 0.8195874261070157,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "17",
+            "realSec": 90.166,
+            "simSec": 90.61278348616912,
+            "pct": 0.495512151109212,
+            "classBest": true
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "17",
+            "realSec": 90.166,
+            "simSec": 90.62513665315444,
+            "pct": 0.5092126224457649,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 93.46000000000001,
+            "simSec": 94.18729456249874,
+            "pct": 0.7781880617362846,
+            "classBest": true
+          },
+          "models": {
+            "track": "monza",
+            "model": "Genesis GMR-001-Hypercar",
+            "entry": "19",
+            "realSec": 93.46000000000001,
+            "simSec": 94.19097648125995,
+            "pct": 0.7821276281403167,
+            "classBest": true
+          }
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "main": {
+    "control": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.22720264826835,
+        "cdA": 0.9714732711381721,
+        "clALow": 6.22720264826835,
+        "cdALow": 0.9714732711381721,
+        "muX": 1.3978992824544592,
+        "muY": 1.5289523401845646,
+        "muXTrac": 1.4852679876078627,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "perTrack": [
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.0787759005674218,
+          "simLap": 89.34022409943258,
+          "realLap": 90.419,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 310.4,
+          "meta": {
+            "event": "IMOLA",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.0797759005674266,
+          "simLap": 89.34022409943258,
+          "realLap": 90.42,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 308.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.2357759005674183,
+          "simLap": 89.34022409943258,
+          "realLap": 90.576,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 311.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.2997759005674254,
+          "simLap": 89.34022409943258,
+          "realLap": 90.64,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 311.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.341775900567427,
+          "simLap": 89.34022409943258,
+          "realLap": 90.682,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 308.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.5267759005674293,
+          "simLap": 89.34022409943258,
+          "realLap": 90.867,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 310.4,
+          "meta": {
+            "event": "IMOLA",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.9177759005674204,
+          "simLap": 89.34022409943258,
+          "realLap": 91.258,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 307.7,
+          "meta": {
+            "event": "IMOLA",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -2.875775900567433,
+          "simLap": 89.34022409943258,
+          "realLap": 92.21600000000001,
+          "shift": 0,
+          "rho": 1.1776842815741762,
+          "vMaxSim": 312.3646768871411,
+          "vMaxReal": 306.8,
+          "meta": {
+            "event": "IMOLA",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.0625546985523613,
+          "simLap": 121.75855469855236,
+          "realLap": 120.696,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 315,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.0275546985523647,
+          "simLap": 121.75855469855236,
+          "realLap": 120.731,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 312.3,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.9205546985523654,
+          "simLap": 121.75855469855236,
+          "realLap": 120.838,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 311.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.8185546985523615,
+          "simLap": 121.75855469855236,
+          "realLap": 120.94,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 315,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.4415546985523662,
+          "simLap": 121.75855469855236,
+          "realLap": 121.317,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 312.3,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.18555469855236595,
+          "simLap": 121.75855469855236,
+          "realLap": 121.573,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 313.2,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": -0.06544530144763883,
+          "simLap": 121.75855469855236,
+          "realLap": 121.824,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 314.1,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": -1.0704453014476343,
+          "simLap": 121.75855469855236,
+          "realLap": 122.829,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.798028753145,
+          "vMaxReal": 310.5,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.25522847062858034,
+          "simLap": 82.78577152937142,
+          "realLap": 83.041,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.30322847062858216,
+          "simLap": 82.78577152937142,
+          "realLap": 83.089,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.3222284706285876,
+          "simLap": 82.78577152937142,
+          "realLap": 83.108,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.34922847062858864,
+          "simLap": 82.78577152937142,
+          "realLap": 83.135,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.3822284706285899,
+          "simLap": 82.78577152937142,
+          "realLap": 83.168,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.5552284706285917,
+          "simLap": 82.78577152937142,
+          "realLap": 83.34100000000001,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.1982284706285924,
+          "simLap": 82.78577152937142,
+          "realLap": 83.98400000000001,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.4352284706285872,
+          "simLap": 82.78577152937142,
+          "realLap": 84.221,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.92845183480057,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 1.3206462038360058,
+          "simLap": 113.394646203836,
+          "realLap": 112.074,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 301.7,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.9496462038360107,
+          "simLap": 113.394646203836,
+          "realLap": 112.445,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.9376462038360103,
+          "simLap": 113.394646203836,
+          "realLap": 112.457,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 299.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.9206462038360144,
+          "simLap": 113.394646203836,
+          "realLap": 112.47399999999999,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 300,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.7116462038360112,
+          "simLap": 113.394646203836,
+          "realLap": 112.68299999999999,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 302.5,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.5536462038359957,
+          "simLap": 113.394646203836,
+          "realLap": 112.84100000000001,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 300,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.39664620383601346,
+          "simLap": 113.394646203836,
+          "realLap": 112.99799999999999,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.3146462038360056,
+          "simLap": 113.394646203836,
+          "realLap": 113.08,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.46169189242124,
+          "vMaxReal": 299.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.5001028911002834,
+          "simLap": 90.66610289110028,
+          "realLap": 90.166,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 306.8,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.187102891100281,
+          "simLap": 90.66610289110028,
+          "realLap": 90.479,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 310.3,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.05589710889972821,
+          "simLap": 90.66610289110028,
+          "realLap": 90.72200000000001,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 305.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.11789710889971161,
+          "simLap": 90.66610289110028,
+          "realLap": 90.78399999999999,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 304.2,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.14789710889971275,
+          "simLap": 90.66610289110028,
+          "realLap": 90.814,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 305.1,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.3168971088997239,
+          "simLap": 90.66610289110028,
+          "realLap": 90.983,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 306.8,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.9048971088997178,
+          "simLap": 90.66610289110028,
+          "realLap": 91.571,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 306.8,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.9838971088997255,
+          "simLap": 90.66610289110028,
+          "realLap": 91.65,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.3497750851615,
+          "vMaxReal": 305.1,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.7764901129182391,
+          "simLap": 94.23649011291825,
+          "realLap": 93.46000000000001,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 314.9,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "19",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.6954901129182502,
+          "simLap": 94.23649011291825,
+          "realLap": 93.541,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 318.6,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "38",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.37849011291824297,
+          "simLap": 94.23649011291825,
+          "realLap": 93.858,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 315.8,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "36",
+            "model": "Alpine A424",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.3364901129182414,
+          "simLap": 94.23649011291825,
+          "realLap": 93.9,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 314,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "12",
+            "model": "Cadillac V-Series.R",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.01850988708174839,
+          "simLap": 94.23649011291825,
+          "realLap": 94.255,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 317.6,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "20",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.20150988708175532,
+          "simLap": 94.23649011291825,
+          "realLap": 94.438,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 314.9,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "35",
+            "model": "Alpine A424",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.3305098870817602,
+          "simLap": 94.23649011291825,
+          "realLap": 94.56700000000001,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 305.9,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "17",
+            "model": "Genesis GMR-001-Hypercar",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.9135098870817586,
+          "simLap": 94.23649011291825,
+          "realLap": 95.15,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.43899105710597,
+          "vMaxReal": 309.5,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "15",
+            "model": "BMW M Hybrid V8",
+            "session": "Qualifying HYPERCAR"
+          }
+        }
+      ],
+      "score": 1.2497229367514555,
+      "x": [
+        -0.13503303205340453,
+        0.6051517872216249,
+        -0.07773168769437289
+      ]
+    },
+    "model": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.30217134023735,
+        "cdA": 0.9702723620562487,
+        "clALow": 6.30217134023735,
+        "cdALow": 0.9702723620562487,
+        "muX": 1.393424250270708,
+        "muY": 1.5240577737335865,
+        "muXTrac": 1.480513265912627,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "modelCars": {
+        "Alpine A424": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "rear",
+            "eMax": 50000,
+            "deployFrom": 0,
+            "regenMax": 50000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "label": "LMDh",
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.3093226876918855,
+          "cdA": 0.9707624937306073,
+          "clALow": 6.3093226876918855,
+          "cdALow": 0.9707624937306073,
+          "muX": 1.4009070317221508,
+          "muY": 1.5322420659461025,
+          "muXTrac": 1.4884637212047853,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "BMW M Hybrid V8": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "rear",
+            "eMax": 50000,
+            "deployFrom": 0,
+            "regenMax": 50000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "label": "LMDh",
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.293595272800404,
+          "cdA": 0.9707330798197326,
+          "clALow": 6.293595272800404,
+          "cdALow": 0.9707330798197326,
+          "muX": 1.3862583264206954,
+          "muY": 1.5162200445226355,
+          "muXTrac": 1.4728994718219888,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Cadillac V-Series.R": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "rear",
+            "eMax": 50000,
+            "deployFrom": 0,
+            "regenMax": 50000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "label": "LMDh",
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.305730613899002,
+          "cdA": 0.9683330349324945,
+          "clALow": 6.305730613899002,
+          "cdALow": 0.9683330349324945,
+          "muX": 1.396548464505836,
+          "muY": 1.527474883053258,
+          "muXTrac": 1.4838327435374505,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Genesis GMR-001-Hypercar": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "rear",
+            "eMax": 50000,
+            "deployFrom": 0,
+            "regenMax": 50000,
+            "regenShare": 0.4,
+            "etaRegen": 0.9
+          },
+          "label": "LMDh",
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.2991155697620815,
+          "cdA": 0.9714242370267773,
+          "clALow": 6.2991155697620815,
+          "cdALow": 0.9714242370267773,
+          "muX": 1.390455317515983,
+          "muY": 1.5208105035331063,
+          "muXTrac": 1.477358774860732,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        }
+      },
+      "x": [
+        -0.13823942211549964,
+        0.6171187995752606,
+        -0.07896862544204807,
+        0.005355699508999345,
+        0.0011341000844457424,
+        0.0005050210029095112,
+        -0.005155941030707371,
+        -0.0013617382769395285,
+        0.0004747207423497978,
+        0.0022396029355099475,
+        0.0005646099992136768,
+        -0.0020007452508805377,
+        -0.0021329470675864083,
+        -0.0004849934069419326,
+        0.0011864625052096238
+      ],
+      "score": 1.1981677223330571,
+      "models": [
+        "Alpine A424",
+        "BMW M Hybrid V8",
+        "Cadillac V-Series.R",
+        "Genesis GMR-001-Hypercar"
+      ],
+      "convergence": {
+        "event": "end",
+        "iteration": 408,
+        "objective": 1.1981677223330571,
+        "x": [
+          -0.13823942211549964,
+          0.6171187995752606,
+          -0.07896862544204807,
+          0.005355699508999345,
+          0.0011341000844457424,
+          0.0005050210029095112,
+          -0.005155941030707371,
+          -0.0013617382769395285,
+          0.0004747207423497978,
+          0.0022396029355099475,
+          0.0005646099992136768,
+          -0.0020007452508805377,
+          -0.0021329470675864083,
+          -0.0004849934069419326,
+          0.0011864625052096238
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00009748384059282689,
+        "relativeObjectiveChange": 5.278872772238354e-7
+      },
+      "shrink": {
+        "lambda": 8,
+        "logScale": 0.1
+      }
+    },
+    "ends": {
+      "base": {
+        "event": "end",
+        "iteration": 91,
+        "objective": 1.2497229367514555,
+        "x": [
+          -0.13503303205340453,
+          0.6051517872216249,
+          -0.07773168769437289
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00007663703976967806,
+        "relativeObjectiveChange": 7.47002306409649e-8
+      },
+      "models": {
+        "event": "end",
+        "iteration": 408,
+        "objective": 1.1981677223330571,
+        "x": [
+          -0.13823942211549964,
+          0.6171187995752606,
+          -0.07896862544204807,
+          0.005355699508999345,
+          0.0011341000844457424,
+          0.0005050210029095112,
+          -0.005155941030707371,
+          -0.0013617382769395285,
+          0.0004747207423497978,
+          0.0022396029355099475,
+          0.0005646099992136768,
+          -0.0020007452508805377,
+          -0.0021329470675864083,
+          -0.0004849934069419326,
+          0.0011864625052096238
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00009748384059282689,
+        "relativeObjectiveChange": 5.278872772238354e-7
+      }
+    },
+    "pass": true,
+    "refKg": null,
+    "refKW": null
+  }
+}

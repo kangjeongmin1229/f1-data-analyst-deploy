@@ -1,0 +1,13 @@
+{
+  "lostSessionId": 1755,
+  "lastObservedAt": "2026-11-10T16:02:25Z",
+  "originalLogHashes": {
+    "lmh-2025/objectives.jsonl": "941beb1eda3252149e16043d02d48a5507382c46b339d29c065cd45952ecda16",
+    "lmh-2026/objectives.jsonl": "03283fce1377a5b72543b0ed0d7a79068aadde2a22080c11e31d947621c42ad5",
+    "lmdh-2025/objectives.jsonl": "b997d6d1071529fca9ae325f7a11601dc6918d7c4446dd737cc6df4dd0bc1551",
+    "lmdh-2026/objectives.jsonl": "4fef7f59ffa6999b91f59b24e075ece5959dc7f5be8a96a03478e32e9566ee38"
+  },
+  "reason": "Execution handle no longer exists; incomplete group logs stopped advancing; no final status file",
+  "restartLimit": 1,
+  "deadlineUnchanged": true
+}

@@ -1,0 +1,32 @@
+{
+  "at": "2026-11-10T16:12:04.403759+00:00",
+  "snapshot": "Completed Hypercar checkpoint. Optional LMGT3 is still running in the original time box.",
+  "timedOut": false,
+  "control": {
+    "code": 0,
+    "preserved": true
+  },
+  "groups": [
+    {
+      "label": "lmh-2025",
+      "code": 0,
+      "complete": true
+    },
+    {
+      "label": "lmh-2026",
+      "code": 0,
+      "complete": true
+    },
+    {
+      "label": "lmdh-2025",
+      "code": 0,
+      "complete": true
+    },
+    {
+      "label": "lmdh-2026",
+      "code": 0,
+      "complete": true
+    }
+  ],
+  "gt3": []
+}

@@ -1,0 +1,2867 @@
+{
+  "group": "wec-lmh/2026",
+  "settings": {
+    "stop": {
+      "tolerance": 0.0001,
+      "cap": 2000,
+      "window": 10
+    },
+    "shrink": {
+      "lambda": 8,
+      "logScale": 0.1
+    },
+    "gripSource": "transfer"
+  },
+  "nCars": 54,
+  "nTracks": 6,
+  "folds": [
+    {
+      "kind": "track",
+      "hidden": "austin",
+      "trainRows": 45,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 78,
+          "objective": 0.742669024053703,
+          "x": [
+            -0.17585482037065,
+            0.7221922406172049,
+            -0.11347222077520883
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009451733332979662,
+          "relativeObjectiveChange": 3.503221448486471e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 392,
+          "objective": 0.7289436773887855,
+          "x": [
+            -0.17610829341766512,
+            0.7218905402664533,
+            -0.11334298753799035,
+            -0.002638052122002836,
+            -0.0005109792353187195,
+            -0.0016889493319744877,
+            0.0020808836999744638,
+            0.00024209258499847388,
+            0.0015548653895393677,
+            0.0022075636835210276,
+            0.0002416347654749456,
+            -0.0009166945449020945,
+            -0.0014137460171444638,
+            -0.00004508354034840578,
+            0.0007910743243745974
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009769615165639012,
+          "relativeObjectiveChange": 0.0000037132373147397146
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "austin",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 112.02000000000001,
+            "simSec": 114.12550398203737,
+            "pct": 1.879578630635037,
+            "classBest": true
+          },
+          "models": {
+            "track": "austin",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 112.02000000000001,
+            "simSec": 114.02876439100456,
+            "pct": 1.7932194170724447,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 112.495,
+            "simSec": 114.12550398203737,
+            "pct": 1.4494012907572573,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 112.495,
+            "simSec": 114.29243096390806,
+            "pct": 1.5977874251371649,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 112.67099999999999,
+            "simSec": 114.12550398203737,
+            "pct": 1.2909302145515555,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 112.67099999999999,
+            "simSec": 114.22533500839049,
+            "pct": 1.3795342265449761,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 112.947,
+            "simSec": 114.12550398203737,
+            "pct": 1.0434132664323803,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 112.947,
+            "simSec": 114.01472819818275,
+            "pct": 0.9453355982741884,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "catalunya",
+      "trainRows": 45,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 73,
+          "objective": 1.1572873764633296,
+          "x": [
+            -0.15347904735329423,
+            0.6757982921246193,
+            -0.08551481526825075
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007630064188379748,
+          "relativeObjectiveChange": 6.65341659773098e-8
+        },
+        "models": {
+          "event": "end",
+          "iteration": 490,
+          "objective": 1.1231860184470097,
+          "x": [
+            -0.15587305879115565,
+            0.6826640145957019,
+            -0.08559529419218456,
+            -0.0020635142204653593,
+            -0.0004203634895973266,
+            -0.0008585217616544779,
+            0.004178566904900902,
+            0.000812042208741149,
+            0.001595572759977617,
+            0.00199783713324557,
+            0.0007262099435118964,
+            -0.001383801784402177,
+            -0.0039555071380830645,
+            -0.0011707882674552531,
+            0.00026509172584399386
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000785790961882471,
+          "relativeObjectiveChange": 0.0000022139048778490687
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.336,
+            "simSec": 90.6425741281716,
+            "pct": 0.33937093536531293,
+            "classBest": true
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.336,
+            "simSec": 90.87863377818536,
+            "pct": 0.6006838671021031,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.55199999999999,
+            "simSec": 90.6425741281716,
+            "pct": 0.10002443697720853,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.55199999999999,
+            "simSec": 90.46648922772751,
+            "pct": -0.09443278146532563,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 91.417,
+            "simSec": 90.6425741281716,
+            "pct": -0.8471355129006652,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 91.417,
+            "simSec": 90.77560085022799,
+            "pct": -0.7016191187328547,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 91.628,
+            "simSec": 90.6425741281716,
+            "pct": -1.0754636921338379,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 91.628,
+            "simSec": 90.56308696119892,
+            "pct": -1.1622135578655879,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "imola",
+      "trainRows": 45,
+      "trainModels": [
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie",
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 85,
+          "objective": 0.9802742889968988,
+          "x": [
+            -0.13695819483909416,
+            0.6127196331030255,
+            -0.08408899149616522
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008521884839918226,
+          "relativeObjectiveChange": 0.0000014621850163987204
+        },
+        "models": {
+          "event": "end",
+          "iteration": 547,
+          "objective": 0.959232388628695,
+          "x": [
+            -0.14153735204400603,
+            0.629454568057934,
+            -0.08630506887125625,
+            -0.0024114882186188832,
+            -0.00033307099800126234,
+            -0.0014224231597637549,
+            0.0036828771139990222,
+            0.0006523265827961013,
+            0.0011848460493811448,
+            0.00039035906262218663,
+            0.0001900496800158647,
+            0.000003011773903319867,
+            -0.002367275591348101,
+            -0.0007038622128992301,
+            0.0001449542786159519
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009197179800102262,
+          "relativeObjectiveChange": 0.000002089317330367102
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.088,
+            "simSec": 89.30385405327362,
+            "pct": -0.8704221946611912,
+            "classBest": true
+          },
+          "models": {
+            "track": "imola",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.088,
+            "simSec": 89.19883002920088,
+            "pct": -0.9870015660233489,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.138,
+            "simSec": 89.30385405327362,
+            "pct": -0.9254098678985301,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.138,
+            "simSec": 89.40162237214795,
+            "pct": -0.8169447157159615,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 90.2,
+            "simSec": 89.30385405327362,
+            "pct": -0.9935099187653895,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 90.2,
+            "simSec": 89.30482507167089,
+            "pct": -0.9924334016952474,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "imola",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 90.806,
+            "simSec": 89.30385405327362,
+            "pct": -1.6542364455282343,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 90.806,
+            "simSec": 89.39430622772608,
+            "pct": -1.5546260954936053,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "interlagos",
+      "trainRows": 45,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 74,
+          "objective": 1.0065377758257819,
+          "x": [
+            -0.1039037229692656,
+            0.47765694864028185,
+            -0.06729436105006244
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00008755136359173132,
+          "relativeObjectiveChange": 0.000005260011803268654
+        },
+        "models": {
+          "event": "end",
+          "iteration": 427,
+          "objective": 0.9849590889302575,
+          "x": [
+            -0.10732958827593367,
+            0.4902789156905327,
+            -0.06653178681132249,
+            -0.002792128018724608,
+            -0.0005935302963186694,
+            -0.001395171517393923,
+            0.004438743573855618,
+            0.001072569840237428,
+            0.0024956228085530703,
+            0.00015245851126169916,
+            0.0002747500096146884,
+            -0.0011954234974066278,
+            -0.0009416125137521397,
+            -0.00029459503382551155,
+            0.000016942825868485288
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009633531659807189,
+          "relativeObjectiveChange": 1.4213723997791305e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 83.387,
+            "simSec": 82.59387873651477,
+            "pct": -0.9511329865389495,
+            "classBest": true
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 83.387,
+            "simSec": 82.47167549289905,
+            "pct": -1.0976825009905045,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 83.402,
+            "simSec": 82.59387873651477,
+            "pct": -0.9689471037687802,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 83.402,
+            "simSec": 82.61593168067247,
+            "pct": -0.9425053587774013,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 83.578,
+            "simSec": 82.59387873651477,
+            "pct": -1.1774884102099037,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 83.578,
+            "simSec": 82.72513101881162,
+            "pct": -1.0204467457804456,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 84.048,
+            "simSec": 82.59387873651477,
+            "pct": -1.7301081090391635,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 84.048,
+            "simSec": 82.66194790113457,
+            "pct": -1.649119668362642,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "monza",
+      "trainRows": 45,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 78,
+          "objective": 1.0077546393774883,
+          "x": [
+            -0.1406793820189191,
+            0.6227050565410527,
+            -0.055111446638329925
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009832750817462266,
+          "relativeObjectiveChange": 6.169097181828719e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 987,
+          "objective": 0.9963791056295538,
+          "x": [
+            -0.14200955158366205,
+            0.626544798506533,
+            -0.05576138722840441,
+            -0.0024159562035102485,
+            -0.0005454051532148131,
+            -0.0010851798280383951,
+            0.002634030282901677,
+            0.00040753345819679015,
+            0.00252888716344856,
+            -0.0000682738625965886,
+            0.00017028069957997162,
+            -0.0011962355130425194,
+            -0.0001782806847226483,
+            -0.00005321303107594739,
+            -0.0002769959259015511
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000964259020049818,
+          "relativeObjectiveChange": 4.0819631452748695e-8
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "monza",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 93.364,
+            "simSec": 94.42372076738188,
+            "pct": 1.1350421654833465,
+            "classBest": true
+          },
+          "models": {
+            "track": "monza",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 93.364,
+            "simSec": 94.36355921973998,
+            "pct": 1.0706045368021666,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 93.61699999999999,
+            "simSec": 94.42372076738188,
+            "pct": 0.8617246519135202,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 93.61699999999999,
+            "simSec": 94.42493724786944,
+            "pct": 0.8630240745478357,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 94.49199999999999,
+            "simSec": 94.42372076738188,
+            "pct": -0.07225927339680194,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 94.49199999999999,
+            "simSec": 94.5049710498791,
+            "pct": 0.013727140794039805,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 94.73400000000001,
+            "simSec": 94.42372076738188,
+            "pct": -0.3275267935673898,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 94.73400000000001,
+            "simSec": 94.43634253469867,
+            "pct": -0.3142034172539332,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "track",
+      "hidden": "spa-francorchamps",
+      "trainRows": 45,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 47,
+          "objective": 1.117600541121351,
+          "x": [
+            -0.02523542221622372,
+            0.029775342259071608,
+            -0.046909922437083515
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009708172561343972,
+          "relativeObjectiveChange": 0.0000974000121268351
+        },
+        "models": {
+          "event": "end",
+          "iteration": 366,
+          "objective": 1.069732535894145,
+          "x": [
+            -0.028376611116466263,
+            0.049532701248988294,
+            -0.04098966935940111,
+            -0.004773798381458776,
+            -0.0006117218528061476,
+            0.000008708922090502798,
+            0.006147773084761015,
+            0.001006750855227871,
+            0.000909720762004454,
+            -0.0037677482844134585,
+            -0.0008612211766159329,
+            -0.0006279485989243922,
+            0.0007544342463764958,
+            -0.00010283854903806258,
+            -7.76154374935897e-8
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009079692800840339,
+          "relativeObjectiveChange": 0.000002488347859335822
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 120.653,
+            "simSec": 123.09307898698115,
+            "pct": 2.022393962007696,
+            "classBest": true
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 120.653,
+            "simSec": 123.27633711999442,
+            "pct": 2.1742825458085813,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 121.013,
+            "simSec": 123.09307898698115,
+            "pct": 1.718888868948909,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 121.013,
+            "simSec": 123.32700774179106,
+            "pct": 1.9121976496666138,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 121.117,
+            "simSec": 123.09307898698115,
+            "pct": 1.6315455196059592,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 121.117,
+            "simSec": 122.74579546070595,
+            "pct": 1.3448115959823426,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "7",
+            "realSec": 121.592,
+            "simSec": 123.09307898698115,
+            "pct": 1.2345211748973295,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "7",
+            "realSec": 121.592,
+            "simSec": 123.03305666660982,
+            "pct": 1.185157466453246,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Aston Martin Valkyrie",
+      "trainRows": 42,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 76,
+          "objective": 1.0015470185791744,
+          "x": [
+            -0.13836353484278208,
+            0.6144437884754959,
+            -0.07390999471150364
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00006414819127398275,
+          "relativeObjectiveChange": 6.777611853084144e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 264,
+          "objective": 0.9878530817644535,
+          "x": [
+            -0.14168681736782046,
+            0.6258278011464218,
+            -0.07503435802499842,
+            0.0028275095599203373,
+            0.0005417462708099593,
+            0.0012034534461984746,
+            -0.0004659509615370372,
+            -0.000005527671842292922,
+            -0.0011802107048297901,
+            -0.0022356844502710244,
+            -0.0004715778344299636,
+            -0.000028822891817617343
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009798024922125226,
+          "relativeObjectiveChange": 2.761616937352329e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 90.806,
+            "simSec": 89.37566704335363,
+            "pct": -1.5751524752179002,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 90.806,
+            "simSec": 89.39420529799916,
+            "pct": -1.554737244235882,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 121.013,
+            "simSec": 121.75552338816544,
+            "pct": 0.6135897698308801,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 121.013,
+            "simSec": 121.76991423699694,
+            "pct": 0.6254817556766046,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 83.578,
+            "simSec": 82.78769797426918,
+            "pct": -0.9455861898236662,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 83.578,
+            "simSec": 82.81118200511939,
+            "pct": -0.9174878495305072,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 112.495,
+            "simSec": 113.4446736586152,
+            "pct": 0.8441918828527406,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 112.495,
+            "simSec": 113.49141773175675,
+            "pct": 0.8857440168511976,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 91.417,
+            "simSec": 90.70747174459898,
+            "pct": -0.7761447601660754,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Aston Martin Valkyrie",
+            "entry": "007",
+            "realSec": 91.417,
+            "simSec": 90.72450698299951,
+            "pct": -0.7575101097175407,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 94.49199999999999,
+            "simSec": 94.28607485353248,
+            "pct": -0.2179286568889549,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Aston Martin Valkyrie",
+            "entry": "009",
+            "realSec": 94.49199999999999,
+            "simSec": 94.29741424640197,
+            "pct": -0.20592828345047387,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Ferrari 499P",
+      "trainRows": 36,
+      "trainModels": [
+        "Toyota TR010 Hybrid",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 71,
+          "objective": 1.0297760294371627,
+          "x": [
+            -0.1663705016805589,
+            0.7088174585802169,
+            -0.09369935031622348
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00004827327723166963,
+          "relativeObjectiveChange": 0.000010908990296444683
+        },
+        "models": {
+          "event": "end",
+          "iteration": 335,
+          "objective": 1.0250018156096243,
+          "x": [
+            -0.1685148304562884,
+            0.7161540257967995,
+            -0.0960728103161268,
+            -0.0014971428775505484,
+            -0.00048307594071743593,
+            -0.0007707129561797589,
+            0.0015813240504548532,
+            0.0005974424775122923,
+            -0.000382446470680515,
+            0.00007459344410472893,
+            0.00010883484074500078,
+            0.0009700368288375974
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00007559158936398802,
+          "relativeObjectiveChange": 0.0000012191880214272512
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.088,
+            "simSec": 89.49394227185026,
+            "pct": -0.6594193767757495,
+            "classBest": true
+          },
+          "models": {
+            "track": "imola",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.088,
+            "simSec": 89.49802027878646,
+            "pct": -0.6548926840572955,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 121.117,
+            "simSec": 121.81725842361156,
+            "pct": 0.5781669159668379,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 121.117,
+            "simSec": 121.81394269940773,
+            "pct": 0.5754292951507534,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 83.387,
+            "simSec": 82.99493159405229,
+            "pct": -0.47017929167341155,
+            "classBest": true
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 83.387,
+            "simSec": 83.00681255414928,
+            "pct": -0.45593131525384356,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 112.02000000000001,
+            "simSec": 113.81537358293619,
+            "pct": 1.6027259265632754,
+            "classBest": true
+          },
+          "models": {
+            "track": "austin",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 112.02000000000001,
+            "simSec": 113.83888840176125,
+            "pct": 1.6237175520096736,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.55199999999999,
+            "simSec": 90.82771499212112,
+            "pct": 0.30448249858769927,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 90.55199999999999,
+            "simSec": 90.82897144379223,
+            "pct": 0.30587004571100973,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 93.364,
+            "simSec": 94.31772679685137,
+            "pct": 1.0215144990053604,
+            "classBest": true
+          },
+          "models": {
+            "track": "monza",
+            "model": "Ferrari 499P",
+            "entry": "50",
+            "realSec": 93.364,
+            "simSec": 94.31310919843368,
+            "pct": 1.0165686971784327,
+            "classBest": true
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Peugeot 9X8",
+      "trainRows": 42,
+      "trainModels": [
+        "Ferrari 499P",
+        "Toyota TR010 Hybrid",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 116,
+          "objective": 1.0212192125944195,
+          "x": [
+            -0.13451253235246174,
+            0.5938360883907046,
+            -0.07229332041130772
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000622653420254693,
+          "relativeObjectiveChange": 3.827141579099933e-8
+        },
+        "models": {
+          "event": "end",
+          "iteration": 475,
+          "objective": 0.9979011561999849,
+          "x": [
+            -0.13735824490486265,
+            0.6014928389199011,
+            -0.07467221073325721,
+            -0.002747882917041227,
+            -0.0006545349451242076,
+            -0.0012577613665392697,
+            0.0038363214500218186,
+            0.000827161061265694,
+            0.0012901430550245558,
+            -0.0010948684617006217,
+            -0.00025463033024760145,
+            -0.000048485893481025434
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009286019798848688,
+          "relativeObjectiveChange": 0
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 90.2,
+            "simSec": 89.40929606872943,
+            "pct": -0.8766118971957559,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 90.2,
+            "simSec": 89.43577933442327,
+            "pct": -0.8472512922136688,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 120.653,
+            "simSec": 121.83621769874267,
+            "pct": 0.9806782249448087,
+            "classBest": true
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 120.653,
+            "simSec": 121.86764031969258,
+            "pct": 1.0067220207475858,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 83.402,
+            "simSec": 82.81156840292678,
+            "pct": -0.707934578395264,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 83.402,
+            "simSec": 82.84828700477465,
+            "pct": -0.6639085336387018,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 112.947,
+            "simSec": 113.47453425525256,
+            "pct": 0.46706353887449037,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 112.947,
+            "simSec": 113.53500398921149,
+            "pct": 0.5206016885897613,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 91.628,
+            "simSec": 90.77912423206995,
+            "pct": -0.9264370802921085,
+            "classBest": false
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 91.628,
+            "simSec": 90.81566687561819,
+            "pct": -0.8865555554872007,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 93.61699999999999,
+            "simSec": 94.32977866916434,
+            "pct": 0.7613773878295094,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Peugeot 9X8",
+            "entry": "94",
+            "realSec": 93.61699999999999,
+            "simSec": 94.3462594958956,
+            "pct": 0.7789819112934637,
+            "classBest": false
+          }
+        }
+      ]
+    },
+    {
+      "kind": "model",
+      "hidden": "Toyota TR010 Hybrid",
+      "trainRows": 42,
+      "trainModels": [
+        "Ferrari 499P",
+        "Peugeot 9X8",
+        "Aston Martin Valkyrie"
+      ],
+      "convergence": {
+        "base": {
+          "event": "end",
+          "iteration": 90,
+          "objective": 1.1264281595373717,
+          "x": [
+            -0.14307116037944123,
+            0.6295392849032234,
+            -0.08057490988801239
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.00009530347105701775,
+          "relativeObjectiveChange": 8.198347678889144e-7
+        },
+        "models": {
+          "event": "end",
+          "iteration": 256,
+          "objective": 1.1053649420052796,
+          "x": [
+            -0.14634626196542844,
+            0.6402061401597072,
+            -0.08178100095694962,
+            -0.003205984332860106,
+            -0.000781573459867642,
+            -0.0009680148677055041,
+            0.003309512673382357,
+            0.0006902729204007676,
+            0.0017634693565385664,
+            -0.00009748891560135587,
+            0.00014067382831965287,
+            -0.0007879003973035286
+          ],
+          "stopReason": "tolerance",
+          "capHit": false,
+          "cap": 2000,
+          "tolerance": 0.0001,
+          "simplexSize": 0.0000851282447946744,
+          "relativeObjectiveChange": 1.0856319737927352e-7
+        }
+      },
+      "pass": true,
+      "errors": [
+        {
+          "base": {
+            "track": "imola",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.138,
+            "simSec": 89.39003552682337,
+            "pct": -0.8297992779700447,
+            "classBest": false
+          },
+          "models": {
+            "track": "imola",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.138,
+            "simSec": 89.4116810528689,
+            "pct": -0.8057855145788717,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "spa-francorchamps",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "7",
+            "realSec": 121.592,
+            "simSec": 121.75644178381093,
+            "pct": 0.13524062751737453,
+            "classBest": false
+          },
+          "models": {
+            "track": "spa-francorchamps",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "7",
+            "realSec": 121.592,
+            "simSec": 121.7767341538687,
+            "pct": 0.15192952979530272,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "interlagos",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 84.048,
+            "simSec": 82.82091560786864,
+            "pct": -1.4599804779784842,
+            "classBest": false
+          },
+          "models": {
+            "track": "interlagos",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 84.048,
+            "simSec": 82.85265563758615,
+            "pct": -1.4222163078405736,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "austin",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 112.67099999999999,
+            "simSec": 113.50784459026981,
+            "pct": 0.7427329040035291,
+            "classBest": false
+          },
+          "models": {
+            "track": "austin",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 112.67099999999999,
+            "simSec": 113.55994137161058,
+            "pct": 0.7889708723722855,
+            "classBest": false
+          }
+        },
+        {
+          "base": {
+            "track": "catalunya",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.336,
+            "simSec": 90.73016904384758,
+            "pct": 0.43633661424855585,
+            "classBest": true
+          },
+          "models": {
+            "track": "catalunya",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 90.336,
+            "simSec": 90.75292857209833,
+            "pct": 0.46153092022929165,
+            "classBest": true
+          }
+        },
+        {
+          "base": {
+            "track": "monza",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 94.73400000000001,
+            "simSec": 94.27611894868164,
+            "pct": -0.48333338750434773,
+            "classBest": false
+          },
+          "models": {
+            "track": "monza",
+            "model": "Toyota TR010 Hybrid",
+            "entry": "8",
+            "realSec": 94.73400000000001,
+            "simSec": 94.29055677393983,
+            "pct": -0.46809300363140904,
+            "classBest": false
+          }
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "main": {
+    "control": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.388639720111363,
+        "cdA": 0.9692120011839189,
+        "clALow": 6.388639720111363,
+        "cdALow": 0.9692120011839189,
+        "muX": 1.3854926315139544,
+        "muY": 1.5153825657183875,
+        "muXTrac": 1.4720859209835762,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "perTrack": [
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.6765692300325554,
+          "simLap": 89.41143076996744,
+          "realLap": 90.088,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 310.4,
+          "meta": {
+            "event": "IMOLA",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.7155692300325569,
+          "simLap": 89.41143076996744,
+          "realLap": 90.127,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 308.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.7265692300325668,
+          "simLap": 89.41143076996744,
+          "realLap": 90.138,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 311.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.7885692300325644,
+          "simLap": 89.41143076996744,
+          "realLap": 90.2,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 314.1,
+          "meta": {
+            "event": "IMOLA",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.803569230032565,
+          "simLap": 89.41143076996744,
+          "realLap": 90.215,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 308.6,
+          "meta": {
+            "event": "IMOLA",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -0.8625692300325625,
+          "simLap": 89.41143076996744,
+          "realLap": 90.274,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 310.4,
+          "meta": {
+            "event": "IMOLA",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.394569230032559,
+          "simLap": 89.41143076996744,
+          "realLap": 90.806,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 312.2,
+          "meta": {
+            "event": "IMOLA",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.5555692300325603,
+          "simLap": 89.41143076996744,
+          "realLap": 90.967,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 311.3,
+          "meta": {
+            "event": "IMOLA",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "imola",
+          "grip": 1.1358,
+          "rmsKph": 0,
+          "dt": -1.583569230032566,
+          "simLap": 89.41143076996744,
+          "realLap": 90.995,
+          "shift": 0,
+          "rho": 1.1787434939260901,
+          "vMaxSim": 312.24507223852964,
+          "vMaxReal": 314.1,
+          "meta": {
+            "event": "IMOLA",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 1.1361279424556159,
+          "simLap": 121.78912794245562,
+          "realLap": 120.653,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 312.3,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.7761279424556164,
+          "simLap": 121.78912794245562,
+          "realLap": 121.013,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 315,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.737127942455615,
+          "simLap": 121.78912794245562,
+          "realLap": 121.052,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 315,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.6721279424556172,
+          "simLap": 121.78912794245562,
+          "realLap": 121.117,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 311.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.5911279424556284,
+          "simLap": 121.78912794245562,
+          "realLap": 121.198,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 311.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.19712794245562293,
+          "simLap": 121.78912794245562,
+          "realLap": 121.592,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 312.3,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": 0.012127942455620655,
+          "simLap": 121.78912794245562,
+          "realLap": 121.777,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 308.7,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": -0.0588720575443773,
+          "simLap": 121.78912794245562,
+          "realLap": 121.848,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 311.4,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "spa-francorchamps",
+          "grip": 1.0246,
+          "rmsKph": 0,
+          "dt": -0.3748720575443798,
+          "simLap": 121.78912794245562,
+          "realLap": 122.164,
+          "shift": 0,
+          "rho": 1.166992835579077,
+          "vMaxSim": 310.81126692007723,
+          "vMaxReal": 312.3,
+          "meta": {
+            "event": "SPA FRANCORCHAMPS",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.5423130566820333,
+          "simLap": 82.84468694331797,
+          "realLap": 83.387,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.5573130566820339,
+          "simLap": 82.84468694331797,
+          "realLap": 83.402,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.7333130566820358,
+          "simLap": 82.84468694331797,
+          "realLap": 83.578,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.7803130566820329,
+          "simLap": 82.84468694331797,
+          "realLap": 83.625,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -0.9873130566820265,
+          "simLap": 82.84468694331797,
+          "realLap": 83.832,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.165313056682038,
+          "simLap": 82.84468694331797,
+          "realLap": 84.01,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.2033130566820347,
+          "simLap": 82.84468694331797,
+          "realLap": 84.048,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.3063130566820291,
+          "simLap": 82.84468694331797,
+          "realLap": 84.151,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "interlagos",
+          "grip": 0.9823,
+          "rmsKph": 0,
+          "dt": -1.3423130566820305,
+          "simLap": 82.84468694331797,
+          "realLap": 84.187,
+          "shift": 0,
+          "rho": 1.0703793661701453,
+          "vMaxSim": 313.9064026520556,
+          "vMaxReal": null,
+          "meta": {
+            "event": "SAO PAULO",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 1.523071376054375,
+          "simLap": 113.54307137605439,
+          "realLap": 112.02000000000001,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 300,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 1.4380713760543955,
+          "simLap": 113.54307137605439,
+          "realLap": 112.10499999999999,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 1.0480713760543807,
+          "simLap": 113.54307137605439,
+          "realLap": 112.495,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 299.2,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.872071376054393,
+          "simLap": 113.54307137605439,
+          "realLap": 112.67099999999999,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 303.4,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.8140713760543861,
+          "simLap": 113.54307137605439,
+          "realLap": 112.729,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.5960713760543825,
+          "simLap": 113.54307137605439,
+          "realLap": 112.947,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 296.7,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.5000713760543789,
+          "simLap": 113.54307137605439,
+          "realLap": 113.043,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.3230713760543864,
+          "simLap": 113.54307137605439,
+          "realLap": 113.22,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 300.8,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "austin",
+          "grip": 0.9966,
+          "rmsKph": 0,
+          "dt": 0.036071376054380266,
+          "simLap": 113.54307137605439,
+          "realLap": 113.507,
+          "shift": 0,
+          "rho": 1.104255454756213,
+          "vMaxSim": 305.43205432958155,
+          "vMaxReal": 298.3,
+          "meta": {
+            "event": "CIRCUIT OF THE AMERICAS",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.4224286188332371,
+          "simLap": 90.75842861883324,
+          "realLap": 90.336,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 305.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": 0.20642861883324315,
+          "simLap": 90.75842861883324,
+          "realLap": 90.55199999999999,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 306.8,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.0455713811667664,
+          "simLap": 90.75842861883324,
+          "realLap": 90.804,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 303.4,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.1945713811667673,
+          "simLap": 90.75842861883324,
+          "realLap": 90.953,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 305.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.658571381166766,
+          "simLap": 90.75842861883324,
+          "realLap": 91.417,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 305.9,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.6845713811667622,
+          "simLap": 90.75842861883324,
+          "realLap": 91.443,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 307.7,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.7495713811667599,
+          "simLap": 90.75842861883324,
+          "realLap": 91.508,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 301.7,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.8695713811667645,
+          "simLap": 90.75842861883324,
+          "realLap": 91.628,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 304.2,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "catalunya",
+          "grip": 0.99,
+          "rmsKph": 0,
+          "dt": -0.9545713811667582,
+          "simLap": 90.75842861883324,
+          "realLap": 91.713,
+          "shift": 0,
+          "rho": 1.1615839885997932,
+          "vMaxSim": 306.33572152456816,
+          "vMaxReal": 303.4,
+          "meta": {
+            "event": "BARCELONA-CATALUNYA",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.9340672653382143,
+          "simLap": 94.29806726533822,
+          "realLap": 93.364,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 314,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "50",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.7250672653382111,
+          "simLap": 94.29806726533822,
+          "realLap": 93.57300000000001,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 310.3,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "51",
+            "model": "Ferrari 499P",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.6810672653382284,
+          "simLap": 94.29806726533822,
+          "realLap": 93.61699999999999,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 316.7,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "94",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.41806726533822314,
+          "simLap": 94.29806726533822,
+          "realLap": 93.88,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 312.1,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "83",
+            "model": "Ferrari 499P",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": 0.2140672653382154,
+          "simLap": 94.29806726533822,
+          "realLap": 94.084,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 311.2,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "93",
+            "model": "Peugeot 9X8",
+            "session": "Hyperpole HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.19393273466177163,
+          "simLap": 94.29806726533822,
+          "realLap": 94.49199999999999,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 319.5,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "009",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.32893273466179096,
+          "simLap": 94.29806726533822,
+          "realLap": 94.62700000000001,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 313,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "007",
+            "model": "Aston Martin Valkyrie",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.4359327346617903,
+          "simLap": 94.29806726533822,
+          "realLap": 94.73400000000001,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 313,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "8",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        },
+        {
+          "name": "monza",
+          "grip": 0.9907,
+          "rmsKph": 0,
+          "dt": -0.7669327346617791,
+          "simLap": 94.29806726533822,
+          "realLap": 95.065,
+          "shift": 0,
+          "rho": 1.2317968378055806,
+          "vMaxSim": 309.42237440166616,
+          "vMaxReal": 317.6,
+          "meta": {
+            "event": "AUTODROMO NAZIONALE DI MONZA",
+            "car": "7",
+            "model": "Toyota TR010 Hybrid",
+            "session": "Qualifying HYPERCAR"
+          }
+        }
+      ],
+      "score": 1.0529299485002843,
+      "x": [
+        -0.14394786222555378,
+        0.6307459377540416,
+        -0.08006207171887986
+      ]
+    },
+    "model": {
+      "car": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.473570731395606,
+        "cdA": 0.9688827617994796,
+        "clALow": 6.473570731395606,
+        "cdALow": 0.9688827617994796,
+        "muX": 1.380298081621397,
+        "muY": 1.5097010267734028,
+        "muXTrac": 1.4665667117227341,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true,
+        "linkMu": true
+      },
+      "modelCars": {
+        "Aston Martin Valkyrie": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "front",
+            "eMax": 200000,
+            "deployFrom": 52.77777777777778,
+            "regenMax": 200000,
+            "regenShare": 0.6,
+            "etaRegen": 0.9
+          },
+          "label": "LMH",
+          "awdAboveKph": 190,
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.469061701552776,
+          "cdA": 0.9677802345314968,
+          "clALow": 6.469061701552776,
+          "cdALow": 0.9677802345314968,
+          "muX": 1.3763285882857175,
+          "muY": 1.5053593934375034,
+          "muXTrac": 1.4623491250535745,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Ferrari 499P": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "front",
+            "eMax": 200000,
+            "deployFrom": 52.77777777777778,
+            "regenMax": 200000,
+            "regenShare": 0.6,
+            "etaRegen": 0.9
+          },
+          "label": "LMH",
+          "awdAboveKph": 190,
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.4784206426413515,
+          "cdA": 0.9703530508032535,
+          "clALow": 6.4784206426413515,
+          "cdALow": 0.9703530508032535,
+          "muX": 1.3855922548201864,
+          "muY": 1.5154915287095787,
+          "muXTrac": 1.472191770746448,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Peugeot 9X8": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "front",
+            "eMax": 200000,
+            "deployFrom": 52.77777777777778,
+            "regenMax": 200000,
+            "regenShare": 0.6,
+            "etaRegen": 0.9
+          },
+          "label": "LMH",
+          "awdAboveKph": 190,
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.474128993705342,
+          "cdA": 0.9679005793011318,
+          "clALow": 6.474128993705342,
+          "cdALow": 0.9679005793011318,
+          "muX": 1.3806749140359484,
+          "muY": 1.5101131872268185,
+          "muXTrac": 1.466967096163195,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        },
+        "Toyota TR010 Hybrid": {
+          "cRoll": 0.015,
+          "etaDrive": 0.95,
+          "inertiaFactor": 1.06,
+          "vSubtractCorner": 0.3,
+          "dmuDfz": -0.00005,
+          "fz0": 3000,
+          "ers": {
+            "rule": "hypercar",
+            "axle": "front",
+            "eMax": 200000,
+            "deployFrom": 52.77777777777778,
+            "regenMax": 200000,
+            "regenShare": 0.6,
+            "etaRegen": 0.9
+          },
+          "label": "LMH",
+          "awdAboveKph": 190,
+          "mass": 1120,
+          "wheelbase": 3.15,
+          "cogHeight": 0.32,
+          "rearWeight": 0.53,
+          "rearAero": 0.52,
+          "clA": 6.472367972537539,
+          "cdA": 0.9693825447149643,
+          "clALow": 6.472367972537539,
+          "cdALow": 0.9693825447149643,
+          "muX": 1.3787117831796287,
+          "muY": 1.5079660128527188,
+          "muXTrac": 1.4648812696283553,
+          "pIce": 500000,
+          "vMax": 95.83333333333333,
+          "noLowDrag": true,
+          "linkMu": true
+        }
+      },
+      "x": [
+        -0.14770415222659217,
+        0.6439524151336078,
+        -0.08040182743557095,
+        -0.002879966389835734,
+        -0.0006967717036877857,
+        -0.0011385846574019638,
+        0.003828192025235622,
+        0.0007489059145211524,
+        0.0015163594607153729,
+        0.00027297073711648686,
+        0.0000862334348085311,
+        -0.001014241047722006,
+        -0.0011499042731234832,
+        -0.00018581253766680167,
+        0.0005157012560470894
+      ],
+      "score": 1.0334185149469626,
+      "models": [
+        "Aston Martin Valkyrie",
+        "Ferrari 499P",
+        "Peugeot 9X8",
+        "Toyota TR010 Hybrid"
+      ],
+      "convergence": {
+        "event": "end",
+        "iteration": 536,
+        "objective": 1.0334185149469626,
+        "x": [
+          -0.14770415222659217,
+          0.6439524151336078,
+          -0.08040182743557095,
+          -0.002879966389835734,
+          -0.0006967717036877857,
+          -0.0011385846574019638,
+          0.003828192025235622,
+          0.0007489059145211524,
+          0.0015163594607153729,
+          0.00027297073711648686,
+          0.0000862334348085311,
+          -0.001014241047722006,
+          -0.0011499042731234832,
+          -0.00018581253766680167,
+          0.0005157012560470894
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.0000997740655869217,
+        "relativeObjectiveChange": 9.208262584812548e-7
+      },
+      "shrink": {
+        "lambda": 8,
+        "logScale": 0.1
+      }
+    },
+    "ends": {
+      "base": {
+        "event": "end",
+        "iteration": 73,
+        "objective": 1.0529299485002843,
+        "x": [
+          -0.14394786222555378,
+          0.6307459377540416,
+          -0.08006207171887986
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.00008747298166977835,
+        "relativeObjectiveChange": 0.0000011148573708315617
+      },
+      "models": {
+        "event": "end",
+        "iteration": 536,
+        "objective": 1.0334185149469626,
+        "x": [
+          -0.14770415222659217,
+          0.6439524151336078,
+          -0.08040182743557095,
+          -0.002879966389835734,
+          -0.0006967717036877857,
+          -0.0011385846574019638,
+          0.003828192025235622,
+          0.0007489059145211524,
+          0.0015163594607153729,
+          0.00027297073711648686,
+          0.0000862334348085311,
+          -0.001014241047722006,
+          -0.0011499042731234832,
+          -0.00018581253766680167,
+          0.0005157012560470894
+        ],
+        "stopReason": "tolerance",
+        "capHit": false,
+        "cap": 2000,
+        "tolerance": 0.0001,
+        "simplexSize": 0.0000997740655869217,
+        "relativeObjectiveChange": 9.208262584812548e-7
+      }
+    },
+    "pass": true,
+    "refKg": null,
+    "refKW": null
+  }
+}

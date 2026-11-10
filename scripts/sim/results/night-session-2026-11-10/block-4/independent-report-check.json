@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "fitOrSettingChanges": false,
+  "groups": {
+    "lmh-2025": {
+      "complete": true,
+      "cars": 45,
+      "n": 5,
+      "folds": 9,
+      "baseRmsPct": 1.694379715152292,
+      "candidateRmsPct": 1.4231676915200693,
+      "classBestBaseRmsPct": 1.7267136675207801,
+      "classBestCandidateRmsPct": 1.4861279394438802,
+      "hiddenModelBaseRmsPct": 1.8444595986035874,
+      "hiddenModelCandidateRmsPct": 1.829760718416975
+    },
+    "lmh-2026": {
+      "complete": true,
+      "cars": 54,
+      "n": 6,
+      "folds": 10,
+      "baseRmsPct": 1.2131759113544984,
+      "candidateRmsPct": 1.2121366865908998,
+      "classBestBaseRmsPct": 1.3347081622675814,
+      "classBestCandidateRmsPct": 1.392194587303616,
+      "hiddenModelBaseRmsPct": 0.8541791321888724,
+      "hiddenModelCandidateRmsPct": 0.8506830765956492
+    },
+    "lmdh-2025": {
+      "complete": true,
+      "cars": 45,
+      "n": 5,
+      "folds": 9,
+      "baseRmsPct": 1.555579090941684,
+      "candidateRmsPct": 1.5397848357555075,
+      "classBestBaseRmsPct": 1.6840115802894626,
+      "classBestCandidateRmsPct": 1.7292343860882982,
+      "hiddenModelBaseRmsPct": 1.285239936266641,
+      "hiddenModelCandidateRmsPct": 1.2853482410850308
+    },
+    "lmdh-2026": {
+      "complete": true,
+      "cars": 48,
+      "n": 6,
+      "folds": 10,
+      "baseRmsPct": 1.1059329043645307,
+      "candidateRmsPct": 1.0969205380837654,
+      "classBestBaseRmsPct": 1.1784630315579212,
+      "classBestCandidateRmsPct": 1.2068084672536201,
+      "hiddenModelBaseRmsPct": 0.8737339337640124,
+      "hiddenModelCandidateRmsPct": 0.8749981076303284
+    }
+  }
+}
