@@ -26,6 +26,8 @@ for(const [cls,seasons] of Object.entries(c.series.wec)){
    assert.ok(source,`STOP: missing fit session for audit ${cls}/${year}/${track}`);
    return [{...pole,track,year:Number(year),cls,weather:source.weather}];
   });
+  assert.deepEqual(sessions.map(identity).sort(),fitRows.filter(w=>w.cls===cls&&Number(w.year)===Number(year)).map(identity).sort(),
+   `STOP: audit and fit session inventories differ for ${cls}/${year}`);
   const scope=splitWecSessions(sessions);
   excluded.push(...scope.excluded.map(({row, ...exclusion})=>({group:'wec-'+cls+'/'+year,track:row.track,realSec:row.lap,...exclusion})));
   for(const p of scope.dry){

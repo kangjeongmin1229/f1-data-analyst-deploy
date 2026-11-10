@@ -64,5 +64,9 @@ test('real fit and historical audit follow both shared exclusion sources, includ
       assert.deepEqual(report.excluded.map(e => e.track).sort(),
         (addManual ? ['austin', 'imola', 'spa-francorchamps'] : ['austin', 'spa-francorchamps']).sort());
     }
+    delete poles.lusail;
+    await writeFile(join(dir, 'worker/lapsim/wec-poles-data.js'), `export const lapsimWecPoles=${JSON.stringify(poles)};`);
+    assert.throws(() => execFileSync(process.execPath, ['scripts/sim/verify-wec-reproduction.mjs', '.', '.cache/missing.json'],
+      {cwd: dir, env, stdio: 'pipe'}), /audit and fit session inventories differ/);
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
