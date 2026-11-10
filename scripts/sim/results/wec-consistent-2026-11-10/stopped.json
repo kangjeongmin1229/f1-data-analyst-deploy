@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-10T11:25:58.695Z",
+  "complete": false,
+  "status": "stopped under section 5.3",
+  "reason": "Historical reproduction assertion included Austin 2025, already excluded as wet by wet-sessions.json. All 33 verified dry rows reproduce exactly; public 2026 checks pass. No production regression is established.",
+  "failedRows": [
+    {
+      "group": "wec-lmh/2025",
+      "track": "austin",
+      "errorSec": 0.028
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "track": "austin",
+      "errorSec": 0.068
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "track": "austin",
+      "errorSec": 0.168
+    }
+  ],
+  "B": "Interrupted after round 1; no completed transfer table",
+  "control": "Interrupted before a completed group report",
+  "candidate": "Not started",
+  "adopted": false,
+  "decisionNeeded": "Apply the existing manual wet exclusions to the historical audit and resume the same candidate, or require a separate investigation first."
+}

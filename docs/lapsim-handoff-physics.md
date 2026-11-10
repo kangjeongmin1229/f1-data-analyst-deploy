@@ -1451,4 +1451,24 @@ A prior geometry-only difference moved LMDh 2025 by 0.37 pp. With n=5 or 6, an a
 
 Step 3 execution declaration: current-configuration control = repository geometry + current B, refit/measured at R; candidate = repository geometry + rebuilt B, refit/measured at R. Frozen production cars are replayed separately and are not confused with the refitted control. B uses LAPSIM_SKIP_WEC=1 LAPSIM_FITTER=bcd LAPSIM_ROUNDS=5 LAPSIM_BCD_ITERS=200 LAPSIM_WTIME=20 LAPSIM_WSECTOR=2 LAPSIM_TRACK_DRAG=off LAPSIM_TEAMS=on LAPSIM_WPRIOR=8; all other LAPSIM variables cleared. Run calibrate.mjs then transfer-grip.mjs on its isolated artifact. B rebuild estimated 3–4 hours from the historical job, followed by WEC fits at R. Timing flags off; WEC lap/trap weights remain 2/0.5. F1 production seasons/projections are restored unchanged before either WEC fit. Any telemetry projection replacement must match the same original measured laps and reproduce the retained geometry; no new fitting rows are silently added.
 
-Input preparation passed: rebuilding source 9865 from 14 original laps / 3707 positions reproduces repository ds, length, sectors, kappa and grade exactly. The repository heading/map/corners are retained verbatim; only projection distance arrays are recovered. All 40 Interlagos trace identities and non-distance fields match the pinned archive exactly; all 845 other trace rows are unchanged. The three wet Interlagos seasons remain excluded. The new trace hash is 36a1f55ac59e73f05abf4144ea08d1c2cdb7d8b78854d7de19e99a83f4f64413. Derived distance overrides and the audit are saved under scripts/sim/results/wec-consistent-2026-11-10; raw API responses remain outside git. The run started 2026-11-10T11:19:02Z; results pending.
+Input preparation passed: rebuilding source 9865 from 14 original laps / 3707 positions reproduces repository ds, length, sectors, kappa and grade exactly. The repository heading/map/corners are retained verbatim; only projection distance arrays are recovered. All 40 Interlagos trace identities and non-distance fields match the pinned archive exactly; all 845 other trace rows are unchanged. The three wet Interlagos seasons remain excluded. The new trace hash is 36a1f55ac59e73f05abf4144ea08d1c2cdb7d8b78854d7de19e99a83f4f64413. Derived distance overrides and the audit are saved under scripts/sim/results/wec-consistent-2026-11-10; raw API responses remain outside git. The run started 2026-11-10T11:19:02Z and was interrupted before either arm completed. See the stop below.
+
+
+### 18.4 Step 3 stopped: historical audit scope, not an established model regression
+
+At approximately 11:23 UTC, an expanded historical reproduction assertion failed on frozen production. The public WEC API selects only the latest calibrated season, so the audit selected older seasons in memory and restored the calibration afterward. It used all rows in wec-poles-data.js, which still contains Austin 2025 with rain=false. This was an audit-scope error: scripts/sim/data/wet-sessions.json already excludes 2025 Austin as wet, and it is absent from the fitted 2025 calibration tracks. The fitting input itself respected that exclusion.
+
+| Group | Historical rows checked | Austin 2025 error (s) | Verified dry n | Maximum verified dry reproduction error (s) |
+|---|---:|---:|---:|---:|
+| LMH 2025 | 6 | +0.028 | 5 | 0.000 |
+| LMH 2026 | 6 | not applicable | 6 | 0.000 |
+| LMDh 2025 | 6 | +0.068 | 5 | 0.000 |
+| LMDh 2026 | 6 | not applicable | 6 | 0.000 |
+| LMGT3 2025 | 6 | +0.168 | 5 | 0.000 |
+| LMGT3 2026 | 6 | not applicable | 6 | 0.000 |
+
+The historical assertion used the existing reproduction tolerance of 0.0015 s. All 33 verified dry rows reproduce exactly at the public result precision; all three public latest-season groups pass. The three failed cases are outside the dry-session scope and outside the public historical selector (which does not exist). They do not establish a new production regression. No model value, test threshold, wet exclusion or gate was changed to resolve the failure.
+
+Section 5.3 says to stop after a raced-session reproduction test fails. The B rebuild and control were stopped; B completed one round (score 37.3313), but produced no completed transfer table. The control produced no completed class-season report. The candidate arm had not started. There are therefore **no candidate held-out errors, car values, choices or candidate Interlagos replay errors to report**, and no candidate pass/fail decision. Partial logs are explicitly named partial and preserved; no values were adopted. The existing frozen-production Interlagos replay in section 16 remains historical evidence, not a new candidate comparison.
+
+Resume decision requested: apply the existing wet-sessions.json exclusions to the historical audit, then rerun the same declared candidate at R in fresh isolated directories. Do not alter the production pole table or model in this code PR. All six tolerance groups remain stable; b2 remains rejected; no model PR, merge or Vercel action.

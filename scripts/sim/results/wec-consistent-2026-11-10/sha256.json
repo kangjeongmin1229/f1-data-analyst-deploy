@@ -1,0 +1,14 @@
+{
+  "B-calibrate.log": "cf7ecabd7cbbd324a3fc0a4b912ecd028697ae00a1544d24da2ce119a9e40454",
+  "B-calibrate.stderr": "2e1d2505025ae1ca98c66c4130079cadee72a9cfef61c0d7c054a9e6ca1ee8ca",
+  "control-calibrate.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "control-calibrate.stderr": "dbc94fbbc68684bd77961bbddd285127c06eaae2764c42fd4ae7c335279531db",
+  "control-objective.partial.jsonl.gz": "0cb8d707d07273bfa8acab8f79d183d2051d816e6c643534081b183827122e45",
+  "interlagos-distance-override.json": "80ff0b78f71faa2cc53cc245391fd3767ebeb0ad5c88700181b4b88bd0509338",
+  "manifest.json": "78dc4236c2227b7b3d0daf71ab2809abcc06b81fb86e1445e27f12e10a10b5c2",
+  "production-integrity.json": "cf24a245652e14ca870b49277ca37e7d46440a02d8e7aebaaf0c703cb2d0a79d",
+  "projection-audit.json": "1346e22304cf40e9d666b05ac1fd6fbed84bb7942a23fffe24a1565ab2e36ec4",
+  "reproduction-frozen.json": "f3ce814c0314edb52daa5e276177eec5b1bbcfaa70efe412b58eb12063c9fd45",
+  "reproduction-scope-audit.json": "8fea8c2e0ea477f2e224f0cebb22609d5ffceda309922f50c097593f2c737c08",
+  "stopped.json": "51987ccee1840b061d3dca2534ccca94bece78be634fa490928a4c619981b6d3"
+}

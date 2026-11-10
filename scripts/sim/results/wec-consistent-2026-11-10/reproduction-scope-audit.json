@@ -1,0 +1,68 @@
+{
+  "note": "Read-only classification of the failed audit. No test threshold or model changed; no candidate resumed.",
+  "rows": [
+    {
+      "group": "wec-lmh/2025",
+      "allRows": 6,
+      "excluded": [
+        {
+          "track": "austin",
+          "realSec": 117.655,
+          "simSec": 117.683,
+          "errorSec": 0.028000000000005798
+        }
+      ],
+      "verifiedDryN": 5,
+      "verifiedDryMaxAbsErrorSec": 0
+    },
+    {
+      "group": "wec-lmh/2026",
+      "allRows": 6,
+      "excluded": [],
+      "verifiedDryN": 6,
+      "verifiedDryMaxAbsErrorSec": 0
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "allRows": 6,
+      "excluded": [
+        {
+          "track": "austin",
+          "realSec": 118.155,
+          "simSec": 118.223,
+          "errorSec": 0.06799999999999784
+        }
+      ],
+      "verifiedDryN": 5,
+      "verifiedDryMaxAbsErrorSec": 0
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "allRows": 6,
+      "excluded": [],
+      "verifiedDryN": 6,
+      "verifiedDryMaxAbsErrorSec": 0
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "allRows": 6,
+      "excluded": [
+        {
+          "track": "austin",
+          "realSec": 127.645,
+          "simSec": 127.813,
+          "errorSec": 0.16800000000000637
+        }
+      ],
+      "verifiedDryN": 5,
+      "verifiedDryMaxAbsErrorSec": 0
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "allRows": 6,
+      "excluded": [],
+      "verifiedDryN": 6,
+      "verifiedDryMaxAbsErrorSec": 0
+    }
+  ]
+}

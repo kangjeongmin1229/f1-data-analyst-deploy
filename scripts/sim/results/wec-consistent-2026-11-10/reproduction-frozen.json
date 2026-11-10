@@ -1,0 +1,277 @@
+{
+  "pass": false,
+  "toleranceSec": 0.0015,
+  "productionFilesWritten": false,
+  "rows": [
+    {
+      "group": "wec-lmh/2025",
+      "n": 6,
+      "maxAbsErrorSec": 0.028000000000005798,
+      "pass": false,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector",
+      "errors": [
+        {
+          "track": "lusail",
+          "realSec": 98.359,
+          "simSec": 98.359,
+          "errorSec": 0
+        },
+        {
+          "track": "imola",
+          "realSec": 88.92,
+          "simSec": 88.92,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 119.617,
+          "simSec": 119.617,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 82.948,
+          "simSec": 82.948,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 117.655,
+          "simSec": 117.683,
+          "errorSec": 0.028000000000005798
+        },
+        {
+          "track": "sakhir",
+          "realSec": 106.826,
+          "simSec": 106.826,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector",
+      "errors": [
+        {
+          "track": "imola",
+          "realSec": 90.088,
+          "simSec": 90.088,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 120.653,
+          "simSec": 120.653,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 83.387,
+          "simSec": 83.387,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 112.02,
+          "simSec": 112.02,
+          "errorSec": 0
+        },
+        {
+          "track": "catalunya",
+          "realSec": 90.336,
+          "simSec": 90.336,
+          "errorSec": 0
+        },
+        {
+          "track": "monza",
+          "realSec": 93.364,
+          "simSec": 93.364,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "n": 6,
+      "maxAbsErrorSec": 0.06799999999999784,
+      "pass": false,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector",
+      "errors": [
+        {
+          "track": "lusail",
+          "realSec": 98.495,
+          "simSec": 98.495,
+          "errorSec": 0
+        },
+        {
+          "track": "imola",
+          "realSec": 89.885,
+          "simSec": 89.885,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 120.246,
+          "simSec": 120.246,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 82.57,
+          "simSec": 82.57,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 118.155,
+          "simSec": 118.223,
+          "errorSec": 0.06799999999999784
+        },
+        {
+          "track": "sakhir",
+          "realSec": 107.543,
+          "simSec": 107.543,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector",
+      "errors": [
+        {
+          "track": "imola",
+          "realSec": 90.419,
+          "simSec": 90.419,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 120.696,
+          "simSec": 120.696,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 83.041,
+          "simSec": 83.041,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 112.074,
+          "simSec": 112.074,
+          "errorSec": 0
+        },
+        {
+          "track": "catalunya",
+          "realSec": 90.166,
+          "simSec": 90.166,
+          "errorSec": 0
+        },
+        {
+          "track": "monza",
+          "realSec": 93.46,
+          "simSec": 93.46,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "n": 6,
+      "maxAbsErrorSec": 0.16800000000000637,
+      "pass": false,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector",
+      "errors": [
+        {
+          "track": "lusail",
+          "realSec": 113.861,
+          "simSec": 113.861,
+          "errorSec": 0
+        },
+        {
+          "track": "imola",
+          "realSec": 102.326,
+          "simSec": 102.326,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 137.732,
+          "simSec": 137.732,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 93.849,
+          "simSec": 93.849,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 127.645,
+          "simSec": 127.813,
+          "errorSec": 0.16800000000000637
+        },
+        {
+          "track": "sakhir",
+          "realSec": 121.661,
+          "simSec": 121.661,
+          "errorSec": 0
+        }
+      ]
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector",
+      "errors": [
+        {
+          "track": "imola",
+          "realSec": 101.181,
+          "simSec": 101.181,
+          "errorSec": 0
+        },
+        {
+          "track": "spa-francorchamps",
+          "realSec": 136.612,
+          "simSec": 136.612,
+          "errorSec": 0
+        },
+        {
+          "track": "interlagos",
+          "realSec": 93.35,
+          "simSec": 93.35,
+          "errorSec": 0
+        },
+        {
+          "track": "austin",
+          "realSec": 125.103,
+          "simSec": 125.103,
+          "errorSec": 0
+        },
+        {
+          "track": "catalunya",
+          "realSec": 100.933,
+          "simSec": 100.933,
+          "errorSec": 0
+        },
+        {
+          "track": "monza",
+          "realSec": 107.065,
+          "simSec": 107.065,
+          "errorSec": 0
+        }
+      ]
+    }
+  ]
+}
