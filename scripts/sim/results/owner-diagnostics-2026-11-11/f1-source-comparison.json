@@ -1,0 +1,62 @@
+[
+  {
+    "path": "scripts/sim/calibrate.mjs",
+    "oldRunnerSha256": "ec8cd84f8a55436b407f39443de6a0826441a32038782b00ccc06eb5914ccb27",
+    "controlSourceSha256": "68c46708cb6733a3038b793f9dc4b347f63aa24bcc4f8f6a6d54226d2726303a",
+    "same": false
+  },
+  {
+    "path": "scripts/sim/joint-bcd.mjs",
+    "oldRunnerSha256": "6773979e615d01adae57399a05df75d8f63c428f98be965a2abc5322b77ff661",
+    "controlSourceSha256": "4598c8bdefb498442624a62a9c6a6b0d93d7494a35355e19735a3a2ee2d970a2",
+    "same": false
+  },
+  {
+    "path": "scripts/sim/bcd-worker.mjs",
+    "oldRunnerSha256": "57d0b5e4aa26717a9a98c42d5ebc3e0d505cfbf6c6268f445a6338c965e80acc",
+    "controlSourceSha256": "57d0b5e4aa26717a9a98c42d5ebc3e0d505cfbf6c6268f445a6338c965e80acc",
+    "same": true
+  },
+  {
+    "path": "scripts/sim/calibrate-lib.mjs",
+    "oldRunnerSha256": "69f8015de1e0699849046a35ebc4692f06fe61430b428d1feceb68207a4fecd6",
+    "controlSourceSha256": "db6e88285524c9886774b1be44c18c2600d56dd32d4ac4bed9339127c87c7d3f",
+    "same": false
+  },
+  {
+    "path": "worker/lapsim/kernel.js",
+    "oldRunnerSha256": "be5ed22bd953659a796bd93e30176eea08aa2448833ecb2e2f5c8077757fdbdc",
+    "controlSourceSha256": "4db5d60be6b9f50335ed3bff0f69082a1d0e682a6a716dca71d79f7a88a4916c",
+    "same": false
+  },
+  {
+    "path": "worker/lapsim/cars.js",
+    "oldRunnerSha256": "825e9ca86a319bd726f4503a1cdb0b9fe34d27e43470820dd259fd378fb10bcd",
+    "controlSourceSha256": "825e9ca86a319bd726f4503a1cdb0b9fe34d27e43470820dd259fd378fb10bcd",
+    "same": true
+  },
+  {
+    "path": "worker/lapsim/atmosphere.js",
+    "oldRunnerSha256": "4f79c02e439b218142a690372343d92f5393614ab389f4a95ea8028b7007f584",
+    "controlSourceSha256": "4f79c02e439b218142a690372343d92f5393614ab389f4a95ea8028b7007f584",
+    "same": true
+  },
+  {
+    "path": "worker/lapsim/energy-limits.js",
+    "oldRunnerSha256": "6c24a81c740c8a2447dfbba41f51d0e3996dad656d9027dbe8388728b67795ab",
+    "controlSourceSha256": "6c24a81c740c8a2447dfbba41f51d0e3996dad656d9027dbe8388728b67795ab",
+    "same": true
+  },
+  {
+    "path": "worker/lapsim/tracks-data.js",
+    "oldRunnerSha256": "fc77a03c00e9e943e06a33296f1f9c986b24141da27d942ff89706dd29614e72",
+    "controlSourceSha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "same": false
+  },
+  {
+    "path": "generated geometry at production fit commit",
+    "productionSha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "currentSha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "same": true
+  }
+]

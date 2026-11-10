@@ -1,0 +1,190 @@
+[
+  {
+    "year": 2023,
+    "trainingRows": 45,
+    "productionTrainingRows": 45,
+    "trackCount": 15,
+    "mainPoleLapWeatherIdentityMatches": 15,
+    "folds": [
+      {
+        "fold": 0,
+        "hiddenTracks": [
+          "austin",
+          "las-vegas",
+          "monte-carlo",
+          "spielberg"
+        ]
+      },
+      {
+        "fold": 1,
+        "hiddenTracks": [
+          "baku",
+          "lusail",
+          "monza",
+          "suzuka"
+        ]
+      },
+      {
+        "fold": 2,
+        "hiddenTracks": [
+          "hungaroring",
+          "mexico-city",
+          "sakhir",
+          "yas-marina-circuit"
+        ]
+      },
+      {
+        "fold": 3,
+        "hiddenTracks": [
+          "jeddah",
+          "miami",
+          "singapore"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "trainingRows": 54,
+    "productionTrainingRows": 54,
+    "trackCount": 18,
+    "mainPoleLapWeatherIdentityMatches": 18,
+    "folds": [
+      {
+        "fold": 0,
+        "hiddenTracks": [
+          "austin",
+          "jeddah",
+          "miami",
+          "shanghai",
+          "yas-marina-circuit"
+        ]
+      },
+      {
+        "fold": 1,
+        "hiddenTracks": [
+          "baku",
+          "las-vegas",
+          "monte-carlo",
+          "singapore",
+          "zandvoort"
+        ]
+      },
+      {
+        "fold": 2,
+        "hiddenTracks": [
+          "catalunya",
+          "lusail",
+          "monza",
+          "spielberg"
+        ]
+      },
+      {
+        "fold": 3,
+        "hiddenTracks": [
+          "imola",
+          "mexico-city",
+          "sakhir",
+          "suzuka"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "trainingRows": 66,
+    "productionTrainingRows": 66,
+    "trackCount": 22,
+    "mainPoleLapWeatherIdentityMatches": 22,
+    "folds": [
+      {
+        "fold": 0,
+        "hiddenTracks": [
+          "austin",
+          "interlagos",
+          "mexico-city",
+          "monza",
+          "singapore",
+          "yas-marina-circuit"
+        ]
+      },
+      {
+        "fold": 1,
+        "hiddenTracks": [
+          "catalunya",
+          "jeddah",
+          "miami",
+          "sakhir",
+          "spa-francorchamps",
+          "zandvoort"
+        ]
+      },
+      {
+        "fold": 2,
+        "hiddenTracks": [
+          "hungaroring",
+          "lusail",
+          "monte-carlo",
+          "shanghai",
+          "spielberg"
+        ]
+      },
+      {
+        "fold": 3,
+        "hiddenTracks": [
+          "imola",
+          "melbourne",
+          "montreal",
+          "silverstone",
+          "suzuka"
+        ]
+      }
+    ]
+  },
+  {
+    "year": 2026,
+    "trainingRows": 50,
+    "productionTrainingRows": 50,
+    "trackCount": 17,
+    "mainPoleLapWeatherIdentityMatches": 17,
+    "folds": [
+      {
+        "fold": 0,
+        "hiddenTracks": [
+          "austin",
+          "kuala-lumpur",
+          "miami",
+          "silverstone",
+          "suzuka"
+        ]
+      },
+      {
+        "fold": 1,
+        "hiddenTracks": [
+          "baku",
+          "madring",
+          "monte-carlo",
+          "singapore"
+        ]
+      },
+      {
+        "fold": 2,
+        "hiddenTracks": [
+          "catalunya",
+          "melbourne",
+          "monza",
+          "spa-francorchamps"
+        ]
+      },
+      {
+        "fold": 3,
+        "hiddenTracks": [
+          "hungaroring",
+          "mexico-city",
+          "shanghai",
+          "spielberg"
+        ]
+      }
+    ]
+  }
+]

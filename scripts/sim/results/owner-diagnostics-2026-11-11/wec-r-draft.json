@@ -1,0 +1,4296 @@
+{
+  "sourceRun": 42913368752,
+  "sourceCommit": "c4a2b9f4ba107b5e2b1655de1a370e37092fb033",
+  "sourceCalibrationSha256": "b21f64d90e5470d5aac27d495b678762e3c77c70ac0504c6dea1ed877efe021b",
+  "geometrySha256": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+  "transferSha256": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+  "groups": [
+    {
+      "group": "lmh/2025",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0868240124603838,
+        "clALow": 7,
+        "cdALow": 1.0868240124603838,
+        "muX": 1.4343471210021914,
+        "muY": 1.5688171635961465,
+        "muXTrac": 1.5239938160648279,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0858981814291746,
+        "clALow": 7,
+        "cdALow": 1.0858981814291746,
+        "muX": 1.432394900901271,
+        "muY": 1.5666819228607651,
+        "muXTrac": 1.5219195822076004,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "f1",
+        "pooled": false,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "f1",
+        "pooled": true,
+        "bop": false
+      },
+      "frozenBounds": [
+        "clA upper"
+      ],
+      "nextBounds": [
+        "clA upper"
+      ],
+      "heldout": {
+        "errors": [
+          {
+            "name": "imola",
+            "dt": -1.2053807681291318,
+            "pct": -1.355578911526234
+          },
+          {
+            "name": "interlagos",
+            "dt": -0.36583877693206546,
+            "pct": -0.4410459286927515
+          },
+          {
+            "name": "lusail",
+            "dt": 1.6457280063872162,
+            "pct": 1.6731849717740221
+          },
+          {
+            "name": "sakhir",
+            "dt": -0.5423528691355131,
+            "pct": -0.5076974417609126
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": 1.2517924109213112,
+            "pct": 1.0465004229510022
+          }
+        ],
+        "rmsPct": 1.1121675659691517,
+        "n": 5
+      },
+      "interlagos": {
+        "real": 82.948,
+        "publicFrozen": 82.948,
+        "publicNew": 82.948,
+        "rawFrozen": 82.848,
+        "rawNew": 82.667,
+        "newHeldout": 82.58216122306793
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.630405814294147,
+        "cdA": 0.9636821172691825,
+        "clALow": 6.630405814294147,
+        "cdALow": 0.9636821172691825,
+        "muX": 1.388028529682916,
+        "muY": 1.518156204340689,
+        "muXTrac": 1.474780312788098,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "front",
+          "eMax": 200000,
+          "deployFrom": 52.77777777777778,
+          "regenMax": 200000,
+          "regenShare": 0.6,
+          "etaRegen": 0.9
+        },
+        "label": "LMH",
+        "awdAboveKph": 190,
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.551861032446289,
+        "cdA": 0.9644689180947299,
+        "clALow": 6.551861032446289,
+        "cdALow": 0.9644689180947299,
+        "muX": 1.391074282757028,
+        "muY": 1.5214874967654992,
+        "muXTrac": 1.478016425429342,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "frozenBounds": [],
+      "nextBounds": [],
+      "heldout": {
+        "errors": [
+          {
+            "name": "austin",
+            "dt": 1.5238943714719682,
+            "pct": 1.360377050055317
+          },
+          {
+            "name": "catalunya",
+            "dt": -0.17003924924911473,
+            "pct": -0.18822977467356505
+          },
+          {
+            "name": "imola",
+            "dt": -1.1358401913434335,
+            "pct": -1.260811863226441
+          },
+          {
+            "name": "interlagos",
+            "dt": -1.1705840511063172,
+            "pct": -1.4037968161779601
+          },
+          {
+            "name": "monza",
+            "dt": 0.7507371823223679,
+            "pct": 0.8040970634531242
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": 1.37571218803906,
+            "pct": 1.140222114691758
+          }
+        ],
+        "rmsPct": 1.110032040096205,
+        "n": 6
+      },
+      "interlagos": {
+        "real": 83.387,
+        "publicFrozen": 83.387,
+        "publicNew": 83.387,
+        "rawFrozen": 82.671,
+        "rawNew": 82.484,
+        "newHeldout": 82.21641594889368
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.0994041361289832,
+        "clALow": 7,
+        "cdALow": 1.0994041361289832,
+        "muX": 1.427359969347544,
+        "muY": 1.5611749664738763,
+        "muXTrac": 1.5165699674317654,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 7,
+        "cdA": 1.1046405409937265,
+        "clALow": 7,
+        "cdALow": 1.1046405409937265,
+        "muX": 1.425284805283207,
+        "muY": 1.5589052557785077,
+        "muXTrac": 1.5143651056134075,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "transfer",
+        "pooled": true,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "frozenBounds": [
+        "clA upper"
+      ],
+      "nextBounds": [
+        "clA upper"
+      ],
+      "heldout": {
+        "errors": [
+          {
+            "name": "imola",
+            "dt": -1.533192292408728,
+            "pct": -1.7057265310215564
+          },
+          {
+            "name": "interlagos",
+            "dt": -0.4195427769218014,
+            "pct": -0.5081055794135869
+          },
+          {
+            "name": "lusail",
+            "dt": 2.1916337993082777,
+            "pct": 2.2251218836573106
+          },
+          {
+            "name": "sakhir",
+            "dt": 0.30115459524336075,
+            "pct": 0.28003179680997636
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": -0.15289113489770045,
+            "pct": -0.1271486244013964
+          }
+        ],
+        "rmsPct": 1.2816728330977838,
+        "n": 5
+      },
+      "interlagos": {
+        "real": 82.57,
+        "publicFrozen": 82.57,
+        "publicNew": 82.57,
+        "rawFrozen": 82.343,
+        "rawNew": 82.196,
+        "newHeldout": 82.15045722307819
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.44683866334923,
+        "cdA": 0.9537951707438306,
+        "clALow": 6.44683866334923,
+        "cdALow": 0.9537951707438306,
+        "muX": 1.3975743835507506,
+        "muY": 1.5285969820086334,
+        "muXTrac": 1.4849227825226723,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {
+          "rule": "hypercar",
+          "axle": "rear",
+          "eMax": 50000,
+          "deployFrom": 0,
+          "regenMax": 50000,
+          "regenShare": 0.4,
+          "etaRegen": 0.9
+        },
+        "label": "LMDh",
+        "mass": 1120,
+        "wheelbase": 3.15,
+        "cogHeight": 0.32,
+        "rearWeight": 0.53,
+        "rearAero": 0.52,
+        "clA": 6.39838146201842,
+        "cdA": 0.9537253754620212,
+        "clALow": 6.39838146201842,
+        "cdALow": 0.9537253754620212,
+        "muX": 1.3991745596691452,
+        "muY": 1.5303471746381274,
+        "muXTrac": 1.4866229696484667,
+        "pIce": 500000,
+        "vMax": 95.83333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "frozenBounds": [],
+      "nextBounds": [],
+      "heldout": {
+        "errors": [
+          {
+            "name": "austin",
+            "dt": 1.4247384195420238,
+            "pct": 1.271247942914533
+          },
+          {
+            "name": "catalunya",
+            "dt": -0.01738725119821538,
+            "pct": -0.01928360046826727
+          },
+          {
+            "name": "imola",
+            "dt": -1.5427536213809816,
+            "pct": -1.7062272546488955
+          },
+          {
+            "name": "interlagos",
+            "dt": -0.6930792257998348,
+            "pct": -0.8346229281918971
+          },
+          {
+            "name": "monza",
+            "dt": 0.5728435480063894,
+            "pct": 0.6129291119263636
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": 1.2535913848107754,
+            "pct": 1.038635402010657
+          }
+        ],
+        "rmsPct": 1.0550431002995766,
+        "n": 6
+      },
+      "interlagos": {
+        "real": 83.041,
+        "publicFrozen": 83.041,
+        "publicNew": 83.041,
+        "rawFrozen": 82.645,
+        "rawNew": 82.483,
+        "newHeldout": 82.34792077420016
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2861956929450995,
+        "clALow": 3.5,
+        "cdALow": 1.2861956929450995,
+        "muX": 1.4878218397065406,
+        "muY": 1.5904302424449228,
+        "muXTrac": 1.539126041075732,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.2850033528195364,
+        "clALow": 3.5,
+        "cdALow": 1.2850033528195364,
+        "muX": 1.486702673422345,
+        "muY": 1.5892338922790585,
+        "muXTrac": 1.5379682828507018,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "frozenBounds": [
+        "clA upper"
+      ],
+      "nextBounds": [
+        "clA upper"
+      ],
+      "heldout": {
+        "errors": [
+          {
+            "name": "imola",
+            "dt": -1.264369555601661,
+            "pct": -1.2356288290382267
+          },
+          {
+            "name": "interlagos",
+            "dt": -1.2572627552836906,
+            "pct": -1.3396655854443718
+          },
+          {
+            "name": "lusail",
+            "dt": 2.0451286151459698,
+            "pct": 1.7961625272445936
+          },
+          {
+            "name": "sakhir",
+            "dt": -1.356244976658516,
+            "pct": -1.11477381959586
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": 1.7958056349529272,
+            "pct": 1.3038405272216558
+          }
+        ],
+        "rmsPct": 1.3777084668052284,
+        "n": 5
+      },
+      "interlagos": {
+        "real": 93.849,
+        "publicFrozen": 93.849,
+        "publicNew": 93.849,
+        "rawFrozen": 92.833,
+        "rawNew": 92.755,
+        "newHeldout": 92.59173724471631
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "frozen": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.3,
+        "clALow": 3.5,
+        "cdALow": 1.3,
+        "muX": 1.5116042469125606,
+        "muY": 1.615852815665151,
+        "muXTrac": 1.5637285312888558,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "next": {
+        "cRoll": 0.015,
+        "etaDrive": 0.95,
+        "inertiaFactor": 1.06,
+        "vSubtractCorner": 0.3,
+        "dmuDfz": -0.00005,
+        "fz0": 3000,
+        "ers": {},
+        "label": "LMGT3",
+        "mass": 1400,
+        "wheelbase": 2.7,
+        "cogHeight": 0.42,
+        "rearWeight": 0.52,
+        "rearAero": 0.5,
+        "clA": 3.5,
+        "cdA": 1.3,
+        "clALow": 3.5,
+        "cdALow": 1.3,
+        "muX": 1.505062128540208,
+        "muY": 1.6088595167153947,
+        "muXTrac": 1.5569608226278013,
+        "pIce": 380000,
+        "vMax": 83.33333333333333,
+        "noLowDrag": true
+      },
+      "frozenChoice": {
+        "gripSource": "transfer",
+        "pooled": false,
+        "bop": false
+      },
+      "nextChoice": {
+        "gripSource": "transfer",
+        "pooled": true,
+        "bop": false
+      },
+      "frozenBounds": [
+        "clA upper",
+        "cdA upper"
+      ],
+      "nextBounds": [
+        "clA upper",
+        "cdA upper"
+      ],
+      "heldout": {
+        "errors": [
+          {
+            "name": "austin",
+            "dt": -0.4323076744069567,
+            "pct": -0.3455613969344906
+          },
+          {
+            "name": "catalunya",
+            "dt": 0.6766864682208364,
+            "pct": 0.6704313437833287
+          },
+          {
+            "name": "imola",
+            "dt": -0.2639844438937615,
+            "pct": -0.2609031773690318
+          },
+          {
+            "name": "interlagos",
+            "dt": -1.4916903018856544,
+            "pct": -1.5979542601881724
+          },
+          {
+            "name": "monza",
+            "dt": 0.5806974551673676,
+            "pct": 0.5423784198079318
+          },
+          {
+            "name": "spa-francorchamps",
+            "dt": 2.5466994004603407,
+            "pct": 1.8641842594064428
+          }
+        ],
+        "rmsPct": 1.0770156649035116,
+        "n": 6
+      },
+      "interlagos": {
+        "real": 93.35,
+        "publicFrozen": 93.35,
+        "publicNew": 93.35,
+        "rawFrozen": 91.938,
+        "rawNew": 91.985,
+        "newHeldout": 91.85830969811434
+      }
+    }
+  ],
+  "forecasts": [
+    {
+      "group": "lmh/2025",
+      "track": "baku",
+      "frozenSec": 117.151,
+      "newSec": 117.208,
+      "deltaSec": 0.05700000000000216,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "catalunya",
+      "frozenSec": 88.512,
+      "newSec": 88.581,
+      "deltaSec": 0.06900000000000261,
+      "conditions": {
+        "air_temp_c": 30.694,
+        "track_temp_c": 49.376,
+        "humidity_pct": 26,
+        "pressure_hpa": 1005.9,
+        "wind_speed_ms": 2.152,
+        "wind_from_deg": 112,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.99,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.365
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "hungaroring",
+      "frozenSec": 92.186,
+      "newSec": 92.248,
+      "deltaSec": 0.06199999999999761,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "jeddah",
+      "frozenSec": 103.23,
+      "newSec": 103.269,
+      "deltaSec": 0.03900000000000148,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "kuala-lumpur",
+      "frozenSec": 111.547,
+      "newSec": 111.618,
+      "deltaSec": 0.07099999999999795,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "las-vegas",
+      "frozenSec": 107.013,
+      "newSec": 107.054,
+      "deltaSec": 0.04099999999999682,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "madring",
+      "frozenSec": 106.428,
+      "newSec": 106.493,
+      "deltaSec": 0.06499999999999773,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "melbourne",
+      "frozenSec": 90.039,
+      "newSec": 90.075,
+      "deltaSec": 0.036000000000001364,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "mexico-city",
+      "frozenSec": 88.978,
+      "newSec": 89.03,
+      "deltaSec": 0.05200000000000671,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "miami",
+      "frozenSec": 103.341,
+      "newSec": 103.395,
+      "deltaSec": 0.054000000000002046,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "monte-carlo",
+      "frozenSec": 83.467,
+      "newSec": 83.521,
+      "deltaSec": 0.054000000000002046,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "montreal",
+      "frozenSec": 84.387,
+      "newSec": 84.426,
+      "deltaSec": 0.03900000000000148,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "monza",
+      "frozenSec": 93.409,
+      "newSec": 93.445,
+      "deltaSec": 0.03599999999998715,
+      "conditions": {
+        "air_temp_c": 33.906,
+        "track_temp_c": 52.306,
+        "humidity_pct": 34,
+        "pressure_hpa": 994.5,
+        "wind_speed_ms": 0.811,
+        "wind_from_deg": 255,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.12,
+        "density_vs_sea_level_pct": -8.5,
+        "engine_power_factor": 0.992,
+        "tyre_grip_factor": 0.985,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.285
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "shanghai",
+      "frozenSec": 110.883,
+      "newSec": 110.947,
+      "deltaSec": 0.06400000000000716,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "silverstone",
+      "frozenSec": 104.486,
+      "newSec": 104.552,
+      "deltaSec": 0.0660000000000025,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "singapore",
+      "frozenSec": 105.844,
+      "newSec": 105.904,
+      "deltaSec": 0.060000000000002274,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "spielberg",
+      "frozenSec": 76.987,
+      "newSec": 77.02,
+      "deltaSec": 0.03300000000000125,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "suzuka",
+      "frozenSec": 106.718,
+      "newSec": 106.777,
+      "deltaSec": 0.0589999999999975,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "yas-marina-circuit",
+      "frozenSec": 97.623,
+      "newSec": 97.674,
+      "deltaSec": 0.05100000000000193,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmh/2025",
+      "track": "zandvoort",
+      "frozenSec": 83.503,
+      "newSec": 83.554,
+      "deltaSec": 0.05100000000000193,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "baku",
+      "frozenSec": 118.537,
+      "newSec": 118.545,
+      "deltaSec": 0.007999999999995566,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "hungaroring",
+      "frozenSec": 94.145,
+      "newSec": 94.174,
+      "deltaSec": 0.029000000000010573,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "jeddah",
+      "frozenSec": 104.089,
+      "newSec": 104.118,
+      "deltaSec": 0.028999999999996362,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "kuala-lumpur",
+      "frozenSec": 113.704,
+      "newSec": 113.742,
+      "deltaSec": 0.038000000000010914,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "las-vegas",
+      "frozenSec": 107.768,
+      "newSec": 107.797,
+      "deltaSec": 0.028999999999996362,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "lusail",
+      "frozenSec": 100.537,
+      "newSec": 100.593,
+      "deltaSec": 0.055999999999997385,
+      "conditions": {
+        "air_temp_c": 20.241,
+        "track_temp_c": 24.853,
+        "humidity_pct": 75,
+        "pressure_hpa": 1016.5,
+        "wind_speed_ms": 0.756,
+        "wind_from_deg": 360,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.199,
+        "density_vs_sea_level_pct": -2.1,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.995,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.663
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "madring",
+      "frozenSec": 108.426,
+      "newSec": 108.459,
+      "deltaSec": 0.03300000000000125,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "melbourne",
+      "frozenSec": 90.962,
+      "newSec": 90.994,
+      "deltaSec": 0.031999999999996476,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "mexico-city",
+      "frozenSec": 90.448,
+      "newSec": 90.444,
+      "deltaSec": -0.003999999999990678,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "miami",
+      "frozenSec": 104.671,
+      "newSec": 104.683,
+      "deltaSec": 0.012000000000000455,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "monte-carlo",
+      "frozenSec": 85.13,
+      "newSec": 85.131,
+      "deltaSec": 0.0010000000000047748,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "montreal",
+      "frozenSec": 85.425,
+      "newSec": 85.431,
+      "deltaSec": 0.006000000000000227,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "sakhir",
+      "frozenSec": 108.204,
+      "newSec": 108.214,
+      "deltaSec": 0.010000000000005116,
+      "conditions": {
+        "air_temp_c": 26.4,
+        "track_temp_c": 30.6,
+        "humidity_pct": 54,
+        "pressure_hpa": 1004.5,
+        "wind_speed_ms": 2.793,
+        "wind_from_deg": 23,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.16,
+        "density_vs_sea_level_pct": -5.3,
+        "engine_power_factor": 0.997,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -2.633
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "shanghai",
+      "frozenSec": 112.694,
+      "newSec": 112.72,
+      "deltaSec": 0.02599999999999625,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "silverstone",
+      "frozenSec": 106.434,
+      "newSec": 106.491,
+      "deltaSec": 0.05700000000000216,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "singapore",
+      "frozenSec": 107.547,
+      "newSec": 107.548,
+      "deltaSec": 0.0010000000000047748,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "spielberg",
+      "frozenSec": 77.843,
+      "newSec": 77.857,
+      "deltaSec": 0.013999999999995794,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "suzuka",
+      "frozenSec": 108.396,
+      "newSec": 108.442,
+      "deltaSec": 0.04599999999999227,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "yas-marina-circuit",
+      "frozenSec": 99.047,
+      "newSec": 99.077,
+      "deltaSec": 0.030000000000001137,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmh/2026",
+      "track": "zandvoort",
+      "frozenSec": 85.047,
+      "newSec": 85.081,
+      "deltaSec": 0.034000000000006025,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "baku",
+      "frozenSec": 117.469,
+      "newSec": 117.564,
+      "deltaSec": 0.09499999999999886,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "catalunya",
+      "frozenSec": 88.808,
+      "newSec": 88.89,
+      "deltaSec": 0.08199999999999363,
+      "conditions": {
+        "air_temp_c": 30.694,
+        "track_temp_c": 49.376,
+        "humidity_pct": 26,
+        "pressure_hpa": 1005.9,
+        "wind_speed_ms": 2.152,
+        "wind_from_deg": 112,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.99,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.365
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "hungaroring",
+      "frozenSec": 92.443,
+      "newSec": 92.523,
+      "deltaSec": 0.0799999999999983,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "jeddah",
+      "frozenSec": 103.484,
+      "newSec": 103.564,
+      "deltaSec": 0.0799999999999983,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "kuala-lumpur",
+      "frozenSec": 111.923,
+      "newSec": 112.019,
+      "deltaSec": 0.09600000000000364,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "las-vegas",
+      "frozenSec": 107.355,
+      "newSec": 107.444,
+      "deltaSec": 0.08899999999999864,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "madring",
+      "frozenSec": 106.79,
+      "newSec": 106.878,
+      "deltaSec": 0.08799999999999386,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "melbourne",
+      "frozenSec": 90.275,
+      "newSec": 90.347,
+      "deltaSec": 0.07199999999998852,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "mexico-city",
+      "frozenSec": 89.229,
+      "newSec": 89.301,
+      "deltaSec": 0.07200000000000273,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "miami",
+      "frozenSec": 103.612,
+      "newSec": 103.7,
+      "deltaSec": 0.08800000000000807,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "monte-carlo",
+      "frozenSec": 83.69,
+      "newSec": 83.758,
+      "deltaSec": 0.06799999999999784,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "montreal",
+      "frozenSec": 84.591,
+      "newSec": 84.655,
+      "deltaSec": 0.06400000000000716,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "monza",
+      "frozenSec": 93.644,
+      "newSec": 93.722,
+      "deltaSec": 0.07799999999998875,
+      "conditions": {
+        "air_temp_c": 33.906,
+        "track_temp_c": 52.306,
+        "humidity_pct": 34,
+        "pressure_hpa": 994.5,
+        "wind_speed_ms": 0.811,
+        "wind_from_deg": 255,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.12,
+        "density_vs_sea_level_pct": -8.5,
+        "engine_power_factor": 0.992,
+        "tyre_grip_factor": 0.985,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.285
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "shanghai",
+      "frozenSec": 111.188,
+      "newSec": 111.284,
+      "deltaSec": 0.09600000000000364,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "silverstone",
+      "frozenSec": 104.838,
+      "newSec": 104.937,
+      "deltaSec": 0.09900000000000375,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "singapore",
+      "frozenSec": 106.103,
+      "newSec": 106.184,
+      "deltaSec": 0.08100000000000307,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "spielberg",
+      "frozenSec": 77.158,
+      "newSec": 77.213,
+      "deltaSec": 0.05499999999999261,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "suzuka",
+      "frozenSec": 107.011,
+      "newSec": 107.102,
+      "deltaSec": 0.09100000000000819,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "yas-marina-circuit",
+      "frozenSec": 97.912,
+      "newSec": 97.992,
+      "deltaSec": 0.0799999999999983,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmdh/2025",
+      "track": "zandvoort",
+      "frozenSec": 83.777,
+      "newSec": 83.848,
+      "deltaSec": 0.07099999999999795,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "baku",
+      "frozenSec": 118.449,
+      "newSec": 118.462,
+      "deltaSec": 0.01300000000000523,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "hungaroring",
+      "frozenSec": 94.11,
+      "newSec": 94.138,
+      "deltaSec": 0.028000000000005798,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "jeddah",
+      "frozenSec": 104.04,
+      "newSec": 104.063,
+      "deltaSec": 0.022999999999996135,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "kuala-lumpur",
+      "frozenSec": 113.688,
+      "newSec": 113.719,
+      "deltaSec": 0.0309999999999917,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "las-vegas",
+      "frozenSec": 107.672,
+      "newSec": 107.684,
+      "deltaSec": 0.012000000000000455,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "lusail",
+      "frozenSec": 100.557,
+      "newSec": 100.601,
+      "deltaSec": 0.04399999999999693,
+      "conditions": {
+        "air_temp_c": 20.241,
+        "track_temp_c": 24.853,
+        "humidity_pct": 75,
+        "pressure_hpa": 1016.5,
+        "wind_speed_ms": 0.756,
+        "wind_from_deg": 360,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.199,
+        "density_vs_sea_level_pct": -2.1,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.995,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.663
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "madring",
+      "frozenSec": 108.468,
+      "newSec": 108.5,
+      "deltaSec": 0.031999999999996476,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "melbourne",
+      "frozenSec": 90.93,
+      "newSec": 90.955,
+      "deltaSec": 0.024999999999991473,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "mexico-city",
+      "frozenSec": 90.34,
+      "newSec": 90.345,
+      "deltaSec": 0.0049999999999954525,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "miami",
+      "frozenSec": 104.571,
+      "newSec": 104.586,
+      "deltaSec": 0.015000000000000568,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "monte-carlo",
+      "frozenSec": 85.048,
+      "newSec": 85.058,
+      "deltaSec": 0.010000000000005116,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "montreal",
+      "frozenSec": 85.348,
+      "newSec": 85.358,
+      "deltaSec": 0.010000000000005116,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "sakhir",
+      "frozenSec": 108.162,
+      "newSec": 108.177,
+      "deltaSec": 0.015000000000000568,
+      "conditions": {
+        "air_temp_c": 26.4,
+        "track_temp_c": 30.6,
+        "humidity_pct": 54,
+        "pressure_hpa": 1004.5,
+        "wind_speed_ms": 2.793,
+        "wind_from_deg": 23,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.16,
+        "density_vs_sea_level_pct": -5.3,
+        "engine_power_factor": 0.997,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -2.633
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "shanghai",
+      "frozenSec": 112.63,
+      "newSec": 112.656,
+      "deltaSec": 0.02600000000001046,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "silverstone",
+      "frozenSec": 106.516,
+      "newSec": 106.564,
+      "deltaSec": 0.04799999999998761,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "singapore",
+      "frozenSec": 107.437,
+      "newSec": 107.447,
+      "deltaSec": 0.010000000000005116,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "spielberg",
+      "frozenSec": 77.792,
+      "newSec": 77.806,
+      "deltaSec": 0.013999999999995794,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "suzuka",
+      "frozenSec": 108.381,
+      "newSec": 108.418,
+      "deltaSec": 0.03700000000000614,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "yas-marina-circuit",
+      "frozenSec": 99.052,
+      "newSec": 99.079,
+      "deltaSec": 0.026999999999986812,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmdh/2026",
+      "track": "zandvoort",
+      "frozenSec": 85.091,
+      "newSec": 85.12,
+      "deltaSec": 0.029000000000010573,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "baku",
+      "frozenSec": 132.399,
+      "newSec": 132.423,
+      "deltaSec": 0.02400000000000091,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "catalunya",
+      "frozenSec": 101.662,
+      "newSec": 101.691,
+      "deltaSec": 0.028999999999996362,
+      "conditions": {
+        "air_temp_c": 30.694,
+        "track_temp_c": 49.376,
+        "humidity_pct": 26,
+        "pressure_hpa": 1005.9,
+        "wind_speed_ms": 2.152,
+        "wind_from_deg": 112,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.99,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.365
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "hungaroring",
+      "frozenSec": 104.308,
+      "newSec": 104.339,
+      "deltaSec": 0.0309999999999917,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "jeddah",
+      "frozenSec": 119.172,
+      "newSec": 119.19,
+      "deltaSec": 0.018000000000000682,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "kuala-lumpur",
+      "frozenSec": 126.644,
+      "newSec": 126.677,
+      "deltaSec": 0.03300000000000125,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "las-vegas",
+      "frozenSec": 122.175,
+      "newSec": 122.196,
+      "deltaSec": 0.021000000000000796,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "madring",
+      "frozenSec": 121.477,
+      "newSec": 121.509,
+      "deltaSec": 0.031999999999996476,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "melbourne",
+      "frozenSec": 104.109,
+      "newSec": 104.126,
+      "deltaSec": 0.017000000000010118,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "mexico-city",
+      "frozenSec": 98.443,
+      "newSec": 98.468,
+      "deltaSec": 0.025000000000005684,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "miami",
+      "frozenSec": 116.491,
+      "newSec": 116.515,
+      "deltaSec": 0.02400000000000091,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "monte-carlo",
+      "frozenSec": 92.004,
+      "newSec": 92.033,
+      "deltaSec": 0.028999999999996362,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "montreal",
+      "frozenSec": 95.134,
+      "newSec": 95.152,
+      "deltaSec": 0.018000000000000682,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "monza",
+      "frozenSec": 107.484,
+      "newSec": 107.498,
+      "deltaSec": 0.014000000000010004,
+      "conditions": {
+        "air_temp_c": 33.906,
+        "track_temp_c": 52.306,
+        "humidity_pct": 34,
+        "pressure_hpa": 994.5,
+        "wind_speed_ms": 0.811,
+        "wind_from_deg": 255,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.12,
+        "density_vs_sea_level_pct": -8.5,
+        "engine_power_factor": 0.992,
+        "tyre_grip_factor": 0.985,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.285
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "shanghai",
+      "frozenSec": 125.926,
+      "newSec": 125.956,
+      "deltaSec": 0.030000000000001137,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "silverstone",
+      "frozenSec": 121.4,
+      "newSec": 121.431,
+      "deltaSec": 0.0309999999999917,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "singapore",
+      "frozenSec": 117.964,
+      "newSec": 117.991,
+      "deltaSec": 0.027000000000001023,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "spielberg",
+      "frozenSec": 87.862,
+      "newSec": 87.877,
+      "deltaSec": 0.015000000000000568,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "suzuka",
+      "frozenSec": 123.007,
+      "newSec": 123.034,
+      "deltaSec": 0.027000000000001023,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "yas-marina-circuit",
+      "frozenSec": 112.048,
+      "newSec": 112.072,
+      "deltaSec": 0.02400000000000091,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmgt3/2025",
+      "track": "zandvoort",
+      "frozenSec": 95.856,
+      "newSec": 95.88,
+      "deltaSec": 0.02400000000000091,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "baku",
+      "frozenSec": 131.849,
+      "newSec": 132.017,
+      "deltaSec": 0.16800000000000637,
+      "conditions": {
+        "air_temp_c": 24.082,
+        "track_temp_c": 35.759,
+        "humidity_pct": 71,
+        "pressure_hpa": 1023.9,
+        "wind_speed_ms": 0.395,
+        "wind_from_deg": 86,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.191,
+        "density_vs_sea_level_pct": -2.8,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.374
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "hungaroring",
+      "frozenSec": 103.648,
+      "newSec": 103.834,
+      "deltaSec": 0.18600000000000705,
+      "conditions": {
+        "air_temp_c": 26.647,
+        "track_temp_c": 42.718,
+        "humidity_pct": 24,
+        "pressure_hpa": 984.1,
+        "wind_speed_ms": 1.346,
+        "wind_from_deg": 120,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.14,
+        "density_vs_sea_level_pct": -6.9,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.997,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.337
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "jeddah",
+      "frozenSec": 118.729,
+      "newSec": 118.87,
+      "deltaSec": 0.14100000000000534,
+      "conditions": {
+        "air_temp_c": 30.441,
+        "track_temp_c": 36.606,
+        "humidity_pct": 49,
+        "pressure_hpa": 1006.5,
+        "wind_speed_ms": 0.328,
+        "wind_from_deg": 31,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.146,
+        "density_vs_sea_level_pct": -6.5,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.205
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "kuala-lumpur",
+      "frozenSec": 125.901,
+      "newSec": 126.114,
+      "deltaSec": 0.21300000000000807,
+      "conditions": {
+        "air_temp_c": 32.494,
+        "track_temp_c": 54.324,
+        "humidity_pct": 50,
+        "pressure_hpa": 1006.3,
+        "wind_speed_ms": 0.737,
+        "wind_from_deg": 308,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.136,
+        "density_vs_sea_level_pct": -7.2,
+        "engine_power_factor": 0.994,
+        "tyre_grip_factor": 0.981,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.542
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "las-vegas",
+      "frozenSec": 121.672,
+      "newSec": 121.832,
+      "deltaSec": 0.1599999999999966,
+      "conditions": {
+        "air_temp_c": 25,
+        "track_temp_c": 35,
+        "humidity_pct": 50,
+        "pressure_hpa": 1013.3,
+        "wind_speed_ms": 0,
+        "wind_from_deg": 0,
+        "sources": {
+          "air_temp": "default",
+          "track_temp": "default",
+          "humidity": "default",
+          "pressure": "default",
+          "wind_speed": "default",
+          "wind_direction": "default"
+        },
+        "air_density_kg_m3": 1.177,
+        "density_vs_sea_level_pct": -3.9,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 1,
+        "wind_applied": false,
+        "main_straight_tailwind_ms": 0
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "lusail",
+      "frozenSec": 114.049,
+      "newSec": 114.232,
+      "deltaSec": 0.18299999999999272,
+      "conditions": {
+        "air_temp_c": 20.241,
+        "track_temp_c": 24.853,
+        "humidity_pct": 75,
+        "pressure_hpa": 1016.5,
+        "wind_speed_ms": 0.756,
+        "wind_from_deg": 360,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.199,
+        "density_vs_sea_level_pct": -2.1,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.995,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.663
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "madring",
+      "frozenSec": 120.782,
+      "newSec": 120.98,
+      "deltaSec": 0.1980000000000075,
+      "conditions": {
+        "air_temp_c": 31.065,
+        "track_temp_c": 53.459,
+        "humidity_pct": 18,
+        "pressure_hpa": 942.8,
+        "wind_speed_ms": 0.776,
+        "wind_from_deg": 87,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.076,
+        "density_vs_sea_level_pct": -12.2,
+        "engine_power_factor": 0.986,
+        "tyre_grip_factor": 0.983,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.77
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "melbourne",
+      "frozenSec": 103.704,
+      "newSec": 103.832,
+      "deltaSec": 0.1280000000000001,
+      "conditions": {
+        "air_temp_c": 20.459,
+        "track_temp_c": 31.8,
+        "humidity_pct": 61,
+        "pressure_hpa": 1013.6,
+        "wind_speed_ms": 2.386,
+        "wind_from_deg": 99,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.196,
+        "density_vs_sea_level_pct": -2.4,
+        "engine_power_factor": 1.002,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.936
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "mexico-city",
+      "frozenSec": 97.89,
+      "newSec": 98.049,
+      "deltaSec": 0.15900000000000603,
+      "conditions": {
+        "air_temp_c": 26.241,
+        "track_temp_c": 40.171,
+        "humidity_pct": 28,
+        "pressure_hpa": 781.9,
+        "wind_speed_ms": 2.091,
+        "wind_from_deg": 252,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 0.906,
+        "density_vs_sea_level_pct": -26.1,
+        "engine_power_factor": 0.961,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.872
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "miami",
+      "frozenSec": 115.944,
+      "newSec": 116.11,
+      "deltaSec": 0.16599999999999682,
+      "conditions": {
+        "air_temp_c": 33.965,
+        "track_temp_c": 51.329,
+        "humidity_pct": 29,
+        "pressure_hpa": 1010.1,
+        "wind_speed_ms": 3.635,
+        "wind_from_deg": 295,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.139,
+        "density_vs_sea_level_pct": -7,
+        "engine_power_factor": 0.995,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 3.601
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "monte-carlo",
+      "frozenSec": 91.394,
+      "newSec": 91.564,
+      "deltaSec": 0.1699999999999875,
+      "conditions": {
+        "air_temp_c": 23.176,
+        "track_temp_c": 33.053,
+        "humidity_pct": 60,
+        "pressure_hpa": 1017.5,
+        "wind_speed_ms": 0.481,
+        "wind_from_deg": 203,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.189,
+        "density_vs_sea_level_pct": -3,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.425
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "montreal",
+      "frozenSec": 94.718,
+      "newSec": 94.843,
+      "deltaSec": 0.125,
+      "conditions": {
+        "air_temp_c": 21.312,
+        "track_temp_c": 41.753,
+        "humidity_pct": 30,
+        "pressure_hpa": 1018.9,
+        "wind_speed_ms": 2.175,
+        "wind_from_deg": 17,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.202,
+        "density_vs_sea_level_pct": -1.9,
+        "engine_power_factor": 1.003,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 2.042
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "sakhir",
+      "frozenSec": 119.259,
+      "newSec": 119.438,
+      "deltaSec": 0.17900000000000205,
+      "conditions": {
+        "air_temp_c": 26.4,
+        "track_temp_c": 30.6,
+        "humidity_pct": 54,
+        "pressure_hpa": 1004.5,
+        "wind_speed_ms": 2.793,
+        "wind_from_deg": 23,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.16,
+        "density_vs_sea_level_pct": -5.3,
+        "engine_power_factor": 0.997,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -2.633
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "shanghai",
+      "frozenSec": 125.25,
+      "newSec": 125.447,
+      "deltaSec": 0.19700000000000273,
+      "conditions": {
+        "air_temp_c": 17.671,
+        "track_temp_c": 29.829,
+        "humidity_pct": 34,
+        "pressure_hpa": 1023.5,
+        "wind_speed_ms": 1.94,
+        "wind_from_deg": 60,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.223,
+        "density_vs_sea_level_pct": -0.2,
+        "engine_power_factor": 1.005,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.857
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "silverstone",
+      "frozenSec": 120.687,
+      "newSec": 120.896,
+      "deltaSec": 0.20900000000000318,
+      "conditions": {
+        "air_temp_c": 25.129,
+        "track_temp_c": 39.982,
+        "humidity_pct": 49,
+        "pressure_hpa": 1007.5,
+        "wind_speed_ms": 0.941,
+        "wind_from_deg": 213,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.17,
+        "density_vs_sea_level_pct": -4.5,
+        "engine_power_factor": 0.999,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.934
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "singapore",
+      "frozenSec": 117.359,
+      "newSec": 117.533,
+      "deltaSec": 0.1740000000000066,
+      "conditions": {
+        "air_temp_c": 29.876,
+        "track_temp_c": 39.965,
+        "humidity_pct": 74,
+        "pressure_hpa": 1010.4,
+        "wind_speed_ms": 1.532,
+        "wind_from_deg": 159,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.148,
+        "density_vs_sea_level_pct": -6.3,
+        "engine_power_factor": 0.996,
+        "tyre_grip_factor": 0.999,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 1.507
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "spielberg",
+      "frozenSec": 87.513,
+      "newSec": 87.619,
+      "deltaSec": 0.10599999999999454,
+      "conditions": {
+        "air_temp_c": 33.424,
+        "track_temp_c": 51.206,
+        "humidity_pct": 25,
+        "pressure_hpa": 942.9,
+        "wind_speed_ms": 0.538,
+        "wind_from_deg": 343,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.066,
+        "density_vs_sea_level_pct": -13,
+        "engine_power_factor": 0.985,
+        "tyre_grip_factor": 0.987,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -0.009
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "suzuka",
+      "frozenSec": 122.4,
+      "newSec": 122.582,
+      "deltaSec": 0.18199999999998795,
+      "conditions": {
+        "air_temp_c": 16.618,
+        "track_temp_c": 28.294,
+        "humidity_pct": 48,
+        "pressure_hpa": 1008.7,
+        "wind_speed_ms": 1.42,
+        "wind_from_deg": 130,
+        "sources": {
+          "air_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2026 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2026 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.208,
+        "density_vs_sea_level_pct": -1.3,
+        "engine_power_factor": 1.004,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": -1.395
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "yas-marina-circuit",
+      "frozenSec": 111.516,
+      "newSec": 111.675,
+      "deltaSec": 0.15899999999999181,
+      "conditions": {
+        "air_temp_c": 24.982,
+        "track_temp_c": 28.588,
+        "humidity_pct": 78,
+        "pressure_hpa": 1017.4,
+        "wind_speed_ms": 0.881,
+        "wind_from_deg": 283,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.178,
+        "density_vs_sea_level_pct": -3.8,
+        "engine_power_factor": 1,
+        "tyre_grip_factor": 0.998,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 0.827
+      }
+    },
+    {
+      "group": "lmgt3/2026",
+      "track": "zandvoort",
+      "frozenSec": 95.327,
+      "newSec": 95.48,
+      "deltaSec": 0.1530000000000058,
+      "conditions": {
+        "air_temp_c": 20.624,
+        "track_temp_c": 34.224,
+        "humidity_pct": 65,
+        "pressure_hpa": 1006.1,
+        "wind_speed_ms": 4.199,
+        "wind_from_deg": 209,
+        "sources": {
+          "air_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "track_temp": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "humidity": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "pressure": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_speed": "real 2025 F1 qualifying (OpenF1 weather, session mean)",
+          "wind_direction": "real 2025 F1 qualifying (OpenF1 weather, session mean)"
+        },
+        "air_density_kg_m3": 1.186,
+        "density_vs_sea_level_pct": -3.2,
+        "engine_power_factor": 1.001,
+        "tyre_grip_factor": 1,
+        "wind_applied": true,
+        "main_straight_tailwind_ms": 4.181
+      }
+    }
+  ],
+  "reproduction": [
+    {
+      "group": "lmh/2025",
+      "n": 5,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    },
+    {
+      "group": "lmh/2026",
+      "n": 6,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    },
+    {
+      "group": "lmdh/2025",
+      "n": 5,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    },
+    {
+      "group": "lmdh/2026",
+      "n": 6,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    },
+    {
+      "group": "lmgt3/2025",
+      "n": 5,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    },
+    {
+      "group": "lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorFrozen": 0,
+      "maxAbsErrorNew": 0
+    }
+  ],
+  "f1Unchanged": true,
+  "excluded": [
+    {
+      "track": "austin",
+      "cls": "lmh",
+      "year": 2025,
+      "reason": "wet-sessions.json",
+      "evidence": {
+        "reason": "rain during qualifying/Hyperpole; Hypercar speed traps 241-259 km/h vs ~300 km/h in 2026, lap 5% slower",
+        "sources": [
+          "https://toyotagazooracing.com/wec/release/2025/rd06-qualify/",
+          "https://speedwaymedia.com/?p=310892"
+        ]
+      }
+    },
+    {
+      "track": "austin",
+      "cls": "lmdh",
+      "year": 2025,
+      "reason": "wet-sessions.json",
+      "evidence": {
+        "reason": "rain during qualifying/Hyperpole; Hypercar speed traps 241-259 km/h vs ~300 km/h in 2026, lap 5% slower",
+        "sources": [
+          "https://toyotagazooracing.com/wec/release/2025/rd06-qualify/",
+          "https://speedwaymedia.com/?p=310892"
+        ]
+      }
+    },
+    {
+      "track": "austin",
+      "cls": "lmgt3",
+      "year": 2025,
+      "reason": "wet-sessions.json",
+      "evidence": {
+        "reason": "rain during qualifying/Hyperpole; Hypercar speed traps 241-259 km/h vs ~300 km/h in 2026, lap 5% slower",
+        "sources": [
+          "https://toyotagazooracing.com/wec/release/2025/rd06-qualify/",
+          "https://speedwaymedia.com/?p=310892"
+        ]
+      }
+    }
+  ]
+}
