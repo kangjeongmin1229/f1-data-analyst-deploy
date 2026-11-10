@@ -118,3 +118,25 @@ The class base is fitted first on each training fold. The hierarchy starts from 
 Report class-best errors and each model's best-entry errors. For pooled tests, aggregate model squared errors by class-season-track before calling the unchanged gate; this avoids treating several cars at one track as independent tracks. A model may keep its own values only if its hidden-track test beats the class base beyond noise; a gain below 0.1 pp with only 5 or 6 tracks is not established. Do not re-score the same held-out data after choosing which model offsets to keep.
 
 Pass requires pooled held-out improvement beyond noise, no worse class-season against both the all-car base and the fresh production arm, no cap hits, and unchanged F1. Report the hide-model test separately. Shown Hypercar output stays class-level. Any main fit reaching the cap is parked before its folds; do not label its scores as converged. Start LMGT3 only if Hypercar finishes inside the box.
+
+
+## Block 5 — done: measurement only
+
+The whole-team gear test finished without fitting a physics model. All selected laps have zero-rain source weather. Every test team is absent from its training set. Source hashes were checked again after analysis. Absolute gearbox ratios remain empty because tyre radius and final drive were not verified.
+
+| Season | Team folds | Laps | Observed samples/s | Correct gear distance, % |
+|---|---:|---:|---:|---:|
+| 2023 | 10 | 20 | 3.760 | 81.640 |
+| 2024 | 10 | 20 | 3.819 | 83.255 |
+| 2025 | 10 | 20 | 3.748 | 83.439 |
+| 2026 | 11 | 22 | 3.751 | 79.857 |
+
+| Coverage or exclusion | Count |
+|---|---:|
+| Raw car-data samples | 25033 |
+| Frozen or invalid-throttle samples | 104 |
+| Long or invalid timestamp intervals | 33 |
+| Team-season-gear rows with enough ratio samples | 189 |
+| Total team-season-gear rows | 328 |
+
+The derived table is `scripts/sim/data/f1-gear-measurements.json`; the readable report is `docs/lapsim-f1-gears-2026-11-10.md`. Raw source responses remain in the experiment cache. Accuracy covers selected Monza qualifying laps only. Low gears often have too few stable, full-throttle samples; those values stay blank. No claim is made about other circuits or absolute gearbox ratios.
