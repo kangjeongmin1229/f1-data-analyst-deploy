@@ -5,7 +5,7 @@ import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from 'n
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {tiTrack} from '../ti-races.mjs';
-import {sessionType, markRelative, markWetAcrossYears, counts} from './schema.mjs';
+import {sessionType, markRelative, markRainTiming, markWetAcrossYears, counts} from './schema.mjs';
 
 const ROOT = process.argv[2] || '.cache/lapsim/ti-all', YEARS = (process.argv[3] || '2023,2024,2025,2026').split(',').map(Number);
 const OUT = process.env.LAPSIM_LAPS || '.cache/lapsim/laps';
@@ -45,12 +45,13 @@ for (const year of YEARS) {
           rows.push({source: 'tracinginsights', series: 'f1', season: year, event, track, layout: track, sessionType: sessionType(session), session,
             cls: 'f1', carModel: `${L.team?.[i]} ${year}`, team: L.team?.[i] ?? null, entry: String(L.dNum?.[i] ?? drv), driver: drv, lap: L.lap[i], time,
             s1: s[0], s2: s[1], s3: s[2], trapKph: v(L.vst?.[i]), tyre: L.compound?.[i] ?? null, tyreAge: v(L.life?.[i]), stint, stintLap,
-            pitIn: v(L.pin?.[i]) != null ? 1 : 0, pitOut: v(L.pout?.[i]) != null ? 1 : 0, flag: status, airC: v(L.wAT?.[i]), trackC: v(L.wTT?.[i]), rain: L.wR?.[i] === true ? 1 : 0, q, src: commit.slice(0, 10)});
+            pitIn: v(L.pin?.[i]) != null ? 1 : 0, pitOut: v(L.pout?.[i]) != null ? 1 : 0, flag: status, tEnd: v(L.sesT?.[i]), rain: L.wR?.[i] === true ? 1 : 0, airC: v(L.wAT?.[i]), trackC: v(L.wTT?.[i]), humidityPct: v(L.wH?.[i]), pressureHpa: v(L.wP?.[i]),
+            windMs: v(L.wWS?.[i]), windFromDeg: v(L.wWD?.[i]), trackCondition: null, q, src: commit.slice(0, 10)});
         }
       }
       // session is wet when any lap saw rain or a wet-weather tyre
       if (rows.some(r => r.q.includes('wet_lap'))) for (const r of rows) r.q.push('wet_session');
-      all.push(...markRelative(rows));
+      all.push(...markRainTiming(markRelative(rows)));
     }
   }
 }

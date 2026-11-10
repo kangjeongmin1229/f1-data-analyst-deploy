@@ -5,7 +5,7 @@ import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {archive, readDocument} from '../../../worker/wec.js';
 import {SERIES} from '../../../worker/lapsim/series.js';
-import {sessionType, markRelative, markWetAcrossYears, counts} from './schema.mjs';
+import {sessionType, markRelative, markRainTiming, markWetAcrossYears, counts} from './schema.mjs';
 
 const OUT = process.env.LAPSIM_LAPS || '.cache/lapsim/laps', FROM = Number(process.env.LAPSIM_WEC_FROM || 2021);
 const WET = JSON.parse(readFileSync('scripts/sim/data/wet-sessions.json', 'utf8')).wec || {};
@@ -34,6 +34,9 @@ for (const s of seasons) {
       let w = []; const wf = files.find(x => x.folders[2] === f.folders[2] && /^Weather_/i.test(x.title));
       if (wf) try { w = await rowsOf(wf.url); } catch {}
       const col = k => w.map(r => num(r[k])).filter(x => x != null);
+      // weather sample for a lap: the weather file starts with the session, so sample time = first sample + lap ELAPSED (approximate join)
+      const wt = w.map(r => num(r.TIME_UTC_SECONDS)), w0 = wt.find(x => x != null);
+      const at = el => { if (w0 == null || !(el >= 0)) return null; let b = null, d = Infinity; w.forEach((r, i) => { const x = Math.abs(wt[i] - w0 - el); if (x < d) { d = x; b = r; } }); return b; };
       const rain = w.some(r => num(r.RAIN) > 0), listed = track && WET[`${s.year} ${track}`];
       sources.push({year: s.year, event, session, url: f.url, published_at: f.published_at, rows: recs.length});
       const rows = [], state = new Map();
@@ -42,7 +45,7 @@ for (const s of seasons) {
         const pitIn = !!String(r.CROSSING_FINISH_LINE_IN_PIT || '').trim(), pitOut = st.prevPit || num(secs(r.PIT_TIME)) > 0;
         if (pitOut && st.stintLap > 0) { st.stint++; st.stintLap = 0; } st.stintLap++; st.prevPit = pitIn;
         const time = secs(r.LAP_TIME), sx = [num(r.S1_SECONDS), num(r.S2_SECONDS), num(r.S3_SECONDS)], flag = String(r.FLAG_AT_FL || '').trim();
-        const q = [];
+        const q = [], ws = at(secs(r.ELAPSED));
         if (!(time > 30)) q.push('no_time');
         if (pitIn) q.push('pit_in'); if (pitOut) q.push('pit_out');
         if (flag && !['GF', 'FF'].includes(flag)) q.push('not_green');   // seasons with no flag column: no mark, counted in flags['']
@@ -54,9 +57,11 @@ for (const s of seasons) {
         rows.push({source: 'alkamel', series: 'wec', season: s.year, event, track, layout: track, sessionType: type, session, cls: clsOf(r.CLASS, r.MANUFACTURER),
           carModel: model.get(entry) || r.MANUFACTURER || null, team: r.TEAM ?? null, entry, driver: r.DRIVER_NAME ?? null, lap: num(r.LAP_NUMBER), time: time > 0 ? time : null,
           s1: sx[0], s2: sx[1], s3: sx[2], trapKph: num(r.TOP_SPEED), tyre: null, tyreAge: null, stint: st.stint, stintLap: st.stintLap, pitIn: pitIn ? 1 : 0, pitOut: pitOut ? 1 : 0,
-          flag, airC: mean(col('AIR_TEMP')), trackC: mean(col('TRACK_TEMP')), rain: rain ? 1 : 0, q});
+          flag, tEnd: secs(r.ELAPSED) || null, rain: ws ? (num(ws.RAIN) > 0 ? 1 : 0) : (rain ? 1 : 0),
+          airC: num(ws?.AIR_TEMP) ?? mean(col('AIR_TEMP')), trackC: num(ws?.TRACK_TEMP) ?? mean(col('TRACK_TEMP')), humidityPct: num(ws?.HUMIDITY), pressureHpa: num(ws?.PRESSURE),
+          windMs: ws && num(ws.WIND_SPEED) != null ? +(num(ws.WIND_SPEED) / 3.6).toFixed(2) : null, windFromDeg: num(ws?.WIND_DIRECTION), trackCondition: listed ? 'wet (report, wet-sessions.json)' : null, q});
       }
-      all.push(...markRelative(rows));
+      all.push(...markRainTiming(markRelative(rows)));
     }
   }
 }

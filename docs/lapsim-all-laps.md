@@ -10,7 +10,7 @@ One row per lap. Builders: `scripts/sim/laps/build-f1.mjs` (TracingInsights), `b
 `build-t71.mjs` (Timing71). Shared marks and counts: `scripts/sim/laps/schema.mjs`. Workflow: `lapsim-laps.yml`.
 
 Columns: source, series, season, event, track, layout, sessionType (Q/P/R), session, cls, carModel, team, entry, driver,
-lap, time, s1–s3, trapKph, tyre, tyreAge, stint, stintLap, pitIn, pitOut, flag, airC, trackC, rain, q (list of marks), push.
+lap, time, s1–s3, trapKph, tyre, tyreAge, stint, stintLap, pitIn, pitOut, flag, the weather columns of section 2.1, q (list of marks), push.
 
 Rows stay out of git (Actions artifacts `laps-*`, 30 days, with SHA-256). Committed: counts, hashes, fitted values.
 Timing71: counts only, as in `docs/lapsim-t71.md`.
@@ -39,20 +39,25 @@ Laps are marked, never deleted. A lap is **clean** when it has none of the hard 
 **Push lap** (the only laps used in the first fit): qualifying session, clean, within 2 % of the same car's best clean lap of that session.
 Practice and race laps are not used until a fuel and tyre-age term is declared (section 6).
 
-### 2.1 Wet and dry (owner instruction, 2026-11-11)
+### 2.1 Wet and dry (owner instruction, 2026-11-11: no wet levels)
 
-Every lap gets `wetLevel`. The first fit uses level 0 only. Wet laps are kept for a later wet model.
+Wet laps are not put into levels. Each lap keeps the weather as measured, so "how wet" can be read from the data later.
+The first fit uses dry laps only (no `wet_lap`, no `wet_session`). Wet laps stay in the dataset.
 
-| wetLevel | Meaning | Evidence |
-|---|---|---|
-| 0 | dry | no rain mark in the session |
-| 1 | damp | rain mark, but the class best is within 3 % of the dry reference |
-| 2 | wet | class best 3–10 % off the dry reference, or intermediate tyres |
-| 3 | heavy | more than 10 % off, or full wet tyres |
+| Column | Meaning | F1 | WEC (Al Kamel) | Timing71 |
+|---|---|---|---|---|
+| rain | rain flag at the lap | per lap | weather sample nearest to the lap (approximate time join) | from the feed's condition text |
+| minsSinceRain | minutes since the last rain sample in the session | yes | yes | yes |
+| rainShare | share of the session's laps with rain | yes | yes | yes |
+| airC, trackC, humidityPct, pressureHpa, windMs, windFromDeg | conditions at the lap | per lap | nearest sample | nearest frame |
+| tyre | slick, intermediate or wet | yes | not published | letters where the feed has them |
+| trackCondition | the feed's own text (for example "Track: Wet") or the outside report | no field | report list only | yes |
+| wx | every weather field of the feed, unchanged | – | – | yes |
+| paceRatio | class best of the session ÷ dry reference | yes | yes | yes |
+| trapRatio | class top speed of the session ÷ dry reference | yes | yes | yes |
 
 Dry reference = median class best of the sessions with no rain mark at the same track, class and session type in other seasons
-(F1: same car generation only). Traps outside 150–400 km/h are ignored. Known limit: the level is per session and class, so a session
-that dries (or gets wet) half-way has one level for all laps. A per-lap level from the rolling session pace is the next step.
+(F1: same car generation only). Traps outside 150–400 km/h are ignored. No source gives rain amount in mm or water depth: none is invented.
 
 ### 2.2 Car models (owner instruction, 2026-11-11)
 

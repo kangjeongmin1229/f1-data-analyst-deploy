@@ -7,7 +7,7 @@ import {join} from 'node:path';
 import {readReplay} from '../t71-read.mjs';
 import {trackOf} from '../t71-tracks.mjs';
 import {SERIES, weatherOf} from '../t71-collect.mjs';
-import {markRelative, markWetAcrossYears, counts, sessionType} from './schema.mjs';
+import {markRelative, markRainTiming, markWetAcrossYears, counts, sessionType} from './schema.mjs';
 
 const API = 'https://archive.timing71.org', OUT = join(process.env.LAPSIM_LAPS || '.cache/lapsim/laps', 't71');
 const get = async (u, n = 3) => {
@@ -31,7 +31,7 @@ async function collect() {
   if (shard === 0) { const inv = {}; for (const r of all) { const k = `${r.series}|${new Date(r.startTime * 1e3).getUTCFullYear()}|${sessionType(r.description || '')}`; inv[k] = (inv[k] || 0) + 1; } mkdirSync(OUT, {recursive: true}); writeFileSync(join(OUT, 'inventory.json'), JSON.stringify(inv)); }
   let mine = pick.filter((r, i) => i % shards === shard); if (limit) mine = mine.slice(0, limit);
   mkdirSync(OUT, {recursive: true});
-  const log = {listed: all.length, picked: pick.length, shard, done: 0, failed: [], carKeys: {}, sessions: []};
+  const log = {listed: all.length, picked: pick.length, shard, done: 0, failed: [], carKeys: {}, wxFields: {}, sessions: []};
   for (const r of mine) {
     try {
       const zip = join(OUT, `r-${shard}.zip`);
@@ -42,19 +42,25 @@ async function collect() {
       const w = weatherOf(rep.manifest.trackDataSpec, rep.weather), season = new Date(r.startTime * 1e3).getUTCFullYear(), track = trackOf(r.series, r.description) || null;
       const session = `${r.description}|${r.startTime}`;
       const cars = analysis?.cars?.cars || Object.fromEntries([...new Set(rep.laps.map(l => l.car))].map(c => [c, {stints: [{laps: rep.laps.filter(l => l.car === c).map(l => ({lapNumber: l.lap + 1, laptime: l.time, flag: l.flag}))}]}]));
+      // every weather field of the feed, as published, at the time of the lap (frame clock)
+      const spec = (rep.manifest.trackDataSpec || []).map(n => String(n)), wxAt = t => { let b = null; for (const x of rep.weather) { if (x.t <= t) b = x; else break; } return b || rep.weather[0] || null; };
+      const wv = x => Array.isArray(x) ? x.filter(y => y !== '' && y != null).join(' ') : x;
+      const wxOf = t => { const x = wxAt(t); return x && Array.isArray(x.v) ? Object.fromEntries(spec.map((n, i) => [n, wv(x.v[i])]).filter(([, y]) => y !== '' && y != null)) : null; };
+      const pickN = (o, re) => { if (!o) return null; const k = Object.keys(o).find(n => re.test(n)); const y = k ? parseFloat(o[k]) : NaN; return Number.isFinite(y) ? y : null; };
       const rows = [];
       for (const [car, c] of Object.entries(cars)) {
         for (const k of Object.keys(c)) if (k !== 'stints') (log.carKeys[r.key] ||= {})[k] = 1;
         (c.stints || []).forEach((st, si) => (st.laps || []).forEach((l, li) => {
           const f = frame.get(`${car}:${l.lapNumber}`), n = st.laps.length, tyre = tyreOf(f?.tyre), time = l.laptime > 0 ? l.laptime : null;
-          const sx = (f?.s || []).slice(0, 3), q = [];
+          const sx = (f?.s || []).slice(0, 3), q = [], wx = f ? wxOf(f.t) : null, cond = wx ? Object.entries(wx).filter(([n]) => /^track$|rain|condition|weather/i.test(n)).map(([n, y]) => `${n}: ${y}`).join('; ') || null : null;
+          const rainNow = cond && /wet|rain|damp/i.test(cond) && !/no rain|rain: (0|no|false|-)\b/i.test(cond) ? 1 : 0;
           if (!time) q.push('no_time');
           // stint boundaries from the analysis file; the frame pit state backs them up
           const pitOut = (li === 0 && (si > 0 || r.type !== 'R')) || false, pitIn = (li === n - 1 && si < c.stints.length - 1) || !!f?.pit;
           if (pitIn) q.push('pit_in'); if (pitOut) q.push('pit_out');
           if (!['green', 'chequered'].includes(l.flag ?? f?.flag)) q.push('not_green');   // local yellow is not a clean lap here
           if (/^W+$/i.test(String(tyre || ''))) q.push('wet_lap');
-          if (w?.wet > 0) q.push('wet_session');
+          if (w?.wet > 0 || rainNow) q.push('wet_session');
           if (!w) q.push('no_weather');
           if (rep.endFlag !== 'chequered') q.push('incomplete_replay');
           if (!track) q.push('no_track');
@@ -63,12 +69,15 @@ async function collect() {
             cls: c.raceClass ?? f?.cls ?? null, carModel: c.make ?? null, team: c.teamName ?? null, entry: String(c.raceNum ?? car), driver: st.driver?.name ?? st.driver ?? f?.driver ?? null,
             lap: l.lapNumber, time, s1: sx[0] ?? null, s2: sx[1] ?? null, s3: sx[2] ?? null, sectors: f?.s?.length > 3 ? f.s : undefined, trapKph: f?.spd ?? null,
             tyre, tyreAge: f?.age ?? null, stint: si + 1, stintLap: li + 1, pitIn: pitIn ? 1 : 0, pitOut: pitOut ? 1 : 0, flag: l.flag ?? f?.flag ?? null,
-            rid: String(r.filename).split('/').pop(), airC: w?.air ?? null, trackC: w?.track ?? null, rain: w?.wet > 0 ? 1 : 0, vft: f?.vft ?? undefined, q});
+            rid: String(r.filename).split('/').pop(), tEnd: f?.t ?? (l.timestamp ? l.timestamp / 1e3 : null), rain: rainNow,
+            airC: pickN(wx, /air/i) ?? w?.air ?? null, trackC: pickN(wx, /track temp/i) ?? w?.track ?? null, humidityPct: pickN(wx, /humid/i), pressureHpa: pickN(wx, /press/i),
+            windMs: pickN(wx, /wind speed/i), windFromDeg: pickN(wx, /wind dir/i), trackCondition: cond, wx, vft: f?.vft ?? undefined, q});
         }));
       }
-      markRelative(rows);
+      markRainTiming(markRelative(rows));
       if (rows.length) appendFileSync(join(OUT, `${r.key}-${shard}.ndjson`), rows.map(x => JSON.stringify(x)).join('\n') + '\n');
       log.sessions.push([r.key, season, r.type, r.description, rows.length, rep.endFlag, !!analysis, track]);
+      for (const n of spec) (log.wxFields[r.key] ||= {})[n] = 1;
       log.done++;
     } catch (x) { log.failed.push([r.series, r.description, String(x).slice(0, 160)]); }
   }
@@ -91,10 +100,12 @@ function merge() {
     writeFileSync(join(OUT, `${key}.ndjson`), rows.map(x => JSON.stringify(x)).join('\n'));
   }
   const logs = files.filter(f => /^log-\d+\.json$/.test(f)).map(f => JSON.parse(readFileSync(join(OUT, f), 'utf8')));
+  const wxFields = {}; for (const l of logs) for (const [k, v] of Object.entries(l.wxFields || {})) Object.assign(wxFields[k] ||= {}, v);
   const carKeys = {}; for (const l of logs) for (const [k, v] of Object.entries(l.carKeys)) Object.assign(carKeys[k] ||= {}, v);
   writeFileSync(join(OUT, '..', 't71-counts.json'), JSON.stringify({source: 'Timing71 archive (archive.timing71.org); calibration use only; rows are not committed',
     listed: logs[0]?.listed, picked: logs[0]?.picked, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
     inventory: existsSync(join(OUT, 'inventory.json')) ? JSON.parse(readFileSync(join(OUT, 'inventory.json'), 'utf8')) : null, sessionsNoLaps: logs.flatMap(l => l.sessions).filter(s => !s[4]).length, counts: table, wetAcrossYears: wet, lapsByModel: models,
+    weatherFields: Object.fromEntries(Object.entries(wxFields).map(([k, v]) => [k, Object.keys(v)])),
     carKeys: Object.fromEntries(Object.entries(carKeys).map(([k, v]) => [k, Object.keys(v)]))}, null, 1));
   console.table(table);
 }
