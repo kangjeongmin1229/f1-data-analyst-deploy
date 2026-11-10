@@ -35,8 +35,9 @@ jobs:
           exit 1
       - name: Download original control and BoP plus recovered sector result
         run: |
-          gh run download 42913368752 -p wec-control -p wec-bop -D wec-results
-          gh run download 42913698920 -p wec-sector2 -D wec-results/wec-sector2
+          gh run download 42913368752 -n wec-control -D wec-results/wec-control
+          gh run download 42913368752 -n wec-bop -D wec-results/wec-bop
+          gh run download 42913698920 -n wec-sector2 -D wec-results/wec-sector2
       - run: node scripts/sim/owner-compare-wec.mjs wec-results
       - run: cat wec-comparison/report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
