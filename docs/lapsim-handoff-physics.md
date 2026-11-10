@@ -1505,8 +1505,41 @@ Preflight: 427/427 offline tests pass; build and artifact validation pass. The f
 
 Execution declaration remains section 18.3: repository geometry for both arms; current B for control; production-settings F1 B rebuild without per-track drag for candidate; unchanged production F1 seasons/projections restored for WEC; R=1e-4, cap 2000 in both arms. Frozen production replay is separate. Timing flags stay off. The saved estimate remains 3–4 hours for B plus WEC; no shorter fit is substituted. Fresh output is .cache/wec-consistent-resume; prior partial artifacts are preserved. Run prepare-wec-consistent.mjs with the pinned archive, then run-wec-consistent.mjs. No adoption, model PR, merge or Vercel action.
 
-The isolated run started after preflight. B and the control are running; the candidate arm waits for rebuilt B. Results will be added here after completion or a stop condition.
+The isolated run started after preflight. B and the control are running; the candidate arm waits for rebuilt B. The later stop is recorded in section 21.
 
 The audit reads weather from the same cached session rows as the fit, not from potentially stale pole-table flags. The integration test deliberately gives the pole table a stale dry flag while marking that session wet only in the fit input. Both entry points exclude it; changing the manual exclusion file also changes both scopes together. Historical assertions run again after each WEC arm. This audit-only follow-up was copied into the isolated arms before their historical checks; the active fitting source and inputs did not change. The shell Git push lacked credentials, so checkpoint publication uses the connected GitHub API with an expected-head check.
 
 The audit also refuses different fit/pole-table session inventories, so an added or missing session cannot silently escape the comparison. The regression fixture covers this failure. Frozen F1 public reproduction is exact too: 2025 has 22 dry rows and 2026 has 17, both with maximum absolute error 0.000 s. These reproduction counts differ from held-out counts. The report helper passed an identical-variant smoke check against the saved tolerance evidence; this is a reporting check, not a new fit.
+
+
+## 21. Consistent candidate stopped: B production settings fail F1 convergence (2026-11-10)
+
+**Stopped; no candidate decision.** The requested fixed production settings for the F1 B rebuild conflict with the standing F1 BCD convergence check in physics rules section 5.1. Section 5 requires convergence before continuing a long run; section 5.3 requires stopping for a rule conflict. No exception to F1 B convergence was recorded in the approved restart. The accepted WEC tolerance rule is unaffected. Do not mistake this F1 issue for a failure of the completed WEC tolerance diagnostic.
+
+The first B main-fit block completed its prescribed rounds but its last score decrease exceeds the limit. Values below are read directly from this run's stdout, rounded there to four decimals. That rounding cannot explain the difference from the limit. No round count, bound, weight or gate was changed after seeing this.
+
+| Check | Value | Result |
+|---|---:|---|
+| B main rounds / iterations per car fit | 5 / 200 | Requested production settings |
+| Main round 1 score | 37.3313 | Recorded |
+| Main round 2 score | 28.8612 | Recorded |
+| Main round 3 score | 27.0969 | Recorded |
+| Main round 4 score | 26.5435 | Recorded |
+| Main round 5 score | 26.1867 | Recorded |
+| Last-round relative decrease | 1.344209% | Fails |
+| Required relative decrease | <1% | Existing F1 rule |
+| WEC R / iteration cap | 1e-4 / 2000 | Unchanged |
+| Frozen WEC dry reproduction | 33 rows; max 0.000 s | Exact |
+| Austin 2025 wet exclusions | 3 class rows | Excluded; not failures |
+| Frozen F1 2025 dry reproduction | 22 rows; max 0.000 s | Exact |
+| Frozen F1 2026 dry reproduction | 17 rows; max 0.000 s | Exact |
+
+The B rebuild and the control process were interrupted together. The execution session returned exit code 130, and the log hashes stopped changing. B had begun a later fit block but had not produced a completed calibration or transfer table. The control had completed four Hypercar group events, with no cap hit in the partial logs, and had reached LMGT3. It had not written a completed calibration. The candidate WEC arm never started. These partial events are retained as evidence only, not a valid paired result. No full held-out comparison, candidate cars/bounds/choices, candidate reproduction or candidate Interlagos replay is available. No candidate pass or rejection is claimed.
+
+The GitHub-only input recovery succeeded; this stop is not a download or runtime-access failure. The archive, raw/preprocessed WEC rows, archive/repository geometries, original/reprojected traces, production seed, current B table, Timing71 input, distance overrides, projection audit and accepted tolerance-result hashes were checked before fitting. All 44 production runtime files and gate.mjs remain byte-identical to the starting PR branch. No production values or geometry were written, and no model PR, merge or Vercel action occurred.
+
+Evidence: [wec-consistent-resume-2026-11-10](../scripts/sim/results/wec-consistent-resume-2026-11-10/), especially stopped.json, the explicitly partial compressed logs, the dry reproduction reports, verified-inputs.json, production-integrity.json and sha256.json. The shared exclusion test, offline test logs, build and validation evidence are preserved there. Section 5.1 already contains the requested WEC convergence rule; it was verified, not duplicated.
+
+**One decision needed:** may B use more rounds to meet the existing F1 convergence rule, with every other setting unchanged? Do not restart or change the fixed round setting before that decision. WEC R remains accepted, b2 stays rejected, trap/aero-ratio experiments remain on hold, and the three deferred geometry sources remain unchanged.
+
+Final verification after the audit inventory guard: 427/427 offline tests pass. Build and artifact validation had already passed; no application or build source changed afterward. Compressed final test output is final-tests.log.gz.

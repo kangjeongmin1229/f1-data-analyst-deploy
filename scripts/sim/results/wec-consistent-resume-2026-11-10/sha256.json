@@ -1,0 +1,20 @@
+{
+  "B-calibrate.partial.log.gz": "ee4e68286d46b4a55775c8b2bac0a6b575ce9f9da62490951da3fb16e31cdb25",
+  "B-calibrate.partial.stderr.gz": "54758f06cd0ba54a0f84bc46b405aba3adaeecc838e2105dcd3c8abaf66fadf8",
+  "control-calibrate.partial.log.gz": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec",
+  "control-calibrate.partial.stderr.gz": "19f98d0374b70774c67037a2a25656af1b2315a9d7b9888ae675619d53153d4a",
+  "control-objective.partial.jsonl.gz": "6f8ea13430e404ee79f619239f31bda7d07df392c4448ae0aa0dae83c157d603",
+  "final-tests.log.gz": "042172d9fe1ea647a01b3947df8f3363240a4a1fccabe58d4b2b954cbd2ec337",
+  "manifest.json": "182216a5eca22b63ccca2f4e1e4c8c202ff33b2e499d8503f56d649ba4628519",
+  "physics-tests.log.gz": "8ecb0975afa60c435a233c2384fa46a3a31fee016d96111012ecd8aba7d342ee",
+  "preflight-build.log.gz": "aa2fccf924460527f20cff7892b55102fd64e4e6a7959dd603144c0e7e35db9a",
+  "preflight-tests.log.gz": "6b7f50337692dcb94fdbe410561df292e0d2c856f3dc4941644f18dcd6a6187a",
+  "preflight-validate.log.gz": "a2b8517014b907d5048963efad18a6bd775d328b57bcbb96da7883fd3ac03320",
+  "production-integrity.json": "350eb8a25ea66decd37232f98839094d112e33f5b4b7422196ab25c6dbe5c4de",
+  "reproduction-frozen-dry.json": "034d7e747984ef27cfdcde7912d58a7aef40c3816db4ceda99a51bd20d567b22",
+  "reproduction-frozen-f1.json": "4cf98ee088328aa991b1f75a08758c7d9d8caaa94cbeb1e7275aaca854784a53",
+  "scope-integration.log.gz": "859a3c9d90826f0b187877018beba7ae19786198ca13d45e61f1bacc1bd2cb3b",
+  "source-hashes.json": "75d2b82eb7991d40ccc58aeec1ed8017003df0cfba63af8acf3ce2e619c2458f",
+  "stopped.json": "ec573e52657db418bdbe2706e1ddf96e1490ea3c96383027209c5d94a3d2e2d3",
+  "verified-inputs.json": "63e1931097a1a3e2b2dec856b1c7fedd956b2ffc2be05338e87e348cff706ffc"
+}

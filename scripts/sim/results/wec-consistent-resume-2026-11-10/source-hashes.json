@@ -1,0 +1,17 @@
+{
+  "node": "v22.23.4",
+  "fittingSourceCheckpoint": "404ef5f879dd2a794d3992724cd1bddde41a55d7",
+  "finalAuditSourceCheckpoint": "ac43e994b767ce3dfbd34b6d2a85fd9ef11dcfac",
+  "sources": {
+    "calibrate.mjs": "a08f7fe7d43bd55686779a870e807702b353fda7456ca30096a8d7bd128968d6",
+    "calibrate-lib.mjs": "db6e88285524c9886774b1be44c18c2600d56dd32d4ac4bed9339127c87c7d3f",
+    "wec-session-scope.mjs": "60189679e35a8203846a923f6e051f99b9cbf63481c51f9e3bd5d93526423cdf",
+    "wec-nm-stop.mjs": "1f7b6babd8c4ee297ed3c5949a30f713b9ff2baf365a43d1a3fbacc4b4cb7099",
+    "joint-bcd.mjs": "a47bbaef27bfc85abb33181ab88c12c90289c79b97b860901dd3ae01263e0854",
+    "verify-wec-reproduction.mjs": "387d77ff9666f3f2ee12ab4fad6c986e320546048bfa359fc49105baabadf8ee",
+    "prepare-wec-consistent.mjs": "c3d8b3d059678d5551476de7bf33ba59ebeac29cae5a7a74ddee3ce8e7187cd7",
+    "run-wec-consistent.mjs": "5dbc4a1bb29dea96b38a64134a5f8ccac4f6a478b8d6e008d1bd302581dad57d",
+    "report-wec-consistent.mjs": "94bfd69b1654f8962c76077023025f33b044aab57a4159aacdb35b593bd27043",
+    "archive-wec-consistent.mjs": "9723d06f5009dc163155d10bca5348fd474d8d6b6eb330c12a657b4db3f47a7a"
+  }
+}

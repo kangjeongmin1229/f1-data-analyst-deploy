@@ -1,0 +1,39 @@
+{
+  "stoppedAt": "2026-11-10T12:35:52.470894+00:00",
+  "reason": "F1 B main-fit convergence rule not met at the fixed production round count; section 5.3 rule conflict",
+  "rule": "section 5.1: less than 1% score decrease between the last two main-fit rounds and every held-out fold",
+  "productionSettings": {
+    "rounds": 5,
+    "iterations": 200
+  },
+  "firstMainBlockScores": [
+    37.3313,
+    28.8612,
+    27.0969,
+    26.5435,
+    26.1867
+  ],
+  "round4Score": 26.5435,
+  "round5Score": 26.1867,
+  "decreasePctFromPrintedScores": 1.3442085633017624,
+  "scorePrecision": "stdout rounded to 4 decimals; the failure is outside rounding uncertainty",
+  "requiredDecreasePctStrictlyBelow": 1,
+  "executionExitCode": 130,
+  "BComplete": false,
+  "controlComplete": false,
+  "candidateStarted": false,
+  "candidateComplete": false,
+  "adopted": false,
+  "partialControlCompletedGroups": [
+    "wec-lmh/2025",
+    "wec-lmh/2026",
+    "wec-lmdh/2025",
+    "wec-lmdh/2026"
+  ],
+  "partialControlCapHits": 0,
+  "standardRUnchanged": {
+    "tolerance": 0.0001,
+    "cap": 2000
+  },
+  "request": "Authorize increasing only B round count to establish convergence, or explicitly waive this B convergence requirement for the fixed-production-settings comparison. No change made."
+}
