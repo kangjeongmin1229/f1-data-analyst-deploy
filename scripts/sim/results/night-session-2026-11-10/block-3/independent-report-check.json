@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "arm": "control",
+      "groups": 6,
+      "n": 33,
+      "capHits": 0,
+      "reproduced": 33,
+      "wetExcluded": 3
+    },
+    {
+      "arm": "bop",
+      "groups": 6,
+      "n": 33,
+      "capHits": 0,
+      "reproduced": 33,
+      "wetExcluded": 3
+    },
+    {
+      "arm": "sector2",
+      "groups": 6,
+      "n": 33,
+      "capHits": 0,
+      "reproduced": 33,
+      "wetExcluded": 3
+    }
+  ]
+}

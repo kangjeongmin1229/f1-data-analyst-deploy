@@ -153,3 +153,5 @@ The fixed-input source audit is in `docs/lapsim-wec-fixed-inputs-2026-11-10.md`.
 | sector2 | 33 | 1.196784 | +0.030075 | rejected: worse on held-out rows | 0 | 33 | 0.000000 |
 
 Model-matched BoP worsens both Hypercar classes in the tested season. The sector retest worsens several class-seasons and pooled WEC. Keep both flags off; no further sector retest is authorized by this block. Neither test supplies a reason to loosen the downforce bound. The detailed report records car values, bound hits, selections, trap diagnostics and each class-season error. Production stays the baseline for Block 4.
+
+The optional LMGT3 extension in Block 4 is assessed separately. It cannot alter the predeclared Hypercar pooled gate or rescue a failed Hypercar result. No model retention choice is used to re-score the same held-out data.
