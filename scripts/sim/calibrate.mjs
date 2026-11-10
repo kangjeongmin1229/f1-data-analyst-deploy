@@ -16,6 +16,7 @@ import {fitSeason, withGrip, holdout, fitJoint, holdoutJoint, addBanking} from '
 import {fitJointBCD, holdoutBCD, backtestBCD, poleMult} from './joint-bcd.mjs';
 import {SERIES} from '../../worker/lapsim/series.js';
 import {lapsimWecBop} from '../../worker/lapsim/wec-bop-data.js';
+import {applyWecTiming, timingMapping} from './wec-timing.mjs';
 
 const CACHE = process.env.LAPSIM_CACHE || '.cache/lapsim';
 const ITERS = Number(process.env.LAPSIM_ITERS || 70), HOLDOUT_ITERS = Number(process.env.LAPSIM_HOLDOUT_ITERS || 25);
@@ -36,6 +37,11 @@ const tauOf = (date, year) => { if (!date) return 0.5; const a = Date.UTC(year, 
 const ONLY_YEARS = process.env.LAPSIM_SEASONS ? process.env.LAPSIM_SEASONS.split(',').map(Number) : null;
 // LAPSIM_ONLY=wec: refit the WEC classes only; F1 seasons and projections are kept from the current calibration
 const ONLY_WEC = E.LAPSIM_ONLY === 'wec';
+const WEC_TIMING = {trapPosition: E.LAPSIM_WEC_TRAP_POSITION === 'on', sectors: E.LAPSIM_WEC_SECTORS === 'on', sectorWeight: Number(E.LAPSIM_WEC_SECTOR_WEIGHT || 2)};
+const WEC_TIMING_ON = WEC_TIMING.trapPosition || WEC_TIMING.sectors;
+if (WEC_TIMING_ON && !ONLY_WEC) throw new Error('WEC timing experiments require LAPSIM_ONLY=wec');
+if (WEC_TIMING.sectors && ![1, 2, 4].includes(WEC_TIMING.sectorWeight)) throw new Error('WEC sector weight must be 1, 2 or 4');
+const WEC_POSITIONS = WEC_TIMING_ON ? JSON.parse(await readFile('scripts/sim/data/wec-timing-positions.json', 'utf8')) : null;
 const prevCal = ONLY_WEC ? (await import('../../worker/lapsim/calibration-data.js')).lapsimCalibration : null;
 const traces = ONLY_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'traces.json'), 'utf8'));
 const tracks = Object.fromEntries(Object.entries(lapsimTracks).map(([id, d]) => [id, trackFromData(d)]));
@@ -207,9 +213,14 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // speed traps sit at different places on each track: use one only when it looks like a top speed
     const traps = sessions.flatMap(w => w.laps.map(l => l.topSpeedKph)).filter(Number.isFinite).sort((a, b) => a - b);
     const medTrap = traps[Math.floor(traps.length / 2)];
-    const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: tracks[w.track], lapSeconds: l.lap, trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null,
-      weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session}})));
+    const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => applyWecTiming({name: w.track, track: tracks[w.track], lapSeconds: l.lap, trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null,
+      weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session}},
+      l, timingMapping(WEC_POSITIONS, 'wec', w.track, w.year), WEC_TIMING)));
     let laps = lapsWith(f1Grip);
+    if (WEC_TIMING_ON) {
+      report.push(`WEC timing ${cls}/${year}: ${JSON.stringify({laps: laps.length, sectorTerms: laps.filter(l => l.timing.sectorUsed).length, positionedTraps: laps.filter(l => l.timing.trapPositionUsed).length, sectorWeight: WEC_TIMING.sectorWeight})}`);
+      for (const l of laps) report.push(`WEC timing row ${cls}/${year}/${l.name}/#${l.meta.car}: ${JSON.stringify(l.timing)}`);
+    }
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
     const params = Object.entries(def.bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi}));
@@ -259,7 +270,8 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     for (const p of fit.perTrack) if (!perTrack[p.name] && p.meta?.event !== 'Timing71') {
       const w = sessions.find(x => x.track === p.name);
       perTrack[p.name] = {grip: +p.grip.toFixed(4), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
-        trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
+        trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null,
+        ...(p.timing ? {timing: p.timing, trapDistance: p.trapDistance, simTrapKph: p.simTrapKph == null ? undefined : +p.simTrapKph.toFixed(1), realSectors: p.realSectors, simSectors: p.simSectors?.map(x => +x.toFixed(3))} : {})};
     }
     ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length,
       holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)}))}};

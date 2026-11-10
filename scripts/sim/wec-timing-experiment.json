@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "309fdfd8e214c5089072bcc5c06e51892bf63790",
+  "inputUrl": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
+  "inputSha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
+  "geometry": "Use production worker/lapsim/tracks-data.js; do not replace it with the older archive geometry.",
+  "commonEnv": {
+    "LAPSIM_ONLY": "wec",
+    "LAPSIM_ITERS": "70",
+    "LAPSIM_HOLDOUT_ITERS": "25",
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_WPRIOR": "8"
+  },
+  "effectiveWecWeights": {
+    "lap": 2,
+    "trap": 0.5,
+    "sectorPrimary": 2
+  },
+  "variants": [
+    {
+      "name": "baseline",
+      "decisionEligible": false,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "off",
+        "LAPSIM_WEC_SECTORS": "off",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+      }
+    },
+    {
+      "name": "a",
+      "decisionEligible": true,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "on",
+        "LAPSIM_WEC_SECTORS": "off",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+      }
+    },
+    {
+      "name": "b2",
+      "decisionEligible": true,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "off",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+      }
+    },
+    {
+      "name": "ab2",
+      "decisionEligible": true,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "on",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+      }
+    },
+    {
+      "name": "b1",
+      "decisionEligible": false,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "off",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "1"
+      }
+    },
+    {
+      "name": "b4",
+      "decisionEligible": false,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "off",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "4"
+      }
+    },
+    {
+      "name": "ab1",
+      "decisionEligible": false,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "on",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "1"
+      }
+    },
+    {
+      "name": "ab4",
+      "decisionEligible": false,
+      "env": {
+        "LAPSIM_WEC_TRAP_POSITION": "on",
+        "LAPSIM_WEC_SECTORS": "on",
+        "LAPSIM_WEC_SECTOR_WEIGHT": "4"
+      }
+    }
+  ],
+  "pass": {
+    "baselineMaxDifferencePP": 0.05,
+    "pooledWecGate": "accepted",
+    "noWorseClassSeason": true,
+    "f1": "byte-identical seasons and projections",
+    "newBoundHits": 0,
+    "reproductionPct": 0,
+    "screenMinutes": 60,
+    "convergenceScoreFallPct": 1
+  },
+  "coverage": [
+    {
+      "class": "lmh",
+      "year": 2025,
+      "alKamelLaps": 15,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "alKamelLaps": 18,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "alKamelLaps": 15,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "alKamelLaps": 18,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "alKamelLaps": 15,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "alKamelLaps": 18,
+      "sectorTerms": 0,
+      "positionedTraps": 0
+    }
+  ],
+  "limitations": [
+    "All fitted layouts differ from official lengths by more than 0.5%; no sector observation is eligible.",
+    "No numeric trap distance verified for fitted layouts. Le Mans map has one, but no geometry is fitted.",
+    "No sensitivity weight may be selected using held-out results.",
+    "WEC corner-speed observations are unavailable.",
+    "The production WEC Nelder-Mead fitter uses 70/25 iterations, not the F1 BCD rounds. Convergence must not be inferred from the F1 settings."
+  ]
+}

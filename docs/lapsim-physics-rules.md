@@ -212,12 +212,43 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 | F1 only / WEC only | `LAPSIM_SKIP_WEC=1` / `LAPSIM_ONLY=wec` |
 | Fit length | `LAPSIM_ROUNDS`, `LAPSIM_BCD_ITERS` |
 | Model flags | `LAPSIM_TRACK_DRAG`, `LAPSIM_AXLE`, `LAPSIM_LOADEXP`, `LAPSIM_ROLLFRONT`, `LAPSIM_KV`, `LAPSIM_BANK`, `LAPSIM_GRIP_LO`, `LAPSIM_GRIP_HI`, `LAPSIM_WEC_GRIP` |
+| WEC timing experiments (off by default, require `LAPSIM_ONLY=wec`) | `LAPSIM_WEC_TRAP_POSITION=on`, `LAPSIM_WEC_SECTORS=on`; `LAPSIM_WEC_SECTOR_WEIGHT=2` is the approved primary weight, `1` and `4` sensitivity only. Verified year-specific positions: `scripts/sim/data/wec-timing-positions.json`. |
 | Parallel experiment | Edit `scripts/sim/experiments.json` (common settings and one entry per variant), push to a `lapsim-exp/<name>` branch. Workflow `lapsim-experiment.yml` runs every variant and a compare job. Do not open a PR from that branch to `main`. |
 | Compare | `node scripts/sim/exp-compare.mjs base.js cand1.js cand2.js` |
 | Corner, trap and braking check | `node scripts/sim/validate.mjs <name>` writes `probe-out/validate-<name>.json` |
 | Summary of one run | `node scripts/sim/exp-summary.mjs <name>` |
 
 A new flag must be read in `calibrate.mjs` from the environment in the same way as the existing flags, and listed in this table.
+
+
+#### Verified WEC production recipe — PR #149
+
+Verified 2026-11-10 with Node 22.23.4. This reconstructs the saved WEC calibration from PR #149 (c08a72f66a8984013d5ede3b9b923bdb476eb734); it does not update the production model. Use an isolated snapshot of that commit, including its calibration-data.js as the unchanged F1 seed, transfer-grip-data.js (experiment B), Timing71 table and BoP data.
+
+**Critical input:** use worker/lapsim/tracks-data.js from the pinned archive for this historical reproduction, not the checked-in geometry. They differ only at Interlagos. PR #149's saved WEC fit was generated with archive geometry, while the repository still contains the other geometry. Never replace production geometry or regenerate its model silently.
+
+Archive URL: https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa
+
+| Input | SHA-256 |
+|---|---|
+| Archive | 268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186 |
+| Archive geometry | 4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1 |
+| Raw archive wec.json | aa40cae3646ea33a3d1692c0f523196a4716bd707b84b38476bcf96da9d54626 |
+| wec.json after existing wet exclusions | ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960 |
+| B transfer table | b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705 |
+| Timing71 derived input | 4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76 |
+
+Extract only into the isolated reproduction snapshot:
+
+```sh
+tar -xzf lapsim-inputs.tgz .cache/lapsim/wec.json worker/lapsim/tracks-data.js
+node --input-type=module -e 'import {readFileSync,writeFileSync} from "node:fs"; const file=".cache/lapsim/wec.json"; const rows=JSON.parse(readFileSync(file,"utf8")); const wet=JSON.parse(readFileSync("scripts/sim/data/wet-sessions.json","utf8")).wec; for(const row of rows) if(wet[row.year+" "+row.track] && row.weather) row.weather.rain=true; writeFileSync(file,JSON.stringify(rows));'
+LAPSIM_ONLY=wec LAPSIM_ITERS=70 LAPSIM_HOLDOUT_ITERS=25 node scripts/sim/calibrate.mjs
+```
+
+Run in a clean environment: no other LAPSIM_* overrides. The new timing flags, axle, banking and vertical-curvature features are off; LAPSIM_WEC_GRIP is unset, allowing the existing F1-versus-transfer selection. WEC weights are the unchanged defaults (lap 2, trap 0.5). BCD rounds/iterations do not control WEC. There are 36 raw class-session rows / 108 selected laps; existing wet exclusions remove 9 Austin 2025 laps, leaving 99. The 11 Timing71 candidate rows remain in scripts/sim/data/t71-wec-extra.json.
+
+The generatedAt field records the execution date and is not a fitted number; compare it separately. Numerical/model output must match exactly, not merely within 0.05 pp. Full evidence and the checked-in-versus-fit geometry discrepancy are in docs/lapsim-handoff-physics.md section 15.
 
 ### 5.3 Stop and ask the owner
 

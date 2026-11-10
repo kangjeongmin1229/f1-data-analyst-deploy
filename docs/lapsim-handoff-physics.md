@@ -734,3 +734,287 @@ Not checked: a new fit, convergence, a new production-baseline experiment, held-
 corner/trap accuracy, WEC trap position, or run-specific track-factor bound hits.
 No improved model or gate acceptance is claimed. The workflow is unchanged; invoking
 this report automatically from that workflow is outside this physics-only task.
+
+
+## 14. WEC timing experiment — task 9.5.2 (2026-11-10)
+
+Owner-approved scope: trap position (a), sector objective (b); aerodynamic ratio (c) is on hold.
+Code flags remain off by default. This is an experimental implementation, not approval to enable it in production.
+
+### 14.1 Predeclared experiment
+
+Base commit: 309fdfd8e214c5089072bcc5c06e51892bf63790 (PR #153).
+Manifest: scripts/sim/wec-timing-experiment.json. Primary variants: baseline, a, b2, ab2.
+Sensitivity-only variants: b1, b4, ab1, ab4. The acceptance decision uses weight 2 only. No best-weight selection from held-out results.
+
+All runs: LAPSIM_ONLY=wec, LAPSIM_ITERS=70, LAPSIM_HOLDOUT_ITERS=25, unchanged production F1 seasons, projections and transfer factors.
+The production workflow's F1 settings (BCD 5 rounds/200 iterations, lap 20, sector 2, prior 8, track drag and teams on) are retained in the environment but are not used to refit F1.
+The WEC fitter actually uses lap weight 2 and trap weight 0.5; its approved new term is 2 times the sum of three squared sector errors in seconds.
+Weights 1 and 4 are sensitivity checks only. Every original row weight, parameter bound, pooling/BoP decision and gate remains unchanged.
+
+Pass: pooled WEC gate accepted, no class-season worse, F1 seasons/projections unchanged, zero new bound hits, no worse measured trap or corner errors.
+Baseline must match production within 0.05 percentage points per group. Screen budget: under 60 minutes.
+The production WEC fitter uses Nelder-Mead iterations, not F1 BCD rounds; F1 round settings are not evidence of WEC convergence.
+WEC corner measurements are unavailable, so the physical corner check cannot be claimed as passed.
+
+| Class | Year | Al Kamel laps | Eligible sectors | Positioned traps | Held-out tracks |
+|---|---:|---:|---:|---:|---:|
+| lmh | 2025 | 15 | 0 | 0 | 5 |
+| lmh | 2026 | 18 | 0 | 0 | 6 |
+| lmdh | 2025 | 15 | 0 | 0 | 5 |
+| lmdh | 2026 | 18 | 0 | 0 | 6 |
+| lmgt3 | 2025 | 15 | 0 | 0 | 5 |
+| lmgt3 | 2026 | 18 | 0 | 0 | 6 |
+
+Timing71 extra candidate rows have no verified year-specific timing positions and retain their original lap/trap observations.
+The existing fit decides whether to use these extra rows; final fitted n is reported separately.
+
+### 14.2 Source verification and eligibility
+
+Official event manifests: https://files.alkamelcloud.com/wec/manifests/results_14_2025.json and https://files.alkamelcloud.com/wec/manifests/results_15_2026.json.
+The derived table scripts/sim/data/wec-timing-positions.json records each source URL, page and SHA-256. Raw PDFs are not committed.
+Distances below are metres from the finish timing line, not the separate grid start line; the maps label distances approximate.
+No trap distance was inferred from a diagram's pixels or borrowed from F1. Le Mans has a numeric trap distance but no simulator geometry in this fit.
+
+| Track | Year | Official length | S1 end | S2 end | Trap | Source |
+|---|---:|---:|---:|---:|---:|---|
+| lusail | 2025 | 5418 | 2072 | 3664 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf) |
+| imola | 2025 | 4909 | 1214 | 2728 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf) |
+| spa-francorchamps | 2025 | 7003.9 | 2243.5 | 5112.7 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf) |
+| interlagos | 2025 | 4309 | 1234 | 3155 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf) |
+| austin | 2025 | 5513 | 1311 | 3568 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v2.pdf) |
+| sakhir | 2025 | 5412 | 1804 | 3562 | unverified | [map](https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf) |
+| imola | 2026 | 4909 | 1214 | 2728 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf) |
+| spa-francorchamps | 2026 | 7003.9 | 2243.5 | 5112.7 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf) |
+| interlagos | 2026 | 4309 | 1234 | 3155 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf) |
+| austin | 2026 | 5513 | 1311 | 3568 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf) |
+| catalunya | 2026 | 4657 | 1627 | 3395 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf) |
+| monza | 2026 | 5793 | 2055 | 3727 | unverified | [map](https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf) |
+| le-mans | 2026 | 13625.7 | 1900.7 | 7672.13 | 3754.13 | [map](https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/00_Event%20Info/Circuit%20Map%20v3.pdf) |
+
+All 12 fitted track/year layouts differ in length by more than 0.5%, so every sector term is excluded.
+A map can be verified while its mapping to the current geometry is ineligible. These two states are reported separately.
+At most 0.5% length difference is allowed, measured relative to official length. Accepted distances are scaled to the simulation's distance scale.
+Measured sectors must be positive and sum to the same real lap within 0.002 s, the maximum combined rounding error of three sectors and a lap published to 0.001 s.
+Invalid rows retain lap and trap only and report the reason. WEC sector overrides copy the track object and never alter its F1 sector points.
+Trap positions also require compatible geometry and a numeric source. A valid positioned trap bypasses the 92% filter; unknown positions keep the existing lap-maximum comparison and filter.
+
+### 14.3 Aerodynamic ratio: held, no assumed numeric limit
+
+- **2026 LMH Technical Regulations**, WMSC 16 October 2025, published 17 October 2025, clean issue, article 3.7.3: aerodynamic coefficients must meet criteria in the technical appendices. This clause gives no numeric downforce/drag ratio. Article 3.7.1 describes official wind-tunnel checks across ride heights. [Official document](https://www.fia.com/system/files/documents/2026_lmh_technical_regs_2025.10.16_published_2025.10.17_clean_version_0.pdf).
+- **LMDh Technical Regulations**, revision 16 October 2025 (2026 rules), article 3.9.3, page 25: homologation requires aerodynamic performance inside the Target Window defined in the appendices. This clause gives no numeric downforce/drag ratio. Article 3.9.1 describes wind-tunnel maps over ride height and car attitude. [Official document](https://www.fia.com/system/files/documents/lmdh-technical-regulations-2025.10.16-blackline.pdf).
+
+The applicable numeric appendix criteria have not been verified. Neither 4:1 nor another ratio has been implemented, and no aero bounds are changed. The owner decides the next step for (c).
+
+### 14.4 Results and decision
+
+Decision: **STOP under rule 5.3**. The flags-off baseline differs from production by more than 0.05 percentage points in four groups. No candidate or sensitivity run was started, no gate acceptance is claimed, and no model or code PR has been published. Owner direction is required before further experiments. The cause is not yet established; changing the iteration count or replacing geometry to make this pass would not be a valid silent correction.
+
+| Class | Season | Production held-out RMS % | Run RMS % | Delta pp | Held-out n | Fitted laps | Grip muY | Downforce ClA | Drag CdA | Bound hits |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| lmh | 2025 | 1.43 | 1.54 | +0.11 | 5 | 15 | 1.568052 | 7.000000 | 1.087457 | clA upper 7 |
+| lmh | 2026 | 1.04 | 1.10 | +0.06 | 6 | 18 | 1.521326 | 6.554535 | 0.964483 | none |
+| lmdh | 2025 | 1.24 | 1.61 | +0.37 | 5 | 15 | 1.559939 | 7.000000 | 1.102774 | clA upper 7 |
+| lmdh | 2026 | 1.07 | 1.05 | -0.02 | 6 | 18 | 1.530437 | 6.396914 | 0.953797 | none |
+| lmgt3 | 2025 | 1.73 | 1.82 | +0.09 | 5 | 15 | 1.589101 | 3.500000 | 1.300000 | clA upper 3.5; cdA upper 1.3 |
+| lmgt3 | 2026 | 1.37 | 1.36 | -0.01 | 6 | 18 | 1.613810 | 3.500000 | 1.291986 | clA upper 3.5 |
+
+Downforce did **not** move off a bound in any group. LMH/LMDh 2026 were already below their upper bounds in production. LMDh 2025 also changed from 18 fitted rows to 15: the existing Timing71 pooling decision did not retain the extra rows in this baseline. This is diagnostic evidence, not evidence of a new timing feature's effect.
+
+F1 seasons and projections are JSON-identical to production. The production calibration file has been restored byte-for-byte; the failed fit is retained only as a local experiment artifact.
+
+| Check | Result |
+|---|---|
+| New timing tests plus existing report tests | 24/24 passed |
+| Physics suite | 90/90 passed, including raced-session reproduction |
+| Full suite, KONGBODA_FEATURES=all | 410/410 passed |
+| npm run build / npm run validate | Both passed |
+| Flags-off unit output compatibility | Passed |
+| Full original-source vs modified-source byte comparison | Incomplete: control run cancelled when the stop condition was found |
+| Production baseline tolerance | Failed: LMH 2025/2026, LMDh 2025, LMGT3 2025 |
+| Primary candidates a, b2, ab2 | Not run: blocked by baseline failure |
+| Sensitivity b1, b4, ab1, ab4 | Not run: blocked by baseline failure |
+| Convergence and pooled WEC acceptance | Not established |
+
+Reproduction inputs: archive SHA-256 268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186, production geometry SHA-256 fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb. The archive includes older Interlagos geometry; only its raw timing cache was extracted, and the repository wet-session exclusions were applied. The production geometry was used unchanged.
+
+Local evidence: .cache/wec-experiment/baseline.log, baseline.js, baseline-comparison.json, production.js, physics-tests.log and full-tests.log. These are preserved for baseline diagnosis; they are not published experiment artifacts or a completed PR.
+
+
+
+## 15. Read-only baseline investigation (2026-11-10)
+
+Owner limit: 45 minutes. No candidate sector/trap fit, model PR, merge, bound/weight/gate change or working geometry change. The revised eligibility rule is evaluated as an audit here; fitting code remains unchanged during this read-only investigation.
+
+### 15.1 Input mismatch and selection decisions
+
+Production calibration is byte-identical to PR #149, commit c08a72f66a8984013d5ede3b9b923bdb476eb734. PR #148 head is 82a8cadebc88ae1a4da6d2be02dfb1ccd4174810. Both PRs describe local WEC-only refits; neither records the original shell environment or raw local wec.json checksum. The reconstruction below is verified by execution, rather than represented as a recovered shell log.
+
+The checked-in geometry is identical at PR #149 and the current base, but the geometry used to generate the PR #149 calibration differs at Interlagos. Archive Interlagos is session 11408 / source year 2026, 4227.802814 m; checked-in Interlagos is session 9865 / source year 2025, 4230.354610 m. Calling the archive geometry 'older' was inaccurate; these are different source snapshots. Curvature, grade, heading, sectors, corners and map differ, not only the length. Other 25 tracks are identical.
+
+A saved-car replay with current geometry misses every PR #149 Interlagos stored lap by 0.091–0.223 s. The archive geometry reproduces all six at the stored 0.001 s precision. For PR #148 the reverse holds: current geometry reproduces all six stored Interlagos laps, and archive geometry does not.
+
+| Class | Season | Grip: production → rerun | F1 / transfer RMS %: production → rerun | Pool RMS %: production → rerun | Pool used: production → rerun | BoP RMS %: production → rerun | BoP used |
+|---|---:|---|---|---|---|---|---|
+| lmh | 2025 | f1 → f1 | 1.43 / 1.74 → 1.54 / 1.61 | 1.43 → 1.49; 1.54 → 1.74 | false → false | 1.43 → 1.59; 1.54 → 1.80 | false → false |
+| lmh | 2026 | transfer → transfer | 1.36 / 1.04 → 1.28 / 1.10 | 1.04 → 1.06; 1.10 → 1.14 | false → false | none; none | n/a → n/a |
+| lmdh | 2025 | transfer → f1 | 1.74 / 1.34 → 1.61 / 1.66 | 1.34 → 1.24; 1.61 → 1.56 | true → false | 1.24 → 1.74; 1.61 → 1.64 | false → false |
+| lmdh | 2026 | transfer → transfer | 1.42 / 1.07 → 1.40 / 1.05 | 1.07 → 1.03; 1.05 → 1.08 | false → false | none; none | n/a → n/a |
+| lmgt3 | 2025 | transfer → transfer | 2.14 / 1.73 → 2.14 / 1.82 | 1.73 → 1.83; 1.82 → 1.79 | false → false | none; none | n/a → n/a |
+| lmgt3 | 2026 | transfer → transfer | 1.49 / 1.37 → 1.48 / 1.36 | 1.37 → 1.35; 1.36 → 1.32 | false → false | none; none | n/a → n/a |
+
+All BoP candidates are rejected in both files. The 2025 BoP references are identical: LMH 15 rows / 1048.7 kg / 500.9 kW; LMDh 15 rows / 1045.1 kg / 505.6 kW. Other BoP fields are null. Extra pool candidate counts are unchanged: 3 per Hypercar group and 5 per LMGT3 group. Every exact pooled, bop and gripSource field, including reason strings, is preserved in the investigation JSON.
+
+| Group | Grip gate: production / failed rerun | Pool gate: production / failed rerun | BoP gate: production / failed rerun |
+|---|---|---|---|
+| lmh/2025 | rejected: worse on held-out rows / rejected: worse on held-out rows | rejected: worse on held-out rows / rejected: worse on held-out rows | rejected: worse on held-out rows / rejected: worse on held-out rows |
+| lmh/2026 | accepted: held-out error lower beyond noise / rejected: gain within noise | rejected: worse on held-out rows / rejected: worse on held-out rows | null / null |
+| lmdh/2025 | accepted: held-out error lower beyond noise / rejected: worse on held-out rows | accepted: held-out error lower beyond noise / rejected: gain within noise | rejected: worse on held-out rows / rejected: worse on held-out rows |
+| lmdh/2026 | rejected: gain within noise / accepted: held-out error lower beyond noise | rejected: gain within noise / rejected: worse on held-out rows | null / null |
+| lmgt3/2025 | rejected: gain within noise / rejected: gain within noise | rejected: worse on held-out rows / rejected: gain within noise | null / null |
+| lmgt3/2026 | rejected: gain within noise / rejected: gain within noise | rejected: gain within noise / rejected: gain within noise | null / null |
+
+LMDh 2025: production first selects transfer grip (1.74 → 1.34%); pooling then passes (1.34 → 1.24%), giving 15 Al Kamel plus 3 Timing71 rows. The mismatched rerun selects F1 grip (1.61 vs transfer 1.66%); pooling improves 1.61 → 1.56% but is within noise, so only 15 rows remain. No row was silently removed by the new timing flags.
+
+Per-track input diff: **zero differing rows out of 33 paired class-season-track rows**. Track membership and the fields realLap, trapKph, car, event and weather are exactly equal. The saved calibration stores only the first lap per track, so the lower two laps are checked through the full historical reproduction rather than claimed to be present in that saved output.
+
+### 15.2 Raw input and source provenance
+
+| Class | Season | Archive sessions / selected laps | Dry sessions / laps | Wet exclusion | Timing71 candidates |
+|---|---:|---:|---:|---|---:|
+| lmh | 2025 | 6 / 18 | 5 / 15 | austin | 3 |
+| lmh | 2026 | 6 / 18 | 6 / 18 | none | 3 |
+| lmdh | 2025 | 6 / 18 | 5 / 15 | austin | 3 |
+| lmdh | 2026 | 6 / 18 | 6 / 18 | none | 3 |
+| lmgt3 | 2025 | 6 / 18 | 5 / 15 | austin | 5 |
+| lmgt3 | 2026 | 6 / 18 | 6 / 18 | none | 5 |
+
+The archive contains 36 class-session rows / 108 selected laps. Its only effective preprocessing change is rain=false → true for the three Austin 2025 class rows, following scripts/sim/data/wet-sessions.json; 9 laps are excluded and 99 remain. The pinned raw file is therefore not the final fit input until these exclusions are applied. No lap, trap, car, event, sector or numeric weather value is changed. Timing71 is the unchanged 11-row derived file: LMH 3, LMDh 3, LMGT3 5, all from 2024.
+
+| Input | SHA-256 |
+|---|---|
+| archive | 268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186 |
+| archiveWec | aa40cae3646ea33a3d1692c0f523196a4716bd707b84b38476bcf96da9d54626 |
+| excludedWec | ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960 |
+| archiveGeometry | 4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1 |
+| checkedInGeometry | fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb |
+| transferB | b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705 |
+| transferJ | c927fb77ef2681aafe9b47f327d7d001d83ffc7789a32430c0ebe0df43ca76e4 |
+| timing71 | 4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76 |
+| seed149 | 47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586 |
+| seed148 | bc81688bc1f760ebbc6e2975e631d90eb0251cc0546efe7b7f134e84cc5efff3 |
+
+PR #148 uses transfer-grip git blob 2fc61d5bf9ad83eabf68b0244ae2a5ef52fa21c4 (J); PR #149 uses 38b864d7f971d2ea8dd8eb98427378db6d1c1539 (B). All 26 values match their experiment artifacts exactly: probe-out/cal-J.js blob 9812395026352dc4098afa8f38169bd017c9c197 and cal-B.js blob 6c2215d44808b315532c884f76a7a2a4b2637f9e on the fork.
+
+The documented WEC command is LAPSIM_ONLY=wec node scripts/sim/calibrate.mjs. Source defaults are LAPSIM_ITERS=70 and LAPSIM_HOLDOUT_ITERS=25. The production workflow's BCD 5 rounds / 200 iterations apply to F1, not the WEC Nelder–Mead fit. WEC lap/trap weights stay 2 / 0.5. Transfer generation is node scripts/sim/transfer-grip.mjs <cal-B.js or cal-J.js> <source label>; this investigation reads the already generated table without regenerating it.
+
+Sources: [PR #149](https://github.com/MisterKinn/f1-data-analyst/pull/149), [commit c08a72f](https://github.com/MisterKinn/f1-data-analyst/commit/c08a72f66a8984013d5ede3b9b923bdb476eb734), [PR #148](https://github.com/MisterKinn/f1-data-analyst/pull/148), [pinned archive](https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa).
+
+### 15.3 Revised sector eligibility, audited before any sector fit
+
+Use ratio = simulated ds times point count / official centre-line length. Scale official S1/S2 distances by this ratio; accept abs(ratio - 1) <= 0.02. Positive sectors and absolute sum-minus-lap <= 0.002 s remain required. No F1 sector point is altered.
+
+Sanity check declared before calculation: for each dry track-year, simulate the best real lap of each class with its saved production car, track grip and session weather. Exclude the whole track-year if any of its classes exceeds 3 percentage points in any sector share. No mapping is selected by the candidate's held-out result.
+
+| Track | Season | Current length m | Official length m | Ratio % | Largest share difference pp | Status |
+|---|---:|---:|---:|---:|---:|---|
+| lusail | 2025 | 5387.457 | 5418 | 99.436261 | 0.327 | eligible |
+| imola | 2025 | 4866.758 | 4909 | 99.139493 | 0.412 | eligible |
+| spa-francorchamps | 2025 | 6947.286 | 7003.9 | 99.191678 | 1.256 | eligible |
+| interlagos | 2025 | 4230.355 | 4309 | 98.174858 | 0.864 | eligible |
+| austin | 2025 | 5422.794 | 5513 | 98.363760 | not tested | wet: excluded before sector check |
+| sakhir | 2025 | 5337.455 | 5412 | 98.622592 | 0.471 | eligible |
+| imola | 2026 | 4866.758 | 4909 | 99.139493 | 0.427 | eligible |
+| spa-francorchamps | 2026 | 6947.286 | 7003.9 | 99.191678 | 1.208 | eligible |
+| interlagos | 2026 | 4230.355 | 4309 | 98.174858 | 1.174 | eligible |
+| austin | 2026 | 5422.794 | 5513 | 98.363760 | 0.227 | eligible |
+| catalunya | 2026 | 4610.808 | 4657 | 99.008121 | 0.256 | eligible |
+| monza | 2026 | 5759.499 | 5793 | 99.421692 | 1.946 | eligible |
+
+All 12 track-years pass the length rule. Austin 2025 remains wet and is not admitted. All 33 dry class-season-track sanity checks pass; the largest absolute share difference is 1.946333 pp (LMGT3 Monza 2026). All 99 dry selected laps have positive sectors and pass the sum check.
+
+| Class | Season | Dry Al Kamel laps | Sector terms | Held-out tracks with sectors | Positioned traps |
+|---|---:|---:|---:|---:|---:|
+| lmh | 2025 | 15 | 15 | 5 | 0 |
+| lmh | 2026 | 18 | 18 | 6 | 0 |
+| lmdh | 2025 | 15 | 15 | 5 | 0 |
+| lmdh | 2026 | 18 | 18 | 6 | 0 |
+| lmgt3 | 2025 | 15 | 15 | 5 | 0 |
+| lmgt3 | 2026 | 18 | 18 | 6 | 0 |
+
+Every group has at least 4 held-out tracks with sector observations (actually 5 or 6); no group is blocked by the requested minimum. Gate acceptance is not implied by sample count. Timing71 extra rows have no verified year-specific sector mapping and remain lap + trap only.
+
+Historical archive Interlagos ratio is 98.115637%, also within 2%. Its sector-share check passes for all six groups (largest difference 1.046766 pp). Thus using the historical snapshot changes no eligibility count; its numeric shares are recorded separately.
+
+| Class | Season | Track | Real S1/S2/S3 % | Sim S1/S2/S3 % | Largest difference pp | Result |
+|---|---:|---|---|---|---:|---|
+| lmh | 2025 | lusail | 36.301 / 33.634 / 30.065 | 36.475 / 33.737 / 29.788 | 0.277 | pass |
+| lmdh | 2025 | lusail | 36.283 / 33.577 / 30.140 | 36.466 / 33.721 / 29.813 | 0.327 | pass |
+| lmgt3 | 2025 | lusail | 36.268 / 33.089 / 30.644 | 36.475 / 32.812 / 30.713 | 0.277 | pass |
+| lmh | 2025 | imola | 20.595 / 32.574 / 46.831 | 21.007 / 32.266 / 46.727 | 0.412 | pass |
+| lmdh | 2025 | imola | 20.730 / 32.582 / 46.689 | 20.976 / 32.291 / 46.733 | 0.291 | pass |
+| lmgt3 | 2025 | imola | 20.684 / 32.599 / 46.717 | 21.070 / 32.477 / 46.453 | 0.386 | pass |
+| lmh | 2025 | spa-francorchamps | 28.332 / 46.251 / 25.417 | 29.588 / 45.136 / 25.277 | 1.256 | pass |
+| lmdh | 2025 | spa-francorchamps | 28.420 / 45.920 / 25.660 | 29.647 / 45.031 / 25.321 | 1.227 | pass |
+| lmgt3 | 2025 | spa-francorchamps | 28.512 / 45.816 / 25.672 | 29.663 / 44.939 / 25.398 | 1.151 | pass |
+| lmh | 2025 | interlagos | 25.594 / 51.066 / 23.340 | 25.659 / 51.452 / 22.888 | 0.452 | pass |
+| lmdh | 2025 | interlagos | 25.674 / 50.845 / 23.481 | 25.702 / 51.341 / 22.958 | 0.523 | pass |
+| lmgt3 | 2025 | interlagos | 25.810 / 50.133 / 24.058 | 25.664 / 50.997 / 23.339 | 0.864 | pass |
+| lmh | 2025 | sakhir | 31.812 / 36.855 / 31.333 | 31.958 / 36.438 / 31.605 | 0.418 | pass |
+| lmdh | 2025 | sakhir | 31.747 / 36.863 / 31.389 | 31.892 / 36.493 / 31.615 | 0.370 | pass |
+| lmgt3 | 2025 | sakhir | 31.693 / 36.572 / 31.735 | 31.751 / 36.102 / 32.148 | 0.471 | pass |
+| lmh | 2026 | imola | 20.492 / 32.856 / 46.652 | 20.832 / 32.460 / 46.709 | 0.396 | pass |
+| lmdh | 2026 | imola | 20.551 / 32.907 / 46.542 | 20.832 / 32.479 / 46.689 | 0.427 | pass |
+| lmgt3 | 2026 | imola | 20.841 / 32.783 / 46.376 | 21.061 / 32.492 / 46.446 | 0.290 | pass |
+| lmh | 2026 | spa-francorchamps | 28.168 / 46.604 / 25.228 | 29.376 / 45.549 / 25.074 | 1.208 | pass |
+| lmdh | 2026 | spa-francorchamps | 28.151 / 46.412 / 25.437 | 29.342 / 45.595 / 25.064 | 1.191 | pass |
+| lmgt3 | 2026 | spa-francorchamps | 28.721 / 45.498 / 25.781 | 29.741 / 44.844 / 25.414 | 1.021 | pass |
+| lmh | 2026 | interlagos | 26.057 / 50.558 / 23.385 | 25.759 / 51.732 / 22.510 | 1.174 | pass |
+| lmdh | 2026 | interlagos | 25.855 / 50.768 / 23.378 | 25.730 / 51.784 / 22.486 | 1.016 | pass |
+| lmgt3 | 2026 | interlagos | 26.051 / 49.844 / 24.105 | 25.899 / 50.890 / 23.211 | 1.046 | pass |
+| lmh | 2026 | austin | 21.335 / 37.895 / 40.770 | 21.364 / 37.985 / 40.651 | 0.118 | pass |
+| lmdh | 2026 | austin | 21.335 / 37.912 / 40.753 | 21.373 / 37.970 / 40.657 | 0.095 | pass |
+| lmgt3 | 2026 | austin | 21.625 / 38.258 / 40.117 | 21.797 / 38.313 / 39.890 | 0.227 | pass |
+| lmh | 2026 | catalunya | 29.095 / 40.564 / 30.341 | 29.247 / 40.659 / 30.093 | 0.248 | pass |
+| lmdh | 2026 | catalunya | 29.039 / 40.735 / 30.226 | 29.256 / 40.650 / 30.095 | 0.217 | pass |
+| lmgt3 | 2026 | catalunya | 29.839 / 40.493 / 29.668 | 30.032 / 40.237 / 29.731 | 0.256 | pass |
+| lmh | 2026 | monza | 32.210 / 34.017 / 33.772 | 33.690 / 32.374 / 33.935 | 1.643 | pass |
+| lmdh | 2026 | monza | 32.278 / 33.960 / 33.762 | 33.655 / 32.377 / 33.968 | 1.583 | pass |
+| lmgt3 | 2026 | monza | 32.073 / 33.853 / 34.074 | 33.576 / 31.907 / 34.517 | 1.946 | pass |
+
+### 15.4 Trap hold and next experiment declaration
+
+(a) is held: zero fitted tracks have a verified numeric trap distance. The existing implementation stays behind its off-by-default flag; no positioned-trap experiment is run. Potential official documents to request/check are the event timing Circuit Map in Al Kamel Event Info/Circuit Info, an FIA WEC Race Director Event Notes map appendix, or the timing provider's official loop-position/chainage schedule. They must give a numeric position from the timing line for the correct layout/year. A graphical TS marker alone is insufficient. The verified Le Mans 2026 Circuit Map v3 explicitly gives 3754.13 m, but Le Mans has no fitted geometry and contributes zero observations. No new trap source was fetched or assumed in this investigation.
+
+Next declared primary variants: baseline and b2 only. Sensitivity: b1 and b4 only; no weight selection from held-out results. LAPSIM_ONLY=wec; lap weight 2; trap weight 0.5; sector weight 2 primary, 1/4 sensitivity. Both feature flags are off in the baseline; trap flag remains off in every variant. Pass: pooled WEC gate accepted, no class-season worse, F1 unchanged. Bounds and gate remain unchanged. Eligibility above is a diagnostic calculation, not a completed change to the fitting code: wire the approved 2% and share checks before any future sector run. (c) remains held.
+
+
+### 15.5 Completed historical reproduction and byte identity
+
+**Result A:** all model fields from PR #149 reproduce exactly with the pinned archive geometry, existing wet exclusions, B transfer table, LAPSIM_ONLY=wec, LAPSIM_ITERS=70 and LAPSIM_HOLDOUT_ITERS=25. Every car parameter, score, track row, held-out result, pooled/bop/gripSource object, F1 season and projection matches at full precision. The only file difference is generatedAt (2026-11-09 versus 2026-11-10); normalizing that metadata date makes every other byte identical. Section 5.2 records the exact historical recipe and checksums.
+
+| Class | Season | Production RMS % | Failed current-geometry RMS % | Historical replay RMS % | Held-out n | Fitted laps | Grip muY | Downforce ClA | Drag CdA | Bound hits |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| lmh | 2025 | 1.43 | 1.54 | 1.43 | 5 | 15 | 1.568817 | 7.000000 | 1.086824 | clA upper 7 |
+| lmh | 2026 | 1.04 | 1.10 | 1.04 | 6 | 18 | 1.518156 | 6.630406 | 0.963682 | none |
+| lmdh | 2025 | 1.24 | 1.61 | 1.24 | 5 | 18 | 1.561175 | 7.000000 | 1.099404 | clA upper 7 |
+| lmdh | 2026 | 1.07 | 1.05 | 1.07 | 6 | 18 | 1.528597 | 6.446839 | 0.953795 | none |
+| lmgt3 | 2025 | 1.73 | 1.82 | 1.73 | 5 | 15 | 1.590430 | 3.500000 | 1.286196 | clA upper 3.5 |
+| lmgt3 | 2026 | 1.37 | 1.36 | 1.37 | 6 | 18 | 1.615853 | 3.500000 | 1.300000 | clA upper 3.5; cdA upper 1.3 |
+
+Downforce did not move off a bound. This reproduces the existing model; it does not introduce a new model. The failed current-geometry baseline is not promoted. The checked-in geometry/calibration inconsistency remains for the owner's decision.
+
+PR #148 cross-check also passed: all model fields and all bytes except generatedAt match exactly, using the current checked-in geometry, J transfer table, the same preprocessed cache, and the same 70/25 WEC command. PR #148 and PR #149 both preserve identical F1 seasons. The original local shell logs were not recovered; these commands are experimentally verified reconstructions.
+
+| Compatibility check | Result | Bytes |
+|---|---|---:|
+| Full calibration: modified flags-off source vs original source | byte-identical | 55407 |
+| Calibration stdout | byte-identical | 5629 |
+| Validation JSON | byte-identical | 24756 |
+| Validation stdout | byte-identical | 2038 |
+
+The first investigation was interrupted by a computer power loss after all three refit processes had exited. On reconnection, the saved PR #148 result was compared and the stored PR #149 and byte-identity evidence rechecked. No fit was restarted. All 44 working worker/lapsim JavaScript files, the production calibration, geometry and gate remain unchanged. Only documentation was updated in this read-only investigation; the approved 2% and sector-share rules were audited but still need implementation before any future sector fit. No candidate experiment, PR, merge or deployment was performed.
+
+Evidence is saved locally in .cache/wec-investigation/: baseline-input-audit.json, sector-share-audit.json, archive-interlagos-sector-audit.json, provenance-hashes.json, pr149-exact-reproduction.json, pr148-exact-reproduction.json and flags-off-identity.json. These are local investigation artifacts, not a published experiment.
+
+**Decision: report and wait.** Primary future variants are baseline/b2; b1/b4 are sensitivity only. Trap (a) and aero ratio (c) remain held.

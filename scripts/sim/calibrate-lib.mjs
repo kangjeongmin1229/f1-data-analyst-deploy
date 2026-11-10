@@ -4,6 +4,7 @@
 // per-track grip factor that absorbs asphalt differences and geometry error.
 import {simulateLap} from '../../worker/lapsim/engine.js';
 import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
+import {sectorTimes} from './wec-timing.mjs';
 
 // Real trace -> arrays on the track's distance scale. The trace distance is speed-integrated,
 // so it is stretched to the track length; shift (m) aligns the timing line with the track start.
@@ -81,12 +82,20 @@ export function withGrip(track, g) {
 
 // Error for one lap, common to every series. Observations: a speed trace (obs: {s, v}) and/or a
 // speed trap (trapKph, compared with the top speed), always the lap time. Units: m/s and s.
-export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, wTrap = 0.5} = {}) {
+export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, wTrap = 0.5, trapDistance = null, sectors = null, wSector = 0} = {}) {
   const res = simulateLap(track, car, env);
   const rms = !obs ? 0 : obs.ext ? extremaRms(res.v, track.ds, obs.ext) : rmsSpeed(res.v, track.ds, obs);
-  const trap = trapKph ? (res.vMaxKph - trapKph) / 3.6 : 0;
+  const simTrap = trapDistance == null ? res.vMaxKph : sampleAt(res.v, track.ds, trapDistance) * 3.6;
+  const trap = trapKph ? (simTrap - trapKph) / 3.6 : 0;
   const dt = res.lapTime - lapTime;
-  return {score: rms * rms + wTime * dt * dt + wTrap * trap * trap, rms, dt, trap: trap * 3.6, res};
+  const out = {score: rms * rms + wTime * dt * dt + wTrap * trap * trap, rms, dt, trap: trap * 3.6, res};
+  if (wSector && sectors) {
+    if (!track.sectors || sectors.length !== 3 || !sectors.every(Number.isFinite)) throw new Error('Invalid sector observations');
+    out.simSectors = sectorTimes(res, track);
+    out.score += wSector * out.simSectors.reduce((sum, v, i) => sum + (v - sectors[i]) ** 2, 0);
+  }
+  if (trapDistance != null) out.simTrapKph = simTrap;
+  return out;
 }
 
 // 1-D golden-section search for the per-track grip factor (same answer for the same car, so the
@@ -177,15 +186,17 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
   };
   // l.patch(car) → car for this lap (e.g. per-event BoP weight and power); no patch = season car
   const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, l.grip != null
-    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph})}
-    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph}));
+    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector})}
+    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapDistance: l.trapDistance, sectors: l.sectors, wSector: l.wSector}));
   const x0 = params.map(() => 0);
   const result = nelderMead(objective, x0, {step: params.map(p => p.step ?? 0.08), iters});
   const car = build(result.x);
   const perTrack = prepared.map(l => {
     const r = evalLap(l, car);
     return {name: l.name, grip: r.grip, rmsKph: r.rms * 3.6, dt: r.dt, simLap: r.res.lapTime, realLap: l.lapSeconds,
-      shift: l.shift, rho: l.env.rho, vMaxSim: r.res.vMaxKph, vMaxReal: l.obs ? Math.max(...l.obs.v) * 3.6 : l.trapKph ?? null, meta: l.meta};
+      shift: l.shift, rho: l.env.rho, vMaxSim: r.res.vMaxKph, vMaxReal: l.obs ? Math.max(...l.obs.v) * 3.6 : l.trapKph ?? null, meta: l.meta,
+      ...(l.timing ? {timing: l.timing, simTrapKph: r.simTrapKph, trapDistance: l.trapDistance,
+        realSectors: l.sectors, simSectors: r.simSectors} : {})};
   });
   log({score: result.value});
   return {car, perTrack, score: result.value, x: result.x};
