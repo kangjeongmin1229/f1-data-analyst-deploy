@@ -1,20 +1,31 @@
 // Read-only reproduction audit. Historical WEC seasons are selected in memory only.
-import {writeFile} from 'node:fs/promises';
+import {readFile,writeFile} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {splitWecSessions} from './wec-session-scope.mjs';
-const [folder='.',output='.cache/wec-reproduction.json']=process.argv.slice(2),root=resolve(folder);
+const [folder='.',output='.cache/wec-reproduction.json',sessionFile='.cache/lapsim/wec.json']=process.argv.slice(2),root=resolve(folder);
 const load=p=>import(pathToFileURL(join(root,p)).href);
 const {lapsimCalibration:c}=await load('worker/lapsim/calibration-data.js');
 const {lapsimWecPoles:P}=await load('worker/lapsim/wec-poles-data.js');
 const {simulate}=await load('worker/lapsim/tool.js');
+// Use the fit's actual session rows. A stale pole-table weather marker must not
+// create a different audit exclusion list.
+const fitRows=JSON.parse(await readFile(join(root,sessionFile),'utf8'));
+const identity=w=>`${w.cls}/${w.year}/${w.track}`;
+const fitByIdentity=new Map(fitRows.map(w=>[identity(w),w]));
+assert.equal(fitByIdentity.size,fitRows.length,'Duplicate fit session identity');
 const before=JSON.stringify(c),rows=[],excluded=[];
 for(const [cls,seasons] of Object.entries(c.series.wec)){
  try{for(const [year,season] of Object.entries(seasons)){
   c.series.wec[cls]={[year]:season};
   const errors=[];
-  const sessions=Object.entries(P).flatMap(([track,ys])=>ys[year]?.[cls]?[{...ys[year][cls],track,year:Number(year),cls}]:[]);
+  const sessions=Object.entries(P).flatMap(([track,ys])=>{
+   const pole=ys[year]?.[cls];if(!pole)return [];
+   const source=fitByIdentity.get(`${cls}/${year}/${track}`);
+   assert.ok(source,`STOP: missing fit session for audit ${cls}/${year}/${track}`);
+   return [{...pole,track,year:Number(year),cls,weather:source.weather}];
+  });
   const scope=splitWecSessions(sessions);
   excluded.push(...scope.excluded.map(({row, ...exclusion})=>({group:'wec-'+cls+'/'+year,track:row.track,realSec:row.lap,...exclusion})));
   for(const p of scope.dry){

@@ -34,9 +34,10 @@ test('real fit and historical audit follow both shared exclusion sources, includ
     const poles = {}, input = [];
     for (const track of ['lusail', 'imola', 'austin', 'spa-francorchamps']) {
       const p = structuredClone(lapsimWecPoles[track][2025].lmh);
-      if (track === 'spa-francorchamps') p.weather.rain = true;
       poles[track] = {2025: {lmh: p}};
-      input.push({year: 2025, track, cls: 'lmh', weather: p.weather, laps: [{...p, topSpeedKph: 280}]});
+      // Deliberately stale pole-table weather: only the real fit input marks rain.
+      const weather = {...p.weather, rain: track === 'spa-francorchamps'};
+      input.push({year: 2025, track, cls: 'lmh', weather, laps: [{...p, topSpeedKph: 280}]});
     }
     await writeFile(join(dir, 'worker/lapsim/wec-poles-data.js'), `export const lapsimWecPoles=${JSON.stringify(poles)};`);
     await writeFile(join(dir, '.cache/lapsim/wec.json'), JSON.stringify(input));
