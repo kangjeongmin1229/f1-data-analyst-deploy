@@ -1,0 +1,547 @@
+{
+  "scope": "Existing completed Hypercar hidden-track folds only. No fit. One error per model-event best lap; car output metric weights model-event cells equally.",
+  "groups": [
+    {
+      "group": "wec-lmdh/2025",
+      "nModelEvent": 20,
+      "nTracks": 5,
+      "baseRmsPct": 1.5555790909416838,
+      "modelRmsPct": 1.5397848357555075,
+      "equalTrackBaseRmsPct": 1.555579090941684,
+      "equalTrackModelRmsPct": 1.5397848357555075
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "nModelEvent": 24,
+      "nTracks": 6,
+      "baseRmsPct": 1.1059329043645307,
+      "modelRmsPct": 1.0969205380837654,
+      "equalTrackBaseRmsPct": 1.1059329043645307,
+      "equalTrackModelRmsPct": 1.0969205380837654
+    },
+    {
+      "group": "wec-lmh/2025",
+      "nModelEvent": 20,
+      "nTracks": 5,
+      "baseRmsPct": 1.694379715152292,
+      "modelRmsPct": 1.4231676915200693,
+      "equalTrackBaseRmsPct": 1.694379715152292,
+      "equalTrackModelRmsPct": 1.4231676915200693
+    },
+    {
+      "group": "wec-lmh/2026",
+      "nModelEvent": 24,
+      "nTracks": 6,
+      "baseRmsPct": 1.2131759113544984,
+      "modelRmsPct": 1.2121366865908998,
+      "equalTrackBaseRmsPct": 1.2131759113544984,
+      "equalTrackModelRmsPct": 1.2121366865908998
+    }
+  ],
+  "classBest": [
+    {
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "baseRmsPct": 1.6840115802894626,
+      "modelsRmsPct": 1.7292343860882982,
+      "productionRmsPct": 1.2816728330977838
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "baseRmsPct": 1.1784630315579212,
+      "modelsRmsPct": 1.2068084672536201,
+      "productionRmsPct": 1.0550431002995766
+    },
+    {
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "baseRmsPct": 1.7267136675207804,
+      "modelsRmsPct": 1.4861279394438802,
+      "productionRmsPct": 1.1121675659691517
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "baseRmsPct": 1.3347081622675814,
+      "modelsRmsPct": 1.392194587303616,
+      "productionRmsPct": 1.110032040096205
+    }
+  ],
+  "models": [
+    {
+      "group": "wec-lmdh/2025",
+      "model": "Alpine A424",
+      "cdA": 1.118472183160032,
+      "clA": 6.988736042342653,
+      "muY": 1.5288832913975265,
+      "cdADelta": 0.005405541150436566,
+      "clADelta": -0.004772184879089814,
+      "muYDelta": -0.009235267565479655,
+      "boundHits": [],
+      "heldout": {
+        "model": "Alpine A424",
+        "n": 5,
+        "baseRmsPct": 1.5059440674818763,
+        "modelRmsPct": 1.462530050344318,
+        "gainPP": 0.043414017137558325,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.5059440674818763,
+          "rmsNew": 1.462530050344318,
+          "gain": 0.1288733862237052,
+          "se": 0.3956710925856095,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "model": "BMW M Hybrid V8",
+      "cdA": 1.1107591687270737,
+      "clA": 6.9999979571903355,
+      "muY": 1.5426582313363553,
+      "cdADelta": -0.002307473282521677,
+      "clADelta": 0.006489729968592428,
+      "muYDelta": 0.0045396723733490685,
+      "boundHits": [
+        {
+          "parameter": "clA",
+          "value": 6.9999979571903355,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "heldout": {
+        "model": "BMW M Hybrid V8",
+        "n": 5,
+        "baseRmsPct": 1.533382378310904,
+        "modelRmsPct": 1.5595515544304295,
+        "gainPP": -0.026169176119525517,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.533382378310904,
+          "rmsNew": 1.5595515544304295,
+          "gain": -0.0809395328119645,
+          "se": 0.17745983317466757,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "model": "Cadillac V-Series.R",
+      "cdA": 1.1139578445552745,
+      "clA": 7,
+      "muY": 1.5464177493840916,
+      "cdADelta": 0.0008912025456790929,
+      "clADelta": 0.006491772778256966,
+      "muYDelta": 0.0082991904210854,
+      "boundHits": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "heldout": {
+        "model": "Cadillac V-Series.R",
+        "n": 5,
+        "baseRmsPct": 1.7076870926835006,
+        "modelRmsPct": 1.6630054356509303,
+        "gainPP": 0.04468165703257032,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.7076870926835006,
+          "rmsNew": 1.6630054356509303,
+          "gain": 0.1506081275132862,
+          "se": 0.4098363646699392,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "model": "Porsche 963",
+      "cdA": 1.109179031626804,
+      "clA": 6.987103867357398,
+      "muY": 1.5349410883224428,
+      "cdADelta": -0.0038876103827913955,
+      "clADelta": -0.006404359864345288,
+      "muYDelta": -0.0031774706405633957,
+      "boundHits": [],
+      "heldout": {
+        "model": "Porsche 963",
+        "n": 5,
+        "baseRmsPct": 1.464233920411535,
+        "modelRmsPct": 1.465253248963946,
+        "gainPP": -0.0010193285524109363,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.464233920411535,
+          "rmsNew": 1.465253248963946,
+          "gain": -0.0029861099156659908,
+          "se": 0.13850285435026757,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "model": "Alpine A424",
+      "cdA": 0.9707624937306073,
+      "clA": 6.3093226876918855,
+      "muY": 1.5322420659461025,
+      "cdADelta": 0.0004901316743586293,
+      "clADelta": 0.007151347454535717,
+      "muYDelta": 0.008184292212515931,
+      "boundHits": [],
+      "heldout": {
+        "model": "Alpine A424",
+        "n": 6,
+        "baseRmsPct": 1.114738618502545,
+        "modelRmsPct": 1.0779989792087077,
+        "gainPP": 0.03673963929383728,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.114738618502545,
+          "rmsNew": 1.0779989792087077,
+          "gain": 0.08056038840594675,
+          "se": 0.19602070109455116,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "model": "BMW M Hybrid V8",
+      "cdA": 0.9707330798197326,
+      "clA": 6.293595272800404,
+      "muY": 1.5162200445226355,
+      "cdADelta": 0.0004607177634838866,
+      "clADelta": -0.0085760674369455,
+      "muYDelta": -0.00783772921095105,
+      "boundHits": [],
+      "heldout": {
+        "model": "BMW M Hybrid V8",
+        "n": 6,
+        "baseRmsPct": 0.9784105380985132,
+        "modelRmsPct": 0.9669387385031704,
+        "gainPP": 0.011471799595342835,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 0.9784105380985132,
+          "rmsNew": 0.9669387385031704,
+          "gain": 0.022316657044119687,
+          "se": 0.2115614052770649,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "model": "Cadillac V-Series.R",
+      "cdA": 0.9683330349324945,
+      "clA": 6.305730613899002,
+      "muY": 1.527474883053258,
+      "cdADelta": -0.0019393271237542198,
+      "clADelta": 0.00355927366165254,
+      "muYDelta": 0.0034171093196715407,
+      "boundHits": [],
+      "heldout": {
+        "model": "Cadillac V-Series.R",
+        "n": 6,
+        "baseRmsPct": 1.072411769779964,
+        "modelRmsPct": 1.048311586956965,
+        "gainPP": 0.024100182822998972,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.072411769779964,
+          "rmsNew": 1.048311586956965,
+          "gain": 0.05110982061436381,
+          "se": 0.12072543457411286,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "model": "Genesis GMR-001-Hypercar",
+      "cdA": 0.9714242370267773,
+      "clA": 6.2991155697620815,
+      "muY": 1.5208105035331063,
+      "cdADelta": 0.001151874970528599,
+      "clADelta": -0.0030557704752682824,
+      "muYDelta": -0.0032472702004802123,
+      "boundHits": [],
+      "heldout": {
+        "model": "Genesis GMR-001-Hypercar",
+        "n": 6,
+        "baseRmsPct": 1.2419154493035691,
+        "modelRmsPct": 1.2715852944016615,
+        "gainPP": -0.02966984509809234,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.2419154493035691,
+          "rmsNew": 1.2715852944016615,
+          "gain": -0.0745751777196747,
+          "se": 0.12419899228926694,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2025",
+      "model": "Aston Martin Valkyrie",
+      "cdA": 1.0651765821347257,
+      "clA": 6.935309153929192,
+      "muY": 1.4947098066568956,
+      "cdADelta": 0.006698291395630163,
+      "clADelta": -0.03099946566113143,
+      "muYDelta": -0.03098672927844448,
+      "boundHits": [],
+      "heldout": {
+        "model": "Aston Martin Valkyrie",
+        "n": 5,
+        "baseRmsPct": 2.02728789440843,
+        "modelRmsPct": 1.5412247728483084,
+        "gainPP": 0.48606312156012144,
+        "gate": {
+          "accept": true,
+          "n": 5,
+          "rmsCur": 2.02728789440843,
+          "rmsNew": 1.5412247728483084,
+          "gain": 1.734522406373643,
+          "se": 1.1053268037932251,
+          "reason": "accepted: held-out error lower beyond noise"
+        },
+        "eligibleOwnValues": true
+      }
+    },
+    {
+      "group": "wec-lmh/2025",
+      "model": "Ferrari 499P",
+      "cdA": 1.0478182967832301,
+      "clA": 7,
+      "muY": 1.5587256548824429,
+      "cdADelta": -0.010659993955865366,
+      "clADelta": 0.03369138040967634,
+      "muYDelta": 0.03302911894710281,
+      "boundHits": [
+        {
+          "parameter": "clA",
+          "value": 7,
+          "side": "upper",
+          "limit": 7,
+          "outside": false
+        }
+      ],
+      "heldout": {
+        "model": "Ferrari 499P",
+        "n": 5,
+        "baseRmsPct": 1.7176070726601758,
+        "modelRmsPct": 1.3539926438377554,
+        "gainPP": 0.36361442882242034,
+        "gate": {
+          "accept": true,
+          "n": 5,
+          "rmsCur": 1.7176070726601758,
+          "rmsNew": 1.3539926438377554,
+          "gain": 1.1168779764855032,
+          "se": 0.9733751995298103,
+          "reason": "accepted: held-out error lower beyond noise"
+        },
+        "eligibleOwnValues": true
+      }
+    },
+    {
+      "group": "wec-lmh/2025",
+      "model": "Peugeot 9X8",
+      "cdA": 1.0667025231791816,
+      "clA": 6.9659779000412,
+      "muY": 1.517093336327536,
+      "cdADelta": 0.008224232440086077,
+      "clADelta": -0.00033071954912333723,
+      "muYDelta": -0.00860319960780398,
+      "boundHits": [],
+      "heldout": {
+        "model": "Peugeot 9X8",
+        "n": 5,
+        "baseRmsPct": 1.5431408066485406,
+        "modelRmsPct": 1.4650583988187216,
+        "gainPP": 0.07808240782981901,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.5431408066485406,
+          "rmsNew": 1.4650583988187216,
+          "gain": 0.23488743719463256,
+          "se": 0.5183914122403621,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2025",
+      "model": "Toyota GR010 - Hybrid",
+      "cdA": 1.0542230436666569,
+      "clA": 6.966471859750157,
+      "muY": 1.5334048139487206,
+      "cdADelta": -0.004255247072438628,
+      "clADelta": 0.00016324015983304463,
+      "muYDelta": 0.007708278013380587,
+      "boundHits": [],
+      "heldout": {
+        "model": "Toyota GR010 - Hybrid",
+        "n": 5,
+        "baseRmsPct": 1.4291034477836508,
+        "modelRmsPct": 1.3215744855243312,
+        "gainPP": 0.10752896225931963,
+        "gate": {
+          "accept": false,
+          "n": 5,
+          "rmsCur": 1.4291034477836508,
+          "rmsNew": 1.3215744855243312,
+          "gain": 0.2957775436782171,
+          "se": 0.3548115119512242,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2026",
+      "model": "Aston Martin Valkyrie",
+      "cdA": 0.9677802345314968,
+      "clA": 6.469061701552776,
+      "muY": 1.5053593934375034,
+      "cdADelta": -0.001102527267982878,
+      "clADelta": -0.004509029842830081,
+      "muYDelta": -0.004341633335899431,
+      "boundHits": [],
+      "heldout": {
+        "model": "Aston Martin Valkyrie",
+        "n": 6,
+        "baseRmsPct": 1.2845998209005989,
+        "modelRmsPct": 1.3012850179243602,
+        "gainPP": -0.016685197023761367,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.2845998209005989,
+          "rmsNew": 1.3012850179243602,
+          "gain": -0.04314599801655175,
+          "se": 0.17870804117994507,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2026",
+      "model": "Ferrari 499P",
+      "cdA": 0.9703530508032535,
+      "clA": 6.4784206426413515,
+      "muY": 1.5154915287095787,
+      "cdADelta": 0.0014702890037738836,
+      "clADelta": 0.004849911245745631,
+      "muYDelta": 0.005790501936175918,
+      "boundHits": [],
+      "heldout": {
+        "model": "Ferrari 499P",
+        "n": 6,
+        "baseRmsPct": 1.235271290833529,
+        "modelRmsPct": 1.180278547293264,
+        "gainPP": 0.054992743540265066,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.235271290833529,
+          "rmsNew": 1.180278547293264,
+          "gain": 0.13283771275683556,
+          "se": 0.17129890123423,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2026",
+      "model": "Peugeot 9X8",
+      "cdA": 0.9679005793011318,
+      "clA": 6.474128993705342,
+      "muY": 1.5101131872268185,
+      "cdADelta": -0.0009821824983478056,
+      "clADelta": 0.0005582623097364348,
+      "muYDelta": 0.00041216045341574414,
+      "boundHits": [],
+      "heldout": {
+        "model": "Peugeot 9X8",
+        "n": 6,
+        "baseRmsPct": 1.2250102421022868,
+        "modelRmsPct": 1.2642491380151644,
+        "gainPP": -0.03923889591287755,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.2250102421022868,
+          "rmsNew": 1.2642491380151644,
+          "gain": -0.09767578971658335,
+          "se": 0.11935400333838761,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "eligibleOwnValues": false
+      }
+    },
+    {
+      "group": "wec-lmh/2026",
+      "model": "Toyota TR010 Hybrid",
+      "cdA": 0.9693825447149643,
+      "clA": 6.472367972537539,
+      "muY": 1.5079660128527188,
+      "cdADelta": 0.0004997829154846922,
+      "clADelta": -0.0012027588580671988,
+      "muYDelta": -0.001735013920683981,
+      "boundHits": [],
+      "heldout": {
+        "model": "Toyota TR010 Hybrid",
+        "n": 6,
+        "baseRmsPct": 1.100200532854073,
+        "modelRmsPct": 1.091959412190341,
+        "gainPP": 0.008241120663731838,
+        "gate": {
+          "accept": false,
+          "n": 6,
+          "rmsCur": 1.100200532854073,
+          "rmsNew": 1.091959412190341,
+          "gain": 0.01806585462131061,
+          "se": 0.08931707334988738,
+          "reason": "rejected: gain within noise"
+        },
+        "eligibleOwnValues": false
+      }
+    }
+  ],
+  "productionAccepted": false,
+  "interpretation": "The all-car training target includes slower models and entries; production is trained on top-three class laps. The shared class base moves toward the wider field, while shrinkage limits model offsets. This is a supported explanation, not an isolated causal experiment. The offset effect itself varies by class-season. GT3 benefit is not established because its held-out fits are incomplete."
+}

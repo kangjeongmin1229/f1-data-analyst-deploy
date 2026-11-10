@@ -1,0 +1,408 @@
+{
+  "pass": true,
+  "groups": [
+    {
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    }
+  ]
+}
+# Lap simulator calibration
+
+Generated 2026-11-10. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
+
+WEC timing lmh/2025: {"laps":15,"sectorTerms":15,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmh/2025/lusail/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/lusail/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/lusail/#7: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/imola/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/imola/#83: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/imola/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/spa-francorchamps/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/spa-francorchamps/#83: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/spa-francorchamps/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/interlagos/#94: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/interlagos/#93: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/interlagos/#83: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/sakhir/#7: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/sakhir/#8: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2025/sakhir/#94: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC lmh 2025: transfer track factors — holdout 1.14% → 1.28%, not used (worse) (rejected: worse on held-out rows)
+WEC lmh 2025: Timing71 rows 3 — holdout 1.14% → 1.11%, accepted: held-out error lower beyond noise
+WEC lmh 2025: per-event BoP — holdout 1.11% → 1.39%, rejected: worse on held-out rows
+## WEC Hypercar LMH 2025
+
+18 laps on 5 tracks, fit score 5.537. Holdout (one track left out at a time): 1.11% RMS over 5 laps.
+
+Car: grip μy 1.562, downforce ClA 7.00 m², drag CdA 1.074 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.359 | 99.784 | +1.425 | 291.9 | 290.1 | 1.0759 |
+| imola | 88.920 | 87.825 | -1.095 | 311.2 | 300.7 | 1.1543 |
+| spa-francorchamps | 119.617 | 120.605 | +0.988 | 312.3 | 304.3 | 1.0059 |
+| interlagos | 82.948 | 82.728 | -0.220 | 282.6 | 300.4 | 0.9602 |
+| sakhir | 106.826 | 106.495 | -0.331 | 293.7 | 295.1 | 0.901 |
+
+WEC timing lmh/2026: {"laps":18,"sectorTerms":18,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmh/2026/imola/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/imola/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/imola/#8: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/spa-francorchamps/#94: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/spa-francorchamps/#009: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/spa-francorchamps/#007: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/interlagos/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/interlagos/#94: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/interlagos/#007: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/austin/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/austin/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/austin/#007: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/catalunya/#8: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/catalunya/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/catalunya/#83: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/monza/#50: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/monza/#51: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmh/2026/monza/#94: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC lmh 2026: transfer track factors — holdout 1.30% → 1.07%, used (rejected: gain within noise)
+WEC lmh 2026: Timing71 rows 3 — holdout 1.07% → 1.07%, rejected: worse on held-out rows
+## WEC Hypercar LMH 2026
+
+18 laps on 6 tracks, fit score 3.230. Holdout (one track left out at a time): 1.07% RMS over 6 laps.
+
+Car: grip μy 1.581, downforce ClA 5.52 m², drag CdA 0.963 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.088 | 89.078 | -1.010 | 310.4 | 313.5 | 1.1358 |
+| spa-francorchamps | 120.653 | 121.444 | +0.791 | 312.3 | 312.2 | 1.0246 |
+| interlagos | 83.387 | 82.406 | -0.981 | – | 315.1 | 0.9823 |
+| austin | 112.020 | 112.862 | +0.842 | 300 | 306.6 | 0.9966 |
+| catalunya | 90.336 | 90.462 | +0.126 | 305.9 | 307.4 | 0.99 |
+| monza | 93.364 | 94.001 | +0.637 | 314 | 310.7 | 0.9907 |
+
+WEC timing lmdh/2025: {"laps":15,"sectorTerms":15,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmdh/2025/lusail/#15: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/lusail/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/lusail/#38: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/imola/#15: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/imola/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/imola/#35: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/spa-francorchamps/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/spa-francorchamps/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/spa-francorchamps/#20: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/interlagos/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/interlagos/#38: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/interlagos/#5: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/sakhir/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/sakhir/#5: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2025/sakhir/#15: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC lmdh 2025: transfer track factors — holdout 1.49% → 1.42%, used (rejected: gain within noise)
+WEC lmdh 2025: Timing71 rows 3 — holdout 1.42% → 1.43%, rejected: worse on held-out rows
+WEC lmdh 2025: per-event BoP — holdout 1.42% → 1.70%, rejected: worse on held-out rows
+## WEC Hypercar LMDh 2025
+
+15 laps on 5 tracks, fit score 6.470. Holdout (one track left out at a time): 1.42% RMS over 5 laps.
+
+Car: grip μy 1.552, downforce ClA 7.00 m², drag CdA 1.089 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.495 | 100.287 | +1.792 | 294.3 | 289.2 | 1.0727 |
+| imola | 89.885 | 88.534 | -1.351 | 308.6 | 299.6 | 1.1358 |
+| spa-francorchamps | 120.246 | 120.208 | -0.038 | 310.5 | 303.4 | 1.0246 |
+| interlagos | 82.570 | 82.288 | -0.282 | 276.2 | 299.6 | 0.9823 |
+| sakhir | 107.543 | 107.928 | +0.385 | 290.5 | 294 | 0.8804 |
+
+WEC timing lmdh/2026: {"laps":18,"sectorTerms":18,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmdh/2026/imola/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/imola/#35: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/imola/#20: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/spa-francorchamps/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/spa-francorchamps/#35: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/spa-francorchamps/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/interlagos/#12: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/interlagos/#38: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/interlagos/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/austin/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/austin/#38: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/austin/#19: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/catalunya/#17: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/catalunya/#19: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/catalunya/#35: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/monza/#19: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/monza/#38: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmdh/2026/monza/#36: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC lmdh 2026: transfer track factors — holdout 1.35% → 1.04%, used (rejected: gain within noise)
+WEC lmdh 2026: Timing71 rows 3 — holdout 1.04% → 1.03%, rejected: gain within noise
+## WEC Hypercar LMDh 2026
+
+18 laps on 6 tracks, fit score 3.161. Holdout (one track left out at a time): 1.04% RMS over 6 laps.
+
+Car: grip μy 1.568, downforce ClA 5.75 m², drag CdA 0.952 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.419 | 89.038 | -1.381 | 310.4 | 314.1 | 1.1358 |
+| spa-francorchamps | 120.696 | 121.371 | +0.675 | 315 | 312.7 | 1.0246 |
+| interlagos | 83.041 | 82.437 | -0.604 | – | 315.5 | 0.9823 |
+| austin | 112.074 | 112.880 | +0.806 | 301.7 | 307 | 0.9966 |
+| catalunya | 90.166 | 90.375 | +0.209 | 306.8 | 308 | 0.99 |
+| monza | 93.460 | 93.908 | +0.448 | 314.9 | 311.3 | 0.9907 |
+
+WEC timing lmgt3/2025: {"laps":15,"sectorTerms":15,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmgt3/2025/lusail/#87: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/lusail/#95: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/lusail/#59: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5637387555738727,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/00_Event%20Info/1_CircuitMap.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/imola/#87: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/imola/#46: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/imola/#27: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/spa-francorchamps/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/spa-francorchamps/#10: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/spa-francorchamps/#77: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/00_Circuit%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/interlagos/#10: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/interlagos/#87: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/interlagos/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/00_Circuit%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/sakhir/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/sakhir/#60: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2025/sakhir/#61: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.3774076997623674,"sourceUrl":"https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC lmgt3 2025: transfer track factors — holdout 1.73% → 1.35%, used (accepted: held-out error lower beyond noise)
+WEC lmgt3 2025: Timing71 rows 5 — holdout 1.35% → 1.35%, rejected: gain within noise
+## WEC LMGT3 2025
+
+15 laps on 5 tracks, fit score 4.627. Holdout (one track left out at a time): 1.35% RMS over 5 laps.
+
+Car: grip μy 1.587, downforce ClA 3.50 m², drag CdA 1.300 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 113.861 | 115.595 | +1.734 | 252.9 | 249.8 | 1.0727 |
+| imola | 102.326 | 101.300 | -1.026 | 267.3 | 261.6 | 1.1358 |
+| spa-francorchamps | 137.732 | 139.112 | +1.380 | 263.6 | 251.7 | 1.0246 |
+| interlagos | 93.849 | 92.854 | -0.995 | 253.7 | 256.2 | 0.9823 |
+| sakhir | 121.661 | 120.798 | -0.863 | 254.4 | 254.7 | 0.8804 |
+
+WEC timing lmgt3/2026: {"laps":18,"sectorTerms":18,"positionedTraps":0,"sectorWeight":2}
+WEC timing row lmgt3/2026/imola/#10: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/imola/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/imola/#87: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8605068607154931,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/00_Event%20Info/1_Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/spa-francorchamps/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/spa-francorchamps/#27: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/spa-francorchamps/#77: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.8083224888899232,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/interlagos/#23: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/interlagos/#79: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/interlagos/#87: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.8251424906483793,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/00_Event%20Info/Circuit%20Map.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/austin/#23: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/austin/#27: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/austin/#77: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":1.6362398653075205,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/00_Event%20Info/Circuit%20Map%20v3.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/catalunya/#10: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/catalunya/#92: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/catalunya/#21: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.9918789785013149,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/00_Event%20Info/Circuit%20Map%20v1.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/monza/#23: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/monza/#78: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC timing row lmgt3/2026/monza/#33: {"sectorUsed":true,"trapPositionUsed":false,"sectorReason":null,"trapReason":"flag off","lengthErrorPct":0.5783077626228095,"sourceUrl":"https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/00_Event%20Info/Circuit%20Map%20v2.pdf","trapSourceUrl":null}
+WEC lmgt3 2026: transfer track factors — holdout 1.19% → 1.22%, not used (worse) (rejected: worse on held-out rows)
+WEC lmgt3 2026: Timing71 rows 5 — holdout 1.19% → 1.19%, rejected: worse on held-out rows
+## WEC LMGT3 2026
+
+18 laps on 6 tracks, fit score 6.620. Holdout (one track left out at a time): 1.19% RMS over 6 laps.
+
+Car: grip μy 1.613, downforce ClA 3.50 m², drag CdA 1.258 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 101.181 | 100.309 | -0.872 | 260 | 265.5 | 1.1543 |
+| spa-francorchamps | 136.612 | 139.028 | +2.416 | 262.4 | 252.6 | 1.0059 |
+| interlagos | 93.350 | 92.485 | -0.865 | 250.8 | 265.8 | 0.9602 |
+| austin | 125.103 | 124.393 | -0.710 | 252.9 | 260.6 | 1.0008 |
+| catalunya | 100.933 | 100.831 | -0.102 | 255.9 | 259.1 | 0.9994 |
+| monza | 107.065 | 107.412 | +0.347 | 268 | 262 | 0.9853 |
+
+{
+  "pass": true,
+  "groups": [
+    {
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    }
+  ]
+}
+{
+ "f1/2023": {
+  "tracks": 15,
+  "lapRmsPct": 0.506,
+  "sectorRmsPct": 2.207,
+  "cornerRmsKph": 21.083,
+  "cornerBiasKph": -11.645,
+  "trapRmsKph": 6.597,
+  "trapBiasKph": -1.918,
+  "brakeRmsM": 56.513,
+  "brakeBiasM": 28.232,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2024": {
+  "tracks": 18,
+  "lapRmsPct": 0.509,
+  "sectorRmsPct": 2.637,
+  "cornerRmsKph": 23.702,
+  "cornerBiasKph": -12.973,
+  "trapRmsKph": 10.324,
+  "trapBiasKph": -7.388,
+  "brakeRmsM": 58.087,
+  "brakeBiasM": 35.332,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2025": {
+  "tracks": 22,
+  "lapRmsPct": 0.355,
+  "sectorRmsPct": 2.495,
+  "cornerRmsKph": 22.939,
+  "cornerBiasKph": -12.757,
+  "trapRmsKph": 7.634,
+  "trapBiasKph": -4.721,
+  "brakeRmsM": 63.834,
+  "brakeBiasM": 35.807,
+  "holdout2025to2026Pct": 0.84
+ },
+ "f1/2026": {
+  "tracks": 17,
+  "lapRmsPct": 0.497,
+  "sectorRmsPct": 3.848,
+  "cornerRmsKph": 21.888,
+  "cornerBiasKph": -14.322,
+  "trapRmsKph": 14.13,
+  "trapBiasKph": 7.996,
+  "brakeRmsM": 68.412,
+  "brakeBiasM": 40.021,
+  "holdout2025to2026Pct": 0.9
+ },
+ "wec-lmh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 0.945,
+  "trapRmsKph": 9.963,
+  "trapBiasKph": -0.22,
+  "f1ToWecHoldoutPct": 1.11,
+  "clA": 7,
+  "muY": 1.562
+ },
+ "wec-lmh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.829,
+  "trapRmsKph": 3.642,
+  "trapBiasKph": 1.56,
+  "f1ToWecHoldoutPct": 1.07,
+  "clA": 5.516,
+  "muY": 1.581
+ },
+ "wec-lmdh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.078,
+  "trapRmsKph": 11.977,
+  "trapBiasKph": 1.14,
+  "f1ToWecHoldoutPct": 1.42,
+  "clA": 7,
+  "muY": 1.552
+ },
+ "wec-lmdh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.814,
+  "trapRmsKph": 3.506,
+  "trapBiasKph": 0.86,
+  "f1ToWecHoldoutPct": 1.04,
+  "clA": 5.747,
+  "muY": 1.568
+ },
+ "wec-lmgt3/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.091,
+  "trapRmsKph": 6.165,
+  "trapBiasKph": -3.58,
+  "f1ToWecHoldoutPct": 1.35,
+  "clA": 3.5,
+  "muY": 1.587
+ },
+ "wec-lmgt3/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.928,
+  "trapRmsKph": 8.726,
+  "trapBiasKph": 2.6,
+  "f1ToWecHoldoutPct": 1.19,
+  "clA": 3.5,
+  "muY": 1.613
+ }
+}

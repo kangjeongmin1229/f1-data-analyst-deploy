@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "arm": "bop",
+  "settings": {
+    "LAPSIM_ONLY": "wec",
+    "LAPSIM_ITERS": "70",
+    "LAPSIM_HOLDOUT_ITERS": "25",
+    "LAPSIM_WEC_NM_TOL": "1e-4",
+    "LAPSIM_WEC_NM_CAP": "2000",
+    "LAPSIM_WEC_TRAP_POSITION": "off",
+    "LAPSIM_WEC_SECTORS": "off",
+    "LAPSIM_WEC_MODEL_BOP": "on"
+  },
+  "f1Unchanged": true,
+  "finishedAt": "2026-11-10T22:30:51.340Z"
+}

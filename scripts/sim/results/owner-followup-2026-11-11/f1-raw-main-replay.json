@@ -1,0 +1,102 @@
+{
+  "control": {
+    "vegas": [
+      {
+        "year": 2023,
+        "session": 9314,
+        "wet": false,
+        "realSec": 92.726,
+        "simSec": 93.00982644915914,
+        "errorSec": 0.283826449159136,
+        "cornerMinBiasKph": -6.899623996763907,
+        "nCorners": 8,
+        "trapErrorKph": 6.6032023814194645,
+        "grip": 0.9471015820671289,
+        "drag": 0.900731094618407
+      },
+      {
+        "year": 2024,
+        "session": 9640,
+        "wet": false,
+        "realSec": 92.312,
+        "simSec": 92.16889123632916,
+        "errorSec": -0.14310876367083836,
+        "cornerMinBiasKph": -0.6429824289076068,
+        "nCorners": 7,
+        "trapErrorKph": -1.754201519297112,
+        "grip": 0.9471015820671289,
+        "drag": 0.900731094618407
+      },
+      {
+        "year": 2025,
+        "session": 9854,
+        "wet": true,
+        "realSec": 107.934,
+        "simSec": 91.94760167243145,
+        "errorSec": -15.986398327568551,
+        "cornerMinBiasKph": 18.338003701001078,
+        "nCorners": 8,
+        "trapErrorKph": 16.597495472852472,
+        "grip": 0.9471015820671289,
+        "drag": 0.900731094618407
+      }
+    ],
+    "prediction2026": {
+      "lapSec": 93.87529427107322,
+      "weatherFrom": 2024,
+      "date": "2026-11-23T06:00:00+00:00",
+      "grip": 0.9471015820671289,
+      "drag": 0.900731094618407
+    }
+  },
+  "candidate": {
+    "vegas": [
+      {
+        "year": 2023,
+        "session": 9314,
+        "wet": false,
+        "realSec": 92.726,
+        "simSec": 92.9910020357506,
+        "errorSec": 0.265002035750598,
+        "cornerMinBiasKph": -7.7515772988010525,
+        "nCorners": 8,
+        "trapErrorKph": 2.2374301451979477,
+        "grip": 0.932802508605206,
+        "drag": 0.9405538194945741
+      },
+      {
+        "year": 2024,
+        "session": 9640,
+        "wet": false,
+        "realSec": 92.312,
+        "simSec": 92.16645756332255,
+        "errorSec": -0.14554243667744515,
+        "cornerMinBiasKph": -2.8327943496617953,
+        "nCorners": 7,
+        "trapErrorKph": -6.699283434760616,
+        "grip": 0.932802508605206,
+        "drag": 0.9405538194945741
+      },
+      {
+        "year": 2025,
+        "session": 9854,
+        "wet": true,
+        "realSec": 107.934,
+        "simSec": 92.03995400686419,
+        "errorSec": -15.894045993135805,
+        "cornerMinBiasKph": 17.136179073717322,
+        "nCorners": 8,
+        "trapErrorKph": 10.460581404184381,
+        "grip": 0.932802508605206,
+        "drag": 0.9405538194945741
+      }
+    ],
+    "prediction2026": {
+      "lapSec": 94.49113618704916,
+      "weatherFrom": 2024,
+      "date": "2026-11-23T06:00:00+00:00",
+      "grip": 0.932802508605206,
+      "drag": 0.9405538194945741
+    }
+  }
+}

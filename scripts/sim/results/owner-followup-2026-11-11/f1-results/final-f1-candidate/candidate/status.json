@@ -1,0 +1,118 @@
+{
+  "complete": true,
+  "accepted": false,
+  "arm": "candidate",
+  "optimizerRoundsExecuted": 0,
+  "sourceCommit": "a526068fb85ea284a360c4b87ef04e0066c24126",
+  "sourceRun": 42913368752,
+  "checkpoints": {
+    "fit-1.json": "c42a9deca53767c74d58b573f365c0aabcf8cfb058fdc0b5344acd1a0ca4b6af",
+    "fit-2.json": "03a2bd0ca6f88f45df7a287edf1bb42c0f2e44c4f1a88e7d919830520068f589",
+    "fit-3.json": "caf17ed5b827099e43b8d22b0cd2fd869c46efae1954015f73d8b5340ad14459",
+    "fit-4.json": "1531337f90ee44e87c206c22aee9bc04b824d995f75c32017b275beae6e5ddb7",
+    "fit-5.json": "4ae3f098a835e76f56d5566659863068adccd41e2b7c58d4f696da7260f8e625",
+    "fit-6.json": "cdc01d33c6d68792b82f71cb1d3eeaaf1b471711bae65cda700e7cce19b68eeb",
+    "fit-7.json": "1606f3c76206519d381fc4d4580ffec67e28c117244d2b7950460b6ff410d531",
+    "fit-8.json": "2297fc9970a0941f68b8684f1c164e6f80b64f4be71222958df5d401d3955f9f",
+    "fit-9.json": "9cce7561f20dfcdc62dc0da5f4951af284980a1512e79063304b35e69d931ea6"
+  },
+  "folds": [
+    {
+      "year": 2025,
+      "fold": 0,
+      "complete": true,
+      "preserved": true,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "da94c34389d1851374304603250d17f3ae17bcfe6bd81c3932cdd7c77e4df7be",
+      "finishedAt": "2026-11-10T22:18:55.150Z"
+    },
+    {
+      "year": 2025,
+      "fold": 1,
+      "complete": true,
+      "preserved": true,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "7f1df56e772bb8de9d86706b34d7adbfb9e929f98d8bd04ffe77ba4b6f94b8d4",
+      "finishedAt": "2026-11-10T22:18:53.206Z"
+    },
+    {
+      "year": 2025,
+      "fold": 2,
+      "complete": true,
+      "preserved": true,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "5f27583162d23c7294588d114f34b2d5c5168dab67a852b4cbea7bd1bc389e40",
+      "finishedAt": "2026-11-10T22:18:52.259Z"
+    },
+    {
+      "year": 2025,
+      "fold": 3,
+      "complete": true,
+      "preserved": false,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "c5ed33bb56ef092f47624e2d5f3759f42c57ee8911661f08bab81aee9374dd94",
+      "finishedAt": "2026-11-10T22:44:31.047Z"
+    },
+    {
+      "year": 2026,
+      "fold": 0,
+      "complete": true,
+      "preserved": false,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "040bfd091efaa74cfc6c8cd022b975db676e541ff936315837090435a6a79fd0",
+      "finishedAt": "2026-11-10T22:37:39.200Z"
+    },
+    {
+      "year": 2026,
+      "fold": 1,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": false,
+      "stopReason": "main-round-limit",
+      "inputHash": "d9734b5ade8280c6eb73806fa8c6072ff6f75d0c63ebaa88d7801522aaa179b5",
+      "finishedAt": "2026-11-10T22:55:22.868Z"
+    },
+    {
+      "year": 2026,
+      "fold": 2,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "ed32b823ecf3035c9067ee7a62580c9a087b361b5230141533af42a76b66d54d",
+      "finishedAt": "2026-11-10T22:51:19.736Z"
+    },
+    {
+      "year": 2026,
+      "fold": 3,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "25bc9e82e47e3ef2c2a53853e72d6db5aa132f605453e5294769f5747e8e92a9",
+      "finishedAt": "2026-11-10T22:43:52.340Z"
+    }
+  ],
+  "remaining": "Paired gate, production-baseline validity and physical acceptance must be assessed."
+}

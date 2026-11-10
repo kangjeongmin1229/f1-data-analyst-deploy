@@ -1,0 +1,118 @@
+{
+  "complete": true,
+  "accepted": false,
+  "arm": "control",
+  "optimizerRoundsExecuted": 0,
+  "sourceCommit": "a526068fb85ea284a360c4b87ef04e0066c24126",
+  "sourceRun": 42913368752,
+  "checkpoints": {
+    "fit-1.json": "efe3c2cc08b8e89f36ef8af6086c13d86ac672fbd9afc8892179198c0ea74438",
+    "fit-2.json": "21399b9d866560614d28b24c55b79da81d424d504d4ecfdeb7204f5b919a682d",
+    "fit-3.json": "907ac407e93873881ad7e8a2fa641ecf44bc5444848ef664455e0176a69755fa",
+    "fit-4.json": "c4e3c71f5ea58f2681901e829746cb48d9cecd32940198e985dac46191850e94",
+    "fit-5.json": "b64e9da8c682d7621059e4cc3bd6b0eae09d63fe52ffba83eec9ba9aa7fb37a2",
+    "fit-6.json": "1a19c5619f7a4854f6d86f41544c5beb6d0e2d2d5d6865ae0f8a007ce02f0381",
+    "fit-7.json": "9ab5a435046c36fd6320082f0361816cdee62951816f6e7269ac7be72c420aed",
+    "fit-8.json": "e72791ae991a55033f9b92bb2a68fcf7b119f5f6c2749db543dcb8d0ca9052da",
+    "fit-9.json": "9eb25cde52374cfc14f677ed1d8e8480d8b0ae88460ceb6236c1a6f536d3fea6"
+  },
+  "folds": [
+    {
+      "year": 2025,
+      "fold": 0,
+      "complete": true,
+      "preserved": true,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "1348abbe38a5b4dfc81994e8a35c1da6cc92e1a7331a513f9372aa73a0732d00",
+      "finishedAt": "2026-11-10T22:18:53.157Z"
+    },
+    {
+      "year": 2025,
+      "fold": 1,
+      "complete": true,
+      "preserved": true,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "498948b5a7e44ca554f63bfc3270d8d863e8f87297ffbd3f81e34cbe41375da3",
+      "finishedAt": "2026-11-10T22:18:52.753Z"
+    },
+    {
+      "year": 2025,
+      "fold": 2,
+      "complete": true,
+      "preserved": true,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "preserved-completed-fold",
+      "inputHash": "65488ecff1b013ea200d727c703c9490b972124b3a8d88310d7cdd3dc0b25d42",
+      "finishedAt": "2026-11-10T22:18:51.193Z"
+    },
+    {
+      "year": 2025,
+      "fold": 3,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "084f877b1e1fbab104b414bedc6bdfe214c81f6993c37a4bdf96e8d1a99b5573",
+      "finishedAt": "2026-11-10T22:52:30.872Z"
+    },
+    {
+      "year": 2026,
+      "fold": 0,
+      "complete": true,
+      "preserved": false,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "7cfdc942beb695a4666fc96a45e7fb00e73a026b62a780cdc225d6c3094d795b",
+      "finishedAt": "2026-11-10T22:41:05.392Z"
+    },
+    {
+      "year": 2026,
+      "fold": 1,
+      "complete": true,
+      "preserved": false,
+      "rounds": 5,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "29938fae9100ec4e827dcdd790d5952aa82d5af86737141584d40415fa6d9902",
+      "finishedAt": "2026-11-10T22:51:50.130Z"
+    },
+    {
+      "year": 2026,
+      "fold": 2,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "de6a0b6c4763887de164723c76d5f0c0907c1277c063b6923f0f4f0887b14ad8",
+      "finishedAt": "2026-11-10T22:51:52.298Z"
+    },
+    {
+      "year": 2026,
+      "fold": 3,
+      "complete": true,
+      "preserved": false,
+      "rounds": 6,
+      "mainRounds": 6,
+      "numericallyConverged": true,
+      "stopReason": "score-decrease-below-one-percent",
+      "inputHash": "3467bee042604ef21db9f1aebecbbbecbbf13a0e832914cf877b00d0a78ae78d",
+      "finishedAt": "2026-11-10T22:49:14.824Z"
+    }
+  ],
+  "remaining": "Paired gate, production-baseline validity and physical acceptance must be assessed."
+}

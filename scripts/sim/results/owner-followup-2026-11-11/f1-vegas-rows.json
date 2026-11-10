@@ -1,0 +1,176 @@
+{
+  "control": {
+    "prediction": {
+      "lap": 93.875,
+      "date": "2026-11-23",
+      "poleMult": 1.01045,
+      "sectors": [
+        26.392,
+        30.363,
+        37.12
+      ],
+      "grip": 0.9471,
+      "drag": 0.9007,
+      "weatherFrom": 2024,
+      "rechargeMJ": 6,
+      "lastPole": {
+        "year": 2024,
+        "lap": 92.312
+      }
+    },
+    "rows": [
+      {
+        "year": "2023",
+        "track": {
+          "grip": 0.9471,
+          "drag": 0.9007,
+          "rmsKph": 12.1,
+          "errorSec": 0.284,
+          "simLap": 93.01,
+          "realLap": 92.726,
+          "sessionKey": 9314,
+          "driver": 16,
+          "position": 1,
+          "weather": {
+            "airTempC": 15.170588235294113,
+            "trackTempC": 16.87058823529412,
+            "humidityPct": 60.8235294117647,
+            "pressureHpa": 942,
+            "rain": false,
+            "windSpeed": 0.17558458869161392,
+            "windFromDeg": 271.7656433912222
+          },
+          "realSectors": [
+            26.224,
+            30.652,
+            35.85
+          ]
+        }
+      },
+      {
+        "year": "2024",
+        "track": {
+          "grip": 0.9471,
+          "drag": 0.9007,
+          "rmsKph": 13.7,
+          "errorSec": -0.143,
+          "simLap": 92.169,
+          "realLap": 92.312,
+          "sessionKey": 9640,
+          "driver": 63,
+          "position": 1,
+          "weather": {
+            "airTempC": 11.488235294117645,
+            "trackTempC": 13.623529411764704,
+            "humidityPct": 26.058823529411764,
+            "pressureHpa": 941.2058823529414,
+            "rain": false,
+            "windSpeed": 0.23365877487703884,
+            "windFromDeg": 274.42496212766866
+          },
+          "realSectors": [
+            25.736,
+            30.916,
+            35.66
+          ]
+        }
+      }
+    ]
+  },
+  "candidate": {
+    "prediction": {
+      "lap": 94.491,
+      "date": "2026-11-23",
+      "poleMult": 1.00983,
+      "sectors": [
+        26.73,
+        30.642,
+        37.12
+      ],
+      "grip": 0.9328,
+      "drag": 0.9406,
+      "weatherFrom": 2024,
+      "rechargeMJ": 6,
+      "lastPole": {
+        "year": 2024,
+        "lap": 92.312
+      }
+    },
+    "rows": [
+      {
+        "year": "2023",
+        "track": {
+          "grip": 0.9328,
+          "drag": 0.9406,
+          "rmsKph": 11.7,
+          "errorSec": 0.265,
+          "simLap": 92.991,
+          "realLap": 92.726,
+          "sessionKey": 9314,
+          "driver": 16,
+          "position": 1,
+          "weather": {
+            "airTempC": 15.170588235294113,
+            "trackTempC": 16.87058823529412,
+            "humidityPct": 60.8235294117647,
+            "pressureHpa": 942,
+            "rain": false,
+            "windSpeed": 0.17558458869161392,
+            "windFromDeg": 271.7656433912222
+          },
+          "realSectors": [
+            26.224,
+            30.652,
+            35.85
+          ]
+        }
+      },
+      {
+        "year": "2024",
+        "track": {
+          "grip": 0.9328,
+          "drag": 0.9406,
+          "rmsKph": 11.2,
+          "errorSec": -0.146,
+          "simLap": 92.166,
+          "realLap": 92.312,
+          "sessionKey": 9640,
+          "driver": 63,
+          "position": 1,
+          "weather": {
+            "airTempC": 11.488235294117645,
+            "trackTempC": 13.623529411764704,
+            "humidityPct": 26.058823529411764,
+            "pressureHpa": 941.2058823529414,
+            "rain": false,
+            "windSpeed": 0.23365877487703884,
+            "windFromDeg": 274.42496212766866
+          },
+          "realSectors": [
+            25.736,
+            30.916,
+            35.66
+          ]
+        }
+      }
+    ]
+  },
+  "productionPrediction": {
+    "lap": 92.84,
+    "date": "2026-11-23",
+    "poleMult": 1.0087,
+    "sectors": [
+      26.247,
+      30.883,
+      35.711
+    ],
+    "grip": 0.9547,
+    "drag": 0.9293,
+    "weatherFrom": 2024,
+    "rechargeMJ": 6,
+    "lastPole": {
+      "year": 2024,
+      "lap": 92.312
+    }
+  }
+}

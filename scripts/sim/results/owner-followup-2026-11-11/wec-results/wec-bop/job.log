@@ -1,0 +1,303 @@
+{
+  "pass": true,
+  "groups": [
+    {
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    }
+  ]
+}
+# Lap simulator calibration
+
+Generated 2026-11-10. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
+
+WEC lmh 2025: transfer track factors — holdout 1.13% → 1.15%, not used (worse) (rejected: worse on held-out rows)
+WEC lmh 2025: Timing71 rows 3 — holdout 1.13% → 1.11%, accepted: held-out error lower beyond noise
+WEC lmh 2025: per-event BoP — holdout 1.11% → 1.40%, rejected: worse on held-out rows
+## WEC Hypercar LMH 2025
+
+18 laps on 5 tracks, fit score 5.274. Holdout (one track left out at a time): 1.40% RMS over 5 laps.
+
+Car: grip μy 1.571, downforce ClA 7.00 m², drag CdA 1.089 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.359 | 99.255 | +0.896 | 291.9 | 289.7 | 1.0759 |
+| imola | 88.920 | 87.421 | -1.499 | 311.2 | 301.4 | 1.1543 |
+| spa-francorchamps | 119.617 | 121.104 | +1.487 | 312.3 | 300.7 | 1.0059 |
+| interlagos | 82.948 | 81.835 | -1.113 | 282.6 | 304 | 0.9602 |
+| sakhir | 106.826 | 106.940 | +0.114 | 293.7 | 291.7 | 0.901 |
+
+WEC lmh 2026: transfer track factors — holdout 1.34% → 1.11%, used (rejected: gain within noise)
+WEC lmh 2026: Timing71 rows 3 — holdout 1.11% → 1.17%, rejected: worse on held-out rows
+## WEC Hypercar LMH 2026
+
+18 laps on 6 tracks, fit score 1.034. Holdout (one track left out at a time): 1.11% RMS over 6 laps.
+
+Car: grip μy 1.521, downforce ClA 6.55 m², drag CdA 0.964 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.088 | 89.070 | -1.018 | 310.4 | 312.4 | 1.1358 |
+| spa-francorchamps | 120.653 | 121.212 | +0.559 | 312.3 | 311.1 | 1.0246 |
+| interlagos | 83.387 | 82.484 | -0.903 | – | 314.1 | 0.9823 |
+| austin | 112.020 | 113.022 | +1.002 | 300 | 305.6 | 0.9966 |
+| catalunya | 90.336 | 90.248 | -0.088 | 305.9 | 306.6 | 0.99 |
+| monza | 93.364 | 93.946 | +0.582 | 314 | 309.6 | 0.9907 |
+
+WEC lmdh 2025: transfer track factors — holdout 1.49% → 1.28%, used (accepted: held-out error lower beyond noise)
+WEC lmdh 2025: Timing71 rows 3 — holdout 1.28% → 1.29%, rejected: worse on held-out rows
+WEC lmdh 2025: per-event BoP — holdout 1.28% → 1.61%, rejected: worse on held-out rows
+## WEC Hypercar LMDh 2025
+
+15 laps on 5 tracks, fit score 5.067. Holdout (one track left out at a time): 1.61% RMS over 5 laps.
+
+Car: grip μy 1.561, downforce ClA 7.00 m², drag CdA 1.109 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 98.495 | 99.899 | +1.404 | 294.3 | 288.1 | 1.0727 |
+| imola | 89.885 | 88.156 | -1.729 | 308.6 | 300 | 1.1358 |
+| spa-francorchamps | 120.246 | 120.135 | -0.111 | 310.5 | 301.2 | 1.0246 |
+| interlagos | 82.570 | 81.845 | -0.725 | 276.2 | 300.7 | 0.9823 |
+| sakhir | 107.543 | 108.683 | +1.140 | 290.5 | 288.7 | 0.8804 |
+
+WEC lmdh 2026: transfer track factors — holdout 1.41% → 1.06%, used (accepted: held-out error lower beyond noise)
+WEC lmdh 2026: Timing71 rows 3 — holdout 1.06% → 1.11%, rejected: worse on held-out rows
+## WEC Hypercar LMDh 2026
+
+18 laps on 6 tracks, fit score 1.097. Holdout (one track left out at a time): 1.06% RMS over 6 laps.
+
+Car: grip μy 1.530, downforce ClA 6.40 m², drag CdA 0.954 m² (mass 1120 kg and 500 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 90.419 | 89.038 | -1.381 | 310.4 | 313.4 | 1.1358 |
+| spa-francorchamps | 120.696 | 121.233 | +0.537 | 315 | 312 | 1.0246 |
+| interlagos | 83.041 | 82.483 | -0.558 | – | 314.8 | 0.9823 |
+| austin | 112.074 | 112.985 | +0.911 | 301.7 | 306.3 | 0.9966 |
+| catalunya | 90.166 | 90.248 | +0.082 | 306.8 | 307.4 | 0.99 |
+| monza | 93.460 | 93.881 | +0.421 | 314.9 | 310.6 | 0.9907 |
+
+WEC lmgt3 2025: transfer track factors — holdout 1.91% → 1.38%, used (accepted: held-out error lower beyond noise)
+WEC lmgt3 2025: Timing71 rows 5 — holdout 1.38% → 1.37%, rejected: gain within noise
+## WEC LMGT3 2025
+
+15 laps on 5 tracks, fit score 2.649. Holdout (one track left out at a time): 1.38% RMS over 5 laps.
+
+Car: grip μy 1.589, downforce ClA 3.50 m², drag CdA 1.285 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| lusail | 113.861 | 115.472 | +1.611 | 252.9 | 250.5 | 1.0727 |
+| imola | 102.326 | 101.195 | -1.131 | 267.3 | 262.2 | 1.1358 |
+| spa-francorchamps | 137.732 | 138.947 | +1.215 | 263.6 | 252.3 | 1.0246 |
+| interlagos | 93.849 | 92.755 | -1.094 | 253.7 | 256.7 | 0.9823 |
+| sakhir | 121.661 | 120.675 | -0.986 | 254.4 | 255.3 | 0.8804 |
+
+WEC lmgt3 2026: transfer track factors — holdout 1.25% → 1.22%, used (rejected: gain within noise)
+WEC lmgt3 2026: Timing71 rows 5 — holdout 1.22% → 1.08%, accepted: held-out error lower beyond noise
+## WEC LMGT3 2026
+
+23 laps on 6 tracks, fit score 2.827. Holdout (one track left out at a time): 1.08% RMS over 6 laps.
+
+Car: grip μy 1.609, downforce ClA 3.50 m², drag CdA 1.300 m² (mass 1400 kg and 380 kW fixed).
+
+| Track | Real | Sim | Error | Trap | Sim top | Track factor (F1) |
+|---|---|---|---|---|---|---|
+| imola | 101.181 | 100.993 | -0.188 | 260 | 263.6 | 1.1358 |
+| spa-francorchamps | 136.612 | 138.533 | +1.921 | 262.4 | 251.5 | 1.0246 |
+| interlagos | 93.350 | 91.985 | -1.365 | 250.8 | 264.2 | 0.9823 |
+| austin | 125.103 | 124.838 | -0.265 | 252.9 | 259 | 0.9966 |
+| catalunya | 100.933 | 101.440 | +0.507 | 255.9 | 257.3 | 0.99 |
+| monza | 107.065 | 107.621 | +0.556 | 268 | 260.1 | 0.9907 |
+
+{
+  "pass": true,
+  "groups": [
+    {
+      "group": "wec-lmh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "n": 5,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "historical season selected in memory; API does not expose a WEC year selector"
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "n": 6,
+      "maxAbsErrorSec": 0,
+      "pass": true,
+      "mode": "public latest-season selector"
+    }
+  ]
+}
+{
+ "f1/2023": {
+  "tracks": 15,
+  "lapRmsPct": 0.506,
+  "sectorRmsPct": 2.207,
+  "cornerRmsKph": 21.083,
+  "cornerBiasKph": -11.645,
+  "trapRmsKph": 6.597,
+  "trapBiasKph": -1.918,
+  "brakeRmsM": 56.513,
+  "brakeBiasM": 28.232,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2024": {
+  "tracks": 18,
+  "lapRmsPct": 0.509,
+  "sectorRmsPct": 2.637,
+  "cornerRmsKph": 23.702,
+  "cornerBiasKph": -12.973,
+  "trapRmsKph": 10.324,
+  "trapBiasKph": -7.388,
+  "brakeRmsM": 58.087,
+  "brakeBiasM": 35.332,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2025": {
+  "tracks": 22,
+  "lapRmsPct": 0.355,
+  "sectorRmsPct": 2.495,
+  "cornerRmsKph": 22.939,
+  "cornerBiasKph": -12.757,
+  "trapRmsKph": 7.634,
+  "trapBiasKph": -4.721,
+  "brakeRmsM": 63.834,
+  "brakeBiasM": 35.807,
+  "holdout2025to2026Pct": 0.84
+ },
+ "f1/2026": {
+  "tracks": 17,
+  "lapRmsPct": 0.497,
+  "sectorRmsPct": 3.848,
+  "cornerRmsKph": 21.888,
+  "cornerBiasKph": -14.322,
+  "trapRmsKph": 14.13,
+  "trapBiasKph": 7.996,
+  "brakeRmsM": 68.412,
+  "brakeBiasM": 40.021,
+  "holdout2025to2026Pct": 0.9
+ },
+ "wec-lmh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.186,
+  "trapRmsKph": 11.81,
+  "trapBiasKph": -0.84,
+  "f1ToWecHoldoutPct": 1.4,
+  "clA": 7,
+  "muY": 1.571
+ },
+ "wec-lmh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.802,
+  "trapRmsKph": 3.366,
+  "trapBiasKph": 0.54,
+  "f1ToWecHoldoutPct": 1.11,
+  "clA": 6.552,
+  "muY": 1.521
+ },
+ "wec-lmdh/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.236,
+  "trapRmsKph": 12.668,
+  "trapBiasKph": -0.28,
+  "f1ToWecHoldoutPct": 1.61,
+  "clA": 7,
+  "muY": 1.561
+ },
+ "wec-lmdh/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.801,
+  "trapRmsKph": 3.406,
+  "trapBiasKph": 0.18,
+  "f1ToWecHoldoutPct": 1.06,
+  "clA": 6.398,
+  "muY": 1.53
+ },
+ "wec-lmgt3/2025": {
+  "tracks": 5,
+  "lapRmsPct": 1.097,
+  "trapRmsKph": 5.818,
+  "trapBiasKph": -2.98,
+  "f1ToWecHoldoutPct": 1.38,
+  "clA": 3.5,
+  "muY": 1.589
+ },
+ "wec-lmgt3/2026": {
+  "tracks": 6,
+  "lapRmsPct": 0.887,
+  "trapRmsKph": 8.296,
+  "trapBiasKph": 0.95,
+  "f1ToWecHoldoutPct": 1.08,
+  "clA": 3.5,
+  "muY": 1.609
+ }
+}

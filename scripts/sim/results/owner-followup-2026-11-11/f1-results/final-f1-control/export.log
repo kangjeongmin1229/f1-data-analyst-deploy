@@ -1,0 +1,224 @@
+# Lap simulator calibration
+
+Generated 2026-11-10. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
+
+F1 joint fit of 2023 and 2024 and 2025 and 2026: 2 s, score 24.738.
+
+### 2023 team pace and development
+
+Development over the season: 3.30% lap time from March to December.
+
+- Red Bull Racing: -0.11%
+- Ferrari: -0.09%
+- Aston Martin: -0.04%
+- McLaren: +0.10%
+- Mercedes: +0.56%
+
+## 2023
+
+45 laps. Holdout: no track had a factor from another season.
+
+Car: grip μy 1.785, downforce ClA 7.12 m², drag CdA 1.333 m², low-drag CdA 0.814 m², ICE 476 kW.
+
+| Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
+|---|---|---|---|---|---|
+| sakhir | 89.708 | 89.473 | -0.235 | 19.3 km/h | 0.8957 / drag 1.1476 |
+| jeddah | 88.265 | 87.963 | -0.302 | 27.6 km/h | 1.2256 / drag 1.0159 |
+| baku | 100.203 | 100.616 | +0.413 | 22.5 km/h | 1.0299 / drag 0.9375 |
+| miami | 86.841 | 87.256 | +0.415 | 16.1 km/h | 0.9327 / drag 1.0084 |
+| monte-carlo | 71.365 | 71.576 | +0.211 | 17.4 km/h | 0.941 / drag 1.1145 |
+| spielberg | 64.391 | 64.715 | +0.324 | 20.9 km/h | 1.0447 / drag 1.144 |
+| hungaroring | 76.609 | 76.785 | +0.176 | 12.9 km/h | 0.9566 / drag 1.1254 |
+| monza | 80.294 | 79.915 | -0.379 | 15 km/h | 0.9817 / drag 0.9916 |
+| singapore | 90.984 | 90.744 | -0.240 | 19.1 km/h | 0.9566 / drag 1.0257 |
+| suzuka | 88.877 | 89.385 | +0.508 | 21.2 km/h | 1.016 / drag 1.0792 |
+| lusail | 83.778 | 82.892 | -0.886 | 13.9 km/h | 1.0802 / drag 1.0628 |
+| austin | 94.723 | 94.160 | -0.563 | 19.4 km/h | 1.0028 / drag 1.0792 |
+| mexico-city | 77.166 | 77.294 | +0.128 | 12.2 km/h | 0.9216 / drag 1.0636 |
+| las-vegas | 92.726 | 93.010 | +0.284 | 12.1 km/h | 0.9471 / drag 0.9007 |
+| yas-marina-circuit | 83.445 | 83.910 | +0.465 | 19.4 km/h | 1.085 / drag 0.9822 |
+
+### 2024 team pace and development
+
+Development over the season: 1.76% lap time from March to December.
+
+- Ferrari: -0.12%
+- Mercedes: -0.07%
+- McLaren: 0.00%
+- Red Bull Racing: +0.08%
+- Alpine: +0.14%
+- Aston Martin: +0.51%
+
+## 2024
+
+54 laps. Holdout: no track had a factor from another season.
+
+Car: grip μy 1.754, downforce ClA 8.00 m², drag CdA 1.272 m², low-drag CdA 0.873 m², ICE 476 kW.
+
+| Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
+|---|---|---|---|---|---|
+| sakhir | 89.179 | 89.887 | +0.708 | 19.1 km/h | 0.8957 / drag 1.1476 |
+| jeddah | 87.472 | 87.801 | +0.329 | 21.2 km/h | 1.2256 / drag 1.0159 |
+| suzuka | 88.197 | 87.694 | -0.503 | 19.3 km/h | 1.016 / drag 1.0792 |
+| shanghai | 93.660 | 92.671 | -0.989 | 29.8 km/h | 1.0422 / drag 0.9728 |
+| miami | 87.241 | 87.161 | -0.080 | 15.1 km/h | 0.9327 / drag 1.0084 |
+| imola | 74.746 | 74.689 | -0.057 | 24.4 km/h | 1.1538 / drag 1.0585 |
+| monte-carlo | 70.270 | 70.924 | +0.654 | 16.1 km/h | 0.941 / drag 1.1145 |
+| catalunya | 71.383 | 71.674 | +0.291 | 16.4 km/h | 1.0118 / drag 1.1455 |
+| spielberg | 64.314 | 64.535 | +0.221 | 22.8 km/h | 1.0447 / drag 1.144 |
+| zandvoort | 69.673 | 69.609 | -0.064 | 20.2 km/h | 1.0944 / drag 1.1496 |
+| monza | 79.327 | 79.423 | +0.096 | 15.3 km/h | 0.9817 / drag 0.9916 |
+| baku | 101.365 | 101.500 | +0.135 | 17.5 km/h | 1.0299 / drag 0.9375 |
+| singapore | 89.525 | 89.825 | +0.300 | 18.6 km/h | 0.9566 / drag 1.0257 |
+| austin | 92.330 | 92.395 | +0.065 | 15.8 km/h | 1.0028 / drag 1.0792 |
+| mexico-city | 75.946 | 75.821 | -0.125 | 13 km/h | 0.9216 / drag 1.0636 |
+| las-vegas | 92.312 | 92.169 | -0.143 | 13.7 km/h | 0.9471 / drag 0.9007 |
+| lusail | 80.520 | 80.969 | +0.449 | 14.2 km/h | 1.0802 / drag 1.0628 |
+| yas-marina-circuit | 82.595 | 82.508 | -0.087 | 17.6 km/h | 1.085 / drag 0.9822 |
+
+### 2025 team pace and development
+
+Development over the season: 2.41% lap time from March to December.
+
+- Mercedes: -0.14%
+- Red Bull Racing: -0.06%
+- McLaren: -0.04%
+- Ferrari: +0.37%
+
+## 2025
+
+66 laps. Holdout: predicted 20 unseen pole laps, typical error 0.84% (RMS).
+
+Car: grip μy 1.785, downforce ClA 8.00 m², drag CdA 1.272 m², low-drag CdA 0.823 m², ICE 476 kW.
+
+| Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
+|---|---|---|---|---|---|
+| melbourne | 75.096 | 75.345 | +0.249 | 24.5 km/h | 1.0952 / drag 1.0084 |
+| shanghai | 90.641 | 91.511 | +0.870 | 32 km/h | 1.0422 / drag 0.9728 |
+| suzuka | 86.983 | 87.023 | +0.040 | 16.7 km/h | 1.016 / drag 1.0792 |
+| sakhir | 89.841 | 89.473 | -0.368 | 18.1 km/h | 0.8957 / drag 1.1476 |
+| jeddah | 87.294 | 87.348 | +0.054 | 26.5 km/h | 1.2256 / drag 1.0159 |
+| miami | 86.204 | 86.120 | -0.084 | 16.5 km/h | 0.9327 / drag 1.0084 |
+| imola | 74.670 | 74.577 | -0.093 | 26.8 km/h | 1.1538 / drag 1.0585 |
+| monte-carlo | 69.954 | 70.158 | +0.204 | 17.7 km/h | 0.941 / drag 1.1145 |
+| catalunya | 71.546 | 71.175 | -0.371 | 14.7 km/h | 1.0118 / drag 1.1455 |
+| montreal | 70.899 | 70.886 | -0.013 | 17.4 km/h | 0.9797 / drag 1.0661 |
+| spielberg | 63.971 | 63.570 | -0.401 | 18.3 km/h | 1.0447 / drag 1.144 |
+| silverstone | 84.892 | 84.661 | -0.231 | 13.7 km/h | 0.9303 / drag 1.0899 |
+| spa-francorchamps | 100.562 | 100.771 | +0.209 | 17.7 km/h | 1.0171 / drag 0.9926 |
+| hungaroring | 75.372 | 74.749 | -0.623 | 14.2 km/h | 0.9566 / drag 1.1254 |
+| zandvoort | 68.662 | 68.856 | +0.194 | 18.8 km/h | 1.0944 / drag 1.1496 |
+| monza | 78.792 | 78.597 | -0.195 | 14 km/h | 0.9817 / drag 0.9916 |
+| singapore | 89.158 | 89.109 | -0.049 | 17.3 km/h | 0.9566 / drag 1.0257 |
+| austin | 92.510 | 92.287 | -0.223 | 15.5 km/h | 1.0028 / drag 1.0792 |
+| mexico-city | 75.586 | 75.604 | +0.018 | 14.9 km/h | 0.9216 / drag 1.0636 |
+| interlagos | 69.511 | 69.643 | +0.132 | 14.1 km/h | 0.9593 / drag 0.9716 |
+| lusail | 79.387 | 79.999 | +0.612 | 15.4 km/h | 1.0802 / drag 1.0628 |
+| yas-marina-circuit | 82.207 | 82.176 | -0.031 | 20.1 km/h | 1.085 / drag 0.9822 |
+
+### 2026 team pace and development
+
+Development over the season: 3.41% lap time from March to December.
+
+- McLaren: -0.40%
+- Alpine: -0.25%
+- Mercedes: -0.18%
+- Ferrari: +0.21%
+- Red Bull Racing: +0.24%
+
+## 2026
+
+50 laps. Holdout: predicted 14 unseen pole laps, typical error 1.19% (RMS).
+
+Car: grip μy 1.942, downforce ClA 4.27 m², drag CdA 1.263 m², low-drag CdA 0.739 m², ICE 370 kW.
+
+| Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
+|---|---|---|---|---|---|
+| melbourne | 78.518 | 78.506 | -0.012 | 31.3 km/h | 1.0952 / drag 1.0084 |
+| shanghai | 92.064 | 92.474 | +0.410 | 27 km/h | 1.0422 / drag 0.9728 |
+| suzuka | 89.076 | 91.037 | +1.961 | 24.3 km/h | 1.016 / drag 1.0792 |
+| miami | 87.798 | 87.489 | -0.309 | 21.3 km/h | 0.9327 / drag 1.0084 |
+| monte-carlo | 72.051 | 70.949 | -1.102 | 17.8 km/h | 0.941 / drag 1.1145 |
+| catalunya | 74.679 | 74.812 | +0.133 | 23.8 km/h | 1.0118 / drag 1.1455 |
+| spielberg | 66.113 | 65.469 | -0.644 | 23.8 km/h | 1.0447 / drag 1.144 |
+| silverstone | 88.111 | 88.298 | +0.187 | 20 km/h | 0.9303 / drag 1.0899 |
+| spa-francorchamps | 104.361 | 104.653 | +0.292 | 28.6 km/h | 1.0171 / drag 0.9926 |
+| hungaroring | 77.207 | 77.573 | +0.366 | 14.5 km/h | 0.9566 / drag 1.1254 |
+| monza | 81.786 | 82.123 | +0.337 | 28.3 km/h | 0.9817 / drag 0.9916 |
+| madring | 91.824 | 91.576 | -0.248 | 19.6 km/h | 1.0933 / drag 1.132 |
+| baku | 102.526 | 102.191 | -0.335 | 26.4 km/h | 1.0299 / drag 0.9375 |
+| kuala-lumpur | 95.130 | 95.243 | +0.113 | 18.6 km/h | 0.984 / drag 1.141 |
+| singapore | 91.373 | 91.239 | -0.134 | 16.3 km/h | 0.9566 / drag 1.0257 |
+| austin | 94.035 | 94.483 | +0.448 | 18.6 km/h | 1.0028 / drag 1.0792 |
+| mexico-city | 76.514 | 76.953 | +0.439 | 14.4 km/h | 0.9216 / drag 1.0636 |
+
+## 2026 predictions (tracks not raced yet in 2026)
+
+| Track | Predicted pole | ± (holdout) | Last real pole | Weather from | Recharge limit |
+|---|---|---|---|---|---|
+| imola | 76.443 | ±0.91 s | 74.670 (2025) | 2025 | 7 MJ |
+| interlagos | 71.909 | ±0.86 s | 69.511 (2025) | 2025 | 6.5 MJ |
+| jeddah | 91.359 | ±1.09 s | 87.294 (2025) | 2025 | 7 MJ |
+| las-vegas | 93.875 | ±1.12 s | 92.312 (2024) | 2024 | 6 MJ |
+| lusail | 85.660 | ±1.02 s | 79.387 (2025) | 2025 | 8 MJ |
+| montreal | 72.128 | ±0.86 s | 70.899 (2025) | 2025 | 6 MJ |
+| sakhir | 89.718 | ±1.07 s | 89.841 (2025) | 2025 | 7 MJ |
+| yas-marina-circuit | 84.529 | ±1.01 s | 82.207 (2025) | 2025 | 7 MJ |
+| zandvoort | 72.036 | ±0.86 s | 68.662 (2025) | 2025 | 7.5 MJ |
+
+## Projections
+
+- 2027: rules -0.64% lap time, development -0.98% (historical range -0.84 to -1.25%).
+- 2028: rules -1.12% lap time, development -1.13% (historical range -0.2 to -2.13%).
+
+{"pass":true,"n":39,"maxAbsErrorSec":0}
+{
+ "f1/2023": {
+  "tracks": 15,
+  "lapRmsPct": 0.483,
+  "sectorRmsPct": 2.285,
+  "cornerRmsKph": 21.078,
+  "cornerBiasKph": -11.356,
+  "trapRmsKph": 7.125,
+  "trapBiasKph": -3.17,
+  "brakeRmsM": 56.953,
+  "brakeBiasM": 28.775,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2024": {
+  "tracks": 18,
+  "lapRmsPct": 0.466,
+  "sectorRmsPct": 2.679,
+  "cornerRmsKph": 23.051,
+  "cornerBiasKph": -11.961,
+  "trapRmsKph": 10.676,
+  "trapBiasKph": -7.652,
+  "brakeRmsM": 58.816,
+  "brakeBiasM": 36.111,
+  "holdout2025to2026Pct": null
+ },
+ "f1/2025": {
+  "tracks": 22,
+  "lapRmsPct": 0.405,
+  "sectorRmsPct": 2.585,
+  "cornerRmsKph": 22.458,
+  "cornerBiasKph": -11.753,
+  "trapRmsKph": 7.923,
+  "trapBiasKph": -5.106,
+  "brakeRmsM": 64.381,
+  "brakeBiasM": 36.311,
+  "holdout2025to2026Pct": 0.84
+ },
+ "f1/2026": {
+  "tracks": 17,
+  "lapRmsPct": 0.758,
+  "sectorRmsPct": 3.619,
+  "cornerRmsKph": 24.466,
+  "cornerBiasKph": -15.955,
+  "trapRmsKph": 13.177,
+  "trapBiasKph": -0.005,
+  "brakeRmsM": 66.291,
+  "brakeBiasM": 36.71,
+  "holdout2025to2026Pct": 1.19
+ }
+}
