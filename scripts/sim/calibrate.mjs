@@ -4,6 +4,7 @@
 import {readFile, writeFile} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {fitBTransferRounds, badTracks, transferCalibration} from './b-transfer-rounds.mjs';
+import {modelBopLookup} from './wec-model-bop.mjs';
 import {objectiveTrace} from './objective-trace.mjs';
 import {wecNmStop} from './wec-nm-stop.mjs';
 import {splitWecSessions} from './wec-session-scope.mjs';
@@ -55,6 +56,9 @@ const tauOf = (date, year) => { if (!date) return 0.5; const a = Date.UTC(year, 
 const ONLY_YEARS = process.env.LAPSIM_SEASONS ? process.env.LAPSIM_SEASONS.split(',').map(Number) : null;
 // LAPSIM_ONLY=wec: refit the WEC classes only; F1 seasons and projections are kept from the current calibration
 const ONLY_WEC = E.LAPSIM_ONLY === 'wec';
+const MODEL_BOP = E.LAPSIM_WEC_MODEL_BOP === 'on';
+if (MODEL_BOP && !ONLY_WEC) throw Error('Model-matched BoP requires a WEC-only experiment');
+const exactBop = MODEL_BOP ? modelBopLookup(JSON.parse(await readFile('scripts/sim/data/wec-model-identities.json')), JSON.parse(await readFile('scripts/sim/data/wec-bop-verified-2025.json'))) : null;
 const WEC_TIMING = {trapPosition: E.LAPSIM_WEC_TRAP_POSITION === 'on', sectors: E.LAPSIM_WEC_SECTORS === 'on', sectorWeight: Number(E.LAPSIM_WEC_SECTOR_WEIGHT || 2)};
 const WEC_TIMING_ON = WEC_TIMING.trapPosition || WEC_TIMING.sectors;
 if (WEC_TIMING_ON && !ONLY_WEC) throw new Error('WEC timing experiments require LAPSIM_ONLY=wec');
@@ -296,7 +300,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     }
     // per-event BoP (weight, power) for each car, relative to the season mean BoP of the class: candidate, gated
     let bop = null;
-    const bopOf = l => Object.entries(lapsimWecBop[l.name]?.[year]?.cars || {}).find(([n]) => n.split(' ')[0].toLowerCase() === String(l.meta.manufacturer || l.meta.car || '').split(' ')[0].toLowerCase())?.[1];
+    const bopOf = l => exactBop ? exactBop(year, l.name, l.meta.car) : Object.entries(lapsimWecBop[l.name]?.[year]?.cars || {}).find(([n]) => n.split(' ')[0].toLowerCase() === String(l.meta.manufacturer || l.meta.car || '').split(' ')[0].toLowerCase())?.[1];
     const withBop = laps.filter(l => bopOf(l)?.kg);
     if (cls !== 'lmgt3' && withBop.length >= laps.length * 0.8) {
       const kg0 = withBop.reduce((a, l) => a + bopOf(l).kg, 0) / withBop.length, kw0 = withBop.reduce((a, l) => a + bopOf(l).kW, 0) / withBop.length;
@@ -305,9 +309,10 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       objectiveLog?.({event: 'candidate', group: `wec-${cls}/${year}`, candidate: 'bop', heldout: h2, gripSource: gripSource.used});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
-      bop = {laps: withBop.length, refKg: +kg0.toFixed(1), refKW: +kw0.toFixed(1), previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
+      const useBop = g.accept || (MODEL_BOP && year === 2025);
+      bop = {laps: withBop.length, refKg: +kg0.toFixed(1), refKW: +kw0.toFixed(1), previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: useBop, ...(MODEL_BOP ? {modelMatched: true, forcedExperiment: true, gateAccepted: g.accept} : {})};
       report.push(`WEC ${cls} ${year}: per-event BoP — holdout ${g.rmsCur.toFixed(2)}% → ${g.rmsNew.toFixed(2)}%, ${g.reason}`);
-      if (g.accept) { laps.splice(0, laps.length, ...cand); h = h2; }
+      if (useBop) { laps.splice(0, laps.length, ...cand); h = h2; }
     }
     const fit = fitSeason(laps, base, params, {iters: ITERS, stop: WEC_NM_STOP, trace: traceFor('main')});
     const car = fit.car; delete car.linkMu;

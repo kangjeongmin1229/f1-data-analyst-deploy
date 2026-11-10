@@ -52,3 +52,27 @@ Control: repository geometry and its pinned matching trace distances. Candidate:
 | Held-out seasons | 2025, 2026 |
 
 Both arms start from the same priors, bounds, rows and production settings. Each main fit and fold uses the same convergence rule; no settings are chosen from held-out errors. Pass requires both season errors and dry Las Vegas row errors not worse, exact raced reproduction and no cap hits. Wet Las Vegas rows are reported separately. Source or time-box failure parks this block without adoption.
+
+## Block 3 — declared before fitting
+
+Source verification began while the Las Vegas fits were running. Baseline remains production. The independent WEC arms below use the same pinned repository geometry, current transfer table, row exclusions, priors, bounds and weights. Each runs at R. No candidate combines the sector and BoP changes.
+
+| Arm | Change | Pass |
+|---|---|---|
+| control | Current production configuration refit at R | Reference, exact dry reproduction |
+| bop | Exact season/event/entry-to-model join; verified event BoP applied for dry Hypercar events in 2025 | Pooled gate accepts and no class-season worse; no cap hits; F1 unchanged |
+| sector2 | Existing frozen-eligibility sector term, weight 2, at R | Pooled gate accepts and no class-season worse; no cap hits; F1 unchanged |
+
+The BoP arm keeps the existing relative mass/power formula and reference means; this is a test of the existing event correction with verified model identity. It forces that correction for the experimental fit so its car and bounds can be reported even if the gate rejects it. The gate itself is unchanged and its verdict is still recorded. This does not replace total running mass with a dry minimum, or treat wheel power as engine power. Those conversions need separately verified inputs. Historical Timing71 rows without entry identities keep their existing base inputs. Unpublished or unverified event values stay empty.
+
+| Shared WEC setting | Value |
+|---|---:|
+| Tolerance / cap | 0.0001 / 2000 |
+| Frozen sector length ratio | 0.98–1.02 |
+| Sector-sum tolerance, s | 0.002 |
+| Maximum production sector-share difference, pp | 3 |
+| Gain called unestablished at group n | below 0.1 pp at 5 or 6 |
+| Official model classification files / identities | 24 / 426 |
+| Verified dry-event Hypercar BoP rows / events | 40 / 5 |
+
+Any class failing the frozen sector-share check excludes the whole track-year from the sector term. No trap-position or aero-ratio assumption is added. BoP documents were read from official FIA PDFs; all verified mass, power, energy and high-speed power adjustments agree with the existing table. A numerical aero coefficient limit was not yet verified and will not be supplied to a fit.
