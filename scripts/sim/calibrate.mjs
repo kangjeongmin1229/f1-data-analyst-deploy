@@ -33,6 +33,7 @@ const objectiveLog = objectiveTrace(E.LAPSIM_OBJECTIVE_LOG);
 const FITTER = E.LAPSIM_FITTER || 'nm';
 const BCD = {rounds: Number(E.LAPSIM_ROUNDS || 4), iters: Number(E.LAPSIM_BCD_ITERS || 150), wTime: WTIME, wSector: Number(E.LAPSIM_WSECTOR || 0),
   trackDrag: E.LAPSIM_TRACK_DRAG === 'on', teams: E.LAPSIM_TEAMS === 'on', residual: E.LAPSIM_RESIDUAL === 'on', residualLambda: Number(E.LAPSIM_RESIDUAL_LAMBDA || 1), wPrior: Number(E.LAPSIM_WPRIOR || 2), log: m => console.log(m)};
+if (E.LAPSIM_BCD_CONVERGENCE === 'on') Object.assign(BCD, {convergence: true, convergenceDir: '.cache/f1-convergence'});
 const MAX_POS = Number(E.LAPSIM_MAX_POS || 3);
 const HOLDOUT_YEARS = (E.LAPSIM_HOLDOUT_YEARS || '2025,2026').split(',').map(Number);
 const B_TRANSFER_ONLY = E.LAPSIM_B_TRANSFER_ONLY === 'on';

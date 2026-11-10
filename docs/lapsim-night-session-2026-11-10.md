@@ -34,3 +34,21 @@ When a dependent fact cannot be verified, two pass checks fail, or a time box en
 ## Block 1 — done: working rules updated
 
 Updated sections 3.3, 5.1 and 5.3, added the pre-approved actions, and replaced section 9 with current dated status. A missing dependent fact parks the affected block; the three session hard stops still end all work. Numerical convergence rules and the gate are unchanged. Model candidates remain isolated and require owner review before production adoption.
+
+## Block 2 — declared before fitting
+
+Control: repository geometry and its pinned matching trace distances. Candidate: only Las Vegas rebuilt from zero-rain qualifying session 9640; all Las Vegas laps projected onto that line with the existing builder. Measured speed, throttle, brake, lap times and sectors must match the pinned data. Other tracks and traces stay identical. Source downloader uses the existing ranking, best-lap selection, telemetry cleaning and weather rules.
+
+| Setting | Value |
+|---|---:|
+| Geometry drivers / trace drivers | 14 / 10 |
+| Position K / curvature K | 0.4 / 0.8 |
+| Sigma / curvature smoothing / minimum sigma / distance step, m | 7 / 6 / 3 / 5 |
+| F1 BCD iterations per round | 200 |
+| Main and fold minimum / maximum rounds | 5 / 10 |
+| Required last-round score decrease | non-negative and below 1% |
+| Time / sector / prior weights | 20 / 2 / 8 |
+| Per-track drag / teams | on / on |
+| Held-out seasons | 2025, 2026 |
+
+Both arms start from the same priors, bounds, rows and production settings. Each main fit and fold uses the same convergence rule; no settings are chosen from held-out errors. Pass requires both season errors and dry Las Vegas row errors not worse, exact raced reproduction and no cap hits. Wet Las Vegas rows are reported separately. Source or time-box failure parks this block without adoption.
