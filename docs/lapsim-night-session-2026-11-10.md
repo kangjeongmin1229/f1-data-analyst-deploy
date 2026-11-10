@@ -76,3 +76,45 @@ The BoP arm keeps the existing relative mass/power formula and reference means; 
 | Verified dry-event Hypercar BoP rows / events | 40 / 5 |
 
 Any class failing the frozen sector-share check excludes the whole track-year from the sector term. No trap-position or aero-ratio assumption is added. BoP documents were read from official FIA PDFs; all verified mass, power, energy and high-speed power adjustments agree with the existing table. A numerical aero coefficient limit was not yet verified and will not be supplied to a fit.
+
+## Block 5 — measurement declared before analysis
+
+This independent download runs while the physics fits finish. Use every available ranked driver's selected qualifying lap at Monza in each source season. This is a common-track measurement, not a claim about all circuits. No kernel or fitted car changes.
+
+| Setting | Declared value |
+|---|---:|
+| Seasons / OpenF1 sessions | 2023 / 9153; 2024 / 9586; 2025 / 9908; 2026 / 11357 |
+| Download driver ceiling (includes all ranked entries) | 30 |
+| Ratio sample minimum speed / RPM | 50 km/h / 5000 rpm |
+| Ratio sample throttle / brake | at least 98% / zero |
+| Valid distance interval | above 0 and at most 1 s |
+| Minimum samples for a reported gear ratio | 5 |
+
+Measure median RPM divided by road speed for stable-gear samples, and each gear relative to the highest observed gear of the same team-season. Absolute gearbox ratios require loaded tyre radius and final-drive ratio; these are not assumed. Report observed timestamp spacing and its equivalent sampling frequency. For validation, hide one whole team's gear channel in a season. From all other teams, learn each gear's distance-weighted median speed. Predict the nearest median using speed alone, then measure correct-gear distance. Repeat for every team, with no tuning. Neutral/invalid gear and long telemetry gaps are excluded and counted. No accuracy threshold is used to choose a model; report measurement coverage and errors.
+
+## Block 4 — declared before fitting
+
+Keep every timed car from the pinned WEC archive. Join its model by season, track and exact entry number. The inventory has one retained best qualifying/Hyperpole lap per car-event; it does not claim to contain every lap driven. Source qualifying lap counts are reported separately.
+
+| Arm | Data and model |
+|---|---|
+| production | Fresh normal top-three production-configuration WEC fit at R in the same experiment |
+| all-car base | All timed cars; one class car; unchanged class priors/bounds and first-lap/non-first-lap weights; frozen production grip-source choices |
+| all-car models | Same all-car rows and settings; class base plus model differences in log drag, log downforce and log grip |
+
+Verified relative event BoP corrections are fixed in both all-car arms for dry Hypercar events in 2025. Other years have no invented BoP. Timing71 rows lack entry/model identity and are omitted from both all-car arms, including hide-model folds. The production arm keeps its normal pipeline and is reported separately, so the all-car data change is visible.
+
+| Model setting | Declared value |
+|---|---:|
+| Shrink penalty | 8 × mean over models of summed squared (log difference / 0.1) |
+| Nelder–Mead step | 0.08 |
+| Tolerance / iteration cap | 0.0001 / 2000 |
+| Hidden-track folds | one circuit each |
+| Hidden-model folds | one whole model each |
+| Fit weights | fastest class car 1; every other car 0.5 |
+
+The class base is fitted first on each training fold. The hierarchy starts from that training-only base with zero model differences. A hidden model receives the class base; its own offset is never fitted. Every effective car stays inside the existing class bounds. The penalty strength is not tuned. Freeze the source table hashes before the first fit.
+
+Report class-best errors and each model's best-entry errors. For pooled tests, aggregate model squared errors by class-season-track before calling the unchanged gate; this avoids treating several cars at one track as independent tracks. A model may keep its own values only if its hidden-track test beats the class base beyond noise; a gain below 0.1 pp with only 5 or 6 tracks is not established. Do not re-score the same held-out data after choosing which model offsets to keep.
+
+Pass requires pooled held-out improvement beyond noise, no worse class-season against both the all-car base and the fresh production arm, no cap hits, and unchanged F1. Report the hide-model test separately. Shown Hypercar output stays class-level. Any main fit reaching the cap is parked before its folds; do not label its scores as converged. Start LMGT3 only if Hypercar finishes inside the box.
