@@ -45,7 +45,7 @@ for (const s of seasons) {
         const q = [];
         if (!(time > 30)) q.push('no_time');
         if (pitIn) q.push('pit_in'); if (pitOut) q.push('pit_out');
-        if (!['GF', 'FF'].includes(flag)) q.push('not_green');
+        if (flag && !['GF', 'FF'].includes(flag)) q.push('not_green');   // seasons with no flag column: no mark, counted in flags['']
         if (rain || listed) q.push('wet_session');
         if (!w.length) q.push('no_weather');
         if (time > 30 && sx.every(x => x != null) && Math.abs(sx[0] + sx[1] + sx[2] - time) > 0.002) q.push('sector_sum');

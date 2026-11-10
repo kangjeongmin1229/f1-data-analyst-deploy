@@ -25,24 +25,45 @@ export function markRelative(rows) {
   return rows;
 }
 
-// Wet check across years: needs the rows of one series (all seasons). Marks whole class-sessions.
+// Wet check across years, per class, track and session type of one series. Dry reference = median best clean lap of
+// the sessions with no rain mark in other seasons. Sets r.wetLevel for every lap of a marked session:
+//   0 dry · 1 damp (rain mark, pace within 3 % of dry) · 2 wet (3–10 % off, or intermediate tyre) · 3 heavy (over 10 % off, or full wet tyre)
+// No rain mark but over 3 % off = wet_suspect (stays wetLevel 0: not proven wet, kept and listed).
+const TRAP_OK = v => v >= 150 && v <= 400; // traps outside this range are timing errors, not evidence
 export function markWetAcrossYears(rows) {
-  const key = r => [r.series, r.track, r.cls, r.sessionType].join('|');
+  // F1 2026 is a new car generation: lap times are not comparable with 2025 and earlier
+  const era = r => r.series === 'f1' ? (r.season >= 2026 ? 'f1-2026' : r.season >= 2022 ? 'f1-2022' : 'f1-2017') : '';
+  const key = r => [r.series, r.track, r.cls, r.sessionType, era(r)].join('|');
+  const rainy = r => r.q.includes('wet_session') || r.q.includes('wet_lap');
   const g = new Map();
-  for (const r of rows) if (isClean(r) && r.track) {
-    const k = key(r) + '|' + r.season + '|' + r.event;
-    const o = g.get(k) || g.set(k, {best: Infinity, trap: 0, base: key(r), season: r.season, event: r.event}).get(k);
-    if (r.time < o.best) o.best = r.time; if (r.trapKph > o.trap) o.trap = r.trapKph;
+  for (const r of rows) if (r.track && r.time > 0) {
+    const k = key(r) + '|' + r.season + '|' + r.session;
+    const o = g.get(k) || g.set(k, {best: Infinity, trap: 0, base: key(r), season: r.season, session: r.session, rain: false, tyre: 0}).get(k);
+    if (rainy(r)) o.rain = true;
+    if (/^INTER/i.test(r.tyre || '') || /^W+$/i.test(r.tyre || '')) o.tyre = Math.max(o.tyre, 2);
+    if (/^WET$/i.test(r.tyre || '')) o.tyre = 3;
+    const usable = !r.q.some(m => ['no_time', 'pit_in', 'pit_out', 'not_green', 'deleted', 'sector_sum', 'inaccurate'].includes(m));
+    if (usable && r.time < o.best) o.best = r.time;
+    if (usable && TRAP_OK(r.trapKph) && r.trapKph > o.trap) o.trap = r.trapKph;
   }
-  const marks = new Map(), list = [];
+  const info = new Map(), list = [];
   for (const [k, o] of g) {
-    const others = [...g.values()].filter(x => x.base === o.base && x.season !== o.season);
-    if (!others.length) continue;
-    const refT = med(others.map(x => x.best)), refV = med(others.map(x => x.trap).filter(v => v > 0));
-    const m = refV && o.trap > 0 && o.trap < refV * TRAP_WET ? 'wet_session' : o.best > refT * PACE_SUSPECT ? 'wet_suspect' : null;
-    if (m) { marks.set(k, m); list.push({group: k, mark: m, best: o.best, otherYearsBest: refT, trap: o.trap || null, otherYearsTrap: refV}); }
+    const dry = [...g.values()].filter(x => x.base === o.base && x.season !== o.season && !x.rain && Number.isFinite(x.best));
+    const refT = med(dry.map(x => x.best)), refV = med(dry.map(x => x.trap).filter(v => v > 0));
+    const ratio = refT && Number.isFinite(o.best) ? o.best / refT : null, trapRatio = refV && o.trap ? o.trap / refV : null;
+    const trapWet = trapRatio != null && trapRatio < TRAP_WET;
+    let mark = null, level = o.rain ? Math.max(1, o.tyre) : 0;
+    if (o.rain || trapWet) { mark = 'wet_session'; level = Math.max(level, ratio == null ? 1 : ratio > 1.10 ? 3 : ratio > PACE_SUSPECT ? 2 : 1); }
+    else if (ratio != null && ratio > PACE_SUSPECT) { mark = 'wet_suspect'; level = 0; }
+    info.set(k, {mark, level, ratio});
+    if (mark) list.push({group: k, mark, wetLevel: level, rainMark: o.rain, best: Number.isFinite(o.best) ? o.best : null, dryRef: refT, paceRatio: ratio && +ratio.toFixed(4), trap: o.trap || null, dryTrap: refV});
   }
-  for (const r of rows) { const m = marks.get(key(r) + '|' + r.season + '|' + r.event); if (m && !r.q.includes(m)) r.q.push(m); }
+  for (const r of rows) {
+    const i = info.get(key(r) + '|' + r.season + '|' + r.session);
+    r.wetLevel = i ? i.level : rainy(r) ? 1 : null; r.paceRatio = i?.ratio ?? null;
+    if (i?.mark && !r.q.includes(i.mark)) r.q.push(i.mark);
+    if (r.q.includes('wet_lap') && /^WET$/i.test(r.tyre || '')) r.wetLevel = 3; else if (r.q.includes('wet_lap') && (r.wetLevel ?? 0) < 2 && /^INTER|^W+$/i.test(r.tyre || '')) r.wetLevel = 2;
+  }
   return list;
 }
 
@@ -50,13 +71,18 @@ export function counts(rows) {
   const out = {};
   for (const r of rows) {
     const k = [r.source, r.series, r.season, r.sessionType].join('|');
-    const o = out[k] ||= {source: r.source, series: r.series, season: r.season, sessionType: r.sessionType, sessions: new Set(), cars: new Set(), laps: 0, timed: 0, clean: 0, cleanNotSlow: 0, push: 0, wet: 0, noTrack: 0};
+    const o = out[k] ||= {source: r.source, series: r.series, season: r.season, sessionType: r.sessionType, sessions: new Set(), cars: new Set(), laps: 0, timed: 0, clean: 0, cleanNotSlow: 0, push: 0, wet: 0, wet1: 0, wet2: 0, wet3: 0, wetSuspect: 0, dryPush: 0, noModel: 0, noTrack: 0, flags: {}};
     o.sessions.add(r.event + '|' + r.session); o.cars.add(r.carModel + '|' + r.entry); o.laps++;
     if (!r.q.includes('no_time')) o.timed++;
     if (r.q.includes('wet_session') || r.q.includes('wet_lap')) o.wet++;
     if (r.q.includes('no_track')) o.noTrack++;
+    if (r.wetLevel >= 1) o['wet' + r.wetLevel]++;
+    if (r.q.includes('wet_suspect')) o.wetSuspect++;
+    if (!r.carModel) o.noModel++;
+    o.flags[r.flag] = (o.flags[r.flag] || 0) + 1;
     if (isClean(r)) { o.clean++; if (!r.q.includes('slow')) o.cleanNotSlow++; }
     if (r.push) o.push++;
+    if (r.push && r.wetLevel === 0) o.dryPush++;
   }
   return Object.values(out).map(o => ({...o, sessions: o.sessions.size, cars: o.cars.size})).sort((a, b) => (a.series + a.season + a.sessionType).localeCompare(b.series + b.season + b.sessionType));
 }

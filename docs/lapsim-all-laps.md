@@ -39,6 +39,26 @@ Laps are marked, never deleted. A lap is **clean** when it has none of the hard 
 **Push lap** (the only laps used in the first fit): qualifying session, clean, within 2 % of the same car's best clean lap of that session.
 Practice and race laps are not used until a fuel and tyre-age term is declared (section 6).
 
+### 2.1 Wet and dry (owner instruction, 2026-11-11)
+
+Every lap gets `wetLevel`. The first fit uses level 0 only. Wet laps are kept for a later wet model.
+
+| wetLevel | Meaning | Evidence |
+|---|---|---|
+| 0 | dry | no rain mark in the session |
+| 1 | damp | rain mark, but the class best is within 3 % of the dry reference |
+| 2 | wet | class best 3–10 % off the dry reference, or intermediate tyres |
+| 3 | heavy | more than 10 % off, or full wet tyres |
+
+Dry reference = median class best of the sessions with no rain mark at the same track, class and session type in other seasons
+(F1: same car generation only). Traps outside 150–400 km/h are ignored. Known limit: the level is per session and class, so a session
+that dries (or gets wet) half-way has one level for all laps. A per-lap level from the rolling session pace is the next step.
+
+### 2.2 Car models (owner instruction, 2026-11-11)
+
+Every series is split by car model, F1 included (one model per team and season, e.g. MCL39, W16, RB21, SF-25).
+The key is team + season; the chassis name is a label from a sourced table, never guessed. Rows with no model name are counted (`noModel`).
+
 ## 3. Design: separate car pace from car parameters (the 2026-11-11 trap)
 
 Problem: an all-car class base was slower than the class-best lap, because slow cars pulled grip and downforce down.

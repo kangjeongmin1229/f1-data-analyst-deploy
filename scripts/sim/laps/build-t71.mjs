@@ -24,8 +24,11 @@ async function collect() {
     const page = await (await get(`${API}/replays?filter[order]=startTime%20ASC&filter[limit]=500&filter[skip]=${skip}`)).json();
     all.push(...page); if (page.length < 500) break;
   }
-  const pick = all.map(r => ({...r, key: Object.keys(SERIES).find(k => SERIES[k].test(r.series)), type: /no current session|backup feed|\bn\/a\b/i.test(r.description || '') ? 'other' : sessionType(r.description || '')}))
-    .filter(r => r.key && r.type !== 'other' && r.startTime >= Date.UTC(2018, 0, 1) / 1e3);
+  const slug = x => String(x || 'unknown').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'unknown';
+  const ALL = process.env.T71_ALL === '1';
+  const pick = all.map(r => ({...r, key: Object.keys(SERIES).find(k => SERIES[k].test(r.series)) || (ALL ? 'x-' + slug(r.series) : null), type: /no current session|backup feed|\bn\/a\b/i.test(r.description || '') ? 'other' : sessionType(r.description || '')}))
+    .filter(r => r.key && r.type !== 'other' && (ALL || r.startTime >= Date.UTC(2018, 0, 1) / 1e3));
+  if (shard === 0) { const inv = {}; for (const r of all) { const k = `${r.series}|${new Date(r.startTime * 1e3).getUTCFullYear()}|${sessionType(r.description || '')}`; inv[k] = (inv[k] || 0) + 1; } mkdirSync(OUT, {recursive: true}); writeFileSync(join(OUT, 'inventory.json'), JSON.stringify(inv)); }
   let mine = pick.filter((r, i) => i % shards === shard); if (limit) mine = mine.slice(0, limit);
   mkdirSync(OUT, {recursive: true});
   const log = {listed: all.length, picked: pick.length, shard, done: 0, failed: [], carKeys: {}, sessions: []};
@@ -75,8 +78,8 @@ async function collect() {
 
 function merge() {
   const files = readdirSync(OUT), table = [], wet = [], models = {};
-  for (const key of Object.keys(SERIES)) {
-    let rows = files.filter(f => f.startsWith(key + '-') && f.endsWith('.ndjson')).flatMap(f => readFileSync(join(OUT, f), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)));
+  for (const key of [...new Set(files.filter(f => /-\d+\.ndjson$/.test(f)).map(f => f.replace(/-\d+\.ndjson$/, '')))].sort()) {
+    let rows = files.filter(f => f.replace(/-\d+\.ndjson$/, '') === key && /-\d+\.ndjson$/.test(f)).flatMap(f => readFileSync(join(OUT, f), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)));
     if (!rows.length) continue;
     // duplicate replays of one session (same description and start): keep the replay with more laps
     const n = {}; for (const r of rows) (n[r.session] ||= {})[r.rid] = (n[r.session][r.rid] || 0) + 1;
@@ -91,7 +94,7 @@ function merge() {
   const carKeys = {}; for (const l of logs) for (const [k, v] of Object.entries(l.carKeys)) Object.assign(carKeys[k] ||= {}, v);
   writeFileSync(join(OUT, '..', 't71-counts.json'), JSON.stringify({source: 'Timing71 archive (archive.timing71.org); calibration use only; rows are not committed',
     listed: logs[0]?.listed, picked: logs[0]?.picked, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
-    sessionsNoLaps: logs.flatMap(l => l.sessions).filter(s => !s[4]).length, counts: table, wetAcrossYears: wet, lapsByModel: models,
+    inventory: existsSync(join(OUT, 'inventory.json')) ? JSON.parse(readFileSync(join(OUT, 'inventory.json'), 'utf8')) : null, sessionsNoLaps: logs.flatMap(l => l.sessions).filter(s => !s[4]).length, counts: table, wetAcrossYears: wet, lapsByModel: models,
     carKeys: Object.fromEntries(Object.entries(carKeys).map(([k, v]) => [k, Object.keys(v)]))}, null, 1));
   console.table(table);
 }
