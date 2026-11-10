@@ -38,7 +38,7 @@ const sameMainChecks=rows.filter(r=>r.rung==='280/200').map(b=>{
 });
 const objectives=[];
 for(const name of ['280-100','280-200']){
-  const events=readFileSync(join(dir,`${name}-objective.jsonl`),'utf8').trim().split('\n').map(JSON.parse), chains=new Map();
+  const events=readFileSync(join(dir,`${name}-objective.jsonl`),'utf8').trim().split('\n').map(JSON.parse).filter(e=>e.event==='iteration'||e.event==='end'), chains=new Map();
   for(const e of events){const key=JSON.stringify([e.group,e.candidate,e.fold??null,e.restart]);if(!chains.has(key))chains.set(key,[]);chains.get(key).push(e);}
   for(const chain of chains.values()){
     const last=chain.at(-1);assert.equal(last.event,'end','Incomplete objective log');

@@ -20,9 +20,12 @@ test('flat objective alone cannot stop a large simplex', () => {
 });
 test('small simplex alone cannot stop a changing objective', () => {
   const events = [];
-  nelderMead(x => 1e12 * (x[0] - 0.3) ** 2, [0], {step: 1e-5,
-    stop: {tolerance: 1e-4, cap: 10, window: 10}, trace: e => events.push(e)});
-  assert.equal(events.at(-1).capHit, true);
+  nelderMead(x => 1e12 * x[0], [0], {step: 1e-10,
+    stop: {tolerance: 1e-4, cap: 10, window: 1}, trace: e => events.push(e)});
+  const end = events.at(-1);
+  assert.equal(end.capHit, true);
+  assert.ok(end.simplexSize < 1e-4);
+  assert.ok(end.relativeObjectiveChange >= 1e-4);
 });
 test('both tolerances converge on a known quadratic and report cap exhaustion separately', () => {
   for (const tolerance of [1e-4, 1e-6]) {

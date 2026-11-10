@@ -53,6 +53,16 @@ const results=await Promise.all(rungs.map(async r=>{
   }
   const validationSeconds=await command(r,'scripts/sim/validate.mjs',[r.name]);
   await copyFile(join(out,r.name,`probe-out/validate-${r.name}.json`),join(out,`validate-${r.name}.json`));
+  if(r.name==='identity70') {
+    const file=join(out,'identity.json'), identity=JSON.parse(await readFile(file,'utf8'));
+    identity.validation=[];
+    for(const [a,b] of [['validate-identity70.json','validate-baseline.json'],['identity70-validate.log','baseline-validate.log']]) {
+      const bytes=readFileSync(join(out,a));
+      assert.ok(bytes.equals(readFileSync(join(old,b))), 'Flags-off validation differs: '+a);
+      identity.validation.push({file:a,identical:true,bytes:bytes.length,sha256:sha256(bytes)});
+    }
+    await writeFile(file,JSON.stringify(identity,null,2)+'\n');
+  }
   const result={...r,startedAt,seconds,validationSeconds};await writeFile(join(out,`${r.name}-runtime.json`),JSON.stringify(result,null,2)+'\n');return result;
 })).catch(e=>{for(const child of children)child.kill();throw e;});
 await writeFile(join(out,'runtime.json'),JSON.stringify(results,null,2)+'\n');
