@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "declaration": "Owner-authorized 2026-11-11: preserve completed fits; unfinished fold stops at score decrease <1% or arm main round count. F1 jobs parallel on fork; WEC independent fresh R confirmation. No adoption.",
+  "inputArchive": {
+    "url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/a8f19241e7bb9d91acddd42dc9204df82e1a241a/probe-out/lapsim-inputs.tgz.part-aa",
+    "sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186"
+  },
+  "checkpoints": {
+    "commit": "203e22850e355539241f2c2d30eb36a9d1224304",
+    "url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/203e22850e355539241f2c2d30eb36a9d1224304/scripts/sim/results/vegas-owner-save-2026-11-11/checkpoints-and-logs.tar.gz",
+    "sha256": "58feef22a9bdf8e1e1edb92e5aaa80da4de645343129d34357213e92d94d1a11",
+    "manifestSha256": "34d99590383939e537f0d9788a915b4e376ddd9cd533cfbfd38f8bbd18ff8ca8"
+  },
+  "pinnedFiles": {
+    "worker/lapsim/atmosphere.js": "4f79c02e439b218142a690372343d92f5393614ab389f4a95ea8028b7007f584",
+    "worker/lapsim/brake-data.js": "1b6c7e0abbf64575192fcd99fc6613e4d91dac9fa143f3162a2caafc0e9f456e",
+    "worker/lapsim/brakes.js": "9b3ca709d6a443fe35a7be556edd0393fc0b655755bd455cb4f7edb11123eb15",
+    "worker/lapsim/calibration-data.js": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "worker/lapsim/car-lines-data.js": "3c588830bf2c5cd8bdbfffa2709cee078287b81b3be2cdca14e76ab0cac032e9",
+    "worker/lapsim/cars.js": "825e9ca86a319bd726f4503a1cdb0b9fe34d27e43470820dd259fd378fb10bcd",
+    "worker/lapsim/change-effects-data.js": "7f7f8bd43631aaefd8c47e9be3cbf0f4cb479191cf74cd5a33ea241bf70a8145",
+    "worker/lapsim/compound-gap-data.js": "b408cd5f6212fa8a3390c89baf3f2ab3e628d483ee483e0f937edec7b4d078d2",
+    "worker/lapsim/compounds-data.js": "eccbda51d8ba2b1991672ac04ac050a3f1bc877c6c851fa10a1aa709da174859",
+    "worker/lapsim/energy-docs-data.js": "881cb73d1a5ea98d7676bf5688a761515dba1184a470b27190fc517309ebc466",
+    "worker/lapsim/energy-limits.js": "6c24a81c740c8a2447dfbba41f51d0e3996dad656d9027dbe8388728b67795ab",
+    "worker/lapsim/engine.js": "316c210968687ce9f18e506cfac09605a946d71c14a4974246f7762b9f33e33b",
+    "worker/lapsim/evolution-data.js": "68424c91ec78f02c7d5883877a865697422257ad33682e45bfdff33450b625e4",
+    "worker/lapsim/evolution.js": "ca75cd22ddf281a1e98bfa29f801af599a20774e30c84ff22b4b75120a39b100",
+    "worker/lapsim/f1-poles-data.js": "e193e1233fdd32d8527512b302556b4d93bc18729db62b50bc62035e704cc6ca",
+    "worker/lapsim/geometry.js": "61401adab10c325ff9dbc8e227f97792d649d688369353bdc45a4188755f65f9",
+    "worker/lapsim/hypercar-setup.js": "ad9e77e60e919cfeae79fd83572624f6a860bf04c8eb711616c390ad309fd132",
+    "worker/lapsim/kernel.js": "4db5d60be6b9f50335ed3bff0f69082a1d0e682a6a716dca71d79f7a88a4916c",
+    "worker/lapsim/live-energy.js": "9afde9aab30d5998ee737323b4d7ac21d36f6306da197b1885afa9ad9bf9580f",
+    "worker/lapsim/names.js": "f469749aa9e4289710633c128f4791f4fe02bb5a7de34e8e825a798dcdc73de1",
+    "worker/lapsim/pole-trend.js": "b1bf6526e4ad553ed32ca79f022d52fe552f0bb7ca461091be16ad9bd6023dce",
+    "worker/lapsim/pu-info.js": "e89b031a199dd005702ed4def3e02f66b12a20b03942d14d786709b01a7a715e",
+    "worker/lapsim/qsplit-data.js": "0f48c4bd15d53adc0135bbe8302840597d6204284d59c9d3e8f030f5cc7df1c2",
+    "worker/lapsim/race-data.js": "6cc9a6e18ea64e90dc046b4734759ba2b271da711949c0dc3f09823c48786063",
+    "worker/lapsim/race-pace.js": "37c91d9b9545571ae6c5f84741a6f9031f9ea5e5a26e81d98619830af7b2d135",
+    "worker/lapsim/racing-line.js": "c331f71db3ddb85765bd74f73ee597480100ce81f1b2d21672b155e734fa21b7",
+    "worker/lapsim/racing-lines-data.js": "7de4c4509b9dd2bbd16d44771b3be5b6847ac7abf4c701701acf3b9afe3e09ca",
+    "worker/lapsim/rules-data.js": "98eb0e03aca0ef59fe203c041be47ab1dbc1d0f3f3ffbddf6a0b583fdb6e272f",
+    "worker/lapsim/scenario.js": "6289ee574a2d11a8f3a8b573bc6d2451b3c09161ad1cfd18780687bdd5afbeff",
+    "worker/lapsim/series-poles-data.js": "3fb7292e47482b2895f74c9ad6fc0adb9664f8bb5731e8a770993ae14cb1b9dc",
+    "worker/lapsim/series.js": "570f0c8ef4d36097c835bcd61f1199200c563f9363db3bda18222642174993c4",
+    "worker/lapsim/stint-data.js": "c28529bd7bfaf327d1c91a37549441959c01dad557675408ed36c49fa50ef5ea",
+    "worker/lapsim/stint-energy.js": "cceeee09f0c5664923cc28abd2c5b9bf199cf55cf492e98d2baf89252d34656d",
+    "worker/lapsim/tool.js": "57131a80d12e9aec8f4a40a4a6d62c32ba809449e7903749f5bb106cf5821799",
+    "worker/lapsim/track-changes-data.js": "e116c243cc1d02cd4709e224a912439376ffd229d54fa686892fa692f09d4c14",
+    "worker/lapsim/track-changes.js": "9281988cfc295aaa934e92e626e3e8b7000e75dff927720ea9ec87107fecb0dd",
+    "worker/lapsim/track-coords.js": "a45f2d5782dab3d2af3cca9367d0b7fefcbb93b83fd927037c442bc8e0fe1679",
+    "worker/lapsim/tracks-data.js": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "worker/lapsim/tracks.js": "16481d62950a0cef1781734b55b257db13f268a52ffaff9e4bcacfc36dca1402",
+    "worker/lapsim/tracktemp-data.js": "9db14ed0b902275e0f89be97703581ec6076fecfcdb3428cd6cd4b53905b3ae7",
+    "worker/lapsim/transfer-grip-data.js": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "worker/lapsim/wec-bop-data.js": "915dd6fa6c50b58ce6e12aad2d8a9b153a6b01f8331f13e51e21e735ed029c5e",
+    "worker/lapsim/wec-poles-data.js": "417a356063e6342eaf8ad48f77aa9d1ec07f4e77bc8b59588ff6c9c8f316a553",
+    "worker/lapsim/wec-tyres-data.js": "26523bcdb8d154d282b73133a1c38f054cfbb34e474863e6d62c9a624e48e7a0",
+    "scripts/sim/gate.mjs": "97ec415ea3168ae5823c13855c0de45f456f12d439858bfbbf56f6140fc3c7b3",
+    "scripts/sim/calibrate.mjs": "68c46708cb6733a3038b793f9dc4b347f63aa24bcc4f8f6a6d54226d2726303a",
+    "scripts/sim/calibrate-lib.mjs": "db6e88285524c9886774b1be44c18c2600d56dd32d4ac4bed9339127c87c7d3f",
+    "scripts/sim/joint-bcd.mjs": "4598c8bdefb498442624a62a9c6a6b0d93d7494a35355e19735a3a2ee2d970a2",
+    "scripts/sim/bcd-worker.mjs": "57d0b5e4aa26717a9a98c42d5ebc3e0d505cfbf6c6268f445a6338c965e80acc",
+    "scripts/sim/data/wet-sessions.json": "6fdf0baa9c8fd878eeb6496d1686102436b3a2eb1ddb2f001ae7b1024383d6b4",
+    "scripts/sim/data/wec-model-identities.json": "6b119c953a5614e9918519d4629538fd0d2fb023f649d485fc7a7c7c0c07cb44",
+    "scripts/sim/data/wec-bop-verified-2025.json": "4c01dfc03ec9234d953fdd4def31e52d0c4786de24e525a45aa6041d00b6a666",
+    "scripts/sim/data/wec-timing-positions.json": "84b67c533addaf9ac58e83c2c0d70e949825e3a259fc11d15068abaf440d120a",
+    "scripts/sim/data/t71-wec-extra.json": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76",
+    "scripts/sim/results/wec-consistent-2026-11-10/interlagos-distance-override.json": "80ff0b78f71faa2cc53cc245391fd3767ebeb0ad5c88700181b4b88bd0509338",
+    "scripts/sim/results/night-session-2026-11-10/block-3/eligibility.json": "7f7a91620cf845b5b19d408e8f376e35d48370632a2675871061ea4bc094c6f6"
+  },
+  "f1Settings": {
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_FITTER": "bcd",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
+    "LAPSIM_WTIME": "20",
+    "LAPSIM_WSECTOR": "2",
+    "LAPSIM_TRACK_DRAG": "on",
+    "LAPSIM_TEAMS": "on",
+    "LAPSIM_WPRIOR": "8",
+    "LAPSIM_BCD_CONVERGENCE": "on"
+  },
+  "folds": [
+    {
+      "arm": "control",
+      "year": 2025,
+      "fold": 3
+    },
+    {
+      "arm": "control",
+      "year": 2026,
+      "fold": 0
+    },
+    {
+      "arm": "control",
+      "year": 2026,
+      "fold": 1
+    },
+    {
+      "arm": "control",
+      "year": 2026,
+      "fold": 2
+    },
+    {
+      "arm": "control",
+      "year": 2026,
+      "fold": 3
+    },
+    {
+      "arm": "candidate",
+      "year": 2025,
+      "fold": 3
+    },
+    {
+      "arm": "candidate",
+      "year": 2026,
+      "fold": 0
+    },
+    {
+      "arm": "candidate",
+      "year": 2026,
+      "fold": 1
+    },
+    {
+      "arm": "candidate",
+      "year": 2026,
+      "fold": 2
+    },
+    {
+      "arm": "candidate",
+      "year": 2026,
+      "fold": 3
+    }
+  ],
+  "mainRounds": {
+    "control": 6,
+    "candidate": 6
+  },
+  "controlTracesSha256": "36a1f55ac59e73f05abf4144ea08d1c2cdb7d8b78854d7de19e99a83f4f64413",
+  "candidateGeometrySha256": "548689d2b7b80776a8eb3d4226f68f369f917b27f6057dd1cbe522026a001489",
+  "candidateTracesSha256": "8f5310041235787766a68659975a225f370e2c767f1090d53bdf27df56346e43",
+  "wecSha256": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+  "wecSettings": {
+    "LAPSIM_ONLY": "wec",
+    "LAPSIM_ITERS": "70",
+    "LAPSIM_HOLDOUT_ITERS": "25",
+    "LAPSIM_WEC_NM_TOL": "1e-4",
+    "LAPSIM_WEC_NM_CAP": "2000",
+    "LAPSIM_WEC_TRAP_POSITION": "off",
+    "LAPSIM_WEC_SECTORS": "off"
+  },
+  "wecVariants": {
+    "control": {},
+    "bop": {
+      "LAPSIM_WEC_MODEL_BOP": "on"
+    },
+    "sector2": {
+      "LAPSIM_WEC_SECTORS": "on",
+      "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+    }
+  },
+  "wecEligibility": "scripts/sim/results/night-session-2026-11-10/block-3/eligibility.json"
+}
