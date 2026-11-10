@@ -194,7 +194,8 @@ Time budget: a screen must finish in under 60 minutes. If it cannot, reduce the 
 
 | Check | Pass value |
 |---|---|
-| Convergence | Fit score falls by less than 1 % between the last two rounds, in the main fit and in every held-out fold |
+| F1 BCD convergence | Fit score falls by less than 1 % between the last two rounds, in the main fit and in every held-out fold |
+| WEC convergence | Compare two tolerances a factor of 100 apart on identical inputs and settings. Every class-season held-out RMS difference must be strictly below 0.02 percentage points, with no pooled/bop/gripSource choice flips. The main fit and folds must stop on both objective change and simplex size. |
 | Baseline is valid | The baseline in the experiment is within 0.05 percentage points of the same baseline at production settings, per group. If not, the settings are too short: results are not usable. |
 | Gate | `gate.mjs` says "accepted" on all rows, and no group is "worse" |
 | F1 protection | F1 2025 and F1 2026 held-out error not higher than the baseline |
@@ -202,6 +203,10 @@ Time budget: a screen must finish in under 60 minutes. If it cannot, reduce the 
 | Reproduction | `node --test tests/lapsim-*.test.mjs` passes (raced sessions stay at 0.000 %) |
 
 The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per variant is enough.
+
+**Standard WEC setting, accepted by the owner on 2026-11-10:** R = `LAPSIM_WEC_NM_TOL=1e-4`, `LAPSIM_WEC_NM_CAP=2000`, for the main fit and every held-out fold. Use R for all later WEC experiments, with both the control and candidate measured at R. The comparison against 1e-6 passed all six groups: maximum change 0.001061 pp, no choice flips and no cap hits. If convergence is checked again, use two tolerances a factor of 100 apart and the WEC rule above; do not select the better held-out result afterward. Record iterations and cap hits. This standard changes experiment settings only: it does not adopt a calibration or change the default-off code path. Historical PR #149 reproduction retains its documented 70/25 recipe.
+
+WEC historical reproduction must use the same exclusion list as the fit: `wet-sessions.json` plus rain-marked rows. All dry raced rows must reproduce exactly at the reported precision; report their count and largest absolute error. Report excluded wet rows separately. Austin 2025 is excluded as wet, not counted as a reproduction failure. A regression test must enforce agreement between fit and audit exclusions.
 
 ### 5.2 Commands
 
@@ -223,11 +228,11 @@ The fit is deterministic (no random numbers in `calibrate.mjs`), so one run per 
 A new flag must be read in `calibrate.mjs` from the environment in the same way as the existing flags, and listed in this table.
 
 
-#### Optional WEC tolerance stopping (owner-approved diagnostic, 2026-11-10)
+#### Optional WEC tolerance stopping (standard experiment setting in 5.1)
 
 LAPSIM_WEC_NM_TOL enables a WEC-only Nelder–Mead stop rule for the main fit and every F1/transfer/pooled/BoP held-out fold. Both conditions must hold: the relative change in the best objective across 10 iterations is below the tolerance, and the largest coordinate distance from the best simplex vertex is below it. Coordinates are the existing log parameters; relative objective change divides by max(1, absolute current best). LAPSIM_WEC_NM_CAP is the iteration ceiling (default 2000). When enabled, the cap replaces LAPSIM_ITERS and LAPSIM_HOLDOUT_ITERS for WEC; those legacy limits still apply when unset. The rule replaces the old objective-spread-only stop only when enabled. Unset means exactly the previous behavior, including the 70/25 defaults. F1 fits do not receive this option.
 
-The declared diagnostic compares 1e-4 and 1e-6 (100 times apart), cap 2000, on pinned PR #149 inputs with all timing flags off and unchanged weights. Pass: every group changes by less than 0.02 percentage points, with no pooled/bop/gripSource choice flip. Use the looser tolerance as R if all groups pass or only LMGT3 2026 fails; otherwise stop. Total step budget is 90 minutes. Do not adopt values or re-judge b2. Objective logs record iterations, cap hits, final simplex size, full-precision candidate/selected errors and group runtime. There is one deterministic initial simplex, labeled restart 0; no new restarts are introduced.
+The completed diagnostic compared 1e-4 and 1e-6 (100 times apart), cap 2000, on pinned PR #149 inputs with all timing flags off and unchanged weights. All six groups passed the <0.02 pp and no-choice-flip check within the diagnostic's 90-minute budget. R = 1e-4 is now the standard experiment setting under section 5.1; the historical conditional LMGT3 exception is not the convergence rule for later experiments. No calibration was adopted and b2 was not re-judged. Objective logs record iterations, cap hits, final simplex size, full-precision candidate/selected errors and group runtime. There is one deterministic initial simplex, labeled restart 0; no new restarts are introduced.
 
 #### WEC sector eligibility and isolated experiment
 
