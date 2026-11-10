@@ -8,7 +8,9 @@ import {spawn, execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {nightIntegrity} from './night-integrity.mjs';
 
-const original = resolve(process.argv[2]), out = resolve('.cache/resume-vegas-2026-11-11-local');
+const original = resolve(process.argv[2]);
+const previous = process.argv[3] ? resolve(process.argv[3]) : null;
+const out = resolve(process.argv[4] || '.cache/resume-vegas-2026-11-11-local');
 const archive = resolve('scripts/sim/results/vegas-resume-2026-11-11');
 const hash = b => createHash('sha256').update(b).digest('hex');
 const json = async p => JSON.parse(await readFile(p));
@@ -44,6 +46,17 @@ try {
     assert.equal(pinned['.cache/lapsim/traces.json'], arm==='candidate' ? manifest.source.inputs['candidate-traces.json'] : hash(await readFile('.cache/wec-consistent-rounds/control/.cache/lapsim/traces.json')));
     await cp(src, dir, {recursive:true,filter:p=>!p.includes('/scripts/sim/results')&&!p.includes('/node_modules')});
     for (const [p, expected] of Object.entries(pinned)) assert.equal(hash(await readFile(join(dir,p))),expected);
+    if (previous) {
+      const priorManifest = await json(join(previous,'resume-manifest.json'));
+      assert.deepEqual(priorManifest.arms[arm].pinned,pinned,'HARD STOP: restart source mismatch');
+      for (const name of await readdir(join(previous,arm,'.cache/f1-convergence'))) {
+        if (!/^fit-\d+\.json$/.test(name)) continue;
+        const bytes=await readFile(join(previous,arm,'.cache/f1-convergence',name)), saved=JSON.parse(bytes);
+        assert.ok(saved.inputHash || hash(bytes)===trusted[name], 'HARD STOP: unverified restart checkpoint');
+        // The wrapper rechecks the complete training-data/options digest before reusing this state.
+        await writeFile(join(dir,'.cache/f1-convergence',name),bytes);
+      }
+    }
     // Preserve the exact old fitter. Only its call boundary is wrapped in this isolated copy.
     const jointFile = join(dir,'scripts/sim/joint-bcd.mjs'), text = await readFile(jointFile,'utf8');
     assert.equal(text.split('export async function fitJointBCD(').length,2);
@@ -57,7 +70,10 @@ try {
   }
   await writeFile(join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
   await writeFile(join(out,'resume-manifest.json'),JSON.stringify(provenance,null,2)+'\n');
-  const startedAt = new Date().toISOString(), deadline = Date.now()+60*60000;
+  const priorProgress = previous ? await json(join(archive,'progress.json')) : null;
+  const startedAt = priorProgress?.startedAt || new Date().toISOString();
+  const deadline = priorProgress ? Date.parse(priorProgress.deadline) : Date.now()+60*60000;
+  assert.ok(deadline>Date.now(),'The original continuation budget has ended');
   const env = {...Object.fromEntries(Object.entries(process.env).filter(([k])=>!k.startsWith('LAPSIM_'))),...manifest.settings};
   const statuses = [];
   async function save(running) {

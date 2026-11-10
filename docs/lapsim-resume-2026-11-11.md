@@ -48,6 +48,21 @@ Use Node 22 and the original local snapshot path:
 node scripts/sim/resume-dry-vegas.mjs /path/to/original/.cache/night-session/vegas-fit
 ```
 
+To resume a later interruption, retain the original source snapshot as argument
+one, pass the interrupted isolated run as argument two, and choose a new output
+directory as argument three. The training-data/options digest is verified before
+each checkpoint is reused. The original deadline is retained; a restart does
+not grant another hour. Do not use a stale `running: true` file as proof of a live
+process. A missing execution handle plus a stopped heartbeat is an interruption,
+not successful completion.
+
+```sh
+node scripts/sim/resume-dry-vegas.mjs \
+  /path/to/original/.cache/night-session/vegas-fit \
+  .cache/resume-vegas-2026-11-11-local \
+  .cache/resume-vegas-2026-11-11-restart
+```
+
 Derived checkpoints, progress, logs, source hashes and final report are saved in
 `scripts/sim/results/vegas-resume-2026-11-11/` on this experiment branch.
 The supervisor archives locally every five minutes and writes the final
