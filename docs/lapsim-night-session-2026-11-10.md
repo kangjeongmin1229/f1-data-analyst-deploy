@@ -30,3 +30,7 @@ Detailed evidence: `scripts/sim/results/wec-consistent-rounds-2026-11-10/`, veri
 | 6: review split and handoff | 30 | Core review branch has no runners/results or result files above 100 KB; handoff status at most 150 lines |
 
 When a dependent fact cannot be verified, two pass checks fail, or a time box ends, park that block and continue. End the session for a production raced-session reproduction failure, a changed production runtime/gate hash, or an input hash mismatch. Every model change stays in a draft PR.
+
+## Block 1 — done: working rules updated
+
+Updated sections 3.3, 5.1 and 5.3, added the pre-approved actions, and replaced section 9 with current dated status. A missing dependent fact parks the affected block; the three session hard stops still end all work. Numerical convergence rules and the gate are unchanged. Model candidates remain isolated and require owner review before production adoption.

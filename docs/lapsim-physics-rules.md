@@ -83,6 +83,7 @@ Level C needs its own test: hide a track from every season and class, predict it
 4. **Identity.** Map every row to track layout, car model, class, season and series. A layout change is a new track.
 5. **Three-way check.** Where two or three sources cover the same session, compare them. Zero conflicts is required before use.
 6. **Count the rows.** State n for every group. With n under 5 the gate rejects by rule. With n of 5 or 6, one track decides the result: say so.
+7. **Geometry.** Build track geometry only from a verified zero-rain session: choose the latest eligible session, and keep the existing geometry if none exists. Missing weather is not zero-rain evidence. Use one geometry per track for every series. Existing rain-source geometry stays unchanged until its separately declared replacement passes; never silently replace production geometry.
 
 ### 3.4 No cancelling errors
 
@@ -188,9 +189,11 @@ Model: quasi-steady-state point mass on a fixed line. Lateral limit by bisection
 9. Write the result in `docs/lapsim-handoff-physics.md`: table, decision, reason, what was rejected.
 10. Model change: separate PR, full settings, gate passed, owner approval.
 
-Time budget: a screen must finish in under 60 minutes. If it cannot, reduce the data (fewer folds, one series) and keep the iterations. Do not reduce iterations below convergence.
+Time budget: use the owner-declared block budget; otherwise a screen must finish in under 60 minutes. When the time box ends, park the block and continue. Do not shorten a declared experiment or reduce iterations below convergence to make it pass. A smaller later screen needs its own declaration.
 
 ### 5.1 Numbers for the checks
+
+When a time box ends, park and continue. Record incomplete fits and their convergence state; do not treat them as accepted results. A gain under 0.1 percentage points with n = 5 or 6 is not established.
 
 | Check | Pass value |
 |---|---|
@@ -271,16 +274,29 @@ Run in a clean environment: no other LAPSIM_* overrides. The new timing flags, a
 
 The generatedAt field records the execution date and is not a fitted number; compare it separately. Numerical/model output must match exactly, not merely within 0.05 pp. Full evidence and the checked-in-versus-fit geometry discrepancy are in docs/lapsim-handoff-physics.md section 15.
 
-### 5.3 Stop and ask the owner
+### 5.3 Stop conditions
 
-Stop and ask before you continue when:
+The following conditions block the affected work:
 
-- a test of raced-session reproduction fails;
-- the baseline in your run does not match production (5.1);
-- a change needs a file outside the physics scope;
-- two rules in this file conflict for your case;
-- data would have to be downloaded from a source not already used in the repo;
-- you want to change a bound, a weight or the gate itself. These change what "better" means, so they need approval and their own experiment.
+- a change to production values, geometry, bounds, weights or the gate;
+- a raced-session reproduction failure;
+- an unverifiable fact that the work depends on;
+- work outside the physics scope.
+
+During the owner-authorized autonomous session, park a blocked block and continue to the next one without asking. A failed candidate check is recorded, not adopted. End the whole session if raced-session reproduction fails on production files, a production runtime file or `gate.mjs` hash changes, or an input hash does not match. Model candidates stay in isolated copies and draft PRs; they do not replace production. No merge or Vercel action.
+
+### Pre-approved actions
+
+Owner authorization dated 2026-11-10:
+
+- Add rounds or iterations to meet the declared convergence rule, up to 10 F1 BCD rounds and 2,000 WEC iterations at R = 1e-4. Do not change the other settings.
+- Restart an interrupted run from the same pinned inputs. For Block 0, restart once; if that retry fails, park it and use production as the baseline.
+- Fix an audit, report, archiver or test to use the same rows as the fit or read its inputs from GitHub files.
+- Choose between verified official sources and use sources already used by the repository: OpenF1, TracingInsights, Al Kamel, Timing71 derived tables and FIA documents. Unverified numeric facts stay empty.
+- Add code behind a default-off flag with flags-off output byte-identical.
+- If a necessary fact cannot be verified, a pass check fails twice or a time box expires, record the blocker, park the block and continue. The hard stops above still end the session.
+
+Every experiment declares its variants, baseline, settings and pass check before running. Control and candidate run together at the same settings; WEC uses R. No setting is chosen after inspecting held-out results. Bounds, weights and the gate are unchanged unless the owner has explicitly authorized that specific experiment. Passing model changes may be prepared as draft PRs for owner review; production adoption is not authorized.
 
 ### 5.4 What these rules can and cannot do
 
@@ -323,66 +339,18 @@ When the owner has an iRacing account: iRacing telemetry (60 Hz, with position, 
 
 ---
 
-## 9. Status on 2026-11-10: axle screen (run 42732407545)
+## 9. Status on 2026-11-10
 
-Replace this section when a newer experiment exists.
-
-### 9.1 Result
-
-Settings: 3 rounds, 100 iterations, weights of production, input pinned by checksum. Held-out RMS error in percent. Baseline in this run was B (no per-track drag).
-
-| Variant | All (67) | F1 (34) | WEC (33) | F1 2025 | F1 2026 | LMH 25 | LMH 26 | LMDh 25 | LMDh 26 | GT3 25 | GT3 26 |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| B baseline | 1.270 | 1.245 | 1.295 | 1.195 | 1.312 | 1.338 | 1.033 | 1.238 | 1.003 | 1.733 | 1.370 |
-| F axle | 1.469 | 1.411 | 1.526 | 1.344 | 1.501 | 1.640 | 1.192 | 1.777 | 1.149 | 1.956 | 1.416 |
-| G axle + vertical curvature | 1.445 | 1.391 | 1.498 | 1.284 | 1.531 | 1.565 | 1.198 | 1.685 | 1.205 | 1.989 | 1.324 |
-| H drag + axle + vertical curvature | 1.370 | 1.200 | 1.524 | 1.257 | **1.115** | 1.565 | 1.246 | 1.685 | 1.208 | 2.067 | 1.341 |
-| I as G, load exponent 0.75 | 1.373 | 1.344 | 1.403 | 1.319 | 1.379 | 1.445 | 1.215 | 1.325 | 1.203 | 1.841 | 1.368 |
-
-Gate: every variant rejected on all rows, on F1 and on WEC. One group accepted: H on F1 2026. Three LMGT3 2026 gains are within noise.
-
-**Decision: no model change. The axle model stays off.** This run cannot be used to reject the axle model for good, for the reasons below.
-
-### 9.2 Review as a data engineer
-
-| Finding | Evidence | Fix |
-|---|---|---|
-| The fits were not converged | Score in the main fit: 37.4 → 29.1 → 27.1 (B) and 39.7 → 29.0 → 27.3 (G). Still falling at the last round. Held-out folds ran only 2 rounds. | Rule 5.5. Run until the score stops falling. |
-| The screen settings move the baseline more than the variants differ | B on F1 2025: 0.90 % at full settings, 1.20 % here. Variants differ from B by 0.1–0.3. | Screen results rank nothing when the settings error is larger than the effect. |
-| No production baseline in the run | Production F1 is A (per-track drag on). A was not run. H is the drag-on axle variant and was compared with B. | Rule 2.6. Rerun A next to H with the same settings. |
-| "Screen" took 3 h 52 min | G: about 10–13 minutes per round, 19 rounds. The earlier run died at the 340 minute limit. | Rule 5 time budget. Screen on F1 only or fewer folds, with enough iterations. |
-| The validation table was not reviewed | `validate.mjs` output is inside the artifacts only. The compare job reads lap error only. | Add corner minimum bias, trap error and bound hits to `exp-compare` output. |
-| Small groups | WEC groups have n = 5 or 6. | State it. Pool by class across seasons for the gate, then check no group is worse. |
-| Input archive is on a branch of a personal fork | Checksum protects content, but the branch can be deleted. | Store the archive as a release asset of the production repo. |
-| The workflow lost functions | Race-pace, circuit-change and race-only steps were removed from `lapsim-experiment.yml`. | Restore them or move them to their own workflow. Do not delete working paths in an unrelated change. |
-
-### 9.3 Review as a race car performance engineer
-
-| Finding | Evidence | Meaning |
-|---|---|---|
-| The axle model did not fix what it was built to fix | With axle on (G): downforce still at the bound for F1 2024 and 2025 (8.00), LMH and LMDh 2025 (7.00), LMGT3 both seasons (3.50). | Load transfer alone does not explain the missing corner speed. The cause is elsewhere or the axle parameters are wrong. |
-| Fixed inputs are guesses | Track width 1.55 / 1.65 / 1.62 m, roll split 0.5, load exponent 0.85, and centre-of-gravity height and aero balance are not from data. | Layer 4 values were used as if they were layer 1. Take them from regulations and homologation papers per car. |
-| The load exponent matters a lot | I (0.75) is better than G (0.85) on WEC: 1.403 against 1.498. | The tyre law is the sensitive part. It needs its own fit with a bound and a gate, not one hand-picked value. |
-| The one accepted group is the 2026 F1 car | H on F1 2026: 1.312 → 1.115. Downforce there is 4.58, far from the bound. | The axle model may help the low-downforce, energy-limited car. Worth a clean test against A. |
-| Trap numbers in the report cannot be trusted yet | B: LMH Interlagos real trap 276, sim 299. LMGT3 Spa real 263, sim 252. But the code compares the real trap with the simulated lap maximum, not the speed at the trap position. | Fix the comparison first (section 4.3, limit 2). Then judge drag and power. |
-| The WEC downforce bound is a data problem as well as a physics problem | WEC is fitted on lap time and one trap. The bound allows a downforce-to-drag ratio above 6. | Sector times in the objective and a ratio constraint (section 4.3, limits 1 and 3) are cheaper than the axle model and should come first. |
-| One class car hides real differences | LMGT3 is one car at 3.50 downforce for every model. | Section 4.1. Per car model fitting is required before GT3 conclusions. |
-
-### 9.4 Was the handoff followed?
-
-| Followed | Not followed |
+| Work | Current state |
 |---|---|
-| Variants declared, inputs pinned by checksum | Production baseline A missing from the run |
-| Gate used, no production model change | PR #150 said "do not merge until the axle screen has completed" and was merged 21 minutes later, about 3.5 hours before the run ended |
-| Result artifacts kept, handoff doc updated | Website fixes, preview export and the experiment workflow in one PR, merged to the auto-deploy branch |
-| B replaced J for WEC transfer factors with a gated check (#149) | The PR restored the crew and live-access blocks on the account page. The owner had decided to remove the crew list from settings: confirm which is intended. |
-| Full-settings confirmation required before any model change | Convergence not checked before a 4-hour run |
+| Axle screen | Rejected at unconverged settings; this is not a final rejection of axle physics. Flags remain off. |
+| Sector term | Rejected at the historical 70/25 settings. One separately declared weight-2 re-test at R is authorized; no result yet. |
+| WEC yardstick | R = 1e-4, cap 2,000. Verified against 1e-6 across 6 groups: under 0.02 pp and no choice flips. |
+| Geometry mismatch | PR #149 WEC and B used archive Interlagos geometry; the repository uses dry session 9865. Exact historical recipe remains in section 5.2. |
+| Consistent candidate | B converged at round 7. Pooled WEC RMS at R increased from 1.166709% to 1.179080%; candidate rejected. Production remains the baseline. |
+| Round-five secondary | Pooled WEC RMS 1.094332%, but B failed convergence. Diagnostic only; no substitution after seeing results. |
+| Geometry guard | Draft PR #155 selects the latest zero-rain session, or retains existing geometry. One geometry per track for all series. |
+| Rain-source tracks | Las Vegas, Montreal and Zandvoort remain unchanged in production. A dry Las Vegas candidate is authorized for a separate comparison. |
+| Production F1 | Existing main-fit scores 23.9813 → 23.6060: 1.56497% decrease, fails the 1% rule. Report only; not adopted or silently refitted. |
 
-### 9.5 Next tasks, in order
-
-0. Extend `exp-compare.mjs` so its output also shows corner minimum bias, trap error and values at a bound per variant (from `validate.mjs` and the calibration file). Without this, section 5.1 cannot be checked by a machine.
-1. Rerun A, B, H and I on F1 only (`LAPSIM_SKIP_WEC=1`), with enough rounds to converge, under 60 minutes. Report lap error, corner minimum bias, trap error and bound hits.
-2. WEC only, fast (minutes, `LAPSIM_ONLY=wec`): trap at the trap position, sector times in the objective, the downforce-to-drag constraint. One flag each, gated against production.
-3. Replace the guessed axle inputs with per-car values from regulations. Fit the load exponent inside a bound.
-4. Start section 6 step 1 (F1 gear ratios). It does not depend on the axle result.
-5. Build the GT3 series table (section 4.2), keep every car in `fetch-wec.mjs`, then the per-car refit (section 4.1).
+No production model, geometry, bounds, weights or gate change has been adopted. Detailed history is in the handoff and its archive; current block status is in `docs/lapsim-night-session-2026-11-10.md`.
