@@ -1,0 +1,323 @@
+{
+ "source": "TracingInsights season repositories (github.com/TracingInsights/<year>), FastF1 timing",
+ "counts": [
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2023,
+   "sessionType": "P",
+   "sessions": 54,
+   "cars": 48,
+   "laps": 23604,
+   "timed": 18941,
+   "clean": 8882,
+   "cleanNotSlow": 5537,
+   "push": 0,
+   "wet": 8222,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2023,
+   "sessionType": "Q",
+   "sessions": 28,
+   "cars": 22,
+   "laps": 8895,
+   "timed": 6217,
+   "clean": 2034,
+   "cleanNotSlow": 1533,
+   "push": 1390,
+   "wet": 3557,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2023,
+   "sessionType": "R",
+   "sessions": 28,
+   "cars": 22,
+   "laps": 26598,
+   "timed": 26334,
+   "clean": 16907,
+   "cleanNotSlow": 16818,
+   "push": 0,
+   "wet": 6160,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2024,
+   "sessionType": "P",
+   "sessions": 60,
+   "cars": 35,
+   "laps": 26076,
+   "timed": 20548,
+   "clean": 12247,
+   "cleanNotSlow": 7221,
+   "push": 0,
+   "wet": 4916,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2024,
+   "sessionType": "Q",
+   "sessions": 30,
+   "cars": 25,
+   "laps": 8943,
+   "timed": 6087,
+   "clean": 2560,
+   "cleanNotSlow": 2028,
+   "push": 1928,
+   "wet": 2101,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2024,
+   "sessionType": "R",
+   "sessions": 30,
+   "cars": 25,
+   "laps": 29024,
+   "timed": 28848,
+   "clean": 20408,
+   "cleanNotSlow": 20082,
+   "push": 0,
+   "wet": 5534,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2025,
+   "sessionType": "P",
+   "sessions": 60,
+   "cars": 38,
+   "laps": 27986,
+   "timed": 21651,
+   "clean": 13838,
+   "cleanNotSlow": 8260,
+   "push": 0,
+   "wet": 2918,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2025,
+   "sessionType": "Q",
+   "sessions": 30,
+   "cars": 23,
+   "laps": 8825,
+   "timed": 5870,
+   "clean": 2758,
+   "cleanNotSlow": 2236,
+   "push": 2159,
+   "wet": 1317,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2025,
+   "sessionType": "R",
+   "sessions": 30,
+   "cars": 23,
+   "laps": 28844,
+   "timed": 28595,
+   "clean": 21130,
+   "cleanNotSlow": 20928,
+   "push": 0,
+   "wet": 3968,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2026,
+   "sessionType": "P",
+   "sessions": 48,
+   "cars": 67,
+   "laps": 25188,
+   "timed": 19744,
+   "clean": 11076,
+   "cleanNotSlow": 6935,
+   "push": 0,
+   "wet": 4665,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2026,
+   "sessionType": "Q",
+   "sessions": 26,
+   "cars": 26,
+   "laps": 8266,
+   "timed": 5824,
+   "clean": 2660,
+   "cleanNotSlow": 1928,
+   "push": 1805,
+   "wet": 1478,
+   "noTrack": 0
+  },
+  {
+   "source": "tracinginsights",
+   "series": "f1",
+   "season": 2026,
+   "sessionType": "R",
+   "sessions": 26,
+   "cars": 26,
+   "laps": 26093,
+   "timed": 25709,
+   "clean": 15419,
+   "cleanNotSlow": 15334,
+   "push": 0,
+   "wet": 6914,
+   "noTrack": 0
+  }
+ ],
+ "wetAcrossYears": [
+  {
+   "group": "f1|monza|f1|R|2023|Italian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 85.072,
+   "otherYearsBest": 81.432,
+   "trap": 354,
+   "otherYearsTrap": 357
+  },
+  {
+   "group": "f1|lusail|f1|P|2023|Qatar Grand Prix",
+   "mark": "wet_suspect",
+   "best": 87.428,
+   "otherYearsBest": 81.953,
+   "trap": 329,
+   "otherYearsTrap": 332
+  },
+  {
+   "group": "f1|lusail|f1|Q|2023|Qatar Grand Prix",
+   "mark": "wet_suspect",
+   "best": 83.778,
+   "otherYearsBest": 80.52,
+   "trap": 323,
+   "otherYearsTrap": 330
+  },
+  {
+   "group": "f1|shanghai|f1|P|2024|Chinese Grand Prix",
+   "mark": "wet_suspect",
+   "best": 96.302,
+   "otherYearsBest": 92.741,
+   "trap": 328,
+   "otherYearsTrap": 340
+  },
+  {
+   "group": "f1|melbourne|f1|P|2026|Australian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 79.053,
+   "otherYearsBest": 76.714,
+   "trap": 322,
+   "otherYearsTrap": 328
+  },
+  {
+   "group": "f1|melbourne|f1|Q|2026|Australian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 78.518,
+   "otherYearsBest": 75.915,
+   "trap": 315,
+   "otherYearsTrap": 328
+  },
+  {
+   "group": "f1|spielberg|f1|Q|2026|Austrian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 66.349,
+   "otherYearsBest": 64.391,
+   "trap": 321,
+   "otherYearsTrap": 322
+  },
+  {
+   "group": "f1|spielberg|f1|R|2026|Austrian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 70.374,
+   "otherYearsBest": 67.694,
+   "trap": 334,
+   "otherYearsTrap": 325
+  },
+  {
+   "group": "f1|sakhir|f1|P|2026|Bahrain Grand Prix",
+   "mark": "wet_suspect",
+   "best": 96.302,
+   "otherYearsBest": 90.505,
+   "trap": 336,
+   "otherYearsTrap": 330
+  },
+  {
+   "group": "f1|sakhir|f1|Q|2026|Bahrain Grand Prix",
+   "mark": "wet_suspect",
+   "best": 95.13,
+   "otherYearsBest": 89.708,
+   "trap": 329,
+   "otherYearsTrap": 327
+  },
+  {
+   "group": "f1|catalunya|f1|P|2026|Barcelona Grand Prix",
+   "mark": "wet_suspect",
+   "best": 75.426,
+   "otherYearsBest": 73.013,
+   "trap": 353,
+   "otherYearsTrap": 337
+  },
+  {
+   "group": "f1|catalunya|f1|Q|2026|Barcelona Grand Prix",
+   "mark": "wet_suspect",
+   "best": 74.679,
+   "otherYearsBest": 71.546,
+   "trap": 340,
+   "otherYearsTrap": 330
+  },
+  {
+   "group": "f1|catalunya|f1|R|2026|Barcelona Grand Prix",
+   "mark": "wet_suspect",
+   "best": 80.122,
+   "otherYearsBest": 76.33,
+   "trap": 358,
+   "otherYearsTrap": 343
+  },
+  {
+   "group": "f1|spa-francorchamps|f1|P|2026|Belgian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 105.944,
+   "otherYearsBest": 102.26,
+   "trap": 315,
+   "otherYearsTrap": 320
+  },
+  {
+   "group": "f1|spa-francorchamps|f1|Q|2026|Belgian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 104.361,
+   "otherYearsBest": 100.51,
+   "trap": 315,
+   "otherYearsTrap": 320
+  },
+  {
+   "group": "f1|silverstone|f1|Q|2026|British Grand Prix",
+   "mark": "wet_suspect",
+   "best": 88.111,
+   "otherYearsBest": 84.892,
+   "trap": 317,
+   "otherYearsTrap": 328
+  },
+  {
+   "group": "f1|monza|f1|Q|2026|Italian Grand Prix",
+   "mark": "wet_suspect",
+   "best": 81.786,
+   "otherYearsBest": 79.327,
+   "trap": 338,
+   "otherYearsTrap": 353
+  }
+ ]
+}

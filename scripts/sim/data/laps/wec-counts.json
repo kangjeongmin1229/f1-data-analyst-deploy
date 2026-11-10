@@ -1,0 +1,3578 @@
+{
+ "source": "Al Kamel Systems published WEC timing (fiawec.alkamelsystems.com), Analysis and Classification CSV",
+ "counts": [
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2021,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 18,
+   "laps": 1447,
+   "timed": 1447,
+   "clean": 0,
+   "cleanNotSlow": 0,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 1447
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2021,
+   "sessionType": "P",
+   "sessions": 22,
+   "cars": 100,
+   "laps": 28475,
+   "timed": 28475,
+   "clean": 0,
+   "cleanNotSlow": 0,
+   "push": 0,
+   "wet": 1415,
+   "noTrack": 21637
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2021,
+   "sessionType": "Q",
+   "sessions": 12,
+   "cars": 64,
+   "laps": 1650,
+   "timed": 1650,
+   "clean": 0,
+   "cleanNotSlow": 0,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 1307
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2021,
+   "sessionType": "R",
+   "sessions": 6,
+   "cars": 63,
+   "laps": 50051,
+   "timed": 50051,
+   "clean": 0,
+   "cleanNotSlow": 0,
+   "push": 0,
+   "wet": 17771,
+   "noTrack": 38765
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2022,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 20,
+   "laps": 1440,
+   "timed": 1440,
+   "clean": 1069,
+   "cleanNotSlow": 1037,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 0
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2022,
+   "sessionType": "P",
+   "sessions": 20,
+   "cars": 67,
+   "laps": 24164,
+   "timed": 24164,
+   "clean": 12369,
+   "cleanNotSlow": 11431,
+   "push": 0,
+   "wet": 6301,
+   "noTrack": 13490
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2022,
+   "sessionType": "Q",
+   "sessions": 12,
+   "cars": 67,
+   "laps": 1506,
+   "timed": 1506,
+   "clean": 554,
+   "cleanNotSlow": 538,
+   "push": 485,
+   "wet": 489,
+   "noTrack": 996
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2022,
+   "sessionType": "R",
+   "sessions": 6,
+   "cars": 67,
+   "laps": 53186,
+   "timed": 53186,
+   "clean": 35339,
+   "cleanNotSlow": 32271,
+   "push": 0,
+   "wet": 11229,
+   "noTrack": 34655
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2023,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 18,
+   "laps": 1481,
+   "timed": 1481,
+   "clean": 1144,
+   "cleanNotSlow": 1090,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 0
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2023,
+   "sessionType": "P",
+   "sessions": 23,
+   "cars": 63,
+   "laps": 26304,
+   "timed": 26304,
+   "clean": 14606,
+   "cleanNotSlow": 13389,
+   "push": 0,
+   "wet": 5321,
+   "noTrack": 16713
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2023,
+   "sessionType": "Q",
+   "sessions": 20,
+   "cars": 62,
+   "laps": 2457,
+   "timed": 2457,
+   "clean": 1262,
+   "cleanNotSlow": 1087,
+   "push": 850,
+   "wet": 142,
+   "noTrack": 1713
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2023,
+   "sessionType": "R",
+   "sessions": 7,
+   "cars": 63,
+   "laps": 57479,
+   "timed": 57479,
+   "clean": 48729,
+   "cleanNotSlow": 44195,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 37817
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2024,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 28,
+   "laps": 2371,
+   "timed": 2371,
+   "clean": 1812,
+   "cleanNotSlow": 1715,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 0
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2024,
+   "sessionType": "P",
+   "sessions": 26,
+   "cars": 63,
+   "laps": 32262,
+   "timed": 32262,
+   "clean": 22096,
+   "cleanNotSlow": 19950,
+   "push": 0,
+   "wet": 1679,
+   "noTrack": 10316
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2024,
+   "sessionType": "Q",
+   "sessions": 30,
+   "cars": 61,
+   "laps": 3272,
+   "timed": 3272,
+   "clean": 2127,
+   "cleanNotSlow": 1658,
+   "push": 1311,
+   "wet": 0,
+   "noTrack": 1272
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2024,
+   "sessionType": "R",
+   "sessions": 8,
+   "cars": 62,
+   "laps": 66038,
+   "timed": 66038,
+   "clean": 38892,
+   "cleanNotSlow": 37634,
+   "push": 0,
+   "wet": 22418,
+   "noTrack": 22635
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2025,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 29,
+   "laps": 2323,
+   "timed": 2323,
+   "clean": 1801,
+   "cleanNotSlow": 1724,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 0
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2025,
+   "sessionType": "P",
+   "sessions": 32,
+   "cars": 62,
+   "laps": 47300,
+   "timed": 47300,
+   "clean": 31913,
+   "cleanNotSlow": 29438,
+   "push": 0,
+   "wet": 3220,
+   "noTrack": 14835
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2025,
+   "sessionType": "Q",
+   "sessions": 34,
+   "cars": 61,
+   "laps": 3072,
+   "timed": 3072,
+   "clean": 1822,
+   "cleanNotSlow": 1343,
+   "push": 1149,
+   "wet": 294,
+   "noTrack": 1128
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2025,
+   "sessionType": "R",
+   "sessions": 8,
+   "cars": 62,
+   "laps": 67924,
+   "timed": 67924,
+   "clean": 54349,
+   "cleanNotSlow": 51954,
+   "push": 0,
+   "wet": 3964,
+   "noTrack": 26865
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2026,
+   "sessionType": "other",
+   "sessions": 2,
+   "cars": 35,
+   "laps": 5771,
+   "timed": 5771,
+   "clean": 4410,
+   "cleanNotSlow": 2828,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 0
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2026,
+   "sessionType": "P",
+   "sessions": 29,
+   "cars": 62,
+   "laps": 38441,
+   "timed": 38441,
+   "clean": 27040,
+   "cleanNotSlow": 24646,
+   "push": 0,
+   "wet": 1075,
+   "noTrack": 15799
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2026,
+   "sessionType": "Q",
+   "sessions": 30,
+   "cars": 62,
+   "laps": 2921,
+   "timed": 2921,
+   "clean": 2068,
+   "cleanNotSlow": 1673,
+   "push": 1335,
+   "wet": 0,
+   "noTrack": 852
+  },
+  {
+   "source": "alkamel",
+   "series": "wec",
+   "season": 2026,
+   "sessionType": "R",
+   "sessions": 8,
+   "cars": 62,
+   "laps": 63541,
+   "timed": 63541,
+   "clean": 53560,
+   "cleanNotSlow": 49665,
+   "push": 0,
+   "wet": 0,
+   "noTrack": 26213
+  }
+ ],
+ "wetAcrossYears": [
+  {
+   "group": "wec|spa-francorchamps|lmh|R|2024|SPA FRANCORCHAMPS",
+   "mark": "wet_suspect",
+   "best": 126.883,
+   "otherYearsBest": 123.122,
+   "trap": 315.9,
+   "otherYearsTrap": 321.5
+  },
+  {
+   "group": "wec|sakhir|lmgt3|P|2024|BAHRAIN INTERNATIONAL CIRCUIT",
+   "mark": "wet_session",
+   "best": 122.079,
+   "otherYearsBest": 122.613,
+   "trap": 360,
+   "otherYearsTrap": 545
+  }
+ ],
+ "lapsByModel": {
+  "2021|lmp2|Oreca": 1918,
+  "2021|lmp2|Aurus": 447,
+  "2021|lmgteam|Aston Martin": 414,
+  "2021|lmdh|Alpine": 190,
+  "2021|lmp2|Ligier": 136,
+  "2021|lmgteam|Porsche": 636,
+  "2021|lmgteam|Ferrari": 901,
+  "2021|lmgtepro|Ferrari": 310,
+  "2021|lmgtepro|Chevrolet": 194,
+  "2021|lmh|Toyota": 290,
+  "2021|lmgtepro|Porsche": 445,
+  "2021|lmp2|Oreca 07 - Gibson": 26532,
+  "2021|lmp2|Aurus 01 - Gibson": 1227,
+  "2021|lmgteam|Aston Martin Vantage AMR": 5989,
+  "2021|lmdh|Alpine A480 - Gibson": 2188,
+  "2021|lmp2|Ligier JSP217 - Gibson": 1227,
+  "2021|lmgteam|Ferrari 488 GTE Evo": 13317,
+  "2021|lmgtepro|Ferrari 488 GTE Evo": 4212,
+  "2021|lmgteam|Porsche 911 RSR - 19": 8496,
+  "2021|lmgtepro|Chevrolet Corvette C8.R": 1142,
+  "2021|lmh|Toyota GR010 HYBRID": 4465,
+  "2021|lmgtepro|Porsche 911 RSR - 19": 4716,
+  "2021|lmh|Glickenhaus 007 LMH": 1778,
+  "2021|innovativecar|Oreca 07 - Gibson": 453,
+  "2022|lmp2|Oreca 07 - Gibson": 32967,
+  "2022|lmgteam|Aston Martin Vantage AMR": 4191,
+  "2022|lmdh|Alpine A480 - Gibson": 2010,
+  "2022|lmgteam|Porsche 911 RSR - 19": 9662,
+  "2022|lmgtepro|Ferrari 488 GTE Evo": 4176,
+  "2022|lmgteam|Ferrari 488 GTE Evo": 12066,
+  "2022|lmgtepro|Chevrolet Corvette C8.R": 2195,
+  "2022|lmh|Toyota GR010 HYBRID": 4110,
+  "2022|lmh|Glickenhaus 007 LMH": 1630,
+  "2022|lmgtepro|Porsche 911 RSR - 19": 3787,
+  "2022|lmp2|Ligier JSP217 - Gibson": 444,
+  "2022|lmgteam|Aston Martin VANTAGE AMR": 1132,
+  "2022|lmh|Peugeot 9X8": 1926,
+  "2023|lmp2|Oreca 07 - Gibson": 29609,
+  "2023|lmdh|Cadillac V-Series.R": 3343,
+  "2023|lmgteam|Ferrari 488 GTE Evo": 9181,
+  "2023|lmgteam|Aston Martin Vantage AMR": 5990,
+  "2023|lmgteam|Chevrolet Corvette C8.R": 2279,
+  "2023|lmh|Vanwall Vandervell 680": 1930,
+  "2023|lmdh|Porsche 963": 7333,
+  "2023|lmh|Ferrari 499P": 4780,
+  "2023|lmgteam|Porsche 911 RSR - 19": 11536,
+  "2023|lmh|Toyota GR010 HYBRID": 4705,
+  "2023|lmh|Glickenhaus 007": 1926,
+  "2023|lmh|Peugeot 9X8": 4647,
+  "2023|innovativecar|Chevrolet Camaro ZL1": 365,
+  "2023|lmp2|Oreca": 97,
+  "2024|lmh|Isotta Fraschini Tipo6-C": 1461,
+  "2024|lmdh|Porsche 963": 13950,
+  "2024|lmdh|BMW M HYBRID V8": 5186,
+  "2024|lmdh|Cadillac V-Series.R": 3548,
+  "2024|lmgt3|Aston Martin Vantage AMR LMGT3": 4942,
+  "2024|lmgt3|BMW M4 LMGT3": 4921,
+  "2024|lmdh|Alpine A424": 5273,
+  "2024|lmh|Ferrari 499P": 8505,
+  "2024|lmgt3|Ferrari 296 LMGT3": 5853,
+  "2024|lmgt3|McLaren 720S LMGT3 Evo": 5367,
+  "2024|lmgt3|Lamborghini Huracan LMGT3 Evo2": 4852,
+  "2024|lmdh|Lamborghini SC63": 3043,
+  "2024|lmh|Toyota GR010 - Hybrid": 5761,
+  "2024|lmgt3|Ford Mustang LMGT3": 5111,
+  "2024|lmgt3|Lexus RC F LMGT3": 4514,
+  "2024|lmgt3|Corvette Z06 LMGT3.R": 4803,
+  "2024|lmgt3|Porsche 911 GT3 R LMGT3": 5226,
+  "2024|lmh|Peugeot 9X8": 5477,
+  "2024|lmp2|Oreca 07 - Gibson": 6134,
+  "2024|lmgt3|Lexus": 16,
+  "2025|lmh|Aston Martin Valkyrie": 6087,
+  "2025|lmgt3|Aston Martin Vantage AMR LMGT3": 5538,
+  "2025|lmdh|Cadillac V-Series.R": 7352,
+  "2025|lmdh|BMW M Hybrid V8": 6283,
+  "2025|lmgt3|Ferrari 296 LMGT3": 7207,
+  "2025|lmgt3|BMW M4 LMGT3": 5692,
+  "2025|lmgt3|Corvette Z06 LMGT3.R": 6146,
+  "2025|lmdh|Alpine A424": 6527,
+  "2025|lmdh|Porsche 963": 9764,
+  "2025|lmh|Ferrari 499P": 9988,
+  "2025|lmgt3|McLaren 720S LMGT3 Evo": 5563,
+  "2025|lmgt3|Mercedes-AMG LMGT3": 5666,
+  "2025|lmh|Toyota GR010 - Hybrid": 6918,
+  "2025|lmgt3|Ford Mustang LMGT3": 4861,
+  "2025|lmgt3|Lexus RC F LMGT3": 4915,
+  "2025|lmgt3|Porsche 911 GT3 R LMGT3": 6612,
+  "2025|lmh|Peugeot 9X8": 6554,
+  "2025|lmp2|Oreca 07 - Gibson": 8946,
+  "2026|lmh|Aston Martin Valkyrie": 5702,
+  "2026|lmgt3|McLaren 720S LMGT3 Evo": 5275,
+  "2026|lmdh|Cadillac V-Series.R": 6475,
+  "2026|lmdh|BMW M Hybrid V8": 5909,
+  "2026|lmdh|Genesis GMR-001-Hypercar": 5689,
+  "2026|lmgt3|Ferrari 296 LMGT3 Evo": 6674,
+  "2026|lmgt3|Aston Martin Vantage AMR LMGT3": 5716,
+  "2026|lmgt3|BMW M4 LMGT3 Evo": 5256,
+  "2026|lmgt3|Corvette Z06 LMGT3.R": 6156,
+  "2026|lmdh|Alpine A424": 5819,
+  "2026|lmh|Ferrari 499P": 8868,
+  "2026|lmgt3|Mercedes-AMG LMGT3": 5148,
+  "2026|lmh|Toyota TR010 Hybrid": 6135,
+  "2026|lmgt3|Ford Mustang LMGT3": 5076,
+  "2026|lmgt3|Lexus RC F LMGT3": 4919,
+  "2026|lmgt3|Porsche 911 GT3 R LMGT3": 5491,
+  "2026|lmh|Peugeot 9X8": 5842,
+  "2026|lmp2|Oreca 07 - Gibson": 10524
+ },
+ "files": [
+  {
+   "year": 2021,
+   "event": "PROLOGUE SPA FRANCORCHAMPS",
+   "session": "Day 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/00_PROLOGUE%20SPA%20FRANCORCHAMPS/355_FIA%20WEC/00_Day%201/202104261000_Morning%20Test%20Session/23_Analysis_Morning%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 624
+  },
+  {
+   "year": 2021,
+   "event": "PROLOGUE SPA FRANCORCHAMPS",
+   "session": "Day 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/00_PROLOGUE%20SPA%20FRANCORCHAMPS/355_FIA%20WEC/00_Day%201/202104261330_Afternoon%20Test%20Session/23_Analysis_Afternoon%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 2085
+  },
+  {
+   "year": 2021,
+   "event": "PROLOGUE SPA FRANCORCHAMPS",
+   "session": "Day 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/00_PROLOGUE%20SPA%20FRANCORCHAMPS/355_FIA%20WEC/01_Day%202/202104270905_Morning%20Test%20Session/23_Analysis_Morning%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 1334
+  },
+  {
+   "year": 2021,
+   "event": "PROLOGUE SPA FRANCORCHAMPS",
+   "session": "Day 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/00_PROLOGUE%20SPA%20FRANCORCHAMPS/355_FIA%20WEC/01_Day%202/202104271400_Afternoon%20Test%20Session/23_Analysis_Afternoon%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 1790
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202104291530_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 1048
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202104300930_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.433Z",
+   "rows": 1114
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202104301400_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.434Z",
+   "rows": 816
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202104301820_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:43.434Z",
+   "rows": 83
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202104301902_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:43.434Z",
+   "rows": 64
+  },
+  {
+   "year": 2021,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/01_SPA%20FRANCORCHAMPS/356_FIA%20WEC/202105011330_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:43.447Z",
+   "rows": 4739
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106111515_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.453Z",
+   "rows": 1211
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106120935_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.453Z",
+   "rows": 1323
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106121400_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.453Z",
+   "rows": 1001
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106121800_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:43.453Z",
+   "rows": 96
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106121820_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:43.454Z",
+   "rows": 89
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/02_AUTODROMO%20DO%20ALGARVE/369_FIA%20WEC/202106131100_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:17:43.454Z",
+   "rows": 8582
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107161530_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.468Z",
+   "rows": 1415
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107170930_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.468Z",
+   "rows": 1472
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107171400_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.468Z",
+   "rows": 973
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107171800_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:43.468Z",
+   "rows": 100
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107171820_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:43.469Z",
+   "rows": 96
+  },
+  {
+   "year": 2021,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/03_AUTODROMO%20NAZIONALE%20DI%20MONZA/377_FIA%20WEC/202107181200_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:43.469Z",
+   "rows": 6547
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108181400_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.470Z",
+   "rows": 1788
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Qualifying Practice",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108181900_Qualifying%20Practice/23_Analysis_Qualifying%20Practice.CSV",
+   "published_at": "2026-10-21T09:17:43.470Z",
+   "rows": 676
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108182200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.470Z",
+   "rows": 1456
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108191400_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.471Z",
+   "rows": 1686
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Hyperpole",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108192100_Hyperpole/23_Analysis_Hyperpole.CSV",
+   "published_at": "2026-10-21T09:17:43.471Z",
+   "rows": 160
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108192210_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-10-21T09:17:43.471Z",
+   "rows": 1181
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108211130_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-10-21T09:17:43.471Z",
+   "rows": 223
+  },
+  {
+   "year": 2021,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/04_LE%20MANS/378_FIA%20WEC/202108211600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-10-21T09:17:43.472Z",
+   "rows": 17771
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110281530_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.527Z",
+   "rows": 1037
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110290830_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.528Z",
+   "rows": 1055
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110291245_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.528Z",
+   "rows": 795
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110291630_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:43.528Z",
+   "rows": 80
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110291650_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:43.528Z",
+   "rows": 62
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/05_BAHRAIN%20INTERNATIONAL%20CIRCUIT%206%20HOURS/396_FIA%20WEC/202110301100_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:43.529Z",
+   "rows": 5411
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111041730_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:43.529Z",
+   "rows": 1084
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111050900_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:43.529Z",
+   "rows": 1155
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111051320_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:43.530Z",
+   "rows": 809
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111051720_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:43.530Z",
+   "rows": 81
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111051740_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:43.530Z",
+   "rows": 63
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/398_FIA%20WEC/202111061400_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:17:43.531Z",
+   "rows": 7001
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Morning session",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/399_FIA%20WEC%20ROOKIE%20TEST/202111071000_Morning%20session/23_Analysis_Morning%20session.CSV",
+   "published_at": "2026-10-21T09:17:43.531Z",
+   "rows": 540
+  },
+  {
+   "year": 2021,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS",
+   "session": "Afternoon session",
+   "url": "https://files.alkamelcloud.com/wec/results/10_2021/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT%208%20HOURS/399_FIA%20WEC%20ROOKIE%20TEST/202111071300_Afternoon%20session/23_Analysis_Afternoon%20session.CSV",
+   "published_at": "2026-10-21T09:17:43.531Z",
+   "rows": 907
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203161105_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.499Z",
+   "rows": 645
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203161640_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.499Z",
+   "rows": 870
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203171155_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.500Z",
+   "rows": 783
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203171900_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:12:24.500Z",
+   "rows": 76
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203171920_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:12:24.500Z",
+   "rows": 75
+  },
+  {
+   "year": 2022,
+   "event": "SEBRING",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/01_SEBRING/402_FIA%20WEC/202203181200_Race/Final%20Results/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:12:24.501Z",
+   "rows": 6407
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205051530_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.501Z",
+   "rows": 1096
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205060905_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.502Z",
+   "rows": 1098
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205061400_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.502Z",
+   "rows": 774
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205061820_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:12:24.502Z",
+   "rows": 79
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205061840_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:12:24.502Z",
+   "rows": 83
+  },
+  {
+   "year": 2022,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/02_SPA%20FRANCORCHAMPS/408_FIA%20WEC/202205071300_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:12:24.503Z",
+   "rows": 3483
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206081400_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.508Z",
+   "rows": 2004
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Qualifying Practice",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206081900_Qualifying%20Practice/23_Analysis_Qualifying%20Practice.CSV",
+   "published_at": "2026-10-21T09:12:24.508Z",
+   "rows": 489
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206082200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.509Z",
+   "rows": 1550
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206091500_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.517Z",
+   "rows": 1864
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Hyperpole",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206092000_Hyperpole/23_Analysis_Hyperpole.CSV",
+   "published_at": "2026-10-21T09:12:24.517Z",
+   "rows": 150
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206092200_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-10-21T09:12:24.518Z",
+   "rows": 1339
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206111030_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-10-21T09:12:24.518Z",
+   "rows": 177
+  },
+  {
+   "year": 2022,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/03_LE%20MANS/419_FIA%20WEC/202206111600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-10-21T09:12:24.520Z",
+   "rows": 20502
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207081530_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.522Z",
+   "rows": 1475
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207090900_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.522Z",
+   "rows": 1607
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207091330_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.522Z",
+   "rows": 1094
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207091730_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:12:24.522Z",
+   "rows": 97
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207091750_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:12:24.523Z",
+   "rows": 79
+  },
+  {
+   "year": 2022,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/04_AUTODROMO%20NAZIONALE%20DI%20MONZA/432_FIA%20WEC/202207101200_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:12:24.523Z",
+   "rows": 6539
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209091100_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.524Z",
+   "rows": 1523
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209091535_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.524Z",
+   "rows": 1620
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209101020_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.524Z",
+   "rows": 1115
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209101440_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:12:24.525Z",
+   "rows": 103
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209101500_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:12:24.525Z",
+   "rows": 103
+  },
+  {
+   "year": 2022,
+   "event": "FUJI SPEEDWAY",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/05_FUJI%20SPEEDWAY/440_FIA%20WEC/202209111100_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:12:24.584Z",
+   "rows": 7746
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211101215_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:12:24.587Z",
+   "rows": 1274
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211101730_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:12:24.588Z",
+   "rows": 1353
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211111100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:12:24.588Z",
+   "rows": 903
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying LMGTE Pro - LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211111650_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Pro%20-%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:12:24.588Z",
+   "rows": 87
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying HYPERCAR - LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211111710_Qualifying%20HYPERCAR%20-%20LMP2/23_Analysis_Qualifying%20HYPERCAR%20-%20LMP2.CSV",
+   "published_at": "2026-10-21T09:12:24.588Z",
+   "rows": 85
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/455_FIA%20WEC/202211121400_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:12:24.589Z",
+   "rows": 8509
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Morning session",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/456_FIA%20WEC%20ROOKIE%20TEST/202211131000_Morning%20session/23_Analysis_Morning%20session.CSV",
+   "published_at": "2026-10-21T09:12:24.590Z",
+   "rows": 618
+  },
+  {
+   "year": 2022,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Afternoon session",
+   "url": "https://files.alkamelcloud.com/wec/results/11_2022/06_BAHRAIN%20INTERNATIONAL%20CIRCUIT/456_FIA%20WEC%20ROOKIE%20TEST/202211131300_Afternoon%20session/23_Analysis_Afternoon%20session.CSV",
+   "published_at": "2026-10-21T09:12:24.590Z",
+   "rows": 822
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303151055_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.733Z",
+   "rows": 965
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303151635_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.733Z",
+   "rows": 770
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303161155_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.733Z",
+   "rows": 736
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303161830_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.733Z",
+   "rows": 88
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303161855_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.734Z",
+   "rows": 83
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303161920_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.734Z",
+   "rows": 60
+  },
+  {
+   "year": 2023,
+   "event": "SEBRING",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/01_SEBRING/460_FIA%20WEC/202303171200_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:17:16.734Z",
+   "rows": 7417
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304141030_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.735Z",
+   "rows": 1364
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304141530_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.735Z",
+   "rows": 1654
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304151115_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.747Z",
+   "rows": 943
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304151530_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.747Z",
+   "rows": 119
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304151555_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.748Z",
+   "rows": 100
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304151620_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.748Z",
+   "rows": 76
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO DO ALGARVE",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/02_AUTODROMO%20DO%20ALGARVE/461_FIA%20WEC/202304161200_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:16.748Z",
+   "rows": 7596
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304271130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.750Z",
+   "rows": 976
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304271620_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.750Z",
+   "rows": 924
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304281103_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.750Z",
+   "rows": 691
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304281700_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.751Z",
+   "rows": 85
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304281737_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.751Z",
+   "rows": 67
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304281800_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.751Z",
+   "rows": 77
+  },
+  {
+   "year": 2023,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/03_SPA%20FRANCORCHAMPS/469_FIA%20WEC/202304291245_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:16.752Z",
+   "rows": 4817
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306071400_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.754Z",
+   "rows": 1715
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Qualifying Practice",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306071900_Qualifying%20Practice/23_Analysis_Qualifying%20Practice.CSV",
+   "published_at": "2026-10-21T09:17:16.754Z",
+   "rows": 720
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306072200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.755Z",
+   "rows": 1530
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306081500_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.755Z",
+   "rows": 2001
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Hyperpole",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306082000_Hyperpole/23_Analysis_Hyperpole.CSV",
+   "published_at": "2026-10-21T09:17:16.767Z",
+   "rows": 171
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306082200_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-10-21T09:17:16.767Z",
+   "rows": 788
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306101200_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-10-21T09:17:16.768Z",
+   "rows": 206
+  },
+  {
+   "year": 2023,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/04_LE%20MANS/474_FIA%20WEC/202306101600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-10-21T09:17:16.769Z",
+   "rows": 15030
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307071130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.770Z",
+   "rows": 1270
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307071640_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.770Z",
+   "rows": 1433
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307081045_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.888Z",
+   "rows": 1030
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307081440_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.888Z",
+   "rows": 99
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307081510_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.889Z",
+   "rows": 88
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307081530_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.889Z",
+   "rows": 93
+  },
+  {
+   "year": 2023,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/05_AUTODROMO%20NAZIONALE%20DI%20MONZA/479_FIA%20WEC/202307091230_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:16.890Z",
+   "rows": 6390
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309081100_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.892Z",
+   "rows": 1363
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309081530_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.892Z",
+   "rows": 1631
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309091020_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.892Z",
+   "rows": 1047
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309091440_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.893Z",
+   "rows": 112
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309091505_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.893Z",
+   "rows": 97
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309091530_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.893Z",
+   "rows": 87
+  },
+  {
+   "year": 2023,
+   "event": "FUJI SPEEDWAY",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/06_FUJI%20SPEEDWAY/497_FIA%20WEC/202309101100_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:17:16.894Z",
+   "rows": 7774
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311021215_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:17:16.895Z",
+   "rows": 936
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311021730_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:17:16.895Z",
+   "rows": 1380
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311031200_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:17:16.907Z",
+   "rows": 951
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying LMGTE Am",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311031615_Qualifying%20LMGTE%20Am/23_Analysis_Qualifying%20LMGTE%20Am.CSV",
+   "published_at": "2026-10-21T09:17:16.907Z",
+   "rows": 93
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying LMP2",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311031640_Qualifying%20LMP2/23_Analysis_Qualifying%20LMP2.CSV",
+   "published_at": "2026-10-21T09:17:16.908Z",
+   "rows": 75
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311031705_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:17:16.908Z",
+   "rows": 67
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/513_FIA%20WEC/202311041400_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:17:16.909Z",
+   "rows": 8455
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Morning session",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/515_FIA%20WEC%20-%20ROOKIE%20TEST/202311051000_Morning%20session/23_Analysis_Morning%20session.CSV",
+   "published_at": "2026-10-21T09:17:16.910Z",
+   "rows": 607
+  },
+  {
+   "year": 2023,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Afternoon session",
+   "url": "https://files.alkamelcloud.com/wec/results/12_2023/07_BAHRAIN%20INTERNATIONAL%20CIRCUIT/515_FIA%20WEC%20-%20ROOKIE%20TEST/202311051300_Afternoon%20session/23_Analysis_Afternoon%20session.CSV",
+   "published_at": "2026-10-21T09:17:16.910Z",
+   "rows": 874
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202402291220_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.757Z",
+   "rows": 1347
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202402291730_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.757Z",
+   "rows": 1161
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403011100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.757Z",
+   "rows": 932
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403011600_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.757Z",
+   "rows": 100
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403011620_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.757Z",
+   "rows": 128
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403011640_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.758Z",
+   "rows": 51
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403011658_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.758Z",
+   "rows": 60
+  },
+  {
+   "year": 2024,
+   "event": "LOSAIL",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/01_LOSAIL/517_FIA%20WEC/202403021100_Race/10_Hour%2010/23_Analysis_Race_Hour%2010.CSV",
+   "published_at": "2026-10-21T09:05:07.758Z",
+   "rows": 11211
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404191200_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.772Z",
+   "rows": 1461
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404191715_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.772Z",
+   "rows": 1542
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404201110_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.772Z",
+   "rows": 1020
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404201445_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.772Z",
+   "rows": 116
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404201505_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.773Z",
+   "rows": 54
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404201525_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.773Z",
+   "rows": 140
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404201545_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.773Z",
+   "rows": 63
+  },
+  {
+   "year": 2024,
+   "event": "IMOLA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/02_IMOLA/526_FIA%20WEC/202404211300_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:05:07.773Z",
+   "rows": 6825
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405091130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.776Z",
+   "rows": 1170
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405091730_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.776Z",
+   "rows": 1138
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405101100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.776Z",
+   "rows": 774
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405101445_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.777Z",
+   "rows": 104
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405101508_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.777Z",
+   "rows": 46
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405101550_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.777Z",
+   "rows": 114
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405101613_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.777Z",
+   "rows": 46
+  },
+  {
+   "year": 2024,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/03_SPA%20FRANCORCHAMPS/536_FIA%20WEC/202405111300_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:05:07.778Z",
+   "rows": 4410
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406121400_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.793Z",
+   "rows": 2056
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Qualifying Practice",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406121900_Qualifying%20Practice/23_Analysis_Qualifying%20Practice.CSV",
+   "published_at": "2026-10-21T09:05:07.793Z",
+   "rows": 729
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406122200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.793Z",
+   "rows": 1619
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406131500_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.796Z",
+   "rows": 1991
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Hyperpole",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406132035_Hyperpole/23_Analysis_Hyperpole.CSV",
+   "published_at": "2026-10-21T09:05:07.797Z",
+   "rows": 175
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406132230_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-10-21T09:05:07.797Z",
+   "rows": 602
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406151200_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-10-21T09:05:07.892Z",
+   "rows": 207
+  },
+  {
+   "year": 2024,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/04_LE%20MANS/541_FIA%20WEC/202406151600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-10-21T09:05:07.893Z",
+   "rows": 15593
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407121045_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.894Z",
+   "rows": 764
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407121430_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.895Z",
+   "rows": 2528
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407131030_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.895Z",
+   "rows": 1205
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407131430_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.895Z",
+   "rows": 115
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407131450_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.895Z",
+   "rows": 56
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407131513_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.895Z",
+   "rows": 145
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407131533_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.896Z",
+   "rows": 69
+  },
+  {
+   "year": 2024,
+   "event": "SAO PAULO",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/05_SAO%20PAULO/552_FIA%20WEC/202407141130_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:05:07.896Z",
+   "rows": 7796
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408301240_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.896Z",
+   "rows": 1151
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408301710_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.897Z",
+   "rows": 1236
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408311100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.897Z",
+   "rows": 938
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408311500_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.897Z",
+   "rows": 98
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408311520_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.897Z",
+   "rows": 47
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408311540_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.897Z",
+   "rows": 108
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202408311600_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.898Z",
+   "rows": 51
+  },
+  {
+   "year": 2024,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/06_CIRCUIT%20OF%20THE%20AMERICAS/558_FIA%20WEC/202409011300_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:05:07.898Z",
+   "rows": 5675
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409131100_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.913Z",
+   "rows": 1464
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409131530_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.913Z",
+   "rows": 1689
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409141020_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.914Z",
+   "rows": 688
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409141420_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.914Z",
+   "rows": 116
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409141440_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.914Z",
+   "rows": 60
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409141500_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.914Z",
+   "rows": 127
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409141520_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.914Z",
+   "rows": 65
+  },
+  {
+   "year": 2024,
+   "event": "FUJI SPEEDWAY",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/07_FUJI%20SPEEDWAY/559_FIA%20WEC/202409151100_Race/Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:05:07.915Z",
+   "rows": 7042
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202410311215_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:05:07.916Z",
+   "rows": 1279
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202410311730_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:05:07.916Z",
+   "rows": 1398
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411011200_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:05:07.917Z",
+   "rows": 902
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411011600_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.917Z",
+   "rows": 92
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411011620_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:05:07.917Z",
+   "rows": 48
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411011640_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.917Z",
+   "rows": 98
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411011700_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:05:07.917Z",
+   "rows": 51
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/575_FIA%20WEC/202411021400_Race/Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:05:07.949Z",
+   "rows": 7486
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Morning session",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/577_FIA%20WEC%20-%20Rookie%20Test/202411031000_Morning%20session/23_Analysis_Morning%20session.CSV",
+   "published_at": "2026-10-21T09:05:07.950Z",
+   "rows": 982
+  },
+  {
+   "year": 2024,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Afternoon session",
+   "url": "https://files.alkamelcloud.com/wec/results/13_2024/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/577_FIA%20WEC%20-%20Rookie%20Test/202411031300_Afternoon%20session/23_Analysis_Afternoon%20session.CSV",
+   "published_at": "2026-10-21T09:05:07.950Z",
+   "rows": 1389
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "1st Test Session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/578_FIA%20WEC%20Prologue/202502211300_1st%20Test%20Session/23_Analysis_1st%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:16:59.147Z",
+   "rows": 1990
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "2nd Test Session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/578_FIA%20WEC%20Prologue/202502211800_2nd%20Test%20Session/23_Analysis_2nd%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:16:59.147Z",
+   "rows": 3361
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "3rd Test Session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/578_FIA%20WEC%20Prologue/202502221200_3rd%20Test%20Session/23_Analysis_3rd%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:16:59.147Z",
+   "rows": 2437
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "4th Test Session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/578_FIA%20WEC%20Prologue/202502221700_4th%20Test%20Session/23_Analysis_4th%20Test%20Session.CSV",
+   "published_at": "2026-10-21T09:16:59.147Z",
+   "rows": 2860
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502261130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.148Z",
+   "rows": 1160
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502261650_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.148Z",
+   "rows": 1470
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502271200_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.148Z",
+   "rows": 950
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502271700_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.148Z",
+   "rows": 106
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502271720_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.149Z",
+   "rows": 51
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502271740_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.149Z",
+   "rows": 114
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502271800_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.149Z",
+   "rows": 57
+  },
+  {
+   "year": 2025,
+   "event": "LOSAIL",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/01_LOSAIL/579_FIA%20WEC/202502281400_Race/10_Hour%2010/23_Analysis_Race_Hour%2010.CSV",
+   "published_at": "2026-10-21T09:16:59.162Z",
+   "rows": 9696
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504181115_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.167Z",
+   "rows": 1516
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504181600_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.167Z",
+   "rows": 1640
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504191040_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.167Z",
+   "rows": 745
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504191430_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.167Z",
+   "rows": 113
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504191450_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.168Z",
+   "rows": 56
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504191510_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.168Z",
+   "rows": 122
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504191530_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.168Z",
+   "rows": 53
+  },
+  {
+   "year": 2025,
+   "event": "IMOLA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/02_IMOLA/589_FIA%20WEC/202504201300_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:16:59.169Z",
+   "rows": 7044
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505081133_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.180Z",
+   "rows": 1049
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505081630_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.181Z",
+   "rows": 909
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505091100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.181Z",
+   "rows": 858
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505091440_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.181Z",
+   "rows": 108
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505091503_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.181Z",
+   "rows": 50
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505091525_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.182Z",
+   "rows": 113
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505091548_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.182Z",
+   "rows": 51
+  },
+  {
+   "year": 2025,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/03_SPA%20FRANCORCHAMPS/597_FIA%20WEC/202505101400_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:16:59.183Z",
+   "rows": 4630
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 1 Test Day",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/01_FIA%20WEC%20-%20TEST%20DAY/202506081000_Free%20Practice%201%20Test%20Day/23_Analysis_Free%20Practice%201%20Test%20Day.CSV",
+   "published_at": "2026-10-21T09:16:59.309Z",
+   "rows": 2094
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 2 Test Day",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/01_FIA%20WEC%20-%20TEST%20DAY/202506081530_Free%20Practice%202%20Test%20Day/23_Analysis_Free%20Practice%202%20Test%20Day.CSV",
+   "published_at": "2026-10-21T09:16:59.310Z",
+   "rows": 1815
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506111400_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.310Z",
+   "rows": 2215
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Qualifying LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506111845_Qualifying%20LMP2-LMGT3/23_Analysis_Qualifying%20LMP2-LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.310Z",
+   "rows": 281
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506111930_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.310Z",
+   "rows": 158
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506112200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.311Z",
+   "rows": 1465
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506121445_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.311Z",
+   "rows": 2158
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Hyperpole 1 LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506122000_Hyperpole%201%20LMP2-LMGT3/23_Analysis_Hyperpole%201%20LMP2-LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.320Z",
+   "rows": 136
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Hyperpole 2 LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506122035_Hyperpole%202%20LMP2-LMGT3/23_Analysis_Hyperpole%202%20LMP2-LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.320Z",
+   "rows": 65
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Hyperpole 1 HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506122105_Hyperpole%201%20HYPERCAR/23_Analysis_Hyperpole%201%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.320Z",
+   "rows": 87
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Hyperpole 2 HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506122140_Hyperpole%202%20HYPERCAR/23_Analysis_Hyperpole%202%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.321Z",
+   "rows": 40
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506122300_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-10-21T09:16:59.321Z",
+   "rows": 668
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506141200_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-10-21T09:16:59.321Z",
+   "rows": 216
+  },
+  {
+   "year": 2025,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/04_LE%20MANS/600_FIA%20WEC/202506141600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-10-21T09:16:59.323Z",
+   "rows": 20182
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507111117_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.326Z",
+   "rows": 1700
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507111545_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.327Z",
+   "rows": 1806
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507121010_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.327Z",
+   "rows": 1246
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507121445_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.327Z",
+   "rows": 123
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507121505_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.327Z",
+   "rows": 62
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507121525_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.328Z",
+   "rows": 130
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507121549_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.328Z",
+   "rows": 62
+  },
+  {
+   "year": 2025,
+   "event": "SAO PAULO",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/05_SAO%20PAULO/613_FIA%20WEC/202507131130_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:16:59.329Z",
+   "rows": 7930
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509051130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.330Z",
+   "rows": 1108
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509051630_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.330Z",
+   "rows": 1230
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509061100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.331Z",
+   "rows": 882
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509061500_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.331Z",
+   "rows": 90
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509061520_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.339Z",
+   "rows": 50
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509061540_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.344Z",
+   "rows": 105
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509061600_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.344Z",
+   "rows": 49
+  },
+  {
+   "year": 2025,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/06_CIRCUIT%20OF%20THE%20AMERICAS/620_FIA%20WEC/202509071330_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:16:59.345Z",
+   "rows": 3964
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509261015_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.360Z",
+   "rows": 1536
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509261430_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.360Z",
+   "rows": 1586
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509270950_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.360Z",
+   "rows": 1082
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509271420_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.360Z",
+   "rows": 110
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509271440_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.453Z",
+   "rows": 59
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509271500_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.453Z",
+   "rows": 129
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509271520_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.453Z",
+   "rows": 63
+  },
+  {
+   "year": 2025,
+   "event": "FUJI SPEEDWAY",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/07_FUJI%20SPEEDWAY/626_FIA%20WEC/202509281100_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-10-21T09:16:59.454Z",
+   "rows": 6683
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511061215_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-10-21T09:16:59.461Z",
+   "rows": 1296
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511061700_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-10-21T09:16:59.461Z",
+   "rows": 1313
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511071200_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-10-21T09:16:59.462Z",
+   "rows": 939
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511071600_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.462Z",
+   "rows": 90
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511071620_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-10-21T09:16:59.462Z",
+   "rows": 47
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511071640_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.462Z",
+   "rows": 94
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511071700_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-10-21T09:16:59.463Z",
+   "rows": 48
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/635_FIA%20WEC/202511081400_Race/08_Hour%208/23_Analysis_Race_Hour%208.CSV",
+   "published_at": "2026-10-21T09:16:59.464Z",
+   "rows": 7795
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Morning session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/636_FIA%20WEC%20-%20%20Rookie%20Test/202511091000_Morning%20session/23_Analysis_Morning%20session.CSV",
+   "published_at": "2026-10-21T09:16:59.464Z",
+   "rows": 897
+  },
+  {
+   "year": 2025,
+   "event": "BAHRAIN INTERNATIONAL CIRCUIT",
+   "session": "Afternoon session",
+   "url": "https://files.alkamelcloud.com/wec/results/14_2025/08_BAHRAIN%20INTERNATIONAL%20CIRCUIT/636_FIA%20WEC%20-%20%20Rookie%20Test/202511091300_Afternoon%20session/23_Analysis_Afternoon%20session.CSV",
+   "published_at": "2026-10-21T09:16:59.464Z",
+   "rows": 1426
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Morning Session",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/644_FIA%20WEC%20Prologue/202604140900_Morning%20Session/23_Analysis_Morning%20Session.CSV",
+   "published_at": "2026-11-08T20:57:34.142Z",
+   "rows": 2653
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Afternoon Session",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/644_FIA%20WEC%20Prologue/202604141400_Afternoon%20Session/23_Analysis_Afternoon%20Session.CSV",
+   "published_at": "2026-11-08T20:57:34.143Z",
+   "rows": 3118
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604171015_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.144Z",
+   "rows": 1456
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604171515_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.144Z",
+   "rows": 1600
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604181030_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.144Z",
+   "rows": 1061
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604181430_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.145Z",
+   "rows": 120
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604181450_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.145Z",
+   "rows": 52
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604181510_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.146Z",
+   "rows": 120
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604181530_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.146Z",
+   "rows": 63
+  },
+  {
+   "year": 2026,
+   "event": "IMOLA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/01_IMOLA/645_FIA%20WEC/202604191300_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.148Z",
+   "rows": 6758
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605071100_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.166Z",
+   "rows": 1160
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605071540_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.166Z",
+   "rows": 1056
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605081010_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.167Z",
+   "rows": 721
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605081430_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.167Z",
+   "rows": 107
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605081455_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.168Z",
+   "rows": 48
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605081520_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.168Z",
+   "rows": 112
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605081545_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.169Z",
+   "rows": 59
+  },
+  {
+   "year": 2026,
+   "event": "SPA FRANCORCHAMPS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/02_SPA%20FRANCORCHAMPS/653_FIA%20WEC/202605091400_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.182Z",
+   "rows": 4831
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 1 Test Day",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/656_FIA%20WEC%20-%20TEST%20DAY/202606071000_Free%20Practice%201%20Test%20Day/23_Analysis_Free%20Practice%201%20Test%20Day.CSV",
+   "published_at": "2026-11-08T20:57:34.189Z",
+   "rows": 1970
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 2 Test Day",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/656_FIA%20WEC%20-%20TEST%20DAY/202606071530_Free%20Practice%202%20Test%20Day/23_Analysis_Free%20Practice%202%20Test%20Day.CSV",
+   "published_at": "2026-11-08T20:57:34.189Z",
+   "rows": 2411
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606101410_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.189Z",
+   "rows": 2321
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Qualifying LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606101845_Qualifying%20LMP2-LMGT3/23_Analysis_Qualifying%20LMP2-LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.190Z",
+   "rows": 330
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606101930_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.190Z",
+   "rows": 149
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606102200_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.190Z",
+   "rows": 1664
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606111445_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.191Z",
+   "rows": 2294
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Hyperpole 1 LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606112000_Hyperpole%201%20LMP2-LMGT3/23_Analysis_Hyperpole%201%20LMP2-LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.191Z",
+   "rows": 154
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Hyperpole 2 LMP2-LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606112035_Hyperpole%202%20LMP2-LMGT3/23_Analysis_Hyperpole%202%20LMP2-LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.191Z",
+   "rows": 84
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Hyperpole 1 HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606112105_Hyperpole%201%20HYPERCAR/23_Analysis_Hyperpole%201%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.192Z",
+   "rows": 89
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Hyperpole 2 HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606112140_Hyperpole%202%20HYPERCAR/23_Analysis_Hyperpole%202%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.192Z",
+   "rows": 46
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Free Practice 4",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606112305_Free%20Practice%204/23_Analysis_Free%20Practice%204.CSV",
+   "published_at": "2026-11-08T20:57:34.192Z",
+   "rows": 753
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Warm Up",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606131200_Warm%20Up/23_Analysis_Warm%20Up.CSV",
+   "published_at": "2026-11-08T20:57:34.193Z",
+   "rows": 237
+  },
+  {
+   "year": 2026,
+   "event": "LE MANS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/03_LE%20MANS/657_FIA%20WEC/202606131600_Race/24_Hour%2024/23_Analysis_Race_Hour%2024.CSV",
+   "published_at": "2026-11-08T20:57:34.203Z",
+   "rows": 20163
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607101100_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.204Z",
+   "rows": 1615
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607101550_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.205Z",
+   "rows": 1737
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607111010_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.205Z",
+   "rows": 1128
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607111430_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.367Z",
+   "rows": 122
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607111450_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.367Z",
+   "rows": 61
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607111510_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.368Z",
+   "rows": 133
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607111530_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.368Z",
+   "rows": 69
+  },
+  {
+   "year": 2026,
+   "event": "SAO PAULO",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/04_SAO%20PAULO/666_FIA%20WEC/202607121130_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.369Z",
+   "rows": 8015
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609041130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.369Z",
+   "rows": 1276
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609041600_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.370Z",
+   "rows": 1196
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609051100_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.382Z",
+   "rows": 924
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609051500_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.383Z",
+   "rows": 101
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609051520_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.383Z",
+   "rows": 48
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609051540_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.383Z",
+   "rows": 101
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609051600_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.384Z",
+   "rows": 50
+  },
+  {
+   "year": 2026,
+   "event": "CIRCUIT OF THE AMERICAS",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/05_CIRCUIT%20OF%20THE%20AMERICAS/673_FIA%20WEC/202609061300_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.384Z",
+   "rows": 5530
+  },
+  {
+   "year": 2026,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/06_FUJI%20SPEEDWAY/679_FIA%20WEC/202609251015_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.403Z",
+   "rows": 1586
+  },
+  {
+   "year": 2026,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/06_FUJI%20SPEEDWAY/679_FIA%20WEC/202609251430_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.403Z",
+   "rows": 1671
+  },
+  {
+   "year": 2026,
+   "event": "FUJI SPEEDWAY",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/06_FUJI%20SPEEDWAY/679_FIA%20WEC/202609260930_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.404Z",
+   "rows": 892
+  },
+  {
+   "year": 2026,
+   "event": "FUJI SPEEDWAY",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/06_FUJI%20SPEEDWAY/679_FIA%20WEC/202609271100_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.405Z",
+   "rows": 6050
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610161130_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.423Z",
+   "rows": 1515
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610161630_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.423Z",
+   "rows": 1599
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Free Practice 3 - LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610170850_Free%20Practice%203%20-%20LMGT3/23_Analysis_Free%20Practice%203%20-%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.424Z",
+   "rows": 546
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610171150_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.424Z",
+   "rows": 111
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610171210_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.425Z",
+   "rows": 57
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Free Practice 3 - HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610171240_Free%20Practice%203%20-%20HYPERCAR/23_Analysis_Free%20Practice%203%20-%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.426Z",
+   "rows": 558
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610171555_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.442Z",
+   "rows": 120
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610171615_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.443Z",
+   "rows": 61
+  },
+  {
+   "year": 2026,
+   "event": "BARCELONA-CATALUNYA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/07_BARCELONA-CATALUNYA/688_FIA%20WEC/202610181200_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.444Z",
+   "rows": 6534
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 1",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611061030_Free%20Practice%201/23_Analysis_Free%20Practice%201.CSV",
+   "published_at": "2026-11-08T20:57:34.445Z",
+   "rows": 1075
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 2",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611061430_Free%20Practice%202/23_Analysis_Free%20Practice%202.CSV",
+   "published_at": "2026-11-08T20:57:34.446Z",
+   "rows": 1448
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Free Practice 3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611071030_Free%20Practice%203/23_Analysis_Free%20Practice%203.CSV",
+   "published_at": "2026-11-08T20:57:34.446Z",
+   "rows": 971
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611071420_Qualifying%20LMGT3/23_Analysis_Qualifying%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.447Z",
+   "rows": 109
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Hyperpole LMGT3",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611071448_Hyperpole%20LMGT3/23_Analysis_Hyperpole%20LMGT3.CSV",
+   "published_at": "2026-11-08T20:57:34.448Z",
+   "rows": 60
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Qualifying HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611071505_Qualifying%20HYPERCAR/23_Analysis_Qualifying%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.448Z",
+   "rows": 124
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Hyperpole HYPERCAR",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611071525_Hyperpole%20HYPERCAR/23_Analysis_Hyperpole%20HYPERCAR.CSV",
+   "published_at": "2026-11-08T20:57:34.510Z",
+   "rows": 61
+  },
+  {
+   "year": 2026,
+   "event": "AUTODROMO NAZIONALE DI MONZA",
+   "session": "Race",
+   "url": "https://files.alkamelcloud.com/wec/results/15_2026/08_AUTODROMO%20NAZIONALE%20DI%20MONZA/689_FIA%20WEC/202611081100_Race/06_Hour%206/23_Analysis_Race_Hour%206.CSV",
+   "published_at": "2026-11-08T20:57:34.524Z",
+   "rows": 5660
+  }
+ ],
+ "log": [
+  "2021 PROLOGUE SPA FRANCORCHAMPS Classification_Morning Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 PROLOGUE SPA FRANCORCHAMPS Classification_Afternoon Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 PROLOGUE SPA FRANCORCHAMPS Classification_Morning Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 PROLOGUE SPA FRANCORCHAMPS Classification_Afternoon Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 SPA FRANCORCHAMPS Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO DO ALGARVE Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO DO ALGARVE Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO DO ALGARVE Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO DO ALGARVE Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO DO ALGARVE Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Qualifying Practice.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Hyperpole.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 6 HOURS Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Morning session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2021 BAHRAIN INTERNATIONAL CIRCUIT 8 HOURS Classification_Afternoon session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SEBRING Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SEBRING Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SEBRING Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SEBRING Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SEBRING Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SPA FRANCORCHAMPS Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Qualifying Practice.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Hyperpole.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 FUJI SPEEDWAY Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 FUJI SPEEDWAY Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 FUJI SPEEDWAY Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 FUJI SPEEDWAY Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 FUJI SPEEDWAY Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying LMGTE Pro - LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying HYPERCAR - LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Morning session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2022 BAHRAIN INTERNATIONAL CIRCUIT Classification_Afternoon session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SEBRING Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO DO ALGARVE Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Qualifying Practice.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Hyperpole.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 FUJI SPEEDWAY Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying LMGTE Am.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying LMP2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Morning session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2023 BAHRAIN INTERNATIONAL CIRCUIT Classification_Afternoon session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LOSAIL Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 IMOLA Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SPA FRANCORCHAMPS Classification_Race_Hour 6.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Qualifying Practice.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Hyperpole.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 SAO PAULO Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 CIRCUIT OF THE AMERICAS Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 FUJI SPEEDWAY Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Morning session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2024 BAHRAIN INTERNATIONAL CIRCUIT Classification_Afternoon session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_1st Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_2nd Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_3rd Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_4th Test Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LOSAIL Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 IMOLA Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SPA FRANCORCHAMPS Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 1 Test Day.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 2 Test Day.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Qualifying LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Hyperpole 1 LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Hyperpole 2 LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Hyperpole 1 HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Hyperpole 2 HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 SAO PAULO Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 CIRCUIT OF THE AMERICAS Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 FUJI SPEEDWAY Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Morning session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2025 BAHRAIN INTERNATIONAL CIRCUIT Classification_Afternoon session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Morning Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Afternoon Session.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 IMOLA Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SPA FRANCORCHAMPS Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 1 Test Day.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 2 Test Day.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Qualifying LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Hyperpole 1 LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Hyperpole 2 LMP2-LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Hyperpole 1 HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Hyperpole 2 HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Free Practice 4.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 LE MANS Classification_Warm Up.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 SAO PAULO Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Free Practice 1_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Free Practice 2_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Free Practice 3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Qualifying LMGT3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Hyperpole LMGT3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Qualifying HYPERCAR_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 CIRCUIT OF THE AMERICAS Classification_Hyperpole HYPERCAR_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 FUJI SPEEDWAY Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 FUJI SPEEDWAY Classification_Free Practice 1_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 FUJI SPEEDWAY Classification_Free Practice 2_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 FUJI SPEEDWAY Classification_Free Practice 3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Free Practice 1_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Free Practice 2_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Free Practice 3 - LMGT3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Qualifying LMGT3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Hyperpole LMGT3_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Free Practice 3 - HYPERCAR_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Qualifying HYPERCAR_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 BARCELONA-CATALUNYA Classification_Hyperpole HYPERCAR_Final.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 1.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 2.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Free Practice 3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Hyperpole LMGT3.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Qualifying HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1",
+  "2026 AUTODROMO NAZIONALE DI MONZA Classification_Hyperpole HYPERCAR.CSV: Al Kamel CSV column mismatch at data row 1"
+ ]
+}
