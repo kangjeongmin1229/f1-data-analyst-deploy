@@ -1,0 +1,27 @@
+{
+  "repository": {
+    "commit": "9fb675e2cb60de4ee5e2d395af5acabf45740e73",
+    "geometryBlob": "973641c280b0bc425758149667c892a5dd3d3d67",
+    "workflow": ".github/workflows/lapsim-data.yml",
+    "f1SeasonsExactlyEqualToCurrent": true,
+    "sourceYear": 2025,
+    "sourceSession": 9865,
+    "originalActionsRunId": null
+  },
+  "archive": {
+    "run": 42544457411,
+    "workflowCommit": "cdeca686a164a9f4d45e605d81c7b04b07b7f1db",
+    "exportCommit": "a8f19241e7bb9d91acddd42dc9204df82e1a241a",
+    "sourceYear": 2026,
+    "sourceSession": 11408
+  },
+  "B": {
+    "run": 42558077604,
+    "job": 128968219459,
+    "workflowCommit": "3d21b2c94c61a224065c2e79427dc832a7165c4e",
+    "jobConclusion": "success",
+    "overallRunConclusion": "cancelled",
+    "transferValuesExactlyEqual": true
+  },
+  "unknown": "Original raw index/fetch log not recovered; exact availability reason for session 11408 in earlier build is unknown."
+}

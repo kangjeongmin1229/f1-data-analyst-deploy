@@ -1,0 +1,38 @@
+(node:27968) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+== .cache/wec-sector-run/b2.js
+all              {"n":67,"base":1.113,"cand":1.118,"reason":"rejected: worse on held-out rows"}
+f1               {"n":34,"base":0.865,"cand":0.865,"reason":"rejected: worse on held-out rows"}
+wec              {"n":33,"base":1.321,"cand":1.329,"reason":"rejected: worse on held-out rows"}
+f1/2025          {"n":20,"base":0.84,"cand":0.84,"reason":"rejected: worse on held-out rows"}
+f1/2026          {"n":14,"base":0.9,"cand":0.9,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2025     {"n":5,"base":1.432,"cand":1.303,"reason":"rejected: gain within noise"}
+wec-lmh/2026     {"n":6,"base":1.041,"cand":0.978,"reason":"rejected: gain within noise"}
+wec-lmdh/2025    {"n":5,"base":1.238,"cand":1.418,"reason":"rejected: worse on held-out rows"}
+wec-lmdh/2026    {"n":6,"base":1.071,"cand":1.07,"reason":"rejected: gain within noise"}
+wec-lmgt3/2025   {"n":5,"base":1.733,"cand":1.799,"reason":"rejected: worse on held-out rows"}
+wec-lmgt3/2026   {"n":6,"base":1.37,"cand":1.353,"reason":"rejected: gain within noise"}
+== .cache/wec-sector-run/b1.js
+all              {"n":67,"base":1.113,"cand":1.112,"reason":"rejected: gain within noise"}
+f1               {"n":34,"base":0.865,"cand":0.865,"reason":"rejected: worse on held-out rows"}
+wec              {"n":33,"base":1.321,"cand":1.319,"reason":"rejected: gain within noise"}
+f1/2025          {"n":20,"base":0.84,"cand":0.84,"reason":"rejected: worse on held-out rows"}
+f1/2026          {"n":14,"base":0.9,"cand":0.9,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2025     {"n":5,"base":1.432,"cand":1.304,"reason":"rejected: gain within noise"}
+wec-lmh/2026     {"n":6,"base":1.041,"cand":0.954,"reason":"accepted: held-out error lower beyond noise"}
+wec-lmdh/2025    {"n":5,"base":1.238,"cand":1.45,"reason":"rejected: worse on held-out rows"}
+wec-lmdh/2026    {"n":6,"base":1.071,"cand":1.026,"reason":"accepted: held-out error lower beyond noise"}
+wec-lmgt3/2025   {"n":5,"base":1.733,"cand":1.793,"reason":"rejected: worse on held-out rows"}
+wec-lmgt3/2026   {"n":6,"base":1.37,"cand":1.329,"reason":"accepted: held-out error lower beyond noise"}
+== .cache/wec-sector-run/b4.js
+all              {"n":67,"base":1.113,"cand":1.13,"reason":"rejected: worse on held-out rows"}
+f1               {"n":34,"base":0.865,"cand":0.865,"reason":"rejected: worse on held-out rows"}
+wec              {"n":33,"base":1.321,"cand":1.35,"reason":"rejected: worse on held-out rows"}
+f1/2025          {"n":20,"base":0.84,"cand":0.84,"reason":"rejected: worse on held-out rows"}
+f1/2026          {"n":14,"base":0.9,"cand":0.9,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2025     {"n":5,"base":1.432,"cand":1.471,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2026     {"n":6,"base":1.041,"cand":1.013,"reason":"rejected: gain within noise"}
+wec-lmdh/2025    {"n":5,"base":1.238,"cand":1.501,"reason":"rejected: worse on held-out rows"}
+wec-lmdh/2026    {"n":6,"base":1.071,"cand":0.982,"reason":"accepted: held-out error lower beyond noise"}
+wec-lmgt3/2025   {"n":5,"base":1.733,"cand":1.783,"reason":"rejected: worse on held-out rows"}
+wec-lmgt3/2026   {"n":6,"base":1.37,"cand":1.306,"reason":"rejected: gain within noise"}

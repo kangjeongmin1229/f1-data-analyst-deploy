@@ -1,0 +1,5754 @@
+{
+  "schemaVersion": 1,
+  "baseline": ".cache/wec-sector-run/baseline.js",
+  "boundTolerance": 0.000001,
+  "variants": [
+    {
+      "calibration": ".cache/wec-sector-run/baseline.js",
+      "validation": ".cache/wec-sector-run/validate-baseline.json",
+      "sha256": {
+        "calibration": "5d612afc8b13dc8018dba1718b9610d3b3e760821f3a4cb41eb6aaf17f10b5b0",
+        "validation": "202cedcac00754065e5e1ffbdb4066d35cdd836652d13c54241d49e0362d25c1"
+      },
+      "physical": {
+        "f1/2023": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 15,
+            "nCorners": 142,
+            "biasKph": -11.644799999999998,
+            "rmsKph": 21.083106124730925
+          },
+          "trap": {
+            "nTracks": 15,
+            "biasKph": -1.9176666666666669,
+            "rmsKph": 6.597413781172135
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -22.055,
+              "cornerRmsKph": 27.402,
+              "trapKph": -3.791
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -10.607,
+              "cornerRmsKph": 25.709,
+              "trapKph": -10.993
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -16.946,
+              "cornerRmsKph": 21.543,
+              "trapKph": 7.62
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -12.089,
+              "cornerRmsKph": 17.749,
+              "trapKph": -1.784
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -9.369,
+              "cornerRmsKph": 19.439,
+              "trapKph": -2.98
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -17.641,
+              "cornerRmsKph": 25.906,
+              "trapKph": -7.174
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -5.844,
+              "cornerRmsKph": 16.5,
+              "trapKph": 5.293
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -7.365,
+              "cornerRmsKph": 19.675,
+              "trapKph": -11.058
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.033,
+              "cornerRmsKph": 19.801,
+              "trapKph": -11.497
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -12.11,
+              "cornerRmsKph": 23.504,
+              "trapKph": -6.859
+            },
+            {
+              "track": "lusail",
+              "cornerN": 11,
+              "cornerBiasKph": -4.05,
+              "cornerRmsKph": 17.956,
+              "trapKph": 2.967
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -14.809,
+              "cornerRmsKph": 26.575,
+              "trapKph": 0.817
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -7.374,
+              "cornerRmsKph": 11.817,
+              "trapKph": 0.606
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 8,
+              "cornerBiasKph": -7.133,
+              "cornerRmsKph": 14.357,
+              "trapKph": 6.771
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -13.247,
+              "cornerRmsKph": 21.195,
+              "trapKph": 3.297
+            }
+          ]
+        },
+        "f1/2024": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 18,
+            "nCorners": 163,
+            "biasKph": -12.972722222222224,
+            "rmsKph": 23.701555287692734
+          },
+          "trap": {
+            "nTracks": 18,
+            "biasKph": -7.387722222222221,
+            "rmsKph": 10.324472015017955
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -21.194,
+              "cornerRmsKph": 25.956,
+              "trapKph": -10.92
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 8,
+              "cornerBiasKph": -7.718,
+              "cornerRmsKph": 25.672,
+              "trapKph": -10.454
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 11,
+              "cornerBiasKph": -12.484,
+              "cornerRmsKph": 23.37,
+              "trapKph": -9.136
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -15.499,
+              "cornerRmsKph": 40.071,
+              "trapKph": -0.341
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -11.694,
+              "cornerRmsKph": 18.409,
+              "trapKph": -6.607
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -16.749,
+              "cornerRmsKph": 29.127,
+              "trapKph": -29.861
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.328,
+              "trapKph": 3.627
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 6,
+              "cornerBiasKph": -21.004,
+              "cornerRmsKph": 24.025,
+              "trapKph": -3.928
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -18.654,
+              "cornerRmsKph": 30.373,
+              "trapKph": -8.51
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.205,
+              "cornerRmsKph": 26.805,
+              "trapKph": -11.63
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -12.198,
+              "cornerRmsKph": 19.943,
+              "trapKph": -13.608
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -14.707,
+              "cornerRmsKph": 19.514,
+              "trapKph": -4.347
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -16.655,
+              "cornerRmsKph": 21.651,
+              "trapKph": -11.36
+            },
+            {
+              "track": "austin",
+              "cornerN": 10,
+              "cornerBiasKph": -13.58,
+              "cornerRmsKph": 21.209,
+              "trapKph": -5
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 11,
+              "cornerBiasKph": -4.202,
+              "cornerRmsKph": 14.495,
+              "trapKph": -3.365
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 7,
+              "cornerBiasKph": -0.818,
+              "cornerRmsKph": 9.544,
+              "trapKph": -3.684
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.71,
+              "cornerRmsKph": 19.533,
+              "trapKph": -6.647
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -12.079,
+              "cornerRmsKph": 20.702,
+              "trapKph": 2.792
+            }
+          ]
+        },
+        "f1/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.84,
+          "heldOutN": 20,
+          "corner": {
+            "nTracks": 22,
+            "nCorners": 196,
+            "biasKph": -13.005909090909093,
+            "rmsKph": 23.126643930756575
+          },
+          "trap": {
+            "nTracks": 22,
+            "biasKph": -4.751499999999999,
+            "rmsKph": 7.656709122783044
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 9,
+              "cornerBiasKph": -16.033,
+              "cornerRmsKph": 28.703,
+              "trapKph": -6.048
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -23.587,
+              "cornerRmsKph": 41.112,
+              "trapKph": 9.359
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -11.531,
+              "cornerRmsKph": 19.182,
+              "trapKph": -10.148
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -19.428,
+              "cornerRmsKph": 23.965,
+              "trapKph": -0.298
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -12.854,
+              "cornerRmsKph": 25.328,
+              "trapKph": -10.511
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -13.49,
+              "cornerRmsKph": 20.225,
+              "trapKph": -2.624
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -18.679,
+              "cornerRmsKph": 35.076,
+              "trapKph": -19.315
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.982,
+              "cornerRmsKph": 22.071,
+              "trapKph": -1.181
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 7,
+              "cornerBiasKph": -19.269,
+              "cornerRmsKph": 22.55,
+              "trapKph": -4.064
+            },
+            {
+              "track": "montreal",
+              "cornerN": 6,
+              "cornerBiasKph": -15.734,
+              "cornerRmsKph": 23.111,
+              "trapKph": -5.186
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -15.353,
+              "cornerRmsKph": 24.876,
+              "trapKph": -6.961
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 9,
+              "cornerBiasKph": -5.741,
+              "cornerRmsKph": 14.208,
+              "trapKph": -6.006
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -8.87,
+              "cornerRmsKph": 17.922,
+              "trapKph": -9.169
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.467,
+              "cornerRmsKph": 18.154,
+              "trapKph": 1.296
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.923,
+              "cornerRmsKph": 26.072,
+              "trapKph": -5.026
+            },
+            {
+              "track": "monza",
+              "cornerN": 7,
+              "cornerBiasKph": -5.358,
+              "cornerRmsKph": 16.393,
+              "trapKph": -10.96
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.865,
+              "cornerRmsKph": 19.708,
+              "trapKph": -12.029
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -9.85,
+              "cornerRmsKph": 18.275,
+              "trapKph": 4.443
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -9.055,
+              "cornerRmsKph": 14.596,
+              "trapKph": -0.008
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 8,
+              "cornerBiasKph": -15.967,
+              "cornerRmsKph": 19.899,
+              "trapKph": -6.016
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.834,
+              "trapKph": -3.193
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 8,
+              "cornerBiasKph": -7.735,
+              "cornerRmsKph": 17.725,
+              "trapKph": -0.888
+            }
+          ]
+        },
+        "f1/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.9,
+          "heldOutN": 14,
+          "corner": {
+            "nTracks": 17,
+            "nCorners": 155,
+            "biasKph": -14.321882352941177,
+            "rmsKph": 21.88792503803383
+          },
+          "trap": {
+            "nTracks": 17,
+            "biasKph": 7.9959999999999996,
+            "rmsKph": 14.130067728075474
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 340000,
+                "side": "lower",
+                "limit": 340000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 7,
+              "cornerBiasKph": -18.592,
+              "cornerRmsKph": 27.869,
+              "trapKph": 18.143
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 10,
+              "cornerBiasKph": -23.79,
+              "cornerRmsKph": 37.578,
+              "trapKph": 13.138
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 9,
+              "cornerBiasKph": -15.422,
+              "cornerRmsKph": 23.145,
+              "trapKph": 7.758
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -13.924,
+              "cornerRmsKph": 19.804,
+              "trapKph": -4.476
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.762,
+              "cornerRmsKph": 19.538,
+              "trapKph": 15.842
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 8,
+              "cornerBiasKph": -15.011,
+              "cornerRmsKph": 18.963,
+              "trapKph": 4.24
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -14.997,
+              "cornerRmsKph": 23.648,
+              "trapKph": 11.36
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 8,
+              "cornerBiasKph": -11.269,
+              "cornerRmsKph": 20.598,
+              "trapKph": 5.038
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -10.348,
+              "cornerRmsKph": 19.133,
+              "trapKph": 0.108
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.409,
+              "cornerRmsKph": 13.176,
+              "trapKph": 13.418
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -21.223,
+              "cornerRmsKph": 25.417,
+              "trapKph": 6.632
+            },
+            {
+              "track": "madring",
+              "cornerN": 9,
+              "cornerBiasKph": -17.22,
+              "cornerRmsKph": 20.06,
+              "trapKph": -17.445
+            },
+            {
+              "track": "baku",
+              "cornerN": 11,
+              "cornerBiasKph": -18.769,
+              "cornerRmsKph": 24.085,
+              "trapKph": 20.078
+            },
+            {
+              "track": "kuala-lumpur",
+              "cornerN": 8,
+              "cornerBiasKph": -6.928,
+              "cornerRmsKph": 15.74,
+              "trapKph": 22.312
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.235,
+              "cornerRmsKph": 17.776,
+              "trapKph": 25.502
+            },
+            {
+              "track": "austin",
+              "cornerN": 9,
+              "cornerBiasKph": -15.05,
+              "cornerRmsKph": 20.216,
+              "trapKph": -14.958
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -8.523,
+              "cornerRmsKph": 12.738,
+              "trapKph": 9.242
+            }
+          ]
+        },
+        "wec-lmh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.43,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -0.940000000000009,
+            "rmsKph": 10.020279437221287
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.5
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -11.199999999999989
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8.800000000000011
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 17.099999999999966
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.6999999999999886
+            }
+          ]
+        },
+        "wec-lmh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.04,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.5400000000000205,
+            "rmsKph": 3.3660065359413696
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -1.1999999999999886
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 5.600000000000023
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.7000000000000455
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.399999999999977
+            }
+          ]
+        },
+        "wec-lmdh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.24,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.5600000000000023,
+            "rmsKph": 11.95775898736884
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -5.699999999999989
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -9.600000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.800000000000011
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 22.80000000000001
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.1000000000000227
+            }
+          ]
+        },
+        "wec-lmdh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.07,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.12000000000001591,
+            "rmsKph": 3.41115816109427
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2.900000000000034
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -3
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4.600000000000023
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.5
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.399999999999977
+            }
+          ]
+        },
+        "wec-lmgt3/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.73,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -3.060000000000008,
+            "rmsKph": 5.803964162535818
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.5
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -5.100000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -11.300000000000011
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2.8000000000000114
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.799999999999983
+            }
+          ]
+        },
+        "wec-lmgt3/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.37,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 6,
+            "biasKph": 1.0666666666666724,
+            "rmsKph": 8.291159951016082
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              },
+              {
+                "parameter": "cdA",
+                "value": 1.3,
+                "side": "upper",
+                "limit": 1.3,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.6000000000000227
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.599999999999966
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 13.599999999999966
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.099999999999994
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.5999999999999943
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.899999999999977
+            }
+          ]
+        }
+      }
+    },
+    {
+      "calibration": ".cache/wec-sector-run/b2.js",
+      "validation": ".cache/wec-sector-run/validate-b2.json",
+      "sha256": {
+        "calibration": "985a5fe09951fcf28230d5f1d8a008fc67a0404a2ea995505398668ef344c82d",
+        "validation": "55193d4992e562674056c801e118c0af71a02b5be93b85804df5a10989ffcd3e"
+      },
+      "physical": {
+        "f1/2023": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 15,
+            "nCorners": 142,
+            "biasKph": -11.644799999999998,
+            "rmsKph": 21.083106124730925
+          },
+          "trap": {
+            "nTracks": 15,
+            "biasKph": -1.9176666666666669,
+            "rmsKph": 6.597413781172135
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -22.055,
+              "cornerRmsKph": 27.402,
+              "trapKph": -3.791
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -10.607,
+              "cornerRmsKph": 25.709,
+              "trapKph": -10.993
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -16.946,
+              "cornerRmsKph": 21.543,
+              "trapKph": 7.62
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -12.089,
+              "cornerRmsKph": 17.749,
+              "trapKph": -1.784
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -9.369,
+              "cornerRmsKph": 19.439,
+              "trapKph": -2.98
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -17.641,
+              "cornerRmsKph": 25.906,
+              "trapKph": -7.174
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -5.844,
+              "cornerRmsKph": 16.5,
+              "trapKph": 5.293
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -7.365,
+              "cornerRmsKph": 19.675,
+              "trapKph": -11.058
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.033,
+              "cornerRmsKph": 19.801,
+              "trapKph": -11.497
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -12.11,
+              "cornerRmsKph": 23.504,
+              "trapKph": -6.859
+            },
+            {
+              "track": "lusail",
+              "cornerN": 11,
+              "cornerBiasKph": -4.05,
+              "cornerRmsKph": 17.956,
+              "trapKph": 2.967
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -14.809,
+              "cornerRmsKph": 26.575,
+              "trapKph": 0.817
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -7.374,
+              "cornerRmsKph": 11.817,
+              "trapKph": 0.606
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 8,
+              "cornerBiasKph": -7.133,
+              "cornerRmsKph": 14.357,
+              "trapKph": 6.771
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -13.247,
+              "cornerRmsKph": 21.195,
+              "trapKph": 3.297
+            }
+          ]
+        },
+        "f1/2024": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 18,
+            "nCorners": 163,
+            "biasKph": -12.972722222222224,
+            "rmsKph": 23.701555287692734
+          },
+          "trap": {
+            "nTracks": 18,
+            "biasKph": -7.387722222222221,
+            "rmsKph": 10.324472015017955
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -21.194,
+              "cornerRmsKph": 25.956,
+              "trapKph": -10.92
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 8,
+              "cornerBiasKph": -7.718,
+              "cornerRmsKph": 25.672,
+              "trapKph": -10.454
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 11,
+              "cornerBiasKph": -12.484,
+              "cornerRmsKph": 23.37,
+              "trapKph": -9.136
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -15.499,
+              "cornerRmsKph": 40.071,
+              "trapKph": -0.341
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -11.694,
+              "cornerRmsKph": 18.409,
+              "trapKph": -6.607
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -16.749,
+              "cornerRmsKph": 29.127,
+              "trapKph": -29.861
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.328,
+              "trapKph": 3.627
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 6,
+              "cornerBiasKph": -21.004,
+              "cornerRmsKph": 24.025,
+              "trapKph": -3.928
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -18.654,
+              "cornerRmsKph": 30.373,
+              "trapKph": -8.51
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.205,
+              "cornerRmsKph": 26.805,
+              "trapKph": -11.63
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -12.198,
+              "cornerRmsKph": 19.943,
+              "trapKph": -13.608
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -14.707,
+              "cornerRmsKph": 19.514,
+              "trapKph": -4.347
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -16.655,
+              "cornerRmsKph": 21.651,
+              "trapKph": -11.36
+            },
+            {
+              "track": "austin",
+              "cornerN": 10,
+              "cornerBiasKph": -13.58,
+              "cornerRmsKph": 21.209,
+              "trapKph": -5
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 11,
+              "cornerBiasKph": -4.202,
+              "cornerRmsKph": 14.495,
+              "trapKph": -3.365
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 7,
+              "cornerBiasKph": -0.818,
+              "cornerRmsKph": 9.544,
+              "trapKph": -3.684
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.71,
+              "cornerRmsKph": 19.533,
+              "trapKph": -6.647
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -12.079,
+              "cornerRmsKph": 20.702,
+              "trapKph": 2.792
+            }
+          ]
+        },
+        "f1/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.84,
+          "heldOutN": 20,
+          "corner": {
+            "nTracks": 22,
+            "nCorners": 196,
+            "biasKph": -13.005909090909093,
+            "rmsKph": 23.126643930756575
+          },
+          "trap": {
+            "nTracks": 22,
+            "biasKph": -4.751499999999999,
+            "rmsKph": 7.656709122783044
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 9,
+              "cornerBiasKph": -16.033,
+              "cornerRmsKph": 28.703,
+              "trapKph": -6.048
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -23.587,
+              "cornerRmsKph": 41.112,
+              "trapKph": 9.359
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -11.531,
+              "cornerRmsKph": 19.182,
+              "trapKph": -10.148
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -19.428,
+              "cornerRmsKph": 23.965,
+              "trapKph": -0.298
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -12.854,
+              "cornerRmsKph": 25.328,
+              "trapKph": -10.511
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -13.49,
+              "cornerRmsKph": 20.225,
+              "trapKph": -2.624
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -18.679,
+              "cornerRmsKph": 35.076,
+              "trapKph": -19.315
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.982,
+              "cornerRmsKph": 22.071,
+              "trapKph": -1.181
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 7,
+              "cornerBiasKph": -19.269,
+              "cornerRmsKph": 22.55,
+              "trapKph": -4.064
+            },
+            {
+              "track": "montreal",
+              "cornerN": 6,
+              "cornerBiasKph": -15.734,
+              "cornerRmsKph": 23.111,
+              "trapKph": -5.186
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -15.353,
+              "cornerRmsKph": 24.876,
+              "trapKph": -6.961
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 9,
+              "cornerBiasKph": -5.741,
+              "cornerRmsKph": 14.208,
+              "trapKph": -6.006
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -8.87,
+              "cornerRmsKph": 17.922,
+              "trapKph": -9.169
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.467,
+              "cornerRmsKph": 18.154,
+              "trapKph": 1.296
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.923,
+              "cornerRmsKph": 26.072,
+              "trapKph": -5.026
+            },
+            {
+              "track": "monza",
+              "cornerN": 7,
+              "cornerBiasKph": -5.358,
+              "cornerRmsKph": 16.393,
+              "trapKph": -10.96
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.865,
+              "cornerRmsKph": 19.708,
+              "trapKph": -12.029
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -9.85,
+              "cornerRmsKph": 18.275,
+              "trapKph": 4.443
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -9.055,
+              "cornerRmsKph": 14.596,
+              "trapKph": -0.008
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 8,
+              "cornerBiasKph": -15.967,
+              "cornerRmsKph": 19.899,
+              "trapKph": -6.016
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.834,
+              "trapKph": -3.193
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 8,
+              "cornerBiasKph": -7.735,
+              "cornerRmsKph": 17.725,
+              "trapKph": -0.888
+            }
+          ]
+        },
+        "f1/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.9,
+          "heldOutN": 14,
+          "corner": {
+            "nTracks": 17,
+            "nCorners": 155,
+            "biasKph": -14.321882352941177,
+            "rmsKph": 21.88792503803383
+          },
+          "trap": {
+            "nTracks": 17,
+            "biasKph": 7.9959999999999996,
+            "rmsKph": 14.130067728075474
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 340000,
+                "side": "lower",
+                "limit": 340000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 7,
+              "cornerBiasKph": -18.592,
+              "cornerRmsKph": 27.869,
+              "trapKph": 18.143
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 10,
+              "cornerBiasKph": -23.79,
+              "cornerRmsKph": 37.578,
+              "trapKph": 13.138
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 9,
+              "cornerBiasKph": -15.422,
+              "cornerRmsKph": 23.145,
+              "trapKph": 7.758
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -13.924,
+              "cornerRmsKph": 19.804,
+              "trapKph": -4.476
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.762,
+              "cornerRmsKph": 19.538,
+              "trapKph": 15.842
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 8,
+              "cornerBiasKph": -15.011,
+              "cornerRmsKph": 18.963,
+              "trapKph": 4.24
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -14.997,
+              "cornerRmsKph": 23.648,
+              "trapKph": 11.36
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 8,
+              "cornerBiasKph": -11.269,
+              "cornerRmsKph": 20.598,
+              "trapKph": 5.038
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -10.348,
+              "cornerRmsKph": 19.133,
+              "trapKph": 0.108
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.409,
+              "cornerRmsKph": 13.176,
+              "trapKph": 13.418
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -21.223,
+              "cornerRmsKph": 25.417,
+              "trapKph": 6.632
+            },
+            {
+              "track": "madring",
+              "cornerN": 9,
+              "cornerBiasKph": -17.22,
+              "cornerRmsKph": 20.06,
+              "trapKph": -17.445
+            },
+            {
+              "track": "baku",
+              "cornerN": 11,
+              "cornerBiasKph": -18.769,
+              "cornerRmsKph": 24.085,
+              "trapKph": 20.078
+            },
+            {
+              "track": "kuala-lumpur",
+              "cornerN": 8,
+              "cornerBiasKph": -6.928,
+              "cornerRmsKph": 15.74,
+              "trapKph": 22.312
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.235,
+              "cornerRmsKph": 17.776,
+              "trapKph": 25.502
+            },
+            {
+              "track": "austin",
+              "cornerN": 9,
+              "cornerBiasKph": -15.05,
+              "cornerRmsKph": 20.216,
+              "trapKph": -14.958
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -8.523,
+              "cornerRmsKph": 12.738,
+              "trapKph": 9.242
+            }
+          ]
+        },
+        "wec-lmh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.3,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -0.19999999999998863,
+            "rmsKph": 9.99859990198627
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -1.7999999999999545
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.5
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 17.899999999999977
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.400000000000034
+            }
+          ]
+        },
+        "wec-lmh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.98,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 1.6000000000000114,
+            "rmsKph": 3.6326299013249463
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.1000000000000227
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -0.10000000000002274
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.600000000000023
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.6000000000000227
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -3.1999999999999886
+            }
+          ]
+        },
+        "wec-lmdh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.42,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 1.1999999999999886,
+            "rmsKph": 11.98932858837392
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -5.100000000000023
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8.900000000000034
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 23.5
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.5
+            }
+          ]
+        },
+        "wec-lmdh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.07,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.9200000000000046,
+            "rmsKph": 3.5377959240182433
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.8000000000000114
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.3000000000000114
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 5.400000000000034
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.1999999999999886
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -3.5
+            }
+          ]
+        },
+        "wec-lmgt3/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.8,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -2.4000000000000057,
+            "rmsKph": 5.576737397439487
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -1.5999999999999943
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.300000000000011
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -11.000000000000028
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.3000000000000114
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.5999999999999943
+            }
+          ]
+        },
+        "wec-lmgt3/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.35,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 6,
+            "biasKph": 1.4500000000000075,
+            "rmsKph": 8.367695819837927
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4.100000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.399999999999977
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 13.899999999999977
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.599999999999994
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.9000000000000057
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.399999999999977
+            }
+          ]
+        }
+      }
+    },
+    {
+      "calibration": ".cache/wec-sector-run/b1.js",
+      "validation": ".cache/wec-sector-run/validate-b1.json",
+      "sha256": {
+        "calibration": "10e9ebe8487a45ac525b8dd893078fb3a8b215b00071faebe89226ce9fb570a1",
+        "validation": "3d80d790cfae50124cfd339830b83a6a9c27515f490b5a25362f475ad92ac0df"
+      },
+      "physical": {
+        "f1/2023": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 15,
+            "nCorners": 142,
+            "biasKph": -11.644799999999998,
+            "rmsKph": 21.083106124730925
+          },
+          "trap": {
+            "nTracks": 15,
+            "biasKph": -1.9176666666666669,
+            "rmsKph": 6.597413781172135
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -22.055,
+              "cornerRmsKph": 27.402,
+              "trapKph": -3.791
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -10.607,
+              "cornerRmsKph": 25.709,
+              "trapKph": -10.993
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -16.946,
+              "cornerRmsKph": 21.543,
+              "trapKph": 7.62
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -12.089,
+              "cornerRmsKph": 17.749,
+              "trapKph": -1.784
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -9.369,
+              "cornerRmsKph": 19.439,
+              "trapKph": -2.98
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -17.641,
+              "cornerRmsKph": 25.906,
+              "trapKph": -7.174
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -5.844,
+              "cornerRmsKph": 16.5,
+              "trapKph": 5.293
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -7.365,
+              "cornerRmsKph": 19.675,
+              "trapKph": -11.058
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.033,
+              "cornerRmsKph": 19.801,
+              "trapKph": -11.497
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -12.11,
+              "cornerRmsKph": 23.504,
+              "trapKph": -6.859
+            },
+            {
+              "track": "lusail",
+              "cornerN": 11,
+              "cornerBiasKph": -4.05,
+              "cornerRmsKph": 17.956,
+              "trapKph": 2.967
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -14.809,
+              "cornerRmsKph": 26.575,
+              "trapKph": 0.817
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -7.374,
+              "cornerRmsKph": 11.817,
+              "trapKph": 0.606
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 8,
+              "cornerBiasKph": -7.133,
+              "cornerRmsKph": 14.357,
+              "trapKph": 6.771
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -13.247,
+              "cornerRmsKph": 21.195,
+              "trapKph": 3.297
+            }
+          ]
+        },
+        "f1/2024": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 18,
+            "nCorners": 163,
+            "biasKph": -12.972722222222224,
+            "rmsKph": 23.701555287692734
+          },
+          "trap": {
+            "nTracks": 18,
+            "biasKph": -7.387722222222221,
+            "rmsKph": 10.324472015017955
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -21.194,
+              "cornerRmsKph": 25.956,
+              "trapKph": -10.92
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 8,
+              "cornerBiasKph": -7.718,
+              "cornerRmsKph": 25.672,
+              "trapKph": -10.454
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 11,
+              "cornerBiasKph": -12.484,
+              "cornerRmsKph": 23.37,
+              "trapKph": -9.136
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -15.499,
+              "cornerRmsKph": 40.071,
+              "trapKph": -0.341
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -11.694,
+              "cornerRmsKph": 18.409,
+              "trapKph": -6.607
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -16.749,
+              "cornerRmsKph": 29.127,
+              "trapKph": -29.861
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.328,
+              "trapKph": 3.627
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 6,
+              "cornerBiasKph": -21.004,
+              "cornerRmsKph": 24.025,
+              "trapKph": -3.928
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -18.654,
+              "cornerRmsKph": 30.373,
+              "trapKph": -8.51
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.205,
+              "cornerRmsKph": 26.805,
+              "trapKph": -11.63
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -12.198,
+              "cornerRmsKph": 19.943,
+              "trapKph": -13.608
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -14.707,
+              "cornerRmsKph": 19.514,
+              "trapKph": -4.347
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -16.655,
+              "cornerRmsKph": 21.651,
+              "trapKph": -11.36
+            },
+            {
+              "track": "austin",
+              "cornerN": 10,
+              "cornerBiasKph": -13.58,
+              "cornerRmsKph": 21.209,
+              "trapKph": -5
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 11,
+              "cornerBiasKph": -4.202,
+              "cornerRmsKph": 14.495,
+              "trapKph": -3.365
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 7,
+              "cornerBiasKph": -0.818,
+              "cornerRmsKph": 9.544,
+              "trapKph": -3.684
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.71,
+              "cornerRmsKph": 19.533,
+              "trapKph": -6.647
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -12.079,
+              "cornerRmsKph": 20.702,
+              "trapKph": 2.792
+            }
+          ]
+        },
+        "f1/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.84,
+          "heldOutN": 20,
+          "corner": {
+            "nTracks": 22,
+            "nCorners": 196,
+            "biasKph": -13.005909090909093,
+            "rmsKph": 23.126643930756575
+          },
+          "trap": {
+            "nTracks": 22,
+            "biasKph": -4.751499999999999,
+            "rmsKph": 7.656709122783044
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 9,
+              "cornerBiasKph": -16.033,
+              "cornerRmsKph": 28.703,
+              "trapKph": -6.048
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -23.587,
+              "cornerRmsKph": 41.112,
+              "trapKph": 9.359
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -11.531,
+              "cornerRmsKph": 19.182,
+              "trapKph": -10.148
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -19.428,
+              "cornerRmsKph": 23.965,
+              "trapKph": -0.298
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -12.854,
+              "cornerRmsKph": 25.328,
+              "trapKph": -10.511
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -13.49,
+              "cornerRmsKph": 20.225,
+              "trapKph": -2.624
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -18.679,
+              "cornerRmsKph": 35.076,
+              "trapKph": -19.315
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.982,
+              "cornerRmsKph": 22.071,
+              "trapKph": -1.181
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 7,
+              "cornerBiasKph": -19.269,
+              "cornerRmsKph": 22.55,
+              "trapKph": -4.064
+            },
+            {
+              "track": "montreal",
+              "cornerN": 6,
+              "cornerBiasKph": -15.734,
+              "cornerRmsKph": 23.111,
+              "trapKph": -5.186
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -15.353,
+              "cornerRmsKph": 24.876,
+              "trapKph": -6.961
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 9,
+              "cornerBiasKph": -5.741,
+              "cornerRmsKph": 14.208,
+              "trapKph": -6.006
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -8.87,
+              "cornerRmsKph": 17.922,
+              "trapKph": -9.169
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.467,
+              "cornerRmsKph": 18.154,
+              "trapKph": 1.296
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.923,
+              "cornerRmsKph": 26.072,
+              "trapKph": -5.026
+            },
+            {
+              "track": "monza",
+              "cornerN": 7,
+              "cornerBiasKph": -5.358,
+              "cornerRmsKph": 16.393,
+              "trapKph": -10.96
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.865,
+              "cornerRmsKph": 19.708,
+              "trapKph": -12.029
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -9.85,
+              "cornerRmsKph": 18.275,
+              "trapKph": 4.443
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -9.055,
+              "cornerRmsKph": 14.596,
+              "trapKph": -0.008
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 8,
+              "cornerBiasKph": -15.967,
+              "cornerRmsKph": 19.899,
+              "trapKph": -6.016
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.834,
+              "trapKph": -3.193
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 8,
+              "cornerBiasKph": -7.735,
+              "cornerRmsKph": 17.725,
+              "trapKph": -0.888
+            }
+          ]
+        },
+        "f1/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.9,
+          "heldOutN": 14,
+          "corner": {
+            "nTracks": 17,
+            "nCorners": 155,
+            "biasKph": -14.321882352941177,
+            "rmsKph": 21.88792503803383
+          },
+          "trap": {
+            "nTracks": 17,
+            "biasKph": 7.9959999999999996,
+            "rmsKph": 14.130067728075474
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 340000,
+                "side": "lower",
+                "limit": 340000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 7,
+              "cornerBiasKph": -18.592,
+              "cornerRmsKph": 27.869,
+              "trapKph": 18.143
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 10,
+              "cornerBiasKph": -23.79,
+              "cornerRmsKph": 37.578,
+              "trapKph": 13.138
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 9,
+              "cornerBiasKph": -15.422,
+              "cornerRmsKph": 23.145,
+              "trapKph": 7.758
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -13.924,
+              "cornerRmsKph": 19.804,
+              "trapKph": -4.476
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.762,
+              "cornerRmsKph": 19.538,
+              "trapKph": 15.842
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 8,
+              "cornerBiasKph": -15.011,
+              "cornerRmsKph": 18.963,
+              "trapKph": 4.24
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -14.997,
+              "cornerRmsKph": 23.648,
+              "trapKph": 11.36
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 8,
+              "cornerBiasKph": -11.269,
+              "cornerRmsKph": 20.598,
+              "trapKph": 5.038
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -10.348,
+              "cornerRmsKph": 19.133,
+              "trapKph": 0.108
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.409,
+              "cornerRmsKph": 13.176,
+              "trapKph": 13.418
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -21.223,
+              "cornerRmsKph": 25.417,
+              "trapKph": 6.632
+            },
+            {
+              "track": "madring",
+              "cornerN": 9,
+              "cornerBiasKph": -17.22,
+              "cornerRmsKph": 20.06,
+              "trapKph": -17.445
+            },
+            {
+              "track": "baku",
+              "cornerN": 11,
+              "cornerBiasKph": -18.769,
+              "cornerRmsKph": 24.085,
+              "trapKph": 20.078
+            },
+            {
+              "track": "kuala-lumpur",
+              "cornerN": 8,
+              "cornerBiasKph": -6.928,
+              "cornerRmsKph": 15.74,
+              "trapKph": 22.312
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.235,
+              "cornerRmsKph": 17.776,
+              "trapKph": 25.502
+            },
+            {
+              "track": "austin",
+              "cornerN": 9,
+              "cornerBiasKph": -15.05,
+              "cornerRmsKph": 20.216,
+              "trapKph": -14.958
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -8.523,
+              "cornerRmsKph": 12.738,
+              "trapKph": 9.242
+            }
+          ]
+        },
+        "wec-lmh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.3,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -0.7399999999999978,
+            "rmsKph": 10.046790532304327
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.2999999999999545
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -11.199999999999989
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8.400000000000034
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 17.399999999999977
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.8000000000000114
+            }
+          ]
+        },
+        "wec-lmh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.95,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 1.0800000000000067,
+            "rmsKph": 3.4635242167480382
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2.6000000000000227
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -0.6000000000000227
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.100000000000023
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.1000000000000227
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -3.8000000000000114
+            }
+          ]
+        },
+        "wec-lmdh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.45,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.5800000000000068,
+            "rmsKph": 11.995915971696386
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -5.699999999999989
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -9.600000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.800000000000011
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 22.900000000000034
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.1000000000000227
+            }
+          ]
+        },
+        "wec-lmdh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.03,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.4200000000000159,
+            "rmsKph": 3.42724379056993
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.2000000000000455
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.8000000000000114
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4.900000000000034
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.8000000000000114
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4
+            }
+          ]
+        },
+        "wec-lmgt3/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.79,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -2.640000000000009,
+            "rmsKph": 5.644111976210268
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -1.9000000000000057
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.600000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -11.100000000000023
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.1000000000000227
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.299999999999983
+            }
+          ]
+        },
+        "wec-lmgt3/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.33,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 6,
+            "biasKph": 1.3666666666666647,
+            "rmsKph": 8.344858696626714
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.399999999999977
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 13.899999999999977
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.400000000000006
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.799999999999983
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "calibration": ".cache/wec-sector-run/b4.js",
+      "validation": ".cache/wec-sector-run/validate-b4.json",
+      "sha256": {
+        "calibration": "9b34d75b6ea8f17971690c8f7424e1b094b1d58fe3de4fc2bc129f4df49d60d6",
+        "validation": "71405407b946a1f9541bdbeefc5993f992848cc7f515b97141708332438655a7"
+      },
+      "physical": {
+        "f1/2023": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 15,
+            "nCorners": 142,
+            "biasKph": -11.644799999999998,
+            "rmsKph": 21.083106124730925
+          },
+          "trap": {
+            "nTracks": 15,
+            "biasKph": -1.9176666666666669,
+            "rmsKph": 6.597413781172135
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -22.055,
+              "cornerRmsKph": 27.402,
+              "trapKph": -3.791
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -10.607,
+              "cornerRmsKph": 25.709,
+              "trapKph": -10.993
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -16.946,
+              "cornerRmsKph": 21.543,
+              "trapKph": 7.62
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -12.089,
+              "cornerRmsKph": 17.749,
+              "trapKph": -1.784
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -9.369,
+              "cornerRmsKph": 19.439,
+              "trapKph": -2.98
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -17.641,
+              "cornerRmsKph": 25.906,
+              "trapKph": -7.174
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -5.844,
+              "cornerRmsKph": 16.5,
+              "trapKph": 5.293
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -7.365,
+              "cornerRmsKph": 19.675,
+              "trapKph": -11.058
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.033,
+              "cornerRmsKph": 19.801,
+              "trapKph": -11.497
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -12.11,
+              "cornerRmsKph": 23.504,
+              "trapKph": -6.859
+            },
+            {
+              "track": "lusail",
+              "cornerN": 11,
+              "cornerBiasKph": -4.05,
+              "cornerRmsKph": 17.956,
+              "trapKph": 2.967
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -14.809,
+              "cornerRmsKph": 26.575,
+              "trapKph": 0.817
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -7.374,
+              "cornerRmsKph": 11.817,
+              "trapKph": 0.606
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 8,
+              "cornerBiasKph": -7.133,
+              "cornerRmsKph": 14.357,
+              "trapKph": 6.771
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -13.247,
+              "cornerRmsKph": 21.195,
+              "trapKph": 3.297
+            }
+          ]
+        },
+        "f1/2024": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": null,
+          "heldOutN": 0,
+          "corner": {
+            "nTracks": 18,
+            "nCorners": 163,
+            "biasKph": -12.972722222222224,
+            "rmsKph": 23.701555287692734
+          },
+          "trap": {
+            "nTracks": 18,
+            "biasKph": -7.387722222222221,
+            "rmsKph": 10.324472015017955
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -21.194,
+              "cornerRmsKph": 25.956,
+              "trapKph": -10.92
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 8,
+              "cornerBiasKph": -7.718,
+              "cornerRmsKph": 25.672,
+              "trapKph": -10.454
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 11,
+              "cornerBiasKph": -12.484,
+              "cornerRmsKph": 23.37,
+              "trapKph": -9.136
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -15.499,
+              "cornerRmsKph": 40.071,
+              "trapKph": -0.341
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -11.694,
+              "cornerRmsKph": 18.409,
+              "trapKph": -6.607
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -16.749,
+              "cornerRmsKph": 29.127,
+              "trapKph": -29.861
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.328,
+              "trapKph": 3.627
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 6,
+              "cornerBiasKph": -21.004,
+              "cornerRmsKph": 24.025,
+              "trapKph": -3.928
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -18.654,
+              "cornerRmsKph": 30.373,
+              "trapKph": -8.51
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.205,
+              "cornerRmsKph": 26.805,
+              "trapKph": -11.63
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -12.198,
+              "cornerRmsKph": 19.943,
+              "trapKph": -13.608
+            },
+            {
+              "track": "baku",
+              "cornerN": 12,
+              "cornerBiasKph": -14.707,
+              "cornerRmsKph": 19.514,
+              "trapKph": -4.347
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -16.655,
+              "cornerRmsKph": 21.651,
+              "trapKph": -11.36
+            },
+            {
+              "track": "austin",
+              "cornerN": 10,
+              "cornerBiasKph": -13.58,
+              "cornerRmsKph": 21.209,
+              "trapKph": -5
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 11,
+              "cornerBiasKph": -4.202,
+              "cornerRmsKph": 14.495,
+              "trapKph": -3.365
+            },
+            {
+              "track": "las-vegas",
+              "cornerN": 7,
+              "cornerBiasKph": -0.818,
+              "cornerRmsKph": 9.544,
+              "trapKph": -3.684
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.71,
+              "cornerRmsKph": 19.533,
+              "trapKph": -6.647
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 9,
+              "cornerBiasKph": -12.079,
+              "cornerRmsKph": 20.702,
+              "trapKph": 2.792
+            }
+          ]
+        },
+        "f1/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.84,
+          "heldOutN": 20,
+          "corner": {
+            "nTracks": 22,
+            "nCorners": 196,
+            "biasKph": -13.005909090909093,
+            "rmsKph": 23.126643930756575
+          },
+          "trap": {
+            "nTracks": 22,
+            "biasKph": -4.751499999999999,
+            "rmsKph": 7.656709122783044
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 8,
+                "side": "upper",
+                "limit": 8,
+                "outside": false
+              },
+              {
+                "parameter": "pIce",
+                "value": 476000,
+                "side": "lower",
+                "limit": 476000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 9,
+              "cornerBiasKph": -16.033,
+              "cornerRmsKph": 28.703,
+              "trapKph": -6.048
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 9,
+              "cornerBiasKph": -23.587,
+              "cornerRmsKph": 41.112,
+              "trapKph": 9.359
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 10,
+              "cornerBiasKph": -11.531,
+              "cornerRmsKph": 19.182,
+              "trapKph": -10.148
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 8,
+              "cornerBiasKph": -19.428,
+              "cornerRmsKph": 23.965,
+              "trapKph": -0.298
+            },
+            {
+              "track": "jeddah",
+              "cornerN": 7,
+              "cornerBiasKph": -12.854,
+              "cornerRmsKph": 25.328,
+              "trapKph": -10.511
+            },
+            {
+              "track": "miami",
+              "cornerN": 9,
+              "cornerBiasKph": -13.49,
+              "cornerRmsKph": 20.225,
+              "trapKph": -2.624
+            },
+            {
+              "track": "imola",
+              "cornerN": 8,
+              "cornerBiasKph": -18.679,
+              "cornerRmsKph": 35.076,
+              "trapKph": -19.315
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.982,
+              "cornerRmsKph": 22.071,
+              "trapKph": -1.181
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 7,
+              "cornerBiasKph": -19.269,
+              "cornerRmsKph": 22.55,
+              "trapKph": -4.064
+            },
+            {
+              "track": "montreal",
+              "cornerN": 6,
+              "cornerBiasKph": -15.734,
+              "cornerRmsKph": 23.111,
+              "trapKph": -5.186
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -15.353,
+              "cornerRmsKph": 24.876,
+              "trapKph": -6.961
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 9,
+              "cornerBiasKph": -5.741,
+              "cornerRmsKph": 14.208,
+              "trapKph": -6.006
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -8.87,
+              "cornerRmsKph": 17.922,
+              "trapKph": -9.169
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.467,
+              "cornerRmsKph": 18.154,
+              "trapKph": 1.296
+            },
+            {
+              "track": "zandvoort",
+              "cornerN": 9,
+              "cornerBiasKph": -13.923,
+              "cornerRmsKph": 26.072,
+              "trapKph": -5.026
+            },
+            {
+              "track": "monza",
+              "cornerN": 7,
+              "cornerBiasKph": -5.358,
+              "cornerRmsKph": 16.393,
+              "trapKph": -10.96
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.865,
+              "cornerRmsKph": 19.708,
+              "trapKph": -12.029
+            },
+            {
+              "track": "austin",
+              "cornerN": 11,
+              "cornerBiasKph": -9.85,
+              "cornerRmsKph": 18.275,
+              "trapKph": 4.443
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -9.055,
+              "cornerRmsKph": 14.596,
+              "trapKph": -0.008
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 8,
+              "cornerBiasKph": -15.967,
+              "cornerRmsKph": 19.899,
+              "trapKph": -6.016
+            },
+            {
+              "track": "lusail",
+              "cornerN": 9,
+              "cornerBiasKph": -10.359,
+              "cornerRmsKph": 20.834,
+              "trapKph": -3.193
+            },
+            {
+              "track": "yas-marina-circuit",
+              "cornerN": 8,
+              "cornerBiasKph": -7.735,
+              "cornerRmsKph": 17.725,
+              "trapKph": -0.888
+            }
+          ]
+        },
+        "f1/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.9,
+          "heldOutN": 14,
+          "corner": {
+            "nTracks": 17,
+            "nCorners": 155,
+            "biasKph": -14.321882352941177,
+            "rmsKph": 21.88792503803383
+          },
+          "trap": {
+            "nTracks": 17,
+            "biasKph": 7.9959999999999996,
+            "rmsKph": 14.130067728075474
+          },
+          "bounds": {
+            "checked": 5,
+            "hits": [
+              {
+                "parameter": "pIce",
+                "value": 340000,
+                "side": "lower",
+                "limit": 340000,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Equal weight per track, as in validate.mjs; sampled minima",
+          "trapDefinition": "Simulated lap maximum minus measured trace maximum",
+          "rows": [
+            {
+              "track": "melbourne",
+              "cornerN": 7,
+              "cornerBiasKph": -18.592,
+              "cornerRmsKph": 27.869,
+              "trapKph": 18.143
+            },
+            {
+              "track": "shanghai",
+              "cornerN": 10,
+              "cornerBiasKph": -23.79,
+              "cornerRmsKph": 37.578,
+              "trapKph": 13.138
+            },
+            {
+              "track": "suzuka",
+              "cornerN": 9,
+              "cornerBiasKph": -15.422,
+              "cornerRmsKph": 23.145,
+              "trapKph": 7.758
+            },
+            {
+              "track": "miami",
+              "cornerN": 8,
+              "cornerBiasKph": -13.924,
+              "cornerRmsKph": 19.804,
+              "trapKph": -4.476
+            },
+            {
+              "track": "monte-carlo",
+              "cornerN": 12,
+              "cornerBiasKph": -11.762,
+              "cornerRmsKph": 19.538,
+              "trapKph": 15.842
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 8,
+              "cornerBiasKph": -15.011,
+              "cornerRmsKph": 18.963,
+              "trapKph": 4.24
+            },
+            {
+              "track": "spielberg",
+              "cornerN": 7,
+              "cornerBiasKph": -14.997,
+              "cornerRmsKph": 23.648,
+              "trapKph": 11.36
+            },
+            {
+              "track": "silverstone",
+              "cornerN": 8,
+              "cornerBiasKph": -11.269,
+              "cornerRmsKph": 20.598,
+              "trapKph": 5.038
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 10,
+              "cornerBiasKph": -10.348,
+              "cornerRmsKph": 19.133,
+              "trapKph": 0.108
+            },
+            {
+              "track": "hungaroring",
+              "cornerN": 11,
+              "cornerBiasKph": -6.409,
+              "cornerRmsKph": 13.176,
+              "trapKph": 13.418
+            },
+            {
+              "track": "monza",
+              "cornerN": 6,
+              "cornerBiasKph": -21.223,
+              "cornerRmsKph": 25.417,
+              "trapKph": 6.632
+            },
+            {
+              "track": "madring",
+              "cornerN": 9,
+              "cornerBiasKph": -17.22,
+              "cornerRmsKph": 20.06,
+              "trapKph": -17.445
+            },
+            {
+              "track": "baku",
+              "cornerN": 11,
+              "cornerBiasKph": -18.769,
+              "cornerRmsKph": 24.085,
+              "trapKph": 20.078
+            },
+            {
+              "track": "kuala-lumpur",
+              "cornerN": 8,
+              "cornerBiasKph": -6.928,
+              "cornerRmsKph": 15.74,
+              "trapKph": 22.312
+            },
+            {
+              "track": "singapore",
+              "cornerN": 12,
+              "cornerBiasKph": -14.235,
+              "cornerRmsKph": 17.776,
+              "trapKph": 25.502
+            },
+            {
+              "track": "austin",
+              "cornerN": 9,
+              "cornerBiasKph": -15.05,
+              "cornerRmsKph": 20.216,
+              "trapKph": -14.958
+            },
+            {
+              "track": "mexico-city",
+              "cornerN": 10,
+              "cornerBiasKph": -8.523,
+              "cornerRmsKph": 12.738,
+              "trapKph": 9.242
+            }
+          ]
+        },
+        "wec-lmh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.47,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 0.30000000000002275,
+            "rmsKph": 10.003499387714273
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -1.2999999999999545
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.099999999999966
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -7.199999999999989
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 18.5
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.6000000000000227
+            }
+          ]
+        },
+        "wec-lmh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.01,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 2.2200000000000046,
+            "rmsKph": 3.9061489986942335
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.8000000000000114
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 0.5
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 7.199999999999989
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.3999999999999773
+            }
+          ]
+        },
+        "wec-lmdh/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.5,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 1.5200000000000045,
+            "rmsKph": 12.015157094270558
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 7,
+                "side": "upper",
+                "limit": 7,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.699999999999989
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8.600000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -6.699999999999989
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 23.80000000000001
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 3.8000000000000114
+            }
+          ]
+        },
+        "wec-lmdh/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 0.98,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": 1.4599999999999909,
+            "rmsKph": 3.7552629734813494
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4.5
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.1000000000000227
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": null
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 1.599999999999966
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -2.6999999999999886
+            }
+          ]
+        },
+        "wec-lmgt3/2025": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.78,
+          "heldOutN": 5,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 5,
+            "biasKph": -1.6000000000000056,
+            "rmsKph": 5.428443607517723
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "lusail",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -0.5999999999999943
+            },
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -3.1999999999999886
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -10.700000000000017
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4
+            },
+            {
+              "track": "sakhir",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 2.4999999999999716
+            }
+          ]
+        },
+        "wec-lmgt3/2026": {
+          "status": "available",
+          "evidence": "Layer 3 fitted model vs layer 2 measurements; in-sample, not held-out",
+          "heldOutRmsPct": 1.31,
+          "heldOutN": 6,
+          "corner": {
+            "nTracks": 0,
+            "nCorners": 0,
+            "biasKph": null,
+            "rmsKph": null
+          },
+          "trap": {
+            "nTracks": 6,
+            "biasKph": 3.8000000000000065,
+            "rmsKph": 9.053728513711901
+          },
+          "bounds": {
+            "checked": 3,
+            "hits": [
+              {
+                "parameter": "clA",
+                "value": 3.5,
+                "side": "upper",
+                "limit": 3.5,
+                "outside": false
+              }
+            ],
+            "unchecked": []
+          },
+          "boundReference": "Current source limits; original run bounds are not stored in the calibration",
+          "uncheckedTrackBounds": "Grip/drag run settings are not stored; no bound check is inferred",
+          "cornerNote": "Unavailable: validate.mjs has no WEC corner measurements",
+          "trapDefinition": "Simulated lap maximum minus measured trap; NOT a trap-position comparison",
+          "rows": [
+            {
+              "track": "imola",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 6.600000000000023
+            },
+            {
+              "track": "spa-francorchamps",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -8.499999999999972
+            },
+            {
+              "track": "interlagos",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 16.19999999999999
+            },
+            {
+              "track": "austin",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 8.599999999999994
+            },
+            {
+              "track": "catalunya",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": 4.400000000000006
+            },
+            {
+              "track": "monza",
+              "cornerN": 0,
+              "cornerBiasKph": null,
+              "cornerRmsKph": null,
+              "trapKph": -4.5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "candidate": ".cache/wec-sector-run/b2.js",
+      "heldOut": {
+        "all": {
+          "n": 67,
+          "base": 1.113,
+          "cand": 1.118,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1": {
+          "n": 34,
+          "base": 0.865,
+          "cand": 0.865,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec": {
+          "n": 33,
+          "base": 1.321,
+          "cand": 1.329,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1/2025": {
+          "n": 20,
+          "base": 0.84,
+          "cand": 0.84,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1/2026": {
+          "n": 14,
+          "base": 0.9,
+          "cand": 0.9,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmh/2025": {
+          "n": 5,
+          "base": 1.432,
+          "cand": 1.303,
+          "reason": "rejected: gain within noise"
+        },
+        "wec-lmh/2026": {
+          "n": 6,
+          "base": 1.041,
+          "cand": 0.978,
+          "reason": "rejected: gain within noise"
+        },
+        "wec-lmdh/2025": {
+          "n": 5,
+          "base": 1.238,
+          "cand": 1.418,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmdh/2026": {
+          "n": 6,
+          "base": 1.071,
+          "cand": 1.07,
+          "reason": "rejected: gain within noise"
+        },
+        "wec-lmgt3/2025": {
+          "n": 5,
+          "base": 1.733,
+          "cand": 1.799,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmgt3/2026": {
+          "n": 6,
+          "base": 1.37,
+          "cand": 1.353,
+          "reason": "rejected: gain within noise"
+        }
+      },
+      "physical": {
+        "f1/2023": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseBiasKph": -11.644799999999998,
+            "candBiasKph": -11.644799999999998,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseRmsKph": 6.597413781172135,
+            "candRmsKph": 6.597413781172135,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2024": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseBiasKph": -12.972722222222224,
+            "candBiasKph": -12.972722222222224,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseRmsKph": 10.324472015017955,
+            "candRmsKph": 10.324472015017955,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2025": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseBiasKph": -13.005909090909093,
+            "candBiasKph": -13.005909090909093,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseRmsKph": 7.656709122783044,
+            "candRmsKph": 7.656709122783044,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2026": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseBiasKph": -14.321882352941177,
+            "candBiasKph": -14.321882352941177,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseRmsKph": 14.130067728075474,
+            "candRmsKph": 14.130067728075474,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 10.020279437221287,
+            "candRmsKph": 9.99859990198627,
+            "rmsChangeKph": -0.021679535235017866
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.3660065359413696,
+            "candRmsKph": 3.6326299013249463,
+            "rmsChangeKph": 0.2666233653835768
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 11.95775898736884,
+            "candRmsKph": 11.98932858837392,
+            "rmsChangeKph": 0.03156960100508144
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.41115816109427,
+            "candRmsKph": 3.5377959240182433,
+            "rmsChangeKph": 0.12663776292397344
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 5.803964162535818,
+            "candRmsKph": 5.576737397439487,
+            "rmsChangeKph": -0.2272267650963311
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 6,
+            "baseRmsKph": 8.291159951016082,
+            "candRmsKph": 8.367695819837927,
+            "rmsChangeKph": 0.07653586882184449
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        }
+      }
+    },
+    {
+      "candidate": ".cache/wec-sector-run/b1.js",
+      "heldOut": {
+        "all": {
+          "n": 67,
+          "base": 1.113,
+          "cand": 1.112,
+          "reason": "rejected: gain within noise"
+        },
+        "f1": {
+          "n": 34,
+          "base": 0.865,
+          "cand": 0.865,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec": {
+          "n": 33,
+          "base": 1.321,
+          "cand": 1.319,
+          "reason": "rejected: gain within noise"
+        },
+        "f1/2025": {
+          "n": 20,
+          "base": 0.84,
+          "cand": 0.84,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1/2026": {
+          "n": 14,
+          "base": 0.9,
+          "cand": 0.9,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmh/2025": {
+          "n": 5,
+          "base": 1.432,
+          "cand": 1.304,
+          "reason": "rejected: gain within noise"
+        },
+        "wec-lmh/2026": {
+          "n": 6,
+          "base": 1.041,
+          "cand": 0.954,
+          "reason": "accepted: held-out error lower beyond noise"
+        },
+        "wec-lmdh/2025": {
+          "n": 5,
+          "base": 1.238,
+          "cand": 1.45,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmdh/2026": {
+          "n": 6,
+          "base": 1.071,
+          "cand": 1.026,
+          "reason": "accepted: held-out error lower beyond noise"
+        },
+        "wec-lmgt3/2025": {
+          "n": 5,
+          "base": 1.733,
+          "cand": 1.793,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmgt3/2026": {
+          "n": 6,
+          "base": 1.37,
+          "cand": 1.329,
+          "reason": "accepted: held-out error lower beyond noise"
+        }
+      },
+      "physical": {
+        "f1/2023": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseBiasKph": -11.644799999999998,
+            "candBiasKph": -11.644799999999998,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseRmsKph": 6.597413781172135,
+            "candRmsKph": 6.597413781172135,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2024": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseBiasKph": -12.972722222222224,
+            "candBiasKph": -12.972722222222224,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseRmsKph": 10.324472015017955,
+            "candRmsKph": 10.324472015017955,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2025": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseBiasKph": -13.005909090909093,
+            "candBiasKph": -13.005909090909093,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseRmsKph": 7.656709122783044,
+            "candRmsKph": 7.656709122783044,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2026": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseBiasKph": -14.321882352941177,
+            "candBiasKph": -14.321882352941177,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseRmsKph": 14.130067728075474,
+            "candRmsKph": 14.130067728075474,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 10.020279437221287,
+            "candRmsKph": 10.046790532304327,
+            "rmsChangeKph": 0.026511095083039393
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.3660065359413696,
+            "candRmsKph": 3.4635242167480382,
+            "rmsChangeKph": 0.09751768080666867
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 11.95775898736884,
+            "candRmsKph": 11.995915971696386,
+            "rmsChangeKph": 0.03815698432754644
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.41115816109427,
+            "candRmsKph": 3.42724379056993,
+            "rmsChangeKph": 0.016085629475659946
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 5.803964162535818,
+            "candRmsKph": 5.644111976210268,
+            "rmsChangeKph": -0.15985218632555043
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 6,
+            "baseRmsKph": 8.291159951016082,
+            "candRmsKph": 8.344858696626714,
+            "rmsChangeKph": 0.053698745610631704
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        }
+      }
+    },
+    {
+      "candidate": ".cache/wec-sector-run/b4.js",
+      "heldOut": {
+        "all": {
+          "n": 67,
+          "base": 1.113,
+          "cand": 1.13,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1": {
+          "n": 34,
+          "base": 0.865,
+          "cand": 0.865,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec": {
+          "n": 33,
+          "base": 1.321,
+          "cand": 1.35,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1/2025": {
+          "n": 20,
+          "base": 0.84,
+          "cand": 0.84,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "f1/2026": {
+          "n": 14,
+          "base": 0.9,
+          "cand": 0.9,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmh/2025": {
+          "n": 5,
+          "base": 1.432,
+          "cand": 1.471,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmh/2026": {
+          "n": 6,
+          "base": 1.041,
+          "cand": 1.013,
+          "reason": "rejected: gain within noise"
+        },
+        "wec-lmdh/2025": {
+          "n": 5,
+          "base": 1.238,
+          "cand": 1.501,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmdh/2026": {
+          "n": 6,
+          "base": 1.071,
+          "cand": 0.982,
+          "reason": "accepted: held-out error lower beyond noise"
+        },
+        "wec-lmgt3/2025": {
+          "n": 5,
+          "base": 1.733,
+          "cand": 1.783,
+          "reason": "rejected: worse on held-out rows"
+        },
+        "wec-lmgt3/2026": {
+          "n": 6,
+          "base": 1.37,
+          "cand": 1.306,
+          "reason": "rejected: gain within noise"
+        }
+      },
+      "physical": {
+        "f1/2023": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseBiasKph": -11.644799999999998,
+            "candBiasKph": -11.644799999999998,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "baku",
+              "miami",
+              "monte-carlo",
+              "spielberg",
+              "hungaroring",
+              "monza",
+              "singapore",
+              "suzuka",
+              "lusail",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "yas-marina-circuit"
+            ],
+            "n": 15,
+            "baseRmsKph": 6.597413781172135,
+            "candRmsKph": 6.597413781172135,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2024": {
+          "corner": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseBiasKph": -12.972722222222224,
+            "candBiasKph": -12.972722222222224,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "sakhir",
+              "jeddah",
+              "suzuka",
+              "shanghai",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "zandvoort",
+              "monza",
+              "baku",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "las-vegas",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 18,
+            "baseRmsKph": 10.324472015017955,
+            "candRmsKph": 10.324472015017955,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2025": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseBiasKph": -13.005909090909093,
+            "candBiasKph": -13.005909090909093,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "sakhir",
+              "jeddah",
+              "miami",
+              "imola",
+              "monte-carlo",
+              "catalunya",
+              "montreal",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "zandvoort",
+              "monza",
+              "singapore",
+              "austin",
+              "mexico-city",
+              "interlagos",
+              "lusail",
+              "yas-marina-circuit"
+            ],
+            "n": 22,
+            "baseRmsKph": 7.656709122783044,
+            "candRmsKph": 7.656709122783044,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "f1/2026": {
+          "corner": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseBiasKph": -14.321882352941177,
+            "candBiasKph": -14.321882352941177,
+            "absBiasChangeKph": 0
+          },
+          "trap": {
+            "tracks": [
+              "melbourne",
+              "shanghai",
+              "suzuka",
+              "miami",
+              "monte-carlo",
+              "catalunya",
+              "spielberg",
+              "silverstone",
+              "spa-francorchamps",
+              "hungaroring",
+              "monza",
+              "madring",
+              "baku",
+              "kuala-lumpur",
+              "singapore",
+              "austin",
+              "mexico-city"
+            ],
+            "n": 17,
+            "baseRmsKph": 14.130067728075474,
+            "candRmsKph": 14.130067728075474,
+            "rmsChangeKph": 0
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 10.020279437221287,
+            "candRmsKph": 10.003499387714273,
+            "rmsChangeKph": -0.016780049507014283
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.3660065359413696,
+            "candRmsKph": 3.9061489986942335,
+            "rmsChangeKph": 0.5401424627528639
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 11.95775898736884,
+            "candRmsKph": 12.015157094270558,
+            "rmsChangeKph": 0.05739810690171865
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmdh/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 5,
+            "baseRmsKph": 3.41115816109427,
+            "candRmsKph": 3.7552629734813494,
+            "rmsChangeKph": 0.3441048123870796
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2025": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "lusail",
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "sakhir"
+            ],
+            "n": 5,
+            "baseRmsKph": 5.803964162535818,
+            "candRmsKph": 5.428443607517723,
+            "rmsChangeKph": -0.37552055501809534
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        },
+        "wec-lmgt3/2026": {
+          "corner": {
+            "tracks": [],
+            "n": 0,
+            "baseBiasKph": null,
+            "candBiasKph": null,
+            "absBiasChangeKph": null
+          },
+          "trap": {
+            "tracks": [
+              "imola",
+              "spa-francorchamps",
+              "interlagos",
+              "austin",
+              "catalunya",
+              "monza"
+            ],
+            "n": 6,
+            "baseRmsKph": 8.291159951016082,
+            "candRmsKph": 9.053728513711901,
+            "rmsChangeKph": 0.7625685626958187
+          },
+          "newBoundHits": [],
+          "note": "Positive change is worse; diagnostics do not change the held-out gate. Missing data is not a pass."
+        }
+      }
+    }
+  ]
+}

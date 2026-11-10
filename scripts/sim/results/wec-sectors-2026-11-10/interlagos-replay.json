@@ -1,0 +1,243 @@
+{
+  "inputs": {
+    "archiveGeometry": "4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1",
+    "repositoryGeometry": "fe67d1ecf2a4c151f35f98e3da334d835881904ffb4ebda24488983952cee5eb",
+    "B": "5c96aea699f06ae59fbf1c466e7305c2cbc9e83e45e373b5e6742b4799657072",
+    "production": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586"
+  },
+  "sources": {
+    "repository": {
+      "year": 2025,
+      "sessionKey": 9865,
+      "lengthM": 4230.354610077961,
+      "sources": [
+        "OpenF1 car positions (qualifying)",
+        "MultiViewer circuit corners",
+        "bacinger/f1-circuits (MIT)"
+      ]
+    },
+    "archive": {
+      "year": 2026,
+      "sessionKey": 11408,
+      "lengthM": 4227.802814040021,
+      "sources": [
+        "OpenF1 car positions (qualifying)",
+        "MultiViewer circuit corners",
+        "bacinger/f1-circuits (MIT)"
+      ]
+    }
+  },
+  "transferEqualsB": true,
+  "BInterlagos": 0.9823,
+  "rows": [
+    {
+      "group": "f1/2023",
+      "realSec": 70.162,
+      "rain": true,
+      "fitted": false,
+      "note": "Wet observation, excluded from fit; dry-model replay with shared 2025 factors is not a validation metric",
+      "grip": 0.9602,
+      "drag": 0.9914,
+      "multiplier": 1.0107104584775086,
+      "repository": {
+        "rawSec": 70.26368567565989,
+        "simSec": 71.01624196356576,
+        "errorSec": 0.8542419635657552,
+        "errorPct": 1.2175279546845275
+      },
+      "archive": {
+        "rawSec": 70.62948414446221,
+        "simSec": 71.38595830167932,
+        "errorSec": 1.2239583016793176,
+        "errorPct": 1.7444746467878858
+      }
+    },
+    {
+      "group": "f1/2024",
+      "realSec": 83.405,
+      "rain": true,
+      "fitted": false,
+      "note": "Wet observation, excluded from fit; dry-model replay with shared 2025 factors is not a validation metric",
+      "grip": 0.9602,
+      "drag": 0.9914,
+      "multiplier": 1.0052955341695502,
+      "repository": {
+        "rawSec": 69.88076152993179,
+        "simSec": 70.25081749040773,
+        "errorSec": -13.154182509592275,
+        "errorPct": -15.771455559729365
+      },
+      "archive": {
+        "rawSec": 70.21533565480833,
+        "simSec": 70.5871633639948,
+        "errorSec": -12.817836636005197,
+        "errorPct": -15.368187322109216
+      }
+    },
+    {
+      "group": "f1/2025",
+      "realSec": 69.511,
+      "rain": false,
+      "fitted": true,
+      "note": "Saved car, grip, drag and rounded team/development adjustment",
+      "grip": 0.9602,
+      "drag": 0.9914,
+      "multiplier": 1.007810276816609,
+      "savedSimSec": 69.61,
+      "repository": {
+        "rawSec": 69.07079362924293,
+        "simSec": 69.6102556474302,
+        "errorSec": 0.09925564743019777,
+        "errorPct": 0.14279128113563466
+      },
+      "archive": {
+        "rawSec": 69.42900960100425,
+        "simSec": 69.9712693850911,
+        "errorSec": 0.4602693850911095,
+        "errorPct": 0.6621533068019492
+      }
+    },
+    {
+      "group": "f1/2026",
+      "realSec": 87.47,
+      "rain": true,
+      "fitted": false,
+      "note": "Wet observation, excluded from fit; dry-model replay with shared 2025 factors is not a validation metric",
+      "grip": 0.9602,
+      "drag": 0.9914,
+      "multiplier": 1.0073412802768167,
+      "repository": {
+        "rawSec": 71.34088638536271,
+        "simSec": 71.86461982751419,
+        "errorSec": -15.605380172485809,
+        "errorPct": -17.840837055545688
+      },
+      "archive": {
+        "rawSec": 71.64742762516697,
+        "simSec": 72.17341147247626,
+        "errorSec": -15.296588527523738,
+        "errorPct": -17.487811281037768
+      }
+    },
+    {
+      "group": "wec-lmh/2025",
+      "realSec": 82.94800000000001,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9602,
+      "savedSimSec": 82.848,
+      "repository": {
+        "rawSec": 82.62527919987284,
+        "simSec": 82.62527919987284,
+        "errorSec": -0.32272080012717197,
+        "errorPct": -0.3890639920518524
+      },
+      "archive": {
+        "rawSec": 82.84751609735316,
+        "simSec": 82.84751609735316,
+        "errorSec": -0.10048390264684315,
+        "errorPct": -0.12114083841303636
+      }
+    },
+    {
+      "group": "wec-lmh/2026",
+      "realSec": 83.387,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9823,
+      "savedSimSec": 82.671,
+      "repository": {
+        "rawSec": 82.46712942986433,
+        "simSec": 82.46712942986433,
+        "errorSec": -0.9198705701356715,
+        "errorPct": -1.1031342656956933
+      },
+      "archive": {
+        "rawSec": 82.67144217991896,
+        "simSec": 82.67144217991896,
+        "errorSec": -0.7155578200810453,
+        "errorPct": -0.8581167569058024
+      }
+    },
+    {
+      "group": "wec-lmdh/2025",
+      "realSec": 82.57,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9823,
+      "savedSimSec": 82.343,
+      "repository": {
+        "rawSec": 82.12955058776716,
+        "simSec": 82.12955058776716,
+        "errorSec": -0.4404494122328373,
+        "errorPct": -0.5334254720029463
+      },
+      "archive": {
+        "rawSec": 82.34270615598739,
+        "simSec": 82.34270615598739,
+        "errorSec": -0.22729384401260688,
+        "errorPct": -0.2752741237890377
+      }
+    },
+    {
+      "group": "wec-lmdh/2026",
+      "realSec": 83.041,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9823,
+      "savedSimSec": 82.645,
+      "repository": {
+        "rawSec": 82.46395732363965,
+        "simSec": 82.46395732363965,
+        "errorSec": -0.5770426763603496,
+        "errorPct": -0.6948888818298804
+      },
+      "archive": {
+        "rawSec": 82.64524148662866,
+        "simSec": 82.64524148662866,
+        "errorSec": -0.3957585133713337,
+        "errorPct": -0.47658206593289565
+      }
+    },
+    {
+      "group": "wec-lmgt3/2025",
+      "realSec": 93.84899999999999,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9823,
+      "savedSimSec": 92.833,
+      "repository": {
+        "rawSec": 92.73462520529819,
+        "simSec": 92.73462520529819,
+        "errorSec": -1.1143747947018028,
+        "errorPct": -1.1874125400396451
+      },
+      "archive": {
+        "rawSec": 92.83314114969086,
+        "simSec": 92.83314114969086,
+        "errorSec": -1.0158588503091295,
+        "errorPct": -1.0824397173215816
+      }
+    },
+    {
+      "group": "wec-lmgt3/2026",
+      "realSec": 93.35,
+      "rain": false,
+      "fitted": true,
+      "grip": 0.9823,
+      "savedSimSec": 91.938,
+      "repository": {
+        "rawSec": 91.84686501725685,
+        "simSec": 91.84686501725685,
+        "errorSec": -1.5031349827431484,
+        "errorPct": -1.6102142289696308
+      },
+      "archive": {
+        "rawSec": 91.93821540915076,
+        "simSec": 91.93821540915076,
+        "errorSec": -1.411784590849237,
+        "errorPct": -1.5123562837163762
+      }
+    }
+  ]
+}

@@ -1,0 +1,1363 @@
+{
+  "schemaVersion": 1,
+  "method": "Best dry lap per class-season, production car/grip/weather; any failing class excludes track-year",
+  "inputs": {
+    "wec": "ce25a479ab6b256d2ac597fa34c5941f7f3166db3bd4112e92cd355502a11960",
+    "geometry": "4fc1b3ecb014434b70d54be520803da3af7bf9ff19b63508c9518f29dd3b67f1",
+    "production": "47e7c24a6df9bc67fd59dcd4fa0de6ffee290cfc02810d1e6742bca901f39586",
+    "mapping": "84b67c533addaf9ac58e83c2c0d70e949825e3a259fc11d15068abaf440d120a",
+    "transfer": "b2d3bba7113685d1382415b4717bd26a6df2aa73f4664c0c88e64068d08e3705",
+    "timing71": "4852d273a360192fe0007c756c3a1e0f70d5aefeeb2cd46198c49878a7c12a76"
+  },
+  "lengthTolerancePct": 2,
+  "shareLimitPP": 3,
+  "sectorSumToleranceSec": 0.002,
+  "ratios": [
+    {
+      "track": "lusail",
+      "year": 2025,
+      "officialLengthM": 5418,
+      "modelLengthM": 5387.456634223007,
+      "ratio": 0.9943626124442613
+    },
+    {
+      "track": "imola",
+      "year": 2025,
+      "officialLengthM": 4909,
+      "modelLengthM": 4866.7577182074765,
+      "ratio": 0.9913949313928451
+    },
+    {
+      "track": "spa-francorchamps",
+      "year": 2025,
+      "officialLengthM": 7003.9,
+      "modelLengthM": 6947.285901200638,
+      "ratio": 0.9919167751111008
+    },
+    {
+      "track": "interlagos",
+      "year": 2025,
+      "officialLengthM": 4309,
+      "modelLengthM": 4227.802814040021,
+      "ratio": 0.9811563736458624
+    },
+    {
+      "track": "austin",
+      "year": 2025,
+      "officialLengthM": 5513,
+      "modelLengthM": 5422.794096225596,
+      "ratio": 0.9836376013469248
+    },
+    {
+      "track": "sakhir",
+      "year": 2025,
+      "officialLengthM": 5412,
+      "modelLengthM": 5337.45469528886,
+      "ratio": 0.9862259230023763
+    },
+    {
+      "track": "imola",
+      "year": 2026,
+      "officialLengthM": 4909,
+      "modelLengthM": 4866.7577182074765,
+      "ratio": 0.9913949313928451
+    },
+    {
+      "track": "spa-francorchamps",
+      "year": 2026,
+      "officialLengthM": 7003.9,
+      "modelLengthM": 6947.285901200638,
+      "ratio": 0.9919167751111008
+    },
+    {
+      "track": "interlagos",
+      "year": 2026,
+      "officialLengthM": 4309,
+      "modelLengthM": 4227.802814040021,
+      "ratio": 0.9811563736458624
+    },
+    {
+      "track": "austin",
+      "year": 2026,
+      "officialLengthM": 5513,
+      "modelLengthM": 5422.794096225596,
+      "ratio": 0.9836376013469248
+    },
+    {
+      "track": "catalunya",
+      "year": 2026,
+      "officialLengthM": 4657,
+      "modelLengthM": 4610.8081959711935,
+      "ratio": 0.9900812102149869
+    },
+    {
+      "track": "monza",
+      "year": 2026,
+      "officialLengthM": 5793,
+      "modelLengthM": 5759.49863131126,
+      "ratio": 0.9942169223737719
+    },
+    {
+      "track": "le-mans",
+      "year": 2026,
+      "officialLengthM": 13625.7,
+      "modelLengthM": null,
+      "ratio": null
+    }
+  ],
+  "checks": [
+    {
+      "class": "lmh",
+      "year": 2025,
+      "track": "lusail",
+      "reason": null,
+      "simShares": [
+        36.47456228384426,
+        33.736988470947736,
+        29.788449245208014
+      ],
+      "realShares": [
+        36.30069439502231,
+        33.63393283786944,
+        30.06537276710824
+      ],
+      "deltaPP": [
+        0.17386788882194537,
+        0.10305563307829857,
+        -0.2769235219002262
+      ],
+      "maxAbsPP": 0.2769235219002262,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "track": "lusail",
+      "reason": null,
+      "simShares": [
+        36.46649859816494,
+        33.72099667539955,
+        29.812504726435513
+      ],
+      "realShares": [
+        36.28306005380984,
+        33.5773389512158,
+        30.139600994974362
+      ],
+      "deltaPP": [
+        0.18343854435509854,
+        0.1436577241837469,
+        -0.327096268538849
+      ],
+      "maxAbsPP": 0.327096268538849,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "track": "lusail",
+      "reason": null,
+      "simShares": [
+        36.47544706529953,
+        32.811914557043146,
+        30.712638377657328
+      ],
+      "realShares": [
+        36.267905604201616,
+        33.088590474350305,
+        30.643503921448083
+      ],
+      "deltaPP": [
+        0.20754146109791094,
+        -0.2766759173071591,
+        0.06913445620924463
+      ],
+      "maxAbsPP": 0.2766759173071591,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2025,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        21.007049691891883,
+        32.26589937656691,
+        46.727050931541214
+      ],
+      "realShares": [
+        20.594916779127306,
+        32.57422402159244,
+        46.83085919928026
+      ],
+      "deltaPP": [
+        0.41213291276457653,
+        -0.3083246450255359,
+        -0.10380826773904772
+      ],
+      "maxAbsPP": 0.41213291276457653,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        20.97633185511741,
+        32.29087288755042,
+        46.73279525733217
+      ],
+      "realShares": [
+        20.729821438504754,
+        32.581632085442514,
+        46.688546476052736
+      ],
+      "deltaPP": [
+        0.24651041661265793,
+        -0.29075919789209337,
+        0.044248781279435434
+      ],
+      "maxAbsPP": 0.29075919789209337,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        21.069940458865442,
+        32.47702038678724,
+        46.453039154347316
+      ],
+      "realShares": [
+        20.68389265680277,
+        32.598753005101344,
+        46.717354338095895
+      ],
+      "deltaPP": [
+        0.38604780206267364,
+        -0.12173261831410542,
+        -0.2643151837485789
+      ],
+      "maxAbsPP": 0.38604780206267364,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2025,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.587708334050856,
+        45.13558133633942,
+        25.27671032960972
+      ],
+      "realShares": [
+        28.332093264335338,
+        46.25095095178779,
+        25.416955783876872
+      ],
+      "deltaPP": [
+        1.2556150697155175,
+        -1.1153696154483725,
+        -0.14024545426715207
+      ],
+      "maxAbsPP": 1.2556150697155175,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.64723826090239,
+        45.03141764603965,
+        25.32134409305796
+      ],
+      "realShares": [
+        28.420072185353362,
+        45.920030603928616,
+        25.65989721071803
+      ],
+      "deltaPP": [
+        1.2271660755490288,
+        -0.8886129578889665,
+        -0.33855311766006935
+      ],
+      "maxAbsPP": 1.2271660755490288,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.662957983468715,
+        44.93917628623363,
+        25.397865730297646
+      ],
+      "realShares": [
+        28.511892661109986,
+        45.81578718090204,
+        25.67232015798798
+      ],
+      "deltaPP": [
+        1.151065322358729,
+        -0.8766108946684099,
+        -0.27445442769033335
+      ],
+      "maxAbsPP": 1.151065322358729,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2025,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        25.899901827490833,
+        51.32497567129056,
+        22.775122501218608
+      ],
+      "realShares": [
+        25.594348266383758,
+        51.06572792592949,
+        23.33992380768674
+      ],
+      "deltaPP": [
+        0.3055535611070752,
+        0.25924774536107265,
+        -0.5648013064681336
+      ],
+      "maxAbsPP": 0.5648013064681336,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        25.947959873578014,
+        51.20684463146243,
+        22.845195494959558
+      ],
+      "realShares": [
+        25.67397359815914,
+        50.84534334504057,
+        23.480683056800295
+      ],
+      "deltaPP": [
+        0.2739862754188742,
+        0.36150128642186274,
+        -0.635487561840737
+      ],
+      "maxAbsPP": 0.635487561840737,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        25.867434330709727,
+        50.84227326698899,
+        23.290292402301287
+      ],
+      "realShares": [
+        25.80954512035291,
+        50.13265991113384,
+        24.05779496851325
+      ],
+      "deltaPP": [
+        0.05788921035681582,
+        0.7096133558551472,
+        -0.767502566211963
+      ],
+      "maxAbsPP": 0.767502566211963,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2025,
+      "track": "sakhir",
+      "reason": null,
+      "simShares": [
+        31.957510428621443,
+        36.437743336922495,
+        31.604746234456066
+      ],
+      "realShares": [
+        31.811544006140828,
+        36.85525995544157,
+        31.33319603841762
+      ],
+      "deltaPP": [
+        0.14596642248061542,
+        -0.4175166185190733,
+        0.2715501960384472
+      ],
+      "maxAbsPP": 0.4175166185190733,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "track": "sakhir",
+      "reason": null,
+      "simShares": [
+        31.89209741922173,
+        36.49321110539055,
+        31.614691475387726
+      ],
+      "realShares": [
+        31.747301079568174,
+        36.86339417721283,
+        31.38930474321899
+      ],
+      "deltaPP": [
+        0.14479633965355632,
+        -0.3701830718222823,
+        0.22538673216873661
+      ],
+      "maxAbsPP": 0.3701830718222823,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "track": "sakhir",
+      "reason": null,
+      "simShares": [
+        31.750645720555507,
+        36.10156659991955,
+        32.147787679524946
+      ],
+      "realShares": [
+        31.692982960850234,
+        36.572114317653146,
+        31.734902721496617
+      ],
+      "deltaPP": [
+        0.05766275970527346,
+        -0.47054771773359505,
+        0.4128849580283287
+      ],
+      "maxAbsPP": 0.47054771773359505,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        20.831531837868372,
+        32.459714230845286,
+        46.708753931286346
+      ],
+      "realShares": [
+        20.492185418701713,
+        32.85565225113223,
+        46.652162330166064
+      ],
+      "deltaPP": [
+        0.33934641916665953,
+        -0.39593802028694114,
+        0.05659160112028161
+      ],
+      "maxAbsPP": 0.39593802028694114,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        20.83200626906099,
+        32.47945521042448,
+        46.68853852051452
+      ],
+      "realShares": [
+        20.550990389188115,
+        32.906800561828824,
+        46.54220904898307
+      ],
+      "deltaPP": [
+        0.281015879872875,
+        -0.42734535140434105,
+        0.14632947153145182
+      ],
+      "maxAbsPP": 0.42734535140434105,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "imola",
+      "reason": null,
+      "simShares": [
+        21.061015615288323,
+        32.49249498263356,
+        46.446489402078114
+      ],
+      "realShares": [
+        20.8408693331752,
+        32.78283472193396,
+        46.376295944890835
+      ],
+      "deltaPP": [
+        0.2201462821131237,
+        -0.2903397393003999,
+        0.07019345718727976
+      ],
+      "maxAbsPP": 0.2903397393003999,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.376482827401155,
+        45.549146745515415,
+        25.07437042708343
+      ],
+      "realShares": [
+        28.168383711967376,
+        46.60389712647012,
+        25.227719161562494
+      ],
+      "deltaPP": [
+        1.2080991154337788,
+        -1.054750380954708,
+        -0.1533487344790636
+      ],
+      "maxAbsPP": 1.2080991154337788,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.341688779474367,
+        45.59461475138372,
+        25.06369646914191
+      ],
+      "realShares": [
+        28.150891495989924,
+        46.41247431563598,
+        25.436634188374097
+      ],
+      "deltaPP": [
+        1.190797283484443,
+        -0.8178595642522595,
+        -0.372937719232187
+      ],
+      "maxAbsPP": 1.190797283484443,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "spa-francorchamps",
+      "reason": null,
+      "simShares": [
+        29.74148135867222,
+        44.84433379420469,
+        25.41418484712309
+      ],
+      "realShares": [
+        28.720756595321056,
+        45.49819927971188,
+        25.78104412496706
+      ],
+      "deltaPP": [
+        1.020724763351165,
+        -0.6538654855071968,
+        -0.36685927784397165
+      ],
+      "maxAbsPP": 1.020724763351165,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        25.990312235155017,
+        51.60500602073487,
+        22.404681744110114
+      ],
+      "realShares": [
+        26.056819408301056,
+        50.558240493122426,
+        23.384940098576518
+      ],
+      "deltaPP": [
+        -0.06650717314603938,
+        1.0467655276124432,
+        -0.9802583544664039
+      ],
+      "maxAbsPP": 1.0467655276124432,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        25.965647059643842,
+        51.64369121740798,
+        22.390661722948185
+      ],
+      "realShares": [
+        25.854698281571753,
+        50.76769306728002,
+        23.37760865114823
+      ],
+      "deltaPP": [
+        0.11094877807208903,
+        0.8759981501279555,
+        -0.9869469282000445
+      ],
+      "maxAbsPP": 0.9869469282000445,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "interlagos",
+      "reason": null,
+      "simShares": [
+        26.096990574584588,
+        50.735719051142,
+        23.167290374273414
+      ],
+      "realShares": [
+        26.051419389394752,
+        49.84359935725764,
+        24.104981253347617
+      ],
+      "deltaPP": [
+        0.04557118518983572,
+        0.8921196938843607,
+        -0.9376908790742036
+      ],
+      "maxAbsPP": 0.9376908790742036,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "austin",
+      "reason": null,
+      "simShares": [
+        21.363597151753794,
+        37.98493483805445,
+        40.65146801019175
+      ],
+      "realShares": [
+        21.335475807891445,
+        37.89501874665238,
+        40.76950544545616
+      ],
+      "deltaPP": [
+        0.02812134386234888,
+        0.08991609140206691,
+        -0.11803743526441224
+      ],
+      "maxAbsPP": 0.11803743526441224,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "austin",
+      "reason": null,
+      "simShares": [
+        21.373067046568895,
+        37.96968928704283,
+        40.657243666388275
+      ],
+      "realShares": [
+        21.33501079643807,
+        37.912450702214606,
+        40.752538501347324
+      ],
+      "deltaPP": [
+        0.038056250130825475,
+        0.057238584828226635,
+        -0.09529483495904856
+      ],
+      "maxAbsPP": 0.09529483495904856,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "austin",
+      "reason": null,
+      "simShares": [
+        21.796662569650067,
+        38.3130397971755,
+        39.890297633174434
+      ],
+      "realShares": [
+        21.624581344971745,
+        38.25807534591497,
+        40.117343309113295
+      ],
+      "deltaPP": [
+        0.17208122467832254,
+        0.05496445126053118,
+        -0.22704567593886082
+      ],
+      "maxAbsPP": 0.22704567593886082,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "catalunya",
+      "reason": null,
+      "simShares": [
+        29.24749391108912,
+        40.65931552116272,
+        30.09319056774817
+      ],
+      "realShares": [
+        29.094713071200854,
+        40.564116188452,
+        30.34117074034715
+      ],
+      "deltaPP": [
+        0.15278083988826552,
+        0.09519933271072034,
+        -0.24798017259897875
+      ],
+      "maxAbsPP": 0.24798017259897875,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "catalunya",
+      "reason": null,
+      "simShares": [
+        29.255628060307195,
+        40.649838820589714,
+        30.094533119103094
+      ],
+      "realShares": [
+        29.038662023379104,
+        40.73486680123328,
+        30.22647117538762
+      ],
+      "deltaPP": [
+        0.2169660369280919,
+        -0.08502798064356654,
+        -0.13193805628452537
+      ],
+      "maxAbsPP": 0.2169660369280919,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "catalunya",
+      "reason": null,
+      "simShares": [
+        30.031738002518303,
+        40.237366054479196,
+        29.730895943002494
+      ],
+      "realShares": [
+        29.83860580781311,
+        40.49319845838329,
+        29.668195733803614
+      ],
+      "deltaPP": [
+        0.19313219470519272,
+        -0.255832403904094,
+        0.06270020919887997
+      ],
+      "maxAbsPP": 0.255832403904094,
+      "pass": true
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "track": "monza",
+      "reason": null,
+      "simShares": [
+        33.69028505382727,
+        32.3742332579624,
+        33.935481688210324
+      ],
+      "realShares": [
+        32.21048798252003,
+        34.01739428473501,
+        33.77211773274495
+      ],
+      "deltaPP": [
+        1.4797970713072388,
+        -1.64316102677261,
+        0.1633639554653712
+      ],
+      "maxAbsPP": 1.64316102677261,
+      "pass": true
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "track": "monza",
+      "reason": null,
+      "simShares": [
+        33.655191097951956,
+        32.37701025486033,
+        33.96779864718771
+      ],
+      "realShares": [
+        32.277979884442544,
+        33.95998288037663,
+        33.76203723518082
+      ],
+      "deltaPP": [
+        1.377211213509412,
+        -1.5829726255162981,
+        0.20576141200689335
+      ],
+      "maxAbsPP": 1.5829726255162981,
+      "pass": true
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "track": "monza",
+      "reason": null,
+      "simShares": [
+        33.576087334225726,
+        31.906934039199587,
+        34.516978626574684
+      ],
+      "realShares": [
+        32.07303974221267,
+        33.85326670714052,
+        34.07369355064681
+      ],
+      "deltaPP": [
+        1.5030475920130542,
+        -1.9463326679409327,
+        0.443285075927875
+      ],
+      "maxAbsPP": 1.9463326679409327,
+      "pass": true
+    }
+  ],
+  "excluded": {},
+  "rows": {
+    "[\"lmh\",2025,\"lusail\",\"LOSAIL\",0,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"lusail\",\"LOSAIL\",1,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"lusail\",\"LOSAIL\",2,\"7\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"lusail\",\"LOSAIL\",0,\"15\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"lusail\",\"LOSAIL\",1,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"lusail\",\"LOSAIL\",2,\"38\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"lusail\",\"LOSAIL\",0,\"87\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"lusail\",\"LOSAIL\",1,\"95\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"lusail\",\"LOSAIL\",2,\"59\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"imola\",\"IMOLA\",0,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"imola\",\"IMOLA\",1,\"83\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"imola\",\"IMOLA\",2,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"imola\",\"IMOLA\",0,\"15\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"imola\",\"IMOLA\",1,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"imola\",\"IMOLA\",2,\"35\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"imola\",\"IMOLA\",0,\"87\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"imola\",\"IMOLA\",1,\"46\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"imola\",\"IMOLA\",2,\"27\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"83\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"20\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"10\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"77\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"interlagos\",\"SAO PAULO\",0,\"94\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"interlagos\",\"SAO PAULO\",1,\"93\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"interlagos\",\"SAO PAULO\",2,\"83\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"interlagos\",\"SAO PAULO\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"interlagos\",\"SAO PAULO\",1,\"38\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"interlagos\",\"SAO PAULO\",2,\"5\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"interlagos\",\"SAO PAULO\",0,\"10\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"interlagos\",\"SAO PAULO\",1,\"87\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"interlagos\",\"SAO PAULO\",2,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",0,\"7\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",1,\"8\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",2,\"94\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",1,\"5\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",2,\"15\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",0,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",1,\"60\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2025,\"sakhir\",\"BAHRAIN INTERNATIONAL CIRCUIT\",2,\"61\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"imola\",\"IMOLA\",0,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"imola\",\"IMOLA\",1,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"imola\",\"IMOLA\",2,\"8\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"imola\",\"IMOLA\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"imola\",\"IMOLA\",1,\"35\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"imola\",\"IMOLA\",2,\"20\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"imola\",\"IMOLA\",0,\"10\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"imola\",\"IMOLA\",1,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"imola\",\"IMOLA\",2,\"87\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"94\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"009\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"007\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"35\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",0,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",1,\"27\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"spa-francorchamps\",\"SPA FRANCORCHAMPS\",2,\"77\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"interlagos\",\"SAO PAULO\",0,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"interlagos\",\"SAO PAULO\",1,\"94\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"interlagos\",\"SAO PAULO\",2,\"007\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"interlagos\",\"SAO PAULO\",0,\"12\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"interlagos\",\"SAO PAULO\",1,\"38\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"interlagos\",\"SAO PAULO\",2,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"interlagos\",\"SAO PAULO\",0,\"23\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"interlagos\",\"SAO PAULO\",1,\"79\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"interlagos\",\"SAO PAULO\",2,\"87\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",0,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",1,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",2,\"007\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",0,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",1,\"38\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",2,\"19\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",0,\"23\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",1,\"27\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"austin\",\"CIRCUIT OF THE AMERICAS\",2,\"77\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",0,\"8\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",1,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",2,\"83\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",0,\"17\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",1,\"19\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",2,\"35\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",0,\"10\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",1,\"92\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"catalunya\",\"BARCELONA-CATALUNYA\",2,\"21\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",0,\"50\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",1,\"51\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",2,\"94\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",0,\"19\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",1,\"38\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmdh\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",2,\"36\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",0,\"23\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",1,\"78\"]": {
+      "eligible": true,
+      "reason": null
+    },
+    "[\"lmgt3\",2026,\"monza\",\"AUTODROMO NAZIONALE DI MONZA\",2,\"33\"]": {
+      "eligible": true,
+      "reason": null
+    }
+  },
+  "coverage": [
+    {
+      "class": "lmh",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    }
+  ]
+}

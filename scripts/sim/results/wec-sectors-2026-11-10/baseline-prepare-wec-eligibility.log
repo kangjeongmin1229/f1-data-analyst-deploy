@@ -1,0 +1,191 @@
+{
+  "ratios": [
+    {
+      "track": "lusail",
+      "year": 2025,
+      "officialLengthM": 5418,
+      "modelLengthM": 5387.456634223007,
+      "ratio": 0.9943626124442613
+    },
+    {
+      "track": "imola",
+      "year": 2025,
+      "officialLengthM": 4909,
+      "modelLengthM": 4866.7577182074765,
+      "ratio": 0.9913949313928451
+    },
+    {
+      "track": "spa-francorchamps",
+      "year": 2025,
+      "officialLengthM": 7003.9,
+      "modelLengthM": 6947.285901200638,
+      "ratio": 0.9919167751111008
+    },
+    {
+      "track": "interlagos",
+      "year": 2025,
+      "officialLengthM": 4309,
+      "modelLengthM": 4227.802814040021,
+      "ratio": 0.9811563736458624
+    },
+    {
+      "track": "austin",
+      "year": 2025,
+      "officialLengthM": 5513,
+      "modelLengthM": 5422.794096225596,
+      "ratio": 0.9836376013469248
+    },
+    {
+      "track": "sakhir",
+      "year": 2025,
+      "officialLengthM": 5412,
+      "modelLengthM": 5337.45469528886,
+      "ratio": 0.9862259230023763
+    },
+    {
+      "track": "imola",
+      "year": 2026,
+      "officialLengthM": 4909,
+      "modelLengthM": 4866.7577182074765,
+      "ratio": 0.9913949313928451
+    },
+    {
+      "track": "spa-francorchamps",
+      "year": 2026,
+      "officialLengthM": 7003.9,
+      "modelLengthM": 6947.285901200638,
+      "ratio": 0.9919167751111008
+    },
+    {
+      "track": "interlagos",
+      "year": 2026,
+      "officialLengthM": 4309,
+      "modelLengthM": 4227.802814040021,
+      "ratio": 0.9811563736458624
+    },
+    {
+      "track": "austin",
+      "year": 2026,
+      "officialLengthM": 5513,
+      "modelLengthM": 5422.794096225596,
+      "ratio": 0.9836376013469248
+    },
+    {
+      "track": "catalunya",
+      "year": 2026,
+      "officialLengthM": 4657,
+      "modelLengthM": 4610.8081959711935,
+      "ratio": 0.9900812102149869
+    },
+    {
+      "track": "monza",
+      "year": 2026,
+      "officialLengthM": 5793,
+      "modelLengthM": 5759.49863131126,
+      "ratio": 0.9942169223737719
+    },
+    {
+      "track": "le-mans",
+      "year": 2026,
+      "officialLengthM": 13625.7,
+      "modelLengthM": null,
+      "ratio": null
+    }
+  ],
+  "excluded": {},
+  "coverage": [
+    {
+      "class": "lmh",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmdh",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmgt3",
+      "year": 2025,
+      "laps": 15,
+      "sectorTerms": 15,
+      "tracks": [
+        "lusail",
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "sakhir"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 5
+    },
+    {
+      "class": "lmh",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    },
+    {
+      "class": "lmdh",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    },
+    {
+      "class": "lmgt3",
+      "year": 2026,
+      "laps": 18,
+      "sectorTerms": 18,
+      "tracks": [
+        "imola",
+        "spa-francorchamps",
+        "interlagos",
+        "austin",
+        "catalunya",
+        "monza"
+      ],
+      "positionedTraps": 0,
+      "heldOutTracksWithSectors": 6
+    }
+  ]
+}
