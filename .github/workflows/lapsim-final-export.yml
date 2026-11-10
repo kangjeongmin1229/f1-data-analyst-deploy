@@ -1,0 +1,74 @@
+name: LapSim checkpoint final export
+on:
+  push:
+    branches: ['exp/lapsim-owner-jobs-2026-11-11']
+    paths: ['.github/workflows/lapsim-final-export.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  export:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        arm: [control, candidate]
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: kangjeongmin1229/f1-data-analyst-deploy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Wait for existing F1 jobs without restarting them
+        run: |
+          for i in $(seq 1 160); do
+            gh api repos/$GH_REPO/actions/runs/42913368752/jobs?per_page=100 > /tmp/jobs.json
+            if jq -e '[.jobs[] | select(.name | startswith("f1 ("))] | length == 16 and all(.[]; .status == "completed")' /tmp/jobs.json; then
+              jq -e '[.jobs[] | select(.name | startswith("f1 ("))] | all(.[]; .conclusion == "success")' /tmp/jobs.json
+              exit 0
+            fi
+            date -Is
+            sleep 60
+          done
+          exit 1
+      - name: Download completed checkpoints and pinned inputs
+        run: |
+          gh run download 42913368752 -p 'f1-*' -D downloaded-results
+          mkdir -p .cache
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+      - name: Export with zero optimizer rounds and verify reproduction
+        run: |
+          set -o pipefail
+          mkdir -p final-output
+          node scripts/sim/owner-finalize.mjs '${{ matrix.arm }}' downloaded-results 2>&1 | tee final-output/export.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-f1-${{ matrix.arm }}
+          path: final-output/
+          retention-days: 30
+  compare:
+    needs: export
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: final-f1-*
+          path: final-results
+      - run: node scripts/sim/owner-compare-final.mjs final-results
+      - run: cat comparison/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-f1-comparison
+          path: comparison/
+          retention-days: 30
