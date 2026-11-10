@@ -197,7 +197,8 @@ When a time box ends, park and continue. Record incomplete fits and their conver
 
 | Check | Pass value |
 |---|---|
-| F1 BCD convergence | Fit score falls by less than 1 % between the last two rounds, in the main fit and in every held-out fold |
+| F1 BCD main-fit convergence | Nonnegative score decrease strictly below 1% between the last two rounds; retain the existing main-fit minimum and maximum of 5 and 10 rounds. |
+| F1 held-out fold stopping — owner revision, 2026-11-11 | Stop at the first nonnegative score decrease strictly below 1% (at least two scores are needed), or at the round count where that arm's main fit converged, whichever comes first. Apply the same rule to control and candidate. Preserve already finished folds and report rounds used and stop reason for every fold. A fold stopped by the main-round limit is complete under this rule, but is not claimed to have met numerical convergence. |
 | WEC convergence | Compare two tolerances a factor of 100 apart on identical inputs and settings. Every class-season held-out RMS difference must be strictly below 0.02 percentage points, with no pooled/bop/gripSource choice flips. The main fit and folds must stop on both objective change and simplex size. |
 | Baseline is valid | The baseline in the experiment is within 0.05 percentage points of the same baseline at production settings, per group. If not, the settings are too short: results are not usable. |
 | Gate | `gate.mjs` says "accepted" on all rows, and no group is "worse" |
