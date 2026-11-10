@@ -1,0 +1,46 @@
+[
+  {
+    "year": 2023,
+    "teams": 10,
+    "laps": 20,
+    "samples": 6123,
+    "medianIntervalSec": 0.24000000953674316,
+    "medianIntervalHz": 4.166666501098216,
+    "observedSamplesPerSecond": 3.7603207191309345,
+    "distanceM": 114032.15071085426,
+    "accuracyPct": 81.64011847470972
+  },
+  {
+    "year": 2024,
+    "teams": 10,
+    "laps": 20,
+    "samples": 6116,
+    "medianIntervalSec": 0.24000000953674316,
+    "medianIntervalHz": 4.166666501098216,
+    "observedSamplesPerSecond": 3.818926975569303,
+    "distanceM": 114341.70209801859,
+    "accuracyPct": 83.25535125187838
+  },
+  {
+    "year": 2025,
+    "teams": 10,
+    "laps": 20,
+    "samples": 5961,
+    "medianIntervalSec": 0.24000000953674316,
+    "medianIntervalHz": 4.166666501098216,
+    "observedSamplesPerSecond": 3.748424747091269,
+    "distanceM": 114065.96163342395,
+    "accuracyPct": 83.43949481269087
+  },
+  {
+    "year": 2026,
+    "teams": 11,
+    "laps": 22,
+    "samples": 6833,
+    "medianIntervalSec": 0.24000000953674316,
+    "medianIntervalHz": 4.166666501098216,
+    "observedSamplesPerSecond": 3.751186747115943,
+    "distanceM": 123207.67941299411,
+    "accuracyPct": 79.85675360606535
+  }
+]

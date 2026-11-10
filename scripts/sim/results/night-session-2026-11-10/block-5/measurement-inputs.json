@@ -1,0 +1,16 @@
+{
+  "declaredIn": "docs/lapsim-night-session-2026-11-10.md Block 5",
+  "createdAt": "2026-11-10T14:56:56.657884+00:00",
+  "inputs": {
+    "2023-monza.json": "09505309eff589f5a5c78c9afffe972525616431df6ce0ecf52a59e5d460acc4",
+    "2024-monza.json": "616707a40ba449c6c5ddcb5bf028fd93238da4abc76cbd462f476d4f42318d0e",
+    "2025-monza.json": "d874fa9bd7fce9016c8736cc2d03574baabe158deadf9f3a905f8522fa27a149",
+    "2026-monza.json": "55ee2a316c9c267ebebc05b9732fa8b9192da76bbe04fba2ce7d365032ffbeb2"
+  },
+  "sessions": [
+    9153,
+    9586,
+    9908,
+    11357
+  ]
+}

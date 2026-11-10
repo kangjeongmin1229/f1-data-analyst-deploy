@@ -1,0 +1,37 @@
+{
+  "at": "2026-11-10T15:09:51.547Z",
+  "timedOut": false,
+  "statuses": [
+    {
+      "arm": "control",
+      "label": "calibrate",
+      "code": 0,
+      "signal": null,
+      "seconds": 1570.204,
+      "complete": true
+    },
+    {
+      "arm": "bop",
+      "label": "calibrate",
+      "code": 0,
+      "signal": null,
+      "seconds": 1618.503,
+      "complete": true
+    },
+    {
+      "arm": "sector2",
+      "label": "calibrate",
+      "code": 0,
+      "signal": null,
+      "seconds": 1649.325,
+      "complete": true
+    }
+  ],
+  "complete": true,
+  "integrity": {
+    "at": "2026-11-10T15:09:51.571Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  }
+}

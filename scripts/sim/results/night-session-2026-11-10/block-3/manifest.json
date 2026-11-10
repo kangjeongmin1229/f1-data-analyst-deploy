@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-11-10T14:42:14.985Z",
+  "deadline": "2026-11-10T16:10:20.000Z",
+  "sentinel": {
+    "at": "2026-11-10T14:42:14.984Z",
+    "productionFiles": 45,
+    "pinnedInputs": 12,
+    "pass": true
+  },
+  "common": {
+    "LAPSIM_ONLY": "wec",
+    "LAPSIM_ITERS": "70",
+    "LAPSIM_HOLDOUT_ITERS": "25",
+    "LAPSIM_WEC_NM_TOL": "1e-4",
+    "LAPSIM_WEC_NM_CAP": "2000",
+    "LAPSIM_WEC_TRAP_POSITION": "off",
+    "LAPSIM_WEC_SECTORS": "off"
+  },
+  "variants": {
+    "control": {},
+    "bop": {
+      "LAPSIM_WEC_MODEL_BOP": "on"
+    },
+    "sector2": {
+      "LAPSIM_WEC_SECTORS": "on",
+      "LAPSIM_WEC_SECTOR_WEIGHT": "2"
+    }
+  },
+  "inputs": {
+    "scripts/sim/data/wec-model-identities.json": "6b119c953a5614e9918519d4629538fd0d2fb023f649d485fc7a7c7c0c07cb44",
+    "scripts/sim/data/wec-bop-verified-2025.json": "4c01dfc03ec9234d953fdd4def31e52d0c4786de24e525a45aa6041d00b6a666"
+  },
+  "baseline": "Current production, repository geometry, current B; refit at R",
+  "pass": "Pooled gate accepts; no class-season worse; no cap hits; exact dry reproduction; F1 unchanged",
+  "bop": "Existing relative mass/power formula, forced for the independent experimental arm in 2025; official exact car model join; no numeric 2026 BoP assumed",
+  "sector": "One allowed retest of sector weight 2 at R, production-frozen eligibility",
+  "eligibilitySha256": "7f7a91620cf845b5b19d408e8f376e35d48370632a2675871061ea4bc094c6f6"
+}

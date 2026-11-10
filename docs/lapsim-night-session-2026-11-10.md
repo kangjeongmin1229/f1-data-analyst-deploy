@@ -140,3 +140,16 @@ The whole-team gear test finished without fitting a physics model. All selected 
 | Total team-season-gear rows | 328 |
 
 The derived table is `scripts/sim/data/f1-gear-measurements.json`; the readable report is `docs/lapsim-f1-gears-2026-11-10.md`. Raw source responses remain in the experiment cache. Accuracy covers selected Monza qualifying laps only. Low gears often have too few stable, full-throttle samples; those values stay blank. No claim is made about other circuits or absolute gearbox ratios.
+
+
+## Block 3 — done: both tests rejected
+
+The fixed-input source audit is in `docs/lapsim-wec-fixed-inputs-2026-11-10.md`. Missing homologation aero limits and unverified event values remain blank. No prior or bound changed. Both paired tests finished at R. The control is exactly equal to the earlier flags-off R control for the saved WEC series; F1 seasons and projections are unchanged.
+
+| Arm | Pooled held-out n | RMS, % | Change from control, pp | Gate | Cap hits | Dry reproduced rows | Largest error, s |
+|---|---:|---:|---:|---|---:|---:|---:|
+| control | 33 | 1.166709 | +0.000000 | reference | 0 | 33 | 0.000000 |
+| bop | 33 | 1.271006 | +0.104298 | rejected: worse on held-out rows | 0 | 33 | 0.000000 |
+| sector2 | 33 | 1.196784 | +0.030075 | rejected: worse on held-out rows | 0 | 33 | 0.000000 |
+
+Model-matched BoP worsens both Hypercar classes in the tested season. The sector retest worsens several class-seasons and pooled WEC. Keep both flags off; no further sector retest is authorized by this block. Neither test supplies a reason to loosen the downforce bound. The detailed report records car values, bound hits, selections, trap diagnostics and each class-season error. Production stays the baseline for Block 4.

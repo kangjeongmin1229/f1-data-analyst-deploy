@@ -1,0 +1,24 @@
+{
+  "files": {
+    "fetch.mjs": {
+      "sha256": "a93cbfaec4f8179d9eb05236a1666208b302414c27b3e3f795ed4f60769efa4d",
+      "bytes": 10268,
+      "sourceSha256": "a93cbfaec4f8179d9eb05236a1666208b302414c27b3e3f795ed4f60769efa4d"
+    },
+    "measurement-inputs.json": {
+      "sha256": "1b8f74ed73c36ea32ec1b3bd8830503ef53bd38dcd2ead4b7cf5adbdb9fc4161",
+      "bytes": 564,
+      "sourceSha256": "1b8f74ed73c36ea32ec1b3bd8830503ef53bd38dcd2ead4b7cf5adbdb9fc4161"
+    },
+    "measurement-summary.json": {
+      "sha256": "c5a268a085997c2f320022997b81bb2521c0c549153aaae54d1bfd54d2006565",
+      "bytes": 1184,
+      "sourceSha256": "c5a268a085997c2f320022997b81bb2521c0c549153aaae54d1bfd54d2006565"
+    },
+    "results.json.gz": {
+      "sha256": "65844faff48921b14385fc81ce774515812abb9370c3d3782cda14835e7f059c",
+      "bytes": 11433,
+      "sourceSha256": "cff2d4a0dfdb83f13dfbd4cc371cc44e75d999d92f0e970877ae13523fc93cae"
+    }
+  }
+}

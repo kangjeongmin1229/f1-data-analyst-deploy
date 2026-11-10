@@ -1,0 +1,22 @@
+// Archive selected derived results, not raw third-party source documents or runtime trees.
+import {readFile,writeFile,mkdir,readdir,stat,copyFile} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
+import {gzipSync} from 'node:zlib';
+import {createHash} from 'node:crypto';
+const block=process.argv[2],folders={2:'vegas-fit',3:'wec-fit',4:'models-fit',5:'gears'};
+if(!folders[block])throw Error('Expected block 2, 3, 4 or 5');
+const source=resolve('.cache/night-session',folders[block]),out=resolve('scripts/sim/results/night-session-2026-11-10','block-'+block);
+await mkdir(out,{recursive:true});
+const files={},hash=b=>createHash('sha256').update(b).digest('hex');
+async function save(from,name){let bytes=await readFile(from),target=name;if(/\.jsonl$|\.log$|\.stderr$/.test(name)||bytes.length>100000){bytes=gzipSync(bytes);target+='.gz';}await mkdir(join(out,target,'..'),{recursive:true});await writeFile(join(out,target),bytes);files[target]={sha256:hash(bytes),bytes:bytes.length,sourceSha256:hash(await readFile(from))};}
+for(const name of await readdir(source)){const path=join(source,name);if((await stat(path)).isFile()&&!name.endsWith('.stderr')&&name!=='report.log')await save(path,name);else if((await stat(path)).isFile()&&(await stat(path)).size)await save(path,name);}
+if(block==='2'){
+ for(const arm of ['control','candidate'])for(const name of await readdir(join(source,arm,'.cache/f1-convergence')))await save(join(source,arm,'.cache/f1-convergence',name),arm+'/'+name);
+ for(const name of ['manifest.json','candidate-tracks.js','candidate-traces.json'])await save(join('.cache/night-session/vegas',name),'geometry/'+name);
+}
+if(block==='4'){
+ for(const dir of await readdir(source)){if(!/^lm(h|dh|gt3)-\d+$/.test(dir))continue;for(const name of await readdir(join(source,dir)))if((await stat(join(source,dir,name))).isFile())await save(join(source,dir,name),dir+'/'+name);}
+ await save('.cache/night-session/wec-sources/all-car-inventory.json','all-car-inventory.json');
+}
+await writeFile(join(out,'sha256.json'),JSON.stringify({files},null,2)+'\n');
+console.log(JSON.stringify({block,files:Object.keys(files).length,bytes:Object.values(files).reduce((s,f)=>s+f.bytes,0),out}));
