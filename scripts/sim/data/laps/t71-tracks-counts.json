@@ -1,0 +1,3542 @@
+{
+ "source": "Timing71 rows, real series only",
+ "note": "geometry = the simulator has this track today",
+ "tracks": {
+  "nordschleife": {
+   "geometry": false,
+   "laps": 852356,
+   "clean": 614920,
+   "push": 30455,
+   "series": [
+    "x-24h-series",
+    "x-24h-series-me-trophy",
+    "x-24h-series-me-trophy-powered-by-hankook",
+    "x-24h-series-powered-by-hankook",
+    "x-clio-cup-middle-east",
+    "x-f3-asian-championship",
+    "x-f4-uae-championship",
+    "x-formula-regional-middle-east-championship",
+    "x-n-rburgring-24-hours",
+    "x-quarantine-gt-challenge",
+    "x-team-fastlane",
+    "x-team-rld-endurance-le-mans-series",
+    "x-wige-solutions"
+   ]
+  },
+  "spa-francorchamps": {
+   "geometry": true,
+   "laps": 445694,
+   "clean": 305028,
+   "push": 8720,
+   "series": [
+    "elms",
+    "f1",
+    "wec",
+    "x-2-0l-cup",
+    "x-2024-championnat-de-france-ffsa-gt",
+    "x-2024-ffsa-f4-french-championship",
+    "x-2025-british-gt-championship",
+    "x-24h-series",
+    "x-24h-series-powered-by-hankook",
+    "x-7racing",
+    "x-8-hours-of-spa-motos",
+    "x-adac-gt-masters",
+    "x-alpine-elf-europa-cup",
+    "x-british-gt-championship-race-1-round-7",
+    "x-caterham-310r-cscuk",
+    "x-caterham-seven-roadsport-270r",
+    "x-championnat-de-france-de-f4",
+    "x-classic-endurance-racing-1",
+    "x-classic-endurance-racing-2",
+    "x-classic-touring-challenge",
+    "x-clubsport-summer-series",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-creventic-endurance-series",
+    "x-crowdstrike-24-hours-of-spa",
+    "x-endurance-racing-legends",
+    "x-endurance-racing-legends-1-lmp-gt1",
+    "x-endurance-racing-legends-2-gt2",
+    "x-eurocup-3",
+    "x-f4-spain",
+    "x-fanatec-gt2-european-series-pwrd-by-pirelli",
+    "x-fastlane-tv",
+    "x-ferrari-challenge-uk",
+    "x-fia-formula-regional-european-championship",
+    "x-ford-modified",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-gb3",
+    "x-gb3-championship",
+    "x-gp3",
+    "x-group-c-racing",
+    "x-gt3-legends",
+    "x-gt4-european-series",
+    "x-gt4-european-series-pwrd-by-rafa-racing-club",
+    "x-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-heritage-touring-cup",
+    "x-lamborghini-super-trofeo",
+    "x-le-mans-cup",
+    "x-legends-of-le-mans",
+    "x-ligier-european-series",
+    "x-lotus-cup-europe",
+    "x-mclaren-trophy-europe",
+    "x-michelin-24h-series",
+    "x-michelin-le-mans-cup",
+    "x-morphmy-caterham-graduates",
+    "x-prototype-cup-germany",
+    "x-radical-cup-europe",
+    "x-sixties-endurance",
+    "x-tcr-europe",
+    "x-tcr-europe-cup",
+    "x-team-rld-endurance-le-mans-series",
+    "x-the-gentlemen-challenge",
+    "x-total-24-hours-of-spa",
+    "x-total-24-hours-of-spa-bronze-test",
+    "x-totalenergies-24-hours-of-spa",
+    "x-trofeo-pirelli",
+    "x-trofeo-pirelli-pirelli-am",
+    "x-w-series",
+    "x-wec-beta"
+   ]
+  },
+  "indianapolis": {
+   "geometry": false,
+   "laps": 431879,
+   "clean": 326731,
+   "push": 10145,
+   "series": [
+    "gtwc",
+    "igtc",
+    "imsa",
+    "x-britcar-trophy",
+    "x-classic-mini-racing-championship",
+    "x-coppa-shell",
+    "x-ctcrc-classic-historic-thunder-saloons",
+    "x-ctcrc-jaguar-challenge",
+    "x-ctcrc-pre-66-classic-saloon-historic-touring-car",
+    "x-ctcrc-pre-83-group-1-touring-cars",
+    "x-fastest-mini-in-the-world",
+    "x-ferrari-challenge-488",
+    "x-goodyear-mini-challenge-supported-by-mini-spares-miglia-libr",
+    "x-goodyear-mini-challenge-supported-by-mini-spares-se7en-se7en",
+    "x-goodyear-mini-challenges-supported-by-mini-spares-miglia",
+    "x-goodyear-mini-challenges-supported-by-mini-spares-se7en",
+    "x-gt-america-powered-by-aws",
+    "x-imsa-michelin-pilot-challenge",
+    "x-indianapolis-8-hour",
+    "x-indianapolis-8-hour-presented-by-aws",
+    "x-indy-lights",
+    "x-indy-pro-2000",
+    "x-indycar",
+    "x-lamborghini-super-trofeo",
+    "x-mclaren-trophy-america",
+    "x-mighty-minis",
+    "x-mini-challenge-clubsport",
+    "x-mini-spares-50th-anniversary-trophy",
+    "x-mustang-challenge",
+    "x-open-wheels-500-mile-race",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprintx",
+    "x-porsche-carrera-cup-north-america",
+    "x-sanwa-trophy-pre-66-minis",
+    "x-tc-america-powered-by-skip-barber",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tcr-tca-tc",
+    "x-tgrna-gr-cup-north-america",
+    "x-trofeo-pirelli",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "le-mans": {
+   "geometry": false,
+   "laps": 328882,
+   "clean": 204561,
+   "push": 4816,
+   "series": [
+    "alms",
+    "wec",
+    "x-benjafield-s-racing-club",
+    "x-endurance-racing-legends",
+    "x-group-c-racing",
+    "x-le-mans-cup",
+    "x-michelin-le-mans-cup",
+    "x-plateau-1-grid-1",
+    "x-plateau-2-grid-2",
+    "x-plateau-3-grid-3",
+    "x-plateau-4-grid-4",
+    "x-plateau-5-grid-5",
+    "x-plateau-6-grid-6",
+    "x-porsche-classic-race",
+    "x-porsche-classic-race-le-mans",
+    "x-timeservice-nl-feed"
+   ]
+  },
+  "daytona": {
+   "geometry": false,
+   "laps": 309119,
+   "clean": 247339,
+   "push": 5719,
+   "series": [
+    "imsa",
+    "x-coppa-shell",
+    "x-ferrari-challenge-trofeo-pirelli",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-mazda-mx-5-cup-presented-by-b-f-goodrich",
+    "x-nascar-cup-series",
+    "x-team-rld-endurance-le-mans-series",
+    "x-trofeo-pirelli",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "catalunya": {
+   "geometry": true,
+   "laps": 298264,
+   "clean": 226460,
+   "push": 4799,
+   "series": [
+    "elms",
+    "f1",
+    "wec",
+    "x-2024-f1-academy",
+    "x-24h-series",
+    "x-24h-series-powered-by-hankook",
+    "x-6h-of-barcelona",
+    "x-alpine-elf-europa-cup",
+    "x-clio-cup-series",
+    "x-club-division",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-eurocup3",
+    "x-european-talent-cup",
+    "x-european-talent-cup-2025",
+    "x-f4spain",
+    "x-fanatec-gt2-european-series-pwrd-by-pirelli",
+    "x-fanatec-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-formula-winter-series",
+    "x-gp3",
+    "x-gt-winter-series",
+    "x-gt3-revival-series",
+    "x-gt4-european-series-pwrd-by-rafa-racing-club",
+    "x-gt4-winter-series",
+    "x-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-juniorgp",
+    "x-juniorgp-2025",
+    "x-lamborghini-super-trofeo",
+    "x-le-mans-cup",
+    "x-ligier-european-series",
+    "x-mclaren-trophy-europe",
+    "x-michelin-24h-series",
+    "x-michelin-le-mans-cup",
+    "x-moto2-ech",
+    "x-moto2-ech-2025",
+    "x-moto3-junior-wch-2026",
+    "x-porsche-carrera-cup-france",
+    "x-prototype-winter-series",
+    "x-radical-cup-europe",
+    "x-radical-wf",
+    "x-sport-division",
+    "x-stock-ech",
+    "x-stock-ech-2025",
+    "x-system-test",
+    "x-tcr-europe",
+    "x-tcr-spain",
+    "x-trofeo-pirelli-pirelli-am"
+   ]
+  },
+  "monza": {
+   "geometry": true,
+   "laps": 239544,
+   "clean": 148049,
+   "push": 4998,
+   "series": [
+    "elms",
+    "f1",
+    "gtwc",
+    "wec",
+    "x-24h-series",
+    "x-24h-series-powered-by-hankook",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-eurocup-3",
+    "x-eurocup3",
+    "x-fanatec-gt2-european-series-pwrd-by-pirelli",
+    "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-fx-pro-series-x-f3",
+    "x-gp3",
+    "x-gt2-european-series-pwrd-by-pirelli",
+    "x-gt4-european-series",
+    "x-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-le-mans-cup",
+    "x-mclaren-trophy-europe",
+    "x-mitjet-2l-italia-2023-series",
+    "x-trofeo-pirelli-pirelli-am",
+    "x-trofeo-predators"
+   ]
+  },
+  "sebring": {
+   "geometry": false,
+   "laps": 201931,
+   "clean": 164436,
+   "push": 1995,
+   "series": [
+    "gtwc",
+    "imsa",
+    "wec",
+    "x-24h-series",
+    "x-club-competizioni-gt",
+    "x-coppa-shell",
+    "x-fastlane-tv",
+    "x-gt-america-powered-by-aws",
+    "x-imsa-airbnb-endurance-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-prototype-challenge-presented-by-mazda",
+    "x-lamborghini-super-trofeo",
+    "x-mazda-mx-5-cup-presented-by-bfgoodrich",
+    "x-michelin-imsa-sportscar-encore-at-sebring",
+    "x-mustang-challenge",
+    "x-mustang-challenge-north-america",
+    "x-pirelli-gt4-america",
+    "x-porsche-carrera-cup-north-america",
+    "x-porsche-endurance-challenge-north-america",
+    "x-porsche-gt3-cup-challenge-by-yokohama",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-skip-barber",
+    "x-sports-car-open",
+    "x-tc-america-powered-by-skip-barber",
+    "x-trofeo-pirelli",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "portimao": {
+   "geometry": false,
+   "laps": 188301,
+   "clean": 127441,
+   "push": 4599,
+   "series": [
+    "elms",
+    "f1",
+    "wec",
+    "x-24h-series",
+    "x-24h-series-powered-by-hankook",
+    "x-6h-of-portim-o",
+    "x-carrera-80s",
+    "x-club-division",
+    "x-coppa-shell",
+    "x-coppa-shell-488",
+    "x-coppa-shell-am",
+    "x-e3",
+    "x-e4",
+    "x-f4spain",
+    "x-formula-winter-series",
+    "x-group-1-portugal",
+    "x-gt-sports-car-cup",
+    "x-gt-winter-series",
+    "x-gt2-european-series-pwrd-by-pirelli",
+    "x-gt4-winter-series",
+    "x-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-iberian-he-2-h1971-1976",
+    "x-le-mans-cup",
+    "x-ligier-european-series",
+    "x-mclaren-trophy-europe",
+    "x-michelin-le-mans-cup",
+    "x-moto2",
+    "x-moto3",
+    "x-motoe",
+    "x-motogp",
+    "x-prototype-winter-series",
+    "x-single-seater-series",
+    "x-sport-division",
+    "x-sports-prototype-winter-series",
+    "x-supercars-gt4",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "road-atlanta": {
+   "geometry": false,
+   "laps": 175786,
+   "clean": 146120,
+   "push": 2099,
+   "series": [
+    "gtwc",
+    "imsa",
+    "x-coppa-shell",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-prototype-challenge-presented-by-mazda",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-lamborghini-super-trofeo",
+    "x-mclaren-trophy-america",
+    "x-pirelli-gt4-america",
+    "x-porsche-carrera-cup-north-america",
+    "x-porsche-endurance-challenge-north-america",
+    "x-porsche-gt3-cup-challenge-usa-by-yokohama",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-tc-america-powered-by-skip-barber",
+    "x-trofeo-pirelli",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "watkins-glen": {
+   "geometry": false,
+   "laps": 165678,
+   "clean": 127998,
+   "push": 6200,
+   "series": [
+    "gtwc",
+    "imsa",
+    "x-488-challenge",
+    "x-coppa-shell",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-prototype-challenge",
+    "x-isowc-2021",
+    "x-lamborghini-super-trofeo",
+    "x-mustang-challenge",
+    "x-mustang-challenge-north-america",
+    "x-nascar-cup-series",
+    "x-nascar-truck-series",
+    "x-nascar-xfinity-series",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx-east",
+    "x-pirelli-gt4-america-sprintx-east",
+    "x-porsche-carrera-cup-north-america",
+    "x-porsche-carrera-cup-north-america-presented-by-the-cayman-is",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tc-class",
+    "x-tc-america-tcr-tca-classes",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "paul-ricard": {
+   "geometry": false,
+   "laps": 156427,
+   "clean": 83880,
+   "push": 3445,
+   "series": [
+    "elms",
+    "f1",
+    "x-24h-series",
+    "x-coppa-shell-488",
+    "x-coppa-shell-am",
+    "x-elms-collective-test-day",
+    "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-formula-2",
+    "x-formula-3",
+    "x-gp3",
+    "x-gt2-european-series-pwrd-by-pirelli",
+    "x-gt3-revival-series",
+    "x-gt4-european-series",
+    "x-gt4-european-series-pwrd-by-rafa-racing-club",
+    "x-gtworldcheu-pwrd-by-aws-endurance-cup",
+    "x-lamborghini-super-trofeo",
+    "x-le-mans-cup",
+    "x-ligier-european-series",
+    "x-michelin-24h-series",
+    "x-michelin-le-mans-cup",
+    "x-mlmc-collective-test-day",
+    "x-porsche-carrera-cup-france",
+    "x-tcr-europe",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "silverstone": {
+   "geometry": true,
+   "laps": 148508,
+   "clean": 90462,
+   "push": 5153,
+   "series": [
+    "elms",
+    "f1",
+    "gtwc",
+    "wec",
+    "x-2021-intelligent-money-british-gt-championship",
+    "x-2023-gb3-championship-partnered-by-the-brdc",
+    "x-2023-gb4-championship-partnered-by-the-brdc",
+    "x-2023-ginetta-gt-academy",
+    "x-2023-intelligent-money-british-gt-championship",
+    "x-2023-michelin-ginetta-junior-championship",
+    "x-2023-protyre-motorsport-ginetta-gt-championship",
+    "x-2025-british-gt-championship",
+    "x-2025-gb3-championship-partnered-by-the-brdc",
+    "x-2025-gb4-championship-partnered-by-the-brdc",
+    "x-2026-f1-academy",
+    "x-2026-wera-tools-f4-british-championship-certified-by-fia",
+    "x-airtec-motorsport-brscc-fiesta-st240-championship-with-vinyl",
+    "x-allcomers-the-mutton-grand-prix-race-closed-wheel",
+    "x-allcomers-the-pumpkin-smash-race-closed-wheel",
+    "x-allcomers-the-wellington-cup-open-wheel",
+    "x-bernie-s-v8s",
+    "x-bmw-sim-live",
+    "x-british-gt-championship-race-1-round-5",
+    "x-brscc-pro-sports-sprint",
+    "x-bsr-super-series",
+    "x-clapham-north-kent-models-mx-5-mk1-championships",
+    "x-clapham-north-mazda-mx-5-supercup-championship",
+    "x-demon-tweeks-audi-tt-cup-championship",
+    "x-elms-collective-test-day",
+    "x-endurance-icons",
+    "x-eurocup3",
+    "x-fia-f3-european-championship",
+    "x-fjhra-silverline-historic-formula-junior-championship",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-generations-trophy",
+    "x-gp-icons-presented-by-goodyear",
+    "x-gp3",
+    "x-gt3-legends",
+    "x-historic-grand-prix-cars-association",
+    "x-historic-touring-car-challenge",
+    "x-hrdc-allstars",
+    "x-hrdc-gerry-marshall-trophy",
+    "x-hrdc-top-hat-pre-66-touring-cars",
+    "x-hscc-derek-bell-trophy-championship",
+    "x-hscc-derek-bell-trophy-series",
+    "x-hscc-historic-road-sports-championship",
+    "x-intelligent-money-british-gt-championship",
+    "x-intelligent-money-british-gt-championship-race-round-9",
+    "x-international-trophy-for-classic-gt-cars-pre-66",
+    "x-kent-models-mx-5-championship",
+    "x-le-mans-cup",
+    "x-ligier-european-series",
+    "x-masters-sports-car-legends",
+    "x-michelin-le-mans-cup",
+    "x-mlmc-collective-test-day",
+    "x-porsche-boxster-cup",
+    "x-porsche-club-championship",
+    "x-pre-66-gt-sprint",
+    "x-pre-war-sports-cars",
+    "x-protyre-motorsport-ginetta-gt5-challenge",
+    "x-royal-automobile-club-woodcote-trophy-stirling-moss-trophy",
+    "x-royal-automobile-pall-mall-cup",
+    "x-silverlake-c1-endurance-series",
+    "x-spa-speedweek",
+    "x-tegiwa-club-enduro-championship",
+    "x-the-sunday-storm-for-pre-82-ff1600",
+    "x-top-hat-pre-66-touring-cars",
+    "x-w-series",
+    "x-walter-hayes-trophy",
+    "x-woodcote-trophy-stirling-moss-trophy-with-hmrn-pre-63-gt",
+    "x-zeo-prototype-series"
+   ]
+  },
+  "laguna-seca": {
+   "geometry": false,
+   "laps": 119232,
+   "clean": 100016,
+   "push": 3300,
+   "series": [
+    "imsa",
+    "x-488-challenge",
+    "x-california-8-hours",
+    "x-club-challenge",
+    "x-club-competizioni-gt",
+    "x-coppa-shell",
+    "x-ferrari-challenge-north-america",
+    "x-gt4-america-west",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-michelin-pilot-sportscar-challenge",
+    "x-indycar",
+    "x-lamborghini-super-trofeo",
+    "x-mustang-challenge",
+    "x-porsche-sprint-challenge-usa-west",
+    "x-tofeo-pirelli",
+    "x-trofeo-pirelli",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "spielberg": {
+   "geometry": true,
+   "laps": 116058,
+   "clean": 77849,
+   "push": 5426,
+   "series": [
+    "dtm",
+    "elms",
+    "f1",
+    "x-110cc",
+    "x-160cc",
+    "x-190cc",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-austria-formel-cup-topjet-f2000",
+    "x-bwc",
+    "x-clio-cup-bohemia",
+    "x-coppa-shell",
+    "x-f1-academy",
+    "x-f4-cez",
+    "x-fia-formula-regional",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-gp3",
+    "x-gr-4-kla-j-k-youngtimer-ber-850ccm-bj-94-04-supersport",
+    "x-histo-cup-yt-und-tco-bis-3000ccm",
+    "x-le-mans-cup",
+    "x-moto2",
+    "x-moto3",
+    "x-motoe",
+    "x-motogp",
+    "x-porsche-sixt-carrera-cup-deutschland",
+    "x-prototype-cup-germany",
+    "x-ravenol-1h-endurance",
+    "x-trofeo-pirelli",
+    "x-w-series"
+   ]
+  },
+  "hockenheim": {
+   "geometry": false,
+   "laps": 114657,
+   "clean": 95816,
+   "push": 2755,
+   "series": [
+    "dtm",
+    "f1",
+    "x-24h-series",
+    "x-adac-graf-berghe-von-trips-pokal",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-adac-tourenwagen-junior-cup",
+    "x-avd-historic-race-cup",
+    "x-boss-gp",
+    "x-class-one-revival",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-dmv-bmw-318ti-cup",
+    "x-dmv-bmw-challenge",
+    "x-dmv-classic-masters-cup-alfa-romeo-challenge",
+    "x-dmv-formel-vau",
+    "x-dmv-nes-1000-km",
+    "x-dmv-nes-1000-km-qual",
+    "x-dmv-nes-500",
+    "x-dmv-polo-cup",
+    "x-dmv-stgt",
+    "x-drm-revival",
+    "x-fanatec-gt2-european-series-pwrd-by-pirelli",
+    "x-fanatec-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-gebhardt-ginetta-gt5-challenge",
+    "x-golden-ra-classic-cup",
+    "x-grand-prix-de-france-historique",
+    "x-group-c-super-cup",
+    "x-gt-summer-series",
+    "x-gt4-european-series-pwrd-by-rafa-racing-club",
+    "x-hscc-f2",
+    "x-lurani-trophy",
+    "x-masters-endurance-legends",
+    "x-masters-racing-legends",
+    "x-mitjet-international",
+    "x-nxt-gen-cup",
+    "x-porsche-carrera-cup-benelux",
+    "x-porsche-endurance-challenge-deutschland",
+    "x-porsche-sixt-carrera-cup-deutschland",
+    "x-porsche-sprint-challenge-deutschland-gt3",
+    "x-porsche-sprint-challenge-deutschland-gt4",
+    "x-porsche-sprint-challenge-gt4-gt3",
+    "x-tourenwagen-golden-ra",
+    "x-tourenwagen-legenden",
+    "x-tourenwagen-legenden-pure-group-a",
+    "x-trofeo-pirelli-pirelli-am",
+    "x-velom-watches-supercup-by-interwetten-scc"
+   ]
+  },
+  "road-america": {
+   "geometry": false,
+   "laps": 114479,
+   "clean": 79742,
+   "push": 3061,
+   "series": [
+    "gtwc",
+    "imsa",
+    "x-coppa-shell",
+    "x-ford-mustang-challenge",
+    "x-idemitsu-mazda-mx-5-cup",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-airbnb-endurance-challenge",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-michelin-pilot-sportscar-challenge",
+    "x-imsa-prototype-challenge",
+    "x-indycar",
+    "x-lamborghini-super-trofeo",
+    "x-lamborghini-super-trofeo-series",
+    "x-mustang-challenge",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx",
+    "x-pirelli-gt4-america-sprint-sprintx-east",
+    "x-pirelli-gt4-america-sprintx",
+    "x-pirelli-gt4-america-sprintx-east",
+    "x-porsche-carrera-cup-north-america",
+    "x-porsche-carrera-cup-north-america-presented-by-the-cayman-is",
+    "x-porsche-endurance-challenge-north-america",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-saleen-cup",
+    "x-tc-america-powered-by-skip-barber",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tc-class",
+    "x-tc-america-tc-tca-tcr-classes",
+    "x-tc-america-tcr-tca-classes",
+    "x-tc-america-tcr-tca-tc",
+    "x-tgrna-gr-cup-north-america",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "austin": {
+   "geometry": true,
+   "laps": 107772,
+   "clean": 82063,
+   "push": 2375,
+   "series": [
+    "f1",
+    "gtwc",
+    "wec",
+    "x-2026-f1-academy",
+    "x-24h-series",
+    "x-488-challenge",
+    "x-coppa-shell",
+    "x-ford-mustang-cup",
+    "x-gt-america-powered-by-aws",
+    "x-gt-sports-club-america",
+    "x-imsa-airbnb-endurance-challenge",
+    "x-indycar",
+    "x-lamborghini-super-trofeo",
+    "x-mustang-challenge",
+    "x-mustang-challenge-north-america",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx",
+    "x-pirelli-gt4-america-sprintx",
+    "x-porsche-endurance-challenge-north-america",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-porsche-sprint-challenge-usa-west",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tcr-tca",
+    "x-tc-america-tcr-tca-tc",
+    "x-tgrna-gr-cup-north-america",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "sakhir": {
+   "geometry": true,
+   "laps": 104880,
+   "clean": 85700,
+   "push": 1431,
+   "series": [
+    "f1",
+    "wec",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-gulf-12-hours"
+   ]
+  },
+  "mugello": {
+   "geometry": false,
+   "laps": 103738,
+   "clean": 84677,
+   "push": 2306,
+   "series": [
+    "elms",
+    "f1",
+    "x-24h-series",
+    "x-24h-series-powered-by-hankook",
+    "x-campionato-italiano-auto-storiche-3-4-r",
+    "x-coppa-shell",
+    "x-coppa-shell-488",
+    "x-coppa-shell-am",
+    "x-ferrari-challenge-na",
+    "x-finale-mondiale-coppa-shell",
+    "x-finale-mondiale-coppa-shell-am",
+    "x-finale-mondiale-trofeo-pirelli-pirelli-am",
+    "x-formula-2",
+    "x-formula-3",
+    "x-michelin-24h-series",
+    "x-prototype-cup-europe",
+    "x-radical-cup-europe",
+    "x-system-test",
+    "x-tcr-europe",
+    "x-trofeo-pirelli",
+    "x-trofeo-pirelli-pirelli-am"
+   ]
+  },
+  "mosport": {
+   "geometry": false,
+   "laps": 91623,
+   "clean": 65307,
+   "push": 1601,
+   "series": [
+    "gtwc",
+    "imsa",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-prototype-challenge-presented-by-mazda",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprintx-east",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "vir": {
+   "geometry": false,
+   "laps": 90516,
+   "clean": 75619,
+   "push": 1933,
+   "series": [
+    "gtwc",
+    "imsa",
+    "x-arca-menards-series",
+    "x-gt-america-powered-by-aws",
+    "x-gt-sports-club-america",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-airbnb-endurance-challenge",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-prototype-challenge-presented-by-mazda",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-lamborghini-super-trofeo",
+    "x-mclaren-trophy-america",
+    "x-mclaren-trophy-cup",
+    "x-mustang-challenge-north-america",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx",
+    "x-pirelli-gt4-america-sprintx",
+    "x-pirelli-gt4-america-sprintx-gt4-america-east",
+    "x-porsche-gt3-cup-challenge-usa-by-yokohama",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-tc-america-powered-by-skip-barber",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tc-class",
+    "x-tc-america-tcr-tca-classes",
+    "x-tc-america-tcr-tca-tc",
+    "x-tgrna-gr-cup-north-america",
+    "x-veterans-race-of-remembrance",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "bathurst": {
+   "geometry": false,
+   "laps": 90502,
+   "clean": 73684,
+   "push": 1441,
+   "series": [
+    "igtc",
+    "x-2021-hi-tec-oils-bathurst-6-hour",
+    "x-2022-hi-tec-oils-bathurst-6-hour",
+    "x-majors-series",
+    "x-timeservice-nl-feed"
+   ]
+  },
+  "yas-marina-circuit": {
+   "geometry": true,
+   "laps": 85565,
+   "clean": 60590,
+   "push": 1922,
+   "series": [
+    "alms",
+    "f1",
+    "x-24h-series-me-trophy",
+    "x-24h-series-me-trophy-powered-by-hankook",
+    "x-24h-series-powered-by-hankook",
+    "x-clio-cup-middle-east",
+    "x-formula-2",
+    "x-formula-2-2024",
+    "x-formula-2-2025"
+   ]
+  },
+  "nurburgring-gp": {
+   "geometry": false,
+   "laps": 78077,
+   "clean": 29993,
+   "push": 2548,
+   "series": [
+    "dtm",
+    "f1",
+    "nur",
+    "x-adac-24h-classic",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-coppa-shell-488",
+    "x-coppa-shell-am",
+    "x-cup-und-tourenwagen-trophy",
+    "x-deutsche-historische-langstrecken-meisterschaft-dhlm",
+    "x-michelin-24h-series",
+    "x-nurburgring-24-hours",
+    "x-porsche-sixt-carrera-cup-deutschland",
+    "x-prototype-cup-europe",
+    "x-radical-cup-europe",
+    "x-tourenwagen-legenden",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "sonoma": {
+   "geometry": false,
+   "laps": 75100,
+   "clean": 60118,
+   "push": 2114,
+   "series": [
+    "gtwc",
+    "x-488-challenge",
+    "x-club-challenge",
+    "x-club-competizioni-gt",
+    "x-coppa-shell",
+    "x-group-2-1957-1963-formula-junior",
+    "x-group-5-1966-1979-historic-scca-b-c-sedans",
+    "x-group-9-1960-s-mini-vs-muscle-enduro",
+    "x-gt-america",
+    "x-gt-america-powered-by-aws",
+    "x-indycar",
+    "x-mclaren-trophy-america",
+    "x-pirelli-gt4-america",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx",
+    "x-pirelli-gt4-america-sprint-sprintx-west",
+    "x-pirelli-gt4-america-sprintx",
+    "x-pirelli-gt4-america-sprintx-west",
+    "x-pirelli-gt4-americasprintx-west",
+    "x-porsche-endurance-challenge-north-america",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-porsche-sprint-challenge-usa-west",
+    "x-tc-america-powered-by-skip-barber",
+    "x-tc-america-powered-by-skip-barber-racing-school",
+    "x-tc-america-tc-class",
+    "x-tc-america-tcr-tca",
+    "x-tc-america-tcr-tca-classes",
+    "x-tc-america-tcr-tca-tc",
+    "x-tgrna-gr-cup-north-america",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "imola": {
+   "geometry": true,
+   "laps": 67413,
+   "clean": 45275,
+   "push": 1549,
+   "series": [
+    "elms",
+    "f1",
+    "wec",
+    "x-2-0l-cup",
+    "x-alfa-revival-cup",
+    "x-classic-endurance-racing-1",
+    "x-classic-endurance-racing-2",
+    "x-classic-touring-challenge",
+    "x-clubsport-summer-series",
+    "x-coppa-shell-488",
+    "x-coppa-shell-am",
+    "x-endurance-racing-legends-1-lmp-gt1",
+    "x-endurance-racing-legends-2-gt2",
+    "x-ferrari-challenge-na",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-heritage-touring-cup",
+    "x-sixties-endurance",
+    "x-the-gentlemen-challenge",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "mid-ohio": {
+   "geometry": false,
+   "laps": 66506,
+   "clean": 55997,
+   "push": 1276,
+   "series": [
+    "imsa",
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-michelin-pilot-sportscar-challenge",
+    "x-imsa-prototype-challenge",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-mustang-challenge-north-america",
+    "x-porsche-gt3-cup-challenge-usa-by-yokohama",
+    "x-whelen-mazda-mx-5-cup-presented-by-michelin"
+   ]
+  },
+  "lusail": {
+   "geometry": true,
+   "laps": 63021,
+   "clean": 44707,
+   "push": 1635,
+   "series": [
+    "f1",
+    "wec",
+    "x-2024-f1-academy",
+    "x-bwc",
+    "x-f4-middle-east-championship",
+    "x-formula-2-2025",
+    "x-fr-middle-east-championship",
+    "x-moto2",
+    "x-moto3",
+    "x-motogp"
+   ]
+  },
+  "interlagos": {
+   "geometry": true,
+   "laps": 56196,
+   "clean": 42856,
+   "push": 1371,
+   "series": [
+    "f1",
+    "wec",
+    "x-moto2",
+    "x-moto3",
+    "x-motogp"
+   ]
+  },
+  "fuji": {
+   "geometry": false,
+   "laps": 53058,
+   "clean": 35876,
+   "push": 658,
+   "series": [
+    "alms",
+    "wec",
+    "x-frjc",
+    "x-porsche-carrera-cup-japan"
+   ]
+  },
+  "detroit": {
+   "geometry": false,
+   "laps": 49537,
+   "clean": 38742,
+   "push": 1290,
+   "series": [
+    "imsa",
+    "x-imsa-michelin-pilot-challenge",
+    "x-indycar",
+    "x-quarantine-gt-challenge"
+   ]
+  },
+  "zandvoort": {
+   "geometry": true,
+   "laps": 45170,
+   "clean": 31926,
+   "push": 1579,
+   "series": [
+    "dtm",
+    "f1",
+    "x-2024-f1-academy",
+    "x-2025-f1-academy",
+    "x-2026-f1-academy",
+    "x-adac-gt-masters",
+    "x-adac-tcr-germany",
+    "x-bilstein-caterham-seven-roadsport-championship",
+    "x-dutch-barn-vodka-caterham-seven-championship-uk",
+    "x-edge-caterham-seven-270r-championship",
+    "x-fia-formula-regional",
+    "x-formula-2-2023",
+    "x-formula-3",
+    "x-formula-regional-championship-by-alpine",
+    "x-ginetta-junior-championship",
+    "x-gt4-european-series",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-p4-emergency-lighting-caterham-graduates-championship",
+    "x-porsche-carrera-cup-benelux",
+    "x-porsche-carrera-cup-france",
+    "x-porsche-sixt-carrera-cup-deutschland",
+    "x-vertex-caterham-seven-310r-championship",
+    "x-wera-tools-f4-british-f4-championship-certified-by-the-fia"
+   ]
+  },
+  "macau": {
+   "geometry": false,
+   "laps": 44657,
+   "clean": 33176,
+   "push": 2665,
+   "series": [
+    "macau",
+    "x-sjm-macau-gt-cup"
+   ]
+  },
+  "valencia": {
+   "geometry": false,
+   "laps": 44399,
+   "clean": 31094,
+   "push": 1896,
+   "series": [
+    "fe",
+    "x-campeonato-espa-a-carrera-de-camiones",
+    "x-carrera-80",
+    "x-clio-cup-series",
+    "x-club-division",
+    "x-copa-racer-confortauto",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-cto-velocidad-cv",
+    "x-euronascar",
+    "x-f4spain",
+    "x-formula-winter-series",
+    "x-gt-winter-series",
+    "x-gt2-european-series-pwrd-by-pirelli",
+    "x-gt4-winter-series",
+    "x-gt4ws-spws",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-historic-endurance",
+    "x-juniorgp",
+    "x-moto2",
+    "x-moto3",
+    "x-motogp",
+    "x-porsche-carrera-cup-france",
+    "x-single-seater-series",
+    "x-sport-division",
+    "x-stock",
+    "x-supercars",
+    "x-tcr-winter-series",
+    "x-trofeo-pirelli",
+    "x-trofeo-pirelli-pirelli-am"
+   ]
+  },
+  "suzuka": {
+   "geometry": true,
+   "laps": 44352,
+   "clean": 32136,
+   "push": 714,
+   "series": [
+    "f1",
+    "gtwc",
+    "igtc",
+    "x-2025-intercontinental-gt-challenge-powered-by-pirelli-suzuka",
+    "x-super-formula",
+    "x-suzuka-10-hours",
+    "x-suzuka-1000km-intercontinental-gt-challenge"
+   ]
+  },
+  "kuala-lumpur": {
+   "geometry": true,
+   "laps": 43110,
+   "clean": 31178,
+   "push": 685,
+   "series": [
+    "alms",
+    "x-24h-series-me-trophy",
+    "x-gr-vios-sprint-cup",
+    "x-malaysia-championship-series",
+    "x-moto2",
+    "x-moto3",
+    "x-motogp"
+   ]
+  },
+  "long-beach": {
+   "geometry": false,
+   "laps": 41843,
+   "clean": 33257,
+   "push": 1081,
+   "series": [
+    "imsa",
+    "x-indycar",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprintx",
+    "x-porsche-carrera-cup-north-america"
+   ]
+  },
+  "melbourne": {
+   "geometry": true,
+   "laps": 41450,
+   "clean": 29671,
+   "push": 1465,
+   "series": [
+    "f1",
+    "x-2018-cams-national-racing-championships-round-1",
+    "x-2018-cams-national-racing-championships-round-2",
+    "x-2018-cams-national-racing-championships-round-3",
+    "x-2018-cams-national-racing-championships-round-5",
+    "x-2019-pirtek-perth-supernight-supercars",
+    "x-2019-shannons-nationals-round-3",
+    "x-2022-hi-tec-oils-bathurst-6-hour",
+    "x-2023-beaurepaires-sydney-supernight",
+    "x-2023-ned-whisky-tasmania-supersprint",
+    "x-2023-otr-supersprint",
+    "x-2024-vailo-adelaide-500",
+    "x-2025-century-batteries-ipswich-super-440",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026",
+    "x-moto2",
+    "x-moto3",
+    "x-motogp",
+    "x-virgin-australia-supercars"
+   ]
+  },
+  "hungaroring": {
+   "geometry": true,
+   "laps": 39153,
+   "clean": 29261,
+   "push": 1090,
+   "series": [
+    "f1",
+    "x-24h-series",
+    "x-eurocup3",
+    "x-formula-2",
+    "x-gp3",
+    "x-moto2",
+    "x-moto3",
+    "x-motoe",
+    "x-motogp",
+    "x-w-series"
+   ]
+  },
+  "shanghai": {
+   "geometry": true,
+   "laps": 37636,
+   "clean": 24617,
+   "push": 531,
+   "series": [
+    "alms",
+    "f1",
+    "wec",
+    "x-2026-f1-academy",
+    "x-shanghai-8h"
+   ]
+  },
+  "monte-carlo": {
+   "geometry": true,
+   "laps": 37353,
+   "clean": 22024,
+   "push": 859,
+   "series": [
+    "f1",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026",
+    "x-formula-3-2023",
+    "x-formula-3-2024",
+    "x-formula-3-2025",
+    "x-formula-3-2026"
+   ]
+  },
+  "lime-rock": {
+   "geometry": false,
+   "laps": 33531,
+   "clean": 29640,
+   "push": 724,
+   "series": [
+    "imsa",
+    "x-imsa-michelin-pilot-challenge",
+    "x-imsa-vp-racing-sportscar-challenge"
+   ]
+  },
+  "dubai": {
+   "geometry": false,
+   "laps": 33369,
+   "clean": 25224,
+   "push": 506,
+   "series": [
+    "alms"
+   ]
+  },
+  "las-vegas": {
+   "geometry": true,
+   "laps": 32609,
+   "clean": 22863,
+   "push": 674,
+   "series": [
+    "f1",
+    "gtwc",
+    "x-2025-f1-academy",
+    "x-pirelli-gt4-america-sprint",
+    "x-pirelli-gt4-america-sprint-sprintx-west",
+    "x-pirelli-gt4-america-sprintx-west",
+    "x-saleen-cup",
+    "x-tc-america-tc-class",
+    "x-tc-america-tc-tcr-tca-classes",
+    "x-tc-america-tcr-tca-classes",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "aragon": {
+   "geometry": false,
+   "laps": 30640,
+   "clean": 21870,
+   "push": 605,
+   "series": [
+    "elms",
+    "x-bwc",
+    "x-e3",
+    "x-e4",
+    "x-etc",
+    "x-f4spain",
+    "x-formula-winter-series",
+    "x-gt-winter-series",
+    "x-gt4-winter-series",
+    "x-juniorgp",
+    "x-le-mans-cup",
+    "x-moto2",
+    "x-moto2-ech-2026",
+    "x-moto3",
+    "x-moto3-junior-wch-2026",
+    "x-motogp",
+    "x-prototype-winter-series",
+    "x-stock-ech",
+    "x-stock-ech-2026"
+   ]
+  },
+  "estoril": {
+   "geometry": false,
+   "laps": 30617,
+   "clean": 24322,
+   "push": 2489,
+   "series": [
+    "elms",
+    "x-2-0l-cup",
+    "x-24h-series-powered-by-hankook",
+    "x-classic-endurance-racing-1",
+    "x-classic-endurance-racing-2",
+    "x-classic-gp-pre-1986-f1",
+    "x-classic-touring-challenge",
+    "x-club-division",
+    "x-coppa-shell",
+    "x-formula-winter-series",
+    "x-gt-winter-series",
+    "x-gt4-winter-series",
+    "x-heritage-touring-cup",
+    "x-iberian-historic-endurance",
+    "x-sixties-endurance",
+    "x-sport-division",
+    "x-superside-world-championship",
+    "x-the-gentlemen-challenge",
+    "x-trofeo-pirelli"
+   ]
+  },
+  "st-petersburg": {
+   "geometry": false,
+   "laps": 28276,
+   "clean": 23091,
+   "push": 517,
+   "series": [
+    "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires",
+    "x-imsa-vp-racing-sportscar-challenge",
+    "x-indycar",
+    "x-pirelli-gt4-america-sprint",
+    "x-tc-america"
+   ]
+  },
+  "misano": {
+   "geometry": false,
+   "laps": 26141,
+   "clean": 21700,
+   "push": 1863,
+   "series": [
+    "x-24h-series-powered-by-hankook",
+    "x-coppa-shell",
+    "x-coppa-shell-am",
+    "x-gt2-european-series-pwrd-by-pirelli",
+    "x-gt4-european-series",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-mclaren-trophy-europe",
+    "x-michelin-24h-series",
+    "x-topjet-f2000",
+    "x-trofeo-pirelli",
+    "x-trofeo-pirelli-pirelli-am",
+    "x-trofeo-predators",
+    "x-w-series"
+   ]
+  },
+  "donington": {
+   "geometry": false,
+   "laps": 26135,
+   "clean": 22281,
+   "push": 505,
+   "series": [
+    "x-2023-bennetts-british-superbike-championship-with-pirelli",
+    "x-british-gt-championship-race-1-round-6",
+    "x-enduroka",
+    "x-generations-trophy",
+    "x-gt3-legends",
+    "x-historic-touring-car-challenge",
+    "x-hmrn-pre-63-gt",
+    "x-hrdc-dunlop-allstars",
+    "x-hrdc-gerry-marshal-trophy-series",
+    "x-hrdc-top-hat-pre-66-touring-cars",
+    "x-intelligent-money-british-gt-championship",
+    "x-intelligent-money-british-gt-championship-race-1-round-3",
+    "x-intelligent-money-british-gt-championship-race-2-round-4",
+    "x-intelligent-money-british-gt-championship-race-round-6",
+    "x-mrl-mad-jack-for-pre-war-sports-cars",
+    "x-royal-automobile-club-pall-mall-cup",
+    "x-royal-automobile-club-woodcote-trophy-stirling-moss-trophy"
+   ]
+  },
+  "fe-berlin": {
+   "geometry": false,
+   "laps": 25365,
+   "clean": 20808,
+   "push": 252,
+   "series": [
+    "fe"
+   ]
+  },
+  "mexico-city": {
+   "geometry": true,
+   "laps": 21776,
+   "clean": 16852,
+   "push": 395,
+   "series": [
+    "f1",
+    "x-nascar-cup-series"
+   ]
+  },
+  "lausitz": {
+   "geometry": false,
+   "laps": 20021,
+   "clean": 15819,
+   "push": 1340,
+   "series": [
+    "dtm",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-adac-historic-cup-ost-formel",
+    "x-adac-tcr-germany",
+    "x-dmv-bmw-318ti-cup",
+    "x-dmv-bmw-challenge",
+    "x-dmv-classic-masters-ptrc-hco-tw",
+    "x-dmv-polo-cup",
+    "x-dmv-stgt-all-series-route-66"
+   ]
+  },
+  "jeddah": {
+   "geometry": true,
+   "laps": 19419,
+   "clean": 14146,
+   "push": 907,
+   "series": [
+    "f1",
+    "fe",
+    "x-2024-f1-academy",
+    "x-2025-f1-academy",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025"
+   ]
+  },
+  "montreal": {
+   "geometry": true,
+   "laps": 19193,
+   "clean": 10127,
+   "push": 676,
+   "series": [
+    "f1",
+    "x-2025-f1-academy",
+    "x-2026-f1-academy",
+    "x-formula-2-2026",
+    "x-trofeo-pirelli",
+    "x-trofeo-pirelli-coppa-shell"
+   ]
+  },
+  "kyalami": {
+   "geometry": false,
+   "laps": 18144,
+   "clean": 12518,
+   "push": 1073,
+   "series": [
+    "igtc",
+    "x-vw-supa-cup-polo-cup-challenge"
+   ]
+  },
+  "baku": {
+   "geometry": true,
+   "laps": 17070,
+   "clean": 11201,
+   "push": 450,
+   "series": [
+    "f1",
+    "x-formula-2",
+    "x-formula-2-2023",
+    "x-formula-2-2024",
+    "x-formula-2-2025",
+    "x-formula-2-2026"
+   ]
+  },
+  "miami": {
+   "geometry": true,
+   "laps": 17016,
+   "clean": 10433,
+   "push": 861,
+   "series": [
+    "f1",
+    "fe",
+    "x-2024-f1-academy",
+    "x-2025-f1-academy",
+    "x-coppa-shell",
+    "x-formula-2-2026",
+    "x-mclaren-trophy-america",
+    "x-trofeo-pirelli",
+    "x-w-series"
+   ]
+  },
+  "oschersleben": {
+   "geometry": false,
+   "laps": 14378,
+   "clean": 11365,
+   "push": 165,
+   "series": [
+    "dtm",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-dmv-bmw-318ti-cup",
+    "x-dmv-bmw-challenge",
+    "x-dmv-classic-masters",
+    "x-dmv-nes-gp",
+    "x-dmv-stgt",
+    "x-natc-sprint-rennen",
+    "x-porsche-endurance-challenge-deutschland-rennen",
+    "x-porsche-sprint-challenge-deutschland-gt3-rennen",
+    "x-porsche-sprint-challenge-deutschland-gt4-rennen",
+    "x-porsche-sprint-challenge-gt4-gt3",
+    "x-spezial-tourenwagen-trophy-rennen",
+    "x-supercar-challenge",
+    "x-tourenwagen-legenden"
+   ]
+  },
+  "fe-london": {
+   "geometry": false,
+   "laps": 14319,
+   "clean": 10224,
+   "push": 263,
+   "series": [
+    "fe"
+   ]
+  },
+  "brands-hatch": {
+   "geometry": false,
+   "laps": 13593,
+   "clean": 11284,
+   "push": 399,
+   "series": [
+    "dtm",
+    "gtwc",
+    "x-7-racing-championship-420r",
+    "x-750mc-roadsports-championship",
+    "x-clio-cup-gb-championship",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-historic-touring-car-challenge",
+    "x-hrdc-allstars-with-classic-alfa-challenge",
+    "x-intelligent-money-british-gt-championship",
+    "x-intelligent-money-british-gt-championship-race-round-5",
+    "x-legends-cars-championship",
+    "x-miata-trophy",
+    "x-pre-war-sports-cars",
+    "x-radical-cup-uk",
+    "x-w-series"
+   ]
+  },
+  "singapore": {
+   "geometry": true,
+   "laps": 13209,
+   "clean": 9823,
+   "push": 366,
+   "series": [
+    "f1",
+    "x-2025-f1-academy"
+   ]
+  },
+  "barber": {
+   "geometry": false,
+   "laps": 13048,
+   "clean": 10715,
+   "push": 538,
+   "series": [
+    "gtwc",
+    "x-gt-america-powered-by-aws",
+    "x-indycar",
+    "x-pirelli-gt4-america",
+    "x-porsche-sprint-challenge-north-america-cayman",
+    "x-porsche-sprint-challenge-north-america-gt3-cup",
+    "x-tc-america-powered-by-skip-barber",
+    "x-tgrna-gr-cup-north-america"
+   ]
+  },
+  "norisring": {
+   "geometry": false,
+   "laps": 11798,
+   "clean": 10251,
+   "push": 741,
+   "series": [
+    "dtm",
+    "x-adac-gt4-germany",
+    "x-dtm-classic",
+    "x-nxt-gen-cup",
+    "x-w-series"
+   ]
+  },
+  "fe-diriyah": {
+   "geometry": false,
+   "laps": 11647,
+   "clean": 9746,
+   "push": 101,
+   "series": [
+    "fe"
+   ]
+  },
+  "buriram": {
+   "geometry": false,
+   "laps": 10527,
+   "clean": 9681,
+   "push": 108,
+   "series": [
+    "alms"
+   ]
+  },
+  "sachsenring": {
+   "geometry": false,
+   "laps": 10506,
+   "clean": 8204,
+   "push": 542,
+   "series": [
+    "dtm",
+    "x-adac-gt-masters",
+    "x-adac-gt4-germany",
+    "x-nxt-gen-cup"
+   ]
+  },
+  "fe-mexico-city": {
+   "geometry": false,
+   "laps": 10316,
+   "clean": 8432,
+   "push": 286,
+   "series": [
+    "fe"
+   ]
+  },
+  "magny-cours": {
+   "geometry": false,
+   "laps": 10223,
+   "clean": 7347,
+   "push": 55,
+   "series": [
+    "x-championnat-de-france-ffsa-tourisme",
+    "x-clio-cup-series",
+    "x-fanatec-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-ffsa-f4-french-championship",
+    "x-gtworldcheu-pwrd-by-aws-sprint-cup",
+    "x-mitjet-international",
+    "x-porsche-carrera-cup-france"
+   ]
+  },
+  "fe-monaco": {
+   "geometry": false,
+   "laps": 9822,
+   "clean": 7226,
+   "push": 173,
+   "series": [
+    "fe"
+   ]
+  },
+  "sochi": {
+   "geometry": false,
+   "laps": 9208,
+   "clean": 6940,
+   "push": 184,
+   "series": [
+    "f1"
+   ]
+  },
+  "zolder": {
+   "geometry": false,
+   "laps": 8150,
+   "clean": 7284,
+   "push": 2208,
+   "series": [
+    "gtwc",
+    "x-dmv-bmw-318ti-cup",
+    "x-dmv-bmw-challenge",
+    "x-dmv-classic-masters-ptrc",
+    "x-dmv-polo-cup",
+    "x-dmv-stgt-und-fcd",
+    "x-pchc-porsche-club-historic-challenge",
+    "x-w-series"
+   ]
+  },
+  "fe-new-york": {
+   "geometry": false,
+   "laps": 7744,
+   "clean": 6828,
+   "push": 252,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-tokyo": {
+   "geometry": false,
+   "laps": 6306,
+   "clean": 4655,
+   "push": 72,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-sao-paulo": {
+   "geometry": false,
+   "laps": 6119,
+   "clean": 3940,
+   "push": 144,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-rome": {
+   "geometry": false,
+   "laps": 5735,
+   "clean": 4038,
+   "push": 58,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-shanghai": {
+   "geometry": false,
+   "laps": 5395,
+   "clean": 4094,
+   "push": 133,
+   "series": [
+    "fe"
+   ]
+  },
+  "istanbul": {
+   "geometry": false,
+   "laps": 5328,
+   "clean": 2790,
+   "push": 0,
+   "series": [
+    "f1"
+   ]
+  },
+  "fe-jakarta": {
+   "geometry": false,
+   "laps": 4729,
+   "clean": 3712,
+   "push": 55,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-santiago": {
+   "geometry": false,
+   "laps": 4389,
+   "clean": 3789,
+   "push": 152,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-portland": {
+   "geometry": false,
+   "laps": 4220,
+   "clean": 2895,
+   "push": 143,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-marrakesh": {
+   "geometry": false,
+   "laps": 3870,
+   "clean": 3240,
+   "push": 148,
+   "series": [
+    "fe"
+   ]
+  },
+  "madring": {
+   "geometry": true,
+   "laps": 3112,
+   "clean": 2351,
+   "push": 205,
+   "series": [
+    "fe",
+    "x-formula-2-2026",
+    "x-formula-3-2026"
+   ]
+  },
+  "jarama": {
+   "geometry": false,
+   "laps": 3024,
+   "clean": 1037,
+   "push": 0,
+   "series": [
+    "x-e3",
+    "x-e4",
+    "x-f4spain"
+   ]
+  },
+  "fe-sanya": {
+   "geometry": false,
+   "laps": 2933,
+   "clean": 2127,
+   "push": 16,
+   "series": [
+    "fe"
+   ]
+  },
+  "the-bend": {
+   "geometry": false,
+   "laps": 2798,
+   "clean": 2181,
+   "push": 41,
+   "series": [
+    "alms"
+   ]
+  },
+  "fe-puebla": {
+   "geometry": false,
+   "laps": 2467,
+   "clean": 2041,
+   "push": 12,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-misano": {
+   "geometry": false,
+   "laps": 2091,
+   "clean": 1463,
+   "push": 0,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-hong-kong": {
+   "geometry": false,
+   "laps": 1592,
+   "clean": 1258,
+   "push": 19,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-paris": {
+   "geometry": false,
+   "laps": 1546,
+   "clean": 1280,
+   "push": 11,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-zurich": {
+   "geometry": false,
+   "laps": 1501,
+   "clean": 1334,
+   "push": 149,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-swiss": {
+   "geometry": false,
+   "laps": 1444,
+   "clean": 1213,
+   "push": 11,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-punta-del-este": {
+   "geometry": false,
+   "laps": 1404,
+   "clean": 1170,
+   "push": 148,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-hyderabad": {
+   "geometry": false,
+   "laps": 1284,
+   "clean": 1078,
+   "push": 0,
+   "series": [
+    "fe"
+   ]
+  },
+  "fe-cape-town": {
+   "geometry": false,
+   "laps": 814,
+   "clean": 486,
+   "push": 0,
+   "series": [
+    "fe"
+   ]
+  },
+  "assen": {
+   "geometry": false,
+   "laps": 649,
+   "clean": 645,
+   "push": 0,
+   "series": [
+    "x-w-series"
+   ]
+  }
+ },
+ "venuesWithNoTrackId": {
+  "x-nascar-cup-series | Cook Out 400": [
+   84289,
+   0
+  ],
+  "x-virgin-australia-supercars | Virgin Australia Supercars C'ship": [
+   76023,
+   2006
+  ],
+  "x-nascar-cup-series | Xfinity 500": [
+   73978,
+   0
+  ],
+  "x-virgin-australia-supercars | Int'l Virgin Australia Supercars C'ship": [
+   72478,
+   80
+  ],
+  "x-nascar-cup-series | Cook Out Southern 500": [
+   70684,
+   0
+  ],
+  "x-imsa | IWSC": [
+   67589,
+   174
+  ],
+  "x-nascar-cup-series | Hollywood Casino 400": [
+   56420,
+   0
+  ],
+  "x-indycar | Bommarito Automotive Group 500": [
+   55836,
+   534
+  ],
+  "x-24-heures-du-mans-motos | 24 heures Motos": [
+   55537,
+   0
+  ],
+  "x-nascar-cup-series | Bass Pro Shops Night Race": [
+   55081,
+   0
+  ],
+  "x-timeservice-nl-feed | Belcar 24 Hours": [
+   53329,
+   181
+  ],
+  "x-nascar-cup-series | Goodyear 400": [
+   52998,
+   0
+  ],
+  "x-nascar-cup-series | South Point 400": [
+   46902,
+   0
+  ],
+  "x-nascar-cup-series | Coca-Cola 600": [
+   45998,
+   0
+  ],
+  "x-l-denon | Ultimate 600": [
+   42701,
+   29784
+  ],
+  "x-ne1 | NE1 Knutstorp 2023": [
+   42439,
+   0
+  ],
+  "x-bol-d-or | Bol d'Or": [
+   40286,
+   0
+  ],
+  "x-nascar-cup-series | NASCAR Cup Series Championship Race": [
+   39169,
+   0
+  ],
+  "x-nascar-cup-series | Coke Zero Sugar 400": [
+   38629,
+   0
+  ],
+  "x-nascar-cup-series | Toyota Owners 400": [
+   38535,
+   0
+  ],
+  "x-nascar-cup-series | Pennzoil 400": [
+   38409,
+   0
+  ],
+  "x-nascar-cup-series | Wurth 400": [
+   37380,
+   0
+  ],
+  "x-nascar-cup-series | NCS Final Practice": [
+   35589,
+   0
+  ],
+  "x-race-of-remembrance | Anglesey International GP": [
+   35576,
+   1425
+  ],
+  "x-international-gt-open | Race": [
+   35244,
+   0
+  ],
+  "x-nogaro | Ultimate 600": [
+   34088,
+   23927
+  ],
+  "x-nascar-cup-series | Quaker State 400": [
+   33407,
+   0
+  ],
+  "x-virgin-australia-supercars | Int'l Virgin Australia Supercars C'ship -Qualifying": [
+   33209,
+   30122
+  ],
+  "x-virgin-australia-supercars | 2021 Repco Supercars Championship": [
+   32701,
+   0
+  ],
+  "x-l-denon | Championnat de France d'Endurance - Qualification 1": [
+   32028,
+   19751
+  ],
+  "x-mugello | European Endurance Prototype Cup": [
+   31849,
+   5200
+  ],
+  "x-nascar-xfinity-series | Kansas Lottery 300": [
+   31745,
+   0
+  ],
+  "x-nogaro | Challenger 1000": [
+   31074,
+   29202
+  ],
+  "x-nascar-cup-series | Food City 500": [
+   30998,
+   0
+  ],
+  "x-nascar-cup-series | Iowa Corn 350": [
+   29460,
+   0
+  ],
+  "x-anglesey-international-gp | Race of Remembrance - Day Qualifying": [
+   28787,
+   18041
+  ],
+  "x-round-04-bahrain-international-circuit | ROUND 04": [
+   28411,
+   105
+  ],
+  "x-nascar-cup-series | YellaWood 500": [
+   27875,
+   0
+  ],
+  "x-nascar-cup-series | FireKeepers Casino 400": [
+   27687,
+   0
+  ],
+  "x-nascar-cup-series | AdventHealth 400": [
+   27504,
+   0
+  ],
+  "x-nascar-cup-series | Enjoy Illinois 300": [
+   26718,
+   0
+  ],
+  "x-nascar-cup-series | Ambetter Health 400": [
+   25135,
+   0
+  ],
+  "x-nascar-cup-series | Ally 400": [
+   24731,
+   0
+  ],
+  "x-nascar-xfinity-series | Food City 300": [
+   24537,
+   0
+  ],
+  "x-race-of-remembrance | Anglesey International GP - Race": [
+   24418,
+   0
+  ],
+  "x-nascar-cup-series | Bank of America ROVAL 400": [
+   23661,
+   0
+  ],
+  "x-virgin-australia-supercars | 2022 Repco Supercars Championship": [
+   23357,
+   0
+  ],
+  "x-european-vw-fun-cup | Race": [
+   22816,
+   0
+  ],
+  "x-nascar-cup-series | GEICO 500": [
+   22773,
+   0
+  ],
+  "x-nascar-truck-series | SpeedyCash.com 250": [
+   22300,
+   0
+  ],
+  "x-timeservice-nl-feed | Gulf 12 Hours": [
+   21355,
+   643
+  ],
+  "x-suzuka-8-hours | FIM Endurance World Championship": [
+   20486,
+   629
+  ],
+  "x-nascar-xfinity-series | Andy's Frozen Custard 300": [
+   19456,
+   0
+  ],
+  "x-nascar-xfinity-series | Tennessee Lottery 250": [
+   19296,
+   0
+  ],
+  "x-l-denon | Challenger 1000": [
+   18950,
+   13575
+  ],
+  "x-nascar-cup-series | Straight Talk Wireless 400": [
+   18849,
+   0
+  ],
+  "x-2cvparts-com-classic-2cv-24-hour-race | Snetterton 200": [
+   18720,
+   0
+  ],
+  "x-nascar-cup-series | Shriners Children's 500": [
+   18522,
+   0
+  ],
+  "x-nascar-xfinity-series | Focused Health 250": [
+   18308,
+   0
+  ],
+  "x-imsa-michelin-pilot-challenge | Fox Factory 120": [
+   18212,
+   249
+  ],
+  "x-l-denon | Endurance": [
+   18139,
+   13260
+  ],
+  "x-nascar-cup-series | Bass Pro Shops NRA Night Race": [
+   18048,
+   0
+  ],
+  "x-nascar-xfinity-series | Focused Health 302": [
+   17842,
+   0
+  ],
+  "x-nascar-cup-series | EchoPark Automotive 400": [
+   17775,
+   0
+  ],
+  "x-enduroka-24hr | Anglesey Coastal": [
+   17674,
+   0
+  ],
+  "x-indycar | Borchetta Bourbon Music City Grand Prix": [
+   17518,
+   54
+  ],
+  "x-nascar-cup-series | Final Practice": [
+   17033,
+   0
+  ],
+  "x-nascar-cup-series | Brickyard 400": [
+   16967,
+   0
+  ],
+  "x-mugello | Kennol GT Endurance Cup": [
+   16798,
+   11038
+  ],
+  "x-nascar-cup-series | Cracker Barrel 400": [
+   16645,
+   0
+  ],
+  "x-weathertech-raceway-laguna-seca | California 8 Hours - 8": [
+   16543,
+   0
+  ],
+  "x-nascar-cup-series | The Great American Getaway 400": [
+   16507,
+   0
+  ],
+  "x-nascar-xfinity-series | Ag-Pro 300": [
+   15731,
+   0
+  ],
+  "x-indycar | Hy-Vee Indycar Race Weekend": [
+   15689,
+   43
+  ],
+  "x-nascar-xfinity-series | BetRivers 200": [
+   15413,
+   0
+  ],
+  "elms | Official Tests": [
+   15391,
+   0
+  ],
+  "x-team-rld | 24 Heures du Mans": [
+   15151,
+   0
+  ],
+  "x-nascar-xfinity-series | North Carolina Education Lottery 250": [
+   15086,
+   0
+  ],
+  "x-nascar-xfinity-series | Alsco Uniforms 300": [
+   15073,
+   0
+  ],
+  "x-arca-menards-series | Mohegan Sun 100": [
+   14885,
+   0
+  ],
+  "x-24-hours-of-deux-chevaux-classic-2cv-racing-club | Snetterton 200": [
+   14703,
+   0
+  ],
+  "x-nascar-cup-series | Drydene 400": [
+   14667,
+   0
+  ],
+  "x-nascar-xfinity-series | ToyotaCare 250": [
+   14592,
+   0
+  ],
+  "x-indycar | DXC Technology 600": [
+   14502,
+   43
+  ],
+  "x-indycar | SUKUP INDYCAR Race Weekend": [
+   14488,
+   26
+  ],
+  "x-monza | Group OPEN GT / GT4 - Qualifying": [
+   14382,
+   9808
+  ],
+  "x-nascar-xfinity-series | RAPTOR King of Tough 250": [
+   14184,
+   0
+  ],
+  "x-imsa-michelin-pilot-challenge | Alan Jay Automotive Network 120": [
+   14045,
+   381
+  ],
+  "x-indycar | PPG 375": [
+   14042,
+   22
+  ],
+  "x-indycar | Iowa INDYCAR 250s": [
+   13776,
+   22
+  ],
+  "x-nascar-cup-series | COCA-COLA 600": [
+   13740,
+   0
+  ],
+  "x-nascar-xfinity-series | NASCAR Xfinity Series Championship Race": [
+   13705,
+   0
+  ],
+  "x-nascar-xfinity-series | BetMGM 300": [
+   13703,
+   0
+  ],
+  "x-nascar-xfinity-series | National Debt Relief 250": [
+   13683,
+   0
+  ],
+  "x-nascar-truck-series | Rackley Roofing 200": [
+   13506,
+   0
+  ],
+  "x-nascar-xfinity-series | GOVX 200": [
+   13493,
+   0
+  ],
+  "x-nascar-cup-series | Jack Link's 500": [
+   13480,
+   0
+  ],
+  "x-nascar-truck-series | NASCAR Craftsman Truck Series Championship Race": [
+   13347,
+   0
+  ],
+  "x-gt-cup-europe | Race": [
+   13310,
+   0
+  ],
+  "x-nascar-xfinity-series | The LiUNA!": [
+   13226,
+   0
+  ],
+  "x-anglesey-international-gp | Race of Remembrance": [
+   13106,
+   0
+  ],
+  "x-indycar | Hy-Vee Milwaukee Mile 250s": [
+   12997,
+   64
+  ],
+  "x-nascar-truck-series | North Carolina Education Lottery 200": [
+   12792,
+   0
+  ],
+  "x-nascar-xfinity-series | Bennett Transportation and Logistics 250": [
+   12569,
+   0
+  ],
+  "x-nascar-cup-series | Food City Dirt Race": [
+   12548,
+   0
+  ],
+  "x-nascar-cup-series | NASCAR All-Star Race": [
+   12527,
+   0
+  ],
+  "x-neo-endurance | NEO Endurance Series": [
+   12420,
+   0
+  ],
+  "x-indycar | Big Machine Music City Grand Prix": [
+   12253,
+   28
+  ],
+  "x-nascar-truck-series | Ecosave 200": [
+   12059,
+   0
+  ],
+  "x-1006-km | Aurum 1006 km race": [
+   12035,
+   1731
+  ],
+  "x-nascar-xfinity-series | Fleetio 200": [
+   11897,
+   0
+  ],
+  "x-nascar-xfinity-series | Sports Illustrated Resorts 250": [
+   11500,
+   0
+  ],
+  "x-indycar | Snap-On Milwaukee Mile 250": [
+   11361,
+   23
+  ],
+  "x-24h-series | 12H Brno": [
+   11334,
+   0
+  ],
+  "x-indycar | Genesys 300": [
+   11250,
+   21
+  ],
+  "x-nascar-xfinity-series | NXS Final Practice": [
+   11159,
+   0
+  ],
+  "x-gtworldcheu-pwrd-by-aws-endurance-cup | Nuerburgring GP NGK": [
+   11087,
+   968
+  ],
+  "x-indycar | Grand Prix of Portland": [
+   11059,
+   0
+  ],
+  "x-nascar-xfinity-series | Pennzoil 250": [
+   11021,
+   0
+  ],
+  "x-imsa | IMPC": [
+   10948,
+   229
+  ],
+  "x-nascar-cup-series | Window World 450": [
+   10777,
+   0
+  ],
+  "x-nascar-truck-series | Black's Tire 200": [
+   10711,
+   0
+  ],
+  "x-nascar-xfinity-series | Wawa 250": [
+   10353,
+   0
+  ],
+  "x-indycar | GMR Grand Prix": [
+   10164,
+   0
+  ],
+  "x-nascar-cup-series | Season Finale 500": [
+   10097,
+   0
+  ],
+  "x-nascar-cup-series | NOCO 400": [
+   10095,
+   0
+  ],
+  "x-adac-gt-masters | ADAC GT Masters Nuerburgring": [
+   10071,
+   687
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Fanatec GTWC pwrd by AWS Endurance Cup Round 3": [
+   10059,
+   494
+  ],
+  "x-nascar-cup-series | Freeway Insurance 500": [
+   10017,
+   0
+  ],
+  "x-nascar-truck-series | UNOH 250": [
+   10003,
+   0
+  ],
+  "x-nascar-cup-series | Cup Series Championship": [
+   9975,
+   0
+  ],
+  "gtwc | Blancpain GT Series Endurance Cup Round 4": [
+   9968,
+   509
+  ],
+  "x-nascar-cup-series | United Rentals Work United 500": [
+   9911,
+   0
+  ],
+  "x-nascar-cup-series | Buschy McBusch Race 400": [
+   9899,
+   0
+  ],
+  "x-nascar-xfinity-series | Sport Clips Haircuts VFW 200": [
+   9883,
+   0
+  ],
+  "x-nascar-cup-series | Folds of Honor QuikTrip 500": [
+   9823,
+   0
+  ],
+  "x-nascar-truck-series | Weather Guard Truck Race": [
+   9774,
+   0
+  ],
+  "x-gt-worldcheu-pwrd-by-aws-endurance-cup | GTWC powered by AWS Endurance Cup Round 3": [
+   9723,
+   408
+  ],
+  "x-nascar-cup-series | Straight Talk Wireless 500": [
+   9643,
+   0
+  ],
+  "elms | Race": [
+   9642,
+   0
+  ],
+  "x-indycar | Hy-Vee HomeFront 250": [
+   9627,
+   14
+  ],
+  "x-nascar-cup-series | Mobil 1 301": [
+   9613,
+   0
+  ],
+  "x-nascar-truck-series | Buckle Up South Carolina 200": [
+   9536,
+   0
+  ],
+  "x-nascar-cup-series | Crayon 301": [
+   9491,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Fanatec GT WorldChEU pwrd by AWS Endurance Cup Round 1": [
+   9271,
+   1207
+  ],
+  "x-les-2-tours-d-horloge | Les 2 Tours d'Horloge": [
+   9176,
+   0
+  ],
+  "x-nascar-cup-series | eero 400": [
+   9096,
+   0
+  ],
+  "x-nascar-cup-series | AutoTrader EchoPark Automotive 400": [
+   9074,
+   0
+  ],
+  "x-nascar-xfinity-series | O'Reilly Auto Parts 300": [
+   8987,
+   0
+  ],
+  "x-nascar-cup-series | Bank of America 400": [
+   8970,
+   0
+  ],
+  "x-nascar-cup-series | Instacart 500": [
+   8862,
+   0
+  ],
+  "x-michelin-992-endurance-cup | Michelin 992 Endurance Cup 2024": [
+   8762,
+   104
+  ],
+  "x-nascar-cup-series | Toyota/Save Mart 350": [
+   8747,
+   0
+  ],
+  "x-nascar-cup-series | 4EVER 400": [
+   8701,
+   0
+  ],
+  "x-indycar | Iowa Corn 300": [
+   8597,
+   22
+  ],
+  "x-nascar-truck-series | NCTS Final Practice": [
+   8588,
+   0
+  ],
+  "x-nascar-cup-series | Autotrader 400": [
+   8532,
+   0
+  ],
+  "x-nascar-cup-series | EchoPark Automotive Grand Prix": [
+   8447,
+   0
+  ],
+  "x-nascar-xfinity-series | Alsco Uniforms 250": [
+   8396,
+   0
+  ],
+  "x-nascar-xfinity-series | Cabo Wabo 250": [
+   8340,
+   0
+  ],
+  "x-nascar-xfinity-series | Beef. It's What's For Dinner. 300": [
+   8304,
+   0
+  ],
+  "x-nascar-cup-series | Dollar Tree 301": [
+   8250,
+   0
+  ],
+  "x-nascar-truck-series | UNOH 200": [
+   8233,
+   0
+  ],
+  "x-nascar-truck-series | Baptist Health 200": [
+   8207,
+   0
+  ],
+  "x-nascar-truck-series | Love's RV Stop 225": [
+   8066,
+   0
+  ],
+  "x-nascar-truck-series | DQS Solutions & Staffing 250": [
+   8058,
+   0
+  ],
+  "x-nascar-xfinity-series | HyVee Perks 250": [
+   8058,
+   0
+  ],
+  "x-nascar-cup-series | Toyota SaveMart 350": [
+   8037,
+   0
+  ],
+  "x-nascar-truck-series | Heart Of America 200": [
+   8034,
+   0
+  ],
+  "x-nascar-xfinity-series | United Rentals 300": [
+   8001,
+   0
+  ],
+  "x-indycar | Good Ranchers 250": [
+   7987,
+   23
+  ],
+  "x-24h-series | 1st Hankook COPPA FLORIO 12H SICILY": [
+   7974,
+   0
+  ],
+  "x-gt-worldcheu-pwrd-by-aws-endurance-cup | GTWC powered by AWS Endurance Cup Round 8": [
+   7947,
+   473
+  ],
+  "x-formula-2 | Race": [
+   7934,
+   0
+  ],
+  "x-nascar-truck-series | Toyota 200": [
+   7882,
+   0
+  ],
+  "x-nascar-cup-series | Autotrader EchoPark Automotive 400": [
+   7863,
+   0
+  ],
+  "x-indycar | Desert Diamond Phoenix Grand Prix": [
+   7752,
+   5
+  ],
+  "x-nascar-truck-series | Victoria's Voice Foundation 200": [
+   7726,
+   0
+  ],
+  "x-indycar | SNAP-ON Makers and Fixers 250": [
+   7705,
+   0
+  ],
+  "x-indycar | ROP": [
+   7630,
+   0
+  ],
+  "x-nascar-cup-series | Dixie Vodka 400": [
+   7625,
+   0
+  ],
+  "x-gulf-12-hours | 12th Gulf 12 Hours Race 2023": [
+   7596,
+   154
+  ],
+  "x-hockenheim | Ultimate GT-Sprint Cup": [
+   7554,
+   3720
+  ],
+  "x-portimao | European Endurance Prototype Cup": [
+   7526,
+   3379
+  ],
+  "x-nascar-cup-series | Explore the Pocono Mountains 350": [
+   7516,
+   0
+  ],
+  "x-nascar-xfinity-series | Hy-Vee Perks 250": [
+   7508,
+   0
+  ],
+  "x-indycar | 10th Annual Bommarito Automotive Group 500": [
+   7439,
+   0
+  ],
+  "x-nascar-truck-series | Fresh From Florida 250": [
+   7362,
+   0
+  ],
+  "x-indycar | Hy-Vee One Step 250": [
+   7342,
+   0
+  ],
+  "x-nascar-cup-series | USA Today 301": [
+   7294,
+   0
+  ],
+  "x-michelin-992-endurance-cup | Michelin 992 Endurance Cup 2025": [
+   7293,
+   92
+  ],
+  "x-le-castellet | Mitjet": [
+   7271,
+   105
+  ],
+  "x-nascar-xfinity-series | Drive for the Cure 250": [
+   7251,
+   0
+  ],
+  "x-nascar-xfinity-series | Dead On Tools 250": [
+   7212,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Nuerburgring GP NGK": [
+   7167,
+   405
+  ],
+  "x-nascar-xfinity-series | The LiUNA": [
+   7157,
+   0
+  ],
+  "x-nascar-truck-series | Black's Tire 250": [
+   7146,
+   0
+  ],
+  "x-nascar-xfinity-series | SciAps 200": [
+   7138,
+   0
+  ],
+  "gtwc | Race": [
+   7027,
+   0
+  ],
+  "x-24h-series | 12H Navarra": [
+   7016,
+   0
+  ],
+  "x-nascar-xfinity-series | NFPA 250": [
+   6979,
+   0
+  ],
+  "x-nascar-xfinity-series | Ambetter Health 302": [
+   6977,
+   0
+  ],
+  "x-nascar-xfinity-series | Credit One NASCAR Amex Credit Card 300": [
+   6938,
+   0
+  ],
+  "x-nascar-xfinity-series | NASCAR O'Reilly Auto Parts Series Championship Race": [
+   6851,
+   0
+  ],
+  "x-indycar | Sonsio Grand Prix": [
+   6835,
+   0
+  ],
+  "x-nascar-xfinity-series | Draft Top 250": [
+   6828,
+   0
+  ],
+  "x-sco-endurance-series-2021-2022 | Round 5": [
+   6817,
+   16
+  ],
+  "x-virgin-australia-supercars | 2021 Repco Supercars Championship - Qualifying": [
+   6812,
+   4738
+  ],
+  "x-nascar-xfinity-series | United Rentals 200": [
+   6801,
+   0
+  ],
+  "x-nascar-xfinity-series | Suburban Propane 300": [
+   6797,
+   0
+  ],
+  "x-nascar-xfinity-series | Hard Rock Bet 300": [
+   6774,
+   0
+  ],
+  "x-nascar-xfinity-series | Call811.com Before You Dig 250": [
+   6752,
+   0
+  ],
+  "x-indycar | REV Group Grand Prix": [
+   6737,
+   0
+  ],
+  "x-nascar-cup-series | Cook Out 400 Busch Pole Qualifying": [
+   6733,
+   1216
+  ],
+  "x-arca-menards-series | Desert Diamond Casino West Valley 100": [
+   6653,
+   0
+  ],
+  "x-nascar-cup-series | NASCAR All-Star Race - Final Segment": [
+   6636,
+   0
+  ],
+  "x-nascar-xfinity-series | Xfinity Series Championship": [
+   6632,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Fanatec GTWC pwrd by AWS Endurance Cup Round 10": [
+   6628,
+   378
+  ],
+  "x-nascar-xfinity-series | Hy-Vee PERKS 250": [
+   6620,
+   0
+  ],
+  "x-nascar-xfinity-series | Winn Dixie 250": [
+   6564,
+   0
+  ],
+  "x-nascar-truck-series | Clean Harbors 250": [
+   6538,
+   0
+  ],
+  "x-nascar-xfinity-series | Contender Boats 300": [
+   6508,
+   0
+  ],
+  "x-nascar-xfinity-series | Explore the Pocono Mountains 225": [
+   6502,
+   0
+  ],
+  "gtwc | Blancpain GT Series Endurance Cup Round 10": [
+   6449,
+   414
+  ],
+  "x-nascar-xfinity-series | CALL811.COM EVERY DIG. EVERY TIME. 200": [
+   6374,
+   0
+  ],
+  "x-formula-regional-championship-by-alpine | Race": [
+   6338,
+   0
+  ],
+  "x-nascar-xfinity-series | Contender Boats 250": [
+   6335,
+   0
+  ],
+  "x-international-gt-open | Qualifying - 1 Driver": [
+   6320,
+   2514
+  ],
+  "x-nascar-xfinity-series | United Rentals 250": [
+   6309,
+   0
+  ],
+  "x-nascar-xfinity-series | Blue Cross NC 300": [
+   6302,
+   0
+  ],
+  "x-nascar-cup-series | Pala Casino 400": [
+   6298,
+   0
+  ],
+  "x-gulf-12-hours | Gulf 12 Hours 2025": [
+   6288,
+   251
+  ],
+  "x-2025-repco-bathurst-1000 | 2025 Repco Supercars Championship": [
+   6273,
+   100
+  ],
+  "x-euroformula-open | Race": [
+   6264,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Race": [
+   6249,
+   0
+  ],
+  "x-nascar-cup-series | Bluegreen Vacations Duel 2": [
+   6236,
+   3064
+  ],
+  "x-sco-endurance-series-2021-2022 | Round 6": [
+   6232,
+   22
+  ],
+  "x-nascar-xfinity-series | Andy's Frozen Custard 340": [
+   6223,
+   0
+  ],
+  "gtwc | Blancpain GT Series Round 10 Endurance Cup": [
+   6200,
+   158
+  ],
+  "x-nascar-xfinity-series | IAA & Ritchie Bros. 250": [
+   6170,
+   0
+  ],
+  "x-nascar-cup-series | Pocono Organics CBD 325": [
+   6163,
+   0
+  ],
+  "x-nascar-cup-series | Yellawood 500": [
+   6154,
+   0
+  ],
+  "x-2023-thrifty-newcastle-500 | 2023 Repco Supercars Championship": [
+   6137,
+   0
+  ],
+  "x-nascar-xfinity-series | Alsco 300": [
+   6135,
+   0
+  ],
+  "x-nascar-xfinity-series | Desert Diamond Casino West Valley 200": [
+   6133,
+   0
+  ],
+  "x-1006-km | Aurum 1006 km race powered by Hankook": [
+   6129,
+   0
+  ],
+  "x-fr-middle-east-trophy | FR Middle East Trophy/UAE4 Series": [
+   6098,
+   2413
+  ],
+  "x-nascar-truck-series | Wright Brand 250": [
+   6076,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup | Fanatec GTWC pwrd by AWS Endurance Cup Round 8": [
+   6071,
+   384
+  ],
+  "x-nascar-xfinity-series | DUDE Wipes 250": [
+   6063,
+   0
+  ],
+  "x-nascar-xfinity-series | Alsco Uniforms 302": [
+   6043,
+   0
+  ],
+  "x-indycar | INDYCAR Grand Prix": [
+   6010,
+   0
+  ],
+  "x-nascar-xfinity-series | SciAps 300": [
+   6008,
+   0
+  ],
+  "x-nascar-truck-series | Tyson 250": [
+   5989,
+   0
+  ],
+  "x-nascar-truck-series | FaithFest 250": [
+   5927,
+   0
+  ],
+  "x-bosch-power-tools-perth-super-440 | 2025 Repco Supercars Championship": [
+   5921,
+   216
+  ],
+  "x-imsa-michelin-pilot-challenge | BMW M Endurance Challenge": [
+   5888,
+   0
+  ],
+  "x-arca-menards-series | General Tire 125": [
+   5860,
+   0
+  ],
+  "x-nascar-xfinity-series | Pit Boss FoodMaxx 250": [
+   5743,
+   0
+  ],
+  "x-nascar-xfinity-series | DoorDash 250": [
+   5732,
+   0
+  ],
+  "x-nascar-xfinity-series | EchoPark 250": [
+   5700,
+   0
+  ],
+  "x-indycar | SNAP-ON Milwaukee Mile 250": [
+   5660,
+   0
+  ],
+  "x-indycar | ABC Supply 500": [
+   5611,
+   22
+  ],
+  "x-nascar-xfinity-series | Nu Way 225": [
+   5611,
+   0
+  ],
+  "x-nascar-truck-series | Window World 250": [
+   5509,
+   0
+  ],
+  "x-snowy-river-caravans-tasmania-super-440 | 2025 Repco Supercars Championship": [
+   5507,
+   132
+  ],
+  "x-raat-endurance | RAAT Thailand Endurance International Championship 2023": [
+   5485,
+   0
+  ],
+  "x-nascar-xfinity-series | Ambetter Health 200": [
+   5467,
+   0
+  ],
+  "x-nascar-xfinity-series | Nu Way 200": [
+   5455,
+   0
+  ],
+  "x-2023-penrite-oil-sandown-500 | Repco Supercars Championship": [
+   5446,
+   0
+  ],
+  "gtwc | Blancpain GT Series Endurance Cup Round 3": [
+   5409,
+   287
+  ],
+  "x-monza | 2h Endurance": [
+   5377,
+   0
+  ],
+  "x-gt-worldcheu-pwrd-by-aws-endurance-cup | GTWC powered by AWS Endurance Cup Round 1": [
+   5366,
+   429
+  ],
+  "x-nascar-truck-series | Tennessee Army National Guard 250": [
+   5363,
+   0
+  ],
+  "x-mugello | Ultimate GT Sprint Cup": [
+   5353,
+   36
+  ],
+  "x-nascar-xfinity-series | NOAPS Final Practice": [
+   5352,
+   0
+  ],
+  "x-2026-repco-bathurst-1000 | 2026 Repco Supercars Championship": [
+   5313,
+   67
+  ],
+  "x-nascar-xfinity-series | Production Alliance Group 300": [
+   5283,
+   0
+  ],
+  "x-nascar-cup-series | HighPoint.com 400": [
+   5198,
+   0
+  ],
+  "x-24h-series-powered-by-hankook | 2nd Hankook 12H KUWAIT 2023": [
+   5174,
+   94
+  ],
+  "x-nascar-xfinity-series | Sport Clips Haircuts VFW Help A Hero 200": [
+   5138,
+   0
+  ],
+  "x-nascar-xfinity-series | Sport Clips Haircuts VFW Help a Hero 200": [
+   5115,
+   0
+  ],
+  "x-nascar-truck-series | Boys and Girls Club of the Blue Ridge 200": [
+   5085,
+   0
+  ],
+  "x-nascar-xfinity-series | Sports Clips Haircuts VFW Help A Hero 200": [
+   5084,
+   0
+  ],
+  "x-arca-menards-series | AMSW Final Practice": [
+   5064,
+   0
+  ],
+  "x-nascar-xfinity-series | Crown Royal Purple Bag Project 200": [
+   5053,
+   0
+  ],
+  "x-2025-bp-adelaide-grand-final | 2025 Repco Supercars Championship": [
+   5038,
+   119
+  ],
+  "x-european-vw-fun-cup | Qualifying ": [
+   5020,
+   1242
+  ],
+  "x-nascar-truck-series | Slim Jim 200": [
+   5015,
+   0
+  ],
+  "x-nascar-truck-series | Long John Silver's 200": [
+   5008,
+   0
+  ],
+  "x-indycar | Freedom 250 Grand Prix of Washington DC": [
+   5000,
+   73
+  ],
+  "x-indycar | BITNILE COM Grand Prix of Portland": [
+   4962,
+   0
+  ],
+  "x-2024-repco-bathurst-1000 | 2024 Repco Supercars Championship": [
+   4961,
+   0
+  ],
+  "gtwc | Blancpain GT Series Endurance Cup Round 1": [
+   4886,
+   133
+  ],
+  "x-motul-12-hours-of-sepang | Race": [
+   4810,
+   0
+  ],
+  "x-2024-boost-mobile-gold-coast-500 | 2024 Repco Supercars Championship": [
+   4786,
+   0
+  ],
+  "x-2025-century-batteries-ipswich-super-440 | 2025 Repco Supercars Championship": [
+   4783,
+   141
+  ],
+  "x-nascar-truck-series | Zip Buy Now Pay Later 200": [
+   4772,
+   0
+  ],
+  "x-nascar-xfinity-series | Shriners Children's 200": [
+   4763,
+   0
+  ],
+  "x-2025-betr-darwin-triple-crown | 2025 Repco Supercars Championship": [
+   4747,
+   267
+  ],
+  "x-formula-regional-middle-east-championship | KMT Formula Series R3": [
+   4731,
+   380
+  ],
+  "x-international-gt-open | Qualifying - 2 Driver": [
+   4724,
+   1785
+  ],
+  "x-2026-tyrepower-tasmania-super-440 | 2026 Repco Supercars Championship": [
+   4707,
+   35
+  ],
+  "x-mugello | Hoosier Formula Cup": [
+   4674,
+   0
+  ],
+  "x-2025-penrite-oil-sandown-500 | 2025 Repco Supercars Championship": [
+   4645,
+   134
+  ],
+  "x-timeservice-nl-feed | 10th Gulf 12 Hours 2022": [
+   4641,
+   0
+  ],
+  "x-2026-betr-darwin-triple-crown | 2026 Repco Supercars Championship": [
+   4638,
+   95
+  ],
+  "x-2026-itm-christchurch-super-440 | 2026 Repco Supercars Championship": [
+   4624,
+   261
+  ],
+  "x-2025-nti-townsville-500 | 2025 Repco Supercars Championship": [
+   4608,
+   63
+  ],
+  "x-indycar | INDYCAR Harvest GP": [
+   4590,
+   0
+  ],
+  "x-le-castellet | Hoosier Formula Cup": [
+   4576,
+   0
+  ],
+  "x-bmw-120 | Round 5": [
+   4516,
+   0
+  ],
+  "x-hockenheim | Ultimate GT Endurance Cup": [
+   4489,
+   1605
+  ],
+  "x-nascar-truck-series | Blacks Tire 200": [
+   4486,
+   0
+  ],
+  "x-2026-nti-townsville-500 | 2026 Repco Supercars Championship": [
+   4476,
+   2
+  ],
+  "x-supercar-challenge-pb-hankook | V-Max Trophy of the Dunes 2026": [
+   4476,
+   0
+  ],
+  "x-nascar-cup-series | Verizon 200 at the Brickyard": [
+   4464,
+   0
+  ],
+  "x-nascar-truck-series | Kansas Lottery 200": [
+   4424,
+   0
+  ],
+  "x-nascar-truck-series | Fr8 208": [
+   4408,
+   0
+  ],
+  "x-indycar | BitNile.com Grand Prix of Portland": [
+   4395,
+   0
+  ],
+  "x-formula-2 | Practice": [
+   4391,
+   0
+  ],
+  "x-formula-3 | Qualifying": [
+   4382,
+   2512
+  ],
+  "x-championnat-de-france-ffsa-des-circuits | Championnat de France FFSA GT / Alpine Elf Cup Series": [
+   4377,
+   0
+  ],
+  "x-navarra | Challenger 1000": [
+   4377,
+   3269
+  ],
+  "x-fun-cup-20-83-du-mans | 89º Edition des 24 Heures du Mans": [
+   4374,
+   0
+  ],
+  "x-fun-cup | 92º Edition des 24 Heures du Mans": [
+   4316,
+   0
+  ],
+  "x-moto2 | Liqui Moly Grand Prix of Germany": [
+   4314,
+   226
+  ],
+  "x-motogp | Motul Grand Prix of Japan": [
+   4293,
+   93
+  ],
+  "x-formula-3 | Race": [
+   4292,
+   0
+  ],
+  "x-2026-airtouch-500-at-the-bend | 2026 Repco Supercars Championship": [
+   4288,
+   0
+  ],
+  "x-motogp | Liqui Moly Grand Prix of Germany": [
+   4253,
+   136
+  ],
+  "x-bmw-sim-gt-cup-2022 | Round 10": [
+   4224,
+   0
+  ],
+  "x-2024-vailo-adelaide-500 | 2024 Repco Supercars Championship": [
+   4153,
+   0
+  ],
+  "x-nascar-cup-series | Cook Out Clash at Bowman Gray": [
+   4126,
+   0
+  ],
+  "x-motogp | Pertamina Grand Prix of Indonesia": [
+   4117,
+   115
+  ],
+  "x-bmw-sim-gt-cup-s1 | Round 4": [
+   4110,
+   0
+  ],
+  "x-indycar | XPEL 375": [
+   4110,
+   0
+  ],
+  "x-nascar-xfinity-series | Final Practice": [
+   4106,
+   0
+  ],
+  "x-nascar-xfinity-series | AG-PRO 300": [
+   4101,
+   0
+  ],
+  "x-indycar | BITNILE.COM Grand Prix of Portland": [
+   4072,
+   0
+  ],
+  "x-hi-tec-oils-bathurst-6-hour-2019 | Race": [
+   4061,
+   0
+  ],
+  "x-nascar-truck-series | Craftsman Truck Series Championship": [
+   4039,
+   0
+  ],
+  "x-moto2 | Pertamina Grand Prix of Indonesia": [
+   4016,
+   191
+  ],
+  "x-nascar-truck-series | Baptist Health Cancer Care 200": [
+   4015,
+   0
+  ],
+  "x-gt4-european-series | Blancpain GT World Challenge Europe Round 2": [
+   4014,
+   125
+  ],
+  "x-nascar-cup-series | Cook Out 400 Busch Pole Qualifying - Round 1 Group A": [
+   3995,
+   1091
+  ],
+  "x-2026-century-batteries-ipswich-super-440 | 2026 Repco Supercars Championship": [
+   3991,
+   48
+  ],
+  "x-nascar-truck-series | Kubota Tractor 200": [
+   3930,
+   0
+  ],
+  "wec | Official Test": [
+   3923,
+   0
+  ],
+  "x-gtworldcheu-pwrd-by-aws-sprint-cup | GTWC powered by AWS Sprint Cup Round 2": [
+   3883,
+   335
+  ],
+  "x-2023-nti-townsville-500 | 2023 Repco Supercars Championship": [
+   3877,
+   0
+  ],
+  "x-nascar-truck-series | Heart of Health Care 200": [
+   3876,
+   0
+  ],
+  "x-2025-itm-taupo-super-440 | 2025 Repco Supercars Championship": [
+   3867,
+   46
+  ],
+  "x-gt4-european-series | Blancpain GT Series Endurance Cup Round 4": [
+   3864,
+   312
+  ],
+  "x-nascar-truck-series | Sober or Slammer 200": [
+   3840,
+   0
+  ],
+  "gtwc | Blancpain GT World Challenge Europe Round 5": [
+   3836,
+   251
+  ],
+  "x-nascar-cup-series | Grant Park 165": [
+   3832,
+   0
+  ],
+  "x-2018-adelaide-500-supercars | Virgin Australia Supercars C'ship": [
+   3788,
+   0
+  ],
+  "x-nascar-cup-series | Toyota / SaveMart 350": [
+   3781,
+   0
+  ],
+  "x-moto2 | Monster Energy Grand Prix of Catalonia": [
+   3740,
+   149
+  ],
+  "x-2026-bosch-power-tools-perth-super-440 | 2026 Repco Supercars Championship": [
+   3717,
+   122
+  ],
+  "x-2023-ned-whisky-tasmania-supersprint | 2023 Repco Supercars Championship": [
+   3701,
+   0
+  ],
+  "x-fanatec-gt-worldcheu-pwrd-by-aws-sprint-cup | Fanatec GT WorldChEU pwrd by AWS Sprint Cup Round 2": [
+   3699,
+   496
+  ],
+  "gtwc | Blancpain GT World Challenge Europe Round 9": [
+   3696,
+   258
+  ],
+  "x-moto2 | Motul Grand Prix of Japan": [
+   3693,
+   118
+  ],
+  "x-motogp | Monster Energy Grand Prix of Catalonia": [
+   3676,
+   139
+  ],
+  "x-nascar-xfinity-series | Explore the Pocono Mountains 250": [
+   3650,
+   0
+  ],
+  "x-nascar-cup-series | Xfinity 500 Busch Pole Qualifying": [
+   3644,
+   1125
+  ],
+  "x-bmw-sim-gt-cup-2022 | Round 2": [
+   3618,
+   0
+  ],
+  "x-le-mans-cup | Collective Tests": [
+   3607,
+   0
+  ],
+  "x-european-vw-fun-cup | RACE": [
+   3599,
+   0
+  ],
+  "x-imsa | PCCNA": [
+   3595,
+   0
+  ],
+  "x-nascar-truck-series | Weather Guard Truck Race on Dirt": [
+   3571,
+   0
+  ],
+  "x-moto3 | Liqui Moly Grand Prix of Germany": [
+   3562,
+   198
+  ],
+  "x-system-test | system under test": [
+   3550,
+   0
+  ],
+  "x-motogp | Brembo Grand Prix of Italy": [
+   3510,
+   68
+  ],
+  "x-indycar | INDYNXT by Firestone at Milwaukee Mile": [
+   3505,
+   44
+  ],
+  "x-moto3 | Monster Energy Grand Prix of Catalonia": [
+   3481,
+   158
+  ],
+  "x-nascar-cup-series | DuraMax Texas Grand Prix": [
+   3471,
+   0
+  ],
+  "x-nascar-xfinity-series | The Progress Group 250": [
+   3469,
+   0
+  ],
+  "x-nascar-truck-series | NC Education Lottery 200": [
+   3460,
+   0
+  ],
+  "x-bmw-sim-cup-120 | Round 6": [
+   3448,
+   0
+  ],
+  "x-gtworldcheu-pwrd-by-aws-sprint-cup | GTWC powered by AWS Sprint Cup Round 6": [
+   3442,
+   177
+  ],
+  "x-indycar | Gallagher Grand Prix": [
+   3435,
+   0
+  ],
+  "x-formula-3 | Practice": [
+   3426,
+   0
+  ],
+  "x-2026-dunlop-sydney-500 | 2026 Repco Supercars Championship": [
+   3424,
+   0
+  ],
+  "x-fanatec-gt-worldcheu-pwrd-by-aws-sprint-cup | Fanatec GT WorldChEU pwrd by AWS Sprint Cup Round 3": [
+   3415,
+   410
+  ],
+  "x-formula-2 | Qualifying": [
+   3374,
+   1388
+  ],
+  "x-nascar-xfinity-series | Blue Cross NC 250": [
+   3359,
+   0
+  ],
+  "x-2023-bosch-power-tools-perth-supersprint | 2023 Dunlop Super2 & Super3 Series": [
+   3353,
+   0
+  ],
+  "f1 | Formula 1 Aramco Pre-Season Testing 2021": [
+   3329,
+   0
+  ],
+  "x-indycar | Big Machine Spiked Coolers Grand Prix": [
+   3293,
+   0
+  ],
+  "x-indycar | ONLYBULLS Grand Prix of Portland": [
+   3291,
+   0
+  ],
+  "x-fanatec-gtworldcheu-pwrd-by-aws-sprint-cup | Fanatec GTWC pwrd by AWS Sprint Cup Round 7": [
+   3286,
+   229
+  ],
+  "gtwc | Blancpain GT World Challenge Europe Round 8": [
+   3280,
+   218
+  ],
+  "gtwc | Blancpain GT World Challenge Europe Round 6": [
+   3278,
+   201
+  ],
+  "x-fastlane-tv | Autodromo Enzo e Dino Ferrari": [
+   3254,
+   79
+  ],
+  "x-stirling-moss-memorial-trophy | Goodwood": [
+   3252,
+   0
+  ],
+  "x-moto2 | Brembo Grand Prix of Italy": [
+   3243,
+   92
+  ],
+  "x-nascar-cup-series | NASCAR All-Star Open": [
+   3239,
+   0
+  ]
+ }
+}

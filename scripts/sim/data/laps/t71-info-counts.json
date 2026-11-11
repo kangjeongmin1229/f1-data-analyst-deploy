@@ -1,0 +1,5172 @@
+{
+ "source": "Timing71 rows",
+ "note": "per series: how many sessions carry temperature, a rain or track-condition field, and any non-green flag",
+ "series": {
+  "alms": {
+   "sessions": 86,
+   "withTemp": 37,
+   "withRainField": 0,
+   "withNonGreenFlag": 61,
+   "wetMarked": 0
+  },
+  "dtm": {
+   "sessions": 79,
+   "withTemp": 38,
+   "withRainField": 0,
+   "withNonGreenFlag": 27,
+   "wetMarked": 0
+  },
+  "elms": {
+   "sessions": 260,
+   "withTemp": 259,
+   "withRainField": 124,
+   "withNonGreenFlag": 179,
+   "wetMarked": 90
+  },
+  "f1": {
+   "sessions": 764,
+   "withTemp": 761,
+   "withRainField": 760,
+   "withNonGreenFlag": 535,
+   "wetMarked": 169
+  },
+  "fe": {
+   "sessions": 523,
+   "withTemp": 522,
+   "withRainField": 0,
+   "withNonGreenFlag": 273,
+   "wetMarked": 0
+  },
+  "gtwc": {
+   "sessions": 230,
+   "withTemp": 129,
+   "withRainField": 109,
+   "withNonGreenFlag": 107,
+   "wetMarked": 7
+  },
+  "igtc": {
+   "sessions": 93,
+   "withTemp": 28,
+   "withRainField": 22,
+   "withNonGreenFlag": 35,
+   "wetMarked": 4
+  },
+  "imsa": {
+   "sessions": 392,
+   "withTemp": 391,
+   "withRainField": 0,
+   "withNonGreenFlag": 224,
+   "wetMarked": 0
+  },
+  "macau": {
+   "sessions": 80,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 72,
+   "wetMarked": 0
+  },
+  "nur": {
+   "sessions": 33,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 31,
+   "wetMarked": 0
+  },
+  "wec": {
+   "sessions": 315,
+   "withTemp": 308,
+   "withRainField": 108,
+   "withNonGreenFlag": 220,
+   "wetMarked": 10
+  },
+  "x-1006-km": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-1006-km-practice-5": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-1006-km-qualifying": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-110cc": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-160cc": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-190cc": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2-0l-cup": {
+   "sessions": 9,
+   "withTemp": 9,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2011-clipsal-500-adelaide": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-2018-adelaide-500-supercars": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2018-cams-national-racing-championships-round-1": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2018-cams-national-racing-championships-round-2": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2018-cams-national-racing-championships-round-3": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2018-cams-national-racing-championships-round-5": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2019-pirtek-perth-supernight-supercars": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2019-shannons-nationals-round-3": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2021-hi-tec-oils-bathurst-6-hour": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2021-intelligent-money-british-gt-championship": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2022-hi-tec-oils-bathurst-6-hour": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-2022-open-wheels-500": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2023-2cvparts-com-classic-racing-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2023-abk-beer-0-bmw-motorrad-f-900-r-cup": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-2023-beaurepaires-sydney-supernight": {
+   "sessions": 22,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-2023-bennetts-british-superbike-championship-with-pirelli": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2023-betr-darwin-triple-crown": {
+   "sessions": 28,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-2023-bosch-power-tools-perth-supersprint": {
+   "sessions": 29,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-2023-british-truck-racing-championship": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 5,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2023-formula-1-rolex-australian-grand-prix": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2023-gb3-championship-partnered-by-the-brdc": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-2023-gb4-championship-partnered-by-the-brdc": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2023-ginetta-gt-academy": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-2023-intelligent-money-british-gt-championship": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 4,
+   "withNonGreenFlag": 2,
+   "wetMarked": 2
+  },
+  "x-2023-junior-saloon-car-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2023-michelin-ginetta-junior-championship": {
+   "sessions": 3,
+   "withTemp": 2,
+   "withRainField": 3,
+   "withNonGreenFlag": 2,
+   "wetMarked": 1
+  },
+  "x-2023-molson-group-british-sidecar-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2023-ned-whisky-tasmania-supersprint": {
+   "sessions": 21,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2023-nti-townsville-500": {
+   "sessions": 27,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-2023-otr-supersprint": {
+   "sessions": 25,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-2023-penrite-oil-sandown-500": {
+   "sessions": 30,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-2023-pirelli-national-junior-superstock-with-santander-consu": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-2023-pirelli-national-superstock-with-santander-consumer-fin": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-2023-protyre-motorsport-ginetta-gt-championship": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2023-quattro-group-british-supersport-british-gp2-championsh": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-2023-thrifty-newcastle-500": {
+   "sessions": 28,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-2023-track-attack-race-club": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2023-vailo-adelaide-500": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2023-welsh-sports-saloon-car-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2024-boost-mobile-gold-coast-500": {
+   "sessions": 32,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 13,
+   "wetMarked": 0
+  },
+  "x-2024-british-gt-championship": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-2024-championnat-de-france-ffsa-gt": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2024-f1-academy": {
+   "sessions": 28,
+   "withTemp": 28,
+   "withRainField": 28,
+   "withNonGreenFlag": 18,
+   "wetMarked": 1
+  },
+  "x-2024-ffsa-f4-french-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2024-gb4-championship-partnered-by-the-brdc": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2024-ginetta-junior-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-2024-protyre-motorsport-ginetta-gt-championship": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2024-repco-bathurst-1000": {
+   "sessions": 26,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 13,
+   "wetMarked": 0
+  },
+  "x-2024-vailo-adelaide-500": {
+   "sessions": 34,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 13,
+   "wetMarked": 0
+  },
+  "x-2025-airtouch-500-at-the-bend": {
+   "sessions": 34,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-2025-betr-darwin-triple-crown": {
+   "sessions": 26,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-2025-boost-mobile-gold-coast-500": {
+   "sessions": 21,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-2025-bp-adelaide-grand-final": {
+   "sessions": 29,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 14,
+   "wetMarked": 0
+  },
+  "x-2025-british-gt-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2025-century-batteries-ipswich-super-440": {
+   "sessions": 27,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-2025-f1-academy": {
+   "sessions": 25,
+   "withTemp": 25,
+   "withRainField": 25,
+   "withNonGreenFlag": 25,
+   "wetMarked": 2
+  },
+  "x-2025-formula-1-louis-vuitton-australian-grand-prix": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-2025-gb3-championship-partnered-by-the-brdc": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-2025-gb4-championship-partnered-by-the-brdc": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-2025-intercontinental-gt-challenge-powered-by-pirelli-suzuka": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 2
+  },
+  "x-2025-itm-taupo-super-440": {
+   "sessions": 24,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2025-nti-townsville-500": {
+   "sessions": 29,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-2025-penrite-oil-sandown-500": {
+   "sessions": 23,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2025-repco-bathurst-1000": {
+   "sessions": 40,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 17,
+   "wetMarked": 0
+  },
+  "x-2025-thrifty-sydney-500-opening-round": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2026-airtouch-500-at-the-bend": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-2026-betr-darwin-triple-crown": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-2026-bosch-power-tools-perth-super-440": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-2026-century-batteries-ipswich-super-440": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-2026-dunlop-sydney-500": {
+   "sessions": 25,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-2026-f1-academy": {
+   "sessions": 20,
+   "withTemp": 20,
+   "withRainField": 20,
+   "withNonGreenFlag": 18,
+   "wetMarked": 1
+  },
+  "x-2026-formula-1-qatar-airways-australian-grand-prix": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-2026-formula-regional-middle-east-trophy": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-2026-itm-christchurch-super-440": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2026-itm-ruapuna-super-440": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-2026-itm-taupo-super-440": {
+   "sessions": 16,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-2026-nti-townsville-500": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-2026-repco-bathurst-1000": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-2026-tyrepower-tasmania-super-440": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-2026-uae4-series": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-2026-wera-tools-f4-british-championship-certified-by-fia": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-24-heures-du-mans-motos": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-24-hours-of-deux-chevaux-classic-2cv-racing-club": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-24h-series": {
+   "sessions": 264,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 170,
+   "wetMarked": 0
+  },
+  "x-24h-series-me-trophy": {
+   "sessions": 19,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 15,
+   "wetMarked": 0
+  },
+  "x-24h-series-me-trophy-powered-by-hankook": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-24h-series-powered-by-hankook": {
+   "sessions": 30,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 28,
+   "wetMarked": 0
+  },
+  "x-2cvparts-com-classic-2cv-24-hour-race": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-2k-world-cup": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-488-challenge": {
+   "sessions": 15,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-6h-of-barcelona": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-6h-of-portim-o": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-7-racing-championship-420r": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-750mc-roadsports-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-7racing": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-8-hours-of-spa-motos": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-adac-24h-classic": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-adac-graf-berghe-von-trips-pokal": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-adac-gt-masters": {
+   "sessions": 82,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 37,
+   "wetMarked": 0
+  },
+  "x-adac-gt4-germany": {
+   "sessions": 34,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 22,
+   "wetMarked": 0
+  },
+  "x-adac-historic-cup-ost-formel": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-adac-tcr-germany": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-adac-tourenwagen-junior-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-adams-page-swinging-sixties": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-adrian-flux-insurance-caterham-academy-green": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-adrian-flux-insurance-caterham-academy-white": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-advantage-motorsport-future-classics": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-airtec-motorsport-brscc-fiesta-st240-championship-with-vinyl": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-alfa-revival-cup": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-allcomers-the-mutton-grand-prix-race-closed-wheel": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-allcomers-the-pumpkin-smash-race-closed-wheel": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-allcomers-the-wellington-cup-open-wheel": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-alpine-elf-cup-series": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-alpine-elf-europa-cup": {
+   "sessions": 6,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-anglesey-international-gp": {
+   "sessions": 19,
+   "withTemp": 0,
+   "withRainField": 19,
+   "withNonGreenFlag": 2,
+   "wetMarked": 8
+  },
+  "x-aquila": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-aquila-synergy-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-aragon": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-arca-menards-series": {
+   "sessions": 39,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-asia-superbike-1000cc": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-austria-formel-cup-topjet-f2000": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-avd-historic-race-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-avon-tyres-caterham-seven-championship-uk": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-benjafield-s-racing-club": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bernie-s-v8s": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bilstein-caterham-seven-roadsport-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-bmw-120": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bmw-sim-cup-120": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bmw-sim-gt-cup-2022": {
+   "sessions": 13,
+   "withTemp": 13,
+   "withRainField": 13,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bmw-sim-gt-cup-s1": {
+   "sessions": 11,
+   "withTemp": 11,
+   "withRainField": 11,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bmw-sim-live": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bol-d-or": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-bosch-power-tools-perth-super-440": {
+   "sessions": 27,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-boss-gp": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-britcar-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-british-gt-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-british-gt-championship-race-1-round-5": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-british-gt-championship-race-1-round-6": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-british-gt-championship-race-1-round-7": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-brscc-citycar-cup-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-brscc-fiesta-junior-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-brscc-mazda-mx-5-championship": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 4,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-brscc-mazda-mx-5-clubman-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-brscc-mx-5-supercup-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-brscc-pro-sports-sprint": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-bsr-super-series": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-btcc": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-bwc": {
+   "sessions": 16,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-california-8-hours": {
+   "sessions": 11,
+   "withTemp": 11,
+   "withRainField": 11,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-campeonato-espa-a-carrera-de-camiones": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-campionato-italiano-auto-storiche-3-4-r": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-carrera-80": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-carrera-80s": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-caterham-310r-cscuk": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-caterham-seven-roadsport-270r": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-championnat-de-france-de-f4": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-championnat-de-france-ffsa-des-circuits": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-championnat-de-france-ffsa-des-circuits-dijon-prenois": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-championnat-de-france-ffsa-tourisme": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-clapham-north-kent-models-mx-5-mk1-championships": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-clapham-north-mazda-mx-5-supercup-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-class-one-revival": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-classic-endurance-racing-1": {
+   "sessions": 8,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-classic-endurance-racing-2": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-classic-gp-pre-1986-f1": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-classic-mini-racing-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-classic-touring-challenge": {
+   "sessions": 6,
+   "withTemp": 6,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-clio-cup-bohemia": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-clio-cup-gb-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-clio-cup-middle-east": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-clio-cup-series": {
+   "sessions": 15,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-club-challenge": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-club-competizioni-gt": {
+   "sessions": 5,
+   "withTemp": 5,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-club-division": {
+   "sessions": 36,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 30,
+   "wetMarked": 0
+  },
+  "x-clubsport-summer-series": {
+   "sessions": 5,
+   "withTemp": 5,
+   "withRainField": 5,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-co-ordsport-tin-tops-puma-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-colmore-youngtimer-touring-car-challenge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-copa-racer-confortauto": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-coppa-shell": {
+   "sessions": 141,
+   "withTemp": 96,
+   "withRainField": 0,
+   "withNonGreenFlag": 74,
+   "wetMarked": 0
+  },
+  "x-coppa-shell-488": {
+   "sessions": 36,
+   "withTemp": 36,
+   "withRainField": 0,
+   "withNonGreenFlag": 13,
+   "wetMarked": 0
+  },
+  "x-coppa-shell-am": {
+   "sessions": 55,
+   "withTemp": 55,
+   "withRainField": 0,
+   "withNonGreenFlag": 39,
+   "wetMarked": 0
+  },
+  "x-coupe-de-p-ques-2026": {
+   "sessions": 22,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 16,
+   "wetMarked": 0
+  },
+  "x-coupes-de-p-ques-de-nogaro": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-creventic-endurance-series": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-crowdstrike-24-hours-of-spa": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-ctcrc-classic-historic-thunder-saloons": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ctcrc-jaguar-challenge": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-ctcrc-pre-66-classic-saloon-historic-touring-car": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-ctcrc-pre-83-group-1-touring-cars": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-cto-velocidad-cv": {
+   "sessions": 18,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-cup-und-tourenwagen-trophy": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-dallara-formula-ir": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dd2-max-master": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-demon-tweeks-audi-tt-cup-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-deutsche-historische-langstrecken-meisterschaft-dhlm": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dmv-bmw-318ti-cup": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-dmv-bmw-challenge": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-dmv-classic-masters": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dmv-classic-masters-cup-alfa-romeo-challenge": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-dmv-classic-masters-ptrc": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dmv-classic-masters-ptrc-hco-tw": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-dmv-formel-vau": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-dmv-nes-1000-km": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-dmv-nes-1000-km-qual": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dmv-nes-500": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-dmv-nes-gp": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dmv-polo-cup": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dmv-stgt": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-dmv-stgt-all-series-route-66": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dmv-stgt-und-fcd": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-drm-revival": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-dtm-classic": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dunlop-mini-challenge-with-mini-spares-mini-miglia": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dunlop-mini-challenge-with-mini-spares-mini-se7en": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-dutch-barn-vodka-caterham-seven-championship-uk": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-e3": {
+   "sessions": 11,
+   "withTemp": 11,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-e4": {
+   "sessions": 11,
+   "withTemp": 11,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-e4-championship": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-edge-caterham-seven-270r-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-elms-collective-test-day": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-endurance": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-endurance-icons": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-endurance-racing-legends": {
+   "sessions": 8,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-endurance-racing-legends-1-lmp-gt1": {
+   "sessions": 8,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-endurance-racing-legends-2-gt2": {
+   "sessions": 11,
+   "withTemp": 11,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-enduroka": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-enduroka-24hr": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-etc": {
+   "sessions": 5,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-etcc-seventies-revival": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-euro-4-championship": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-eurocup-3": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-eurocup3": {
+   "sessions": 12,
+   "withTemp": 12,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-euroformula-open": {
+   "sessions": 54,
+   "withTemp": 51,
+   "withRainField": 0,
+   "withNonGreenFlag": 29,
+   "wetMarked": 0
+  },
+  "x-euronascar": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-european-talent-cup": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-european-talent-cup-2025": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-european-vw-fun-cup": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-f1-academy": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-f1000-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-f3-asian-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-f4-cez": {
+   "sessions": 17,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-f4-cez-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-f4-middle-east-championship": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-f4-saudi-gulf-prix-of-kuwait": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-f4-spain": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-f4-uae-championship": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-f4spain": {
+   "sessions": 22,
+   "withTemp": 22,
+   "withRainField": 0,
+   "withNonGreenFlag": 21,
+   "wetMarked": 0
+  },
+  "x-fanatec-gt-worldcheu-pwrd-by-aws-sprint-cup": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-fanatec-gt2-european-series-pwrd-by-pirelli": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup": {
+   "sessions": 46,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 31,
+   "wetMarked": 0
+  },
+  "x-fanatec-gtworldcheu-pwrd-by-aws-sprint-cup": {
+   "sessions": 37,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 27,
+   "wetMarked": 0
+  },
+  "x-fastest-mini-in-the-world": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 4,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-fastlane-tv": {
+   "sessions": 18,
+   "withTemp": 18,
+   "withRainField": 18,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-febo-nieuwjaarsrace": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge-488": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge-na": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge-north-america": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge-trofeo-pirelli": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-ferrari-challenge-uk": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-ffsa-f4-french-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fia-f3-european-championship": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-fia-formula-regional": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-fia-formula-regional-european-championship": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-fia-motorsport-games-2019-formula-4-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fia-motorsport-games-2019-gt-cup": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-finale-mondiale-coppa-shell": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-finale-mondiale-coppa-shell-am": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-finale-mondiale-trofeo-pirelli-pirelli-am": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fjhra-silverline-historic-formula-junior-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ford-fiesta-sprint-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-ford-modified": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ford-mustang-challenge": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ford-mustang-cup": {
+   "sessions": 8,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-formula-2": {
+   "sessions": 176,
+   "withTemp": 169,
+   "withRainField": 169,
+   "withNonGreenFlag": 130,
+   "wetMarked": 0
+  },
+  "x-formula-2-2023": {
+   "sessions": 44,
+   "withTemp": 37,
+   "withRainField": 38,
+   "withNonGreenFlag": 33,
+   "wetMarked": 7
+  },
+  "x-formula-2-2024": {
+   "sessions": 54,
+   "withTemp": 53,
+   "withRainField": 54,
+   "withNonGreenFlag": 47,
+   "wetMarked": 4
+  },
+  "x-formula-2-2025": {
+   "sessions": 50,
+   "withTemp": 49,
+   "withRainField": 49,
+   "withNonGreenFlag": 43,
+   "wetMarked": 1
+  },
+  "x-formula-2-2026": {
+   "sessions": 46,
+   "withTemp": 46,
+   "withRainField": 46,
+   "withNonGreenFlag": 42,
+   "wetMarked": 0
+  },
+  "x-formula-3": {
+   "sessions": 95,
+   "withTemp": 95,
+   "withRainField": 95,
+   "withNonGreenFlag": 73,
+   "wetMarked": 0
+  },
+  "x-formula-3-2023": {
+   "sessions": 34,
+   "withTemp": 28,
+   "withRainField": 29,
+   "withNonGreenFlag": 25,
+   "wetMarked": 6
+  },
+  "x-formula-3-2024": {
+   "sessions": 37,
+   "withTemp": 37,
+   "withRainField": 37,
+   "withNonGreenFlag": 30,
+   "wetMarked": 5
+  },
+  "x-formula-3-2025": {
+   "sessions": 34,
+   "withTemp": 34,
+   "withRainField": 33,
+   "withNonGreenFlag": 28,
+   "wetMarked": 1
+  },
+  "x-formula-3-2026": {
+   "sessions": 34,
+   "withTemp": 34,
+   "withRainField": 34,
+   "withNonGreenFlag": 25,
+   "wetMarked": 1
+  },
+  "x-formula-4-indian-2023": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-formula-4-middle-east-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-formula-4-uae": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-formula-nordic": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-formula-regional-championship-by-alpine": {
+   "sessions": 25,
+   "withTemp": 22,
+   "withRainField": 0,
+   "withNonGreenFlag": 14,
+   "wetMarked": 0
+  },
+  "x-formula-regional-middle-east-championship": {
+   "sessions": 19,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 16,
+   "wetMarked": 0
+  },
+  "x-formula-renault-eurocup": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-formula-trophy": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-formula-winter-series": {
+   "sessions": 18,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 15,
+   "wetMarked": 0
+  },
+  "x-fr-middle-east-championship": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-fr-middle-east-trophy": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-freddie-march-memorial-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-friday-night-shakedown": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-frjc": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fun-cup": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fun-cup-20-83-du-mans": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-fx-pro-series-x-f3": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gb3": {
+   "sessions": 6,
+   "withTemp": 6,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-gb3-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-gebhardt-ginetta-gt5-challenge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-generations-trophy": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-ginetta-junior-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-golden-ra-classic-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-goodyear-mini-challenge-supported-by-mini-spares-miglia-libr": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-goodyear-mini-challenge-supported-by-mini-spares-se7en-se7en": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-goodyear-mini-challenges-supported-by-mini-spares-miglia": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-goodyear-mini-challenges-supported-by-mini-spares-se7en": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-gp-icons-presented-by-goodyear": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-gp3": {
+   "sessions": 32,
+   "withTemp": 32,
+   "withRainField": 32,
+   "withNonGreenFlag": 20,
+   "wetMarked": 0
+  },
+  "x-gr-4-kla-j-k-youngtimer-ber-850ccm-bj-94-04-supersport": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gr-vios-sprint-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-grand-prix-de-france-historique": {
+   "sessions": 24,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 17,
+   "wetMarked": 0
+  },
+  "x-greater-bay-area-gt-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-group-1-portugal": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-group-2-1957-1963-formula-junior": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-group-5-1966-1979-historic-scca-b-c-sedans": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-group-9-1960-s-mini-vs-muscle-enduro": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-group-c-racing": {
+   "sessions": 10,
+   "withTemp": 10,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-group-c-super-cup": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-gt-america": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt-america-powered-by-aws": {
+   "sessions": 14,
+   "withTemp": 14,
+   "withRainField": 1,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-gt-cup-endurance": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-gt-cup-europe": {
+   "sessions": 51,
+   "withTemp": 51,
+   "withRainField": 0,
+   "withNonGreenFlag": 40,
+   "wetMarked": 0
+  },
+  "x-gt-cup-sprint": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-gt-sports-car-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-gt-sports-club-america": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt-summer-series": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt-winter-series": {
+   "sessions": 61,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 52,
+   "wetMarked": 0
+  },
+  "x-gt-worldcheu-pwrd-by-aws-endurance-cup": {
+   "sessions": 21,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-gt2-european-series-pwrd-by-pirelli": {
+   "sessions": 11,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-gt3-legends": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 5,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-gt3-revival-series": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt4-america-west": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt4-european-series": {
+   "sessions": 28,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 20,
+   "wetMarked": 0
+  },
+  "x-gt4-european-series-pwrd-by-rafa-racing-club": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-gt4-scandinavia": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gt4-winter-series": {
+   "sessions": 46,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 30,
+   "wetMarked": 0
+  },
+  "x-gt4ws-spws": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-gtworldcheu-pwrd-by-aws-endurance-cup": {
+   "sessions": 27,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 18,
+   "wetMarked": 0
+  },
+  "x-gtworldcheu-pwrd-by-aws-sprint-cup": {
+   "sessions": 47,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 31,
+   "wetMarked": 0
+  },
+  "x-gulf-12-hours": {
+   "sessions": 18,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-gulf-procar": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-gulf-radical-cup": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-heritage-touring-cup": {
+   "sessions": 13,
+   "withTemp": 10,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-hi-tec-oils-bathurst-6-hour-2019": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-histo-cup-yt-und-tco-bis-3000ccm": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-historic-endurance": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-historic-grand-prix-cars": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-historic-grand-prix-cars-association": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-historic-touring-car-challenge": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 6,
+   "withNonGreenFlag": 3,
+   "wetMarked": 1
+  },
+  "x-hmrn-pre-63-gt": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hockenheim": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 9,
+   "wetMarked": 0
+  },
+  "x-honda-cbr-600-rr": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-honda-cbr-650-r": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-honda-city-hatchback-omr": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-honda-thailand-talent-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hrdc-allstars": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hrdc-allstars-with-classic-alfa-challenge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hrdc-dunlop-allstars": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-hrdc-gerry-marshal-trophy-series": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hrdc-gerry-marshall-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-hrdc-top-hat-pre-66-touring-cars": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 4,
+   "withNonGreenFlag": 2,
+   "wetMarked": 1
+  },
+  "x-hscc-derek-bell-trophy-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-hscc-derek-bell-trophy-series": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-hscc-f2": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-hscc-historic-road-sports-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-iberian-he-2-h1971-1976": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-iberian-historic-endurance": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-idemitsu-mazda-mx-5-cup": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-idemitsu-mazda-mx-5-cup-presented-by-bfgoodrich-tires": {
+   "sessions": 21,
+   "withTemp": 18,
+   "withRainField": 0,
+   "withNonGreenFlag": 18,
+   "wetMarked": 0
+  },
+  "x-imola": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-imsa": {
+   "sessions": 50,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 32,
+   "wetMarked": 0
+  },
+  "x-imsa-airbnb-endurance-challenge": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-imsa-michelin-pilot-challenge": {
+   "sessions": 162,
+   "withTemp": 161,
+   "withRainField": 0,
+   "withNonGreenFlag": 107,
+   "wetMarked": 0
+  },
+  "x-imsa-michelin-pilot-sportscar-challenge": {
+   "sessions": 19,
+   "withTemp": 19,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-imsa-prototype-challenge": {
+   "sessions": 54,
+   "withTemp": 54,
+   "withRainField": 0,
+   "withNonGreenFlag": 30,
+   "wetMarked": 0
+  },
+  "x-imsa-prototype-challenge-presented-by-mazda": {
+   "sessions": 23,
+   "withTemp": 23,
+   "withRainField": 0,
+   "withNonGreenFlag": 14,
+   "wetMarked": 0
+  },
+  "x-imsa-vp-racing-sportscar-challenge": {
+   "sessions": 34,
+   "withTemp": 31,
+   "withRainField": 0,
+   "withNonGreenFlag": 21,
+   "wetMarked": 0
+  },
+  "x-indian-racing-league-2023": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-indianapolis-8-hour": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-indianapolis-8-hour-presented-by-aws": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 7,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-indy-lights": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-indy-pro-2000": {
+   "sessions": 3,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-indy-pro-2000-championship": {
+   "sessions": 14,
+   "withTemp": 14,
+   "withRainField": 14,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-indycar": {
+   "sessions": 925,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 460,
+   "wetMarked": 41
+  },
+  "x-intelligent-money-british-gt-championship": {
+   "sessions": 24,
+   "withTemp": 24,
+   "withRainField": 24,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-intelligent-money-british-gt-championship-race-1-round-3": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-intelligent-money-british-gt-championship-race-2-round-4": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-intelligent-money-british-gt-championship-race-round-5": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-intelligent-money-british-gt-championship-race-round-6": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-intelligent-money-british-gt-championship-race-round-9": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-international-gt-open": {
+   "sessions": 77,
+   "withTemp": 77,
+   "withRainField": 0,
+   "withNonGreenFlag": 61,
+   "wetMarked": 0
+  },
+  "x-international-trophy-for-classic-gt-cars-pre-66": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 1
+  },
+  "x-isowc-2021": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-italian-f4-championship": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-jaguar-i-pace-etrophy-series": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-jdm-plates-ma7da-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-jmc-racing-special-saloons-and-modsports": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-juniorgp": {
+   "sessions": 11,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-juniorgp-2025": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-kent-models-mx-5-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-kmtc-2k-race-series": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-kumho-bmw-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-l-denon": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-lamborghini-super-trofeo": {
+   "sessions": 71,
+   "withTemp": 51,
+   "withRainField": 0,
+   "withNonGreenFlag": 47,
+   "wetMarked": 0
+  },
+  "x-lamborghini-super-trofeo-series": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-lancaster-insurance-mgoc-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-le-castellet": {
+   "sessions": 20,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-le-castellet-2": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-le-mans-classic-2018": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-le-mans-cup": {
+   "sessions": 204,
+   "withTemp": 204,
+   "withRainField": 102,
+   "withNonGreenFlag": 168,
+   "wetMarked": 80
+  },
+  "x-le-vigeant": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-legends-cars-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-legends-of-le-mans": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-les-2-tours-d-horloge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ligier-european-series": {
+   "sessions": 26,
+   "withTemp": 26,
+   "withRainField": 0,
+   "withNonGreenFlag": 26,
+   "wetMarked": 0
+  },
+  "x-ligier-js-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-liqui-moly-slicks": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 1
+  },
+  "x-lohen-turbo-tin-tops": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-lotus-cup-europe": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-lotus-cup-italia": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-lurani-trophy": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-magny-cours": {
+   "sessions": 40,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-majors-series": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-majors-series-european-region": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-malaysia-championship-series": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-masters-endurance-legends": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-masters-racing-legends": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-masters-sports-car-legends": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-mazda-mx-5-cup-benelux": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-mazda-mx-5-cup-group-2-shootout": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mazda-mx-5-cup-pb-hankook": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mazda-mx-5-cup-presented-by-b-f-goodrich": {
+   "sessions": 5,
+   "withTemp": 5,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-mazda-mx-5-cup-presented-by-bfgoodrich": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mazda-mx-5-cup-shootout": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mazda-mx5-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-mazda-smx-selected-drivers-group-2": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mclaren-trophy-america": {
+   "sessions": 9,
+   "withTemp": 9,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-mclaren-trophy-cup": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mclaren-trophy-europe": {
+   "sessions": 14,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-miata-trophy": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-michelin-24h-series": {
+   "sessions": 23,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 19,
+   "wetMarked": 0
+  },
+  "x-michelin-992-endurance-cup": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-michelin-imsa-sportscar-encore-at-sebring": {
+   "sessions": 15,
+   "withTemp": 15,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-michelin-le-mans-cup": {
+   "sessions": 13,
+   "withTemp": 12,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-michelin-le-mans-cup-barcelona-round": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mighty-minis": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 4,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-milltek-sport-civic-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-mini-challenge-clubsport": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mini-max-micro-max": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mini-spares-50th-anniversary-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mintex-classic-k": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-misano": {
+   "sessions": 17,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-mission-motorsport-caterham-seven-270r-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mitjet-2l-italia-2023-series": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mitjet-international": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-mlmc-collective-test-day": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-modern-classics": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-momoven-moto4-ec-2026": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-monza": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-morphmy-caterham-graduates": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-morphmy-caterham-graduates-championship-sigma-135": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-morphmy-caterham-graduates-championship-sigma-150-sigmax": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-moto2": {
+   "sessions": 188,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 20,
+   "wetMarked": 0
+  },
+  "x-moto2-ech": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-moto2-ech-2025": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-moto2-ech-2026": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-moto3": {
+   "sessions": 191,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-moto3-junior-wch-2026": {
+   "sessions": 8,
+   "withTemp": 8,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-motoe": {
+   "sessions": 20,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-motogp": {
+   "sessions": 245,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-motor-mania-round-1": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-motor-mania-round-3": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-motul-12-hours-of-sepang": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-motul-caterham-seven-310r-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mrl-mad-jack-for-pre-war-sports-cars": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-mugello": {
+   "sessions": 55,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 24,
+   "wetMarked": 0
+  },
+  "x-mustang-challenge": {
+   "sessions": 18,
+   "withTemp": 14,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-mustang-challenge-le-mans-invitational": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-mustang-challenge-north-america": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-n-rburgring-24-hours": {
+   "sessions": 42,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 30,
+   "wetMarked": 0
+  },
+  "x-nascar-cup-series": {
+   "sessions": 539,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 115,
+   "wetMarked": 0
+  },
+  "x-nascar-truck-series": {
+   "sessions": 218,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 32,
+   "wetMarked": 0
+  },
+  "x-nascar-xfinity-series": {
+   "sessions": 355,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 53,
+   "wetMarked": 0
+  },
+  "x-natc-sprint-rennen": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-navarra": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ne1": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-neo-endurance": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-nogaro": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-north-wilkesboro-throwback-cup": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-nurburgring-24-hours": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-nxt-gen-cup": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-official-paid-fanatec-gtwc-pwrd-by-aws-gt2": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-official-paid-gtwc-powered-by-aws": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-official-test-87-edition-des-24-heures-du-mans": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-open-wheels-500-mile-race": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-open-wheels-veterans-100": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ot-publishing-coupe-cup-with-toyo-tires": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-other": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-p4-emergency-lighting-caterham-graduates-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-paul-ricard": {
+   "sessions": 27,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 20,
+   "wetMarked": 0
+  },
+  "x-pccme-race": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-pccna": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-pchc-porsche-club-historic-challenge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-america": {
+   "sessions": 52,
+   "withTemp": 52,
+   "withRainField": 34,
+   "withNonGreenFlag": 28,
+   "wetMarked": 2
+  },
+  "x-pirelli-gt4-america-sprint": {
+   "sessions": 32,
+   "withTemp": 32,
+   "withRainField": 32,
+   "withNonGreenFlag": 13,
+   "wetMarked": 3
+  },
+  "x-pirelli-gt4-america-sprint-sprintx": {
+   "sessions": 12,
+   "withTemp": 12,
+   "withRainField": 12,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-america-sprint-sprintx-east": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 4,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-america-sprint-sprintx-west": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-america-sprintx": {
+   "sessions": 30,
+   "withTemp": 30,
+   "withRainField": 30,
+   "withNonGreenFlag": 7,
+   "wetMarked": 3
+  },
+  "x-pirelli-gt4-america-sprintx-east": {
+   "sessions": 12,
+   "withTemp": 12,
+   "withRainField": 12,
+   "withNonGreenFlag": 5,
+   "wetMarked": 2
+  },
+  "x-pirelli-gt4-america-sprintx-gt4-america-east": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-america-sprintx-west": {
+   "sessions": 13,
+   "withTemp": 13,
+   "withRainField": 13,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-pirelli-gt4-americasprintx-west": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-plateau-1-grid-1": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-plateau-2-grid-2": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-plateau-3-grid-3": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-plateau-4-grid-4": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-plateau-5-grid-5": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-plateau-6-grid-6": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-porsche-boxster-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 2
+  },
+  "x-porsche-carrera-cup": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-asia": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-benelux": {
+   "sessions": 93,
+   "withTemp": 85,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-france": {
+   "sessions": 17,
+   "withTemp": 13,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-japan": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-middle-east": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-north-america": {
+   "sessions": 43,
+   "withTemp": 39,
+   "withRainField": 0,
+   "withNonGreenFlag": 21,
+   "wetMarked": 0
+  },
+  "x-porsche-carrera-cup-north-america-presented-by-the-cayman-is": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-porsche-classic-race": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-classic-race-le-mans": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-club": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-club-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-club-lithuania": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-endurance-challenge-deutschland": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-endurance-challenge-deutschland-rennen": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-endurance-challenge-north-america": {
+   "sessions": 9,
+   "withTemp": 9,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-porsche-gt3-cup-challenge-by-yokohama": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-gt3-cup-challenge-usa-by-yokohama": {
+   "sessions": 10,
+   "withTemp": 10,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-porsche-mobil-1-supercup": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-racing-cup-supersession": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-s-c-iberica-1": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-s-c-iberica-2": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-porsche-sixt-carrera-cup-deutschland": {
+   "sessions": 9,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-deutschland-gt3": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-deutschland-gt3-rennen": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-deutschland-gt4": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-deutschland-gt4-rennen": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-gt4-gt3": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-north-america-cayman": {
+   "sessions": 18,
+   "withTemp": 17,
+   "withRainField": 0,
+   "withNonGreenFlag": 14,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-north-america-gt3-cup": {
+   "sessions": 20,
+   "withTemp": 20,
+   "withRainField": 0,
+   "withNonGreenFlag": 16,
+   "wetMarked": 0
+  },
+  "x-porsche-sprint-challenge-usa-west": {
+   "sessions": 17,
+   "withTemp": 17,
+   "withRainField": 0,
+   "withNonGreenFlag": 11,
+   "wetMarked": 0
+  },
+  "x-porsche-supercup": {
+   "sessions": 20,
+   "withTemp": 19,
+   "withRainField": 0,
+   "withNonGreenFlag": 20,
+   "wetMarked": 0
+  },
+  "x-portim-o": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-portimao": {
+   "sessions": 22,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-pre-66-gt-sprint": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-pre-war-sports-cars": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-prototype-cup-europe": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-prototype-cup-germany": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-prototype-winter-series": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-protyre-motorsport-ginetta-gt5-challenge": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-quarantine-gt-challenge": {
+   "sessions": 13,
+   "withTemp": 13,
+   "withRainField": 13,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-raat-endurance": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-race-of-remembrance": {
+   "sessions": 15,
+   "withTemp": 0,
+   "withRainField": 15,
+   "withNonGreenFlag": 8,
+   "wetMarked": 3
+  },
+  "x-racespot": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-radical-cup-europe": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-radical-cup-scandinavia": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-radical-cup-uk": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-radical-wf": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-ravenol-1h-endurance": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-red-bull-ring": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-renault-clio-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-reykjavik-international-games-2022": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-roadsport-c-by-nankang": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-round-01-jeddah-corniche-circuit": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-round-02-jeddah-corniche-circuit": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-round-03-bahrain-international-circuit": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-round-04-bahrain-international-circuit": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-round-04-jeddah-corniche-circuit": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-round-05-jeddah-corniche-circuit": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-royal-automobile-club-pall-mall-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-royal-automobile-club-woodcote-trophy-stirling-moss-trophy": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-royal-automobile-pall-mall-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-saleen-cup": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-sanwa-trophy-pre-66-minis": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 4,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-sco-endurance-series-2021-2022": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 4,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-scottish-mini-cooper-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-shanghai-8h": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-silverlake-c1-endurance-series": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 5,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-single-seater-series": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-sixties-endurance": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-sjm-macau-gt-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-skip-barber": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-snowy-river-caravans-tasmania-super-440": {
+   "sessions": 26,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 8,
+   "wetMarked": 0
+  },
+  "x-spa-francorchamps": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-spa-speedweek": {
+   "sessions": 33,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-spezial-tourenwagen-trophy-h-r-cup": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-spezial-tourenwagen-trophy-rennen": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-sport-division": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-sports-car-open": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-sports-prototype-winter-series": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-stirling-moss-memorial-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-stock": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-stock-ech": {
+   "sessions": 6,
+   "withTemp": 6,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-stock-ech-2025": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-stock-ech-2026": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-super-bike-1000-cc-sb3": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-super-formula": {
+   "sessions": 15,
+   "withTemp": 0,
+   "withRainField": 15,
+   "withNonGreenFlag": 9,
+   "wetMarked": 3
+  },
+  "x-supercar-challenge": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-supercar-challenge-pb-hankook": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-supercar-challenge-powered-by-hankook": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-supercars": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-supercars-gt4": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-superside-world-championship": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-supersport-gt": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-sussex-trophy": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 1
+  },
+  "x-sustain-fuels-formula-vee-championship": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-suzuka-10-hours": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 10,
+   "withNonGreenFlag": 2,
+   "wetMarked": 1
+  },
+  "x-suzuka-1000km-intercontinental-gt-challenge": {
+   "sessions": 5,
+   "withTemp": 5,
+   "withRainField": 5,
+   "withNonGreenFlag": 2,
+   "wetMarked": 2
+  },
+  "x-suzuka-8-hours": {
+   "sessions": 13,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-swift-cup-europe": {
+   "sessions": 2,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-system-test": {
+   "sessions": 3,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-systemtest": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-tc-america": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tc-america-powered-by-skip-barber": {
+   "sessions": 16,
+   "withTemp": 16,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-tc-america-powered-by-skip-barber-racing-school": {
+   "sessions": 28,
+   "withTemp": 28,
+   "withRainField": 28,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-tc-america-tc-class": {
+   "sessions": 24,
+   "withTemp": 24,
+   "withRainField": 24,
+   "withNonGreenFlag": 7,
+   "wetMarked": 1
+  },
+  "x-tc-america-tc-tca-tcr-classes": {
+   "sessions": 3,
+   "withTemp": 3,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tc-america-tc-tcr-tca-classes": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tc-america-tcr-tca": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tc-america-tcr-tca-classes": {
+   "sessions": 22,
+   "withTemp": 22,
+   "withRainField": 22,
+   "withNonGreenFlag": 7,
+   "wetMarked": 2
+  },
+  "x-tc-america-tcr-tca-tc": {
+   "sessions": 34,
+   "withTemp": 34,
+   "withRainField": 34,
+   "withNonGreenFlag": 9,
+   "wetMarked": 2
+  },
+  "x-tcr-asia-series": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-tcr-eastern-europe": {
+   "sessions": 11,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-tcr-eastern-europe-croatian-national-championship": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-tcr-europe": {
+   "sessions": 28,
+   "withTemp": 14,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-tcr-europe-cup": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tcr-spain": {
+   "sessions": 3,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-tcr-uk-touring-car-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tcr-winter-series": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-team-fastlane": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-team-rld": {
+   "sessions": 6,
+   "withTemp": 6,
+   "withRainField": 6,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-team-rld-endurance-le-mans-series": {
+   "sessions": 4,
+   "withTemp": 4,
+   "withRainField": 4,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-tegiwa-club-enduro-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-tegiwa-roadsports-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-tgrna-gr-cup-north-america": {
+   "sessions": 14,
+   "withTemp": 14,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-th-super-compact": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-th-super-eco": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-th-super-pickup-d1-class-a-b": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-th-super-pickup-d2-class-c": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-th-supercar-gt3": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-th-supercar-gt3-gtm": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-th-supercar-gt4": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-th-supercar-gtc": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-th-supercar-gtm-gt4": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-thailand-super-compact": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-thailand-super-eco": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-thailand-super-pickup-d1-class-a-b": {
+   "sessions": 10,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 10,
+   "wetMarked": 0
+  },
+  "x-thailand-super-pickup-d2-class-c": {
+   "sessions": 11,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 7,
+   "wetMarked": 0
+  },
+  "x-thailand-supercar-gt3": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-thailand-supercar-gtc": {
+   "sessions": 6,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-thailand-supercar-gtm-gt4": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-the-gentlemen-challenge": {
+   "sessions": 17,
+   "withTemp": 17,
+   "withRainField": 0,
+   "withNonGreenFlag": 12,
+   "wetMarked": 0
+  },
+  "x-the-morgan-challenge": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-the-sunday-storm-for-pre-82-ff1600": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-the-vertu-motors-mini-challenge-trophy": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-time-attack-heat-2-su-ul-ula-ulb-ma-sa-mb": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-timeservice-nl-feed": {
+   "sessions": 55,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 29,
+   "wetMarked": 0
+  },
+  "x-tofeo-pirelli": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-top-hat-pre-66-touring-cars": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-topjet-f2000": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-total-24-hours-of-spa": {
+   "sessions": 28,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 21,
+   "wetMarked": 0
+  },
+  "x-total-24-hours-of-spa-bronze-test": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-totalenergies-24-hours-of-spa": {
+   "sessions": 9,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 6,
+   "wetMarked": 0
+  },
+  "x-tourenwagen-golden-ra": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-tourenwagen-legenden": {
+   "sessions": 12,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 5,
+   "wetMarked": 0
+  },
+  "x-tourenwagen-legenden-pure-group-a": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-toyota-corolla-altis-gr-sport-omr-toyota-yaris-ativ-lady-omr": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-toyota-gr-cup-north-america": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-toyota-hilux-revo-omr": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-toyota-yaris-omr": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-trofeo-pirelli": {
+   "sessions": 147,
+   "withTemp": 101,
+   "withRainField": 0,
+   "withNonGreenFlag": 60,
+   "wetMarked": 0
+  },
+  "x-trofeo-pirelli-coppa-shell": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-trofeo-pirelli-pirelli-am": {
+   "sessions": 39,
+   "withTemp": 39,
+   "withRainField": 0,
+   "withNonGreenFlag": 22,
+   "wetMarked": 0
+  },
+  "x-trofeo-predators": {
+   "sessions": 3,
+   "withTemp": 1,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-tss-supercar-gt3": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tss-supercar-gtc": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tss-supercar-gtm-gt4": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-tss-the-super-series-by-b-quik-gt3-gtm-gt4": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-tss-the-super-series-by-b-quik-gtc": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-turbine": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-twingo-cup-series": {
+   "sessions": 5,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-uae4-series": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 3,
+   "wetMarked": 0
+  },
+  "x-ultimate-bmw": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-valeryd-legends-cup-2023": {
+   "sessions": 4,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-velom-watches-supercup-by-interwetten-scc": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-vertex-caterham-roadsport-championship": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 3,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-vertex-caterham-seven-310r-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-veterans-race-of-remembrance": {
+   "sessions": 2,
+   "withTemp": 2,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-virgin-australia-supercars": {
+   "sessions": 471,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 69,
+   "wetMarked": 0
+  },
+  "x-vrs-gt-sprint-series": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-vsg-crypto-clio-sport-championship": {
+   "sessions": 2,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-vw-supa-cup-polo-cup-challenge": {
+   "sessions": 1,
+   "withTemp": 1,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-w-series": {
+   "sessions": 31,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-walter-hayes-trophy": {
+   "sessions": 8,
+   "withTemp": 0,
+   "withRainField": 8,
+   "withNonGreenFlag": 2,
+   "wetMarked": 4
+  },
+  "x-weathertech-raceway-laguna-seca": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 7,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-wec-beta": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 7,
+   "withNonGreenFlag": 4,
+   "wetMarked": 0
+  },
+  "x-wera-tools-f4-british-f4-championship-certified-by-the-fia": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 2,
+   "wetMarked": 0
+  },
+  "x-whelen-mazda-mx-5-cup-presented-by-michelin": {
+   "sessions": 37,
+   "withTemp": 33,
+   "withRainField": 0,
+   "withNonGreenFlag": 29,
+   "wetMarked": 0
+  },
+  "x-wige-solutions": {
+   "sessions": 7,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-winter-greenhell-2020-2021": {
+   "sessions": 7,
+   "withTemp": 7,
+   "withRainField": 7,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-woodcote-trophy-stirling-moss-trophy-with-hmrn-pre-63-gt": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 1,
+   "wetMarked": 0
+  },
+  "x-wosp-new-millennium": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 1
+  },
+  "x-x-bow-battle": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 0,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-z-cars-production-gti-championships": {
+   "sessions": 3,
+   "withTemp": 0,
+   "withRainField": 2,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  },
+  "x-zeo-prototype-series": {
+   "sessions": 1,
+   "withTemp": 0,
+   "withRainField": 1,
+   "withNonGreenFlag": 0,
+   "wetMarked": 0
+  }
+ }
+}
