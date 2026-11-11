@@ -94,7 +94,7 @@ const SIM = /iracing|e-?sports?|esport|sim ?racing|simracing|virtual|lionheart|\
 async function merge() {
   const {createInterface} = await import('node:readline'); const {createReadStream} = await import('node:fs');
   const files = readdirSync(OUT).filter(f => /-\d+\.ndjson$/.test(f)), table = [], wet = [], models = {}, marks = {}, simSeries = [];
-  const gap = {}, venues = {}, info = {}, cond = {}, evo = {}; const medn = a => { const x = a.filter(Number.isFinite).sort((p, q) => p - q); return x.length ? +x[x.length >> 1].toFixed(1) : null; };
+  const gap = {}, venues = {}, info = {}, cond = {}, evo = {}, bests = {}; const medn = a => { const x = a.filter(Number.isFinite).sort((p, q) => p - q); return x.length ? +x[x.length >> 1].toFixed(1) : null; };
   for (const key of [...new Set(files.map(f => f.replace(/-\d+\.ndjson$/, '')))].sort()) {
     let rows = [];
     for (const f of files.filter(f => f.replace(/-\d+\.ndjson$/, '') === key)) {
@@ -122,6 +122,8 @@ async function merge() {
       const sess = new Map();
       for (const r of rows) {
         if (r.q.includes('sim')) continue;
+        // fastest dry qualifying push lap per series, track, season and class, with the weather of that lap
+        if (r.track && r.push && r.time > 0) { const k = `${key}|${r.track}|${r.season}|${r.cls}`, b = bests[k]; if (!b || r.time < b.lap) bests[k] = {lap: r.time, carModel: r.carModel, entry: r.entry, session: String(r.session).split('|')[0], airC: r.airC, trackC: r.trackC, humidityPct: r.humidityPct, pressureHpa: r.pressureHpa, windMs: r.windMs, trapKph: r.trapKph, paceSuspect: r.q.includes('wet_suspect'), laps: (b?.laps || 0) + 1}; else b.laps++; }
         if (r.track) { const g = gap[r.track] ||= {geometry: !!lapsimTracks[r.track], laps: 0, clean: 0, push: 0, series: {}}; g.laps++; if (isClean(r)) g.clean++; if (r.push) g.push++; g.series[key] = 1; }
         else { const v = venues[key + ' | ' + r.venue] ||= [0, 0]; v[0]++; if (r.push) v[1]++; }
         const o = sess.get(r.session) || sess.set(r.session, {type: r.sessionType, track: r.track, season: r.season, start: +String(r.session).split('|').pop(), air: [], trk: [], hum: [], prs: [], wind: [], n: 0, rain: 0, cond: 0, flags: new Set(), wetMark: false}).get(r.session);
@@ -149,6 +151,7 @@ async function merge() {
   writeFileSync(join(OUT, '..', 't71-info-counts.json'), JSON.stringify({source: 'Timing71 rows', note: 'per series: how many sessions carry temperature, a rain or track-condition field, and any non-green flag', series: info}, null, 1));
   writeFileSync(join(OUT, '..', 't71-conditions-counts.json'), JSON.stringify({source: 'Timing71 feed weather, dry sessions, median per session then median over sessions', key: 'series|track|month|sessionType',
     conditions: Object.fromEntries(Object.entries(cond).map(([k, c]) => [k, {sessions: c.n, seasons: Object.keys(c.seasons), airC: medn(c.air), trackC: medn(c.trk), humidityPct: medn(c.hum), pressureHpa: medn(c.prs), windMs: medn(c.wind)}]))}, null, 1));
+  writeFileSync(join(OUT, '..', 't71-bests-counts.json'), JSON.stringify({source: 'Timing71 rows', note: 'fastest clean dry qualifying push lap per series|track|season|class; laps = push laps in the group', bests}, null, 0));
   writeFileSync(join(OUT, '..', 't71-evo-counts.json'), JSON.stringify({source: 'Timing71 car model text', note: 'GT3 laps per base model, series, season and kit (base / evo / evo2)', models: evo}, null, 1));
   writeFileSync(join(OUT, '..', 't71-counts.json'), JSON.stringify({source: 'Timing71 archive (archive.timing71.org); calibration use only; rows are not committed',
     listed: logs.find(l => l.shard === 0)?.listed ?? logs[0]?.listed, picked: logs[0]?.picked, shards: logs.length, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
