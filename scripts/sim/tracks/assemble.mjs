@@ -55,7 +55,11 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
   const out = {source: 'OpenStreetMap raceway ways (© OpenStreetMap contributors, ODbL); loops found by scripts/sim/tracks/assemble.mjs', rule: 'accepted = within 0.5 % of the official lap length', tracks: {}}, lines = {};
   for (const t of REQ.filter(t => t.status === 'osm')) {
     const f = `${DIR}/${t.id}.json`; if (!existsSync(f)) { out.tracks[t.id] = {error: 'no map data'}; continue; }
-    const els = JSON.parse(readFileSync(f, 'utf8')).elements; let r = loops(els), snapUsed = 12;
+    const raw = JSON.parse(readFileSync(f, 'utf8')).elements, clone = a => JSON.parse(JSON.stringify(a));
+    // permanent raceway ways and the ways of a route relation are searched separately (the same way can be in both)
+    const els = raw.filter(e => !e.inRelation), rel = raw.filter(e => e.inRelation);
+    const both = sm => { const a = loops(clone(els), {snapM: sm}); if (rel.length) { const b = loops(clone(rel), {snapM: sm}); a.loops.push(...b.loops); a.relationWays = b.ways; a.relationLoops = b.loops.length; } return a; };
+    let r = both(12), snapUsed = 12;
     // official lengths: every FIA-licensed layout whose name matches this venue (newest list first), plus any length stored with a source
     const re = t.fia ? new RegExp(t.fia, 'i') : null, seen = new Set();
     const fia = re ? FIA.filter(x => re.test(x.name) && !(t.fiaNot && new RegExp(t.fiaNot, 'i').test(x.name))).filter(x => !seen.has(x.name + x.lengthM) && seen.add(x.name + x.lengthM)) : [];
@@ -69,10 +73,10 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
       const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]);
       return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok, gapClosedM: snapUsed}; });
     let acc2 = accepted;
-    for (const sm of [30, 60]) { if (!targets.length || acc2.some(a => a.accepted)) break; r = loops(JSON.parse(JSON.stringify(els)), {snapM: sm}); snapUsed = sm; acc2 = pick(); }
+    for (const sm of [30, 60]) { if (!targets.length || acc2.some(a => a.accepted)) break; r = both(sm); snapUsed = sm; acc2 = pick(); }
     accepted.splice(0, accepted.length, ...acc2);
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
-    out.tracks[t.id] = {gapClosedM: snapUsed, snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
+    out.tracks[t.id] = {relationWays: r.relationWays, relationLoops: r.relationLoops, gapClosedM: snapUsed, snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
   }
   writeFileSync(`${DIR}/loops-summary.json`, JSON.stringify(out, null, 1)); writeFileSync(`${DIR}/accepted-lines.json`, JSON.stringify(lines));
   console.log(Object.entries(out.tracks).map(([k, v]) => `${k}: ${v.error || v.loopsFound + ' loops, longest ' + (v.loopLengthsM[0]?.m ?? '-')}`).join('\n'));
