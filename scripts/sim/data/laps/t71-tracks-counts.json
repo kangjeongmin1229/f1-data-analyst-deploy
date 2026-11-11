@@ -27,7 +27,7 @@
    "geometry": true,
    "laps": 445694,
    "clean": 305028,
-   "push": 8720,
+   "push": 8262,
    "series": [
     "elms",
     "f1",
@@ -112,7 +112,7 @@
    "geometry": false,
    "laps": 431879,
    "clean": 326731,
-   "push": 10145,
+   "push": 9920,
    "series": [
     "gtwc",
     "igtc",
@@ -161,7 +161,7 @@
    "geometry": false,
    "laps": 328882,
    "clean": 204561,
-   "push": 4816,
+   "push": 4565,
    "series": [
     "alms",
     "wec",
@@ -205,7 +205,7 @@
    "geometry": true,
    "laps": 298264,
    "clean": 226460,
-   "push": 4799,
+   "push": 4548,
    "series": [
     "elms",
     "f1",
@@ -346,7 +346,7 @@
    "geometry": false,
    "laps": 188301,
    "clean": 127441,
-   "push": 4599,
+   "push": 3876,
    "series": [
     "elms",
     "f1",
@@ -450,7 +450,7 @@
    "geometry": false,
    "laps": 156427,
    "clean": 83880,
-   "push": 3445,
+   "push": 3010,
    "series": [
     "elms",
     "f1",
@@ -482,7 +482,7 @@
    "geometry": true,
    "laps": 148508,
    "clean": 90462,
-   "push": 5153,
+   "push": 4944,
    "series": [
     "elms",
     "f1",
@@ -596,7 +596,7 @@
    "geometry": true,
    "laps": 116058,
    "clean": 77849,
-   "push": 5426,
+   "push": 5246,
    "series": [
     "dtm",
     "elms",
@@ -697,7 +697,7 @@
    "geometry": false,
    "laps": 114479,
    "clean": 79742,
-   "push": 3061,
+   "push": 3020,
    "series": [
     "gtwc",
     "imsa",
@@ -1496,7 +1496,7 @@
    "geometry": false,
    "laps": 18144,
    "clean": 12518,
-   "push": 1073,
+   "push": 930,
    "series": [
     "igtc",
     "x-vw-supa-cup-polo-cup-challenge"
