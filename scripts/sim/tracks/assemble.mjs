@@ -3,6 +3,7 @@
 // when a loop is within 0.5 % of the official lap length stored in track-requests.json (lengthM with lengthSource).
 // Without an official length the loops are only listed. © OpenStreetMap contributors, ODbL.
 import {existsSync, readFileSync, writeFileSync} from 'node:fs';
+const FIA = existsSync('.cache/lapsim/osm/fia-circuits.json') ? JSON.parse(readFileSync('.cache/lapsim/osm/fia-circuits.json', 'utf8')).rows : [];
 const DIR = '.cache/lapsim/osm', REQ = JSON.parse(readFileSync('scripts/sim/data/track-requests.json', 'utf8')).tracks;
 const hav = (a, b) => { const R = 6371008.8, r = Math.PI / 180, x = (b[1] - a[1]) * r * Math.cos((a[0] + b[0]) / 2 * r), y = (b[0] - a[0]) * r; return R * Math.hypot(x, y); };
 const key = p => p[0].toFixed(7) + ',' + p[1].toFixed(7);
@@ -41,9 +42,12 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
   for (const t of REQ.filter(t => t.status === 'osm')) {
     const f = `${DIR}/${t.id}.json`; if (!existsSync(f)) { out.tracks[t.id] = {error: 'no map data'}; continue; }
     const r = loops(JSON.parse(readFileSync(f, 'utf8')).elements);
-    const targets = [...(t.lengthM ? [{id: t.id, lengthM: t.lengthM}] : []), ...(t.layouts || []).filter(l => l.lengthM)];
-    const accepted = targets.map(g => { const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err)[0]; if (!best) return {id: g.id, officialM: g.lengthM, accepted: false};
-      const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]); return {id: g.id, officialM: g.lengthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok}; });
+    // official lengths: every FIA-licensed layout whose name matches this venue (newest list first), plus any length stored with a source
+    const re = t.fia ? new RegExp(t.fia, 'i') : null, seen = new Set();
+    const fia = re ? FIA.filter(x => re.test(x.name) && !(t.fiaNot && new RegExp(t.fiaNot, 'i').test(x.name))).filter(x => !seen.has(x.name + x.lengthM) && seen.add(x.name + x.lengthM)) : [];
+    const targets = [...(t.lengthM ? [{id: t.id, lengthM: t.lengthM, src: t.lengthSource}] : []), ...fia.map(x => ({id: `${t.id} | ${x.name}`, lengthM: x.lengthM, src: `FIA list ${x.list}`, fia: x}))];
+    const accepted = targets.map(g => { const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err)[0]; if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
+      const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]); return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok}; });
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
     out.tracks[t.id] = {ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
   }

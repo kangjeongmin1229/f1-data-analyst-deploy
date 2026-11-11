@@ -24,7 +24,8 @@
     26.0325,
     50.5106
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "BAHRAIN|SAKHIR"
   },
   {
    "id": "interlagos",
@@ -44,7 +45,8 @@
     47.95,
     0.21
    ],
-   "radius": 8000
+   "radius": 8000,
+   "fia": "LE MANS|SARTHE|BUGATTI"
   },
   {
    "id": "silverstone",
@@ -64,7 +66,8 @@
     43.997,
     11.372
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "MUGELLO"
   },
   {
    "id": "yeongam",
@@ -74,7 +77,8 @@
     34.733,
     126.417
    ],
-   "radius": 4000
+   "radius": 4000,
+   "fia": "KOREA|YEONGAM"
   },
   {
    "id": "mexico-city",
@@ -142,7 +146,8 @@
     -86.235
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "INDIANAPOLIS"
   },
   {
    "id": "las-vegas",
@@ -158,7 +163,8 @@
     -81.35
    ],
    "radius": 4000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "SEBRING"
   },
   {
    "id": "road-atlanta",
@@ -169,7 +175,8 @@
     -83.815
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "ROAD ATLANTA"
   },
   {
    "id": "yongin",
@@ -179,7 +186,8 @@
     37.297,
     127.215
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "EVERLAND|YONGIN"
   },
   {
    "id": "inje",
@@ -189,7 +197,8 @@
     38.0,
     128.29
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "INJE"
   },
   {
    "id": "nurburgring",
@@ -214,7 +223,8 @@
      "use": "endurance: NLS combined lap"
     }
    ],
-   "layoutNote": "Owner, 2026-11-11: Grand Prix and endurance layouts. Official lengths and which series uses which lap come from the series documents, not assumed."
+   "layoutNote": "Owner, 2026-11-11: Grand Prix and endurance layouts. Official lengths and which series uses which lap come from the series documents, not assumed.",
+   "fia": "N.RBURGRING"
   },
   {
    "id": "brands-hatch",
@@ -225,7 +235,8 @@
     0.262
    ],
    "radius": 3000,
-   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source; also owner list"
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source; also owner list",
+   "fia": "BRANDS"
   },
   {
    "id": "kyalami",
@@ -235,7 +246,8 @@
     -25.998,
     28.068
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "KYALAMI"
   },
   {
    "id": "fuji",
@@ -245,7 +257,8 @@
     35.372,
     138.927
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "FUJI"
   },
   {
    "id": "daytona",
@@ -256,7 +269,8 @@
     -81.07
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "DAYTONA"
   },
   {
    "id": "portimao",
@@ -266,7 +280,8 @@
     37.232,
     -8.628
    ],
-   "radius": 3000
+   "radius": 3000,
+   "fia": "ALGARVE|PORTIM"
   },
   {
    "id": "paul-ricard",
@@ -276,7 +291,8 @@
     43.251,
     5.792
    ],
-   "radius": 4000
+   "radius": 4000,
+   "fia": "PAUL RICARD"
   },
   {
    "id": "laguna-seca",
@@ -287,7 +303,8 @@
     -121.753
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "LAGUNA"
   },
   {
    "id": "watkins-glen",
@@ -298,7 +315,8 @@
     -76.927
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "WATKINS"
   },
   {
    "id": "road-america",
@@ -309,7 +327,8 @@
     -87.99
    ],
    "radius": 4000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "ROAD AMERICA|ELKHART"
   },
   {
    "id": "bathurst",
@@ -319,7 +338,8 @@
     -33.447,
     149.557
    ],
-   "radius": 4000
+   "radius": 4000,
+   "fia": "BATHURST|PANORAMA"
   },
   {
    "id": "fe-berlin",
@@ -331,7 +351,8 @@
    ],
    "radius": 3000,
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
-   "kind": "temporary"
+   "kind": "temporary",
+   "fia": "BERLIN"
   },
   {
    "id": "fe-tokyo",
@@ -343,7 +364,8 @@
    ],
    "radius": 3000,
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
-   "kind": "street"
+   "kind": "street",
+   "fia": "TOKYO"
   },
   {
    "id": "fe-sao-paulo",
@@ -355,7 +377,9 @@
    ],
    "radius": 3000,
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
-   "kind": "street"
+   "kind": "street",
+   "fia": "S.O PAULO|ANHEMBI",
+   "fiaNot": "INTERLAGOS|CARLOS PACE"
   },
   {
    "id": "fe-sanya",
@@ -367,7 +391,8 @@
    ],
    "radius": 4000,
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
-   "kind": "street"
+   "kind": "street",
+   "fia": "SANYA"
   },
   {
    "id": "jarama",
@@ -378,7 +403,8 @@
     -3.585
    ],
    "radius": 3000,
-   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source"
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
+   "fia": "JARAMA"
   },
   {
    "id": "long-beach",
@@ -390,7 +416,8 @@
    ],
    "radius": 2500,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "kind": "street"
+   "kind": "street",
+   "fia": "LONG BEACH"
   },
   {
    "id": "detroit",
@@ -402,7 +429,8 @@
    ],
    "radius": 2500,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "kind": "street"
+   "kind": "street",
+   "fia": "DETROIT"
   },
   {
    "id": "mosport",
@@ -413,7 +441,8 @@
     -78.675
    ],
    "radius": 3000,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "MOSPORT|CANADIAN TIRE"
   },
   {
    "id": "vir",
@@ -424,7 +453,8 @@
     -79.205
    ],
    "radius": 3500,
-   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "fia": "VIRGINIA"
   },
   {
    "id": "mid-ohio",
@@ -435,7 +465,8 @@
     -82.635
    ],
    "radius": 3000,
-   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps"
+   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps",
+   "fia": "MID.?OHIO"
   },
   {
    "id": "lime-rock",
@@ -446,7 +477,8 @@
     -73.383
    ],
    "radius": 2500,
-   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps"
+   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps",
+   "fia": "LIME ROCK"
   },
   {
    "id": "hockenheim",
@@ -457,7 +489,8 @@
     8.57
    ],
    "radius": 3000,
-   "need": "DTM, GT series; 114,657 Timing71 laps"
+   "need": "DTM, GT series; 114,657 Timing71 laps",
+   "fia": "HOCKENHEIM"
   }
  ],
  "formulaE_2026_27": {
