@@ -297,3 +297,5 @@ fullThrottleShare is the sample fraction at throttle>=98 among valid 0–100 rea
 | 2026 | mexico-city | 10 | 9 | 8 | 2 | -7.647744 | 0.994247 |
 
 Reproduce this addendum with node scripts/sim/analyse-owner-brake-observations.mjs after restoring pinned aligned traces. This replays the same 34 saved F1 folds and changes no fit, model or gate.
+
+Signal audit: all 262 matched brake onsets use the recorded value 100. One rising edge with value 104 (Shanghai 2026) is unmatched and contributes no braking-bias value. Its physical meaning is not assumed. The raw edge counts include that unmatched record. Across all 34 F1 laps, distance coverage for the throttle calculation is 94.443985–100.045326%; no throttle samples fall outside 0–100. All 67 held-out predictions are unchanged by this measurement-only update.
