@@ -3,7 +3,7 @@
 // Writes .cache/lapsim/osm/fia-circuits.json. This is the only source of "official length" for the acceptance check.
 import {execFileSync} from 'node:child_process';
 import {mkdirSync, writeFileSync} from 'node:fs';
-const URLS = (process.env.FIA_CIRCUITS_URLS || 'https://www.fia.com/sites/default/files/circuits_fia20260331_0.pdf,https://www.fia.com/sites/default/files/circuits_fia20251201.pdf,https://www.fia.com/sites/default/files/circuits_fia20240313.pdf').split(',');
+const URLS = (process.env.FIA_CIRCUITS_URLS || 'https://www.fia.com/sites/default/files/circuits_fia20260331_0.pdf,https://www.fia.com/sites/default/files/circuits_fia20251201.pdf,https://www.fia.com/sites/default/files/circuits_fia20240603.pdf').split(',');
 const OUT = '.cache/lapsim/osm'; mkdirSync(OUT, {recursive: true});
 const rows = [], lists = [];
 for (const url of URLS) {

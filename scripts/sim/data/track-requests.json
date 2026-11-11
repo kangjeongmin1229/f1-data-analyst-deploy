@@ -164,7 +164,15 @@
    ],
    "radius": 4000,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "fia": "SEBRING"
+   "fia": "SEBRING",
+   "lengths": [
+    {
+     "name": "IMSA layout",
+     "lengthM": 6019,
+     "source": "imsa.com/weathertech/weathertech-2025-schedule (3.74 miles, 17 corners)",
+     "roundedTo": "0.01 mile"
+    }
+   ]
   },
   {
    "id": "road-atlanta",
@@ -187,7 +195,14 @@
     127.215
    ],
    "radius": 3000,
-   "fia": "EVERLAND|YONGIN"
+   "fia": "EVERLAND|YONGIN",
+   "lengths": [
+    {
+     "name": "Everland Speedway full course",
+     "lengthM": 4346,
+     "source": "hyundai-n.com/en/motorsport/nf-calendar-ncup-r4.do (4.346 km, 16 corners, pole left)"
+    }
+   ]
   },
   {
    "id": "inje",
@@ -198,7 +213,14 @@
     128.29
    ],
    "radius": 3000,
-   "fia": "INJE"
+   "fia": "INJE",
+   "lengths": [
+    {
+     "name": "Full course",
+     "lengthM": 3908,
+     "source": "O-NE Superrace 2025 round 6 circuit map (Inje Speedium 3.908 km)"
+    }
+   ]
   },
   {
    "id": "nurburgring",
@@ -247,7 +269,15 @@
     28.068
    ],
    "radius": 3000,
-   "fia": "KYALAMI"
+   "fia": "KYALAMI",
+   "lengths": [
+    {
+     "name": "Grand Prix Circuit",
+     "lengthM": 4522,
+     "source": "kyalamigrandprixcircuit.com/grand-prix-circuit (4.522 km, 16 turns, anti-clockwise, pole left)",
+     "direction": "anti-clockwise"
+    }
+   ]
   },
   {
    "id": "fuji",
@@ -270,7 +300,15 @@
    ],
    "radius": 3000,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "fia": "DAYTONA"
+   "fia": "DAYTONA",
+   "lengths": [
+    {
+     "name": "Road course (IMSA)",
+     "lengthM": 5729,
+     "source": "imsa.com/weathertech/weathertech-2026-schedule (3.56 miles, 12 corners)",
+     "roundedTo": "0.01 mile"
+    }
+   ]
   },
   {
    "id": "portimao",
@@ -316,7 +354,15 @@
    ],
    "radius": 3000,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "fia": "WATKINS"
+   "fia": "WATKINS",
+   "lengths": [
+    {
+     "name": "Long course (IMSA)",
+     "lengthM": 5472,
+     "source": "imsa.com/news/tracks/watkins-glen-international (3.4 miles)",
+     "roundedTo": "0.1 mile: too coarse for the 0.5 % check, treated as weak"
+    }
+   ]
   },
   {
    "id": "road-america",
@@ -442,7 +488,14 @@
    ],
    "radius": 3000,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "fia": "MOSPORT|CANADIAN TIRE"
+   "fia": "MOSPORT|CANADIAN TIRE",
+   "lengths": [
+    {
+     "name": "Grand Prix track (IMSA)",
+     "lengthM": 3957,
+     "source": "imsa.com/weathertech/weathertech-2024-schedule (2.459 miles, 10 corners)"
+    }
+   ]
   },
   {
    "id": "vir",
@@ -454,7 +507,15 @@
    ],
    "radius": 3500,
    "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
-   "fia": "VIRGINIA"
+   "fia": "VIRGINIA",
+   "lengths": [
+    {
+     "name": "Full course (IMSA)",
+     "lengthM": 5263,
+     "source": "imsa.com/virginia-international-raceway (3.27 miles)",
+     "roundedTo": "0.01 mile"
+    }
+   ]
   },
   {
    "id": "mid-ohio",
@@ -466,7 +527,14 @@
    ],
    "radius": 3000,
    "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps",
-   "fia": "MID.?OHIO"
+   "fia": "MID.?OHIO",
+   "lengths": [
+    {
+     "name": "IMSA layout",
+     "lengthM": 3634,
+     "source": "imsa.com/vpracingsportscarchallenge/imsa-vp-racing-sportscar-challenge-2024-schedule (2.258 miles, 13 corners)"
+    }
+   ]
   },
   {
    "id": "lime-rock",
@@ -478,7 +546,15 @@
    ],
    "radius": 2500,
    "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps",
-   "fia": "LIME ROCK"
+   "fia": "LIME ROCK",
+   "lengths": [
+    {
+     "name": "IMSA layout",
+     "lengthM": 2414,
+     "source": "imsa.com/weathertech/weathertech-2022-schedule (1.50 miles, 7 corners)",
+     "roundedTo": "0.01 mile"
+    }
+   ]
   },
   {
    "id": "hockenheim",
