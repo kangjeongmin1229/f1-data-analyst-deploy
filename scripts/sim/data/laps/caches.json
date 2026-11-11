@@ -1,8 +1,15 @@
 [
   {
+    "created_at": "2026-11-11T07:28:12.635860Z",
+    "key": "osm-ways-42979702284",
+    "last_accessed_at": "2026-11-11T07:28:12.635860Z",
+    "ref": "refs/heads/lapsim-laps/all-laps-2026-11-11",
+    "size_in_bytes": 1067454
+  },
+  {
     "created_at": "2026-11-11T07:18:00.164357Z",
     "key": "osm-ways-42978458551",
-    "last_accessed_at": "2026-11-11T07:18:00.164357Z",
+    "last_accessed_at": "2026-11-11T07:28:12.012853Z",
     "ref": "refs/heads/lapsim-laps/all-laps-2026-11-11",
     "size_in_bytes": 1066943
   },
