@@ -44,3 +44,16 @@ Full list: `scripts/sim/data/laps/t71-tracks-counts.json`.
 3. Flag and weather filling for the fitted series first: IMSA, Formula E, DTM, Asian LMS have no rain field (R5).
 4. The hierarchical per-model fit and its validation at R (all-laps doc 3–5).
 5. Website PRs (R3, R4, R6 tick box), separate from physics.
+
+## 5. Map data fetched (2026-11-11)
+
+`scripts/sim/data/tracks/osm-summary.json`: raceway ways found for 18 of 20 venues. Yongin timed out (retry). Bathurst has no raceway ways (public road).
+Le Mans has only the Bugatti part as raceway; the public-road sections need a separate query. Next: assemble each layout as a closed loop and
+accept it only if it matches the official lap length (with a source) within 0.5 %.
+
+## 6. Rwanda
+
+Owner decision (2026-11-11): use what is published as far as possible, include the climate of the site, and update automatically until the circuit is finished.
+Published facts and their conflict are stored in `track-requests.json` (official October 2026 figures against a diagram of unknown origin).
+Automatic update, proposed: a weekly job that (a) repeats the map fetch at the site, so the track is picked up as soon as mappers draw it,
+(b) checks the FIA licensed-circuit list and the Formula 1 news pages for a released layout, and (c) opens an issue when something changes. Not built yet.

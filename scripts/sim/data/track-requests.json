@@ -1,36 +1,298 @@
 {
-  "note": "Owner track list (2026-11-11). 'seed' is only a search centre for OpenStreetMap (about 0.01 deg), never a model input. 'label' is the homepage text. status: have = simulator geometry exists; osm = to build from OpenStreetMap + elevation model; none = no surveyed data exists.",
-  "tracks": [
-    {"id": "melbourne", "label": "🇦🇺AUS - Melbourne", "status": "have"},
-    {"id": "spa-francorchamps", "label": "🇧🇪BEL - Spa", "status": "have"},
-    {"id": "sakhir", "label": "🇧🇭BHA - Bahrain", "status": "have"},
-    {"id": "sakhir-outer", "label": "🇧🇭BHA - Bahrain(Outer)", "status": "osm", "seed": [26.0325, 50.5106], "radius": 3000},
-    {"id": "interlagos", "label": "🇧🇷BRA - Interlagos", "status": "have"},
-    {"id": "montreal", "label": "🇨🇦CAN - Montreal", "status": "have"},
-    {"id": "le-mans", "label": "🇫🇷FRA - Le Mans", "status": "osm", "seed": [47.95, 0.21], "radius": 8000},
-    {"id": "silverstone", "label": "🇬🇧GBR - Silverstone", "status": "have"},
-    {"id": "monza", "label": "🇮🇹ITA - Monza", "status": "have"},
-    {"id": "mugello", "label": "🇮🇹ITA - Mugello", "status": "osm", "seed": [43.997, 11.372], "radius": 3000},
-    {"id": "yeongam", "label": "🇰🇷KOR - Yeongam", "status": "osm", "seed": [34.733, 126.417], "radius": 4000},
-    {"id": "mexico-city", "label": "🇲🇽MEX - Mexico City", "status": "have"},
-    {"id": "rwanda", "label": "🇷🇼RWA - Rwanda⚠️", "status": "none"},
-    {"id": "austin", "label": "🇺🇸USA - COTA", "status": "have"},
-    {"id": "indianapolis", "label": "🇺🇸USA - Indianapolis", "status": "osm", "seed": [39.795, -86.235], "radius": 3000},
-    {"id": "las-vegas", "label": "🇺🇸USA - Las Vegas", "status": "have"},
-    {"id": "sebring", "label": "🇺🇸USA - Sebring", "status": "osm", "seed": [27.455, -81.35], "radius": 4000},
-    {"id": "road-atlanta", "label": "🇺🇸USA - Road Atlanta", "status": "osm", "seed": [34.147, -83.815], "radius": 3000},
-    {"id": "yongin", "label": "🇰🇷KOR - Yongin", "status": "osm", "seed": [37.297, 127.215], "radius": 3000},
-    {"id": "inje", "label": "🇰🇷KOR - Inje", "status": "osm", "seed": [38.0, 128.29], "radius": 3000},
-    {"id": "nurburgring", "label": "🇩🇪GER - Nürburgring", "status": "osm", "seed": [50.345, 6.96], "radius": 9000},
-    {"id": "brands-hatch", "label": "🇬🇧GBR - Brands Hatch", "status": "osm", "seed": [51.357, 0.262], "radius": 3000},
-    {"id": "kyalami", "label": "🇿🇦RSA - Kyalami", "status": "osm", "seed": [-25.998, 28.068], "radius": 3000},
-    {"id": "fuji", "label": "🇯🇵JPN - Fuji", "status": "osm", "seed": [35.372, 138.927], "radius": 3000},
-    {"id": "daytona", "label": "🇺🇸USA - Daytona", "status": "osm", "seed": [29.185, -81.07], "radius": 3000},
-    {"id": "portimao", "label": "🇵🇹POR - Portimão", "status": "osm", "seed": [37.232, -8.628], "radius": 3000},
-    {"id": "paul-ricard", "label": "🇫🇷FRA - Paul Ricard", "status": "osm", "seed": [43.251, 5.792], "radius": 4000},
-    {"id": "laguna-seca", "label": "🇺🇸USA - Laguna Seca", "status": "osm", "seed": [36.584, -121.753], "radius": 3000},
-    {"id": "watkins-glen", "label": "🇺🇸USA - Watkins Glen", "status": "osm", "seed": [42.337, -76.927], "radius": 3000},
-    {"id": "road-america", "label": "🇺🇸USA - Road America", "status": "osm", "seed": [43.798, -87.99], "radius": 4000},
-    {"id": "bathurst", "label": "🇦🇺AUS - Bathurst", "status": "osm", "seed": [-33.447, 149.557], "radius": 4000}
-  ]
+ "note": "Owner track list (2026-11-11). 'seed' is only a search centre for OpenStreetMap (about 0.01 deg), never a model input. 'label' is the homepage text. status: have = simulator geometry exists; osm = to build from OpenStreetMap + elevation model; none = no surveyed data exists.",
+ "tracks": [
+  {
+   "id": "melbourne",
+   "label": "🇦🇺AUS - Melbourne",
+   "status": "have"
+  },
+  {
+   "id": "spa-francorchamps",
+   "label": "🇧🇪BEL - Spa",
+   "status": "have"
+  },
+  {
+   "id": "sakhir",
+   "label": "🇧🇭BHA - Bahrain",
+   "status": "have"
+  },
+  {
+   "id": "sakhir-outer",
+   "label": "🇧🇭BHA - Bahrain(Outer)",
+   "status": "osm",
+   "seed": [
+    26.0325,
+    50.5106
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "interlagos",
+   "label": "🇧🇷BRA - Interlagos",
+   "status": "have"
+  },
+  {
+   "id": "montreal",
+   "label": "🇨🇦CAN - Montreal",
+   "status": "have"
+  },
+  {
+   "id": "le-mans",
+   "label": "🇫🇷FRA - Le Mans",
+   "status": "osm",
+   "seed": [
+    47.95,
+    0.21
+   ],
+   "radius": 8000
+  },
+  {
+   "id": "silverstone",
+   "label": "🇬🇧GBR - Silverstone",
+   "status": "have"
+  },
+  {
+   "id": "monza",
+   "label": "🇮🇹ITA - Monza",
+   "status": "have"
+  },
+  {
+   "id": "mugello",
+   "label": "🇮🇹ITA - Mugello",
+   "status": "osm",
+   "seed": [
+    43.997,
+    11.372
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "yeongam",
+   "label": "🇰🇷KOR - Yeongam",
+   "status": "osm",
+   "seed": [
+    34.733,
+    126.417
+   ],
+   "radius": 4000
+  },
+  {
+   "id": "mexico-city",
+   "label": "🇲🇽MEX - Mexico City",
+   "status": "have"
+  },
+  {
+   "id": "rwanda",
+   "label": "🇷🇼RWA - Rwanda⚠️",
+   "status": "announced",
+   "announced": {
+    "official_2026_10": {
+     "lengthKm": "about 6",
+     "corners": 17,
+     "direction": "anti-clockwise",
+     "elevationChangeM": 197,
+     "notes": "cambered turns and banking; site in Bugesera, about 40 km south of Kigali; final layout not released; first race early 2030s",
+     "source": "https://www.formula1.com/en/latest/article/hills-a-lake-and-a-roller-coaster-inside-rwandas-plan-for-the-african-grand-prix.76LEZDItQYH362QElcHoY1.76LEZDItQYH362QElcHoY1"
+    },
+    "diagram_from_owner_2026_11_11": {
+     "lengthKm": 5.302,
+     "turns": 18,
+     "direction": "clockwise",
+     "minWidthM": 13,
+     "topSpeedKph": 350,
+     "fiaGrade": 1,
+     "elevationLabelsM": [
+      0,
+      12,
+      20,
+      33,
+      35,
+      35,
+      50
+     ],
+     "bankingLabelsDeg": [
+      6,
+      6
+     ],
+     "source": "image supplied by the owner, origin not known; a third-party page lists 5.302 km as \"final design, TBC\""
+    },
+    "conflict": "The two sets disagree on length, corner count and direction. No geometry is built until one is chosen or a layout is published."
+   },
+   "watch": [
+    "formula1.com African Grand Prix articles",
+    "FIA list of licensed circuits",
+    "OpenStreetMap raceway or construction ways near the site (weekly map fetch)"
+   ]
+  },
+  {
+   "id": "austin",
+   "label": "🇺🇸USA - COTA",
+   "status": "have"
+  },
+  {
+   "id": "indianapolis",
+   "label": "🇺🇸USA - Indianapolis",
+   "status": "osm",
+   "seed": [
+    39.795,
+    -86.235
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "las-vegas",
+   "label": "🇺🇸USA - Las Vegas",
+   "status": "have"
+  },
+  {
+   "id": "sebring",
+   "label": "🇺🇸USA - Sebring",
+   "status": "osm",
+   "seed": [
+    27.455,
+    -81.35
+   ],
+   "radius": 4000
+  },
+  {
+   "id": "road-atlanta",
+   "label": "🇺🇸USA - Road Atlanta",
+   "status": "osm",
+   "seed": [
+    34.147,
+    -83.815
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "yongin",
+   "label": "🇰🇷KOR - Yongin",
+   "status": "osm",
+   "seed": [
+    37.297,
+    127.215
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "inje",
+   "label": "🇰🇷KOR - Inje",
+   "status": "osm",
+   "seed": [
+    38.0,
+    128.29
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "nurburgring",
+   "label": "🇩🇪GER - Nürburgring",
+   "status": "osm",
+   "seed": [
+    50.345,
+    6.96
+   ],
+   "radius": 9000
+  },
+  {
+   "id": "brands-hatch",
+   "label": "🇬🇧GBR - Brands Hatch",
+   "status": "osm",
+   "seed": [
+    51.357,
+    0.262
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "kyalami",
+   "label": "🇿🇦RSA - Kyalami",
+   "status": "osm",
+   "seed": [
+    -25.998,
+    28.068
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "fuji",
+   "label": "🇯🇵JPN - Fuji",
+   "status": "osm",
+   "seed": [
+    35.372,
+    138.927
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "daytona",
+   "label": "🇺🇸USA - Daytona",
+   "status": "osm",
+   "seed": [
+    29.185,
+    -81.07
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "portimao",
+   "label": "🇵🇹POR - Portimão",
+   "status": "osm",
+   "seed": [
+    37.232,
+    -8.628
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "paul-ricard",
+   "label": "🇫🇷FRA - Paul Ricard",
+   "status": "osm",
+   "seed": [
+    43.251,
+    5.792
+   ],
+   "radius": 4000
+  },
+  {
+   "id": "laguna-seca",
+   "label": "🇺🇸USA - Laguna Seca",
+   "status": "osm",
+   "seed": [
+    36.584,
+    -121.753
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "watkins-glen",
+   "label": "🇺🇸USA - Watkins Glen",
+   "status": "osm",
+   "seed": [
+    42.337,
+    -76.927
+   ],
+   "radius": 3000
+  },
+  {
+   "id": "road-america",
+   "label": "🇺🇸USA - Road America",
+   "status": "osm",
+   "seed": [
+    43.798,
+    -87.99
+   ],
+   "radius": 4000
+  },
+  {
+   "id": "bathurst",
+   "label": "🇦🇺AUS - Bathurst",
+   "status": "osm",
+   "seed": [
+    -33.447,
+    149.557
+   ],
+   "radius": 4000
+  }
+ ]
 }
