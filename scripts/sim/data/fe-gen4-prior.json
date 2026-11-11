@@ -46,27 +46,27 @@
  "straightLine": {
   "ldf-600": {
    "t100": 1.795,
-   "t200": 4.186,
-   "vTopKph": 340.005,
+   "t200": 4.377,
+   "vTopKph": 340.001,
    "dragLimited": false
   },
   "hdf-600": {
-   "t100": 1.772,
-   "t200": 4.184,
-   "vTopKph": 340.005,
-   "dragLimited": false
+   "t100": 1.745,
+   "t200": 4.473,
+   "vTopKph": 329.441,
+   "dragLimited": true
   },
   "ldf-450": {
-   "t100": 1.814,
-   "t200": 5.075,
-   "vTopKph": 340.003,
+   "t100": 1.838,
+   "t200": 5.383,
+   "vTopKph": 340.001,
    "dragLimited": false
   },
   "hdf-450": {
-   "t100": 1.8,
-   "t200": 5.114,
-   "vTopKph": 340.001,
-   "dragLimited": false
+   "t100": 1.816,
+   "t200": 5.651,
+   "vTopKph": 298.753,
+   "dragLimited": true
   }
  },
  "tracks": {
@@ -75,44 +75,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 88.751,
-     "vMaxKph": 340,
-     "netKWh": 7.564,
-     "outKWh": 10.414,
-     "regenFraction": 0.274,
-     "flatOutLaps": 6.776
+     "lapTime": 90.015,
+     "vMaxKph": 320.401,
+     "netKWh": 9.362,
+     "outKWh": 11.71,
+     "regenFraction": 0.201,
+     "flatOutLaps": 5.474
     },
     "unleashed": {
-     "lapTime": 93.399,
-     "vMaxKph": 325.584,
-     "netKWh": 6.312,
-     "outKWh": 8.92,
-     "regenFraction": 0.292,
-     "flatOutLaps": 8.119
+     "lapTime": 95.52,
+     "vMaxKph": 291,
+     "netKWh": 7.695,
+     "outKWh": 9.756,
+     "regenFraction": 0.211,
+     "flatOutLaps": 6.66
     },
     "unleashed-attack": {
-     "lapTime": 88.751,
-     "vMaxKph": 340,
-     "netKWh": 7.564,
-     "outKWh": 10.414,
-     "regenFraction": 0.274,
-     "flatOutLaps": 6.776
+     "lapTime": 90.015,
+     "vMaxKph": 320.401,
+     "netKWh": 9.362,
+     "outKWh": 11.71,
+     "regenFraction": 0.201,
+     "flatOutLaps": 5.474
     },
     "eprix": {
-     "lapTime": 94.236,
-     "vMaxKph": 334.525,
-     "netKWh": 5.759,
-     "outKWh": 8.644,
-     "regenFraction": 0.334,
-     "flatOutLaps": 8.899
+     "lapTime": 95.516,
+     "vMaxKph": 326.452,
+     "netKWh": 6.097,
+     "outKWh": 8.902,
+     "regenFraction": 0.315,
+     "flatOutLaps": 8.406
     },
     "eprix-attack": {
-     "lapTime": 90.033,
+     "lapTime": 90.984,
      "vMaxKph": 340,
-     "netKWh": 6.712,
-     "outKWh": 9.832,
-     "regenFraction": 0.317,
-     "flatOutLaps": 7.635
+     "netKWh": 7.29,
+     "outKWh": 10.377,
+     "regenFraction": 0.297,
+     "flatOutLaps": 7.03
     }
    }
   },
@@ -121,44 +121,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 107.084,
-     "vMaxKph": 340,
-     "netKWh": 7.413,
-     "outKWh": 11.387,
-     "regenFraction": 0.349,
-     "flatOutLaps": 6.914
+     "lapTime": 107.462,
+     "vMaxKph": 313.401,
+     "netKWh": 9.267,
+     "outKWh": 12.605,
+     "regenFraction": 0.265,
+     "flatOutLaps": 5.53
     },
     "unleashed": {
-     "lapTime": 111.812,
-     "vMaxKph": 313.697,
-     "netKWh": 6.137,
-     "outKWh": 9.683,
-     "regenFraction": 0.366,
-     "flatOutLaps": 8.351
+     "lapTime": 112.962,
+     "vMaxKph": 285.352,
+     "netKWh": 7.67,
+     "outKWh": 10.621,
+     "regenFraction": 0.278,
+     "flatOutLaps": 6.682
     },
     "unleashed-attack": {
-     "lapTime": 107.084,
-     "vMaxKph": 340,
-     "netKWh": 7.413,
-     "outKWh": 11.387,
-     "regenFraction": 0.349,
-     "flatOutLaps": 6.914
+     "lapTime": 107.462,
+     "vMaxKph": 313.401,
+     "netKWh": 9.267,
+     "outKWh": 12.605,
+     "regenFraction": 0.265,
+     "flatOutLaps": 5.53
     },
     "eprix": {
-     "lapTime": 113.197,
-     "vMaxKph": 319.743,
-     "netKWh": 5.504,
-     "outKWh": 9.362,
-     "regenFraction": 0.412,
-     "flatOutLaps": 9.311
+     "lapTime": 114.453,
+     "vMaxKph": 312.282,
+     "netKWh": 5.945,
+     "outKWh": 9.698,
+     "regenFraction": 0.387,
+     "flatOutLaps": 8.62
     },
     "eprix-attack": {
-     "lapTime": 108.943,
+     "lapTime": 109.959,
      "vMaxKph": 340,
-     "netKWh": 6.53,
-     "outKWh": 10.839,
-     "regenFraction": 0.398,
-     "flatOutLaps": 7.848
+     "netKWh": 7.143,
+     "outKWh": 11.37,
+     "regenFraction": 0.372,
+     "flatOutLaps": 7.174
     }
    }
   },
@@ -167,44 +167,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 87.969,
-     "vMaxKph": 317.818,
-     "netKWh": 4.009,
-     "outKWh": 7.456,
-     "regenFraction": 0.462,
-     "flatOutLaps": 12.785
+     "lapTime": 86.32,
+     "vMaxKph": 298.563,
+     "netKWh": 5.37,
+     "outKWh": 8.309,
+     "regenFraction": 0.354,
+     "flatOutLaps": 9.544
     },
     "unleashed": {
-     "lapTime": 90.371,
-     "vMaxKph": 292.79,
-     "netKWh": 3.378,
-     "outKWh": 6.433,
-     "regenFraction": 0.475,
-     "flatOutLaps": 15.174
+     "lapTime": 89.514,
+     "vMaxKph": 273.915,
+     "netKWh": 4.469,
+     "outKWh": 7.082,
+     "regenFraction": 0.369,
+     "flatOutLaps": 11.468
     },
     "unleashed-attack": {
-     "lapTime": 87.969,
-     "vMaxKph": 317.818,
-     "netKWh": 4.009,
-     "outKWh": 7.456,
-     "regenFraction": 0.462,
-     "flatOutLaps": 12.785
+     "lapTime": 86.32,
+     "vMaxKph": 298.563,
+     "netKWh": 5.37,
+     "outKWh": 8.309,
+     "regenFraction": 0.354,
+     "flatOutLaps": 9.544
     },
     "eprix": {
-     "lapTime": 92.439,
-     "vMaxKph": 294.704,
-     "netKWh": 2.905,
-     "outKWh": 6.159,
-     "regenFraction": 0.528,
-     "flatOutLaps": 17.641
+     "lapTime": 93.089,
+     "vMaxKph": 288.581,
+     "netKWh": 3.238,
+     "outKWh": 6.392,
+     "regenFraction": 0.493,
+     "flatOutLaps": 15.826
     },
     "eprix-attack": {
-     "lapTime": 90.223,
-     "vMaxKph": 319.429,
-     "netKWh": 3.453,
-     "outKWh": 7.14,
-     "regenFraction": 0.516,
-     "flatOutLaps": 14.841
+     "lapTime": 90.754,
+     "vMaxKph": 312.778,
+     "netKWh": 3.832,
+     "outKWh": 7.42,
+     "regenFraction": 0.484,
+     "flatOutLaps": 13.375
     }
    }
   },
@@ -213,44 +213,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 112.62,
-     "vMaxKph": 340,
-     "netKWh": 5.59,
-     "outKWh": 9.462,
-     "regenFraction": 0.409,
-     "flatOutLaps": 9.168
+     "lapTime": 111.383,
+     "vMaxKph": 318.668,
+     "netKWh": 7.248,
+     "outKWh": 10.712,
+     "regenFraction": 0.323,
+     "flatOutLaps": 7.071
     },
     "unleashed": {
-     "lapTime": 116.055,
-     "vMaxKph": 321.448,
-     "netKWh": 4.687,
-     "outKWh": 8.26,
-     "regenFraction": 0.433,
-     "flatOutLaps": 10.934
+     "lapTime": 115.506,
+     "vMaxKph": 290.196,
+     "netKWh": 6.033,
+     "outKWh": 9.181,
+     "regenFraction": 0.343,
+     "flatOutLaps": 8.494
     },
     "unleashed-attack": {
-     "lapTime": 112.62,
-     "vMaxKph": 340,
-     "netKWh": 5.59,
-     "outKWh": 9.462,
-     "regenFraction": 0.409,
-     "flatOutLaps": 9.168
+     "lapTime": 111.383,
+     "vMaxKph": 318.668,
+     "netKWh": 7.248,
+     "outKWh": 10.712,
+     "regenFraction": 0.323,
+     "flatOutLaps": 7.071
     },
     "eprix": {
-     "lapTime": 117.997,
-     "vMaxKph": 328.57,
-     "netKWh": 4.207,
-     "outKWh": 7.981,
-     "regenFraction": 0.473,
-     "flatOutLaps": 12.181
+     "lapTime": 118.962,
+     "vMaxKph": 320.992,
+     "netKWh": 4.603,
+     "outKWh": 8.267,
+     "regenFraction": 0.443,
+     "flatOutLaps": 11.135
     },
     "eprix-attack": {
-     "lapTime": 114.796,
+     "lapTime": 115.536,
      "vMaxKph": 340,
-     "netKWh": 4.924,
-     "outKWh": 9.004,
-     "regenFraction": 0.453,
-     "flatOutLaps": 10.409
+     "netKWh": 5.436,
+     "outKWh": 9.449,
+     "regenFraction": 0.425,
+     "flatOutLaps": 9.428
     }
    }
   },
@@ -259,44 +259,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 83.37,
-     "vMaxKph": 340,
-     "netKWh": 4.619,
-     "outKWh": 7.685,
-     "regenFraction": 0.399,
-     "flatOutLaps": 11.096
+     "lapTime": 82.913,
+     "vMaxKph": 320.143,
+     "netKWh": 5.956,
+     "outKWh": 8.658,
+     "regenFraction": 0.312,
+     "flatOutLaps": 8.604
     },
     "unleashed": {
-     "lapTime": 86.073,
-     "vMaxKph": 324.484,
-     "netKWh": 3.907,
-     "outKWh": 6.706,
-     "regenFraction": 0.417,
-     "flatOutLaps": 13.118
+     "lapTime": 86.261,
+     "vMaxKph": 290.932,
+     "netKWh": 4.953,
+     "outKWh": 7.351,
+     "regenFraction": 0.326,
+     "flatOutLaps": 10.347
     },
     "unleashed-attack": {
-     "lapTime": 83.37,
-     "vMaxKph": 340,
-     "netKWh": 4.619,
-     "outKWh": 7.685,
-     "regenFraction": 0.399,
-     "flatOutLaps": 11.096
+     "lapTime": 82.913,
+     "vMaxKph": 320.143,
+     "netKWh": 5.956,
+     "outKWh": 8.658,
+     "regenFraction": 0.312,
+     "flatOutLaps": 8.604
     },
     "eprix": {
-     "lapTime": 87.315,
-     "vMaxKph": 332.748,
-     "netKWh": 3.536,
-     "outKWh": 6.486,
-     "regenFraction": 0.455,
-     "flatOutLaps": 14.495
+     "lapTime": 88.072,
+     "vMaxKph": 324.886,
+     "netKWh": 3.844,
+     "outKWh": 6.717,
+     "regenFraction": 0.428,
+     "flatOutLaps": 13.333
     },
     "eprix-attack": {
-     "lapTime": 84.897,
+     "lapTime": 85.445,
      "vMaxKph": 340,
-     "netKWh": 4.08,
-     "outKWh": 7.298,
-     "regenFraction": 0.441,
-     "flatOutLaps": 12.56
+     "netKWh": 4.511,
+     "outKWh": 7.653,
+     "regenFraction": 0.411,
+     "flatOutLaps": 11.362
     }
    }
   },
@@ -305,44 +305,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 97.719,
-     "vMaxKph": 340,
-     "netKWh": 6.087,
-     "outKWh": 9.308,
-     "regenFraction": 0.346,
-     "flatOutLaps": 8.419
+     "lapTime": 97.991,
+     "vMaxKph": 320.038,
+     "netKWh": 7.723,
+     "outKWh": 10.593,
+     "regenFraction": 0.271,
+     "flatOutLaps": 6.636
     },
     "unleashed": {
-     "lapTime": 101.588,
-     "vMaxKph": 324.51,
-     "netKWh": 5.178,
-     "outKWh": 8.157,
-     "regenFraction": 0.365,
-     "flatOutLaps": 9.898
+     "lapTime": 102.563,
+     "vMaxKph": 290.758,
+     "netKWh": 6.401,
+     "outKWh": 8.959,
+     "regenFraction": 0.286,
+     "flatOutLaps": 8.006
     },
     "unleashed-attack": {
-     "lapTime": 97.719,
-     "vMaxKph": 340,
-     "netKWh": 6.087,
-     "outKWh": 9.308,
-     "regenFraction": 0.346,
-     "flatOutLaps": 8.419
+     "lapTime": 97.991,
+     "vMaxKph": 320.038,
+     "netKWh": 7.723,
+     "outKWh": 10.593,
+     "regenFraction": 0.271,
+     "flatOutLaps": 6.636
     },
     "eprix": {
-     "lapTime": 102.923,
-     "vMaxKph": 330.693,
-     "netKWh": 4.682,
-     "outKWh": 7.861,
-     "regenFraction": 0.404,
-     "flatOutLaps": 10.947
+     "lapTime": 103.849,
+     "vMaxKph": 324.648,
+     "netKWh": 5.072,
+     "outKWh": 8.151,
+     "regenFraction": 0.378,
+     "flatOutLaps": 10.105
     },
     "eprix-attack": {
-     "lapTime": 100,
+     "lapTime": 100.647,
      "vMaxKph": 340,
-     "netKWh": 5.325,
-     "outKWh": 8.856,
-     "regenFraction": 0.399,
-     "flatOutLaps": 9.625
+     "netKWh": 5.849,
+     "outKWh": 9.316,
+     "regenFraction": 0.372,
+     "flatOutLaps": 8.762
     }
    }
   },
@@ -351,44 +351,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 109.191,
-     "vMaxKph": 340,
-     "netKWh": 5.413,
-     "outKWh": 9.963,
-     "regenFraction": 0.457,
-     "flatOutLaps": 9.467
+     "lapTime": 107.327,
+     "vMaxKph": 313.148,
+     "netKWh": 7.293,
+     "outKWh": 11.127,
+     "regenFraction": 0.345,
+     "flatOutLaps": 7.028
     },
     "unleashed": {
-     "lapTime": 112.44,
-     "vMaxKph": 313.325,
-     "netKWh": 4.568,
-     "outKWh": 8.581,
-     "regenFraction": 0.468,
-     "flatOutLaps": 11.219
+     "lapTime": 111.543,
+     "vMaxKph": 284.796,
+     "netKWh": 6.119,
+     "outKWh": 9.52,
+     "regenFraction": 0.357,
+     "flatOutLaps": 8.376
     },
     "unleashed-attack": {
-     "lapTime": 109.191,
-     "vMaxKph": 340,
-     "netKWh": 5.413,
-     "outKWh": 9.963,
-     "regenFraction": 0.457,
-     "flatOutLaps": 9.467
+     "lapTime": 107.327,
+     "vMaxKph": 313.148,
+     "netKWh": 7.293,
+     "outKWh": 11.127,
+     "regenFraction": 0.345,
+     "flatOutLaps": 7.028
     },
     "eprix": {
-     "lapTime": 114.763,
-     "vMaxKph": 319.667,
-     "netKWh": 4.009,
-     "outKWh": 8.326,
-     "regenFraction": 0.519,
-     "flatOutLaps": 12.785
+     "lapTime": 115.665,
+     "vMaxKph": 312.061,
+     "netKWh": 4.455,
+     "outKWh": 8.597,
+     "regenFraction": 0.482,
+     "flatOutLaps": 11.504
     },
     "eprix-attack": {
-     "lapTime": 111.824,
+     "lapTime": 112.496,
      "vMaxKph": 340,
-     "netKWh": 4.719,
-     "outKWh": 9.488,
-     "regenFraction": 0.503,
-     "flatOutLaps": 10.86
+     "netKWh": 5.271,
+     "outKWh": 9.939,
+     "regenFraction": 0.47,
+     "flatOutLaps": 9.722
     }
    }
   },
@@ -397,44 +397,44 @@
    "layout": "F1 layout in the simulator; the Formula E layout may differ",
    "modes": {
     "qualifying": {
-     "lapTime": 80.885,
-     "vMaxKph": 278.905,
-     "netKWh": 2.739,
-     "outKWh": 6.262,
-     "regenFraction": 0.563,
-     "flatOutLaps": 18.708
+     "lapTime": 79.562,
+     "vMaxKph": 269.619,
+     "netKWh": 3.742,
+     "outKWh": 6.904,
+     "regenFraction": 0.458,
+     "flatOutLaps": 13.697
     },
     "unleashed": {
-     "lapTime": 82.797,
-     "vMaxKph": 257.983,
-     "netKWh": 2.286,
-     "outKWh": 5.467,
-     "regenFraction": 0.582,
-     "flatOutLaps": 22.419
+     "lapTime": 81.889,
+     "vMaxKph": 256.85,
+     "netKWh": 3.186,
+     "outKWh": 5.991,
+     "regenFraction": 0.468,
+     "flatOutLaps": 16.085
     },
     "unleashed-attack": {
-     "lapTime": 80.885,
-     "vMaxKph": 278.905,
-     "netKWh": 2.739,
-     "outKWh": 6.262,
-     "regenFraction": 0.563,
-     "flatOutLaps": 18.708
+     "lapTime": 79.562,
+     "vMaxKph": 269.619,
+     "netKWh": 3.742,
+     "outKWh": 6.904,
+     "regenFraction": 0.458,
+     "flatOutLaps": 13.697
     },
     "eprix": {
-     "lapTime": 84.181,
-     "vMaxKph": 257.997,
-     "netKWh": 1.986,
-     "outKWh": 5.292,
-     "regenFraction": 0.625,
-     "flatOutLaps": 25.812
+     "lapTime": 84.723,
+     "vMaxKph": 252.828,
+     "netKWh": 2.298,
+     "outKWh": 5.524,
+     "regenFraction": 0.584,
+     "flatOutLaps": 22.303
     },
     "eprix-attack": {
-     "lapTime": 82.47,
-     "vMaxKph": 278.512,
-     "netKWh": 2.362,
-     "outKWh": 6.025,
-     "regenFraction": 0.608,
-     "flatOutLaps": 21.701
+     "lapTime": 82.849,
+     "vMaxKph": 273.172,
+     "netKWh": 2.714,
+     "outKWh": 6.281,
+     "regenFraction": 0.568,
+     "flatOutLaps": 18.884
     }
    }
   }
@@ -443,20 +443,20 @@
   "muY": {
    "lo": 1.3,
    "hi": 2,
-   "dtLo": 4.425,
-   "dtHi": -4.288
+   "dtLo": 4.244,
+   "dtHi": -4.313
   },
   "muXTrac": {
    "lo": 1.5,
    "hi": 2,
-   "dtLo": 0.227,
-   "dtHi": -0.356
+   "dtLo": 0.179,
+   "dtHi": -0.288
   },
   "muX": {
    "lo": 1.3,
    "hi": 1.9,
-   "dtLo": 0.696,
-   "dtHi": -0.952
+   "dtLo": 0.527,
+   "dtHi": -0.731
   },
   "cogHeight": {
    "lo": 0.25,
@@ -473,42 +473,85 @@
   "cRoll": {
    "lo": 0.01,
    "hi": 0.02,
-   "dtLo": -0.143,
-   "dtHi": 0.149
+   "dtLo": -0.249,
+   "dtHi": 0.25
   },
   "etaDrive": {
-   "lo": 0.94,
-   "hi": 0.98,
-   "dtLo": 0.45,
-   "dtHi": -0.141
+   "lo": 0.88,
+   "hi": 0.97,
+   "dtLo": 0.402,
+   "dtHi": -1.315
   },
   "vMaxKph": {
    "lo": 335,
    "hi": 345,
-   "dtLo": 0.097,
-   "dtHi": -0.057
+   "dtLo": 0,
+   "dtHi": 0
   },
   "clA": {
-   "lo": 2,
-   "hi": 5,
-   "dtLo": 1.708,
-   "dtHi": -2.925
+   "lo": 3,
+   "hi": 6,
+   "dtLo": 1.954,
+   "dtHi": -2.027
   },
   "cdA": {
-   "lo": 0.65,
+   "lo": 0.75,
    "hi": 1.18,
-   "dtLo": -0.217,
-   "dtHi": 0.987
+   "dtLo": -0.945,
+   "dtHi": 0.214
   },
   "base": {
    "mode": "qualifying",
    "track": "monza",
-   "lapTime": 88.751
+   "lapTime": 90.015
   }
  },
  "impliedGrip": {
-  "ldf-600": 1.476,
-  "hdf-600": 1.401,
-  "ldf-450": 1.715
+  "ldf-600": 1.518,
+  "hdf-600": 1.454,
+  "ldf-450": 1.815
+ },
+ "gen3EvoCheck": {
+  "track": "monte-carlo",
+  "ref": {
+   "lapTime": 86.217,
+   "source": "e-formula.news, Monaco 2026 semi-final duel (D. Ticktum)",
+   "claimGainS": [
+    8,
+    10
+   ]
+  },
+  "rows": {
+   "clA 1.5": {
+    "gen3EvoMuY": 1.54,
+    "gen4QualifyingGainS": {
+     "1": 5.258,
+     "1.05": 7.039,
+     "1.075": 7.871,
+     "1.1": 8.661
+    }
+   },
+   "clA 1.75": {
+    "gen3EvoMuY": 1.521,
+    "gen4QualifyingGainS": {
+     "1": 4.793,
+     "1.05": 6.587,
+     "1.075": 7.432,
+     "1.1": 8.232
+    }
+   },
+   "clA 2": {
+    "gen3EvoMuY": 1.503,
+    "gen4QualifyingGainS": {
+     "1": 4.348,
+     "1.05": 6.157,
+     "1.075": 7.011,
+     "1.1": 7.825
+    }
+   }
+  },
+  "priorGainS": 6.655,
+  "clANeededFor8s": 4.811,
+  "note": "simulator Monaco is 3267 m against 3337 m official, so absolute times run about 2 % short; the Gen3 Evo to Gen4 difference is not affected"
  }
 }

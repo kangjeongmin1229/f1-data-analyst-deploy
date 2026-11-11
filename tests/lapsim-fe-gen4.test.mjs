@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {lapsimKernel} from '../worker/lapsim/kernel.js';
 import {lapsimTracks} from '../worker/lapsim/tracks-data.js';
 import {SERIES} from '../worker/lapsim/series.js';
-import {FE_GEN4_FIXED, FE_GEN4_PRIOR, FE_GEN4_AERO, gen4Car, modeCar, powerSplit, straightLine, lapEnergy} from '../worker/lapsim/fe-gen4.js';
+import {FE_GEN4_FIXED, FE_GEN4_PRIOR, FE_GEN4_AERO, gen4Car, modeCar, powerSplit, straightLine, lapEnergy, gen3EvoCar} from '../worker/lapsim/fe-gen4.js';
 
 const K = lapsimKernel();
 const env = K.conditionsFromWeather({pressureHpa: 1013.25, airTempC: 25, humidityPct: 50, trackTempC: 35});
@@ -36,7 +36,7 @@ test('the prior car carries the regulation values and starts inside its bounds',
 test('straight-line check is near the published acceleration claims', () => {
   const s = straightLine(modeCar('eprix-attack'));
   assert.ok(s.t100 > 1.5 && s.t100 < 2.1, String(s.t100));
-  assert.ok(s.t200 > 3.8 && s.t200 < 5.0, String(s.t200));
+  assert.ok(Math.abs(s.t200 - 4.4) < 0.15, String(s.t200));
   assert.ok(s.vTopKph >= 335);
 });
 
@@ -48,4 +48,11 @@ test('more power and more downforce both shorten the lap; energy stays consisten
   const e = lapEnergy(ep.r, modeCar('eprix'), ep.tr, {rho: env.rho});
   assert.ok(e.outKWh > e.netKWh && e.netKWh > 0 && e.regenFraction > 0 && e.regenFraction < 1);
   assert.ok(FE_GEN4_FIXED.raceEnergyKWh / e.netKWh > 1);
+});
+
+test('Gen3 Evo reference car reaches its Monaco duel lap with a grip inside the prior bounds', () => {
+  const tr = K.trackFromData(lapsimTracks['monte-carlo']);
+  const t = mu => K.simulateLap(tr, gen3EvoCar(mu), env).lapTime;
+  assert.ok(t(FE_GEN4_PRIOR.muY.lo) > 86.217 && t(FE_GEN4_PRIOR.muY.hi) < 86.217);
+  assert.ok(K.simulateLap(tr, modeCar('qualifying'), env).lapTime < 86.217);
 });

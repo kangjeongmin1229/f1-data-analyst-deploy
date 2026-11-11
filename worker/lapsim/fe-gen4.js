@@ -18,23 +18,27 @@ export const FE_GEN4_FIXED = {
 
 // Not published anywhere. start = value the prior car uses; lo/hi = bounds for the fit; basis = where it comes from.
 export const FE_GEN4_PRIOR = {
-  muY: {start: 1.6, lo: 1.3, hi: 2.0, basis: 'treaded all-weather tyre; below the F1 slick prior (1.85)'},
+  muY: {start: 1.6, lo: 1.3, hi: 2.0, basis: 'Gen3 Evo needs about 1.5 for its Monaco duel lap (scripts/sim/fe-gen4-prior.mjs); Gen4 tyre reported 5-10 % grippier'},
   muXTrac: {start: 1.65, lo: 1.5, hi: 2.0, basis: '0-100 km/h in about 1.8 s needs a mean of 1.57 g on four driven tyres'},
   muX: {start: 1.5, lo: 1.3, hi: 1.9, basis: 'braking; same ratio to muY as the WEC prior'},
   cogHeight: {start: 0.29, lo: 0.25, hi: 0.33, basis: 'single-seater with the battery under the monocoque (engineering prior)'},
   rearAero: {start: 0.55, lo: 0.45, hi: 0.6, basis: 'aero balance, near the mass distribution'},
   cRoll: {start: 0.015, lo: 0.01, hi: 0.02, basis: 'same as the series common value'},
-  etaDrive: {start: 0.97, lo: 0.94, hi: 0.98, basis: 'series claim "efficiency exceeding 97%"'},
+  etaDrive: {start: 0.9, lo: 0.88, hi: 0.97, basis: 'battery to wheel; 0.90 reproduces the published 0-200 km/h time (4.4 s), 0.97 (series claim) gives 4.2 s'},
   regenShare: {start: 0.9, lo: 0.6, hi: 1.0, basis: 'share of braking done by the motors; four circuits, two are motor-only'},
   etaRegen: {start: 0.95, lo: 0.9, hi: 0.97, basis: 'wheel to battery'},
   vMaxKph: {start: 340, lo: 335, hi: 345, basis: 'claimed top speed 335 km/h; 338 km/h reported in testing'},
 };
 
-// Aero packages (TR 4.5). Coefficients are the FIA tender TARGETS as reported (SCz 2.0/3.0, SCx 0.65/0.75), not
-// measured values. Bound from the top-speed claim: cdA <= 1.18.
+// Aero packages (TR 4.5). No measured coefficient is public.
+// LDF: the FIA tender TARGET as reported (SCz 2.0, SCx 0.65).
+// HDF: revised 2026-11-11 from the tender target (SCz 3.0, SCx 0.75). Two independent hints agree on more downforce:
+// Porsche "up to 150 percent more downforce compared to the GEN3 Evo" (2.5 x 1.75 = 4.4), and the 8 s Monaco gain
+// over Gen3 Evo that engineers quote needs about 4.6 in this model. Drag keeps the tender lift/drag ratio (4.0).
+// Bound from the top-speed claim: cdA <= 1.18.
 export const FE_GEN4_AERO = {
   ldf: {label: 'Low downforce (LDF)', clA: 2.0, cdA: 0.65, bounds: {clA: [1.2, 3.0], cdA: [0.55, 1.0]}},
-  hdf: {label: 'High downforce (HDF)', clA: 3.0, cdA: 0.75, bounds: {clA: [2.0, 5.0], cdA: [0.65, 1.18]}},
+  hdf: {label: 'High downforce (HDF)', clA: 4.4, cdA: 1.1, tender: {clA: 3.0, cdA: 0.75}, bounds: {clA: [3.0, 6.0], cdA: [0.75, 1.18]}},
 };
 
 // Session configurations. Aero per session is fixed by a Bulletin for each event (SR 23.1, 27.3 a)); these are the
@@ -113,4 +117,17 @@ export function lapEnergy(result, car, track, {rho = 1.225} = {}) {
   }
   const k = 1 / 3.6e6;
   return {outKWh: out * k, regenKWh: regen * k, netKWh: (out - regen) * k, regenFraction: out ? regen / out : 0};
+}
+
+// Gen3 Evo reference car (seasons 2024-25 and 2025-26) for checking the method on real laps: 350 kW with all four
+// wheels driven in qualifying duels, 859 kg with driver, wheelbase 2970.5 mm. Aero is the Gen3 tender range middle
+// (SCz 1.5-2.0, SCx 0.60-0.65); grip is the value to solve for.
+export function gen3EvoCar(muY, {clA = 1.75, cdA = 0.62} = {}) {
+  return {...gen4Car({aero: 'ldf', powerKW: 350}), label: 'Gen3 Evo 350 kW (reference)', mass: 859, wheelbase: 2.9705,
+    clA, cdA, clALow: clA, cdALow: cdA, vMax: 322 / 3.6, ...gripSet(muY)};
+}
+// The three grip values move together, in the ratio of the prior.
+export function gripSet(muY) {
+  const p = FE_GEN4_PRIOR;
+  return {muY, muX: muY * p.muX.start / p.muY.start, muXTrac: muY * p.muXTrac.start / p.muY.start};
 }
