@@ -39,6 +39,7 @@ Rows without a prefix are Technical Regulations (TR). SR = Sporting Regulations;
 | Rims | 18 inch; width 11.5 inch front, 13 inch rear | 13.5 / p37 |
 | Tyre sectional width | 295 mm front, 345 mm rear | 13.8 / p37 |
 | Tyre overall diameter | 710 mm front, 710 mm rear | 13.8 / p37 |
+| Tyre fitting pressure, maximum | "3.0 5.0 bars at 20°C" (both numbers are printed; fitting on the rim only, not a running pressure); no device may change tyre pressure while the car runs | 13.9 / p38 |
 | Tyres | used as supplied by the single supplier; air only | 13 / p37-38 |
 | Aero adjustment | only with tools; no gurneys or trim tabs beyond the supplier specification | 4 / p19 |
 | Aero configurations (definition) | only 2 configurations may be used: LDF (low downforce) = reference bodywork of the supplier catalogue; HDF (high downforce) = made by adding or replacing bodywork parts of the reference | TR 4.5, 4.5.1, 4.5.2 / p17 (full page read) |
@@ -79,7 +80,8 @@ safety tests, cameras and transponders (18-19), drawings 1-13 (pages 57-73) and 
 
 Second check on 2026-11-11 (full page reads of TR p17, p20-24, p33-37 and SR p2-3): the first read of TR pages 12-41 had
 missed four values that are printed there - tyre width and diameter (13.8), camber range (10.9), the fast-charging
-energy (7.5) and the DC-DC rule (7.5). They are now in the table. Pages 25-32 and 38-41 were not read again.
+energy (7.5) and the DC-DC rule (7.5). They are now in the table. Pages 25-32 and 38-42 were read again in a third check: one more value (tyre fitting pressure,
+13.9) and no other model input (electrical safety, sensors, lights, cockpit and seat rules).
 
 Still not in either regulation (see section 2): tyre pressure numbers; Attack Mode total time; the energy value, Pit Boost
 table and aero configuration of each event. Sporting Regulations Appendix 4 (Attack Mode, PDF page 76) is a rotated diagram.
@@ -152,18 +154,50 @@ Solved on 2026-11-11 and moved to section 1.1: the 450kW Race Mode limit, the At
 the qualifying format, tyre allocation, when the Typhoon tyre may be used, the race energy and Pit Boost rules,
 tyre width and diameter, the camber range, the maximum fast-charging energy, the race time caps.
 
-Still open, no number in any regulation read:
+### 2.1 Unpublished car values: best evidence and calculated bounds (third check, 2026-11-11)
 
-- Drag and downforce of both aero packages. Web search found only a relative claim and an old tender target (section 1.3).
-- Tyre grip, All-Weather and Typhoon; loaded tyre radius. Web search (Bridgestone press release, series pages, press) gives no number.
-- Tyre pressure numbers: supplier working ranges, given to the teams at each event (SR 15.8). Not public.
-- Front/rear power split the teams use inside the 250/350 kW caps.
-- Centre-of-gravity height (the regulation only says where ballast goes: on the keel).
-- Sporting Regulations Appendix 4 by eye: the diagram on PDF page 76 must be opened by a person to confirm the rebuilt row.
+Searched: regulations, FIA and series pages, Bridgestone and Porsche press material, test reports (The Race, RacingNews365,
+e-formula.news, DIVEBOMB), technical press, video pages. No source gives these numbers. They stay fitted values.
+The "bound" column is a calculation from sourced numbers (mass 1046 kg, air 1.225 kg/m3, 97 % drive efficiency as the series claims).
 
-Searched on 2026-11-11 with no result: tyre pressure, grip, centre of gravity, power split, drag or downforce numbers,
-Gen4 test lap times (the Valencia results found are the Gen3 Evo test of October 2025), any Jeddah Bulletin.
-The Jeddah values are due 21 days before the race, about 27 November 2026.
+| Item | Best public evidence | Calculated bound | Status |
+|---|---|---|---|
+| Front/rear power split | caps 250 kW front, 350 kW rear (TR 7.5); FIA: teams "will play a lot with torque distribution" (Autosport, V. Gaillardot) | at 600 kW the caps add up to exactly 600, so the split is forced: 250 / 350 (41.7 % front). At 450kW: front 100 to 250 kW, rear 200 to 350 kW (22 to 56 % front). At 700 kW regen: forced 350 / 350 | closed for 600 kW and full regen; a free control choice in Race Mode |
+| Tyre grip, All-Weather | 0-100 km/h in about 1.8 s (series, Bridgestone) | mean 15.4 m/s2 = 1.57 g; power allows this up to about 130 km/h, so the launch is grip-limited: mean longitudinal grip of at least about 1.5 (four wheels driven, little downforce at this speed) | lower bound only; lateral grip and load sensitivity open |
+| Drag | top speed 335 km/h (series); 338 km/h reached (RacingNews365); FIA tender target SCx 0.65 low downforce / 0.75 high downforce (forum report) | from 335 km/h at 600 kW: SCx no more than 1.18 m2. With the tender targets the car would only need 321 / 370 kW at 335 km/h, so 335 km/h is not a drag-limited speed and cannot fix SCx | bounded: about 0.65 to 1.18 m2; fit from straight-line data |
+| Downforce | tender target SCz 2.0 low / 3.0 high downforce (forum report); Porsche: up to 150 percent more than Gen3 Evo | at the tender targets, 200 km/h: 3781 N / 5671 N = 37 % / 55 % of car weight. The Porsche claim and the tender ratio (3.0 / 2.0) do not agree, so neither is used as input | open; fit per package |
+| Centre-of-gravity height | battery under the centre of the monocoque, ballast on the keel (TR 5.3); pack about 340 kg (tender maximum; batterydesign.net) | none possible from public data | open |
+| Tyre pressure, running | supplier working range, not public; fitting maximum 5.0 bar (TR 13.9) | none | open |
+| Loaded tyre radius | unloaded 355 mm (TR 13.8) | below 355 mm; exact value needs tyre stiffness | open |
+
+Engineering starting ranges for the fit only. These are priors from general single-seater practice, NOT sources and not
+Gen4 data; they must never be quoted as values: centre-of-gravity height 0.25 to 0.33 m; loaded radius 0.97 to 0.98 of
+unloaded (344 to 348 mm); hot running pressure 1.3 to 1.8 bar.
+
+Electrical checks (calculated from TR 7.5 and series values):
+
+| Check | Result |
+|---|---|
+| Battery C-rate, 55 kWh pack | 10.9 C at 600 kW discharge; 12.7 C at 700 kW regen |
+| Current at the 1000 V maximum | at least 600 A at 600 kW, at least 700 A at 700 kW (more at the real, lower pack voltage) |
+| Pit Boost time at 600 kW | [4.05 max TBC] kWh = 24.3 s; 3.85 kWh = 23.1 s. The series quotes 30 s for 3.85 kWh, a mean of 462 kW |
+| Gross energy if regen is 40 % / 50 % of the energy used (series claim) | 85 / 103 kWh through the motors for 51.25 kWh net; 114 / 137 kW mean over 45 minutes |
+| Pack energy density at 340 kg | about 162 Wh/kg |
+
+### 2.2 Test records found (unofficial unless stated; not usable for a fit yet)
+
+| Test | Result | Source | Limits |
+|---|---|---|---|
+| Monteblanco, November 2025 | first manufacturer test, low downforce only, no official times | The Race; e-formula.news | development cars |
+| Almeria (Circuit Andalusia), January 2026 | best laps: Porsche 1m47.873s, Jaguar 1m49.322s, Stellantis 1m49.386s, Lola 1m49.529s, Nissan 1m49.692s; high downforce kit first run on the last day | The Race | power level not stated; track not in the simulator |
+| Paul Ricard, June 2026 | onboard lap video (J. Rossiter), no lap time published | fiaformulae.com video; YouTube | promotional |
+| Jarama, unofficial | over 200 mph on the main straight (J. Rossiter) | DIVEBOMB | no lap time |
+| Monza, 17-18 October 2026, Porsche | lap "in the 1:32 range", about 320 km/h, used tyres, no qualifying run; wet running on Typhoon tyres on day 2 | RacingNews365; e-formula.news; DIVEBOMB | unofficial, source-reported; aero package and power not confirmed. F2 pole 2026 at Monza: 1:31.326 |
+| Guadix; Valencia group shakedown, early November 2026 | running reported, no times published | forum reports only | not verified |
+| Jarama official pre-season test, 16-20 November 2026 | not run yet. Track days Monday, Wednesday, Friday, two 3-hour sessions each; two race simulations (E-Prix and E-PrixUnleashed) | fiaformulae.com; e-formula.news | first official Gen4 times. Gen3 Evo reference on the same layout: race fastest lap 1:32.941 (Madrid E-Prix, 21 March 2026) |
+
+The Jarama test is the first data that can close items in 2.1: a Gen3 Evo reference exists on the same layout, both race
+formats are simulated, and all teams run. The Jeddah Bulletins follow about 27 November 2026.
 
 Still open, published per event in a Bulletin (collect before each race, first one Jeddah):
 
@@ -234,6 +268,16 @@ Section 13 of the programme document applies: map-built tracks are about 5 % off
 - https://competition.totalenergies.com/en/auto/formula-e/formula-e-rules
 - https://forums.autosport.com/topic/224023-fia-launches-tenders-for-formula-e-gen4/
 - https://www.spa.gov.sa/en/N2680740
+- https://www.the-race.com/formula-e/what-we-learned-private-formula-e-gen4-test/
+- https://racingnews365.com/key-details-from-extraordinary-porsche-formula-e-monza-test-revealed
+- https://e-formula.news/news/formula-e-news/formula-e-news-detail/porsche-gen4-stuns-at-monza-formula-e-car-hits-320-km-h-and-matches-f2-pace-31243
+- https://www.dive-bomb.com/article/what-we-learnt-from-porsche-s-special-gen4-test-at-monza
+- https://e-formula.news/news/formula-e-news/formula-e-news-detail/formula-e-gen4-pre-season-test-schedule-confirmed-2-race-simulations-planned-21859
+- https://fiaformulae.com/en/news/1071341/jarama-to-host-formula-e-2026-27-pre-season-testing
+- https://www.fiaformulae.com/en/news/1072926/video-formula-e-s-new-gen4-car-is-out-of-this-world-
+- https://www.autosport.com/formula-e/news/inside-formula-es-most-ambitious-car-yet-the-making-of-gen4/10804187/
+- https://www.batterydesign.net/gen-4-formula-e-battery/
+- https://racingnews365.com/f1-drivers-hold-conversations-with-formula-e-ceo-over-gen4-private-test
 - https://www.bridgestone.com/corporate/news/2026100101.html
 - https://newsroom.porsche.com/en_US/2026/motorsport/porsche-975-rse-formula-e-gen4-presentation-42191.html
 - https://theevreport.com/nissan-formula-e-gen4-car-power
