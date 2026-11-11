@@ -116,13 +116,17 @@
      ],
      "source": "image supplied by the owner, origin not known; a third-party page lists 5.302 km as \"final design, TBC\""
     },
-    "conflict": "The two sets disagree on length, corner count and direction. No geometry is built until one is chosen or a layout is published."
+    "conflict": "The two sets disagree on length, corner count and direction. Owner chose the diagram as the provisional basis."
    },
    "watch": [
     "formula1.com African Grand Prix articles",
     "FIA list of licensed circuits",
     "OpenStreetMap raceway or construction ways near the site (weekly map fetch)"
-   ]
+   ],
+   "basis": {
+    "decision": "owner, 2026-11-11: build from the diagram (first picture): 5.302 km, 18 turns, clockwise, 13 m minimum width, elevation and banking labels as drawn",
+    "label": "⚠️ provisional: traced from a perspective drawing, scaled to 5.302 km; it disagrees with the official October 2026 figures (about 6 km, 17 corners, anti-clockwise) and is replaced when a layout is published"
+   }
   },
   {
    "id": "austin",
@@ -202,23 +206,15 @@
      "use": "Grand Prix circuit"
     },
     {
-     "id": "nurburgring-sprint",
-     "use": "Sprint circuit"
-    },
-    {
-     "id": "nordschleife",
-     "use": "Nordschleife alone"
-    },
-    {
      "id": "nurburgring-24h",
-     "use": "24 Hours combined lap"
+     "use": "endurance: 24 Hours combined lap"
     },
     {
      "id": "nurburgring-nls",
-     "use": "NLS combined lap"
+     "use": "endurance: NLS combined lap"
     }
    ],
-   "layoutNote": "Which series uses which layout (F1, DTM, GT World Challenge, 24 Hours, NLS) and each official length are to be taken from the series documents, not assumed."
+   "layoutNote": "Owner, 2026-11-11: Grand Prix and endurance layouts. Official lengths and which series uses which lap come from the series documents, not assumed."
   },
   {
    "id": "brands-hatch",
@@ -498,5 +494,9 @@
    "indianapolis",
    "road-atlanta"
   ]
+ },
+ "storage": {
+  "decision": "owner, 2026-11-11: keep the raw lap rows in a private repository of the owner",
+  "state": "repository not created yet"
  }
 }
