@@ -211,3 +211,31 @@ Shape numbers of the production track against the TUM race line (no fit, read on
   middle of the road or carries position noise, not a racing line. Its track factor then hides the difference.
 - Suzuka: 55 degrees more turning with the same length; smaller version of the same pattern.
 - Not changed: the production tracks. Proposed check for the model owner: rebuild both from another session and compare.
+
+## 14. Review and debug pass on the builders (2026-11-11)
+
+Code review of `scripts/sim/laps` and `scripts/sim/tracks` (no tests existed for them). Found and fixed, each with a test in
+`tests/lapsim-laps-tracks.test.mjs`:
+
+| # | Fault | Effect | Fix |
+|---|---|---|---|
+| 1 | Push-lap mark was set before the cross-year wet check | a qualifying lap of a session later marked wet could stay a push lap | wet_session clears the push mark |
+| 2 | "Qualifying Race" was typed as qualifying | race laps of GT sprint events could count as push laps | typed as race (applies at the next full collection) |
+| 3 | Wet check grouped by track, season and session name only | two events at one track in one season (e.g. two Bahrain rounds) shared one wet mark | event added to the group |
+| 4 | "Evolution" written in full was not seen as an Evo kit; "Lancer Evo" was | wrong car split | kit only when a racing category word is present; both spellings |
+
+Counts in section 3 were produced before these fixes; the next merge run replaces them.
+
+Debug of the venues with no accepted lap. Root causes, from the committed map summaries:
+
+| Venue | What the map has | Root cause | Action |
+|---|---|---|---|
+| Yeongam F1 lap | one way "YEONGAM F1 Track", 5603 m (official 5615 m, 0.21 % off) | three ways drawn over the same nodes doubled the loop count at every shared node; search stopped at its cap (199,832 loops) before the full lap | duplicate edges dropped; search limited to the longest official length + 3 % |
+| Paul Ricard | 31,776 loops | same cause | same fix; layout identity still needs the official drawing |
+| Mosport | longest loop 3032 m, official 3957 m | a connection is missing (gap over 60 m or a missing way) | open ends are now listed with their distance, to see where |
+| Jarama | two ways, 3053 + 852 = 3905 m, no loop | ends do not meet within 60 m | same listing |
+| Sebring | 5887 m, official 6019 m (2.19 % off, official rounded to 0.01 mile) | about 130 m missing | same listing |
+| Inje | one closed way, 3947 m, official 3908 m (1.00 % off) | map line and official length disagree; not a code fault | stays rejected; needs a second length source |
+| Sao Paulo FE | 2931 m, official 2960 m (0.98 % off) | same kind | stays rejected |
+| Brands Hatch Indy | 1927 m, official 1944 m (0.87 % off) | same kind | TUM line used instead |
+| Long Beach, Detroit, Berlin, Tokyo, Sanya, Bathurst | no racing ways (public roads) | builder only read ways tagged as racing track | roads are now fetched (also for Bathurst) and their names listed; a lap needs the road names from an official circuit map before any loop is accepted, because many road loops match one length |

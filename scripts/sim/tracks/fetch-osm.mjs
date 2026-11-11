@@ -22,11 +22,13 @@ for (const t of REQ) {
       writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d));
       await new Promise(f => setTimeout(f, 3000));
     }
+    // no raceway way at all (lap on public roads, e.g. Bathurst): fetch the roads too, also when the file came from the cache
+    if (!d.roads && !d.roadsError && (t.kind || !d.elements.some(e => e.type === 'way'))) { try { const r = await overpass(`[out:json][timeout:50];way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service)$"](around:${Math.min(t.radius, 1800)},${t.seed[0]},${t.seed[1]});out geom tags;`); d.roads = r.elements; } catch (e) { d.roadsError = String(e).slice(0, 120); } writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d)); }
     // a venue whose lap uses public roads: add the ways of its route relation (marked, so the assembler keeps them)
     if (t.relation && !d.relationDone) { const r = await overpass(`[out:json][timeout:50];relation(${t.relation});way(r);out geom tags;`); d.elements.push(...r.elements.filter(e => e.type === 'way').map(e => ({...e, inRelation: t.relation}))); d.relationDone = true; writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d)); }
     const ways = d.elements.filter(e => e.type === 'way' && e.geometry).map(e => ({id: e.id, name: e.tags?.name || null, ref: e.tags?.ref || null, sport: e.tags?.sport || null, surface: e.tags?.surface || null, oneway: e.tags?.oneway || null,
       width: e.tags?.width || null, m: Math.round(e.geometry.slice(1).reduce((a, p, i) => a + hav(e.geometry[i], p), 0)), closed: hav(e.geometry[0], e.geometry[e.geometry.length - 1]) < 0.5, nodes: e.geometry.length}));
-    summary.tracks[t.id] = {kind: t.kind || 'permanent', roads: d.roads ? d.roads.length : undefined, ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),
+    summary.tracks[t.id] = {kind: t.kind || 'permanent', roads: d.roads ? d.roads.length : undefined, roadNames: d.roads ? Object.entries(d.roads.reduce((o, e) => { const k = e.tags?.name; if (k) o[k] = (o[k] || 0) + 1; return o; }, {})).sort((a, b) => b[1] - a[1]).slice(0, 40).map(x => x[0]) : undefined, ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),
       relations: d.elements.filter(e => e.type === 'relation').map(e => ({id: e.id, name: e.tags?.name, members: e.members?.length})),
       byName: Object.entries(ways.reduce((o, w) => { const k = `${w.name ?? '(no name)'} | ${w.sport ?? ''} | ${w.surface ?? ''}`; (o[k] ||= [0, 0])[0]++; o[k][1] += w.m; return o; }, {})).sort((a, b) => b[1][1] - a[1][1]).slice(0, 25)};
   } catch (e) { summary.tracks[t.id] = {error: String(e).slice(0, 200)}; }

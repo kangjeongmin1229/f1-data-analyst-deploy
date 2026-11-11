@@ -12,7 +12,7 @@ export const SLOW = 1.07;         // 'slow' mark: more than 7 % off the car's ow
 export const TRAP_WET = 0.90;     // class session trap under 90 % of the same class/track in other years = wet (rules 3.3.1)
 export const PACE_SUSPECT = 1.03; // class session best more than 3 % off other years = wet_suspect (kept, listed, not removed)
 export const isClean = r => !r.q.some(m => HARD.includes(m));
-export const sessionType = name => /hyperpole|qualif|shootout|superpole|duel/i.test(name) ? 'Q' : /practice|\bfp ?\d|test|warm/i.test(name) ? 'P' : /race|grand prix|sprint/i.test(name) ? 'R' : 'other';
+export const sessionType = name => /qualif\w*[ -]race|quali[ -]race/i.test(name) ? 'R' : /hyperpole|qualif|shootout|superpole|duel/i.test(name) ? 'Q' : /practice|\bfp ?\d|test|warm/i.test(name) ? 'P' : /race|grand prix|sprint/i.test(name) ? 'R' : 'other';
 const med = a => { const s = a.filter(Number.isFinite).sort((x, y) => x - y); return s.length ? s[s.length >> 1] : null; };
 
 // Session-level marks that need all rows of a session: slow laps and push laps per car.
@@ -41,7 +41,7 @@ export function markWetAcrossYears(rows) {
   const rainy = r => r.q.includes('wet_session') || r.q.includes('wet_lap');
   const g = new Map();
   for (const r of rows) if (r.track && r.time > 0) {
-    const k = key(r) + '|' + r.season + '|' + r.session;
+    const k = key(r) + '|' + r.season + '|' + r.event + '|' + r.session;
     const o = g.get(k) || g.set(k, {best: Infinity, trap: 0, base: key(r), season: r.season, session: r.session, rain: false}).get(k);
     if (rainy(r)) o.rain = true;
     const usable = !r.q.some(m => ['no_time', 'pit_in', 'pit_out', 'not_green', 'deleted', 'sector_sum', 'inaccurate'].includes(m));
@@ -58,9 +58,10 @@ export function markWetAcrossYears(rows) {
     if (mark) list.push({group: k, mark, rainMark: o.rain, best: Number.isFinite(o.best) ? o.best : null, dryRef: refT, paceRatio, trap: o.trap || null, dryTrap: refV, trapRatio});
   }
   for (const r of rows) {
-    const i = info.get(key(r) + '|' + r.season + '|' + r.session);
+    const i = info.get(key(r) + '|' + r.season + '|' + r.event + '|' + r.session);
     r.paceRatio = i?.paceRatio ?? null; r.trapRatio = i?.trapRatio ?? null;
     if (i?.mark && !r.q.includes(i.mark)) r.q.push(i.mark);
+    if (i?.mark === 'wet_session') r.push = 0; // a push lap must be dry: this mark arrives after markRelative set r.push
   }
   return list;
 }

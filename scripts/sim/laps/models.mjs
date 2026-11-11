@@ -4,10 +4,11 @@
 const clean = s => String(s || '').toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^A-Z0-9. ]+/g, ' ').replace(/\s+/g, ' ').trim();
 export function modelIdentity(text) {
   const t = clean(text); if (!t) return null;
-  const evoM = t.match(/\bEVO ?(II|2)?\b/), evo = evoM ? (evoM[1] ? 'evo2' : 'evo') : null;
   const gen = (t.match(/\b(99[12](?: ?II| ?\.2| ?I)?|G82|F8[12]|GEN ?\d)\b/) || [])[1] || null;
   const cat = (t.match(/\b(LMGT3|GT3|GT4|GT2|GTE|CUP|SUPER TROFEO|CHALLENGE|LMP2|LMP3|TCR)\b/) || [])[1] || null;
+  // "Evo" is a kit only on a customer racing car (a category word is present). "Lancer Evolution X" is a model name.
+  const EVO = /\bEVO(?:LUTION)? ?(II|2)?\b/, evoM = cat ? t.match(EVO) : null, evo = evoM ? (evoM[1] ? 'evo2' : 'evo') : null;
   // base = text without the Evo word, the category spelling differences and brackets
-  const base = t.replace(/\bEVO ?(II|2)?\b/, '').replace(/\bLMGT3\b/, 'GT3').replace(/\bTYPE\b/g, '').replace(/\s+/g, ' ').trim();
+  const base = (evo ? t.replace(EVO, '') : t).replace(/\bLMGT3\b/, 'GT3').replace(/\bTYPE\b/g, '').replace(/\s+/g, ' ').trim();
   return {base, evo, generation: gen, category: cat === 'LMGT3' ? 'GT3' : cat, key: base + (evo ? ' +' + evo.toUpperCase() : '')};
 }
