@@ -57,3 +57,21 @@ Owner decision (2026-11-11): use what is published as far as possible, include t
 Published facts and their conflict are stored in `track-requests.json` (official October 2026 figures against a diagram of unknown origin).
 Automatic update, proposed: a weekly job that (a) repeats the map fetch at the site, so the track is picked up as soon as mappers draw it,
 (b) checks the FIA licensed-circuit list and the Formula 1 news pages for a released layout, and (c) opens an issue when something changes. Not built yet.
+
+## 7. Track geometry status (2026-11-11, run for commit 38094d6)
+
+Official lengths: FIA List of Licensed Circuits, lists of 2026-03-31 and 2025-12-01, parsed into `scripts/sim/data/tracks/fia-circuits.json` (438 rows).
+Accepted (map lap within 0.5 % of the FIA lap distance): 24 layouts at 13 venues. Candidates with height: `scripts/sim/data/tracks/extra-tracks.json`. Nothing reads this file yet.
+
+Open defects, to fix before any use:
+
+| Defect | Evidence | Fix |
+|---|---|---|
+| Position smoothing shortens the lap | Paul Ricard 5,733 m built against 5,822 m official (−1.5 %); most others −0.1 to −0.6 % | Smooth less, or smooth curvature instead of positions; re-check the 0.5 % rule after smoothing |
+| One accepted loop is not a simple lap | Indianapolis Grand Prix: total turn 0° instead of ±360° | Reject loops whose total turn is not ±360° |
+| Height is too rough | Maximum grade 25.5 % at Mugello and 23.9 % on the Nordschleife from a 30 m height grid | Longer smoothing and a finer height source per country; compare with published height profiles |
+| Direction and start line not verified | "as mapped" only | Take from the series documents and video |
+
+Not accepted yet: Sebring (map lap 2.5 % short), Inje (1.0 % long), Brands Hatch Grand Prix (0.54 %), Lime Rock (1.5 %), São Paulo (0.98 %).
+No FIA row matched: Kyalami, Daytona, Watkins Glen, Yongin, Mosport, VIR — another official length source is needed.
+No lap on the map: Jarama, Bathurst, Berlin, Tokyo, Sanya, Long Beach, Detroit, the Le Mans 24 Hours lap, the Yeongam F1 lap, the Nürburgring 24 Hours and NLS laps. Mid-Ohio: map server error.
