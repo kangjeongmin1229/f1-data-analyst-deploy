@@ -37,6 +37,7 @@ paul-ricard-paul-ricard-2c: 4138 m (official 4138, smoothing shrink 1.47 %), raw
 laguna-seca-laguna-seca-raceway: 3601 m (official 3602, smoothing shrink 0.17 %), raw height range 55 m, height 229–282 m, max grade 11.8 %, turn 360°
 watkins-glen-long-course-imsa: 5473 m (official 5472, smoothing shrink 0.12 %), raw height range 45 m, height 454–496 m, max grade 8.1 %, turn -360°
 road-america-road-america-elkhart-lake: 6493 m (official 6514, smoothing shrink 0.08 %), raw height range 56 m, height 270–324 m, max grade 9.6 %, turn -360°
+bathurst-mount-panorama-bathurst: 6197 m (official 6213, smoothing shrink 0.09 %), raw height range 179 m, height 700–874 m, max grade 13.9 %, turn 360°
 mosport-grand-prix-track-imsa: 3943 m (official 3957, smoothing shrink 0.11 %), raw height range 56 m, height 289–340 m, max grade 9.7 %, turn -360°
 vir-full-course-imsa: 5262 m (official 5263, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°
 vir-virginia-int-raceway-alton: 5262 m (official 5248, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°

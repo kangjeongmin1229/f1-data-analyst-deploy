@@ -3557,13 +3557,11 @@
   "bathurst": {
    "gapClosedM": 60,
    "snappedEnds": 0,
-   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
    "duplicateEdgesDropped": 0,
-   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3571,7 +3569,18 @@
      "id": "bathurst | MOUNT PANORAMA - BATHURST",
      "officialM": 6213,
      "source": "FIA list 2026-03-31",
-     "accepted": false
+     "grade": "3",
+     "pole": "Left",
+     "widthM": 9,
+     "loopM": 6197,
+     "errorPct": 0.26,
+     "accepted": true,
+     "method": "public roads joined in the order of Pit Straight > Mountain Straight > Brocks Skyline > The Chase",
+     "viaSource": "Bathurst Regional Council, Mount Panorama Track Facts (bathurst.nsw.gov.au): 6.213 km, anti-clockwise, 23 turns, sections Pit Straight, Mountain Straight, Skyline, Conrod Straight; The Chase from the Wikipedia circuit description. Road names as written on OpenStreetMap.",
+     "loopsTried": [
+      6197,
+      10174
+     ]
     }
    ]
   },

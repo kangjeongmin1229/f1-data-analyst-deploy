@@ -403,7 +403,15 @@
     149.557
    ],
    "radius": 4000,
-   "fia": "BATHURST|PANORAMA"
+   "fia": "BATHURST|PANORAMA",
+   "via": [
+    "Pit Straight",
+    "Mountain Straight",
+    "Brocks Skyline",
+    "The Chase"
+   ],
+   "viaSource": "Bathurst Regional Council, Mount Panorama Track Facts (bathurst.nsw.gov.au): 6.213 km, anti-clockwise, 23 turns, sections Pit Straight, Mountain Straight, Skyline, Conrod Straight; The Chase from the Wikipedia circuit description. Road names as written on OpenStreetMap.",
+   "direction": "anti-clockwise (Bathurst Regional Council Track Facts)"
   },
   {
    "id": "fe-berlin",

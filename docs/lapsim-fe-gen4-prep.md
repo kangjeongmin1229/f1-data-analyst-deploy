@@ -196,6 +196,8 @@ Electrical checks (calculated from TR 7.5 and series values):
 | Jarama, unofficial | over 200 mph on the main straight (J. Rossiter) | DIVEBOMB | no lap time |
 | Monza, 17-18 October 2026, Porsche | lap "in the 1:32 range", about 320 km/h, used tyres, no qualifying run; wet running on Typhoon tyres on day 2 | RacingNews365; e-formula.news; DIVEBOMB | unofficial, source-reported; aero package and power not confirmed. F2 pole 2026 at Monza: 1:31.326 |
 | Guadix; Valencia group shakedown, early November 2026 | running reported, no times published | forum reports only | not verified |
+| Jarama, Gen3 Evo reference laps (same layout with the extra chicane) | Madrid E-Prix 21 March 2026: 23 laps, 90.48 km (3.934 km per lap), race fastest lap 1:32.941; rookie test the next day: best 1m29.888s, best at 300kW 1m31.881s | Wikipedia (Madrid ePrix); The Race | Gen3 Evo, not Gen4; the base for the first Gen4 fit |
+| Assetto Corsa, Race Sim Studio official Gen4 car | announced 7 November 2026, "Developed using technical data supplied for the project"; no release date | racesimstudio.com; traxion.gg | a game model; when released, its data files (mass split, aero, tyres) are a cross-check, not a source |
 | Jarama official pre-season test, 16-20 November 2026 | not run yet. Track days Monday, Wednesday, Friday, two 3-hour sessions each; two race simulations (E-Prix and E-PrixUnleashed) | fiaformulae.com; e-formula.news | first official Gen4 times. Gen3 Evo reference on the same layout: race fastest lap 1:32.941 (Madrid E-Prix, 21 March 2026) |
 
 The Jarama test is the first data that can close items in 2.1: a Gen3 Evo reference exists on the same layout, both race
@@ -333,6 +335,9 @@ layout with the Gen3 Evo lap as the reference, keep everything else fixed, and r
 - https://www.fiaformulae.com/en/news/1072926/video-formula-e-s-new-gen4-car-is-out-of-this-world-
 - https://www.autosport.com/formula-e/news/inside-formula-es-most-ambitious-car-yet-the-making-of-gen4/10804187/
 - https://www.batterydesign.net/gen-4-formula-e-battery/
+- https://e-formel.de/nachrichten/formel-e-news/formel-e-news-detail/formel-e-test-von-porsche-im-video-gen4-verbluefft-in-monza-mit-f2-rundenzeit-320-km-h-10601
+- https://www.the-race.com/formula-e/five-things-we-learned-formula-e-rookie-test-jarama/
+- https://racesimstudio.com/rss-formula-e
 - https://racingnews365.com/f1-drivers-hold-conversations-with-formula-e-ceo-over-gen4-private-test
 - https://www.bridgestone.com/corporate/news/2026100101.html
 - https://newsroom.porsche.com/en_US/2026/motorsport/porsche-975-rse-formula-e-gen4-presentation-42191.html
