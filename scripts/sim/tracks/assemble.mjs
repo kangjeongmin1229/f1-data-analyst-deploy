@@ -3,6 +3,7 @@
 // when a loop is within 0.5 % of the official lap length stored in track-requests.json (lengthM with lengthSource).
 // Without an official length the loops are only listed. © OpenStreetMap contributors, ODbL.
 import {existsSync, readFileSync, writeFileSync} from 'node:fs';
+import {roadLap} from './road-lap.mjs';
 const FIA = existsSync('.cache/lapsim/osm/fia-circuits.json') ? JSON.parse(readFileSync('.cache/lapsim/osm/fia-circuits.json', 'utf8')).rows : [];
 const DIR = '.cache/lapsim/osm', REQ = JSON.parse(readFileSync('scripts/sim/data/track-requests.json', 'utf8')).tracks;
 const hav = (a, b) => { const R = 6371008.8, r = Math.PI / 180, x = (b[1] - a[1]) * r * Math.cos((a[0] + b[0]) / 2 * r), y = (b[0] - a[0]) * r; return R * Math.hypot(x, y); };
@@ -73,7 +74,7 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
   const out = {source: 'OpenStreetMap raceway ways (© OpenStreetMap contributors, ODbL); loops found by scripts/sim/tracks/assemble.mjs', rule: 'accepted = within 0.5 % of the official lap length', tracks: {}}, lines = {};
   for (const t of REQ.filter(t => t.status === 'osm')) {
     const f = `${DIR}/${t.id}.json`; if (!existsSync(f)) { out.tracks[t.id] = {error: 'no map data'}; continue; }
-    const raw = JSON.parse(readFileSync(f, 'utf8')).elements, clone = a => JSON.parse(JSON.stringify(a));
+    const file = JSON.parse(readFileSync(f, 'utf8')), raw = file.elements, clone = a => JSON.parse(JSON.stringify(a));
     // permanent raceway ways and the ways of a route relation are searched separately (the same way can be in both)
     const els = raw.filter(e => !e.inRelation), rel = raw.filter(e => e.inRelation);
     // official lengths: every FIA-licensed layout whose name matches this venue (newest list first), plus any length stored with a source
@@ -95,6 +96,11 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
     let acc2 = accepted;
     for (const sm of [30, 60]) { if (!targets.length || acc2.some(a => a.accepted)) break; r = both(sm); snapUsed = sm; acc2 = pick(); }
     accepted.splice(0, accepted.length, ...acc2);
+    // a lap on public roads: named roads in lap order from an official description (road-lap.mjs); the length check still decides
+    if (t.via && file.roads && !accepted.some(a => a.accepted)) for (const [i, g] of targets.entries()) {
+      const rl = roadLap(file.roads, t.via, g.lengthM); if (rl.accepted) lines[g.id] = rl.line.map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]);
+      accepted[i] = {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: rl.loopM, errorPct: rl.errorPct, accepted: rl.accepted, method: 'public roads joined in the order of ' + t.via.join(' > '), viaSource: t.viaSource, reason: rl.reason, loopsTried: rl.loopsTried};
+    }
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
     out.tracks[t.id] = {relationWays: r.relationWays, relationLoops: r.relationLoops, gapClosedM: snapUsed, snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, duplicateEdgesDropped: r.duplicateEdgesDropped, openEnds: accepted.every(a => a.accepted) ? undefined : r.dangling, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
   }

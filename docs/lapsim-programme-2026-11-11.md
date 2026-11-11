@@ -265,3 +265,17 @@ filter of 14 could drop one half of a symmetric ring; it now also compares the m
 | Mosport | 3943 m | 3957 m (IMSA, 2.459 miles) | 0.35 % | passes the 0.5 % rule locally; confirmed by the next Actions run |
 | Jarama | 3906 m | 3850 m (FIA list) / 3931 m (FIA list, Formula E) | 1.45 % / 0.64 % | found, but outside 0.5 %: stays rejected |
 | Sebring | 5887 m | 6019 m (3.74 miles, rounded) | 2.19 % | the map lap is complete; map and official length disagree. Needs a second length source |
+
+### 14.3 Laps on public roads (2026-11-11)
+
+New declared method, `scripts/sim/tracks/road-lap.mjs`: road names in lap order from an official circuit description are
+joined by the shortest road path; a lap is accepted only when exactly one loop is within 0.5 % of the official length.
+
+| Venue | Road names used (source) | Loop | Official | Off by | Result |
+|---|---|---|---|---|---|
+| Bathurst | Pit Straight, Mountain Straight, Brocks Skyline, The Chase (Bathurst Regional Council Track Facts; Wikipedia for The Chase) | 6197 m | 6213 m | 0.26 % | passes locally on the real map roads, total turn 360 degrees; a wrong road order gives 5820 m and is rejected |
+| Long Beach | Shoreline Drive, Pine Avenue, Seaside Way (IndyCar event page: 1.968 miles, 11 turns) | - | 3167 m | - | not yet: Shoreline Drive is two one-way carriageways on the map, so one name is not one stretch |
+| Detroit, Berlin, Tokyo, Sanya | - | - | - | - | need an official description with road names first |
+
+Also in this pass: the duplicate filter of 14.2 compared middle points and lost the Yeongam F1 lap again when the two map
+ways had different point spacing. It now measures the distance to the other edge's line. Test added.

@@ -78,3 +78,15 @@ test('car models: Evo kit is separate, a model called Evolution is not a kit', (
   assert.equal(modelIdentity('Aston Martin Vantage AMR GT3 Evolution').evo, 'evo');
   assert.equal(modelIdentity('Mitsubishi Lancer Evo X').evo, null);
 });
+
+test('road lap: named roads joined in order, accepted only inside the length rule', async () => {
+  const {roadLap} = await import('../scripts/sim/tracks/road-lap.mjs');
+  const ring = circle(120, 800), road = (g, name) => ({type: 'way', tags: {highway: 'residential', name}, geometry: g});
+  // lap = A (0-30) + unnamed (30-60) + B (60-90) + unnamed (90-120); a long detour road also joins 30 and 60
+  const detour = [ring[30], {lat: ring[45].lat + 0.02, lon: ring[45].lon}, ring[60]];
+  const roads = [road(ring.slice(0, 31), 'A Straight'), road(ring.slice(30, 61), null), road(ring.slice(60, 91), 'B Straight'), road(ring.slice(90), null), road(detour, 'Detour Road')];
+  const L = 2 * Math.PI * 800, ok = roadLap(roads, ['A Straight', 'B Straight'], L);
+  assert.equal(ok.accepted, true); assert.ok(Math.abs(ok.loopM - L) < 15);
+  assert.equal(roadLap(roads, ['A Straight', 'B Straight'], L * 1.02).accepted, false);
+  assert.equal(roadLap(roads, ['A Straight', 'No Such Road'], L).accepted, false);
+});
