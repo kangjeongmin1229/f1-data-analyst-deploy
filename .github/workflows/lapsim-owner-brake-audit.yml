@@ -1,0 +1,40 @@
+name: LapSim saved baseline brake audit
+on:
+  push:
+    branches: ['exp/lapsim-owner-diagnostics-2026-11-11']
+    paths: ['.github/workflows/lapsim-owner-brake-audit.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Restore pinned inputs
+        run: |
+          mkdir -p .cache
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").checkpoints.url')" -o .cache/owner-checkpoints.tar.gz
+          curl --fail --location --retry 3 "$(node -p 'require("./scripts/sim/owner-actions-plan.json").inputArchive.url')" -o .cache/owner-inputs.tgz
+          node scripts/sim/owner-f1-actions.mjs prepare control
+      - name: Replay saved folds and audit observed brake signals
+        run: node scripts/sim/analyse-owner-brake-observations.mjs
+      - name: Save derived evidence to fork branch
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add docs/lapsim-owner-residual-analysis-2026-11-11.md scripts/sim/results/owner-diagnostics-2026-11-11
+          git commit -m "analysis: use saved brake observations and distance-weighted throttle"
+          git push origin HEAD:refs/heads/evidence/lapsim-baseline-diagnostics-2026-11-11
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baseline-brake-observations
+          path: |
+            scripts/sim/results/owner-diagnostics-2026-11-11/
+            docs/lapsim-owner-residual-analysis-2026-11-11.md
+          retention-days: 30
