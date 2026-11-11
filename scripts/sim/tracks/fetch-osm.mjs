@@ -22,6 +22,8 @@ for (const t of REQ) {
       writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d));
       await new Promise(f => setTimeout(f, 3000));
     }
+    // a venue whose lap uses public roads: add the ways of its route relation (marked, so the assembler keeps them)
+    if (t.relation && !d.relationDone) { const r = await overpass(`[out:json][timeout:50];relation(${t.relation});way(r);out geom tags;`); d.elements.push(...r.elements.filter(e => e.type === 'way').map(e => ({...e, inRelation: t.relation}))); d.relationDone = true; writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d)); }
     const ways = d.elements.filter(e => e.type === 'way' && e.geometry).map(e => ({id: e.id, name: e.tags?.name || null, ref: e.tags?.ref || null, sport: e.tags?.sport || null, surface: e.tags?.surface || null, oneway: e.tags?.oneway || null,
       width: e.tags?.width || null, m: Math.round(e.geometry.slice(1).reduce((a, p, i) => a + hav(e.geometry[i], p), 0)), closed: hav(e.geometry[0], e.geometry[e.geometry.length - 1]) < 0.5, nodes: e.geometry.length}));
     summary.tracks[t.id] = {kind: t.kind || 'permanent', roads: d.roads ? d.roads.length : undefined, ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),

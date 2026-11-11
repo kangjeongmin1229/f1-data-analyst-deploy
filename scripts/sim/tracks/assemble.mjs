@@ -17,7 +17,7 @@ export function totalTurnDeg(pts) {
 }
 
 export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000, snapM = 12} = {}) {
-  const ways = elements.filter(e => e.type === 'way' && e.geometry?.length > 1 && e.tags?.highway === 'raceway' && !SKIP.test(e.tags?.sport || '') && !SKIPNAME.test(e.tags?.name || '') && !/dirt|ground|unpaved|gravel|grass|sand/i.test(e.tags?.surface || ''))
+  const ways = elements.filter(e => e.type === 'way' && e.geometry?.length > 1 && (e.inRelation || (e.tags?.highway === 'raceway' && !SKIP.test(e.tags?.sport || '') && !SKIPNAME.test(e.tags?.name || '') && !/dirt|ground|unpaved|gravel|grass|sand/i.test(e.tags?.surface || ''))))
     .map(e => ({name: e.tags?.name || null, pts: e.geometry.map(g => [g.lat, g.lon])}));
   // close small mapping gaps: a way end within SNAP_M of a point of another way is moved onto that point (map ways often do not share a node)
   const SNAP_M = snapM, all = ways.flatMap((w, wi) => w.pts.map(p => ({p, wi}))); let snapped = 0;

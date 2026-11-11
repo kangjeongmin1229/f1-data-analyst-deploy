@@ -46,7 +46,9 @@
     0.21
    ],
    "radius": 8000,
-   "fia": "LE MANS|SARTHE|BUGATTI"
+   "fia": "LE MANS|SARTHE|BUGATTI",
+   "relation": 2126739,
+   "relationNote": "OpenStreetMap relation \"Circuit des 24 Heures du Mans\": the 24 Hours lap including the public-road sections"
   },
   {
    "id": "silverstone",
