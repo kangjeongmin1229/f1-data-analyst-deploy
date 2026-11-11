@@ -14,11 +14,8 @@
    "cleanNotSlow": 5509,
    "push": 0,
    "wet": 8290,
-   "wet1": 4438,
-   "wet2": 2685,
-   "wet3": 1167,
+   "rainLaps": 1212,
    "wetSuspect": 1490,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -63,11 +60,8 @@
    "cleanNotSlow": 1533,
    "push": 1390,
    "wet": 3557,
-   "wet1": 1845,
-   "wet2": 1291,
-   "wet3": 421,
+   "rainLaps": 316,
    "wetSuspect": 344,
-   "dryPush": 1390,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -98,11 +92,8 @@
    "cleanNotSlow": 16818,
    "push": 0,
    "wet": 6160,
-   "wet1": 2613,
-   "wet2": 480,
-   "wet3": 3067,
+   "rainLaps": 780,
    "wetSuspect": 1280,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -156,11 +147,8 @@
    "cleanNotSlow": 7221,
    "push": 0,
    "wet": 4916,
-   "wet1": 2882,
-   "wet2": 985,
-   "wet3": 1049,
+   "rainLaps": 982,
    "wetSuspect": 1322,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -193,11 +181,8 @@
    "cleanNotSlow": 2028,
    "push": 1928,
    "wet": 2101,
-   "wet1": 742,
-   "wet2": 586,
-   "wet3": 773,
+   "rainLaps": 860,
    "wetSuspect": 279,
-   "dryPush": 1928,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -222,11 +207,8 @@
    "cleanNotSlow": 20082,
    "push": 0,
    "wet": 5534,
-   "wet1": 2166,
-   "wet2": 961,
-   "wet3": 2407,
+   "rainLaps": 1843,
    "wetSuspect": 378,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -272,11 +254,8 @@
    "cleanNotSlow": 8260,
    "push": 0,
    "wet": 2918,
-   "wet1": 2097,
-   "wet2": 821,
-   "wet3": 0,
+   "rainLaps": 46,
    "wetSuspect": 0,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -323,11 +302,8 @@
    "cleanNotSlow": 2236,
    "push": 2159,
    "wet": 1317,
-   "wet1": 942,
-   "wet2": 0,
-   "wet3": 375,
+   "rainLaps": 201,
    "wetSuspect": 0,
-   "dryPush": 2159,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -357,11 +333,8 @@
    "cleanNotSlow": 20928,
    "push": 0,
    "wet": 3968,
-   "wet1": 1005,
-   "wet2": 2963,
-   "wet3": 0,
+   "rainLaps": 416,
    "wetSuspect": 0,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -403,11 +376,8 @@
    "cleanNotSlow": 6935,
    "push": 0,
    "wet": 4665,
-   "wet1": 3972,
-   "wet2": 693,
-   "wet3": 0,
+   "rainLaps": 270,
    "wetSuspect": 0,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -459,11 +429,8 @@
    "cleanNotSlow": 1928,
    "push": 1805,
    "wet": 1478,
-   "wet1": 1087,
-   "wet2": 0,
-   "wet3": 391,
+   "rainLaps": 242,
    "wetSuspect": 0,
-   "dryPush": 1805,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -492,11 +459,8 @@
    "cleanNotSlow": 15334,
    "push": 0,
    "wet": 6914,
-   "wet1": 2801,
-   "wet2": 4113,
-   "wet3": 0,
+   "rainLaps": 179,
    "wetSuspect": 0,
-   "dryPush": 0,
    "noModel": 0,
    "noTrack": 0,
    "flags": {
@@ -541,1201 +505,1201 @@
   {
    "group": "f1|yas-marina-circuit|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 86.072,
    "dryRef": 83.517,
    "paceRatio": 1.0306,
    "trap": 329,
-   "dryTrap": 331
+   "dryTrap": 331,
+   "trapRatio": 0.994
   },
   {
    "group": "f1|melbourne|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 78.887,
    "dryRef": 76.714,
    "paceRatio": 1.0283,
    "trap": 326,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 0.9939
   },
   {
    "group": "f1|melbourne|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 76.732,
    "dryRef": 75.915,
    "paceRatio": 1.0108,
    "trap": 328,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1
   },
   {
    "group": "f1|spielberg|f1|R|f1-2022|2023|Sprint",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 70.18,
    "dryRef": 67.924,
    "paceRatio": 1.0332,
    "trap": 321,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9877
   },
   {
    "group": "f1|spielberg|f1|Q|f1-2022|2023|Sprint Shootout",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 64.44,
    "dryRef": 64.686,
    "paceRatio": 0.9962,
    "trap": 322,
-   "dryTrap": 322
+   "dryTrap": 322,
+   "trapRatio": 1
   },
   {
    "group": "f1|baku|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 100.203,
    "dryRef": 101.365,
    "paceRatio": 0.9885,
    "trap": 324,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9969
   },
   {
    "group": "f1|sakhir|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 92.758,
    "dryRef": 91.646,
    "paceRatio": 1.0121,
    "trap": 321,
-   "dryTrap": 321
+   "dryTrap": 321,
+   "trapRatio": 1
   },
   {
    "group": "f1|sakhir|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 90.907,
    "dryRef": 91.646,
    "paceRatio": 0.9919,
    "trap": 323,
-   "dryTrap": 321
+   "dryTrap": 321,
+   "trapRatio": 1.0062
   },
   {
    "group": "f1|sakhir|f1|P|f1-2022|2023|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 92.34,
    "dryRef": 91.646,
    "paceRatio": 1.0076,
    "trap": 326,
-   "dryTrap": 321
+   "dryTrap": 321,
+   "trapRatio": 1.0156
   },
   {
    "group": "f1|spa-francorchamps|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 123.207,
    "dryRef": 102.26,
    "paceRatio": 1.2048,
    "trap": 267,
-   "dryTrap": 317
+   "dryTrap": 317,
+   "trapRatio": 0.8423
   },
   {
    "group": "f1|spa-francorchamps|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 106.168,
    "dryRef": 100.562,
    "paceRatio": 1.0557,
    "trap": 313,
-   "dryTrap": 320
+   "dryTrap": 320,
+   "trapRatio": 0.9781
   },
   {
    "group": "f1|spa-francorchamps|f1|R|f1-2022|2023|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 108.922,
    "dryRef": 105.914,
    "paceRatio": 1.0284,
    "trap": 323,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9938
   },
   {
    "group": "f1|spa-francorchamps|f1|R|f1-2022|2023|Sprint",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 120.36,
    "dryRef": 105.914,
    "paceRatio": 1.1364,
    "trap": 310,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9538
   },
   {
    "group": "f1|spa-francorchamps|f1|Q|f1-2022|2023|Sprint Shootout",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 109.056,
    "dryRef": 100.562,
    "paceRatio": 1.0845,
    "trap": 312,
-   "dryTrap": 320
+   "dryTrap": 320,
+   "trapRatio": 0.975
   },
   {
    "group": "f1|silverstone|f1|P|f1-2022|2023|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 87.419,
    "dryRef": 86.892,
    "paceRatio": 1.0061,
    "trap": 330,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0061
   },
   {
    "group": "f1|silverstone|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 86.72,
    "dryRef": 84.892,
    "paceRatio": 1.0215,
    "trap": 327,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 0.997
   },
   {
    "group": "f1|montreal|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 73.718,
    "dryRef": 72.549,
    "paceRatio": 1.0161,
    "trap": 330,
-   "dryTrap": 334
+   "dryTrap": 334,
+   "trapRatio": 0.988
   },
   {
    "group": "f1|montreal|f1|P|f1-2022|2023|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 83.106,
    "dryRef": 72.549,
    "paceRatio": 1.1455,
    "trap": 311,
-   "dryTrap": 334
+   "dryTrap": 334,
+   "trapRatio": 0.9311
   },
   {
    "group": "f1|montreal|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 78.725,
    "dryRef": 70.899,
    "paceRatio": 1.1104,
    "trap": 338,
-   "dryTrap": 336
+   "dryTrap": 336,
+   "trapRatio": 1.006
   },
   {
    "group": "f1|montreal|f1|R|f1-2022|2023|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 74.481,
    "dryRef": 74.119,
    "paceRatio": 1.0049,
    "trap": 342,
-   "dryTrap": 344
+   "dryTrap": 344,
+   "trapRatio": 0.9942
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2022|2023|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 81.631,
    "dryRef": 70.702,
    "paceRatio": 1.1546,
    "trap": 291,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 0.8872
   },
   {
    "group": "f1|zandvoort|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 70.567,
    "dryRef": 69.673,
    "paceRatio": 1.0128,
    "trap": 326,
-   "dryTrap": 335
+   "dryTrap": 335,
+   "trapRatio": 0.9731
   },
   {
    "group": "f1|zandvoort|f1|R|f1-2022|2023|Race",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 73.837,
    "dryRef": 73.817,
    "paceRatio": 1.0003,
    "trap": 334,
-   "dryTrap": 335
+   "dryTrap": 335,
+   "trapRatio": 0.997
   },
   {
    "group": "f1|hungaroring|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 98.795,
    "dryRef": 76.098,
    "paceRatio": 1.2983,
    "trap": 281,
-   "dryTrap": 310
+   "dryTrap": 310,
+   "trapRatio": 0.9065
   },
   {
    "group": "f1|monza|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 82.657,
    "dryRef": 80.117,
    "paceRatio": 1.0317,
    "trap": 351,
-   "dryTrap": 350
+   "dryTrap": 350,
+   "trapRatio": 1.0029
   },
   {
    "group": "f1|monza|f1|R|f1-2022|2023|Race",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 85.072,
    "dryRef": 81.432,
    "paceRatio": 1.0447,
    "trap": 354,
-   "dryTrap": 364
+   "dryTrap": 364,
+   "trapRatio": 0.9725
   },
   {
    "group": "f1|suzuka|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 91.647,
    "dryRef": 88.549,
    "paceRatio": 1.035,
    "trap": 309,
-   "dryTrap": 307
+   "dryTrap": 307,
+   "trapRatio": 1.0065
   },
   {
    "group": "f1|suzuka|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 90.688,
    "dryRef": 88.549,
    "paceRatio": 1.0242,
    "trap": 310,
-   "dryTrap": 307
+   "dryTrap": 307,
+   "trapRatio": 1.0098
   },
   {
    "group": "f1|las-vegas|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": false,
    "best": 100.909,
    "dryRef": 93.836,
    "paceRatio": 1.0754,
    "trap": 311,
-   "dryTrap": 347
+   "dryTrap": 347,
+   "trapRatio": 0.8963
   },
   {
    "group": "f1|mexico-city|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 79.718,
    "dryRef": 77.392,
    "paceRatio": 1.0301,
    "trap": 351,
-   "dryTrap": 351
+   "dryTrap": 351,
+   "trapRatio": 1
   },
   {
    "group": "f1|mexico-city|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 78.686,
    "dryRef": 77.392,
    "paceRatio": 1.0167,
    "trap": 351,
-   "dryTrap": 351
+   "dryTrap": 351,
+   "trapRatio": 1
   },
   {
    "group": "f1|monte-carlo|f1|R|f1-2022|2023|Race",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 75.65,
    "dryRef": 74.165,
    "paceRatio": 1.02,
    "trap": 287,
-   "dryTrap": 289
+   "dryTrap": 289,
+   "trapRatio": 0.9931
   },
   {
    "group": "f1|lusail|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 87.428,
    "dryRef": 81.953,
    "paceRatio": 1.0668,
    "trap": 329,
-   "dryTrap": 332
+   "dryTrap": 332,
+   "trapRatio": 0.991
   },
   {
    "group": "f1|lusail|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 83.778,
    "dryRef": 80.52,
    "paceRatio": 1.0405,
    "trap": 323,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 0.9848
   },
   {
    "group": "f1|lusail|f1|R|f1-2022|2023|Sprint",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 85.604,
    "dryRef": 82.996,
    "paceRatio": 1.0314,
    "trap": 342,
-   "dryTrap": 341
+   "dryTrap": 341,
+   "trapRatio": 1.0029
   },
   {
    "group": "f1|lusail|f1|Q|f1-2022|2023|Sprint Shootout",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 84.454,
    "dryRef": 80.52,
    "paceRatio": 1.0489,
    "trap": 324,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 0.9878
   },
   {
    "group": "f1|catalunya|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 74.606,
    "dryRef": 73.264,
    "paceRatio": 1.0183,
    "trap": 336,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0244
   },
   {
    "group": "f1|catalunya|f1|P|f1-2022|2023|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 73.907,
    "dryRef": 73.264,
    "paceRatio": 1.0088,
    "trap": 332,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0122
   },
   {
    "group": "f1|catalunya|f1|P|f1-2022|2023|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 73.664,
    "dryRef": 73.264,
    "paceRatio": 1.0055,
    "trap": 329,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.003
   },
   {
    "group": "f1|catalunya|f1|Q|f1-2022|2023|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 72.272,
    "dryRef": 71.546,
    "paceRatio": 1.0101,
    "trap": 332,
-   "dryTrap": 330
+   "dryTrap": 330,
+   "trapRatio": 1.0061
   },
   {
    "group": "f1|interlagos|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.732,
    "dryRef": 70.61,
    "paceRatio": 1.0159,
    "trap": 336,
-   "dryTrap": 335
+   "dryTrap": 335,
+   "trapRatio": 1.003
   },
   {
    "group": "f1|interlagos|f1|R|f1-2022|2023|Sprint",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 74.422,
    "dryRef": 72.4,
    "paceRatio": 1.0279,
    "trap": 332,
-   "dryTrap": 336
+   "dryTrap": 336,
+   "trapRatio": 0.9881
   },
   {
    "group": "f1|austin|f1|P|f1-2022|2023|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 95.912,
    "dryRef": 93.602,
    "paceRatio": 1.0247,
    "trap": 327,
-   "dryTrap": 330
+   "dryTrap": 330,
+   "trapRatio": 0.9909
   },
   {
    "group": "f1|melbourne|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 78.564,
    "dryRef": 77.252,
    "paceRatio": 1.017,
    "trap": 323,
-   "dryTrap": 326
+   "dryTrap": 326,
+   "trapRatio": 0.9908
   },
   {
    "group": "f1|baku|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 105.546,
    "dryRef": 102.315,
    "paceRatio": 1.0316,
    "trap": 324,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9969
   },
   {
    "group": "f1|baku|f1|P|f1-2022|2024|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 102.514,
    "dryRef": 102.315,
    "paceRatio": 1.0019,
    "trap": 326,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0031
   },
   {
    "group": "f1|spa-francorchamps|f1|P|f1-2022|2024|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 121.565,
    "dryRef": 102.022,
    "paceRatio": 1.1916,
    "trap": 290,
-   "dryTrap": 320
+   "dryTrap": 320,
+   "trapRatio": 0.9063
   },
   {
    "group": "f1|spa-francorchamps|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 113.159,
    "dryRef": 100.562,
    "paceRatio": 1.1253,
    "trap": 311,
-   "dryTrap": 320
+   "dryTrap": 320,
+   "trapRatio": 0.9719
   },
   {
    "group": "f1|silverstone|f1|P|f1-2022|2024|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 86.549,
    "dryRef": 86.892,
    "paceRatio": 0.9961,
    "trap": 328,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0092
   },
   {
    "group": "f1|silverstone|f1|P|f1-2022|2024|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 97.529,
    "dryRef": 86.892,
    "paceRatio": 1.1224,
    "trap": 301,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9262
   },
   {
    "group": "f1|silverstone|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 85.819,
    "dryRef": 84.892,
    "paceRatio": 1.0109,
    "trap": 332,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0122
   },
   {
    "group": "f1|silverstone|f1|R|f1-2022|2024|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 88.293,
    "dryRef": 90.275,
    "paceRatio": 0.978,
    "trap": 335,
-   "dryTrap": 338
+   "dryTrap": 338,
+   "trapRatio": 0.9911
   },
   {
    "group": "f1|montreal|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 87.56,
    "dryRef": 72.123,
    "paceRatio": 1.214,
    "trap": 321,
-   "dryTrap": 334
+   "dryTrap": 334,
+   "trapRatio": 0.9611
   },
   {
    "group": "f1|montreal|f1|P|f1-2022|2024|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 75.81,
    "dryRef": 72.123,
    "paceRatio": 1.0511,
    "trap": 333,
-   "dryTrap": 334
+   "dryTrap": 334,
+   "trapRatio": 0.997
   },
   {
    "group": "f1|montreal|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.742,
    "dryRef": 70.899,
    "paceRatio": 1.0119,
    "trap": 333,
-   "dryTrap": 336
+   "dryTrap": 336,
+   "trapRatio": 0.9911
   },
   {
    "group": "f1|montreal|f1|R|f1-2022|2024|Race",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 74.856,
    "dryRef": 74.119,
    "paceRatio": 1.0099,
    "trap": 347,
-   "dryTrap": 344
+   "dryTrap": 344,
+   "trapRatio": 1.0087
   },
   {
    "group": "f1|shanghai|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 96.302,
    "dryRef": 91.504,
    "paceRatio": 1.0524,
    "trap": 328,
-   "dryTrap": 340
+   "dryTrap": 340,
+   "trapRatio": 0.9647
   },
   {
    "group": "f1|shanghai|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 93.66,
    "dryRef": 90.849,
    "paceRatio": 1.0309,
    "trap": 335,
-   "dryTrap": 339
+   "dryTrap": 339,
+   "trapRatio": 0.9882
   },
   {
    "group": "f1|shanghai|f1|R|f1-2022|2024|Sprint",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 100.331,
    "dryRef": 95.399,
    "paceRatio": 1.0517,
    "trap": 346,
-   "dryTrap": 353
+   "dryTrap": 353,
+   "trapRatio": 0.9802
   },
   {
    "group": "f1|shanghai|f1|Q|f1-2022|2024|Sprint Qualifying",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 95.606,
    "dryRef": 90.849,
    "paceRatio": 1.0524,
    "trap": 320,
-   "dryTrap": 339
+   "dryTrap": 339,
+   "trapRatio": 0.944
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 72.322,
    "dryRef": 71.33,
    "paceRatio": 1.0139,
    "trap": 330,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0154
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2022|2024|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 80.311,
    "dryRef": 71.33,
    "paceRatio": 1.1259,
    "trap": 290,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.8923
   },
   {
    "group": "f1|imola|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 76.99,
    "dryRef": 75.293,
    "paceRatio": 1.0225,
    "trap": 302,
-   "dryTrap": 300
+   "dryTrap": 300,
+   "trapRatio": 1.0067
   },
   {
    "group": "f1|hungaroring|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_suspect",
-   "wetLevel": 0,
    "rainMark": false,
    "best": 78.713,
    "dryRef": 76.071,
    "paceRatio": 1.0347,
    "trap": 306,
-   "dryTrap": 307
+   "dryTrap": 307,
+   "trapRatio": 0.9967
   },
   {
    "group": "f1|hungaroring|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 75.227,
    "dryRef": 76.609,
    "paceRatio": 0.982,
    "trap": 315,
-   "dryTrap": 314
+   "dryTrap": 314,
+   "trapRatio": 1.0032
   },
   {
    "group": "f1|suzuka|f1|P|f1-2022|2024|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 94.725,
    "dryRef": 88.549,
    "paceRatio": 1.0697,
    "trap": 297,
-   "dryTrap": 308
+   "dryTrap": 308,
+   "trapRatio": 0.9643
   },
   {
    "group": "f1|las-vegas|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 95.001,
    "dryRef": 95.265,
    "paceRatio": 0.9972,
    "trap": 342,
-   "dryTrap": 347
+   "dryTrap": 347,
+   "trapRatio": 0.9856
   },
   {
    "group": "f1|mexico-city|f1|P|f1-2022|2024|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 77.699,
    "dryRef": 77.392,
    "paceRatio": 1.004,
    "trap": 356,
-   "dryTrap": 351
+   "dryTrap": 351,
+   "trapRatio": 1.0142
   },
   {
    "group": "f1|monte-carlo|f1|P|f1-2022|2024|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 72.198,
    "dryRef": 72.462,
    "paceRatio": 0.9964,
    "trap": 282,
-   "dryTrap": 283
+   "dryTrap": 283,
+   "trapRatio": 0.9965
   },
   {
    "group": "f1|lusail|f1|R|f1-2022|2024|Sprint",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 83.923,
    "dryRef": 84.319,
    "paceRatio": 0.9953,
    "trap": 334,
-   "dryTrap": 342
+   "dryTrap": 342,
+   "trapRatio": 0.9766
   },
   {
    "group": "f1|catalunya|f1|R|f1-2022|2024|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 77.115,
    "dryRef": 76.33,
    "paceRatio": 1.0103,
    "trap": 343,
-   "dryTrap": 343
+   "dryTrap": 343,
+   "trapRatio": 1
   },
   {
    "group": "f1|interlagos|f1|Q|f1-2022|2024|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 83.405,
    "dryRef": 70.021,
    "paceRatio": 1.1911,
    "trap": 273,
-   "dryTrap": 338
+   "dryTrap": 338,
+   "trapRatio": 0.8077
   },
   {
    "group": "f1|interlagos|f1|R|f1-2022|2024|Race",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 80.472,
    "dryRef": 72.4,
    "paceRatio": 1.1115,
    "trap": 294,
-   "dryTrap": 335
+   "dryTrap": 335,
+   "trapRatio": 0.8776
   },
   {
    "group": "f1|interlagos|f1|R|f1-2022|2024|Sprint",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.692,
    "dryRef": 72.4,
    "paceRatio": 0.9902,
    "trap": 344,
-   "dryTrap": 335
+   "dryTrap": 335,
+   "trapRatio": 1.0269
   },
   {
    "group": "f1|melbourne|f1|Q|f1-2022|2025|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 75.096,
    "dryRef": 75.915,
    "paceRatio": 0.9892,
    "trap": 331,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0091
   },
   {
    "group": "f1|melbourne|f1|R|f1-2022|2025|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 82.167,
    "dryRef": 80.342,
    "paceRatio": 1.0227,
    "trap": 304,
-   "dryTrap": 326
+   "dryTrap": 326,
+   "trapRatio": 0.9325
   },
   {
    "group": "f1|spielberg|f1|Q|f1-2022|2025|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 64.268,
    "dryRef": 64.391,
    "paceRatio": 0.9981,
    "trap": 322,
-   "dryTrap": 321
+   "dryTrap": 321,
+   "trapRatio": 1.0031
   },
   {
    "group": "f1|baku|f1|P|f1-2022|2025|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 101.293,
    "dryRef": 103.484,
    "paceRatio": 0.9788,
    "trap": 328,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0092
   },
   {
    "group": "f1|baku|f1|Q|f1-2022|2025|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 101.117,
    "dryRef": 101.697,
    "paceRatio": 0.9943,
    "trap": 322,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9908
   },
   {
    "group": "f1|spa-francorchamps|f1|R|f1-2022|2025|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 104.861,
    "dryRef": 104.701,
    "paceRatio": 1.0015,
    "trap": 321,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 0.9877
   },
   {
    "group": "f1|silverstone|f1|R|f1-2022|2025|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 89.337,
    "dryRef": 90.275,
    "paceRatio": 0.9896,
    "trap": 344,
-   "dryTrap": 338
+   "dryTrap": 338,
+   "trapRatio": 1.0178
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2022|2025|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 69.89,
    "dryRef": 71.33,
    "paceRatio": 0.9798,
    "trap": 330,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0154
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2022|2025|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 68.972,
    "dryRef": 71.33,
    "paceRatio": 0.9669,
    "trap": 329,
-   "dryTrap": 325
+   "dryTrap": 325,
+   "trapRatio": 1.0123
   },
   {
    "group": "f1|las-vegas|f1|P|f1-2022|2025|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 93.901,
    "dryRef": 94.093,
    "paceRatio": 0.998,
    "trap": 349,
-   "dryTrap": 346
+   "dryTrap": 346,
+   "trapRatio": 1.0087
   },
   {
    "group": "f1|las-vegas|f1|P|f1-2022|2025|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 94.281,
    "dryRef": 94.093,
    "paceRatio": 1.002,
    "trap": 351,
-   "dryTrap": 346
+   "dryTrap": 346,
+   "trapRatio": 1.0145
   },
   {
    "group": "f1|las-vegas|f1|Q|f1-2022|2025|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 108.257,
    "dryRef": 92.726,
    "paceRatio": 1.1675,
    "trap": 285,
-   "dryTrap": 352
+   "dryTrap": 352,
+   "trapRatio": 0.8097
   },
   {
    "group": "f1|mexico-city|f1|P|f1-2022|2025|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 78.38,
    "dryRef": 77.887,
    "paceRatio": 1.0063,
    "trap": 349,
-   "dryTrap": 351
+   "dryTrap": 351,
+   "trapRatio": 0.9943
   },
   {
    "group": "f1|miami|f1|R|f1-2022|2025|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 89.746,
    "dryRef": 90.415,
    "paceRatio": 0.9926,
    "trap": 345,
-   "dryTrap": 348
+   "dryTrap": 348,
+   "trapRatio": 0.9914
   },
   {
    "group": "f1|miami|f1|R|f1-2022|2025|Sprint",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 96.368,
    "dryRef": 90.415,
    "paceRatio": 1.0658,
    "trap": 315,
-   "dryTrap": 348
+   "dryTrap": 348,
+   "trapRatio": 0.9052
   },
   {
    "group": "f1|catalunya|f1|P|f1-2022|2025|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 72.387,
    "dryRef": 73.264,
    "paceRatio": 0.988,
    "trap": 330,
-   "dryTrap": 328
+   "dryTrap": 328,
+   "trapRatio": 1.0061
   },
   {
    "group": "f1|baku|f1|P|f1-2026|2026|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 105.387,
    "dryRef": null,
    "paceRatio": null,
    "trap": 339,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|baku|f1|P|f1-2026|2026|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 103.347,
    "dryRef": null,
    "paceRatio": null,
    "trap": 339,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|sakhir|f1|R|f1-2026|2026|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 98.22,
    "dryRef": null,
    "paceRatio": null,
    "trap": 347,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|spa-francorchamps|f1|P|f1-2026|2026|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 105.99,
    "dryRef": null,
    "paceRatio": null,
    "trap": 317,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|montreal|f1|Q|f1-2026|2026|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 72.578,
    "dryRef": null,
    "paceRatio": null,
    "trap": 329,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|montreal|f1|R|f1-2026|2026|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 74.21,
    "dryRef": null,
    "paceRatio": null,
    "trap": 343,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|zandvoort|f1|P|f1-2026|2026|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 72.949,
    "dryRef": null,
    "paceRatio": null,
    "trap": 319,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|zandvoort|f1|Q|f1-2026|2026|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.163,
    "dryRef": null,
    "paceRatio": null,
    "trap": 331,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|zandvoort|f1|R|f1-2026|2026|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 74.23,
    "dryRef": null,
    "paceRatio": null,
    "trap": 336,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|zandvoort|f1|Q|f1-2026|2026|Sprint Qualifying",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.567,
    "dryRef": null,
    "paceRatio": null,
    "trap": 324,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|hungaroring|f1|R|f1-2026|2026|Race",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 82,
    "dryRef": null,
    "paceRatio": null,
    "trap": 346,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|mexico-city|f1|P|f1-2026|2026|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 77.6,
    "dryRef": null,
    "paceRatio": null,
    "trap": 351,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|monte-carlo|f1|P|f1-2026|2026|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 73.978,
    "dryRef": null,
    "paceRatio": null,
    "trap": 284,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|monte-carlo|f1|P|f1-2026|2026|Practice 2",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 73.026,
    "dryRef": null,
    "paceRatio": null,
    "trap": 285,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|singapore|f1|R|f1-2026|2026|Sprint",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 105.626,
    "dryRef": null,
    "paceRatio": null,
    "trap": 277,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|madring|f1|P|f1-2026|2026|Practice 3",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 92.797,
    "dryRef": null,
    "paceRatio": null,
    "trap": 304,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|interlagos|f1|P|f1-2026|2026|Practice 1",
    "mark": "wet_session",
-   "wetLevel": 1,
    "rainMark": true,
    "best": 71.799,
    "dryRef": null,
    "paceRatio": null,
    "trap": 319,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|interlagos|f1|Q|f1-2026|2026|Qualifying",
    "mark": "wet_session",
-   "wetLevel": 3,
    "rainMark": true,
    "best": 87.47,
    "dryRef": null,
    "paceRatio": null,
    "trap": 266,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   },
   {
    "group": "f1|interlagos|f1|R|f1-2026|2026|Race",
    "mark": "wet_session",
-   "wetLevel": 2,
    "rainMark": true,
    "best": 72.689,
    "dryRef": null,
    "paceRatio": null,
    "trap": 286,
-   "dryTrap": null
+   "dryTrap": null,
+   "trapRatio": null
   }
  ]
 }

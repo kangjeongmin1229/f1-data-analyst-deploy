@@ -10,11 +10,17 @@
    "cars": 18,
    "laps": 1447,
    "timed": 1447,
-   "clean": 0,
-   "cleanNotSlow": 0,
+   "clean": 1121,
+   "cleanNotSlow": 1107,
    "push": 0,
    "wet": 0,
-   "noTrack": 1447
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 1447,
+   "flags": {
+    "": 1447
+   }
   },
   {
    "source": "alkamel",
@@ -25,11 +31,17 @@
    "cars": 100,
    "laps": 28475,
    "timed": 28475,
-   "clean": 0,
-   "cleanNotSlow": 0,
+   "clean": 18732,
+   "cleanNotSlow": 16908,
    "push": 0,
    "wet": 1415,
-   "noTrack": 21637
+   "rainLaps": 517,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 21637,
+   "flags": {
+    "": 28475
+   }
   },
   {
    "source": "alkamel",
@@ -40,11 +52,17 @@
    "cars": 64,
    "laps": 1650,
    "timed": 1650,
-   "clean": 0,
-   "cleanNotSlow": 0,
-   "push": 0,
+   "clean": 790,
+   "cleanNotSlow": 722,
+   "push": 649,
    "wet": 0,
-   "noTrack": 1307
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 1307,
+   "flags": {
+    "": 1650
+   }
   },
   {
    "source": "alkamel",
@@ -55,11 +73,17 @@
    "cars": 63,
    "laps": 50051,
    "timed": 50051,
-   "clean": 0,
-   "cleanNotSlow": 0,
+   "clean": 29904,
+   "cleanNotSlow": 28726,
    "push": 0,
    "wet": 17771,
-   "noTrack": 38765
+   "rainLaps": 517,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 38765,
+   "flags": {
+    "": 50051
+   }
   },
   {
    "source": "alkamel",
@@ -74,7 +98,15 @@
    "cleanNotSlow": 1037,
    "push": 0,
    "wet": 0,
-   "noTrack": 0
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 0,
+   "flags": {
+    "GF": 1390,
+    "FF": 16,
+    "RF": 34
+   }
   },
   {
    "source": "alkamel",
@@ -89,7 +121,16 @@
    "cleanNotSlow": 11431,
    "push": 0,
    "wet": 6301,
-   "noTrack": 13490
+   "rainLaps": 2540,
+   "wetSuspect": 23,
+   "noModel": 0,
+   "noTrack": 13490,
+   "flags": {
+    "GF": 23004,
+    "FF": 656,
+    "FCY": 381,
+    "RF": 123
+   }
   },
   {
    "source": "alkamel",
@@ -104,7 +145,15 @@
    "cleanNotSlow": 538,
    "push": 485,
    "wet": 489,
-   "noTrack": 996
+   "rainLaps": 221,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 996,
+   "flags": {
+    "GF": 1317,
+    "FF": 135,
+    "RF": 54
+   }
   },
   {
    "source": "alkamel",
@@ -119,7 +168,17 @@
    "cleanNotSlow": 32271,
    "push": 0,
    "wet": 11229,
-   "noTrack": 34655
+   "rainLaps": 1295,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 34655,
+   "flags": {
+    "GF": 50752,
+    "RF": 97,
+    "SF": 1228,
+    "FCY": 919,
+    "FF": 190
+   }
   },
   {
    "source": "alkamel",
@@ -134,7 +193,15 @@
    "cleanNotSlow": 1090,
    "push": 0,
    "wet": 0,
-   "noTrack": 0
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 0,
+   "flags": {
+    "GF": 1458,
+    "FF": 17,
+    "RF": 6
+   }
   },
   {
    "source": "alkamel",
@@ -149,7 +216,16 @@
    "cleanNotSlow": 13389,
    "push": 0,
    "wet": 5321,
-   "noTrack": 16713
+   "rainLaps": 3460,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 16713,
+   "flags": {
+    "GF": 24801,
+    "FF": 550,
+    "RF": 488,
+    "FCY": 465
+   }
   },
   {
    "source": "alkamel",
@@ -164,7 +240,15 @@
    "cleanNotSlow": 1087,
    "push": 850,
    "wet": 142,
-   "noTrack": 1713
+   "rainLaps": 29,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 1713,
+   "flags": {
+    "GF": 2082,
+    "FF": 204,
+    "RF": 171
+   }
   },
   {
    "source": "alkamel",
@@ -179,7 +263,16 @@
    "cleanNotSlow": 44195,
    "push": 0,
    "wet": 0,
-   "noTrack": 37817
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 37817,
+   "flags": {
+    "GF": 53889,
+    "SF": 2806,
+    "FCY": 546,
+    "FF": 238
+   }
   },
   {
    "source": "alkamel",
@@ -194,7 +287,15 @@
    "cleanNotSlow": 1715,
    "push": 0,
    "wet": 0,
-   "noTrack": 0
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 0,
+   "flags": {
+    "GF": 2305,
+    "FF": 31,
+    "RF": 35
+   }
   },
   {
    "source": "alkamel",
@@ -205,11 +306,20 @@
    "cars": 63,
    "laps": 32262,
    "timed": 32262,
-   "clean": 22096,
-   "cleanNotSlow": 19950,
+   "clean": 23294,
+   "cleanNotSlow": 21057,
    "push": 0,
-   "wet": 1679,
-   "noTrack": 10316
+   "wet": 0,
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 10316,
+   "flags": {
+    "GF": 30504,
+    "FCY": 537,
+    "RF": 537,
+    "FF": 684
+   }
   },
   {
    "source": "alkamel",
@@ -224,7 +334,15 @@
    "cleanNotSlow": 1658,
    "push": 1311,
    "wet": 0,
-   "noTrack": 1272
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 1272,
+   "flags": {
+    "GF": 2838,
+    "FF": 322,
+    "RF": 112
+   }
   },
   {
    "source": "alkamel",
@@ -239,7 +357,17 @@
    "cleanNotSlow": 37634,
    "push": 0,
    "wet": 22418,
-   "noTrack": 22635
+   "rainLaps": 818,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 22635,
+   "flags": {
+    "GF": 61071,
+    "FCY": 789,
+    "FF": 261,
+    "SF": 3901,
+    "RF": 16
+   }
   },
   {
    "source": "alkamel",
@@ -254,7 +382,15 @@
    "cleanNotSlow": 1724,
    "push": 0,
    "wet": 0,
-   "noTrack": 0
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 0,
+   "flags": {
+    "GF": 2263,
+    "RF": 36,
+    "FF": 24
+   }
   },
   {
    "source": "alkamel",
@@ -269,7 +405,17 @@
    "cleanNotSlow": 29438,
    "push": 0,
    "wet": 3220,
-   "noTrack": 14835
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 14835,
+   "flags": {
+    "GF": 44052,
+    "RF": 922,
+    "FF": 1043,
+    "FCY": 1045,
+    "SF": 238
+   }
   },
   {
    "source": "alkamel",
@@ -284,7 +430,15 @@
    "cleanNotSlow": 1343,
    "push": 1149,
    "wet": 294,
-   "noTrack": 1128
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 1128,
+   "flags": {
+    "GF": 2594,
+    "FF": 373,
+    "RF": 105
+   }
   },
   {
    "source": "alkamel",
@@ -299,7 +453,17 @@
    "cleanNotSlow": 51954,
    "push": 0,
    "wet": 3964,
-   "noTrack": 26865
+   "rainLaps": 1012,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 26865,
+   "flags": {
+    "GF": 63197,
+    "FCY": 737,
+    "SF": 3683,
+    "FF": 272,
+    "RF": 35
+   }
   },
   {
    "source": "alkamel",
@@ -314,7 +478,16 @@
    "cleanNotSlow": 2828,
    "push": 0,
    "wet": 0,
-   "noTrack": 0
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 0,
+   "flags": {
+    "GF": 5520,
+    "FCY": 162,
+    "RF": 48,
+    "FF": 41
+   }
   },
   {
    "source": "alkamel",
@@ -329,7 +502,17 @@
    "cleanNotSlow": 24646,
    "push": 0,
    "wet": 1075,
-   "noTrack": 15799
+   "rainLaps": 36,
+   "wetSuspect": 490,
+   "noModel": 0,
+   "noTrack": 15799,
+   "flags": {
+    "GF": 36238,
+    "FCY": 601,
+    "FF": 990,
+    "RF": 345,
+    "SF": 267
+   }
   },
   {
    "source": "alkamel",
@@ -344,7 +527,15 @@
    "cleanNotSlow": 1673,
    "push": 1335,
    "wet": 0,
-   "noTrack": 852
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 852,
+   "flags": {
+    "GF": 2505,
+    "FF": 397,
+    "RF": 19
+   }
   },
   {
    "source": "alkamel",
@@ -359,25 +550,799 @@
    "cleanNotSlow": 49665,
    "push": 0,
    "wet": 0,
-   "noTrack": 26213
+   "rainLaps": 0,
+   "wetSuspect": 0,
+   "noModel": 0,
+   "noTrack": 26213,
+   "flags": {
+    "GF": 59382,
+    "SF": 3375,
+    "FF": 265,
+    "FCY": 519
+   }
   }
  ],
  "wetAcrossYears": [
   {
-   "group": "wec|spa-francorchamps|lmh|R|2024|SPA FRANCORCHAMPS",
-   "mark": "wet_suspect",
-   "best": 126.883,
-   "otherYearsBest": 123.122,
-   "trap": 315.9,
-   "otherYearsTrap": 321.5
+   "group": "wec|monza|lmp2|P||2021|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 99.37299999999999,
+   "dryRef": 99.62100000000001,
+   "paceRatio": 0.9975,
+   "trap": 302.5,
+   "dryTrap": 299.2,
+   "trapRatio": 1.011
   },
   {
-   "group": "wec|sakhir|lmgt3|P|2024|BAHRAIN INTERNATIONAL CIRCUIT",
+   "group": "wec|monza|lmgteam|P||2021|Free Practice 1",
    "mark": "wet_session",
-   "best": 122.079,
-   "otherYearsBest": 122.613,
-   "trap": 360,
-   "otherYearsTrap": 545
+   "rainMark": true,
+   "best": 107.194,
+   "dryRef": 107.538,
+   "paceRatio": 0.9968,
+   "trap": 276.2,
+   "dryTrap": 275.5,
+   "trapRatio": 1.0025
+  },
+  {
+   "group": "wec|monza|lmdh|P||2021|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 98.553,
+   "dryRef": 97.644,
+   "paceRatio": 1.0093,
+   "trap": 310.3,
+   "dryTrap": 309.5,
+   "trapRatio": 1.0026
+  },
+  {
+   "group": "wec|monza|lmgtepro|P||2021|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 106.32900000000001,
+   "dryRef": 106.245,
+   "paceRatio": 1.0008,
+   "trap": 277.6,
+   "dryTrap": 279.8,
+   "trapRatio": 0.9921
+  },
+  {
+   "group": "wec|monza|lmh|P||2021|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 98.40100000000001,
+   "dryRef": 97.533,
+   "paceRatio": 1.0089,
+   "trap": 316.7,
+   "dryTrap": 316.7,
+   "trapRatio": 1
+  },
+  {
+   "group": "wec|spa-francorchamps|lmdh|P||2022|Free Practice 1",
+   "mark": "wet_suspect",
+   "rainMark": false,
+   "best": 127.291,
+   "dryRef": 123.523,
+   "paceRatio": 1.0305,
+   "trap": 296.9,
+   "dryTrap": 313.2,
+   "trapRatio": 0.948
+  },
+  {
+   "group": "wec|spa-francorchamps|lmp2|R||2022|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 126.955,
+   "dryRef": 126.732,
+   "paceRatio": 1.0018,
+   "trap": 301,
+   "dryTrap": 305.2,
+   "trapRatio": 0.9862
+  },
+  {
+   "group": "wec|spa-francorchamps|lmgteam|R||2022|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 137.16,
+   "dryRef": 134.829,
+   "paceRatio": 1.0173,
+   "trap": 266.2,
+   "dryTrap": 275,
+   "trapRatio": 0.968
+  },
+  {
+   "group": "wec|spa-francorchamps|lmdh|R||2022|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 126.051,
+   "dryRef": 124.822,
+   "paceRatio": 1.0098,
+   "trap": 304.4,
+   "dryTrap": 314.1,
+   "trapRatio": 0.9691
+  },
+  {
+   "group": "wec|spa-francorchamps|lmgtepro|R||2022|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 135.147,
+   "dryRef": 133.658,
+   "paceRatio": 1.0111,
+   "trap": 269.6,
+   "dryTrap": 275,
+   "trapRatio": 0.9804
+  },
+  {
+   "group": "wec|spa-francorchamps|lmh|R||2022|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 125.298,
+   "dryRef": 123.93,
+   "paceRatio": 1.011,
+   "trap": 315,
+   "dryTrap": 318.7,
+   "trapRatio": 0.9884
+  },
+  {
+   "group": "wec|monza|lmp2|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 99.973,
+   "dryRef": 99.62100000000001,
+   "paceRatio": 1.0035,
+   "trap": 302.5,
+   "dryTrap": 299.2,
+   "trapRatio": 1.011
+  },
+  {
+   "group": "wec|monza|lmgteam|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 108.38900000000001,
+   "dryRef": 106.973,
+   "paceRatio": 1.0132,
+   "trap": 273.4,
+   "dryTrap": 276.2,
+   "trapRatio": 0.9899
+  },
+  {
+   "group": "wec|monza|lmdh|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 98.602,
+   "dryRef": 97.59100000000001,
+   "paceRatio": 1.0104,
+   "trap": 303.4,
+   "dryTrap": 313,
+   "trapRatio": 0.9693
+  },
+  {
+   "group": "wec|monza|lmgtepro|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 107.273,
+   "dryRef": 106.253,
+   "paceRatio": 1.0096,
+   "trap": 279.1,
+   "dryTrap": 278.4,
+   "trapRatio": 1.0025
+  },
+  {
+   "group": "wec|monza|lmh|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 97.98400000000001,
+   "dryRef": 96.864,
+   "paceRatio": 1.0116,
+   "trap": 317.6,
+   "dryTrap": 316.7,
+   "trapRatio": 1.0028
+  },
+  {
+   "group": "wec|sakhir|lmp2|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 112.144,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 282.2,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmgteam|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 119.636,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 259.9,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmdh|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 111.79599999999999,
+   "dryRef": 110.152,
+   "paceRatio": 1.0149,
+   "trap": 286.7,
+   "dryTrap": 289.7,
+   "trapRatio": 0.9896
+  },
+  {
+   "group": "wec|sakhir|lmgtepro|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.025,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 264.9,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmh|P||2022|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 110.536,
+   "dryRef": 109.697,
+   "paceRatio": 1.0076,
+   "trap": 289.7,
+   "dryTrap": 295.3,
+   "trapRatio": 0.981
+  },
+  {
+   "group": "wec|sakhir|lmp2|P||2022|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 111.792,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 282.9,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmgteam|P||2022|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 120.079,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 259.9,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmdh|P||2022|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 110.328,
+   "dryRef": 110.152,
+   "paceRatio": 1.0016,
+   "trap": 284.4,
+   "dryTrap": 289.7,
+   "trapRatio": 0.9817
+  },
+  {
+   "group": "wec|sakhir|lmgtepro|P||2022|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 117.089,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 261.7,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|sakhir|lmh|P||2022|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 108.384,
+   "dryRef": 109.697,
+   "paceRatio": 0.988,
+   "trap": 294.5,
+   "dryTrap": 295.3,
+   "trapRatio": 0.9973
+  },
+  {
+   "group": "wec|spa-francorchamps|lmp2|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 130.268,
+   "dryRef": 124.254,
+   "paceRatio": 1.0484,
+   "trap": 288.2,
+   "dryTrap": 301.8,
+   "trapRatio": 0.9549
+  },
+  {
+   "group": "wec|spa-francorchamps|lmdh|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 129.436,
+   "dryRef": 124.11,
+   "paceRatio": 1.0429,
+   "trap": 293.7,
+   "dryTrap": 312.3,
+   "trapRatio": 0.9404
+  },
+  {
+   "group": "wec|spa-francorchamps|lmgteam|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 145.726,
+   "dryRef": 135.351,
+   "paceRatio": 1.0767,
+   "trap": 252.6,
+   "dryTrap": 268.9,
+   "trapRatio": 0.9394
+  },
+  {
+   "group": "wec|spa-francorchamps|lmh|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 128.702,
+   "dryRef": 123.225,
+   "paceRatio": 1.0444,
+   "trap": 296.1,
+   "dryTrap": 314.1,
+   "trapRatio": 0.9427
+  },
+  {
+   "group": "wec|sakhir|lmp2|P||2023|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 114.1,
+   "dryRef": 111.787,
+   "paceRatio": 1.0207,
+   "trap": 272.9,
+   "dryTrap": 280.7,
+   "trapRatio": 0.9722
+  },
+  {
+   "group": "wec|sakhir|lmdh|P||2023|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 110.28999999999999,
+   "dryRef": 110.01400000000001,
+   "paceRatio": 1.0025,
+   "trap": 292.1,
+   "dryTrap": 285.2,
+   "trapRatio": 1.0242
+  },
+  {
+   "group": "wec|sakhir|lmgteam|P||2023|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 119.51599999999999,
+   "dryRef": 119.717,
+   "paceRatio": 0.9983,
+   "trap": 256.8,
+   "dryTrap": 255.6,
+   "trapRatio": 1.0047
+  },
+  {
+   "group": "wec|sakhir|lmh|P||2023|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 109.856,
+   "dryRef": 109.613,
+   "paceRatio": 1.0022,
+   "trap": 291.3,
+   "dryTrap": 291.3,
+   "trapRatio": 1
+  },
+  {
+   "group": "wec|sakhir|lmp2|P||2023|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 112.85,
+   "dryRef": 111.787,
+   "paceRatio": 1.0095,
+   "trap": 278.6,
+   "dryTrap": 280.7,
+   "trapRatio": 0.9925
+  },
+  {
+   "group": "wec|sakhir|lmdh|P||2023|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 107.69,
+   "dryRef": 110.01400000000001,
+   "paceRatio": 0.9789,
+   "trap": 296.9,
+   "dryTrap": 285.2,
+   "trapRatio": 1.041
+  },
+  {
+   "group": "wec|sakhir|lmgteam|P||2023|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.24600000000001,
+   "dryRef": 119.717,
+   "paceRatio": 0.9877,
+   "trap": 260.5,
+   "dryTrap": 255.6,
+   "trapRatio": 1.0192
+  },
+  {
+   "group": "wec|sakhir|lmh|P||2023|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 106.851,
+   "dryRef": 109.613,
+   "paceRatio": 0.9748,
+   "trap": 300.2,
+   "dryTrap": 291.3,
+   "trapRatio": 1.0306
+  },
+  {
+   "group": "wec|sakhir|lmp2|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 113.661,
+   "dryRef": 111.787,
+   "paceRatio": 1.0168,
+   "trap": 275.7,
+   "dryTrap": 280.7,
+   "trapRatio": 0.9822
+  },
+  {
+   "group": "wec|sakhir|lmdh|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 109.512,
+   "dryRef": 110.01400000000001,
+   "paceRatio": 0.9954,
+   "trap": 296.1,
+   "dryTrap": 285.2,
+   "trapRatio": 1.0382
+  },
+  {
+   "group": "wec|sakhir|lmgteam|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.214,
+   "dryRef": 119.717,
+   "paceRatio": 0.9874,
+   "trap": 258,
+   "dryTrap": 255.6,
+   "trapRatio": 1.0094
+  },
+  {
+   "group": "wec|sakhir|lmh|P||2023|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 110.00999999999999,
+   "dryRef": 109.613,
+   "paceRatio": 1.0036,
+   "trap": 295.3,
+   "dryTrap": 291.3,
+   "trapRatio": 1.0137
+  },
+  {
+   "group": "wec|sakhir|lmp2|Q||2023|Qualifying LMP2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 112.28999999999999,
+   "dryRef": 110.33,
+   "paceRatio": 1.0178,
+   "trap": 275.7,
+   "dryTrap": 282.9,
+   "trapRatio": 0.9745
+  },
+  {
+   "group": "wec|sakhir|lmdh|Q||2023|Qualifying HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 107.265,
+   "dryRef": 107.55,
+   "paceRatio": 0.9974,
+   "trap": 294.5,
+   "dryTrap": 297.7,
+   "trapRatio": 0.9893
+  },
+  {
+   "group": "wec|sakhir|lmh|Q||2023|Qualifying HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 106.564,
+   "dryRef": 106.826,
+   "paceRatio": 0.9975,
+   "trap": 301,
+   "dryTrap": 299.3,
+   "trapRatio": 1.0057
+  },
+  {
+   "group": "wec|imola|lmh|R||2024|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 91.794,
+   "dryRef": 92.50399999999999,
+   "paceRatio": 0.9923,
+   "trap": 323.4,
+   "dryTrap": 321.4,
+   "trapRatio": 1.0062
+  },
+  {
+   "group": "wec|imola|lmdh|R||2024|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 92.59,
+   "dryRef": 92.87,
+   "paceRatio": 0.997,
+   "trap": 320.5,
+   "dryTrap": 318.6,
+   "trapRatio": 1.006
+  },
+  {
+   "group": "wec|imola|lmgt3|R||2024|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 102.257,
+   "dryRef": 102.912,
+   "paceRatio": 0.9936,
+   "trap": 272.7,
+   "dryTrap": 274.1,
+   "trapRatio": 0.9949
+  },
+  {
+   "group": "wec|austin|lmh|P||2025|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 113.713,
+   "dryRef": 112.56700000000001,
+   "paceRatio": 1.0102,
+   "trap": 300.8,
+   "dryTrap": 308.9,
+   "trapRatio": 0.9738
+  },
+  {
+   "group": "wec|austin|lmgt3|P||2025|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 127.037,
+   "dryRef": 125.731,
+   "paceRatio": 1.0104,
+   "trap": 255.9,
+   "dryTrap": 258.9,
+   "trapRatio": 0.9884
+  },
+  {
+   "group": "wec|austin|lmdh|P||2025|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 113.584,
+   "dryRef": 112.689,
+   "paceRatio": 1.0079,
+   "trap": 296.7,
+   "dryTrap": 305.4,
+   "trapRatio": 0.9715
+  },
+  {
+   "group": "wec|austin|lmh|P||2025|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 112.407,
+   "dryRef": 112.56700000000001,
+   "paceRatio": 0.9986,
+   "trap": 302.5,
+   "dryTrap": 308.9,
+   "trapRatio": 0.9793
+  },
+  {
+   "group": "wec|austin|lmdh|P||2025|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 111.816,
+   "dryRef": 112.689,
+   "paceRatio": 0.9923,
+   "trap": 300,
+   "dryTrap": 305.4,
+   "trapRatio": 0.9823
+  },
+  {
+   "group": "wec|austin|lmgt3|P||2025|Free Practice 2",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 126.423,
+   "dryRef": 125.731,
+   "paceRatio": 1.0055,
+   "trap": 259,
+   "dryTrap": 258.9,
+   "trapRatio": 1.0004
+  },
+  {
+   "group": "wec|austin|lmh|P||2025|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 111.967,
+   "dryRef": 112.56700000000001,
+   "paceRatio": 0.9947,
+   "trap": 303.4,
+   "dryTrap": 308.9,
+   "trapRatio": 0.9822
+  },
+  {
+   "group": "wec|austin|lmgt3|P||2025|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 125.947,
+   "dryRef": 125.731,
+   "paceRatio": 1.0017,
+   "trap": 257.1,
+   "dryTrap": 258.9,
+   "trapRatio": 0.993
+  },
+  {
+   "group": "wec|austin|lmdh|P||2025|Free Practice 3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 112.17099999999999,
+   "dryRef": 112.689,
+   "paceRatio": 0.9954,
+   "trap": 299.2,
+   "dryTrap": 305.4,
+   "trapRatio": 0.9797
+  },
+  {
+   "group": "wec|austin|lmgt3|Q||2025|Qualifying LMGT3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 132.24099999999999,
+   "dryRef": 126.009,
+   "paceRatio": 1.0495,
+   "trap": 247.1,
+   "dryTrap": 260.1,
+   "trapRatio": 0.95
+  },
+  {
+   "group": "wec|austin|lmgt3|Q||2025|Hyperpole LMGT3",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 127.645,
+   "dryRef": 126.009,
+   "paceRatio": 1.013,
+   "trap": 252.9,
+   "dryTrap": 260.1,
+   "trapRatio": 0.9723
+  },
+  {
+   "group": "wec|austin|lmh|Q||2025|Qualifying HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.405,
+   "dryRef": 112.02000000000001,
+   "paceRatio": 1.057,
+   "trap": 259,
+   "dryTrap": 308.9,
+   "trapRatio": 0.8385
+  },
+  {
+   "group": "wec|austin|lmdh|Q||2025|Qualifying HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.155,
+   "dryRef": 112.074,
+   "paceRatio": 1.0543,
+   "trap": 259,
+   "dryTrap": 303.7,
+   "trapRatio": 0.8528
+  },
+  {
+   "group": "wec|austin|lmh|Q||2025|Hyperpole HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 117.655,
+   "dryRef": 112.02000000000001,
+   "paceRatio": 1.0503,
+   "trap": 266.7,
+   "dryTrap": 308.9,
+   "trapRatio": 0.8634
+  },
+  {
+   "group": "wec|austin|lmdh|Q||2025|Hyperpole HYPERCAR",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 118.619,
+   "dryRef": 112.074,
+   "paceRatio": 1.0584,
+   "trap": 262.8,
+   "dryTrap": 303.7,
+   "trapRatio": 0.8653
+  },
+  {
+   "group": "wec|austin|lmh|R||2025|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 123.705,
+   "dryRef": 113.674,
+   "paceRatio": 1.0882,
+   "trap": 292.7,
+   "dryTrap": 316,
+   "trapRatio": 0.9263
+  },
+  {
+   "group": "wec|austin|lmgt3|R||2025|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 129.49,
+   "dryRef": 125.801,
+   "paceRatio": 1.0293,
+   "trap": 257.8,
+   "dryTrap": 263.9,
+   "trapRatio": 0.9769
+  },
+  {
+   "group": "wec|austin|lmdh|R||2025|Race",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 123.443,
+   "dryRef": 113.822,
+   "paceRatio": 1.0845,
+   "trap": 294.3,
+   "dryTrap": 314.2,
+   "trapRatio": 0.9367
+  },
+  {
+   "group": "wec|monza|lmh|P||2026|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 106.263,
+   "dryRef": 96.813,
+   "paceRatio": 1.0976,
+   "trap": 285,
+   "dryTrap": 316.7,
+   "trapRatio": 0.8999
+  },
+  {
+   "group": "wec|monza|lmgt3|P||2026|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 117.575,
+   "dryRef": null,
+   "paceRatio": null,
+   "trap": 265.4,
+   "dryTrap": null,
+   "trapRatio": null
+  },
+  {
+   "group": "wec|monza|lmdh|P||2026|Free Practice 1",
+   "mark": "wet_session",
+   "rainMark": true,
+   "best": 105.862,
+   "dryRef": 97.59100000000001,
+   "paceRatio": 1.0848,
+   "trap": 281.2,
+   "dryTrap": 313,
+   "trapRatio": 0.8984
+  },
+  {
+   "group": "wec|monza|lmh|P||2026|Free Practice 3",
+   "mark": "wet_suspect",
+   "rainMark": false,
+   "best": 102.706,
+   "dryRef": 96.813,
+   "paceRatio": 1.0609,
+   "trap": 300,
+   "dryTrap": 316.7,
+   "trapRatio": 0.9473
+  },
+  {
+   "group": "wec|monza|lmdh|P||2026|Free Practice 3",
+   "mark": "wet_suspect",
+   "rainMark": false,
+   "best": 102.74600000000001,
+   "dryRef": 97.59100000000001,
+   "paceRatio": 1.0528,
+   "trap": 303.4,
+   "dryTrap": 313,
+   "trapRatio": 0.9693
   }
  ],
  "lapsByModel": {
