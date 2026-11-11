@@ -9,6 +9,7 @@
    "edges": 19,
    "junctions": 16,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 40,
    "loopLengthsM": [
     {
@@ -372,6 +373,7 @@
    "edges": 88,
    "junctions": 55,
    "searchCapped": true,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 2119,
    "loopLengthsM": [
     {
@@ -767,6 +769,7 @@
    "edges": 46,
    "junctions": 2,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 1,
    "loopLengthsM": [
     {
@@ -797,13 +800,62 @@
    "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 11,
-   "edges": 566,
-   "junctions": 288,
-   "searchCapped": true,
-   "loopsFound": 199832,
+   "edges": 290,
+   "junctions": 19,
+   "searchCapped": false,
+   "duplicateEdgesDropped": 276,
+   "loopsFound": 12,
    "loopLengthsM": [
     {
+     "m": 5596,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 5530,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 3591,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 3374,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit",
+      "B Course"
+     ]
+    },
+    {
+     "m": 3307,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit",
+      "B Course"
+     ]
+    },
+    {
      "m": 3027,
+     "names": [
+      "Permanent Circuit"
+     ]
+    },
+    {
+     "m": 2961,
      "names": [
       "Permanent Circuit"
      ]
@@ -817,9 +869,9 @@
      "grade": "1",
      "pole": "Right",
      "widthM": 12,
-     "loopM": 3027,
-     "errorPct": 46.09,
-     "accepted": false
+     "loopM": 5596,
+     "errorPct": 0.34,
+     "accepted": true
     },
     {
      "id": "yeongam | KOREA PERMANENT 1",
@@ -839,9 +891,9 @@
      "grade": "2",
      "pole": null,
      "widthM": 12,
-     "loopM": 3027,
-     "errorPct": 2.13,
-     "accepted": false
+     "loopM": 2961,
+     "errorPct": 0.1,
+     "accepted": true
     }
    ]
   },
@@ -849,67 +901,59 @@
    "gapClosedM": 12,
    "snappedEnds": 3,
    "ways": 41,
-   "edges": 60,
-   "junctions": 31,
-   "searchCapped": true,
-   "loopsFound": 1159,
+   "edges": 58,
+   "junctions": 29,
+   "searchCapped": false,
+   "duplicateEdgesDropped": 2,
+   "loopsFound": 52,
    "loopLengthsM": [
     {
-     "m": 9052,
+     "m": 4317,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course - Corner 5",
+      "IMS Road Course - Corner 6",
+      "IMS Road Course - Hulman Straight",
+      "IMS Road Course"
      ]
     },
     {
-     "m": 9030,
+     "m": 4295,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course - Corner 5",
+      "IMS Road Course - Corner 6",
+      "IMS Road Course - Hulman Straight",
+      "IMS Road Course"
      ]
     },
     {
-     "m": 8983,
+     "m": 4272,
      "names": [
       "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
-     "m": 8961,
+     "m": 4249,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
       "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course Corner 1 Escape Road",
+      "IMS Road Course",
+      "IMS Road Course = Alternate Corner 2"
      ]
     },
     {
-     "m": 8934,
+     "m": 4226,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course - Corner 5",
+      "IMS Road Course - Corner 6",
+      "IMS Road Course - Hulman Straight",
+      "IMS Road Course"
      ]
     },
     {
-     "m": 8913,
-     "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
-     ]
-    },
-    {
-     "m": 8885,
+     "m": 4209,
      "names": [
       "IMS Road Course",
       "IMS Road Course = Alternate Corner 2",
@@ -918,25 +962,29 @@
      ]
     },
     {
-     "m": 8866,
+     "m": 4189,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
       "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course Corner 1 Escape Road",
+      "IMS Road Course",
+      "IMS Road Course = Alternate Corner 2"
      ]
     },
     {
-     "m": 8844,
+     "m": 4171,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course"
      ]
     },
     {
-     "m": 8810,
+     "m": 4149,
+     "names": [
+      "IMS Road Course",
+      "IMS Grand Prix Circuit"
+     ]
+    },
+    {
+     "m": 4118,
      "names": [
       "IMS Road Course",
       "IMS Road Course = Alternate Corner 2",
@@ -945,7 +993,7 @@
      ]
     },
     {
-     "m": 8792,
+     "m": 4092,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -954,7 +1002,16 @@
      ]
     },
     {
-     "m": 8770,
+     "m": 4071,
+     "names": [
+      "Indianapolis Motor Speedway - Backstretch",
+      "Indianapolis Motor Speedway - Turn 3",
+      "Indianapolis Motor Speedway - North Straight",
+      "Indianapolis Motor Speedway - Turn 4"
+     ]
+    },
+    {
+     "m": 4035,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -963,7 +1020,7 @@
      ]
     },
     {
-     "m": 8723,
+     "m": 4013,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -972,7 +1029,7 @@
      ]
     },
     {
-     "m": 8701,
+     "m": 3980,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -981,7 +1038,7 @@
      ]
     },
     {
-     "m": 8675,
+     "m": 3958,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -990,7 +1047,7 @@
      ]
     },
     {
-     "m": 8653,
+     "m": 3928,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -999,7 +1056,7 @@
      ]
     },
     {
-     "m": 8625,
+     "m": 3911,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -1008,7 +1065,7 @@
      ]
     },
     {
-     "m": 8606,
+     "m": 3889,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -1017,7 +1074,7 @@
      ]
     },
     {
-     "m": 8584,
+     "m": 3859,
      "names": [
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
@@ -1026,192 +1083,111 @@
      ]
     },
     {
-     "m": 8551,
+     "m": 3656,
      "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8530,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8508,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8407,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8385,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8338,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8317,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8281,
-     "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
       "IMS Oval - Warmup Lane/Pit Entry",
-      "Indianapolis Motor Speedway - Backstretch"
+      "IMS Oval - Warmup Lane to Pit Entry",
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit"
      ]
     },
     {
-     "m": 8259,
+     "m": 3348,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
       "IMS Oval - Warmup Lane/Pit Entry",
-      "Indianapolis Motor Speedway - Backstretch"
+      "IMS Oval - Warmup Lane to Pit Entry",
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit"
      ]
     },
     {
-     "m": 8212,
+     "m": 3164,
      "names": [
-      "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
       "IMS Oval - Warmup Lane/Pit Entry",
-      "Indianapolis Motor Speedway - Backstretch"
-     ]
-    },
-    {
-     "m": 8190,
-     "names": [
-      "IMS Road Course",
       "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "Indianapolis Motor Speedway - Backstretch"
-     ]
-    },
-    {
-     "m": 8138,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8117,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8069,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8048,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 8021,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 7999,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 7952,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 7930,
-     "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
-     ]
-    },
-    {
-     "m": 7896,
-     "names": [
       "IMS Road Course",
-      "IMS Road Course Corner 1 Escape Road",
-      "IMS Oval - Warmup Lane/Pit Entry",
-      "IMS Oval - Warmup Lane to Pit Entry"
+      "IMS Road Course - Pit Exit"
      ]
     },
     {
-     "m": 7876,
+     "m": 3127,
      "names": [
-      "IMS Road Course - Corner 5",
-      "IMS Road Course - Corner 6",
-      "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Oval - Warmup Lane/Pit Entry",
+      "IMS Road Course Corner 1 Escape Road",
+      "IMS Road Course",
+      "IMS Road Course - Pit Exit"
+     ]
+    },
+    {
+     "m": 3042,
+     "names": [
+      "IMS Oval - Warmup Lane/Pit Entry",
+      "IMS Road Course Corner 1 Escape Road",
+      "IMS Road Course",
+      "IMS Road Course = Alternate Corner 2"
+     ]
+    },
+    {
+     "m": 2817,
+     "names": [
+      "IMS Oval - Warmup Lane/Pit Entry",
+      "IMS Oval - Warmup Lane to Pit Entry",
+      "IMS Oval - Pit Entry",
+      "Indianapolis Motor Speedway - Main Straight"
+     ]
+    },
+    {
+     "m": 2435,
+     "names": [
+      "IMS Oval - Warmup Lane/Pit Entry",
+      "IMS Oval - Warmup Lane to Pit Entry",
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit"
+     ]
+    },
+    {
+     "m": 2328,
+     "names": [
+      "IMS Oval - Warmup Lane/Pit Entry",
+      "IMS Oval - Warmup Lane to Pit Entry",
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit"
+     ]
+    },
+    {
+     "m": 2149,
+     "names": [
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1"
+     ]
+    },
+    {
+     "m": 1958,
+     "names": [
+      "IMS Oval - Pit Entry",
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course",
+      "IMS Start-Finish Line"
+     ]
+    },
+    {
+     "m": 1689,
+     "names": [
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course",
+      "IMS Start-Finish Line"
+     ]
+    },
+    {
+     "m": 1572,
+     "names": [
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Start-Finish Line"
      ]
     }
    ],
@@ -1353,6 +1329,8 @@
    "edges": 35,
    "junctions": 10,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 27,
    "loopLengthsM": [
     {
@@ -1494,6 +1472,7 @@
    "edges": 19,
    "junctions": 10,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 25,
    "loopLengthsM": [
     {
@@ -1601,6 +1580,7 @@
    "edges": 13,
    "junctions": 6,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 8,
    "loopLengthsM": [
     {
@@ -1672,6 +1652,8 @@
    "edges": 10,
    "junctions": 6,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 6,
    "loopLengthsM": [
     {
@@ -1743,9 +1725,30 @@
    "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 82,
-   "edges": 90,
+   "edges": 89,
    "junctions": 17,
    "searchCapped": false,
+   "duplicateEdgesDropped": 1,
+   "openEnds": [
+    {
+     "at": [
+      50.3263073,
+      6.9367753
+     ],
+     "nearestOtherM": 15,
+     "way": null,
+     "wayM": 47
+    },
+    {
+     "at": [
+      50.3266687,
+      6.9383723
+     ],
+     "nearestOtherM": 23,
+     "way": null,
+     "wayM": 35
+    }
+   ],
    "loopsFound": 39,
    "loopLengthsM": [
     {
@@ -2131,6 +2134,8 @@
    "edges": 26,
    "junctions": 2,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 3,
    "loopLengthsM": [
     {
@@ -2195,6 +2200,7 @@
    "edges": 24,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 1,
    "loopLengthsM": [
     {
@@ -2236,6 +2242,7 @@
    "edges": 26,
    "junctions": 22,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 2,
    "loopLengthsM": [
     {
@@ -2272,6 +2279,7 @@
    "edges": 29,
    "junctions": 17,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 79,
    "loopLengthsM": [
     {
@@ -2604,10 +2612,11 @@
    "gapClosedM": 12,
    "snappedEnds": 3,
    "ways": 61,
-   "edges": 89,
+   "edges": 88,
    "junctions": 41,
    "searchCapped": true,
-   "loopsFound": 1326,
+   "duplicateEdgesDropped": 1,
+   "loopsFound": 951,
    "loopLengthsM": [
     {
      "m": 4682,
@@ -2902,10 +2911,11 @@
    "edges": 105,
    "junctions": 68,
    "searchCapped": true,
-   "loopsFound": 31776,
+   "duplicateEdgesDropped": 0,
+   "loopsFound": 31729,
    "loopLengthsM": [
     {
-     "m": 6116,
+     "m": 6029,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2914,7 +2924,7 @@
      ]
     },
     {
-     "m": 6101,
+     "m": 6014,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2923,7 +2933,7 @@
      ]
     },
     {
-     "m": 6084,
+     "m": 5999,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2932,7 +2942,7 @@
      ]
     },
     {
-     "m": 6069,
+     "m": 5984,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2941,7 +2951,7 @@
      ]
     },
     {
-     "m": 6054,
+     "m": 5969,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2950,7 +2960,7 @@
      ]
     },
     {
-     "m": 6039,
+     "m": 5954,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2959,7 +2969,7 @@
      ]
     },
     {
-     "m": 6024,
+     "m": 5939,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2968,7 +2978,7 @@
      ]
     },
     {
-     "m": 6009,
+     "m": 5924,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2977,7 +2987,7 @@
      ]
     },
     {
-     "m": 5994,
+     "m": 5909,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2986,7 +2996,7 @@
      ]
     },
     {
-     "m": 5979,
+     "m": 5894,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -2995,7 +3005,7 @@
      ]
     },
     {
-     "m": 5964,
+     "m": 5879,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3004,7 +3014,7 @@
      ]
     },
     {
-     "m": 5949,
+     "m": 5864,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3013,7 +3023,7 @@
      ]
     },
     {
-     "m": 5934,
+     "m": 5849,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3022,7 +3032,7 @@
      ]
     },
     {
-     "m": 5919,
+     "m": 5834,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3031,7 +3041,7 @@
      ]
     },
     {
-     "m": 5904,
+     "m": 5819,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3040,7 +3050,7 @@
      ]
     },
     {
-     "m": 5889,
+     "m": 5804,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3049,7 +3059,7 @@
      ]
     },
     {
-     "m": 5874,
+     "m": 5789,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3058,7 +3068,7 @@
      ]
     },
     {
-     "m": 5859,
+     "m": 5774,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3067,7 +3077,7 @@
      ]
     },
     {
-     "m": 5844,
+     "m": 5759,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3076,7 +3086,7 @@
      ]
     },
     {
-     "m": 5829,
+     "m": 5744,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3085,7 +3095,7 @@
      ]
     },
     {
-     "m": 5814,
+     "m": 5729,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3094,7 +3104,7 @@
      ]
     },
     {
-     "m": 5799,
+     "m": 5714,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3103,7 +3113,7 @@
      ]
     },
     {
-     "m": 5784,
+     "m": 5699,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3112,7 +3122,7 @@
      ]
     },
     {
-     "m": 5769,
+     "m": 5684,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3121,7 +3131,7 @@
      ]
     },
     {
-     "m": 5754,
+     "m": 5669,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3130,7 +3140,7 @@
      ]
     },
     {
-     "m": 5739,
+     "m": 5654,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3139,7 +3149,7 @@
      ]
     },
     {
-     "m": 5724,
+     "m": 5639,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3148,7 +3158,7 @@
      ]
     },
     {
-     "m": 5709,
+     "m": 5624,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3157,7 +3167,7 @@
      ]
     },
     {
-     "m": 5694,
+     "m": 5609,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3166,7 +3176,7 @@
      ]
     },
     {
-     "m": 5679,
+     "m": 5594,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3175,7 +3185,7 @@
      ]
     },
     {
-     "m": 5664,
+     "m": 5579,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3184,7 +3194,7 @@
      ]
     },
     {
-     "m": 5649,
+     "m": 5564,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3193,7 +3203,7 @@
      ]
     },
     {
-     "m": 5634,
+     "m": 5549,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3202,7 +3212,7 @@
      ]
     },
     {
-     "m": 5619,
+     "m": 5534,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3211,7 +3221,7 @@
      ]
     },
     {
-     "m": 5604,
+     "m": 5519,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3220,7 +3230,7 @@
      ]
     },
     {
-     "m": 5589,
+     "m": 5504,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3229,7 +3239,7 @@
      ]
     },
     {
-     "m": 5574,
+     "m": 5489,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3238,7 +3248,7 @@
      ]
     },
     {
-     "m": 5559,
+     "m": 5474,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3247,7 +3257,7 @@
      ]
     },
     {
-     "m": 5544,
+     "m": 5459,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3256,7 +3266,7 @@
      ]
     },
     {
-     "m": 5529,
+     "m": 5444,
      "names": [
       "Courbe de Signes",
       "Circuit Paul Ricard",
@@ -3407,6 +3417,7 @@
    "edges": 8,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 1,
    "loopLengthsM": [
     {
@@ -3440,6 +3451,7 @@
    "edges": 21,
    "junctions": 4,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 5,
    "loopLengthsM": [
     {
@@ -3506,6 +3518,7 @@
    "edges": 30,
    "junctions": 4,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 2,
    "loopLengthsM": [
     {
@@ -3549,6 +3562,8 @@
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3568,6 +3583,8 @@
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3593,6 +3610,8 @@
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3631,6 +3650,8 @@
    "edges": 3,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 1,
    "loopLengthsM": [
     {
@@ -3663,6 +3684,7 @@
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": []
@@ -3693,9 +3715,11 @@
     ]
    ],
    "ways": 5,
-   "edges": 10,
-   "junctions": 5,
+   "edges": 9,
+   "junctions": 3,
    "searchCapped": false,
+   "duplicateEdgesDropped": 1,
+   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3730,6 +3754,27 @@
    "edges": 2,
    "junctions": 2,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [
+    {
+     "at": [
+      33.7656636,
+      -118.1858883
+     ],
+     "nearestOtherM": 214,
+     "way": "Grand Prix of Long Beach Infield Section",
+     "wayM": 291
+    },
+    {
+     "at": [
+      33.7643197,
+      -118.1842557
+     ],
+     "nearestOtherM": 4,
+     "way": "Grand Prix of Long Beach Infield Section",
+     "wayM": 291
+    }
+   ],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3749,6 +3794,8 @@
    "edges": 0,
    "junctions": 0,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 0,
    "loopLengthsM": [],
    "accepted": [
@@ -3825,6 +3872,8 @@
    "edges": 21,
    "junctions": 7,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [],
    "loopsFound": 14,
    "loopLengthsM": [
     {
@@ -3888,83 +3937,12 @@
    "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 34,
-   "edges": 52,
-   "junctions": 22,
+   "edges": 51,
+   "junctions": 21,
    "searchCapped": false,
-   "loopsFound": 150,
+   "duplicateEdgesDropped": 1,
+   "loopsFound": 114,
    "loopLengthsM": [
-    {
-     "m": 6678,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 6656,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 6503,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 6481,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
-    {
-     "m": 5603,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 5581,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5492,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5470,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
     {
      "m": 5399,
      "names": [
@@ -4252,6 +4230,7 @@
    "edges": 14,
    "junctions": 6,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 4,
    "loopLengthsM": [
     {
@@ -4314,6 +4293,45 @@
    "edges": 37,
    "junctions": 19,
    "searchCapped": false,
+   "duplicateEdgesDropped": 0,
+   "openEnds": [
+    {
+     "at": [
+      41.9290323,
+      -73.3836516
+     ],
+     "nearestOtherM": 18,
+     "way": null,
+     "wayM": 18
+    },
+    {
+     "at": [
+      41.9291988,
+      -73.383779
+     ],
+     "nearestOtherM": 21,
+     "way": null,
+     "wayM": 31
+    },
+    {
+     "at": [
+      41.9276326,
+      -73.3870753
+     ],
+     "nearestOtherM": 46,
+     "way": null,
+     "wayM": 131
+    },
+    {
+     "at": [
+      41.9273925,
+      -73.3875249
+     ],
+     "nearestOtherM": 46,
+     "way": null,
+     "wayM": 101
+    }
+   ],
    "loopsFound": 4,
    "loopLengthsM": [
     {
@@ -4364,17 +4382,9 @@
    "edges": 32,
    "junctions": 11,
    "searchCapped": false,
-   "loopsFound": 28,
+   "duplicateEdgesDropped": 0,
+   "loopsFound": 27,
    "loopLengthsM": [
-    {
-     "m": 4790,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
     {
      "m": 4690,
      "names": [

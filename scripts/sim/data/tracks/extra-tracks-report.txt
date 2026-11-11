@@ -6,7 +6,9 @@ sakhir-outer-bahrain-endurance: 6315 m (official 6299, smoothing shrink 0.22 %),
 le-mans-le-mans-bugatti: 4196 m (official 4180, smoothing shrink 0.50 %), raw height range 35 m, height 50–82 m, max grade 10.0 %, turn -360°
 le-mans-le-mans-24-heures: 13612 m (official 13626, smoothing shrink 0.05 %), raw height range 38 m, height 46–82 m, max grade 8.9 %, turn 360°
 mugello-mugello: 5245 m (official 5245, smoothing shrink 0.08 %), raw height range 47 m, height 246–289 m, max grade 13.3 %, turn 360°
-yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.25 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn 360°
+yeongam-korea: 5596 m (official 5615, smoothing shrink 0.21 %), raw height range 3 m, height 0–1 m, max grade 1.0 %, turn -360°
+yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.24 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn -360°
+yeongam-korea-permanent-2: 2961 m (official 2964, smoothing shrink 0.19 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn -360°
 indianapolis-indianapolis-grand-prix: 4187 m (official 4192, smoothing shrink 0.18 %), raw height range 3 m, height 221–224 m, max grade 0.5 %, turn 360°
 indianapolis-indianapolis-road-course: 3911 m (official 3910, smoothing shrink 0.18 %), raw height range 4 m, height 221–224 m, max grade 0.5 %, turn -360°
 road-atlanta-road-atlanta: 4090 m (official 4088, smoothing shrink 0.10 %), raw height range 37 m, height 275–308 m, max grade 10.9 %, turn -360°

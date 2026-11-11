@@ -1,6 +1,6 @@
 {
  "source": "B4mad Racing community telemetry (telemetry.b4mad.racing), read-only",
- "probed": "2026-11-11T07:37:33.786Z",
+ "probed": "2026-11-11T07:51:17.171Z",
  "readmeOk": true,
  "host": "telemetry.b4mad.racing",
  "error": "TypeError: fetch failed | UND_ERR_CONNECT_TIMEOUT"
