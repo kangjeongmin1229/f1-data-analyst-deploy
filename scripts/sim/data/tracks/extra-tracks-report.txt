@@ -9,6 +9,9 @@ yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.25 %), raw 
 indianapolis-indianapolis-grand-prix: 4187 m (official 4192, smoothing shrink 0.18 %), raw height range 3 m, height 221–224 m, max grade 0.5 %, turn 360°
 indianapolis-indianapolis-road-course: 3911 m (official 3910, smoothing shrink 0.18 %), raw height range 4 m, height 221–224 m, max grade 0.5 %, turn -360°
 road-atlanta-road-atlanta: 4090 m (official 4088, smoothing shrink 0.10 %), raw height range 37 m, height 275–308 m, max grade 10.9 %, turn -360°
+yongin-everland-speedway-full-course: 4353 m (official 4346, smoothing shrink 0.35 %), raw height range 60 m, height 92–146 m, max grade 12.3 %, turn 0°
+nurburgring-24-hours-combined-lap: 25321 m (official 25378, smoothing shrink 0.09 %), raw height range 290 m, height 340–627 m, max grade 16.7 %, turn -360°
+nurburgring-nordschleife-alone: 20746 m (official 20832, smoothing shrink 0.08 %), raw height range 290 m, height 340–627 m, max grade 16.7 %, turn 360°
 nurburgring-nurburgring-grand-prix: 5127 m (official 5148, smoothing shrink 0.17 %), raw height range 56 m, height 567–621 m, max grade 7.5 %, turn 360°
 nurburgring-nurburgring-sprint-strecke: 3612 m (official 3629, smoothing shrink 0.22 %), raw height range 35 m, height 588–621 m, max grade 6.9 %, turn 360°
 nurburgring-nurburgring-nordschleife: 25838 m (official 25888, smoothing shrink 0.10 %), raw height range 290 m, height 340–627 m, max grade 16.7 %, turn -360°

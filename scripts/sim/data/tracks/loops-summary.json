@@ -3,6 +3,7 @@
  "rule": "accepted = within 0.5 % of the official lap length",
  "tracks": {
   "sakhir-outer": {
+   "snappedEnds": 0,
    "ways": 13,
    "edges": 19,
    "junctions": 16,
@@ -362,6 +363,7 @@
    ]
   },
   "le-mans": {
+   "snappedEnds": 2,
    "ways": 64,
    "edges": 88,
    "junctions": 55,
@@ -755,6 +757,7 @@
    ]
   },
   "mugello": {
+   "snappedEnds": 0,
    "ways": 45,
    "edges": 46,
    "junctions": 2,
@@ -786,6 +789,7 @@
    ]
   },
   "yeongam": {
+   "snappedEnds": 0,
    "ways": 11,
    "edges": 566,
    "junctions": 288,
@@ -836,9 +840,10 @@
    ]
   },
   "indianapolis": {
+   "snappedEnds": 3,
    "ways": 41,
    "edges": 60,
-   "junctions": 32,
+   "junctions": 31,
    "searchCapped": true,
    "loopsFound": 1159,
    "loopLengthsM": [
@@ -1229,6 +1234,113 @@
    ]
   },
   "sebring": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     "Sunset Bend",
+     391
+    ],
+    [
+     null,
+     328
+    ],
+    [
+     null,
+     1468
+    ],
+    [
+     null,
+     557
+    ],
+    [
+     null,
+     159
+    ],
+    [
+     null,
+     219
+    ],
+    [
+     null,
+     133
+    ],
+    [
+     null,
+     328
+    ],
+    [
+     "Club Circuit",
+     141
+    ],
+    [
+     "Ullman Straight",
+     901
+    ],
+    [
+     "Le Mans Curve",
+     69
+    ],
+    [
+     null,
+     118
+    ],
+    [
+     "Gendebien Bend",
+     135
+    ],
+    [
+     null,
+     276
+    ],
+    [
+     null,
+     98
+    ],
+    [
+     "Bishop Bend",
+     81
+    ],
+    [
+     null,
+     333
+    ],
+    [
+     "Tower Turn",
+     75
+    ],
+    [
+     null,
+     206
+    ],
+    [
+     "Cunningham Corner",
+     71
+    ],
+    [
+     null,
+     119
+    ],
+    [
+     "Collier Curve",
+     98
+    ],
+    [
+     "Hairpin",
+     203
+    ],
+    [
+     "Fangio",
+     280
+    ],
+    [
+     "Gurney Bend",
+     366
+    ],
+    [
+     null,
+     347
+    ]
+   ],
    "ways": 26,
    "edges": 33,
    "junctions": 10,
@@ -1339,6 +1451,7 @@
    ]
   },
   "road-atlanta": {
+   "snappedEnds": 0,
    "ways": 9,
    "edges": 19,
    "junctions": 10,
@@ -1444,6 +1557,7 @@
    ]
   },
   "yongin": {
+   "snappedEnds": 0,
    "ways": 7,
    "edges": 13,
    "junctions": 6,
@@ -1488,13 +1602,32 @@
      "id": "yongin | Everland Speedway full course",
      "officialM": 4346,
      "source": "hyundai-n.com/en/motorsport/nf-calendar-ncup-r4.do (4.346 km, 16 corners, pole left)",
-     "loopM": 2929,
-     "errorPct": 32.6,
-     "accepted": false
+     "loopM": 4353,
+     "errorPct": 0.16,
+     "accepted": true
     }
    ]
   },
   "inje": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     "풀코스",
+     3947
+    ],
+    [
+     "A 코스",
+     176
+    ],
+    [
+     "B 코스",
+     144
+    ],
+    [
+     null,
+     302
+    ]
+   ],
    "ways": 4,
    "edges": 10,
    "junctions": 6,
@@ -1565,9 +1698,10 @@
    ]
   },
   "nurburgring": {
+   "snappedEnds": 2,
    "ways": 82,
    "edges": 90,
-   "junctions": 19,
+   "junctions": 17,
    "searchCapped": false,
    "loopsFound": 39,
    "loopLengthsM": [
@@ -1758,6 +1892,22 @@
    ],
    "accepted": [
     {
+     "id": "nurburgring | 24 Hours combined lap",
+     "officialM": 25378,
+     "source": "ADAC RAVENOL 24h Nürburgring press information (24h-media.de): 25.378 km combination of Grand Prix circuit and Nordschleife; clockwise",
+     "loopM": 25321,
+     "errorPct": 0.22,
+     "accepted": true
+    },
+    {
+     "id": "nurburgring | Nordschleife alone",
+     "officialM": 20832,
+     "source": "bmw-m.com \"24 Fakten\" (20.832 km Nordschleife, 5.148 km Grand Prix circuit); redbull.com Nordschleife guide",
+     "loopM": 20746,
+     "errorPct": 0.41,
+     "accepted": true
+    },
+    {
      "id": "nurburgring | NÜRBURGRING GRAND PRIX",
      "officialM": 5148,
      "source": "FIA list 2026-03-31",
@@ -1826,6 +1976,113 @@
    ]
   },
   "brands-hatch": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     "Hawthorns Bend",
+     164
+    ],
+    [
+     "McLaren",
+     186
+    ],
+    [
+     "Clark Curve",
+     258
+    ],
+    [
+     "Paddock Hill",
+     202
+    ],
+    [
+     "Druids Bend",
+     121
+    ],
+    [
+     "Cooper Straight",
+     273
+    ],
+    [
+     "Graham Hill Bend",
+     110
+    ],
+    [
+     "Surtees",
+     75
+    ],
+    [
+     "Pilgrims Drop",
+     246
+    ],
+    [
+     "Derek Minter Straight",
+     211
+    ],
+    [
+     "Westfield Bend",
+     128
+    ],
+    [
+     "Brabham Straight",
+     411
+    ],
+    [
+     "Dingle Dell",
+     111
+    ],
+    [
+     "Sheene Curve",
+     108
+    ],
+    [
+     "Stirlings Bend",
+     95
+    ],
+    [
+     "Hailwoods Hill",
+     144
+    ],
+    [
+     "Hawthorn Hill",
+     384
+    ],
+    [
+     "Dingle Dell Corner",
+     167
+    ],
+    [
+     null,
+     24
+    ],
+    [
+     null,
+     96
+    ],
+    [
+     null,
+     35
+    ],
+    [
+     null,
+     97
+    ],
+    [
+     null,
+     275
+    ],
+    [
+     "Clearways",
+     88
+    ],
+    [
+     "Surtees",
+     56
+    ],
+    [
+     "Clearways",
+     16
+    ]
+   ],
    "ways": 26,
    "edges": 26,
    "junctions": 2,
@@ -1886,6 +2143,7 @@
    ]
   },
   "kyalami": {
+   "snappedEnds": 0,
    "ways": 24,
    "edges": 24,
    "junctions": 0,
@@ -1925,6 +2183,7 @@
    ]
   },
   "fuji": {
+   "snappedEnds": 0,
    "ways": 14,
    "edges": 26,
    "junctions": 22,
@@ -1959,6 +2218,7 @@
    ]
   },
   "daytona": {
+   "snappedEnds": 0,
    "ways": 23,
    "edges": 29,
    "junctions": 17,
@@ -2292,11 +2552,12 @@
    ]
   },
   "portimao": {
+   "snappedEnds": 3,
    "ways": 61,
-   "edges": 88,
+   "edges": 89,
    "junctions": 41,
    "searchCapped": true,
-   "loopsFound": 407,
+   "loopsFound": 1326,
    "loopLengthsM": [
     {
      "m": 4682,
@@ -2479,35 +2740,67 @@
      ]
     },
     {
-     "m": 1912,
+     "m": 2063,
      "names": []
     },
     {
-     "m": 1895,
+     "m": 2040,
      "names": []
     },
     {
-     "m": 1864,
+     "m": 1991,
      "names": []
     },
     {
-     "m": 1844,
+     "m": 1974,
      "names": []
     },
     {
-     "m": 1824,
+     "m": 1958,
      "names": []
     },
     {
-     "m": 1807,
+     "m": 1939,
      "names": []
     },
     {
-     "m": 1791,
+     "m": 1922,
      "names": []
     },
     {
-     "m": 1776,
+     "m": 1899,
+     "names": []
+    },
+    {
+     "m": 1881,
+     "names": []
+    },
+    {
+     "m": 1865,
+     "names": []
+    },
+    {
+     "m": 1850,
+     "names": []
+    },
+    {
+     "m": 1835,
+     "names": []
+    },
+    {
+     "m": 1820,
+     "names": []
+    },
+    {
+     "m": 1803,
+     "names": []
+    },
+    {
+     "m": 1788,
+     "names": []
+    },
+    {
+     "m": 1773,
      "names": []
     },
     {
@@ -2515,47 +2808,15 @@
      "names": []
     },
     {
-     "m": 1741,
+     "m": 1743,
      "names": []
     },
     {
-     "m": 1725,
+     "m": 1728,
      "names": []
     },
     {
-     "m": 1708,
-     "names": []
-    },
-    {
-     "m": 1692,
-     "names": []
-    },
-    {
-     "m": 1677,
-     "names": []
-    },
-    {
-     "m": 1662,
-     "names": []
-    },
-    {
-     "m": 1647,
-     "names": []
-    },
-    {
-     "m": 1632,
-     "names": []
-    },
-    {
-     "m": 1617,
-     "names": []
-    },
-    {
-     "m": 1602,
-     "names": []
-    },
-    {
-     "m": 1587,
+     "m": 1713,
      "names": []
     }
    ],
@@ -2585,8 +2846,9 @@
    ]
   },
   "paul-ricard": {
+   "snappedEnds": 5,
    "ways": 62,
-   "edges": 104,
+   "edges": 105,
    "junctions": 68,
    "searchCapped": true,
    "loopsFound": 31776,
@@ -3088,6 +3350,7 @@
    ]
   },
   "laguna-seca": {
+   "snappedEnds": 0,
    "ways": 8,
    "edges": 8,
    "junctions": 0,
@@ -3119,6 +3382,7 @@
    ]
   },
   "watkins-glen": {
+   "snappedEnds": 0,
    "ways": 21,
    "edges": 21,
    "junctions": 4,
@@ -3183,6 +3447,7 @@
    ]
   },
   "road-america": {
+   "snappedEnds": 0,
    "ways": 29,
    "edges": 30,
    "junctions": 4,
@@ -3223,6 +3488,8 @@
    ]
   },
   "bathurst": {
+   "snappedEnds": 0,
+   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
@@ -3239,6 +3506,8 @@
    ]
   },
   "fe-berlin": {
+   "snappedEnds": 0,
+   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
@@ -3261,6 +3530,8 @@
    ]
   },
   "fe-tokyo": {
+   "snappedEnds": 0,
+   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
@@ -3283,6 +3554,21 @@
    ]
   },
   "fe-sao-paulo": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     "ABB FIA Formula E São Paulo E-Prix",
+     2712
+    ],
+    [
+     "ABB FIA Formula E São Paulo E-Prix",
+     195
+    ],
+    [
+     "ABB FIA Formula E São Paulo E-Prix",
+     23
+    ]
+   ],
    "ways": 3,
    "edges": 3,
    "junctions": 0,
@@ -3311,6 +3597,8 @@
    ]
   },
   "fe-sanya": {
+   "snappedEnds": 0,
+   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
@@ -3320,9 +3608,32 @@
    "accepted": []
   },
   "jarama": {
+   "snappedEnds": 1,
+   "wayList": [
+    [
+     "Circuito del Jarama",
+     3053
+    ],
+    [
+     null,
+     20
+    ],
+    [
+     null,
+     231
+    ],
+    [
+     null,
+     112
+    ],
+    [
+     "Circuito del Jarama",
+     852
+    ]
+   ],
    "ways": 5,
    "edges": 10,
-   "junctions": 6,
+   "junctions": 5,
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
@@ -3342,6 +3653,17 @@
    ]
   },
   "long-beach": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     "Grand Prix of Long Beach Infield Section",
+     273
+    ],
+    [
+     "Grand Prix of Long Beach Hairpin",
+     25
+    ]
+   ],
    "ways": 2,
    "edges": 2,
    "junctions": 4,
@@ -3358,6 +3680,8 @@
    ]
   },
   "detroit": {
+   "snappedEnds": 0,
+   "wayList": [],
    "ways": 0,
    "edges": 0,
    "junctions": 0,
@@ -3374,6 +3698,65 @@
    ]
   },
   "mosport": {
+   "snappedEnds": 0,
+   "wayList": [
+    [
+     null,
+     523
+    ],
+    [
+     null,
+     2842
+    ],
+    [
+     null,
+     565
+    ],
+    [
+     null,
+     103
+    ],
+    [
+     null,
+     142
+    ],
+    [
+     null,
+     93
+    ],
+    [
+     "Moss Corner",
+     184
+    ],
+    [
+     "Mario Andretti Straight",
+     1167
+    ],
+    [
+     "Esses",
+     454
+    ],
+    [
+     "Whites Corner",
+     84
+    ],
+    [
+     null,
+     801
+    ],
+    [
+     "Clayton Corner",
+     299
+    ],
+    [
+     null,
+     148
+    ],
+    [
+     "Quebec Corner",
+     284
+    ]
+   ],
    "ways": 14,
    "edges": 21,
    "junctions": 7,
@@ -3437,9 +3820,10 @@
    ]
   },
   "vir": {
+   "snappedEnds": 2,
    "ways": 34,
-   "edges": 51,
-   "junctions": 21,
+   "edges": 52,
+   "junctions": 22,
    "searchCapped": false,
    "loopsFound": 150,
    "loopLengthsM": [
@@ -3796,6 +4180,7 @@
    ]
   },
   "mid-ohio": {
+   "snappedEnds": 0,
    "ways": 9,
    "edges": 14,
    "junctions": 6,
@@ -3856,6 +4241,7 @@
    ]
   },
   "lime-rock": {
+   "snappedEnds": 0,
    "ways": 26,
    "edges": 37,
    "junctions": 19,
@@ -3904,6 +4290,7 @@
    ]
   },
   "hockenheim": {
+   "snappedEnds": 0,
    "ways": 21,
    "edges": 32,
    "junctions": 11,
