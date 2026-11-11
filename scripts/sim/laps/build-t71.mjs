@@ -7,7 +7,9 @@ import {join} from 'node:path';
 import {readReplay} from '../t71-read.mjs';
 import {trackOf} from '../t71-tracks.mjs';
 import {SERIES, weatherOf} from '../t71-collect.mjs';
-import {markRelative, markRainTiming, markWetAcrossYears, counts, sessionType} from './schema.mjs';
+import {markRelative, markRainTiming, markWetAcrossYears, counts, sessionType, isClean} from './schema.mjs';
+import {modelIdentity} from './models.mjs';
+import {lapsimTracks} from '../../../worker/lapsim/tracks-data.js';
 
 const API = 'https://archive.timing71.org', OUT = join(process.env.LAPSIM_LAPS || '.cache/lapsim/laps', 't71');
 const get = async (u, n = 3) => {
@@ -92,13 +94,15 @@ const SIM = /iracing|e-?sports?|esport|sim ?racing|simracing|virtual|lionheart|\
 async function merge() {
   const {createInterface} = await import('node:readline'); const {createReadStream} = await import('node:fs');
   const files = readdirSync(OUT).filter(f => /-\d+\.ndjson$/.test(f)), table = [], wet = [], models = {}, marks = {}, simSeries = [];
+  const gap = {}, venues = {}, info = {}, cond = {}, evo = {}; const medn = a => { const x = a.filter(Number.isFinite).sort((p, q) => p - q); return x.length ? +x[x.length >> 1].toFixed(1) : null; };
   for (const key of [...new Set(files.map(f => f.replace(/-\d+\.ndjson$/, '')))].sort()) {
     let rows = [];
     for (const f of files.filter(f => f.replace(/-\d+\.ndjson$/, '') === key)) {
       for await (const line of createInterface({input: createReadStream(join(OUT, f)), crlfDelay: Infinity})) {
         if (!line) continue; const r = JSON.parse(line);
         rows.push({source: r.source, series: r.series, season: r.season, event: r.event, track: r.track, cls: r.cls, sessionType: r.sessionType, session: r.session, carModel: r.carModel,
-          entry: r.entry, time: r.time, trapKph: r.trapKph, tyre: r.tyre, flag: r.flag, rain: r.rain, push: r.push, rid: r.rid, q: r.q});
+          entry: r.entry, time: r.time, trapKph: r.trapKph, tyre: r.tyre, flag: r.flag, rain: r.rain, push: r.push, rid: r.rid, q: r.q,
+          airC: r.airC, trackC: r.trackC, humidityPct: r.humidityPct, pressureHpa: r.pressureHpa, windMs: r.windMs, cond: r.trackCondition ? 1 : 0, venue: r.track ? null : String(r.event).split(' | ').pop()});
       }
     }
     if (!rows.length) continue;
@@ -113,12 +117,39 @@ async function merge() {
     for (const w of list) marks[w.group] = {mark: w.mark, paceRatio: w.paceRatio, trapRatio: w.trapRatio};
     for (const [sess, rid] of Object.entries(keep)) if (Object.keys(n[sess]).length > 1) (marks.__keepReplay ||= {})[key + '|' + sess] = rid;
     table.push(...counts(rows).map(c => ({...c, sim})));
+    if (!sim) {
+      // geometry gap: laps per track id, with or without simulator geometry; venues with no id at all
+      const sess = new Map();
+      for (const r of rows) {
+        if (r.q.includes('sim')) continue;
+        if (r.track) { const g = gap[r.track] ||= {geometry: !!lapsimTracks[r.track], laps: 0, clean: 0, push: 0, series: {}}; g.laps++; if (isClean(r)) g.clean++; if (r.push) g.push++; g.series[key] = 1; }
+        else { const v = venues[key + ' | ' + r.venue] ||= [0, 0]; v[0]++; if (r.push) v[1]++; }
+        const o = sess.get(r.session) || sess.set(r.session, {type: r.sessionType, track: r.track, season: r.season, start: +String(r.session).split('|').pop(), air: [], trk: [], hum: [], prs: [], wind: [], n: 0, rain: 0, cond: 0, flags: new Set(), wetMark: false}).get(r.session);
+        o.n++; if (r.rain === 1) o.rain++; if (r.cond) o.cond++; o.flags.add(r.flag); if (r.q.includes('wet_session')) o.wetMark = true;
+        if (o.n % 25 === 1) { o.air.push(r.airC); o.trk.push(r.trackC); o.hum.push(r.humidityPct); o.prs.push(r.pressureHpa); o.wind.push(r.windMs); }
+        const id = modelIdentity(r.carModel); if (id?.category === 'GT3') { const e = evo[id.base] ||= {}; const k = `${key}|${r.season}|${id.evo || 'base'}`; e[k] = (e[k] || 0) + 1; }
+      }
+      // what each series' feed tells us: air/track temperature, a rain or track-condition field, any non-green flag
+      const I = info[key] = {sessions: sess.size, withTemp: 0, withRainField: 0, withNonGreenFlag: 0, wetMarked: 0};
+      for (const o of sess.values()) {
+        if (medn(o.air) != null) I.withTemp++; if (o.cond) I.withRainField++; if ([...o.flags].some(f => f && !['green', 'chequered', 'none'].includes(f))) I.withNonGreenFlag++; if (o.wetMark) I.wetMarked++;
+        // typical conditions of an event: series, track, month and session type (dry sessions only), for the automatic season choice
+        if (o.track && !o.wetMark && Number.isFinite(o.start) && medn(o.air) != null) { const k = `${key}|${o.track}|${new Date(o.start * 1e3).getUTCMonth() + 1}|${o.type}`; const c = cond[k] ||= {n: 0, air: [], trk: [], hum: [], prs: [], wind: [], seasons: {}}; c.n++; c.seasons[o.season] = 1; c.air.push(medn(o.air)); c.trk.push(medn(o.trk)); c.hum.push(medn(o.hum)); c.prs.push(medn(o.prs)); c.wind.push(medn(o.wind)); }
+      }
+    }
     for (const r of rows) { const k = `${key}|${r.season}|${r.cls}|${r.carModel}`; models[k] = (models[k] || 0) + 1; }
   }
   const all = readdirSync(OUT);
   const logs = all.filter(f => /^log-\d+\.json$/.test(f)).map(f => JSON.parse(readFileSync(join(OUT, f), 'utf8')));
   const merged = (name) => { const o = {}; for (const l of logs) for (const [k, v] of Object.entries(l[name] || {})) Object.assign(o[k] ||= {}, v); return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, Object.keys(v)])); };
   writeFileSync(join(OUT, '..', 't71-session-marks.json'), JSON.stringify(marks));
+  writeFileSync(join(OUT, '..', 't71-tracks-counts.json'), JSON.stringify({source: 'Timing71 rows, real series only', note: 'geometry = the simulator has this track today',
+    tracks: Object.fromEntries(Object.entries(gap).sort((a, b) => b[1].laps - a[1].laps).map(([k, g]) => [k, {...g, series: Object.keys(g.series)}])),
+    venuesWithNoTrackId: Object.fromEntries(Object.entries(venues).sort((a, b) => b[1][0] - a[1][0]).slice(0, 400))}, null, 1));
+  writeFileSync(join(OUT, '..', 't71-info-counts.json'), JSON.stringify({source: 'Timing71 rows', note: 'per series: how many sessions carry temperature, a rain or track-condition field, and any non-green flag', series: info}, null, 1));
+  writeFileSync(join(OUT, '..', 't71-conditions-counts.json'), JSON.stringify({source: 'Timing71 feed weather, dry sessions, median per session then median over sessions', key: 'series|track|month|sessionType',
+    conditions: Object.fromEntries(Object.entries(cond).map(([k, c]) => [k, {sessions: c.n, seasons: Object.keys(c.seasons), airC: medn(c.air), trackC: medn(c.trk), humidityPct: medn(c.hum), pressureHpa: medn(c.prs), windMs: medn(c.wind)}]))}, null, 1));
+  writeFileSync(join(OUT, '..', 't71-evo-counts.json'), JSON.stringify({source: 'Timing71 car model text', note: 'GT3 laps per base model, series, season and kit (base / evo / evo2)', models: evo}, null, 1));
   writeFileSync(join(OUT, '..', 't71-counts.json'), JSON.stringify({source: 'Timing71 archive (archive.timing71.org); calibration use only; rows are not committed',
     listed: logs.find(l => l.shard === 0)?.listed ?? logs[0]?.listed, picked: logs[0]?.picked, shards: logs.length, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
     inventory: existsSync(join(OUT, 'inventory.json')) ? JSON.parse(readFileSync(join(OUT, 'inventory.json'), 'utf8')) : null,

@@ -39,6 +39,15 @@ jobs:
           jq 'length' out/caches.json out/t71-artifacts.json
       - uses: actions/upload-artifact@v4
         with: {name: probe, path: out}
+  osm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node scripts/sim/tracks/fetch-osm.mjs
+      - uses: actions/upload-artifact@v4
+        with: {name: osm-raceways, path: .cache/lapsim/osm, retention-days: 90}
   f1:
     needs: plan
     if: needs.plan.outputs.run == ''
@@ -109,7 +118,7 @@ jobs:
           git add scripts/sim/data/laps
           git diff --cached --quiet || (git commit -m "All-laps dataset: F1 and WEC counts, cache probe" && git pull --rebase && git push)
   merge:
-    needs: [plan, cache-probe, f1, wec, t71]
+    needs: [plan, cache-probe, osm, f1, wec, t71]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -126,6 +135,9 @@ jobs:
         continue-on-error: true
       - uses: actions/download-artifact@v4
         with: {name: probe, path: probe}
+        continue-on-error: true
+      - uses: actions/download-artifact@v4
+        with: {name: osm-raceways, path: osm}
         continue-on-error: true
       - id: m
         continue-on-error: true
@@ -147,6 +159,7 @@ jobs:
           mkdir -p scripts/sim/data/laps
           cp .cache/lapsim/laps/*-counts.json .cache/lapsim/laps/t71-session-marks.json .cache/lapsim/laps/*sha256.txt scripts/sim/data/laps/ 2>/dev/null || true
           cp probe/*.json scripts/sim/data/laps/ 2>/dev/null || true
+          cp osm/osm-summary.json scripts/sim/data/laps/ 2>/dev/null || true
           echo "{\"run\": \"${{ github.run_id }}\", \"rows_from_run\": \"${{ needs.plan.outputs.run || github.run_id }}\", \"sha\": \"${{ github.sha }}\", \"merge\": \"${{ steps.m.outcome }}\"}" > scripts/sim/data/laps/run.json
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
