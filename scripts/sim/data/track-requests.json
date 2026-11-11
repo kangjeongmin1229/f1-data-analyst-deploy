@@ -247,8 +247,21 @@
      "use": "endurance: NLS combined lap"
     }
    ],
-   "layoutNote": "Owner, 2026-11-11: Grand Prix and endurance layouts. Official lengths and which series uses which lap come from the series documents, not assumed.",
-   "fia": "N.RBURGRING"
+   "layoutNote": "Owner, 2026-11-11: Grand Prix and endurance layouts. Official lengths and which series uses which lap come from the series documents, not assumed. NLS combined lap: no sourced length stored yet.",
+   "fia": "N.RBURGRING",
+   "lengths": [
+    {
+     "name": "24 Hours combined lap",
+     "lengthM": 25378,
+     "source": "ADAC RAVENOL 24h Nürburgring press information (24h-media.de): 25.378 km combination of Grand Prix circuit and Nordschleife; clockwise",
+     "direction": "clockwise"
+    },
+    {
+     "name": "Nordschleife alone",
+     "lengthM": 20832,
+     "source": "bmw-m.com \"24 Fakten\" (20.832 km Nordschleife, 5.148 km Grand Prix circuit); redbull.com Nordschleife guide"
+    }
+   ]
   },
   {
    "id": "brands-hatch",

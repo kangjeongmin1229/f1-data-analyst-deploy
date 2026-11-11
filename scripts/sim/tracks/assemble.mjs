@@ -19,6 +19,13 @@ export function totalTurnDeg(pts) {
 export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000} = {}) {
   const ways = elements.filter(e => e.type === 'way' && e.geometry?.length > 1 && e.tags?.highway === 'raceway' && !SKIP.test(e.tags?.sport || '') && !SKIPNAME.test(e.tags?.name || '') && !/dirt|ground|unpaved|gravel|grass|sand/i.test(e.tags?.surface || ''))
     .map(e => ({name: e.tags?.name || null, pts: e.geometry.map(g => [g.lat, g.lon])}));
+  // close small mapping gaps: a way end within SNAP_M of a point of another way is moved onto that point (map ways often do not share a node)
+  const SNAP_M = 12, all = ways.flatMap((w, wi) => w.pts.map(p => ({p, wi}))); let snapped = 0;
+  for (const [wi, w] of ways.entries()) for (const e of [0, w.pts.length - 1]) {
+    const p = w.pts[e]; if (all.some(o => o.wi !== wi && o.p[0] === p[0] && o.p[1] === p[1])) continue;
+    let best = null, bd = SNAP_M; for (const o of all) { if (o.wi === wi) continue; const dd = hav(p, o.p); if (dd < bd) { bd = dd; best = o.p; } }
+    if (best) { w.pts[e] = best; snapped++; }
+  }
   // split ways at every point that another way (or the same way) also touches
   const count = new Map(); for (const w of ways) w.pts.forEach((p, i) => { const k = key(p); count.set(k, (count.get(k) || 0) + (i === 0 || i === w.pts.length - 1 ? 2 : 1)); });
   const edges = [];
@@ -41,7 +48,7 @@ export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000} = {}) 
   }
   for (const s of starts) { walk(s, s, 0, new Set(), []); if (steps > cap) break; }
   const line = l => { let n = l.start; const out = []; for (const j of l.path) { const e = edges[j], fwd = e.a === n; out.push(...(fwd ? e.pts : [...e.pts].reverse()).slice(out.length ? 1 : 0)); n = fwd ? e.b : e.a; } return out; };
-  return {ways: ways.length, edges: edges.length, junctions: nodes.length, searchCapped: steps > cap, loops: [...found.values()].sort((a, b) => b.m - a.m).map(l => ({m: Math.round(l.m), names: [...new Set(l.path.map(j => edges[j].name).filter(Boolean))], line: () => line(l)}))};
+  return {snapped, wayList: ways.map(w => [w.name, Math.round(w.pts.slice(1).reduce((t, p, j) => t + hav(w.pts[j], p), 0))]), ways: ways.length, edges: edges.length, junctions: nodes.length, searchCapped: steps > cap, loops: [...found.values()].sort((a, b) => b.m - a.m).map(l => ({m: Math.round(l.m), names: [...new Set(l.path.map(j => edges[j].name).filter(Boolean))], line: () => line(l)}))};
 }
 
 if (process.argv[1]?.endsWith('assemble.mjs')) {
@@ -57,7 +64,7 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
       const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err).slice(0, 40).find(c => t.crossover || Math.abs(Math.abs(totalTurnDeg(c.l.line())) - 360) < 30); if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
       const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]); return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok}; });
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
-    out.tracks[t.id] = {ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
+    out.tracks[t.id] = {snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
   }
   writeFileSync(`${DIR}/loops-summary.json`, JSON.stringify(out, null, 1)); writeFileSync(`${DIR}/accepted-lines.json`, JSON.stringify(lines));
   console.log(Object.entries(out.tracks).map(([k, v]) => `${k}: ${v.error || v.loopsFound + ' loops, longest ' + (v.loopLengthsM[0]?.m ?? '-')}`).join('\n'));
