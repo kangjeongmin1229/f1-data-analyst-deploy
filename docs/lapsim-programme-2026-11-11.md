@@ -131,3 +131,23 @@ Reading:
 - Level C (track-unseen) error for WEC is about 2.3 % on 6 rows and 2 tracks, against 1.17 % on fitted tracks. n is small: one track decides the result.
 - Daytona is 6–9 % too fast with the racing line (banking and the chicane are not in the geometry; the cars are also borrowed). Le Mans is 2–3 % too slow.
 - Next: hide-and-predict on these tracks with a fitted track factor (level B), better height, real widths, and the per-model fit.
+
+## 11. Sim-racing tracks as a geometry source (owner request, 2026-11-11)
+
+Owner decision: a sim other than iRacing is allowed as a track-geometry source when it is widely regarded as realistic and the track is verified (laser-scanned, official). This widens rule 2.10 for track geometry only.
+Search result (web search, 2026-11-11). No sim data has been obtained: only which tracks exist.
+
+| Needed venue | Laser-scanned sim version found | Note |
+|---|---|---|
+| Sebring | iRacing; rFactor 2; Project Motor Racing | |
+| Long Beach | iRacing | |
+| Daytona (banking) | iRacing (2021 rescan) | |
+| Bathurst | iRacing; Project Motor Racing; Assetto Corsa Competizione | |
+| Mosport | Project Motor Racing | |
+| Le Mans, Nordschleife (height) | iRacing (Le Mans); rFactor 2 (both); Project Motor Racing | |
+| Detroit | iRacing has Belle Isle only | Not the street circuit IMSA races now |
+| Berlin (Formula E) | rFactor 2 Berlin E-Prix | An older, shorter layout (1.9 km) than the current FIA length |
+| Yeongam | Community conversion only (rFactor → Assetto Corsa) | Not laser-scanned: does not meet the owner's standard |
+| Inje, Jarama, Tokyo, São Paulo (Formula E), Sanya | None found | |
+
+How the data could be used: a lap driven in the sim and exported as telemetry (position, height, speed) by an account holder. Track files are licensed game content and are not extracted here.
