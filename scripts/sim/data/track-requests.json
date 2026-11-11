@@ -202,7 +202,9 @@
      "lengthM": 4346,
      "source": "hyundai-n.com/en/motorsport/nf-calendar-ncup-r4.do (4.346 km, 16 corners, pole left)"
     }
-   ]
+   ],
+   "crossover": true,
+   "crossoverNote": "The 4,353 m map loop crosses itself (total turn not ±360°). A lap with a bridge would explain it; to be confirmed from video or the circuit map before use."
   },
   {
    "id": "inje",
@@ -330,7 +332,8 @@
     5.792
    ],
    "radius": 4000,
-   "fia": "PAUL RICARD"
+   "fia": "PAUL RICARD",
+   "ambiguous": "31,776 loops on the map, so several different loops match each official length to the metre. Layout identity is not verified; one loop lost 13 % in smoothing. Not usable until each layout is checked against the official layout drawing."
   },
   {
    "id": "laguna-seca",
@@ -606,6 +609,6 @@
  },
  "storage": {
   "decision": "owner, 2026-11-11: keep the raw lap rows in a private repository of the owner",
-  "state": "repository not created yet"
+  "state": "could not be created by this session (GitHub refused: not permitted for the integration). The owner has to create a private repository and give access."
  }
 }

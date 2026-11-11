@@ -75,3 +75,22 @@ Open defects, to fix before any use:
 Not accepted yet: Sebring (map lap 2.5 % short), Inje (1.0 % long), Brands Hatch Grand Prix (0.54 %), Lime Rock (1.5 %), São Paulo (0.98 %).
 No FIA row matched: Kyalami, Daytona, Watkins Glen, Yongin, Mosport, VIR — another official length source is needed.
 No lap on the map: Jarama, Bathurst, Berlin, Tokyo, Sanya, Long Beach, Detroit, the Le Mans 24 Hours lap, the Yeongam F1 lap, the Nürburgring 24 Hours and NLS laps. Mid-Ohio: map server error.
+
+## 8. Track geometry status, second pass (2026-11-11, run for commit 60dfd08)
+
+Fixed: self-crossing loops are rejected (total turn must be ±360°); the mapped lap length is restored after smoothing; height is smoothed over 150 m twice.
+Official lengths outside the FIA list are stored with their source in `track-requests.json` (`lengths`): circuit and series pages for Kyalami, Yongin, Daytona, Watkins Glen, Mosport, VIR, Lime Rock, Mid-Ohio, Inje, Sebring.
+
+Candidates: 40 layouts at 20 venues (`extra-tracks.json`, report in `extra-tracks-report.txt`). New since the first pass: Kyalami, Daytona, Watkins Glen, VIR, Mid-Ohio, Lime Rock, Hockenheim Short.
+
+Still open:
+
+| Item | State |
+|---|---|
+| Paul Ricard | Ambiguous: too many loops on the map. Not usable until each layout is checked against the official drawing |
+| Yongin | The 4,353 m loop (official 4,346 m) crosses itself; allowed as a crossover lap, to confirm from video |
+| Watkins Glen | Official length is rounded to 0.1 mile, so the length check is weak |
+| Height | Maximum grades now 3–17 %. Not compared with a published profile yet |
+| Not accepted | Sebring (−2.5 %), Inje (+1.0 %), Brands Hatch GP (0.54 %), São Paulo (0.98 %), Mosport (map incomplete), Yeongam F1 lap, Le Mans 24 Hours lap |
+| No lap on the map | Jarama, Bathurst, Berlin, Tokyo, Sanya, Long Beach, Detroit, Nürburgring 24 Hours and NLS laps |
+| Private data repository | Could not be created from this session; the owner has to create it |
