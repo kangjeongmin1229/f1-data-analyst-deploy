@@ -17,7 +17,7 @@ for (const t of REQ) {
     const d = await overpass(`[out:json][timeout:50];(way["highway"="raceway"](around:${t.radius},${t.seed[0]},${t.seed[1]});relation["type"~"circuit|route"]["route"~"raceway|circuit",i](around:${t.radius},${t.seed[0]},${t.seed[1]}););out geom tags;`);
     writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d));
     const ways = d.elements.filter(e => e.type === 'way' && e.geometry).map(e => ({id: e.id, name: e.tags?.name || null, ref: e.tags?.ref || null, sport: e.tags?.sport || null, surface: e.tags?.surface || null, oneway: e.tags?.oneway || null,
-      width: e.tags?.width || null, m: Math.round(e.geometry.slice(1).reduce((a, p, i) => a + hav(e.geometry[i], p), 0)), closed: e.nodes[0] === e.nodes[e.nodes.length - 1], nodes: e.nodes.length}));
+      width: e.tags?.width || null, m: Math.round(e.geometry.slice(1).reduce((a, p, i) => a + hav(e.geometry[i], p), 0)), closed: hav(e.geometry[0], e.geometry[e.geometry.length - 1]) < 0.5, nodes: e.geometry.length}));
     summary.tracks[t.id] = {ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),
       relations: d.elements.filter(e => e.type === 'relation').map(e => ({id: e.id, name: e.tags?.name, members: e.members?.length})),
       byName: Object.entries(ways.reduce((o, w) => { const k = `${w.name ?? '(no name)'} | ${w.sport ?? ''} | ${w.surface ?? ''}`; (o[k] ||= [0, 0])[0]++; o[k][1] += w.m; return o; }, {})).sort((a, b) => b[1][1] - a[1][1]).slice(0, 25)};
