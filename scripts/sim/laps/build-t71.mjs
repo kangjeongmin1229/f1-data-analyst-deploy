@@ -106,8 +106,9 @@ async function merge() {
     const n = {}; for (const r of rows) (n[r.session] ||= {})[r.rid] = (n[r.session][r.rid] || 0) + 1;
     const keep = Object.fromEntries(Object.entries(n).map(([s, m]) => [s, Object.entries(m).sort((a, b) => b[1] - a[1])[0][0]]));
     rows = rows.filter(r => keep[r.session] === r.rid);
-    const sim = SIM.test(key) || rows.some(r => SIM.test(r.event || ''));
-    if (sim) { simSeries.push(key); for (const r of rows) r.q.push('sim'); }   // sim-racing feeds: marked, never fitted (rules 2.10)
+    // sim-racing feeds: marked per event (series name or event text), never fitted (rules 2.10)
+    let simRows = 0; for (const r of rows) if (SIM.test(key) || SIM.test(r.event || '')) { r.q.push('sim'); simRows++; }
+    const sim = simRows > rows.length / 2; if (simRows) simSeries.push([key, simRows, rows.length]);
     const list = markWetAcrossYears(rows); wet.push(...list);
     for (const w of list) marks[w.group] = {mark: w.mark, paceRatio: w.paceRatio, trapRatio: w.trapRatio};
     for (const [sess, rid] of Object.entries(keep)) if (Object.keys(n[sess]).length > 1) (marks.__keepReplay ||= {})[key + '|' + sess] = rid;
