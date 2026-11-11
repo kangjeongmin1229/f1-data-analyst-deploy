@@ -122,3 +122,30 @@ dry raced sessions still reproduce at 0.000 %. Class-best and per-car numbers ar
 
 Practice and race laps (need a declared fuel and tyre-age term), GT3 across series (needs the verified series table of rule 4.2),
 Timing71 tracks without geometry, sim-racing data (iRacing only, none available).
+
+## 7. Status — 2026-11-11 (no fit has been run)
+
+Rows: Actions run 42927630531 (artifacts `laps-f1`, `laps-wec`, `laps-t71-0…39`, 30 days). Side tables and counts: run 42933122254.
+Committed: `scripts/sim/data/laps/` (`f1-counts.json`, `wec-counts.json`, `t71-counts.json`, `t71-session-marks.json`, SHA-256 lists, cache probe).
+
+| Source | Sessions | Laps | Clean laps | Dry qualifying push laps |
+|---|---:|---:|---:|---:|
+| F1, TracingInsights, 2023–2026 | 450 | 248,342 | 129,891 | 7,282 |
+| WEC, Al Kamel, 2021–2026 | 345 | 584,876 | 408,707 | 5,779 |
+| Timing71, 11 collected series, 2018–2026 | 2,856 | 2,909,370 | 2,070,033 | 57,009 |
+| Timing71, 727 other real series | 10,012 | 9,503,265 | 7,689,294 | 491,056 |
+| Timing71, sim-racing feeds (marked `sim`, never fitted) | 591 | 954,966 | 0 | 0 |
+
+Timing71: 15,808 replays listed, 14,519 picked (practice, qualifying, race), 3 failed (404), 1,040 hold no laps.
+The Timing71 Actions cache is gone (0 `t71-*` caches). The old per-car summaries survive only as artifacts of run 42528831029 until 2026-11-15.
+They are no longer needed: the rows were read again from the archive.
+
+Limits found (not fixed by guessing): 56 % of Timing71 rows have no car model name; 46 % have no simulator track; WEC 2021 files have no flag column;
+Nürburgring feeds are almost never "green" (Code 60 zones); IMSA, Formula E, DTM and Asian LMS feeds have no rain field, so wet sessions there
+can only be found by the pace check; Timing71 holds little from 2022 (392 replays).
+
+Commands: push to `lapsim-laps/**` = collect everything again (about 30 minutes, 40 jobs).
+With `scripts/sim/laps/source-run.json` present = merge only, from the rows of the named run (about 3 minutes).
+Local F1 build: `node scripts/sim/laps/build-f1.mjs <dir>`. Rows are rebuilt from the sources; hashes in `all-sha256.txt` prove an identical copy.
+
+Next: sourced car-model tables (F1 chassis names, Timing71 entries), per-lap dryness from rolling pace, then the fit of sections 3–5.
