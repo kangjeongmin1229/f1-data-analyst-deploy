@@ -151,3 +151,13 @@ Search result (web search, 2026-11-11). No sim data has been obtained: only whic
 | Inje, Jarama, Tokyo, São Paulo (Formula E), Sanya | None found | |
 
 How the data could be used: a lap driven in the sim and exported as telemetry (position, height, speed) by an account holder. Track files are licensed game content and are not extracted here.
+
+## 12. Sim data attempt and first track-state documents (2026-11-11)
+
+Sim data: nothing could be fetched. The one open source found, the B4mad Racing community telemetry database (car positions per lap for iRacing and other sims), did not answer
+(connection time-out from GitHub Actions, `scripts/sim/data/tracks/b4mad-probe.json`). Track files of the sims are licensed game content and no sim or account exists in this session.
+A lap exported by an account holder remains the only route.
+
+Track state: `scripts/sim/data/tracks/track-state.json` holds the first documented surface and layout changes with sources (Laguna Seca 2023 resurfacing, Mid-Ohio 2024 surface,
+Detroit circuit change in 2023, Le Mans Mulsanne resurfacing from July 2025, Le Mans length and start line, Suzuka 2026 resurfacing). Rule for use: lap data from before a
+resurfacing is a different track state and is not pooled with later laps.
