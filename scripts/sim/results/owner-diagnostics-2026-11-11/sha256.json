@@ -1,6 +1,13 @@
 {
-  "wec-r-draft.json": "39069e0847ae0067d7697f6e03b3b4326616806a177e31ee9b2b7a81c852bbdd",
-  "f1-source-comparison.json": "a35e52046084a166d707f8c3621cfd4771ff728dd8616ff23495fa21bc64469c",
   "baseline-residuals.json": "874f5cba0ad53b9bcc2d9f673bfd89c5449d62a45e804301c03e5ee23c02f275",
-  "f1-input-fold-inventory.json": "646a2dacffcb0ae5a855d0219eb9903fc4b1d6f0893f623226d7fb8e2dda1350"
+  "f1-input-fold-inventory.json": "646a2dacffcb0ae5a855d0219eb9903fc4b1d6f0893f623226d7fb8e2dda1350",
+  "f1-rounds-3.zip": "69d1209ad0dbea29cd5277b1b0eb1943301e8831557aec9c8acf63d78235aa20",
+  "f1-rounds-4.zip": "fd69bd8d582a15df8e1b4b65f4095bd5df44408af28ee0fbcafacb18d0320429",
+  "f1-rounds-5.zip": "5d7273271565cb6bc2f73bbec406c3628b9ecac8921fabddda47ab8f9b0166f6",
+  "f1-rounds-6.zip": "2abcf12587f4a505b35621c8a0b6f0001bda3bda99a52bfe0ac60b1348695aac",
+  "f1-source-comparison.json": "a35e52046084a166d707f8c3621cfd4771ff728dd8616ff23495fa21bc64469c",
+  "round-artifacts.json": "5a6fdf57c090a15fd84a2b996b047ed0e8d53ea1021f7720e7f622c3bb537a2d",
+  "round-curve.json": "26f1b43b6a5ab74170b5c4990a5fed2ea36972fb4fb35b674937c6bf790931ce",
+  "round-run.json": "ed81752e60a491e73edad423e50d9dc14c10305062b6d0ea817cd4206c766a52",
+  "wec-r-draft.json": "39069e0847ae0067d7697f6e03b3b4326616806a177e31ee9b2b7a81c852bbdd"
 }
