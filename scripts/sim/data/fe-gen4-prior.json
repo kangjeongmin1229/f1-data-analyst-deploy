@@ -1,0 +1,514 @@
+{
+ "generated": "2026-11-11",
+ "status": "prior, not calibrated",
+ "fixed": {
+  "mass": 1046,
+  "wheelbase": 3.08,
+  "frontMass": 0.45,
+  "tyreRadius": 0.355,
+  "powerMaxKW": 600,
+  "frontCapKW": 250,
+  "rearCapKW": 350,
+  "regenMaxKW": 700,
+  "regenFrontCapKW": 350,
+  "regenRearCapKW": 350,
+  "raceEnergyKWh": 51.25,
+  "fastChargeKWh": 4.05,
+  "raceModeMaxKW": 450,
+  "attackExtraKW": 150
+ },
+ "claims": {
+  "t100": 1.8,
+  "t200": 4.4,
+  "vTopKph": 335,
+  "monza": {
+   "lapTime": 92.5,
+   "vMaxKph": 320,
+   "note": "Porsche test, unofficial, \"1:32 range\", used tyres, package and power not confirmed"
+  }
+ },
+ "powerSplit": {
+  "450": {
+   "frontMinKW": 100,
+   "frontMaxKW": 250,
+   "rearMinKW": 200,
+   "rearMaxKW": 350,
+   "forced": false
+  },
+  "600": {
+   "frontMinKW": 250,
+   "frontMaxKW": 250,
+   "rearMinKW": 350,
+   "rearMaxKW": 350,
+   "forced": true
+  }
+ },
+ "straightLine": {
+  "ldf-600": {
+   "t100": 1.795,
+   "t200": 4.186,
+   "vTopKph": 340.005,
+   "dragLimited": false
+  },
+  "hdf-600": {
+   "t100": 1.772,
+   "t200": 4.184,
+   "vTopKph": 340.005,
+   "dragLimited": false
+  },
+  "ldf-450": {
+   "t100": 1.814,
+   "t200": 5.075,
+   "vTopKph": 340.003,
+   "dragLimited": false
+  },
+  "hdf-450": {
+   "t100": 1.8,
+   "t200": 5.114,
+   "vTopKph": 340.001,
+   "dragLimited": false
+  }
+ },
+ "tracks": {
+  "monza": {
+   "lengthM": 5759,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 88.751,
+     "vMaxKph": 340,
+     "netKWh": 7.564,
+     "outKWh": 10.414,
+     "regenFraction": 0.274,
+     "flatOutLaps": 6.776
+    },
+    "unleashed": {
+     "lapTime": 93.399,
+     "vMaxKph": 325.584,
+     "netKWh": 6.312,
+     "outKWh": 8.92,
+     "regenFraction": 0.292,
+     "flatOutLaps": 8.119
+    },
+    "unleashed-attack": {
+     "lapTime": 88.751,
+     "vMaxKph": 340,
+     "netKWh": 7.564,
+     "outKWh": 10.414,
+     "regenFraction": 0.274,
+     "flatOutLaps": 6.776
+    },
+    "eprix": {
+     "lapTime": 94.236,
+     "vMaxKph": 334.525,
+     "netKWh": 5.759,
+     "outKWh": 8.644,
+     "regenFraction": 0.334,
+     "flatOutLaps": 8.899
+    },
+    "eprix-attack": {
+     "lapTime": 90.033,
+     "vMaxKph": 340,
+     "netKWh": 6.712,
+     "outKWh": 9.832,
+     "regenFraction": 0.317,
+     "flatOutLaps": 7.635
+    }
+   }
+  },
+  "jeddah": {
+   "lengthM": 6110,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 107.084,
+     "vMaxKph": 340,
+     "netKWh": 7.413,
+     "outKWh": 11.387,
+     "regenFraction": 0.349,
+     "flatOutLaps": 6.914
+    },
+    "unleashed": {
+     "lapTime": 111.812,
+     "vMaxKph": 313.697,
+     "netKWh": 6.137,
+     "outKWh": 9.683,
+     "regenFraction": 0.366,
+     "flatOutLaps": 8.351
+    },
+    "unleashed-attack": {
+     "lapTime": 107.084,
+     "vMaxKph": 340,
+     "netKWh": 7.413,
+     "outKWh": 11.387,
+     "regenFraction": 0.349,
+     "flatOutLaps": 6.914
+    },
+    "eprix": {
+     "lapTime": 113.197,
+     "vMaxKph": 319.743,
+     "netKWh": 5.504,
+     "outKWh": 9.362,
+     "regenFraction": 0.412,
+     "flatOutLaps": 9.311
+    },
+    "eprix-attack": {
+     "lapTime": 108.943,
+     "vMaxKph": 340,
+     "netKWh": 6.53,
+     "outKWh": 10.839,
+     "regenFraction": 0.398,
+     "flatOutLaps": 7.848
+    }
+   }
+  },
+  "zandvoort": {
+   "lengthM": 4211,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 87.969,
+     "vMaxKph": 317.818,
+     "netKWh": 4.009,
+     "outKWh": 7.456,
+     "regenFraction": 0.462,
+     "flatOutLaps": 12.785
+    },
+    "unleashed": {
+     "lapTime": 90.371,
+     "vMaxKph": 292.79,
+     "netKWh": 3.378,
+     "outKWh": 6.433,
+     "regenFraction": 0.475,
+     "flatOutLaps": 15.174
+    },
+    "unleashed-attack": {
+     "lapTime": 87.969,
+     "vMaxKph": 317.818,
+     "netKWh": 4.009,
+     "outKWh": 7.456,
+     "regenFraction": 0.462,
+     "flatOutLaps": 12.785
+    },
+    "eprix": {
+     "lapTime": 92.439,
+     "vMaxKph": 294.704,
+     "netKWh": 2.905,
+     "outKWh": 6.159,
+     "regenFraction": 0.528,
+     "flatOutLaps": 17.641
+    },
+    "eprix-attack": {
+     "lapTime": 90.223,
+     "vMaxKph": 319.429,
+     "netKWh": 3.453,
+     "outKWh": 7.14,
+     "regenFraction": 0.516,
+     "flatOutLaps": 14.841
+    }
+   }
+  },
+  "shanghai": {
+   "lengthM": 5440,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 112.62,
+     "vMaxKph": 340,
+     "netKWh": 5.59,
+     "outKWh": 9.462,
+     "regenFraction": 0.409,
+     "flatOutLaps": 9.168
+    },
+    "unleashed": {
+     "lapTime": 116.055,
+     "vMaxKph": 321.448,
+     "netKWh": 4.687,
+     "outKWh": 8.26,
+     "regenFraction": 0.433,
+     "flatOutLaps": 10.934
+    },
+    "unleashed-attack": {
+     "lapTime": 112.62,
+     "vMaxKph": 340,
+     "netKWh": 5.59,
+     "outKWh": 9.462,
+     "regenFraction": 0.409,
+     "flatOutLaps": 9.168
+    },
+    "eprix": {
+     "lapTime": 117.997,
+     "vMaxKph": 328.57,
+     "netKWh": 4.207,
+     "outKWh": 7.981,
+     "regenFraction": 0.473,
+     "flatOutLaps": 12.181
+    },
+    "eprix-attack": {
+     "lapTime": 114.796,
+     "vMaxKph": 340,
+     "netKWh": 4.924,
+     "outKWh": 9.004,
+     "regenFraction": 0.453,
+     "flatOutLaps": 10.409
+    }
+   }
+  },
+  "mexico-city": {
+   "lengthM": 4243,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 83.37,
+     "vMaxKph": 340,
+     "netKWh": 4.619,
+     "outKWh": 7.685,
+     "regenFraction": 0.399,
+     "flatOutLaps": 11.096
+    },
+    "unleashed": {
+     "lapTime": 86.073,
+     "vMaxKph": 324.484,
+     "netKWh": 3.907,
+     "outKWh": 6.706,
+     "regenFraction": 0.417,
+     "flatOutLaps": 13.118
+    },
+    "unleashed-attack": {
+     "lapTime": 83.37,
+     "vMaxKph": 340,
+     "netKWh": 4.619,
+     "outKWh": 7.685,
+     "regenFraction": 0.399,
+     "flatOutLaps": 11.096
+    },
+    "eprix": {
+     "lapTime": 87.315,
+     "vMaxKph": 332.748,
+     "netKWh": 3.536,
+     "outKWh": 6.486,
+     "regenFraction": 0.455,
+     "flatOutLaps": 14.495
+    },
+    "eprix-attack": {
+     "lapTime": 84.897,
+     "vMaxKph": 340,
+     "netKWh": 4.08,
+     "outKWh": 7.298,
+     "regenFraction": 0.441,
+     "flatOutLaps": 12.56
+    }
+   }
+  },
+  "miami": {
+   "lengthM": 5346,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 97.719,
+     "vMaxKph": 340,
+     "netKWh": 6.087,
+     "outKWh": 9.308,
+     "regenFraction": 0.346,
+     "flatOutLaps": 8.419
+    },
+    "unleashed": {
+     "lapTime": 101.588,
+     "vMaxKph": 324.51,
+     "netKWh": 5.178,
+     "outKWh": 8.157,
+     "regenFraction": 0.365,
+     "flatOutLaps": 9.898
+    },
+    "unleashed-attack": {
+     "lapTime": 97.719,
+     "vMaxKph": 340,
+     "netKWh": 6.087,
+     "outKWh": 9.308,
+     "regenFraction": 0.346,
+     "flatOutLaps": 8.419
+    },
+    "eprix": {
+     "lapTime": 102.923,
+     "vMaxKph": 330.693,
+     "netKWh": 4.682,
+     "outKWh": 7.861,
+     "regenFraction": 0.404,
+     "flatOutLaps": 10.947
+    },
+    "eprix-attack": {
+     "lapTime": 100,
+     "vMaxKph": 340,
+     "netKWh": 5.325,
+     "outKWh": 8.856,
+     "regenFraction": 0.399,
+     "flatOutLaps": 9.625
+    }
+   }
+  },
+  "austin": {
+   "lengthM": 5423,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 109.191,
+     "vMaxKph": 340,
+     "netKWh": 5.413,
+     "outKWh": 9.963,
+     "regenFraction": 0.457,
+     "flatOutLaps": 9.467
+    },
+    "unleashed": {
+     "lapTime": 112.44,
+     "vMaxKph": 313.325,
+     "netKWh": 4.568,
+     "outKWh": 8.581,
+     "regenFraction": 0.468,
+     "flatOutLaps": 11.219
+    },
+    "unleashed-attack": {
+     "lapTime": 109.191,
+     "vMaxKph": 340,
+     "netKWh": 5.413,
+     "outKWh": 9.963,
+     "regenFraction": 0.457,
+     "flatOutLaps": 9.467
+    },
+    "eprix": {
+     "lapTime": 114.763,
+     "vMaxKph": 319.667,
+     "netKWh": 4.009,
+     "outKWh": 8.326,
+     "regenFraction": 0.519,
+     "flatOutLaps": 12.785
+    },
+    "eprix-attack": {
+     "lapTime": 111.824,
+     "vMaxKph": 340,
+     "netKWh": 4.719,
+     "outKWh": 9.488,
+     "regenFraction": 0.503,
+     "flatOutLaps": 10.86
+    }
+   }
+  },
+  "monte-carlo": {
+   "lengthM": 3267,
+   "layout": "F1 layout in the simulator; the Formula E layout may differ",
+   "modes": {
+    "qualifying": {
+     "lapTime": 80.885,
+     "vMaxKph": 278.905,
+     "netKWh": 2.739,
+     "outKWh": 6.262,
+     "regenFraction": 0.563,
+     "flatOutLaps": 18.708
+    },
+    "unleashed": {
+     "lapTime": 82.797,
+     "vMaxKph": 257.983,
+     "netKWh": 2.286,
+     "outKWh": 5.467,
+     "regenFraction": 0.582,
+     "flatOutLaps": 22.419
+    },
+    "unleashed-attack": {
+     "lapTime": 80.885,
+     "vMaxKph": 278.905,
+     "netKWh": 2.739,
+     "outKWh": 6.262,
+     "regenFraction": 0.563,
+     "flatOutLaps": 18.708
+    },
+    "eprix": {
+     "lapTime": 84.181,
+     "vMaxKph": 257.997,
+     "netKWh": 1.986,
+     "outKWh": 5.292,
+     "regenFraction": 0.625,
+     "flatOutLaps": 25.812
+    },
+    "eprix-attack": {
+     "lapTime": 82.47,
+     "vMaxKph": 278.512,
+     "netKWh": 2.362,
+     "outKWh": 6.025,
+     "regenFraction": 0.608,
+     "flatOutLaps": 21.701
+    }
+   }
+  }
+ },
+ "sensitivity": {
+  "muY": {
+   "lo": 1.3,
+   "hi": 2,
+   "dtLo": 4.425,
+   "dtHi": -4.288
+  },
+  "muXTrac": {
+   "lo": 1.5,
+   "hi": 2,
+   "dtLo": 0.227,
+   "dtHi": -0.356
+  },
+  "muX": {
+   "lo": 1.3,
+   "hi": 1.9,
+   "dtLo": 0.696,
+   "dtHi": -0.952
+  },
+  "cogHeight": {
+   "lo": 0.25,
+   "hi": 0.33,
+   "dtLo": 0,
+   "dtHi": 0
+  },
+  "rearAero": {
+   "lo": 0.45,
+   "hi": 0.6,
+   "dtLo": 0,
+   "dtHi": 0
+  },
+  "cRoll": {
+   "lo": 0.01,
+   "hi": 0.02,
+   "dtLo": -0.143,
+   "dtHi": 0.149
+  },
+  "etaDrive": {
+   "lo": 0.94,
+   "hi": 0.98,
+   "dtLo": 0.45,
+   "dtHi": -0.141
+  },
+  "vMaxKph": {
+   "lo": 335,
+   "hi": 345,
+   "dtLo": 0.097,
+   "dtHi": -0.057
+  },
+  "clA": {
+   "lo": 2,
+   "hi": 5,
+   "dtLo": 1.708,
+   "dtHi": -2.925
+  },
+  "cdA": {
+   "lo": 0.65,
+   "hi": 1.18,
+   "dtLo": -0.217,
+   "dtHi": 0.987
+  },
+  "base": {
+   "mode": "qualifying",
+   "track": "monza",
+   "lapTime": 88.751
+  }
+ },
+ "impliedGrip": {
+  "ldf-600": 1.476,
+  "hdf-600": 1.401,
+  "ldf-450": 1.715
+ }
+}
