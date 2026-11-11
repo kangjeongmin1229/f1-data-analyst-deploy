@@ -239,3 +239,16 @@ Debug of the venues with no accepted lap. Root causes, from the committed map su
 | Sao Paulo FE | 2931 m, official 2960 m (0.98 % off) | same kind | stays rejected |
 | Brands Hatch Indy | 1927 m, official 1944 m (0.87 % off) | same kind | TUM line used instead |
 | Long Beach, Detroit, Berlin, Tokyo, Sanya, Bathurst | no racing ways (public roads) | builder only read ways tagged as racing track | roads are now fetched (also for Bathurst) and their names listed; a lap needs the road names from an official circuit map before any loop is accepted, because many road loops match one length |
+
+### 14.1 Result of the rerun after the fixes (2026-11-11)
+
+| Venue | Before | After |
+|---|---|---|
+| Yeongam F1 lap | search stopped at its cap, best loop 3027 m | accepted: 5596 m against the official 5615 m (0.34 % off); 276 duplicate edges dropped, 12 loops |
+| Yeongam permanent layouts | accepted | still accepted (3027 m, 2961 m) |
+| Paul Ricard | 31,776 loops | 31,729 loops, search still capped: its layouts are separate ways that cross, not copies, so the duplicate fix does not apply |
+| Mosport, Jarama, Sebring | no lap | no lap, and no open end either: the missing length is not a gap. Needs the raw map ways to see which way is missing or filtered |
+| Long Beach | no lap | 2 racing ways only; one end is 214 m from the rest (the lap is on public roads) |
+
+Raw map ways and raw lap rows now go to the owner's private repository `kongboda-lapsim-data` (import workflow there copies
+the Actions artifacts), so these cases can be debugged with the real geometry.
