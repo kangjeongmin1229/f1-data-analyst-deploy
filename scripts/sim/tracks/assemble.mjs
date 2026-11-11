@@ -32,12 +32,18 @@ export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000, snapM 
   for (const w of ways) { let s = 0; for (let i = 1; i < w.pts.length; i++) if (i === w.pts.length - 1 || count.get(key(w.pts[i])) > 1) { const pts = w.pts.slice(s, i + 1); edges.push({a: key(pts[0]), b: key(pts[pts.length - 1]), pts, m: pts.slice(1).reduce((t, p, j) => t + hav(pts[j], p), 0), name: w.name}); s = i; } }
   // two map ways drawn over the same nodes (e.g. an "F1 track" way on top of a "permanent circuit" way) give pairs of identical
   // edges; each pair doubles the number of loops, so the search hit its cap before it reached the full lap (Yeongam, Paul Ricard).
-  // Keep one edge per pair: same two end points and the same length within 1 m.
-  { const seenE = new Map(), keep = []; for (const e of edges) { const k = e.a < e.b ? e.a + '|' + e.b : e.b + '|' + e.a, l = seenE.get(k) || seenE.set(k, []).get(k); if (l.some(m => Math.abs(m - e.m) < 1)) continue; l.push(e.m); keep.push(e); } var dropped = edges.length - keep.length; edges.length = 0; edges.push(...keep); }
+  // Keep one edge per pair: same two end points, the same length within 1 m and the same middle point within 2 m
+  // (two halves of a symmetric ring have equal ends and length but different middles, and both must stay).
+  { const seenE = new Map(), keep = []; for (const e of edges) { const k = e.a < e.b ? e.a + '|' + e.b : e.b + '|' + e.a, l = seenE.get(k) || seenE.set(k, []).get(k), mid = e.pts[e.pts.length >> 1]; if (l.some(o => Math.abs(o.m - e.m) < 1 && hav(o.mid, mid) < 2)) continue; l.push({m: e.m, mid}); keep.push(e); } var dropped = edges.length - keep.length; edges.length = 0; edges.push(...keep); }
   const adj = new Map(); edges.forEach((e, i) => { for (const n of [e.a, e.b]) (adj.get(n) || adj.set(n, []).get(n)).push(i); });
   const found = new Map(); let steps = 0;
   const nodes = [...adj.keys()].filter(n => adj.get(n).length !== 2);
-  const starts = nodes.length ? nodes : [...adj.keys()].slice(0, 1);
+  // every connected part needs a start. A plain ring (all nodes touch exactly two edges) has no junction, so it was never
+  // searched when another part of the venue had one (Jarama and Mosport: the lap is a ring once the pit lane is left out).
+  const starts = [...nodes], reached = new Set();
+  const flood = n0 => { const st = [n0]; reached.add(n0); while (st.length) { const n = st.pop(); for (const i of adj.get(n)) { const o = edges[i].a === n ? edges[i].b : edges[i].a; if (!reached.has(o)) { reached.add(o); st.push(o); } } } };
+  for (const n of nodes) if (!reached.has(n)) flood(n);
+  for (const n of adj.keys()) if (!reached.has(n)) { starts.push(n); flood(n); }
   function walk(start, node, len, used, path) {
     if (++steps > cap) return;
     for (const i of adj.get(node)) {

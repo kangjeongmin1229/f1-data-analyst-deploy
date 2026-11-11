@@ -252,3 +252,16 @@ Debug of the venues with no accepted lap. Root causes, from the committed map su
 
 Raw map ways and raw lap rows now go to the owner's private repository `kongboda-lapsim-data` (import workflow there copies
 the Actions artifacts), so these cases can be debugged with the real geometry.
+
+### 14.2 Second debug pass with the raw map ways (2026-11-11)
+
+With the raw ways now readable from the private repository, the cause for Jarama and Mosport was found: once the pit lane
+is left out, the lap is a plain ring with no junction, and the search only started from junctions when any other part of
+the venue had one. Fixed (every connected part gets a start) with a test. A second fault found by that test: the duplicate
+filter of 14 could drop one half of a symmetric ring; it now also compares the middle point.
+
+| Venue | Loop now | Official | Off by | Result |
+|---|---|---|---|---|
+| Mosport | 3943 m | 3957 m (IMSA, 2.459 miles) | 0.35 % | passes the 0.5 % rule locally; confirmed by the next Actions run |
+| Jarama | 3906 m | 3850 m (FIA list) / 3931 m (FIA list, Formula E) | 1.45 % / 0.64 % | found, but outside 0.5 %: stays rejected |
+| Sebring | 5887 m | 6019 m (3.74 miles, rounded) | 2.19 % | the map lap is complete; map and official length disagree. Needs a second length source |

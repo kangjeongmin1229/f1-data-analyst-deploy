@@ -18,6 +18,16 @@ test('two ways drawn over the same nodes give one lap, not thousands (Yeongam ca
   assert.ok(Math.abs(Math.abs(totalTurnDeg(r1.loops[0].line())) - 360) < 1);
 });
 
+test('a plain ring is found when another part of the venue has junctions (Jarama, Mosport case)', () => {
+  const ring = circle(120, 600); // about 3770 m, split into two ways that meet end to end
+  const a = ring.slice(0, 61), b = ring.slice(60);
+  const shift = g => g.map(p => ({lat: p.lat + 0.05, lon: p.lon})); // a small separate part with junctions
+  const small = circle(40, 100), spur = [small[0], {lat: small[0].lat, lon: small[0].lon + 0.001}];
+  const r1 = loops([way(a, 'Main'), way(b, 'Main'), way(shift(small), null), way(shift(spur), null)], {minM: 1500});
+  assert.equal(r1.loops.length, 1);
+  assert.ok(Math.abs(r1.loops[0].m - 2 * Math.PI * 600) < 15);
+});
+
 test('an open end is reported with its distance to the rest of the track', () => {
   const pts = circle(120, 800), gap = pts.slice(0, 115); // about 250 m missing
   const r1 = loops([way(gap, 'Main')], {snapM: 12});
