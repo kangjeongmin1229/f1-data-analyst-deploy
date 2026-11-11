@@ -800,88 +800,62 @@
    "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 11,
-   "edges": 326,
-   "junctions": 77,
-   "searchCapped": true,
-   "duplicateEdgesDropped": 240,
-   "openEnds": [
-    {
-     "at": [
-      34.7417943,
-      126.4138912
-     ],
-     "nearestOtherM": 22,
-     "way": null,
-     "wayM": 243
-    },
-    {
-     "at": [
-      34.7417122,
-      126.4163804
-     ],
-     "nearestOtherM": 143,
-     "way": null,
-     "wayM": 243
-    },
-    {
-     "at": [
-      34.743017,
-      126.4140885
-     ],
-     "nearestOtherM": 46,
-     "way": null,
-     "wayM": 55
-    },
-    {
-     "at": [
-      34.7428253,
-      126.4135595
-     ],
-     "nearestOtherM": 35,
-     "way": null,
-     "wayM": 55
-    },
-    {
-     "at": [
-      34.7420335,
-      126.4139385
-     ],
-     "nearestOtherM": 27,
-     "way": null,
-     "wayM": 53
-    },
-    {
-     "at": [
-      34.7421551,
-      126.4146048
-     ],
-     "nearestOtherM": 19,
-     "way": null,
-     "wayM": 19
-    },
-    {
-     "at": [
-      34.7416801,
-      126.4143421
-     ],
-     "nearestOtherM": 26,
-     "way": null,
-     "wayM": 47
-    },
-    {
-     "at": [
-      34.7426466,
-      126.4138766
-     ],
-     "nearestOtherM": 24,
-     "way": null,
-     "wayM": 87
-    }
-   ],
-   "loopsFound": 32,
+   "edges": 290,
+   "junctions": 19,
+   "searchCapped": false,
+   "duplicateEdgesDropped": 276,
+   "loopsFound": 12,
    "loopLengthsM": [
     {
+     "m": 5596,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 5530,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 3591,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit"
+     ]
+    },
+    {
+     "m": 3374,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit",
+      "B Course"
+     ]
+    },
+    {
+     "m": 3307,
+     "names": [
+      "Permanent Circuit",
+      "YEONGAM F1 Track",
+      "GP Circuit",
+      "B Course"
+     ]
+    },
+    {
      "m": 3027,
+     "names": [
+      "Permanent Circuit"
+     ]
+    },
+    {
+     "m": 2961,
      "names": [
       "Permanent Circuit"
      ]
@@ -895,9 +869,9 @@
      "grade": "1",
      "pole": "Right",
      "widthM": 12,
-     "loopM": 3027,
-     "errorPct": 46.09,
-     "accepted": false
+     "loopM": 5596,
+     "errorPct": 0.34,
+     "accepted": true
     },
     {
      "id": "yeongam | KOREA PERMANENT 1",
@@ -917,9 +891,9 @@
      "grade": "2",
      "pole": null,
      "widthM": 12,
-     "loopM": 3026,
-     "errorPct": 2.09,
-     "accepted": false
+     "loopM": 2961,
+     "errorPct": 0.1,
+     "accepted": true
     }
    ]
   },
@@ -3741,10 +3715,10 @@
     ]
    ],
    "ways": 5,
-   "edges": 10,
-   "junctions": 5,
+   "edges": 9,
+   "junctions": 3,
    "searchCapped": false,
-   "duplicateEdgesDropped": 0,
+   "duplicateEdgesDropped": 1,
    "openEnds": [],
    "loopsFound": 1,
    "loopLengthsM": [
@@ -3931,10 +3905,10 @@
    "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 34,
-   "edges": 52,
-   "junctions": 22,
+   "edges": 51,
+   "junctions": 21,
    "searchCapped": false,
-   "duplicateEdgesDropped": 0,
+   "duplicateEdgesDropped": 1,
    "loopsFound": 114,
    "loopLengthsM": [
     {
