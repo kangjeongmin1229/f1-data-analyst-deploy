@@ -9,6 +9,13 @@ const hav = (a, b) => { const R = 6371008.8, r = Math.PI / 180, x = (b[1] - a[1]
 const key = p => p[0].toFixed(7) + ',' + p[1].toFixed(7);
 const SKIP = /kart|motocross|rallycross|off_road|bmx|drag|rc_car|speedway_dirt/i, SKIPNAME = /pit ?lane|pitlane|boxengasse|피트|ピット|kart|drag|rally|drift|ドリフト|カート|motocross|skid|glisse|driving center/i;
 
+export function totalTurnDeg(pts) {
+  const n = pts.length - (pts[0][0] === pts[pts.length - 1][0] && pts[0][1] === pts[pts.length - 1][1] ? 1 : 0), c = Math.cos(pts[0][0] * Math.PI / 180); let t = 0;
+  const h = i => Math.atan2(pts[(i + 1) % n][0] - pts[i][0], (pts[(i + 1) % n][1] - pts[i][1]) * c);
+  for (let i = 0; i < n; i++) { let d = h((i + 1) % n) - h(i); while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; t += d; }
+  return t * 180 / Math.PI;
+}
+
 export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000} = {}) {
   const ways = elements.filter(e => e.type === 'way' && e.geometry?.length > 1 && e.tags?.highway === 'raceway' && !SKIP.test(e.tags?.sport || '') && !SKIPNAME.test(e.tags?.name || '') && !/dirt|ground|unpaved|gravel|grass|sand/i.test(e.tags?.surface || ''))
     .map(e => ({name: e.tags?.name || null, pts: e.geometry.map(g => [g.lat, g.lon])}));
@@ -46,7 +53,8 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
     const re = t.fia ? new RegExp(t.fia, 'i') : null, seen = new Set();
     const fia = re ? FIA.filter(x => re.test(x.name) && !(t.fiaNot && new RegExp(t.fiaNot, 'i').test(x.name))).filter(x => !seen.has(x.name + x.lengthM) && seen.add(x.name + x.lengthM)) : [];
     const targets = [...(t.lengthM ? [{id: t.id, lengthM: t.lengthM, src: t.lengthSource}] : []), ...fia.map(x => ({id: `${t.id} | ${x.name}`, lengthM: x.lengthM, src: `FIA list ${x.list}`, fia: x}))];
-    const accepted = targets.map(g => { const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err)[0]; if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
+    const accepted = targets.map(g => { // nearest loops by length; a loop that crosses itself (total turn not ±360°) is not a lap
+      const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err).slice(0, 40).find(c => Math.abs(Math.abs(totalTurnDeg(c.l.line())) - 360) < 30); if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
       const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]); return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok}; });
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
     out.tracks[t.id] = {ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};

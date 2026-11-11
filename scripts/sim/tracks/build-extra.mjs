@@ -7,7 +7,7 @@ import {inflateSync} from 'node:zlib';
 import {existsSync, readFileSync, writeFileSync} from 'node:fs';
 import {resampleClosed, movingAverageClosed, headingCurvature, lonLatToLocal} from '../../../worker/lapsim/geometry.js';
 const DIR = '.cache/lapsim/osm', DS = 5, Z = 14;
-const POS_SMOOTH_M = Number(process.env.EXTRA_POS_SMOOTH_M || 15), CURV_SMOOTH_M = 6, ELEV_SMOOTH_M = Number(process.env.EXTRA_ELEV_SMOOTH_M || 60);
+const POS_SMOOTH_M = Number(process.env.EXTRA_POS_SMOOTH_M || 9), CURV_SMOOTH_M = 6, ELEV_SMOOTH_M = Number(process.env.EXTRA_ELEV_SMOOTH_M || 150);
 
 // minimal PNG reader: 8-bit RGB or RGBA, not interlaced
 export function decodePng(buf) {
@@ -46,21 +46,23 @@ if (process.argv[1]?.endsWith('build-extra.mjs')) {
       const loc = lonLatToLocal(pts.map(p => [p[1], p[0]]));
       let g = resampleClosed(loc.x, loc.y, DS); const w = Math.max(1, Math.round(POS_SMOOTH_M / g.ds) | 1);
       g = resampleClosed(Array.from(movingAverageClosed(g.x, w)), Array.from(movingAverageClosed(g.y, w)), DS);
-      const {kappa} = headingCurvature(g.x, g.y, g.ds, CURV_SMOOTH_M), n = g.x.length;
+      // smoothing cuts corners, so the smoothed line is a little short: keep its shape, restore the mapped lap length
+      const shrink = g.length / (acc.loopM || g.length), {kappa: k0} = headingCurvature(g.x, g.y, g.ds, CURV_SMOOTH_M), n = g.x.length;
+      const kappa = Float64Array.from(k0, v => v * shrink), lapM = g.length / shrink, ds = g.ds / shrink;
       // height at every grid point (back to lat/lon), smoothed over the DEM grid size, then grade
       const lat0 = pts.reduce((a, p) => a + p[0], 0) / pts.length * Math.PI / 180, R = 6371008.8, z = new Float64Array(n);
       for (let i = 0; i < n; i++) z[i] = await heightAt(pts[0][0] + g.y[i] / R * 180 / Math.PI, pts[0][1] + g.x[i] / (R * Math.cos(lat0)) * 180 / Math.PI);
       const zs = movingAverageClosed(movingAverageClosed(z, Math.max(1, Math.round(ELEV_SMOOTH_M / g.ds) | 1)), Math.max(1, Math.round(ELEV_SMOOTH_M / g.ds) | 1)), grade = new Float64Array(n);
-      for (let i = 0; i < n; i++) grade[i] = Math.atan((zs[(i + 1) % n] - zs[(i - 1 + n) % n]) / (2 * g.ds));
+      for (let i = 0; i < n; i++) grade[i] = Math.atan((zs[(i + 1) % n] - zs[(i - 1 + n) % n]) / (2 * ds));
       const step = Math.max(1, Math.floor(n / 360)), map = {x: [], y: []}; for (let i = 0; i < n; i += step) { map.x.push(Math.round(g.x[i])); map.y.push(Math.round(g.y[i])); }
-      const zmin = Math.min(...zs), zmax = Math.max(...zs), turn = kappa.reduce((a, k) => a + k * g.ds, 0), maxGrade = Math.max(...Array.from(grade, Math.abs));
+      const zmin = Math.min(...zs), zmax = Math.max(...zs), turn = kappa.reduce((a, k) => a + k * ds, 0), maxGrade = Math.max(...Array.from(grade, Math.abs));
       const id = (venue + '--' + fiaName).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      out.tracks[id] = {id, venue, name: fiaName, ds: g.ds, length: Math.round(g.length), officialLengthM: acc.officialM ?? null, lengthSource: acc.source ?? null, fiaGrade: acc.grade ?? null, pole: acc.pole ?? null, widthM: acc.widthM ?? null,
+      out.tracks[id] = {id, venue, name: fiaName, ds, length: Math.round(lapM), officialLengthM: acc.officialM ?? null, lengthSource: acc.source ?? null, fiaGrade: acc.grade ?? null, pole: acc.pole ?? null, widthM: acc.widthM ?? null,
         sectors: [], corners: [], kappa: Array.from(kappa, v => Math.round(v * 1e5)), grade: Array.from(grade, v => Math.round(v * 1e4)), heading: null, map,
         elevation: {minM: Math.round(zmin), maxM: Math.round(zmax), rangeM: +(zmax - zmin).toFixed(1), maxGradePct: +(Math.tan(maxGrade) * 100).toFixed(1), everyM: 50, m: Array.from({length: Math.ceil(n / 10)}, (_, i) => Math.round(zs[i * 10] * 10) / 10)},
-        centre: [+pts[0][0].toFixed(4), +pts[0][1].toFixed(4)], quality: {evidence: 'map centre line', mapPoints: pts.length, loopM: acc.loopM, lengthErrorPct: acc.errorPct, smoothedLengthM: Math.round(g.length), totalTurnDeg: Math.round(turn * 180 / Math.PI), direction: turn < 0 ? 'clockwise as mapped' : 'anti-clockwise as mapped', startVerified: false},
+        centre: [+pts[0][0].toFixed(4), +pts[0][1].toFixed(4)], quality: {evidence: 'map centre line', mapPoints: pts.length, loopM: acc.loopM, lengthErrorPct: acc.errorPct, smoothedLengthM: Math.round(g.length), smoothingShrinkPct: +((1 - shrink) * 100).toFixed(2), rawHeightRangeM: +(Math.max(...z) - Math.min(...z)).toFixed(1), totalTurnDeg: Math.round(turn * 180 / Math.PI), direction: turn < 0 ? 'clockwise as mapped' : 'anti-clockwise as mapped', startVerified: false},
         sources: ['OpenStreetMap raceway ways (© OpenStreetMap contributors, ODbL)', acc.source, 'Terrarium elevation tiles (Mapzen/Tilezen open data)'].filter(Boolean)};
-      report.push(`${id}: ${Math.round(g.length)} m (official ${acc.officialM}), height ${Math.round(zmin)}–${Math.round(zmax)} m, max grade ${(Math.tan(maxGrade) * 100).toFixed(1)} %, turn ${Math.round(turn * 180 / Math.PI)}°`);
+      report.push(`${id}: ${Math.round(lapM)} m (official ${acc.officialM}, smoothing shrink ${((1 - shrink) * 100).toFixed(2)} %), raw height range ${(Math.max(...z) - Math.min(...z)).toFixed(0)} m, height ${Math.round(zmin)}–${Math.round(zmax)} m, max grade ${(Math.tan(maxGrade) * 100).toFixed(1)} %, turn ${Math.round(turn * 180 / Math.PI)}°`);
     } catch (e) { report.push(`${key}: ERROR ${String(e).slice(0, 160)}`); out.errors = [...(out.errors || []), `${key}: ${String(e).slice(0, 160)}`]; }
   }
   writeFileSync(`${DIR}/extra-tracks.json`, JSON.stringify(out)); writeFileSync(`${DIR}/extra-tracks-report.txt`, report.join('\n') + '\n'); console.log(report.join('\n'));
