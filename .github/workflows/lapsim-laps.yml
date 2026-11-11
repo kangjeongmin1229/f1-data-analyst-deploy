@@ -5,7 +5,7 @@ name: Lap simulator all-laps dataset
 on:
   push:
     branches: ['lapsim-laps/**']
-    paths-ignore: ['scripts/sim/data/laps/**', 'docs/**']
+    paths-ignore: ['scripts/sim/data/**', 'docs/**']
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.p.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: echo "run=$(jq -r '.run // empty' scripts/sim/laps/source-run.json 2>/dev/null)" >> "$GITHUB_OUTPUT"
   cache-probe:
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +40,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: {name: probe, path: out}
   f1:
+    needs: plan
+    if: needs.plan.outputs.run == ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +52,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: {name: laps-f1, path: .cache/lapsim/laps, retention-days: 30}
   wec:
+    needs: plan
+    if: needs.plan.outputs.run == ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -53,6 +65,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: {name: laps-wec, path: .cache/lapsim/laps, retention-days: 30}
   t71:
+    needs: plan
+    if: needs.plan.outputs.run == ''
     runs-on: ubuntu-latest
     timeout-minutes: 340
     strategy:
@@ -72,8 +86,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: {name: 'laps-t71-${{ matrix.shard }}', path: .cache/lapsim/laps/t71, retention-days: 30}
   early:
-    needs: [cache-probe, f1, wec]
-    if: always()
+    needs: [plan, cache-probe, f1, wec]
+    if: always() && needs.plan.outputs.run == ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -95,7 +109,7 @@ jobs:
           git add scripts/sim/data/laps
           git diff --cached --quiet || (git commit -m "All-laps dataset: F1 and WEC counts, cache probe" && git pull --rebase && git push)
   merge:
-    needs: [cache-probe, f1, wec, t71]
+    needs: [plan, cache-probe, f1, wec, t71]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -103,28 +117,38 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - uses: actions/download-artifact@v4
-        with: {pattern: 'laps-t71-*', path: .cache/lapsim/laps/t71, merge-multiple: true}
+        with: {pattern: 'laps-t71-*', path: .cache/lapsim/laps/t71, merge-multiple: true, run-id: '${{ needs.plan.outputs.run || github.run_id }}', github-token: '${{ github.token }}'}
       - uses: actions/download-artifact@v4
-        with: {name: laps-f1, path: .cache/lapsim/laps}
+        with: {name: laps-f1, path: .cache/lapsim/laps, run-id: '${{ needs.plan.outputs.run || github.run_id }}', github-token: '${{ github.token }}'}
         continue-on-error: true
       - uses: actions/download-artifact@v4
-        with: {name: laps-wec, path: .cache/lapsim/laps}
+        with: {name: laps-wec, path: .cache/lapsim/laps, run-id: '${{ needs.plan.outputs.run || github.run_id }}', github-token: '${{ github.token }}'}
         continue-on-error: true
       - uses: actions/download-artifact@v4
         with: {name: probe, path: probe}
         continue-on-error: true
-      - run: node --max-old-space-size=12000 scripts/sim/laps/build-t71.mjs merge
+      - id: m
+        continue-on-error: true
+        run: node --max-old-space-size=12000 scripts/sim/laps/build-t71.mjs merge 2>&1 | tee .cache/lapsim/laps/merge-log.txt
       - run: |
           cd .cache/lapsim/laps && sha256sum t71/*.ndjson *.ndjson > all-sha256.txt || true
+          tail -c 2000 merge-log.txt > merge-log-sha256.txt || true
       - uses: actions/upload-artifact@v4
-        with: {name: laps-all, path: '.cache/lapsim/laps', retention-days: 30}
+        with:
+          name: laps-side-tables
+          path: |
+            .cache/lapsim/laps/*.json
+            .cache/lapsim/laps/*.txt
+          retention-days: 90
       - name: Commit counts only
         run: |
           mkdir -p scripts/sim/data/laps
-          cp .cache/lapsim/laps/*-counts.json .cache/lapsim/laps/*sha256.txt scripts/sim/data/laps/ 2>/dev/null || true
+          git fetch origin "${{ github.ref_name }}" && git reset --hard FETCH_HEAD
+          mkdir -p scripts/sim/data/laps
+          cp .cache/lapsim/laps/*-counts.json .cache/lapsim/laps/t71-session-marks.json .cache/lapsim/laps/*sha256.txt scripts/sim/data/laps/ 2>/dev/null || true
           cp probe/*.json scripts/sim/data/laps/ 2>/dev/null || true
-          echo "{\"run\": \"${{ github.run_id }}\", \"sha\": \"${{ github.sha }}\"}" > scripts/sim/data/laps/run.json
+          echo "{\"run\": \"${{ github.run_id }}\", \"rows_from_run\": \"${{ needs.plan.outputs.run || github.run_id }}\", \"sha\": \"${{ github.sha }}\", \"merge\": \"${{ steps.m.outcome }}\"}" > scripts/sim/data/laps/run.json
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add scripts/sim/data/laps
-          git diff --cached --quiet || (git commit -m "All-laps dataset: counts, hashes, cache probe" && git pull --rebase && git push)
+          git diff --cached --quiet || (git commit -m "All-laps dataset: counts, hashes, cache probe" && git push origin HEAD:"${{ github.ref_name }}")

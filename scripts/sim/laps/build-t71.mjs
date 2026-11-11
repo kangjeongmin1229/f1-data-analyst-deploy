@@ -85,28 +85,44 @@ async function collect() {
   console.log(`shard ${shard}/${shards}: picked ${pick.length}, mine ${mine.length}, done ${log.done}, failed ${log.failed.length}`);
 }
 
-function merge() {
-  const files = readdirSync(OUT), table = [], wet = [], models = {};
-  for (const key of [...new Set(files.filter(f => /-\d+\.ndjson$/.test(f)).map(f => f.replace(/-\d+\.ndjson$/, '')))].sort()) {
-    let rows = files.filter(f => f.replace(/-\d+\.ndjson$/, '') === key && /-\d+\.ndjson$/.test(f)).flatMap(f => readFileSync(join(OUT, f), 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)));
+// Merge: shard files stay as they are (they are the dataset). This step reads them line by line, keeps a slim copy of each row,
+// and writes the cross-session results as small side tables: t71-session-marks.json (per session and class: mark, paceRatio,
+// trapRatio; replay to keep when a session was archived twice) and t71-counts.json.
+const SIM = /iracing|e-?sports?|esport|sim ?racing|simracing|virtual|lionheart|\bvco\b|\bivra\b|rfactor|assetto|prosim|eracing|realsimracing/i;
+async function merge() {
+  const {createInterface} = await import('node:readline'); const {createReadStream} = await import('node:fs');
+  const files = readdirSync(OUT).filter(f => /-\d+\.ndjson$/.test(f)), table = [], wet = [], models = {}, marks = {}, simSeries = [];
+  for (const key of [...new Set(files.map(f => f.replace(/-\d+\.ndjson$/, '')))].sort()) {
+    let rows = [];
+    for (const f of files.filter(f => f.replace(/-\d+\.ndjson$/, '') === key)) {
+      for await (const line of createInterface({input: createReadStream(join(OUT, f)), crlfDelay: Infinity})) {
+        if (!line) continue; const r = JSON.parse(line);
+        rows.push({source: r.source, series: r.series, season: r.season, event: r.event, track: r.track, cls: r.cls, sessionType: r.sessionType, session: r.session, carModel: r.carModel,
+          entry: r.entry, time: r.time, trapKph: r.trapKph, tyre: r.tyre, flag: r.flag, rain: r.rain, push: r.push, rid: r.rid, q: r.q});
+      }
+    }
     if (!rows.length) continue;
     // duplicate replays of one session (same description and start): keep the replay with more laps
     const n = {}; for (const r of rows) (n[r.session] ||= {})[r.rid] = (n[r.session][r.rid] || 0) + 1;
     const keep = Object.fromEntries(Object.entries(n).map(([s, m]) => [s, Object.entries(m).sort((a, b) => b[1] - a[1])[0][0]]));
     rows = rows.filter(r => keep[r.session] === r.rid);
-    wet.push(...markWetAcrossYears(rows));
-    table.push(...counts(rows));
+    const sim = SIM.test(key) || rows.some(r => SIM.test(r.event || ''));
+    if (sim) { simSeries.push(key); for (const r of rows) r.q.push('sim'); }   // sim-racing feeds: marked, never fitted (rules 2.10)
+    const list = markWetAcrossYears(rows); wet.push(...list);
+    for (const w of list) marks[w.group] = {mark: w.mark, paceRatio: w.paceRatio, trapRatio: w.trapRatio};
+    for (const [sess, rid] of Object.entries(keep)) if (Object.keys(n[sess]).length > 1) (marks.__keepReplay ||= {})[key + '|' + sess] = rid;
+    table.push(...counts(rows).map(c => ({...c, sim})));
     for (const r of rows) { const k = `${key}|${r.season}|${r.cls}|${r.carModel}`; models[k] = (models[k] || 0) + 1; }
-    writeFileSync(join(OUT, `${key}.ndjson`), rows.map(x => JSON.stringify(x)).join('\n'));
   }
-  const logs = files.filter(f => /^log-\d+\.json$/.test(f)).map(f => JSON.parse(readFileSync(join(OUT, f), 'utf8')));
-  const wxFields = {}; for (const l of logs) for (const [k, v] of Object.entries(l.wxFields || {})) Object.assign(wxFields[k] ||= {}, v);
-  const carKeys = {}; for (const l of logs) for (const [k, v] of Object.entries(l.carKeys)) Object.assign(carKeys[k] ||= {}, v);
+  const all = readdirSync(OUT);
+  const logs = all.filter(f => /^log-\d+\.json$/.test(f)).map(f => JSON.parse(readFileSync(join(OUT, f), 'utf8')));
+  const merged = (name) => { const o = {}; for (const l of logs) for (const [k, v] of Object.entries(l[name] || {})) Object.assign(o[k] ||= {}, v); return Object.fromEntries(Object.entries(o).map(([k, v]) => [k, Object.keys(v)])); };
+  writeFileSync(join(OUT, '..', 't71-session-marks.json'), JSON.stringify(marks));
   writeFileSync(join(OUT, '..', 't71-counts.json'), JSON.stringify({source: 'Timing71 archive (archive.timing71.org); calibration use only; rows are not committed',
-    listed: logs[0]?.listed, picked: logs[0]?.picked, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
-    inventory: existsSync(join(OUT, 'inventory.json')) ? JSON.parse(readFileSync(join(OUT, 'inventory.json'), 'utf8')) : null, sessionsNoLaps: logs.flatMap(l => l.sessions).filter(s => !s[4]).length, counts: table, wetAcrossYears: wet, lapsByModel: models,
-    weatherFields: Object.fromEntries(Object.entries(wxFields).map(([k, v]) => [k, Object.keys(v)])),
-    carKeys: Object.fromEntries(Object.entries(carKeys).map(([k, v]) => [k, Object.keys(v)]))}, null, 1));
-  console.table(table);
+    listed: logs.find(l => l.shard === 0)?.listed ?? logs[0]?.listed, picked: logs[0]?.picked, shards: logs.length, done: logs.reduce((a, l) => a + l.done, 0), failed: logs.flatMap(l => l.failed),
+    inventory: existsSync(join(OUT, 'inventory.json')) ? JSON.parse(readFileSync(join(OUT, 'inventory.json'), 'utf8')) : null,
+    sessionsNoLaps: logs.flatMap(l => l.sessions).filter(s => !s[4]).length, simSeries, counts: table, wetAcrossYears: wet.length, lapsByModel: models,
+    weatherFields: merged('wxFields'), carKeys: merged('carKeys')}, null, 1));
+  console.log('series', new Set(table.map(c => c.series)).size, 'laps', table.reduce((a, c) => a + c.laps, 0));
 }
 await (process.argv[2] === 'merge' ? merge() : collect());

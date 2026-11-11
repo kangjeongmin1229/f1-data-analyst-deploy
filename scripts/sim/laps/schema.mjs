@@ -5,7 +5,7 @@ export const COLUMNS = ['source', 'series', 'season', 'event', 'track', 'layout'
   // weather, as measured (no wet levels): rain flag at the lap, minutes since the last rain sample, rain share of the session, conditions
   'rain', 'minsSinceRain', 'rainShare', 'airC', 'trackC', 'humidityPct', 'pressureHpa', 'windMs', 'windFromDeg', 'trackCondition', 'paceRatio', 'trapRatio', 'q'];
 // Quality marks (row.q is a list of these). A lap is CLEAN when it has none of the HARD marks.
-export const HARD = ['no_time', 'pit_in', 'pit_out', 'not_green', 'deleted', 'wet_lap', 'wet_session', 'sector_sum', 'inaccurate'];
+export const HARD = ['no_time', 'pit_in', 'pit_out', 'not_green', 'deleted', 'wet_lap', 'wet_session', 'sector_sum', 'inaccurate', 'sim'];
 export const SOFT = ['slow', 'first_lap', 'wet_suspect', 'no_weather', 'incomplete_replay', 'no_track'];
 export const PUSH_QUALI = 1.02;   // qualifying push lap: clean and within 2 % of the car's own best clean lap of that session
 export const SLOW = 1.07;         // 'slow' mark: more than 7 % off the car's own best clean lap (traffic, cool-down, lift)
