@@ -1,5 +1,5 @@
 {
- "note": "Owner track list (2026-11-11). 'seed' is only a search centre for OpenStreetMap (about 0.01 deg), never a model input. 'label' is the homepage text. status: have = simulator geometry exists; osm = to build from OpenStreetMap + elevation model; none = no surveyed data exists.",
+ "note": "Owner track list (2026-11-11). 'seed' is only a search centre for OpenStreetMap (about 0.01 deg), never a model input. 'label' is the homepage text. status: have = simulator geometry exists; osm = to build from OpenStreetMap + elevation model; none = no surveyed data exists. kind: street/temporary = no permanent raceway on the map; the lap must be assembled from public roads with the official track map.",
  "tracks": [
   {
    "id": "melbourne",
@@ -137,7 +137,8 @@
     39.795,
     -86.235
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "las-vegas",
@@ -152,7 +153,8 @@
     27.455,
     -81.35
    ],
-   "radius": 4000
+   "radius": 4000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "road-atlanta",
@@ -162,7 +164,8 @@
     34.147,
     -83.815
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "yongin",
@@ -192,7 +195,30 @@
     50.345,
     6.96
    ],
-   "radius": 9000
+   "radius": 9000,
+   "layouts": [
+    {
+     "id": "nurburgring-gp",
+     "use": "Grand Prix circuit"
+    },
+    {
+     "id": "nurburgring-sprint",
+     "use": "Sprint circuit"
+    },
+    {
+     "id": "nordschleife",
+     "use": "Nordschleife alone"
+    },
+    {
+     "id": "nurburgring-24h",
+     "use": "24 Hours combined lap"
+    },
+    {
+     "id": "nurburgring-nls",
+     "use": "NLS combined lap"
+    }
+   ],
+   "layoutNote": "Which series uses which layout (F1, DTM, GT World Challenge, 24 Hours, NLS) and each official length are to be taken from the series documents, not assumed."
   },
   {
    "id": "brands-hatch",
@@ -202,7 +228,8 @@
     51.357,
     0.262
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source; also owner list"
   },
   {
    "id": "kyalami",
@@ -232,7 +259,8 @@
     29.185,
     -81.07
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "portimao",
@@ -262,7 +290,8 @@
     36.584,
     -121.753
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "watkins-glen",
@@ -272,7 +301,8 @@
     42.337,
     -76.927
    ],
-   "radius": 3000
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "road-america",
@@ -282,7 +312,8 @@
     43.798,
     -87.99
    ],
-   "radius": 4000
+   "radius": 4000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
   },
   {
    "id": "bathurst",
@@ -293,6 +324,179 @@
     149.557
    ],
    "radius": 4000
+  },
+  {
+   "id": "fe-berlin",
+   "label": "🇩🇪GER - Berlin Tempelhof",
+   "status": "osm",
+   "seed": [
+    52.48,
+    13.39
+   ],
+   "radius": 3000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
+   "kind": "temporary"
+  },
+  {
+   "id": "fe-tokyo",
+   "label": "🇯🇵JPN - Tokyo",
+   "status": "osm",
+   "seed": [
+    35.63,
+    139.79
+   ],
+   "radius": 3000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
+   "kind": "street"
+  },
+  {
+   "id": "fe-sao-paulo",
+   "label": "🇧🇷BRA - São Paulo Anhembi",
+   "status": "osm",
+   "seed": [
+    -23.515,
+    -46.64
+   ],
+   "radius": 3000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
+   "kind": "street"
+  },
+  {
+   "id": "fe-sanya",
+   "label": "🇨🇳CHN - Sanya Haitang Bay",
+   "status": "osm",
+   "seed": [
+    18.33,
+    109.74
+   ],
+   "radius": 4000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
+   "kind": "street"
+  },
+  {
+   "id": "jarama",
+   "label": "🇪🇸ESP - Jarama",
+   "status": "osm",
+   "seed": [
+    40.617,
+    -3.585
+   ],
+   "radius": 3000,
+   "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source"
+  },
+  {
+   "id": "long-beach",
+   "label": "🇺🇸USA - Long Beach",
+   "status": "osm",
+   "seed": [
+    33.765,
+    -118.19
+   ],
+   "radius": 2500,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "kind": "street"
+  },
+  {
+   "id": "detroit",
+   "label": "🇺🇸USA - Detroit",
+   "status": "osm",
+   "seed": [
+    42.33,
+    -83.04
+   ],
+   "radius": 2500,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)",
+   "kind": "street"
+  },
+  {
+   "id": "mosport",
+   "label": "🇨🇦CAN - Mosport",
+   "status": "osm",
+   "seed": [
+    44.05,
+    -78.675
+   ],
+   "radius": 3000,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+  },
+  {
+   "id": "vir",
+   "label": "🇺🇸USA - VIR",
+   "status": "osm",
+   "seed": [
+    36.56,
+    -79.205
+   ],
+   "radius": 3500,
+   "need": "IMSA 2027 schedule (sportscar365.com/?p=142695)"
+  },
+  {
+   "id": "mid-ohio",
+   "label": "🇺🇸USA - Mid-Ohio",
+   "status": "osm",
+   "seed": [
+    40.69,
+    -82.635
+   ],
+   "radius": 3000,
+   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps"
+  },
+  {
+   "id": "lime-rock",
+   "label": "🇺🇸USA - Lime Rock",
+   "status": "osm",
+   "seed": [
+    41.928,
+    -73.383
+   ],
+   "radius": 2500,
+   "need": "IMSA Michelin Pilot Challenge venue; Timing71 laps"
+  },
+  {
+   "id": "hockenheim",
+   "label": "🇩🇪GER - Hockenheim",
+   "status": "osm",
+   "seed": [
+    49.33,
+    8.57
+   ],
+   "radius": 3000,
+   "need": "DTM, GT series; 114,657 Timing71 laps"
   }
- ]
+ ],
+ "formulaE_2026_27": {
+  "source": "https://fiaformulae.com/en/news/1074658",
+  "events": [
+   "jeddah",
+   "mexico-city",
+   "austin",
+   "miami",
+   "fe-sao-paulo",
+   "fe-sanya",
+   "monte-carlo",
+   "fe-berlin",
+   "brands-hatch",
+   "zandvoort",
+   "jarama",
+   "shanghai",
+   "fe-tokyo"
+  ],
+  "note": "The calendar page does not say which layout is used at Jeddah, Mexico City, Austin, Miami, Monaco, Zandvoort, Shanghai or Brands Hatch. A Formula E layout is a separate track id until confirmed equal to the existing one."
+ },
+ "imsa_2027": {
+  "source": "https://sportscar365.com/?p=142695",
+  "events": [
+   "daytona",
+   "sebring",
+   "long-beach",
+   "laguna-seca",
+   "detroit",
+   "watkins-glen",
+   "mosport",
+   "road-america",
+   "vir",
+   "indianapolis",
+   "road-atlanta"
+  ]
+ }
 }

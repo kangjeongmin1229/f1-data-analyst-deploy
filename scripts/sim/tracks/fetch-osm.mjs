@@ -3,7 +3,7 @@
 // the committed summary lists way names, lengths and closed loops so each layout can be assembled and checked
 // against the official lap length before any simulator use. No geometry is invented here.
 import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
-const REQ = JSON.parse(readFileSync('scripts/sim/data/track-requests.json', 'utf8')).tracks.filter(t => t.status === 'osm');
+const REQ = JSON.parse(readFileSync('scripts/sim/data/track-requests.json', 'utf8')).tracks.filter(t => t.status === 'osm' && t.seed);
 const OUT = '.cache/lapsim/osm'; mkdirSync(OUT, {recursive: true});
 const API = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const hav = (a, b) => { const R = 6371008.8, r = Math.PI / 180, dφ = (b.lat - a.lat) * r, dλ = (b.lon - a.lon) * r; const h = Math.sin(dφ / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dλ / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
@@ -15,10 +15,11 @@ const summary = {source: 'OpenStreetMap via Overpass API (© OpenStreetMap contr
 for (const t of REQ) {
   try {
     const d = await overpass(`[out:json][timeout:50];(way["highway"="raceway"](around:${t.radius},${t.seed[0]},${t.seed[1]});relation["type"~"circuit|route"]["route"~"raceway|circuit",i](around:${t.radius},${t.seed[0]},${t.seed[1]}););out geom tags;`);
+    if (t.kind) { try { const r = await overpass(`[out:json][timeout:50];way["highway"~"^(motorway|trunk|primary|secondary|tertiary|unclassified|residential|service)$"](around:${Math.min(t.radius, 1800)},${t.seed[0]},${t.seed[1]});out geom tags;`); d.roads = r.elements; } catch (e) { d.roadsError = String(e).slice(0, 120); } }
     writeFileSync(`${OUT}/${t.id}.json`, JSON.stringify(d));
     const ways = d.elements.filter(e => e.type === 'way' && e.geometry).map(e => ({id: e.id, name: e.tags?.name || null, ref: e.tags?.ref || null, sport: e.tags?.sport || null, surface: e.tags?.surface || null, oneway: e.tags?.oneway || null,
       width: e.tags?.width || null, m: Math.round(e.geometry.slice(1).reduce((a, p, i) => a + hav(e.geometry[i], p), 0)), closed: hav(e.geometry[0], e.geometry[e.geometry.length - 1]) < 0.5, nodes: e.geometry.length}));
-    summary.tracks[t.id] = {ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),
+    summary.tracks[t.id] = {kind: t.kind || 'permanent', roads: d.roads ? d.roads.length : undefined, ways: ways.length, totalM: ways.reduce((a, w) => a + w.m, 0), closedLoops: ways.filter(w => w.closed).map(w => [w.name, w.m]),
       relations: d.elements.filter(e => e.type === 'relation').map(e => ({id: e.id, name: e.tags?.name, members: e.members?.length})),
       byName: Object.entries(ways.reduce((o, w) => { const k = `${w.name ?? '(no name)'} | ${w.sport ?? ''} | ${w.surface ?? ''}`; (o[k] ||= [0, 0])[0]++; o[k][1] += w.m; return o; }, {})).sort((a, b) => b[1][1] - a[1][1]).slice(0, 25)};
   } catch (e) { summary.tracks[t.id] = {error: String(e).slice(0, 200)}; }
