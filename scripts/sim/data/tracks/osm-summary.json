@@ -1,63 +1,2329 @@
 {
  "source": "OpenStreetMap via Overpass API (© OpenStreetMap contributors, ODbL)",
- "fetched": "2026-11-11T03:55:51.543Z",
+ "fetched": "2026-11-11T04:13:14.136Z",
  "tracks": {
   "sakhir-outer": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 27,
+   "totalM": 12750,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "Grand Prix Circuit | motor | asphalt",
+     [
+      3,
+      5420
+     ]
+    ],
+    [
+     "Drag Strip | motor | ",
+     [
+      6,
+      2316
+     ]
+    ],
+    [
+     "Bahrain International Karting Circuit CIK-FIA | karting | ",
+     [
+      1,
+      1046
+     ]
+    ],
+    [
+     "(no name) | karting | ",
+     [
+      6,
+      880
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      776
+     ]
+    ],
+    [
+     "Outer Circuit | motor | asphalt",
+     [
+      2,
+      685
+     ]
+    ],
+    [
+     "Inner Circuit | motor | ",
+     [
+      2,
+      521
+     ]
+    ],
+    [
+     "Flat Oval Layout | motor | ",
+     [
+      1,
+      304
+     ]
+    ],
+    [
+     "Endurance Circuit |  | ",
+     [
+      1,
+      283
+     ]
+    ],
+    [
+     "Flat Oval Layout | motor | asphalt",
+     [
+      1,
+      248
+     ]
+    ],
+    [
+     "Paddock Layout | motor | asphalt",
+     [
+      1,
+      146
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      1,
+      95
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      1,
+      30
+     ]
+    ]
+   ]
   },
   "le-mans": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 89,
+   "totalM": 22421,
+   "closedLoops": [
+    [
+     "Circuit Alain Prost Pro",
+     1167
+    ],
+    [
+     "Circuit C.I.K",
+     1384
+    ],
+    [
+     null,
+     1532
+    ],
+    [
+     null,
+     314
+    ],
+    [
+     null,
+     549
+    ]
+   ],
+   "relations": [
+    {
+     "id": 2126739,
+     "name": "Circuit des 24 Heures du Mans"
+    }
+   ],
+   "byName": [
+    [
+     "(no name) | motocross | ",
+     [
+      3,
+      2395
+     ]
+    ],
+    [
+     "Circuit Bugatti | motor | ",
+     [
+      5,
+      1690
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      4,
+      1542
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      12,
+      1472
+     ]
+    ],
+    [
+     "Circuit C.I.K | karting | ",
+     [
+      1,
+      1384
+     ]
+    ],
+    [
+     "Circuit Alain Prost Pro | karting | ",
+     [
+      1,
+      1167
+     ]
+    ],
+    [
+     "Pitlane Circuit Maison Blanche | motor | ",
+     [
+      2,
+      1158
+     ]
+    ],
+    [
+     "Circuit Maison Blanche | motor | ",
+     [
+      4,
+      1123
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      4,
+      836
+     ]
+    ],
+    [
+     "Circuit Alain Prost Amateur | karting | ",
+     [
+      1,
+      765
+     ]
+    ],
+    [
+     "(no name) | karting | ",
+     [
+      10,
+      709
+     ]
+    ],
+    [
+     "Moto Pit Exit | motor | ",
+     [
+      2,
+      689
+     ]
+    ],
+    [
+     "Chicane Maison Blanche | motor | ",
+     [
+      1,
+      608
+     ]
+    ],
+    [
+     "Pit Entry | motor | ",
+     [
+      3,
+      584
+     ]
+    ],
+    [
+     "Maison Blanche | motor | ",
+     [
+      1,
+      501
+     ]
+    ],
+    [
+     "Courbe Dunlop | motor | ",
+     [
+      1,
+      386
+     ]
+    ],
+    [
+     "Tertre Rouge | motor | ",
+     [
+      1,
+      384
+     ]
+    ],
+    [
+     "Virage du Pont | motor | ",
+     [
+      1,
+      344
+     ]
+    ],
+    [
+     "Porsche Center | motor | ",
+     [
+      2,
+      341
+     ]
+    ],
+    [
+     "Esses de la Forêt | motor | ",
+     [
+      1,
+      324
+     ]
+    ],
+    [
+     "Le « S » du Garage Bleu | motor | ",
+     [
+      1,
+      276
+     ]
+    ],
+    [
+     "Virage du Karting | motor | ",
+     [
+      1,
+      275
+     ]
+    ],
+    [
+     "Pit Exit | motor | ",
+     [
+      1,
+      264
+     ]
+    ],
+    [
+     "Chicane Daytona | motor | asphalt",
+     [
+      2,
+      245
+     ]
+    ],
+    [
+     "Chicane Michelin | motor | asphalt",
+     [
+      1,
+      243
+     ]
+    ]
+   ]
   },
   "mugello": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 49,
+   "totalM": 9232,
+   "closedLoops": [
+    [
+     null,
+     625
+    ],
+    [
+     "Mugellino",
+     581
+    ],
+    [
+     null,
+     927
+    ],
+    [
+     null,
+     571
+    ],
+    [
+     null,
+     117
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | asphalt",
+     [
+      28,
+      3310
+     ]
+    ],
+    [
+     "(no name) | motor | ground",
+     [
+      2,
+      1498
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      1014
+     ]
+    ],
+    [
+     "(no name) |  | asphalt",
+     [
+      1,
+      625
+     ]
+    ],
+    [
+     "Mugellino |  | asphalt",
+     [
+      1,
+      581
+     ]
+    ],
+    [
+     "Curva Bucine | motor | asphalt",
+     [
+      1,
+      314
+     ]
+    ],
+    [
+     "Curva Correntaio | motor | asphalt",
+     [
+      1,
+      259
+     ]
+    ],
+    [
+     "Curva dell'Arrabbiata 1 | motor | asphalt",
+     [
+      1,
+      206
+     ]
+    ],
+    [
+     "Curva San Donato | motor | asphalt",
+     [
+      1,
+      191
+     ]
+    ],
+    [
+     "Curva dell'Arrabbiata 2 | motor | asphalt",
+     [
+      1,
+      159
+     ]
+    ],
+    [
+     "Bypass | motor | asphalt",
+     [
+      1,
+      153
+     ]
+    ],
+    [
+     "Curva Biondetti | motor | asphalt",
+     [
+      1,
+      133
+     ]
+    ],
+    [
+     "Curva Savelli | motor | asphalt",
+     [
+      1,
+      129
+     ]
+    ],
+    [
+     "(no name) |  | ground",
+     [
+      1,
+      117
+     ]
+    ],
+    [
+     "Curva Poggio Secco | motor | asphalt",
+     [
+      1,
+      102
+     ]
+    ],
+    [
+     "Curva Palagio | motor | asphalt",
+     [
+      1,
+      86
+     ]
+    ],
+    [
+     "Curva Scarperia | motor | asphalt",
+     [
+      1,
+      77
+     ]
+    ],
+    [
+     "Curva Borgo San Lorenzo | motor | asphalt",
+     [
+      1,
+      74
+     ]
+    ],
+    [
+     "Curva Casanova | motor | asphalt",
+     [
+      1,
+      72
+     ]
+    ],
+    [
+     "Curva Materassi | motor | asphalt",
+     [
+      1,
+      69
+     ]
+    ],
+    [
+     "Curva Luco | motor | asphalt",
+     [
+      1,
+      63
+     ]
+    ]
+   ]
   },
   "yeongam": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 20,
+   "totalM": 19148,
+   "closedLoops": [
+    [
+     "Permanent Circuit",
+     3027
+    ],
+    [
+     null,
+     90
+    ],
+    [
+     null,
+     12
+    ],
+    [
+     "Cart Track",
+     1063
+    ],
+    [
+     null,
+     1287
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "YEONGAM F1 Track | motor | ",
+     [
+      1,
+      5603
+     ]
+    ],
+    [
+     "GP Circuit | motor | ",
+     [
+      1,
+      3078
+     ]
+    ],
+    [
+     "Permanent Circuit | motor | ",
+     [
+      1,
+      3027
+     ]
+    ],
+    [
+     "Rally Course | motor | dirt",
+     [
+      2,
+      1612
+     ]
+    ],
+    [
+     "Cart Track | karting | ",
+     [
+      2,
+      1382
+     ]
+    ],
+    [
+     "(no name) | motor | dirt",
+     [
+      1,
+      1287
+     ]
+    ],
+    [
+     "GP Pit Lane |  | ",
+     [
+      2,
+      1012
+     ]
+    ],
+    [
+     "Permanent Pit Lane | motor | ",
+     [
+      1,
+      710
+     ]
+    ],
+    [
+     "B Course | motor | asphalt",
+     [
+      1,
+      542
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      6,
+      522
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      1,
+      243
+     ]
+    ],
+    [
+     "Rally Course | motor | asphalt",
+     [
+      1,
+      130
+     ]
+    ]
+   ]
   },
   "indianapolis": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 44,
+   "totalM": 15689,
+   "closedLoops": [
+    [
+     "Dirt Track at IMS",
+     302
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "IMS Road Course | motor | asphalt",
+     [
+      4,
+      4170
+     ]
+    ],
+    [
+     "IMS Oval - Warmup Lane/Pit Entry | motor | ",
+     [
+      1,
+      1200
+     ]
+    ],
+    [
+     "Allison testing track | motor | asphalt",
+     [
+      1,
+      874
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Backstretch | motor | asphalt",
+     [
+      1,
+      833
+     ]
+    ],
+    [
+     "IMS Oval - Pit Exit & Warmup Lane | motor | ",
+     [
+      2,
+      829
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Main Straight | motor | asphalt",
+     [
+      1,
+      686
+     ]
+    ],
+    [
+     "IMS Pit Lane | motor | ",
+     [
+      2,
+      681
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Turn 1 | motor | asphalt",
+     [
+      1,
+      452
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Turn 4 | motor | asphalt",
+     [
+      1,
+      441
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Turn 3 | motor | asphalt",
+     [
+      1,
+      415
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Turn 2 | motor | ",
+     [
+      1,
+      407
+     ]
+    ],
+    [
+     "IMS Formula One Pit Lane | motor | ",
+     [
+      1,
+      373
+     ]
+    ],
+    [
+     "IMS Oval - Warmup Lane & Pit Exit | motor | ",
+     [
+      1,
+      352
+     ]
+    ],
+    [
+     "IMS Road Course - Pit Exit | motor | asphalt",
+     [
+      2,
+      326
+     ]
+    ],
+    [
+     "Dirt Track at IMS | motor | ",
+     [
+      1,
+      302
+     ]
+    ],
+    [
+     "IMS Road Course - Pit Entry | motor | ",
+     [
+      1,
+      295
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - Main Straigt | motor | asphalt",
+     [
+      1,
+      270
+     ]
+    ],
+    [
+     "Allison Testing Track | motor | asphalt",
+     [
+      1,
+      254
+     ]
+    ],
+    [
+     "IMS Oval - Pit Entry | motor | ",
+     [
+      1,
+      231
+     ]
+    ],
+    [
+     "IMS Road Course - Alternate Corner 1 Entry | motor | asphalt",
+     [
+      1,
+      212
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - South Straight | motor | asphalt",
+     [
+      1,
+      210
+     ]
+    ],
+    [
+     "IMS Start-Finish Line | motor | painted",
+     [
+      2,
+      206
+     ]
+    ],
+    [
+     "IMS Road Course - Alternate Corners 12 & 12A | motor | ",
+     [
+      1,
+      203
+     ]
+    ],
+    [
+     "Indianapolis Motor Speedway - North Straight | motor | asphalt",
+     [
+      1,
+      197
+     ]
+    ],
+    [
+     "IMS Oval - Warmup Lane to Pit Entry | motor | asphalt",
+     [
+      1,
+      182
+     ]
+    ]
+   ]
   },
   "sebring": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 27,
+   "totalM": 8034,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | concrete",
+     [
+      8,
+      3195
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      6,
+      1494
+     ]
+    ],
+    [
+     "Ullman Straight | motor | concrete",
+     [
+      1,
+      901
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      534
+     ]
+    ],
+    [
+     "Sunset Bend | motor | concrete",
+     [
+      1,
+      391
+     ]
+    ],
+    [
+     "Gurney Bend | motor | concrete",
+     [
+      1,
+      366
+     ]
+    ],
+    [
+     "Fangio | motor | concrete",
+     [
+      1,
+      280
+     ]
+    ],
+    [
+     "Hairpin | motor | concrete",
+     [
+      1,
+      203
+     ]
+    ],
+    [
+     "Club Circuit | motor | ",
+     [
+      1,
+      141
+     ]
+    ],
+    [
+     "Gendebien Bend | motor | concrete",
+     [
+      1,
+      135
+     ]
+    ],
+    [
+     "Collier Curve | motor | concrete",
+     [
+      1,
+      98
+     ]
+    ],
+    [
+     "Bishop Bend | motor | concrete",
+     [
+      1,
+      81
+     ]
+    ],
+    [
+     "Tower Turn | motor | concrete",
+     [
+      1,
+      75
+     ]
+    ],
+    [
+     "Cunningham Corner | motor | concrete",
+     [
+      1,
+      71
+     ]
+    ],
+    [
+     "Le Mans Curve | motor | concrete",
+     [
+      1,
+      69
+     ]
+    ]
+   ]
   },
   "road-atlanta": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 14,
+   "totalM": 8627,
+   "closedLoops": [
+    [
+     null,
+     593
+    ],
+    [
+     null,
+     738
+    ],
+    [
+     null,
+     116
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "Road Atlanta Racetrack | motor | ",
+     [
+      2,
+      3721
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      968
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      1,
+      738
+     ]
+    ],
+    [
+     "Left Hand Pitlane | motor | ",
+     [
+      1,
+      687
+     ]
+    ],
+    [
+     "(no name) | motor;karting | asphalt",
+     [
+      1,
+      593
+     ]
+    ],
+    [
+     "Short Course Turn 5 | motor | ",
+     [
+      1,
+      379
+     ]
+    ],
+    [
+     "The Esses | motor | ",
+     [
+      1,
+      370
+     ]
+    ],
+    [
+     "Motorcycle Turn 12 | motor | ",
+     [
+      1,
+      354
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      2,
+      309
+     ]
+    ],
+    [
+     "Club Course | motor | ",
+     [
+      1,
+      285
+     ]
+    ],
+    [
+     "(no name) | motor;karting | paved",
+     [
+      2,
+      223
+     ]
+    ]
+   ]
   },
   "yongin": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
-  },
-  "inje": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
-  },
-  "nurburgring": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
-  },
-  "brands-hatch": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
-  },
-  "kyalami": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
-  },
-  "fuji": {
    "error": "Error: https://overpass.kumi.systems/api/interpreter: The operation was aborted due to timeout"
   },
+  "inje": {
+   "ways": 5,
+   "totalM": 5696,
+   "closedLoops": [
+    [
+     "풀코스",
+     3947
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "풀코스 | motor | asphalt",
+     [
+      1,
+      3947
+     ]
+    ],
+    [
+     "피트 레인 | motor | ",
+     [
+      1,
+      1127
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      1,
+      302
+     ]
+    ],
+    [
+     "A 코스 | motor | ",
+     [
+      1,
+      176
+     ]
+    ],
+    [
+     "B 코스 | motor | ",
+     [
+      1,
+      144
+     ]
+    ]
+   ]
+  },
+  "nurburgring": {
+   "ways": 99,
+   "totalM": 29256,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "Nürburgring Sprintstrecke | motor | asphalt",
+     [
+      9,
+      3613
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      16,
+      1533
+     ]
+    ],
+    [
+     "Boxengasse | motor | asphalt",
+     [
+      3,
+      1186
+     ]
+    ],
+    [
+     "Hohe Acht | motor | asphalt",
+     [
+      1,
+      1116
+     ]
+    ],
+    [
+     "Antoniusbuche | motor | asphalt",
+     [
+      2,
+      902
+     ]
+    ],
+    [
+     "Fuchsröhre | motor | asphalt",
+     [
+      1,
+      861
+     ]
+    ],
+    [
+     "Kesselchen | motor | asphalt",
+     [
+      1,
+      783
+     ]
+    ],
+    [
+     "Pflanzgarten | motor | asphalt",
+     [
+      1,
+      763
+     ]
+    ],
+    [
+     "Schwedenkreuz | motor | asphalt",
+     [
+      1,
+      756
+     ]
+    ],
+    [
+     "Döttinger Höhe | motor | asphalt",
+     [
+      1,
+      745
+     ]
+    ],
+    [
+     "Metzgesfeld | motor | asphalt",
+     [
+      1,
+      708
+     ]
+    ],
+    [
+     "Flugplatz | motor | asphalt",
+     [
+      1,
+      695
+     ]
+    ],
+    [
+     "Galgenkopf | motor | asphalt",
+     [
+      1,
+      688
+     ]
+    ],
+    [
+     "Senkenlinks | motor | asphalt",
+     [
+      1,
+      666
+     ]
+    ],
+    [
+     "Hatzenbach | motor | asphalt",
+     [
+      1,
+      593
+     ]
+    ],
+    [
+     "Steilstrecke | motor | asphalt",
+     [
+      1,
+      532
+     ]
+    ],
+    [
+     "Boxengasse an T13 | motor | asphalt",
+     [
+      7,
+      530
+     ]
+    ],
+    [
+     "Hocheichen | motor | asphalt",
+     [
+      1,
+      529
+     ]
+    ],
+    [
+     "Kallenhard | motor | asphalt",
+     [
+      1,
+      515
+     ]
+    ],
+    [
+     "Adenauer Forst | motor | asphalt",
+     [
+      1,
+      501
+     ]
+    ],
+    [
+     "Schwalbenschwanz | motor | asphalt",
+     [
+      1,
+      490
+     ]
+    ],
+    [
+     "Brünnchen | motor | asphalt",
+     [
+      1,
+      487
+     ]
+    ],
+    [
+     "Breidscheid | motor | asphalt",
+     [
+      3,
+      474
+     ]
+    ],
+    [
+     "Hatzenbogen | motor | asphalt",
+     [
+      1,
+      467
+     ]
+    ],
+    [
+     "Stefan-Bellof-S | motor | asphalt",
+     [
+      1,
+      434
+     ]
+    ]
+   ]
+  },
+  "brands-hatch": {
+   "ways": 51,
+   "totalM": 7610,
+   "closedLoops": [
+    [
+     "Go Kart Track",
+     235
+    ],
+    [
+     "Rally Stage 1",
+     735
+    ],
+    [
+     null,
+     220
+    ],
+    [
+     null,
+     133
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | rallycross;off_road | dirt",
+     [
+      16,
+      1221
+     ]
+    ],
+    [
+     "Rally Stage 1 | rallycross | unpaved",
+     [
+      3,
+      838
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      559
+     ]
+    ],
+    [
+     "Rally Stage 2 | rallycross | unpaved",
+     [
+      1,
+      534
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      5,
+      527
+     ]
+    ],
+    [
+     "Brabham Straight | motor | asphalt",
+     [
+      1,
+      411
+     ]
+    ],
+    [
+     "Hawthorn Hill | motor | asphalt",
+     [
+      1,
+      384
+     ]
+    ],
+    [
+     "Go Kart Track | karting | asphalt",
+     [
+      3,
+      327
+     ]
+    ],
+    [
+     "Cooper Straight | motor | asphalt",
+     [
+      1,
+      273
+     ]
+    ],
+    [
+     "Clark Curve | motor | asphalt",
+     [
+      1,
+      258
+     ]
+    ],
+    [
+     "Pilgrims Drop | motor | asphalt",
+     [
+      1,
+      246
+     ]
+    ],
+    [
+     "Derek Minter Straight | motor | asphalt",
+     [
+      1,
+      211
+     ]
+    ],
+    [
+     "Paddock Hill | motor | asphalt",
+     [
+      1,
+      202
+     ]
+    ],
+    [
+     "McLaren | motor | asphalt",
+     [
+      1,
+      186
+     ]
+    ],
+    [
+     "Dingle Dell Corner | motor | asphalt",
+     [
+      1,
+      167
+     ]
+    ],
+    [
+     "Hawthorns Bend | motor | asphalt",
+     [
+      1,
+      164
+     ]
+    ],
+    [
+     "Hailwoods Hill | motor | asphalt",
+     [
+      1,
+      144
+     ]
+    ],
+    [
+     "Surtees | motor | asphalt",
+     [
+      2,
+      131
+     ]
+    ],
+    [
+     "Westfield Bend | motor | asphalt",
+     [
+      1,
+      128
+     ]
+    ],
+    [
+     "Druids Bend | motor | asphalt",
+     [
+      1,
+      121
+     ]
+    ],
+    [
+     "Dingle Dell | motor | asphalt",
+     [
+      1,
+      111
+     ]
+    ],
+    [
+     "Graham Hill Bend | motor | asphalt",
+     [
+      1,
+      110
+     ]
+    ],
+    [
+     "Sheene Curve | motor | asphalt",
+     [
+      1,
+      108
+     ]
+    ],
+    [
+     "Clearways | motor | asphalt",
+     [
+      2,
+      104
+     ]
+    ],
+    [
+     "Stirlings Bend | motor | asphalt",
+     [
+      1,
+      95
+     ]
+    ]
+   ]
+  },
+  "kyalami": {
+   "ways": 27,
+   "totalM": 6648,
+   "closedLoops": [
+    [
+     "Kyalami Karting Circuit",
+     1112
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "Kyalami Grand Prix Circuit | motor | asphalt",
+     [
+      12,
+      2858
+     ]
+    ],
+    [
+     "Kyalami Karting Circuit | motor | ",
+     [
+      1,
+      1112
+     ]
+    ],
+    [
+     "Grand Prix Pit Lane | motor | ",
+     [
+      1,
+      571
+     ]
+    ],
+    [
+     "National Pit Lane | motor | ",
+     [
+      1,
+      439
+     ]
+    ],
+    [
+     "The Esses | motor | asphalt",
+     [
+      1,
+      280
+     ]
+    ],
+    [
+     "Sunset | motor | asphalt",
+     [
+      1,
+      268
+     ]
+    ],
+    [
+     "Mineshaft | motor | asphalt",
+     [
+      1,
+      175
+     ]
+    ],
+    [
+     "Ingwe | motor | asphalt",
+     [
+      1,
+      154
+     ]
+    ],
+    [
+     "The Crocodiles | motor | asphalt",
+     [
+      1,
+      141
+     ]
+    ],
+    [
+     "Leeukop | motor | asphalt",
+     [
+      1,
+      122
+     ]
+    ],
+    [
+     "The Kink | motor | asphalt",
+     [
+      1,
+      102
+     ]
+    ],
+    [
+     "Crowthorne | motor | asphalt",
+     [
+      1,
+      102
+     ]
+    ],
+    [
+     "Cheetah | motor | asphalt",
+     [
+      1,
+      95
+     ]
+    ],
+    [
+     "Clubhouse | motor | asphalt",
+     [
+      1,
+      91
+     ]
+    ],
+    [
+     "Barbeque | motor | asphalt",
+     [
+      1,
+      81
+     ]
+    ],
+    [
+     "Juksei Sweep | motor | asphalt",
+     [
+      1,
+      57
+     ]
+    ]
+   ]
+  },
+  "fuji": {
+   "ways": 20,
+   "totalM": 10487,
+   "closedLoops": [
+    [
+     "ドリフトコース",
+     689
+    ],
+    [
+     "ショートサーキット",
+     856
+    ],
+    [
+     null,
+     485
+    ],
+    [
+     "Fuji Speedway",
+     4554
+    ],
+    [
+     "カートレース場",
+     512
+    ],
+    [
+     "カートレース場",
+     181
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "Fuji Speedway | motor | asphalt",
+     [
+      1,
+      4554
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      10,
+      1411
+     ]
+    ],
+    [
+     "ショートサーキット | motor | ",
+     [
+      2,
+      1336
+     ]
+    ],
+    [
+     "Pit lane | motor | ",
+     [
+      1,
+      1294
+     ]
+    ],
+    [
+     "カートレース場 | karting | ",
+     [
+      2,
+      693
+     ]
+    ],
+    [
+     "ドリフトコース | motor | ",
+     [
+      1,
+      689
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      1,
+      425
+     ]
+    ],
+    [
+     "(no name) | karting | ",
+     [
+      2,
+      85
+     ]
+    ]
+   ]
+  },
   "daytona": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 26,
+   "totalM": 10103,
+   "closedLoops": [
+    [
+     "Daytona Flat Track",
+     385
+    ],
+    [
+     null,
+     315
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | ",
+     [
+      9,
+      2831
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      7,
+      2726
+     ]
+    ],
+    [
+     "Speedway | motor | asphalt",
+     [
+      1,
+      1965
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      2,
+      621
+     ]
+    ],
+    [
+     "Road Course Pit Lane | motor | ",
+     [
+      1,
+      548
+     ]
+    ],
+    [
+     "Daytona Flat Track | motor | ",
+     [
+      1,
+      385
+     ]
+    ],
+    [
+     "West Horseshoe | motor | ",
+     [
+      1,
+      316
+     ]
+    ],
+    [
+     "Le Mans Chicane | motor | ",
+     [
+      1,
+      278
+     ]
+    ],
+    [
+     "International Horseshoe | motor | asphalt",
+     [
+      1,
+      200
+     ]
+    ],
+    [
+     "2021 NASCAR chicane | motor | paved",
+     [
+      1,
+      132
+     ]
+    ],
+    [
+     "Dogleg | motor | asphalt",
+     [
+      1,
+      101
+     ]
+    ]
+   ]
   },
   "portimao": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 62,
+   "totalM": 10986,
+   "closedLoops": [
+    [
+     null,
+     957
+    ],
+    [
+     null,
+     163
+    ],
+    [
+     null,
+     392
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | ",
+     [
+      19,
+      4297
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      33,
+      3485
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      1223
+     ]
+    ],
+    [
+     "Autódromo Internacional do Algarve | motor | asphalt",
+     [
+      1,
+      986
+     ]
+    ],
+    [
+     "Curva Galp | motor | asphalt",
+     [
+      1,
+      238
+     ]
+    ],
+    [
+     "Curva Sagres | motor | asphalt",
+     [
+      1,
+      195
+     ]
+    ],
+    [
+     "Curva Portimão | motor | asphalt",
+     [
+      1,
+      145
+     ]
+    ],
+    [
+     "Enter Pit Line | motor | asphalt",
+     [
+      1,
+      136
+     ]
+    ],
+    [
+     "Curva Craig Jones | motor | asphalt",
+     [
+      1,
+      101
+     ]
+    ],
+    [
+     "Curva Samsung | motor | asphalt",
+     [
+      1,
+      64
+     ]
+    ],
+    [
+     "Curva Lagos | motor | asphalt",
+     [
+      1,
+      59
+     ]
+    ],
+    [
+     "Curva da Torre Vip | motor | asphalt",
+     [
+      1,
+      57
+     ]
+    ]
+   ]
   },
   "paul-ricard": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 85,
+   "totalM": 18642,
+   "closedLoops": [
+    [
+     "Karting Circuit Paul Ricard",
+     751
+    ],
+    [
+     "Piste de Glisse",
+     639
+    ],
+    [
+     "Terrain dévolution",
+     523
+    ],
+    [
+     null,
+     137
+    ],
+    [
+     "Piste de Glisse",
+     124
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | ",
+     [
+      17,
+      2635
+     ]
+    ],
+    [
+     "Ligne droite du Mistral | motor | asphalt",
+     [
+      2,
+      1848
+     ]
+    ],
+    [
+     "Espace tout-terrain | motocross | dirt",
+     [
+      7,
+      1797
+     ]
+    ],
+    [
+     "Driving Center Castellet | motor | ",
+     [
+      4,
+      1578
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      14,
+      1439
+     ]
+    ],
+    [
+     "Karting Circuit Paul Ricard | karting | asphalt",
+     [
+      4,
+      1295
+     ]
+    ],
+    [
+     "Stand | motor | asphalt",
+     [
+      2,
+      1284
+     ]
+    ],
+    [
+     "Piste de Glisse | motor | asphalt",
+     [
+      4,
+      1001
+     ]
+    ],
+    [
+     "Circuit Paul Ricard | motor | asphalt",
+     [
+      6,
+      902
+     ]
+    ],
+    [
+     "Ligne droite des stands | motor | asphalt",
+     [
+      2,
+      876
+     ]
+    ],
+    [
+     "\"S\" de la Verrerie | motor | asphalt",
+     [
+      3,
+      767
+     ]
+    ],
+    [
+     "Terrain dévolution | motor | asphalt",
+     [
+      1,
+      523
+     ]
+    ],
+    [
+     "Chicane Nord | motor | asphalt",
+     [
+      2,
+      470
+     ]
+    ],
+    [
+     "Double droite du Beausset | motor | asphalt",
+     [
+      1,
+      373
+     ]
+    ],
+    [
+     "Courbe du Garlaban | motor | asphalt",
+     [
+      1,
+      337
+     ]
+    ],
+    [
+     "(no name) | karting | asphalt",
+     [
+      4,
+      230
+     ]
+    ],
+    [
+     "Courbe de Signes | motor | asphalt",
+     [
+      2,
+      192
+     ]
+    ],
+    [
+     "Virage de la Sainte-Baume | motor | asphalt",
+     [
+      1,
+      192
+     ]
+    ],
+    [
+     "Virage du Lac | motor | asphalt",
+     [
+      1,
+      190
+     ]
+    ],
+    [
+     "Pinede | motor | asphalt",
+     [
+      3,
+      187
+     ]
+    ],
+    [
+     "Virage de l'hotel | motor | asphalt",
+     [
+      1,
+      180
+     ]
+    ],
+    [
+     "Virage du camp | motor | asphalt",
+     [
+      1,
+      129
+     ]
+    ],
+    [
+     "Virage de Bendor | motor | asphalt",
+     [
+      1,
+      127
+     ]
+    ],
+    [
+     "Virage du Pont | motor | asphalt",
+     [
+      1,
+      90
+     ]
+    ]
+   ]
   },
   "laguna-seca": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 9,
+   "totalM": 4600,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "WeatherTech Raceway Laguna Seca | motor | asphalt",
+     [
+      4,
+      2902
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      999
+     ]
+    ],
+    [
+     "Rahal Straight | motor | asphalt",
+     [
+      1,
+      311
+     ]
+    ],
+    [
+     "Andretti Hairpin | motor | asphalt",
+     [
+      1,
+      161
+     ]
+    ],
+    [
+     "The Corkscrew | motor | asphalt",
+     [
+      1,
+      132
+     ]
+    ],
+    [
+     "Rainey Curve | motor | asphalt",
+     [
+      1,
+      95
+     ]
+    ]
+   ]
   },
   "watkins-glen": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 23,
+   "totalM": 6825,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "Watkins Glen International | motor | ",
+     [
+      9,
+      3280
+     ]
+    ],
+    [
+     "The Esses | motor | ",
+     [
+      3,
+      768
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      2,
+      757
+     ]
+    ],
+    [
+     "Short Course | motor | ",
+     [
+      1,
+      376
+     ]
+    ],
+    [
+     "Outer Loop | motor | ",
+     [
+      1,
+      363
+     ]
+    ],
+    [
+     "The Toe | motor | ",
+     [
+      1,
+      258
+     ]
+    ],
+    [
+     "Inner Loop | motor | ",
+     [
+      1,
+      242
+     ]
+    ],
+    [
+     "The Chute | motor | ",
+     [
+      1,
+      229
+     ]
+    ],
+    [
+     "The Heel | motor | ",
+     [
+      1,
+      155
+     ]
+    ],
+    [
+     "The Fast Lefthander | motor | ",
+     [
+      1,
+      143
+     ]
+    ],
+    [
+     "The Ninety | motor | ",
+     [
+      1,
+      127
+     ]
+    ],
+    [
+     "The Boot | motor | ",
+     [
+      1,
+      127
+     ]
+    ]
+   ]
   },
   "road-america": {
-   "error": "TypeError: Cannot read properties of undefined (reading '0')"
+   "ways": 37,
+   "totalM": 9543,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | karting | ",
+     [
+      6,
+      1599
+     ]
+    ],
+    [
+     "Road America Straight | motor | ",
+     [
+      1,
+      1223
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      9,
+      1077
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      967
+     ]
+    ],
+    [
+     "Road America | motor | ",
+     [
+      5,
+      926
+     ]
+    ],
+    [
+     "Kettle Bottoms | motor | asphalt",
+     [
+      1,
+      795
+     ]
+    ],
+    [
+     "Moraine Sweep | motor | ",
+     [
+      1,
+      619
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      2,
+      526
+     ]
+    ],
+    [
+     "Hurry Downs | motor | ",
+     [
+      1,
+      351
+     ]
+    ],
+    [
+     "(no name) | karting | unpaved",
+     [
+      1,
+      259
+     ]
+    ],
+    [
+     "bend | motor | asphalt",
+     [
+      1,
+      240
+     ]
+    ],
+    [
+     "Carousel | motor | asphalt",
+     [
+      1,
+      228
+     ]
+    ],
+    [
+     "Carousel | motor | ",
+     [
+      1,
+      222
+     ]
+    ],
+    [
+     "Thunder Valley | motor | ",
+     [
+      1,
+      211
+     ]
+    ],
+    [
+     "Kink | motor | ",
+     [
+      1,
+      91
+     ]
+    ],
+    [
+     "Road America | motor | asphalt",
+     [
+      1,
+      80
+     ]
+    ],
+    [
+     "Canada Corner | motor | ",
+     [
+      1,
+      71
+     ]
+    ],
+    [
+     "(no name) |  | ",
+     [
+      1,
+      40
+     ]
+    ],
+    [
+     "Road America |  | ",
+     [
+      1,
+      18
+     ]
+    ]
+   ]
   },
   "bathurst": {
    "ways": 0,
