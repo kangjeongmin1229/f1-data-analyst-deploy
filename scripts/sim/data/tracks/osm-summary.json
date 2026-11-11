@@ -1,6 +1,6 @@
 {
  "source": "OpenStreetMap via Overpass API (© OpenStreetMap contributors, ODbL)",
- "fetched": "2026-11-11T06:06:35.427Z",
+ "fetched": "2026-11-11T06:26:51.257Z",
  "tracks": {
   "sakhir-outer": {
    "kind": "permanent",
@@ -2806,7 +2806,48 @@
    ]
   },
   "mid-ohio": {
-   "error": "Error: https://maps.mail.ru/osm/tools/overpass/api/interpreter: 504"
+   "kind": "permanent",
+   "ways": 10,
+   "totalM": 4707,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | asphalt",
+     [
+      6,
+      3139
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      631
+     ]
+    ],
+    [
+     "Thunder Valley | motor | asphalt",
+     [
+      1,
+      481
+     ]
+    ],
+    [
+     "Carousel | motor | asphalt",
+     [
+      1,
+      287
+     ]
+    ],
+    [
+     "The Keyhole | motor | asphalt",
+     [
+      1,
+      169
+     ]
+    ]
+   ]
   },
   "lime-rock": {
    "kind": "permanent",

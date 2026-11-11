@@ -740,6 +740,17 @@
      "loopM": 4196,
      "errorPct": 0.38,
      "accepted": true
+    },
+    {
+     "id": "le-mans | LE MANS 24 HEURES",
+     "officialM": 13626,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 8,
+     "loopM": 7315,
+     "errorPct": 46.32,
+     "accepted": false
     }
    ]
   },
@@ -1200,8 +1211,8 @@
      "grade": "1",
      "pole": "Left",
      "widthM": 14.326,
-     "loopM": 4189,
-     "errorPct": 0.07,
+     "loopM": 4187,
+     "errorPct": 0.12,
      "accepted": true
     },
     {
@@ -1306,6 +1317,14 @@
     }
    ],
    "accepted": [
+    {
+     "id": "sebring | IMSA layout",
+     "officialM": 6019,
+     "source": "imsa.com/weathertech/weathertech-2025-schedule (3.74 miles, 17 corners) [rounded to 0.01 mile]",
+     "loopM": 5866,
+     "errorPct": 2.54,
+     "accepted": false
+    },
     {
      "id": "sebring | SEBRING",
      "officialM": 6019,
@@ -1464,7 +1483,16 @@
      "names": []
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "yongin | Everland Speedway full course",
+     "officialM": 4346,
+     "source": "hyundai-n.com/en/motorsport/nf-calendar-ncup-r4.do (4.346 km, 16 corners, pole left)",
+     "loopM": 2929,
+     "errorPct": 32.6,
+     "accepted": false
+    }
+   ]
   },
   "inje": {
    "ways": 4,
@@ -1515,6 +1543,14 @@
     }
    ],
    "accepted": [
+    {
+     "id": "inje | Full course",
+     "officialM": 3908,
+     "source": "O-NE Superrace 2025 round 6 circuit map (Inje Speedium 3.908 km)",
+     "loopM": 3947,
+     "errorPct": 1,
+     "accepted": false
+    },
     {
      "id": "inje | INJE",
      "officialM": 3908,
@@ -1764,6 +1800,28 @@
      "loopM": 25838,
      "errorPct": 0.19,
      "accepted": true
+    },
+    {
+     "id": "nurburgring | NURBURGRING SPRINT STRECKE NGK",
+     "officialM": 3618,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": null,
+     "widthM": null,
+     "loopM": 3612,
+     "errorPct": 0.17,
+     "accepted": true
+    },
+    {
+     "id": "nurburgring | NURBURGRING RX",
+     "officialM": 1029,
+     "source": "FIA list 2024-06-03",
+     "grade": "6R",
+     "pole": "Right",
+     "widthM": 12,
+     "loopM": 1766,
+     "errorPct": 71.62,
+     "accepted": false
     }
    ]
   },
@@ -1844,7 +1902,27 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "kyalami | Grand Prix Circuit",
+     "officialM": 4522,
+     "source": "kyalamigrandprixcircuit.com/grand-prix-circuit (4.522 km, 16 turns, anti-clockwise, pole left)",
+     "loopM": 4525,
+     "errorPct": 0.07,
+     "accepted": true
+    },
+    {
+     "id": "kyalami | KYALAMI",
+     "officialM": 4522,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 11,
+     "loopM": 4525,
+     "errorPct": 0.07,
+     "accepted": true
+    }
+   ]
   },
   "fuji": {
    "ways": 14,
@@ -2202,7 +2280,16 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "daytona | Road course (IMSA)",
+     "officialM": 5729,
+     "source": "imsa.com/weathertech/weathertech-2026-schedule (3.56 miles, 12 corners) [rounded to 0.01 mile]",
+     "loopM": 5731,
+     "errorPct": 0.03,
+     "accepted": true
+    }
+   ]
   },
   "portimao": {
    "ways": 61,
@@ -2920,6 +3007,83 @@
      "loopM": 3826,
      "errorPct": 0,
      "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD",
+     "officialM": 5842,
+     "source": "FIA list 2024-06-03",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 5842,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 1AV2",
+     "officialM": 5791,
+     "source": "FIA list 2024-06-03",
+     "grade": "1",
+     "pole": null,
+     "widthM": null,
+     "loopM": 5791,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 1DV2",
+     "officialM": 5854,
+     "source": "FIA list 2024-06-03",
+     "grade": "1",
+     "pole": null,
+     "widthM": null,
+     "loopM": 5854,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 3A",
+     "officialM": 3793,
+     "source": "FIA list 2024-06-03",
+     "grade": "1",
+     "pole": null,
+     "widthM": null,
+     "loopM": 3793,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 3D",
+     "officialM": 3853,
+     "source": "FIA list 2024-06-03",
+     "grade": "1",
+     "pole": null,
+     "widthM": null,
+     "loopM": 3853,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 2A",
+     "officialM": 3523,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 3521,
+     "errorPct": 0.06,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 2C",
+     "officialM": 4138,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 4138,
+     "errorPct": 0,
+     "accepted": true
     }
    ]
   },
@@ -3007,7 +3171,16 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "watkins-glen | Long course (IMSA)",
+     "officialM": 5472,
+     "source": "imsa.com/news/tracks/watkins-glen-international (3.4 miles) [rounded to 0.1 mile: too coarse for the 0.5 % check, treated as weak]",
+     "loopM": 5473,
+     "errorPct": 0.02,
+     "accepted": true
+    }
+   ]
   },
   "road-america": {
    "ways": 29,
@@ -3078,6 +3251,12 @@
      "officialM": 2370,
      "source": "FIA list 2026-03-31",
      "accepted": false
+    },
+    {
+     "id": "fe-berlin | BERLIN FORMULA E",
+     "officialM": 2340,
+     "source": "FIA list 2024-06-03",
+     "accepted": false
     }
    ]
   },
@@ -3093,6 +3272,12 @@
      "id": "fe-tokyo | TOKYO E-PRIX",
      "officialM": 2576,
      "source": "FIA list 2026-03-31",
+     "accepted": false
+    },
+    {
+     "id": "fe-tokyo | TOKYO E-PRIX",
+     "officialM": 2585,
+     "source": "FIA list 2024-06-03",
      "accepted": false
     }
    ]
@@ -3240,7 +3425,16 @@
      "names": []
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "mosport | Grand Prix track (IMSA)",
+     "officialM": 3957,
+     "source": "imsa.com/weathertech/weathertech-2024-schedule (2.459 miles, 10 corners)",
+     "loopM": 3032,
+     "errorPct": 23.38,
+     "accepted": false
+    }
+   ]
   },
   "vir": {
    "ways": 34,
@@ -3579,10 +3773,87 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "vir | Full course (IMSA)",
+     "officialM": 5263,
+     "source": "imsa.com/virginia-international-raceway (3.27 miles) [rounded to 0.01 mile]",
+     "loopM": 5262,
+     "errorPct": 0.02,
+     "accepted": true
+    },
+    {
+     "id": "vir | VIRGINIA INT. RACEWAY - ALTON",
+     "officialM": 5248,
+     "source": "FIA list 2024-06-03",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 10,
+     "loopM": 5262,
+     "errorPct": 0.27,
+     "accepted": true
+    }
+   ]
   },
   "mid-ohio": {
-   "error": "no map data"
+   "ways": 9,
+   "edges": 14,
+   "junctions": 6,
+   "searchCapped": false,
+   "loopsFound": 4,
+   "loopLengthsM": [
+    {
+     "m": 3646,
+     "names": [
+      "The Keyhole",
+      "Carousel",
+      "Thunder Valley"
+     ]
+    },
+    {
+     "m": 3616,
+     "names": [
+      "The Keyhole",
+      "Carousel",
+      "Thunder Valley"
+     ]
+    },
+    {
+     "m": 3068,
+     "names": [
+      "Thunder Valley",
+      "Carousel"
+     ]
+    },
+    {
+     "m": 2731,
+     "names": [
+      "Thunder Valley",
+      "Carousel"
+     ]
+    }
+   ],
+   "accepted": [
+    {
+     "id": "mid-ohio | IMSA layout",
+     "officialM": 3634,
+     "source": "imsa.com/vpracingsportscarchallenge/imsa-vp-racing-sportscar-challenge-2024-schedule (2.258 miles, 13 corners)",
+     "loopM": 3646,
+     "errorPct": 0.33,
+     "accepted": true
+    },
+    {
+     "id": "mid-ohio | MID-OHIO",
+     "officialM": 3630,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 12,
+     "loopM": 3616,
+     "errorPct": 0.39,
+     "accepted": true
+    }
+   ]
   },
   "lime-rock": {
    "ways": 26,
@@ -3611,6 +3882,14 @@
     }
    ],
    "accepted": [
+    {
+     "id": "lime-rock | IMSA layout",
+     "officialM": 2414,
+     "source": "imsa.com/weathertech/weathertech-2022-schedule (1.50 miles, 7 corners) [rounded to 0.01 mile]",
+     "loopM": 2411,
+     "errorPct": 0.12,
+     "accepted": true
+    },
     {
      "id": "lime-rock | LIME ROCK",
      "officialM": 2448,
@@ -3795,6 +4074,17 @@
      "widthM": 9,
      "loopM": 4565,
      "errorPct": 0.2,
+     "accepted": true
+    },
+    {
+     "id": "hockenheim | HOCKENHEIM - SHORT",
+     "officialM": 3692,
+     "source": "FIA list 2024-06-03",
+     "grade": "3",
+     "pole": "Left",
+     "widthM": null,
+     "loopM": 3688,
+     "errorPct": 0.11,
      "accepted": true
     }
    ]
