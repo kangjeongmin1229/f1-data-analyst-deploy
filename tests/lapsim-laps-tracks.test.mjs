@@ -18,6 +18,15 @@ test('two ways drawn over the same nodes give one lap, not thousands (Yeongam ca
   assert.ok(Math.abs(Math.abs(totalTurnDeg(r1.loops[0].line())) - 360) < 1);
 });
 
+test('overlapping ways with different point spacing are still one lap', () => {
+  const n = 120, r = 800, full = circle(n, r), half = circle(n, r, 0, 60);
+  // the second way shares only every third node, plus one extra point exactly on a segment of the first
+  const sparse = half.filter((_, i) => i % 3 === 0); sparse.splice(1, 0, {lat: (full[1].lat + full[2].lat) / 2, lon: (full[1].lon + full[2].lon) / 2});
+  const r1 = loops([way(full, 'F1 Track'), way(sparse, 'Permanent Circuit')], {cap: 20000});
+  assert.equal(r1.searchCapped, false);
+  assert.ok(r1.loops.some(l => Math.abs(l.m - 2 * Math.PI * r) < 15));
+});
+
 test('a plain ring is found when another part of the venue has junctions (Jarama, Mosport case)', () => {
   const ring = circle(120, 600); // about 3770 m, split into two ways that meet end to end
   const a = ring.slice(0, 61), b = ring.slice(60);

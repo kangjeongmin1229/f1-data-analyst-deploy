@@ -9,6 +9,12 @@ const hav = (a, b) => { const R = 6371008.8, r = Math.PI / 180, x = (b[1] - a[1]
 const key = p => p[0].toFixed(7) + ',' + p[1].toFixed(7);
 const SKIP = /kart|motocross|rallycross|off_road|bmx|drag|rc_car|speedway_dirt/i, SKIPNAME = /pit ?lane|pitlane|boxengasse|피트|ピット|kart|drag|rally|drift|ドリフト|カート|motocross|skid|glisse|driving center/i;
 
+// distance in metres from point p to the polyline pts (flat-earth, fine for a few hundred metres)
+const offLine = (p, pts) => { const k = 111195, c = Math.cos(p[0] * Math.PI / 180), xy = q => [(q[1] - p[1]) * k * c, (q[0] - p[0]) * k]; let best = Infinity;
+  if (pts.length === 1) return hav(p, pts[0]);
+  for (let i = 1; i < pts.length; i++) { const [ax, ay] = xy(pts[i - 1]), [bx, by] = xy(pts[i]), dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy, t = L ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / L)) : 0; best = Math.min(best, Math.hypot(ax + t * dx, ay + t * dy)); }
+  return best; };
+
 export function totalTurnDeg(pts) {
   const n = pts.length - (pts[0][0] === pts[pts.length - 1][0] && pts[0][1] === pts[pts.length - 1][1] ? 1 : 0), c = Math.cos(pts[0][0] * Math.PI / 180); let t = 0;
   const h = i => Math.atan2(pts[(i + 1) % n][0] - pts[i][0], (pts[(i + 1) % n][1] - pts[i][1]) * c);
@@ -32,9 +38,9 @@ export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000, snapM 
   for (const w of ways) { let s = 0; for (let i = 1; i < w.pts.length; i++) if (i === w.pts.length - 1 || count.get(key(w.pts[i])) > 1) { const pts = w.pts.slice(s, i + 1); edges.push({a: key(pts[0]), b: key(pts[pts.length - 1]), pts, m: pts.slice(1).reduce((t, p, j) => t + hav(pts[j], p), 0), name: w.name}); s = i; } }
   // two map ways drawn over the same nodes (e.g. an "F1 track" way on top of a "permanent circuit" way) give pairs of identical
   // edges; each pair doubles the number of loops, so the search hit its cap before it reached the full lap (Yeongam, Paul Ricard).
-  // Keep one edge per pair: same two end points, the same length within 1 m and the same middle point within 2 m
+  // Keep one edge per pair: same two end points, the same length within 1 m and the middle point of one within 2 m of the line of the other
   // (two halves of a symmetric ring have equal ends and length but different middles, and both must stay).
-  { const seenE = new Map(), keep = []; for (const e of edges) { const k = e.a < e.b ? e.a + '|' + e.b : e.b + '|' + e.a, l = seenE.get(k) || seenE.set(k, []).get(k), mid = e.pts[e.pts.length >> 1]; if (l.some(o => Math.abs(o.m - e.m) < 1 && hav(o.mid, mid) < 2)) continue; l.push({m: e.m, mid}); keep.push(e); } var dropped = edges.length - keep.length; edges.length = 0; edges.push(...keep); }
+  { const seenE = new Map(), keep = []; for (const e of edges) { const k = e.a < e.b ? e.a + '|' + e.b : e.b + '|' + e.a, l = seenE.get(k) || seenE.set(k, []).get(k), mid = e.pts[e.pts.length >> 1]; if (l.some(o => Math.abs(o.m - e.m) < 1 && offLine(mid, o.pts) < 2)) continue; l.push({m: e.m, pts: e.pts}); keep.push(e); } var dropped = edges.length - keep.length; edges.length = 0; edges.push(...keep); }
   const adj = new Map(); edges.forEach((e, i) => { for (const n of [e.a, e.b]) (adj.get(n) || adj.set(n, []).get(n)).push(i); });
   const found = new Map(); let steps = 0;
   const nodes = [...adj.keys()].filter(n => adj.get(n).length !== 2);
