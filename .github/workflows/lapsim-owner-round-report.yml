@@ -1,0 +1,40 @@
+name: LapSim owner round report only
+on:
+  push:
+    branches: ['exp/lapsim-owner-diagnostics-2026-11-11']
+    paths: ['.github/workflows/lapsim-owner-round-report.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: lapsim-owner-round-report
+  cancel-in-progress: false
+jobs:
+  report:
+    if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.4'
+      - name: Verify existing run and replay saved states only
+        run: node scripts/sim/collect-owner-round-report.mjs
+      - name: Save verified evidence to a separate fork branch
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          git add docs/lapsim-owner-round-curve-results-2026-11-11.md docs/lapsim-f1-control-diagnosis-2026-11-11.md scripts/sim/results/owner-diagnostics-2026-11-11
+          git commit -m "results: verified F1 fixed-round curve and saved checkpoints"
+          git push origin HEAD:refs/heads/evidence/f1-round-curve-2026-11-11
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verified-round-report
+          path: |
+            scripts/sim/results/owner-diagnostics-2026-11-11/
+            docs/lapsim-owner-round-curve-results-2026-11-11.md
+          retention-days: 30
