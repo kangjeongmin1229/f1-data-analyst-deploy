@@ -192,3 +192,22 @@ Reading:
 - Not tested: tuning the margin or smoothing to shrink the bias. That would be a fit and needs its own declared hold-out.
 - Practical consequence: new tracks need real car positions (timing with GPS, onboard telemetry or a verified laser-scan
   sim track) to reach production quality.
+
+### 13.1 Outlier check: Shanghai and Suzuka (2026-11-11)
+
+Shape numbers of the production track against the TUM race line (no fit, read only):
+
+| Track | Source | Length m | Sum of turning deg | Tightest 1 % radius m |
+|---|---|---|---|---|
+| Shanghai | production | 5440 | 1871 | 19 |
+| Shanghai | TUM race line | 5341 | 1806 | 25 |
+| Suzuka | production | 5771 | 1694 | 32 |
+| Suzuka | TUM race line | 5747 | 1639 | 33 |
+| Monza (normal case) | production | 5759 | 876 | 44 |
+| Monza (normal case) | TUM race line | 5758 | 889 | 37 |
+
+- Shanghai: the production line is almost as long as the centre line (0.1 % shorter; other tracks are 0.5-1.8 % shorter),
+  turns 65 degrees more in total and has a tighter slowest corner. This looks like a production track that follows the
+  middle of the road or carries position noise, not a racing line. Its track factor then hides the difference.
+- Suzuka: 55 degrees more turning with the same length; smaller version of the same pattern.
+- Not changed: the production tracks. Proposed check for the model owner: rebuild both from another session and compare.
