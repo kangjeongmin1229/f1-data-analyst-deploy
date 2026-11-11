@@ -800,62 +800,88 @@
    "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 11,
-   "edges": 290,
-   "junctions": 19,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 276,
-   "loopsFound": 12,
+   "edges": 326,
+   "junctions": 77,
+   "searchCapped": true,
+   "duplicateEdgesDropped": 240,
+   "openEnds": [
+    {
+     "at": [
+      34.7417943,
+      126.4138912
+     ],
+     "nearestOtherM": 22,
+     "way": null,
+     "wayM": 243
+    },
+    {
+     "at": [
+      34.7417122,
+      126.4163804
+     ],
+     "nearestOtherM": 143,
+     "way": null,
+     "wayM": 243
+    },
+    {
+     "at": [
+      34.743017,
+      126.4140885
+     ],
+     "nearestOtherM": 46,
+     "way": null,
+     "wayM": 55
+    },
+    {
+     "at": [
+      34.7428253,
+      126.4135595
+     ],
+     "nearestOtherM": 35,
+     "way": null,
+     "wayM": 55
+    },
+    {
+     "at": [
+      34.7420335,
+      126.4139385
+     ],
+     "nearestOtherM": 27,
+     "way": null,
+     "wayM": 53
+    },
+    {
+     "at": [
+      34.7421551,
+      126.4146048
+     ],
+     "nearestOtherM": 19,
+     "way": null,
+     "wayM": 19
+    },
+    {
+     "at": [
+      34.7416801,
+      126.4143421
+     ],
+     "nearestOtherM": 26,
+     "way": null,
+     "wayM": 47
+    },
+    {
+     "at": [
+      34.7426466,
+      126.4138766
+     ],
+     "nearestOtherM": 24,
+     "way": null,
+     "wayM": 87
+    }
+   ],
+   "loopsFound": 32,
    "loopLengthsM": [
     {
-     "m": 5596,
-     "names": [
-      "Permanent Circuit",
-      "YEONGAM F1 Track",
-      "GP Circuit"
-     ]
-    },
-    {
-     "m": 5530,
-     "names": [
-      "Permanent Circuit",
-      "YEONGAM F1 Track",
-      "GP Circuit"
-     ]
-    },
-    {
-     "m": 3591,
-     "names": [
-      "Permanent Circuit",
-      "YEONGAM F1 Track",
-      "GP Circuit"
-     ]
-    },
-    {
-     "m": 3374,
-     "names": [
-      "Permanent Circuit",
-      "YEONGAM F1 Track",
-      "GP Circuit",
-      "B Course"
-     ]
-    },
-    {
-     "m": 3307,
-     "names": [
-      "Permanent Circuit",
-      "YEONGAM F1 Track",
-      "GP Circuit",
-      "B Course"
-     ]
-    },
-    {
      "m": 3027,
-     "names": [
-      "Permanent Circuit"
-     ]
-    },
-    {
-     "m": 2961,
      "names": [
       "Permanent Circuit"
      ]
@@ -869,9 +895,9 @@
      "grade": "1",
      "pole": "Right",
      "widthM": 12,
-     "loopM": 5596,
-     "errorPct": 0.34,
-     "accepted": true
+     "loopM": 3027,
+     "errorPct": 46.09,
+     "accepted": false
     },
     {
      "id": "yeongam | KOREA PERMANENT 1",
@@ -891,9 +917,9 @@
      "grade": "2",
      "pole": null,
      "widthM": 12,
-     "loopM": 2961,
-     "errorPct": 0.1,
-     "accepted": true
+     "loopM": 3026,
+     "errorPct": 2.09,
+     "accepted": false
     }
    ]
   },
@@ -3715,25 +3741,44 @@
     ]
    ],
    "ways": 5,
-   "edges": 9,
-   "junctions": 3,
+   "edges": 10,
+   "junctions": 5,
    "searchCapped": false,
-   "duplicateEdgesDropped": 1,
+   "duplicateEdgesDropped": 0,
    "openEnds": [],
-   "loopsFound": 0,
-   "loopLengthsM": [],
+   "loopsFound": 1,
+   "loopLengthsM": [
+    {
+     "m": 3906,
+     "names": [
+      "Circuito del Jarama"
+     ]
+    }
+   ],
    "accepted": [
     {
      "id": "jarama | JARAMA",
      "officialM": 3850,
      "source": "FIA list 2026-03-31",
-     "accepted": false
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 12,
+     "loopM": 3906,
+     "errorPct": 1.45,
+     "accepted": false,
+     "gapClosedM": 60
     },
     {
      "id": "jarama | JARAMA FE",
      "officialM": 3931,
      "source": "FIA list 2026-03-31",
-     "accepted": false
+     "grade": "FE",
+     "pole": null,
+     "widthM": 12,
+     "loopM": 3906,
+     "errorPct": 0.64,
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
@@ -3808,74 +3853,24 @@
    ]
   },
   "mosport": {
-   "gapClosedM": 60,
+   "gapClosedM": 12,
    "snappedEnds": 0,
-   "wayList": [
-    [
-     null,
-     523
-    ],
-    [
-     null,
-     2842
-    ],
-    [
-     null,
-     565
-    ],
-    [
-     null,
-     103
-    ],
-    [
-     null,
-     142
-    ],
-    [
-     null,
-     93
-    ],
-    [
-     "Moss Corner",
-     184
-    ],
-    [
-     "Mario Andretti Straight",
-     1167
-    ],
-    [
-     "Esses",
-     454
-    ],
-    [
-     "Whites Corner",
-     84
-    ],
-    [
-     null,
-     801
-    ],
-    [
-     "Clayton Corner",
-     299
-    ],
-    [
-     null,
-     148
-    ],
-    [
-     "Quebec Corner",
-     284
-    ]
-   ],
    "ways": 14,
    "edges": 21,
    "junctions": 7,
    "searchCapped": false,
    "duplicateEdgesDropped": 0,
-   "openEnds": [],
-   "loopsFound": 14,
+   "loopsFound": 15,
    "loopLengthsM": [
+    {
+     "m": 3943,
+     "names": [
+      "Moss Corner",
+      "Mario Andretti Straight",
+      "Esses",
+      "Whites Corner"
+     ]
+    },
     {
      "m": 3032,
      "names": []
@@ -3926,10 +3921,9 @@
      "id": "mosport | Grand Prix track (IMSA)",
      "officialM": 3957,
      "source": "imsa.com/weathertech/weathertech-2024-schedule (2.459 miles, 10 corners)",
-     "loopM": 3032,
-     "errorPct": 23.38,
-     "accepted": false,
-     "gapClosedM": 60
+     "loopM": 3943,
+     "errorPct": 0.35,
+     "accepted": true
     }
    ]
   },
@@ -3937,10 +3931,10 @@
    "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 34,
-   "edges": 51,
-   "junctions": 21,
+   "edges": 52,
+   "junctions": 22,
    "searchCapped": false,
-   "duplicateEdgesDropped": 1,
+   "duplicateEdgesDropped": 0,
    "loopsFound": 114,
    "loopLengthsM": [
     {

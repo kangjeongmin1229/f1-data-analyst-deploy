@@ -6,9 +6,7 @@ sakhir-outer-bahrain-endurance: 6315 m (official 6299, smoothing shrink 0.22 %),
 le-mans-le-mans-bugatti: 4196 m (official 4180, smoothing shrink 0.50 %), raw height range 35 m, height 50–82 m, max grade 10.0 %, turn -360°
 le-mans-le-mans-24-heures: 13612 m (official 13626, smoothing shrink 0.05 %), raw height range 38 m, height 46–82 m, max grade 8.9 %, turn 360°
 mugello-mugello: 5245 m (official 5245, smoothing shrink 0.08 %), raw height range 47 m, height 246–289 m, max grade 13.3 %, turn 360°
-yeongam-korea: 5596 m (official 5615, smoothing shrink 0.21 %), raw height range 3 m, height 0–1 m, max grade 1.0 %, turn -360°
 yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.24 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn -360°
-yeongam-korea-permanent-2: 2961 m (official 2964, smoothing shrink 0.19 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn -360°
 indianapolis-indianapolis-grand-prix: 4187 m (official 4192, smoothing shrink 0.18 %), raw height range 3 m, height 221–224 m, max grade 0.5 %, turn 360°
 indianapolis-indianapolis-road-course: 3911 m (official 3910, smoothing shrink 0.18 %), raw height range 4 m, height 221–224 m, max grade 0.5 %, turn -360°
 road-atlanta-road-atlanta: 4090 m (official 4088, smoothing shrink 0.10 %), raw height range 37 m, height 275–308 m, max grade 10.9 %, turn -360°
@@ -37,6 +35,7 @@ paul-ricard-paul-ricard-2c: 4138 m (official 4138, smoothing shrink 1.47 %), raw
 laguna-seca-laguna-seca-raceway: 3601 m (official 3602, smoothing shrink 0.17 %), raw height range 55 m, height 229–282 m, max grade 11.8 %, turn 360°
 watkins-glen-long-course-imsa: 5473 m (official 5472, smoothing shrink 0.12 %), raw height range 45 m, height 454–496 m, max grade 8.1 %, turn -360°
 road-america-road-america-elkhart-lake: 6493 m (official 6514, smoothing shrink 0.08 %), raw height range 56 m, height 270–324 m, max grade 9.6 %, turn -360°
+mosport-grand-prix-track-imsa: 3943 m (official 3957, smoothing shrink 0.11 %), raw height range 56 m, height 289–340 m, max grade 9.7 %, turn -360°
 vir-full-course-imsa: 5262 m (official 5263, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°
 vir-virginia-int-raceway-alton: 5262 m (official 5248, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°
 mid-ohio-imsa-layout: 3646 m (official 3634, smoothing shrink 0.17 %), raw height range 42 m, height 398–437 m, max grade 4.5 %, turn 360°
