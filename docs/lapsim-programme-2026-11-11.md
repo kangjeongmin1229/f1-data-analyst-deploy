@@ -113,3 +113,21 @@ Still failing, with the reason:
 | Nürburgring NLS lap | No sourced length stored |
 | Paul Ricard | Ambiguous (see section 8) |
 | Rwanda | The ribbon was extracted from the owner's diagram, but the drawing overlaps itself in the middle and is an oblique view. An automatic trace is not reliable; the lap order has to be set by hand. Not built |
+
+## 10. First track-unseen check of the candidate tracks (2026-11-11)
+
+Command: `node scripts/sim/tracks/check-candidates.mjs` → `scripts/sim/data/tracks/candidate-check.json`. No fit. Production WEC cars (frozen values) are run on tracks the fit never saw
+and compared with the fastest dry qualifying push lap of the same class and season in the Timing71 rows (`t71-bests-counts.json`), in that lap's weather.
+
+| Group | n | Tracks | Centre line, factor 1 | Centre line, class mean factor | Racing line inside the track width, class mean factor |
+|---|---:|---:|---:|---:|---:|
+| WEC cars on their own class (Le Mans, Fuji) | 6 | 2 | 11.37 % RMS, +11.26 % bias | 10.82 %, +10.70 % | **2.31 %, +1.38 %** |
+| IMSA with borrowed WEC cars (GTP = LMDh, GTD = LMGT3) | 30 | 7 | 14.58 %, +13.87 % | 13.90 %, +13.17 % | 3.91 %, +0.39 % |
+
+Reading:
+- A map centre line is 11–14 % too slow. It must never be used as the driven line.
+- A least-curvature line inside the track (FIA reference width minus 1.2 m per side; 12 m assumed when the list has no width) removes most of that.
+  This variant was added after the first result was seen, with one fixed margin and no tuning; it needs its own declared test before any claim.
+- Level C (track-unseen) error for WEC is about 2.3 % on 6 rows and 2 tracks, against 1.17 % on fitted tracks. n is small: one track decides the result.
+- Daytona is 6–9 % too fast with the racing line (banking and the chicane are not in the geometry; the cars are also borrowed). Le Mans is 2–3 % too slow.
+- Next: hide-and-predict on these tracks with a fitted track factor (level B), better height, real widths, and the per-model fit.
