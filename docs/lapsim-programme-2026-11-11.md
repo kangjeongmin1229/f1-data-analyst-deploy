@@ -161,3 +161,34 @@ A lap exported by an account holder remains the only route.
 Track state: `scripts/sim/data/tracks/track-state.json` holds the first documented surface and layout changes with sources (Laguna Seca 2023 resurfacing, Mid-Ohio 2024 surface,
 Detroit circuit change in 2023, Le Mans Mulsanne resurfacing from July 2025, Le Mans length and start line, Suzuka 2026 resurfacing). Rule for use: lap data from before a
 resurfacing is a different track state and is not pooled with later laps.
+
+## 13. Geometry-method test on known tracks (2026-11-11)
+
+Script: `scripts/sim/tracks/check-method.mjs`, result: `scripts/sim/data/tracks/method-check.json`.
+Question: if a track is built from a map centre line, how far is the simulated lap from the lap on the production track
+(built from real car positions)? Same car, weather and track factor on both sides, height off, so only the plan shape differs.
+Source of centre lines, widths and race lines: TUM racetrack-database (LGPL). 15 tracks, 2 cars.
+
+Declared before the run: variants A/B/C, cars, metric. One correction after the first run: the length filter was 0.5 % and
+skipped 16 of 17 tracks, because a centre line is 0.5-1.8 % longer than a driven line. It is now 2 %, which still drops the
+two real layout changes (Yas Marina, Zandvoort). The correction was made before the lap times of the skipped tracks were read.
+
+| Variant | Car | n | RMS % | Bias % | Min % | Max % |
+|---|---|---|---|---|---|---|
+| A centre line | F1 2025 | 15 | 15.31 | +14.26 | +3.14 | +25.04 |
+| A centre line | WEC LMH | 15 | 14.39 | +13.44 | +3.69 | +23.24 |
+| B least-curvature line (width - 1.2 m) | F1 2025 | 15 | 5.85 | +4.42 | -3.36 | +12.42 |
+| B least-curvature line (width - 1.2 m) | WEC LMH | 15 | 5.05 | +3.24 | -4.56 | +12.06 |
+| C TUM race line | F1 2025 | 15 | 3.00 | -0.50 | -7.45 | +4.37 |
+| C TUM race line | WEC LMH | 15 | 3.21 | -0.51 | -7.53 | +5.10 |
+
+Reading:
+- No map-based variant reaches the current held-out error (about 1 %). Variant B, the one used for the new candidate
+  tracks in section 10, is about 5 % RMS and 3-4 % too slow on average.
+- So map-built tracks may be shown as rough previews with a warning, but must not be used to fit car values, and their
+  lap times must not be reported as predictions.
+- Even a published race line (C) is 3 % RMS, so the gap is not only our line solver. Shanghai (-7.5 %) and Suzuka (-4 to -5 %)
+  are outliers in every variant; the production tracks there should be checked before any conclusion about them.
+- Not tested: tuning the margin or smoothing to shrink the bias. That would be a fit and needs its own declared hold-out.
+- Practical consequence: new tracks need real car positions (timing with GPS, onboard telemetry or a verified laser-scan
+  sim track) to reach production quality.

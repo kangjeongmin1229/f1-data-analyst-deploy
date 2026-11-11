@@ -1,0 +1,395 @@
+{
+ "note": "Geometry-method test on known tracks: lap-time difference to the production track (real car positions), plan shape only.",
+ "source": "github.com/TUMFTM/racetrack-database @ e59595d1f3573b30d1ded6a08984935b957688e0",
+ "declared": "2026-11-11, before the run",
+ "summary": {
+  "2025": {
+   "centreLine": {
+    "n": 15,
+    "rms": 15.31,
+    "bias": 14.26,
+    "min": 3.14,
+    "max": 25.04
+   },
+   "racingLine": {
+    "n": 15,
+    "rms": 5.85,
+    "bias": 4.42,
+    "min": -3.36,
+    "max": 12.42
+   },
+   "tumRaceLine": {
+    "n": 15,
+    "rms": 3,
+    "bias": -0.5,
+    "min": -7.45,
+    "max": 4.37
+   }
+  },
+  "wec-lmh": {
+   "centreLine": {
+    "n": 15,
+    "rms": 14.39,
+    "bias": 13.44,
+    "min": 3.69,
+    "max": 23.24
+   },
+   "racingLine": {
+    "n": 15,
+    "rms": 5.05,
+    "bias": 3.24,
+    "min": -4.56,
+    "max": 12.06
+   },
+   "tumRaceLine": {
+    "n": 15,
+    "rms": 3.21,
+    "bias": -0.51,
+    "min": -7.53,
+    "max": 5.1
+   }
+  }
+ },
+ "skipped": [
+  [
+   "YasMarina",
+   "length 5547 m against 5229 m (6.07 %): different layout"
+  ],
+  [
+   "Zandvoort",
+   "length 4316 m against 4211 m (2.50 %): different layout"
+  ]
+ ],
+ "rows": [
+  {
+   "track": "austin",
+   "car": "2025",
+   "productionLap": 91.207,
+   "lengthErrPct": 1.56,
+   "centreLinePct": 16.85,
+   "racingLinePct": 4.35,
+   "tumRaceLinePct": -2.74,
+   "racingLineLengthM": 5393,
+   "meanHalfWidthM": 5.6
+  },
+  {
+   "track": "austin",
+   "car": "wec-lmh",
+   "productionLap": 111.39,
+   "lengthErrPct": 1.56,
+   "centreLinePct": 16.31,
+   "racingLinePct": 3.87,
+   "tumRaceLinePct": -2.3,
+   "racingLineLengthM": 5393,
+   "meanHalfWidthM": 5.6
+  },
+  {
+   "track": "hungaroring",
+   "car": "2025",
+   "productionLap": 74.228,
+   "lengthErrPct": 1.18,
+   "centreLinePct": 17,
+   "racingLinePct": 5.77,
+   "tumRaceLinePct": 1.27,
+   "racingLineLengthM": 4315,
+   "meanHalfWidthM": 3.7
+  },
+  {
+   "track": "hungaroring",
+   "car": "wec-lmh",
+   "productionLap": 93.773,
+   "lengthErrPct": 1.18,
+   "centreLinePct": 13.69,
+   "racingLinePct": 4.17,
+   "tumRaceLinePct": 1.1,
+   "racingLineLengthM": 4315,
+   "meanHalfWidthM": 3.7
+  },
+  {
+   "track": "catalunya",
+   "car": "2025",
+   "productionLap": 71.36,
+   "lengthErrPct": 0.84,
+   "centreLinePct": 17.75,
+   "racingLinePct": 8.18,
+   "tumRaceLinePct": 4.37,
+   "racingLineLengthM": 4572,
+   "meanHalfWidthM": 4.3
+  },
+  {
+   "track": "catalunya",
+   "car": "wec-lmh",
+   "productionLap": 89.584,
+   "lengthErrPct": 0.84,
+   "centreLinePct": 15.57,
+   "racingLinePct": 5.88,
+   "tumRaceLinePct": 3.14,
+   "racingLineLengthM": 4572,
+   "meanHalfWidthM": 4.3
+  },
+  {
+   "track": "melbourne",
+   "car": "2025",
+   "productionLap": 75.88,
+   "lengthErrPct": 1.12,
+   "centreLinePct": 25.04,
+   "racingLinePct": 12.42,
+   "tumRaceLinePct": 3.15,
+   "racingLineLengthM": 5245,
+   "meanHalfWidthM": 4.8
+  },
+  {
+   "track": "melbourne",
+   "car": "wec-lmh",
+   "productionLap": 91.054,
+   "lengthErrPct": 1.12,
+   "centreLinePct": 23.24,
+   "racingLinePct": 12.06,
+   "tumRaceLinePct": 5.1,
+   "racingLineLengthM": 5245,
+   "meanHalfWidthM": 4.8
+  },
+  {
+   "track": "mexico-city",
+   "car": "2025",
+   "productionLap": 73.171,
+   "lengthErrPct": 1.28,
+   "centreLinePct": 20.43,
+   "racingLinePct": 9,
+   "tumRaceLinePct": 2.11,
+   "racingLineLengthM": 4241,
+   "meanHalfWidthM": 4.7
+  },
+  {
+   "track": "mexico-city",
+   "car": "wec-lmh",
+   "productionLap": 88.936,
+   "lengthErrPct": 1.28,
+   "centreLinePct": 18.75,
+   "racingLinePct": 6.62,
+   "tumRaceLinePct": 1.62,
+   "racingLineLengthM": 4241,
+   "meanHalfWidthM": 4.7
+  },
+  {
+   "track": "montreal",
+   "car": "2025",
+   "productionLap": 71.285,
+   "lengthErrPct": 1.08,
+   "centreLinePct": 11.88,
+   "racingLinePct": 3.34,
+   "tumRaceLinePct": -0.55,
+   "racingLineLengthM": 4305,
+   "meanHalfWidthM": 3.5
+  },
+  {
+   "track": "montreal",
+   "car": "wec-lmh",
+   "productionLap": 85.585,
+   "lengthErrPct": 1.08,
+   "centreLinePct": 10.25,
+   "racingLinePct": 2.5,
+   "tumRaceLinePct": -0.19,
+   "racingLineLengthM": 4305,
+   "meanHalfWidthM": 3.5
+  },
+  {
+   "track": "monza",
+   "car": "2025",
+   "productionLap": 78.679,
+   "lengthErrPct": 0.54,
+   "centreLinePct": 13.59,
+   "racingLinePct": 3.25,
+   "tumRaceLinePct": 0.7,
+   "racingLineLengthM": 5756,
+   "meanHalfWidthM": 3.3
+  },
+  {
+   "track": "monza",
+   "car": "wec-lmh",
+   "productionLap": 93.421,
+   "lengthErrPct": 0.54,
+   "centreLinePct": 11.67,
+   "racingLinePct": 3.69,
+   "tumRaceLinePct": 1.54,
+   "racingLineLengthM": 5756,
+   "meanHalfWidthM": 3.3
+  },
+  {
+   "track": "sakhir",
+   "car": "2025",
+   "productionLap": 89.293,
+   "lengthErrPct": 1.29,
+   "centreLinePct": 14.59,
+   "racingLinePct": 5.17,
+   "tumRaceLinePct": -0.87,
+   "racingLineLengthM": 5339,
+   "meanHalfWidthM": 5.3
+  },
+  {
+   "track": "sakhir",
+   "car": "wec-lmh",
+   "productionLap": 107.7,
+   "lengthErrPct": 1.29,
+   "centreLinePct": 14.21,
+   "racingLinePct": 4,
+   "tumRaceLinePct": -0.18,
+   "racingLineLengthM": 5339,
+   "meanHalfWidthM": 5.3
+  },
+  {
+   "track": "interlagos",
+   "car": "2025",
+   "productionLap": 68.592,
+   "lengthErrPct": 1.76,
+   "centreLinePct": 11.97,
+   "racingLinePct": 2.58,
+   "tumRaceLinePct": -2.13,
+   "racingLineLengthM": 4233,
+   "meanHalfWidthM": 4.6
+  },
+  {
+   "track": "interlagos",
+   "car": "wec-lmh",
+   "productionLap": 83.031,
+   "lengthErrPct": 1.76,
+   "centreLinePct": 14.63,
+   "racingLinePct": 1.85,
+   "tumRaceLinePct": -1.63,
+   "racingLineLengthM": 4233,
+   "meanHalfWidthM": 4.6
+  },
+  {
+   "track": "kuala-lumpur",
+   "car": "2025",
+   "productionLap": 91.399,
+   "lengthErrPct": 0.81,
+   "centreLinePct": 12.5,
+   "racingLinePct": 2.53,
+   "tumRaceLinePct": -3.62,
+   "racingLineLengthM": 5436,
+   "meanHalfWidthM": 5.9
+  },
+  {
+   "track": "kuala-lumpur",
+   "car": "wec-lmh",
+   "productionLap": 112.318,
+   "lengthErrPct": 0.81,
+   "centreLinePct": 10.89,
+   "racingLinePct": 0.45,
+   "tumRaceLinePct": -4.01,
+   "racingLineLengthM": 5436,
+   "meanHalfWidthM": 5.9
+  },
+  {
+   "track": "shanghai",
+   "car": "2025",
+   "productionLap": 92.169,
+   "lengthErrPct": 0.1,
+   "centreLinePct": 3.14,
+   "racingLinePct": -3.36,
+   "tumRaceLinePct": -7.45,
+   "racingLineLengthM": 5334,
+   "meanHalfWidthM": 5.2
+  },
+  {
+   "track": "shanghai",
+   "car": "wec-lmh",
+   "productionLap": 113.369,
+   "lengthErrPct": 0.1,
+   "centreLinePct": 3.69,
+   "racingLinePct": -4.56,
+   "tumRaceLinePct": -7.53,
+   "racingLineLengthM": 5334,
+   "meanHalfWidthM": 5.2
+  },
+  {
+   "track": "silverstone",
+   "car": "2025",
+   "productionLap": 85.814,
+   "lengthErrPct": 1.04,
+   "centreLinePct": 22.02,
+   "racingLinePct": 7.85,
+   "tumRaceLinePct": 1.37,
+   "racingLineLengthM": 5792,
+   "meanHalfWidthM": 5.6
+  },
+  {
+   "track": "silverstone",
+   "car": "wec-lmh",
+   "productionLap": 106.472,
+   "lengthErrPct": 1.04,
+   "centreLinePct": 21.96,
+   "racingLinePct": 6.95,
+   "tumRaceLinePct": 1.51,
+   "racingLineLengthM": 5792,
+   "meanHalfWidthM": 5.6
+  },
+  {
+   "track": "spa-francorchamps",
+   "car": "2025",
+   "productionLap": 100.308,
+   "lengthErrPct": 0.76,
+   "centreLinePct": 9.34,
+   "racingLinePct": 2.04,
+   "tumRaceLinePct": 0.33,
+   "racingLineLengthM": 6941,
+   "meanHalfWidthM": 3.6
+  },
+  {
+   "track": "spa-francorchamps",
+   "car": "wec-lmh",
+   "productionLap": 121.348,
+   "lengthErrPct": 0.76,
+   "centreLinePct": 11.1,
+   "racingLinePct": 1.28,
+   "tumRaceLinePct": -0.52,
+   "racingLineLengthM": 6941,
+   "meanHalfWidthM": 3.6
+  },
+  {
+   "track": "spielberg",
+   "car": "2025",
+   "productionLap": 63.3,
+   "lengthErrPct": 0.59,
+   "centreLinePct": 10.3,
+   "racingLinePct": 4.37,
+   "tumRaceLinePct": 0.39,
+   "racingLineLengthM": 4282,
+   "meanHalfWidthM": 4.2
+  },
+  {
+   "track": "spielberg",
+   "car": "wec-lmh",
+   "productionLap": 76.999,
+   "lengthErrPct": 0.59,
+   "centreLinePct": 8.23,
+   "racingLinePct": 2.77,
+   "tumRaceLinePct": 0.07,
+   "racingLineLengthM": 4282,
+   "meanHalfWidthM": 4.2
+  },
+  {
+   "track": "suzuka",
+   "car": "2025",
+   "productionLap": 87.188,
+   "lengthErrPct": 0.55,
+   "centreLinePct": 7.49,
+   "racingLinePct": -1.2,
+   "tumRaceLinePct": -3.9,
+   "racingLineLengthM": 5742,
+   "meanHalfWidthM": 3.6
+  },
+  {
+   "track": "suzuka",
+   "car": "wec-lmh",
+   "productionLap": 108.461,
+   "lengthErrPct": 0.55,
+   "centreLinePct": 7.46,
+   "racingLinePct": -2.96,
+   "tumRaceLinePct": -5.36,
+   "racingLineLengthM": 5742,
+   "meanHalfWidthM": 3.6
+  }
+ ]
+}
