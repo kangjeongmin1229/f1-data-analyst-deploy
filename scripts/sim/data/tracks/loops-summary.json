@@ -3,6 +3,7 @@
  "rule": "accepted = within 0.5 % of the official lap length",
  "tracks": {
   "sakhir-outer": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 13,
    "edges": 19,
@@ -363,6 +364,7 @@
    ]
   },
   "le-mans": {
+   "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 64,
    "edges": 88,
@@ -757,6 +759,7 @@
    ]
   },
   "mugello": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 45,
    "edges": 46,
@@ -789,6 +792,7 @@
    ]
   },
   "yeongam": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 11,
    "edges": 566,
@@ -840,6 +844,7 @@
    ]
   },
   "indianapolis": {
+   "gapClosedM": 12,
    "snappedEnds": 3,
    "ways": 41,
    "edges": 60,
@@ -1234,7 +1239,8 @@
    ]
   },
   "sebring": {
-   "snappedEnds": 0,
+   "gapClosedM": 60,
+   "snappedEnds": 2,
    "wayList": [
     [
      "Sunset Bend",
@@ -1254,11 +1260,11 @@
     ],
     [
      null,
-     159
+     180
     ],
     [
      null,
-     219
+     239
     ],
     [
      null,
@@ -1342,18 +1348,27 @@
     ]
    ],
    "ways": 26,
-   "edges": 33,
+   "edges": 35,
    "junctions": 10,
    "searchCapped": false,
-   "loopsFound": 9,
+   "loopsFound": 27,
    "loopLengthsM": [
     {
-     "m": 5866,
+     "m": 5887,
      "names": [
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
       "Gendebien Bend"
+     ]
+    },
+    {
+     "m": 5869,
+     "names": [
+      "Sunset Bend",
+      "Ullman Straight",
+      "Gendebien Bend",
+      "Bishop Bend"
      ]
     },
     {
@@ -1366,12 +1381,21 @@
      ]
     },
     {
-     "m": 3460,
+     "m": 3482,
      "names": [
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
       "Gendebien Bend"
+     ]
+    },
+    {
+     "m": 3464,
+     "names": [
+      "Sunset Bend",
+      "Ullman Straight",
+      "Gendebien Bend",
+      "Bishop Bend"
      ]
     },
     {
@@ -1384,12 +1408,21 @@
      ]
     },
     {
-     "m": 3119,
+     "m": 3140,
      "names": [
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
       "Gendebien Bend"
+     ]
+    },
+    {
+     "m": 3122,
+     "names": [
+      "Sunset Bend",
+      "Ullman Straight",
+      "Gendebien Bend",
+      "Bishop Bend"
      ]
     },
     {
@@ -1433,9 +1466,10 @@
      "id": "sebring | IMSA layout",
      "officialM": 6019,
      "source": "imsa.com/weathertech/weathertech-2025-schedule (3.74 miles, 17 corners) [rounded to 0.01 mile]",
-     "loopM": 5866,
-     "errorPct": 2.54,
-     "accepted": false
+     "loopM": 5887,
+     "errorPct": 2.19,
+     "accepted": false,
+     "gapClosedM": 60
     },
     {
      "id": "sebring | SEBRING",
@@ -1444,13 +1478,15 @@
      "grade": "2",
      "pole": "Left",
      "widthM": 12,
-     "loopM": 5866,
-     "errorPct": 2.54,
-     "accepted": false
+     "loopM": 5887,
+     "errorPct": 2.19,
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
   "road-atlanta": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 9,
    "edges": 19,
@@ -1557,6 +1593,7 @@
    ]
   },
   "yongin": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 7,
    "edges": 13,
@@ -1609,6 +1646,7 @@
    ]
   },
   "inje": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [
     [
@@ -1682,7 +1720,8 @@
      "source": "O-NE Superrace 2025 round 6 circuit map (Inje Speedium 3.908 km)",
      "loopM": 3947,
      "errorPct": 1,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     },
     {
      "id": "inje | INJE",
@@ -1693,11 +1732,13 @@
      "widthM": 14,
      "loopM": 3947,
      "errorPct": 1,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
   "nurburgring": {
+   "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 82,
    "edges": 90,
@@ -1976,6 +2017,7 @@
    ]
   },
   "brands-hatch": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [
     [
@@ -2127,7 +2169,8 @@
      "widthM": 9,
      "loopM": 1927,
      "errorPct": 0.87,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     },
     {
      "id": "brands-hatch | BRANDS HATCH GRAND PRIX",
@@ -2138,11 +2181,13 @@
      "widthM": 9,
      "loopM": 3895,
      "errorPct": 0.54,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
   "kyalami": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 24,
    "edges": 24,
@@ -2183,6 +2228,7 @@
    ]
   },
   "fuji": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 14,
    "edges": 26,
@@ -2218,6 +2264,7 @@
    ]
   },
   "daytona": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 23,
    "edges": 29,
@@ -2552,6 +2599,7 @@
    ]
   },
   "portimao": {
+   "gapClosedM": 12,
    "snappedEnds": 3,
    "ways": 61,
    "edges": 89,
@@ -2846,6 +2894,7 @@
    ]
   },
   "paul-ricard": {
+   "gapClosedM": 12,
    "snappedEnds": 5,
    "ways": 62,
    "edges": 105,
@@ -3350,6 +3399,7 @@
    ]
   },
   "laguna-seca": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 8,
    "edges": 8,
@@ -3382,6 +3432,7 @@
    ]
   },
   "watkins-glen": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 21,
    "edges": 21,
@@ -3447,6 +3498,7 @@
    ]
   },
   "road-america": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 29,
    "edges": 30,
@@ -3488,6 +3540,7 @@
    ]
   },
   "bathurst": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [],
    "ways": 0,
@@ -3506,6 +3559,7 @@
    ]
   },
   "fe-berlin": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [],
    "ways": 0,
@@ -3530,6 +3584,7 @@
    ]
   },
   "fe-tokyo": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [],
    "ways": 0,
@@ -3554,6 +3609,7 @@
    ]
   },
   "fe-sao-paulo": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [
     [
@@ -3592,11 +3648,13 @@
      "widthM": 10,
      "loopM": 2931,
      "errorPct": 0.98,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
   "fe-sanya": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "wayList": [],
    "ways": 0,
@@ -3608,7 +3666,8 @@
    "accepted": []
   },
   "jarama": {
-   "snappedEnds": 1,
+   "gapClosedM": 60,
+   "snappedEnds": 2,
    "wayList": [
     [
      "Circuito del Jarama",
@@ -3620,7 +3679,7 @@
     ],
     [
      null,
-     231
+     226
     ],
     [
      null,
@@ -3653,20 +3712,21 @@
    ]
   },
   "long-beach": {
-   "snappedEnds": 0,
+   "gapClosedM": 60,
+   "snappedEnds": 3,
    "wayList": [
     [
      "Grand Prix of Long Beach Infield Section",
-     273
+     291
     ],
     [
      "Grand Prix of Long Beach Hairpin",
-     25
+     66
     ]
    ],
    "ways": 2,
    "edges": 2,
-   "junctions": 4,
+   "junctions": 2,
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
@@ -3680,6 +3740,7 @@
    ]
   },
   "detroit": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [],
    "ways": 0,
@@ -3698,6 +3759,7 @@
    ]
   },
   "mosport": {
+   "gapClosedM": 60,
    "snappedEnds": 0,
    "wayList": [
     [
@@ -3815,11 +3877,13 @@
      "source": "imsa.com/weathertech/weathertech-2024-schedule (2.459 miles, 10 corners)",
      "loopM": 3032,
      "errorPct": 23.38,
-     "accepted": false
+     "accepted": false,
+     "gapClosedM": 60
     }
    ]
   },
   "vir": {
+   "gapClosedM": 12,
    "snappedEnds": 2,
    "ways": 34,
    "edges": 52,
@@ -4180,6 +4244,7 @@
    ]
   },
   "mid-ohio": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 9,
    "edges": 14,
@@ -4241,6 +4306,7 @@
    ]
   },
   "lime-rock": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 26,
    "edges": 37,
@@ -4290,6 +4356,7 @@
    ]
   },
   "hockenheim": {
+   "gapClosedM": 12,
    "snappedEnds": 0,
    "ways": 21,
    "edges": 32,
