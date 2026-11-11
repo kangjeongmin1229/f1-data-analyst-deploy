@@ -1,6 +1,6 @@
 {
  "source": "OpenStreetMap via Overpass API (© OpenStreetMap contributors, ODbL)",
- "fetched": "2026-11-11T06:54:59.705Z",
+ "fetched": "2026-11-11T06:58:16.220Z",
  "tracks": {
   "sakhir-outer": {
    "kind": "permanent",
@@ -104,8 +104,8 @@
   },
   "le-mans": {
    "kind": "permanent",
-   "ways": 89,
-   "totalM": 22421,
+   "ways": 139,
+   "totalM": 37233,
    "closedLoops": [
     [
      "Circuit Alain Prost Pro",
@@ -136,10 +136,45 @@
    ],
    "byName": [
     [
+     "(no name) | motor | asphalt",
+     [
+      8,
+      3084
+     ]
+    ],
+    [
      "(no name) | motocross | ",
      [
       3,
       2395
+     ]
+    ],
+    [
+     "Ligne droite des Hunaudières |  | asphalt",
+     [
+      3,
+      2188
+     ]
+    ],
+    [
+     "Route du Golf |  | asphalt",
+     [
+      5,
+      2011
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      15,
+      1960
+     ]
+    ],
+    [
+     "(no name) |  | asphalt",
+     [
+      3,
+      1838
      ]
     ],
     [
@@ -150,24 +185,31 @@
      ]
     ],
     [
-     "(no name) | motor | asphalt",
-     [
-      4,
-      1542
-     ]
-    ],
-    [
-     "(no name) | motor | ",
-     [
-      12,
-      1472
-     ]
-    ],
-    [
      "Circuit C.I.K | karting | ",
      [
       1,
       1384
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      7,
+      1314
+     ]
+    ],
+    [
+     "Route de Tours |  | asphalt",
+     [
+      3,
+      1313
+     ]
+    ],
+    [
+     "Chicane Maison Blanche | motor | ",
+     [
+      2,
+      1216
      ]
     ],
     [
@@ -192,10 +234,24 @@
      ]
     ],
     [
-     "Pit Lane | motor | ",
+     "Pit Entry | motor | ",
      [
-      4,
-      836
+      5,
+      1043
+     ]
+    ],
+    [
+     "Courbe Dunlop | motor | ",
+     [
+      2,
+      772
+     ]
+    ],
+    [
+     "Tertre Rouge | motor | ",
+     [
+      2,
+      768
      ]
     ],
     [
@@ -220,17 +276,31 @@
      ]
     ],
     [
-     "Chicane Maison Blanche | motor | ",
+     "Virage du Pont | motor | ",
      [
-      1,
-      608
+      2,
+      688
      ]
     ],
     [
-     "Pit Entry | motor | ",
+     "Esses de la Forêt | motor | ",
      [
-      3,
-      584
+      2,
+      648
+     ]
+    ],
+    [
+     "Virage du Karting | motor | ",
+     [
+      2,
+      550
+     ]
+    ],
+    [
+     "Pit Exit | motor | ",
+     [
+      2,
+      528
      ]
     ],
     [
@@ -238,76 +308,6 @@
      [
       1,
       501
-     ]
-    ],
-    [
-     "Courbe Dunlop | motor | ",
-     [
-      1,
-      386
-     ]
-    ],
-    [
-     "Tertre Rouge | motor | ",
-     [
-      1,
-      384
-     ]
-    ],
-    [
-     "Virage du Pont | motor | ",
-     [
-      1,
-      344
-     ]
-    ],
-    [
-     "Porsche Center | motor | ",
-     [
-      2,
-      341
-     ]
-    ],
-    [
-     "Esses de la Forêt | motor | ",
-     [
-      1,
-      324
-     ]
-    ],
-    [
-     "Le « S » du Garage Bleu | motor | ",
-     [
-      1,
-      276
-     ]
-    ],
-    [
-     "Virage du Karting | motor | ",
-     [
-      1,
-      275
-     ]
-    ],
-    [
-     "Pit Exit | motor | ",
-     [
-      1,
-      264
-     ]
-    ],
-    [
-     "Chicane Daytona | motor | asphalt",
-     [
-      2,
-      245
-     ]
-    ],
-    [
-     "Chicane Michelin | motor | asphalt",
-     [
-      1,
-      243
      ]
     ]
    ]

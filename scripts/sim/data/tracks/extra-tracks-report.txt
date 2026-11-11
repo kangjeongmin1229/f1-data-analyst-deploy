@@ -3,7 +3,6 @@ sakhir-outer-bahrain-oasis-circuit: 2546 m (official 2554, smoothing shrink 0.49
 sakhir-outer-bahrain-outer-circuit: 3551 m (official 3543, smoothing shrink 0.14 %), raw height range 24 m, height 7–28 m, max grade 3.3 %, turn -360°
 sakhir-outer-bahrain-paddock-circuit: 3836 m (official 3823, smoothing shrink 0.17 %), raw height range 23 m, height 7–27 m, max grade 3.9 %, turn -360°
 sakhir-outer-bahrain-endurance: 6315 m (official 6299, smoothing shrink 0.22 %), raw height range 27 m, height 7–31 m, max grade 3.9 %, turn -360°
-le-mans-le-mans-bugatti: 4196 m (official 4180, smoothing shrink 0.50 %), raw height range 35 m, height 50–82 m, max grade 10.0 %, turn -360°
 mugello-mugello: 5245 m (official 5245, smoothing shrink 0.08 %), raw height range 47 m, height 246–289 m, max grade 13.3 %, turn 360°
 yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.25 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn 360°
 indianapolis-indianapolis-grand-prix: 4187 m (official 4192, smoothing shrink 0.18 %), raw height range 3 m, height 221–224 m, max grade 0.5 %, turn 360°
