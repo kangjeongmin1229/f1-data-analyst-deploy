@@ -16,11 +16,11 @@ export function totalTurnDeg(pts) {
   return t * 180 / Math.PI;
 }
 
-export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000} = {}) {
+export function loops(elements, {maxM = 30000, minM = 1500, cap = 200000, snapM = 12} = {}) {
   const ways = elements.filter(e => e.type === 'way' && e.geometry?.length > 1 && e.tags?.highway === 'raceway' && !SKIP.test(e.tags?.sport || '') && !SKIPNAME.test(e.tags?.name || '') && !/dirt|ground|unpaved|gravel|grass|sand/i.test(e.tags?.surface || ''))
     .map(e => ({name: e.tags?.name || null, pts: e.geometry.map(g => [g.lat, g.lon])}));
   // close small mapping gaps: a way end within SNAP_M of a point of another way is moved onto that point (map ways often do not share a node)
-  const SNAP_M = 12, all = ways.flatMap((w, wi) => w.pts.map(p => ({p, wi}))); let snapped = 0;
+  const SNAP_M = snapM, all = ways.flatMap((w, wi) => w.pts.map(p => ({p, wi}))); let snapped = 0;
   for (const [wi, w] of ways.entries()) for (const e of [0, w.pts.length - 1]) {
     const p = w.pts[e]; if (all.some(o => o.wi !== wi && o.p[0] === p[0] && o.p[1] === p[1])) continue;
     let best = null, bd = SNAP_M; for (const o of all) { if (o.wi === wi) continue; const dd = hav(p, o.p); if (dd < bd) { bd = dd; best = o.p; } }
@@ -55,7 +55,7 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
   const out = {source: 'OpenStreetMap raceway ways (© OpenStreetMap contributors, ODbL); loops found by scripts/sim/tracks/assemble.mjs', rule: 'accepted = within 0.5 % of the official lap length', tracks: {}}, lines = {};
   for (const t of REQ.filter(t => t.status === 'osm')) {
     const f = `${DIR}/${t.id}.json`; if (!existsSync(f)) { out.tracks[t.id] = {error: 'no map data'}; continue; }
-    const r = loops(JSON.parse(readFileSync(f, 'utf8')).elements);
+    const els = JSON.parse(readFileSync(f, 'utf8')).elements; let r = loops(els), snapUsed = 12;
     // official lengths: every FIA-licensed layout whose name matches this venue (newest list first), plus any length stored with a source
     const re = t.fia ? new RegExp(t.fia, 'i') : null, seen = new Set();
     const fia = re ? FIA.filter(x => re.test(x.name) && !(t.fiaNot && new RegExp(t.fiaNot, 'i').test(x.name))).filter(x => !seen.has(x.name + x.lengthM) && seen.add(x.name + x.lengthM)) : [];
@@ -63,8 +63,16 @@ if (process.argv[1]?.endsWith('assemble.mjs')) {
     const accepted = targets.map(g => { // nearest loops by length; a loop that crosses itself (total turn not ±360°) is not a lap
       const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err).slice(0, 40).find(c => t.crossover || Math.abs(Math.abs(totalTurnDeg(c.l.line())) - 360) < 30); if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
       const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]); return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok}; });
+    // a venue with no accepted lap is tried again with wider gap closing; the length check still decides
+    const pick = () => targets.map(g => { const best = r.loops.map(l => ({l, err: Math.abs(l.m - g.lengthM) / g.lengthM})).sort((a, b) => a.err - b.err).slice(0, 40).find(c => t.crossover || Math.abs(Math.abs(totalTurnDeg(c.l.line())) - 360) < 30);
+      if (!best) return {id: g.id, officialM: g.lengthM, source: g.src, accepted: false};
+      const ok = best.err <= 0.005; if (ok) lines[g.id] = best.l.line().map(p => [+p[0].toFixed(7), +p[1].toFixed(7)]);
+      return {id: g.id, officialM: g.lengthM, source: g.src, grade: g.fia?.grade, pole: g.fia?.pole, widthM: g.fia?.widthM, loopM: best.l.m, errorPct: +(best.err * 100).toFixed(2), accepted: ok, gapClosedM: snapUsed}; });
+    let acc2 = accepted;
+    for (const sm of [30, 60]) { if (!targets.length || acc2.some(a => a.accepted)) break; r = loops(JSON.parse(JSON.stringify(els)), {snapM: sm}); snapUsed = sm; acc2 = pick(); }
+    accepted.splice(0, accepted.length, ...acc2);
     const distinct = []; for (const l of r.loops) if (!distinct.some(d => Math.abs(d.m - l.m) < 15)) distinct.push({m: l.m, names: l.names.slice(0, 4)});
-    out.tracks[t.id] = {snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
+    out.tracks[t.id] = {gapClosedM: snapUsed, snappedEnds: r.snapped, wayList: accepted.some(a => a.accepted) ? undefined : r.wayList.slice(0, 60), ways: r.ways, edges: r.edges, junctions: r.junctions, searchCapped: r.searchCapped, loopsFound: r.loops.length, loopLengthsM: distinct.slice(0, 40), accepted};
   }
   writeFileSync(`${DIR}/loops-summary.json`, JSON.stringify(out, null, 1)); writeFileSync(`${DIR}/accepted-lines.json`, JSON.stringify(lines));
   console.log(Object.entries(out.tracks).map(([k, v]) => `${k}: ${v.error || v.loopsFound + ' loops, longest ' + (v.loopLengthsM[0]?.m ?? '-')}`).join('\n'));
