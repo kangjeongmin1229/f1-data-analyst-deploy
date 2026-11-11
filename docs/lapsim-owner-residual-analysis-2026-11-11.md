@@ -93,7 +93,7 @@ Sector residuals use held-out cars and factors; F1 time-only team/development mu
 | f1/2025 | medium corner minimum | 75 | -16.599404 | 30.682404 | km/h |
 | f1/2025 | fast corner minimum | 7 | -7.317330 | 16.670392 | km/h |
 | f1/2025 | straights | 195 | 2.193337 | 15.620071 | km/h |
-| f1/2025 | brakes | 178 | 36.344840 | 63.494820 | m |
+| f1/2025 | brakes | 153 | 18.809984 | 44.355637 | m |
 | f1/2026 | sector 1 | 14 | -0.400702 | 0.976658 | seconds |
 | f1/2026 | sector 2 | 14 | -0.156129 | 1.088432 | seconds |
 | f1/2026 | sector 3 | 14 | 0.448569 | 0.858478 | seconds |
@@ -101,9 +101,9 @@ Sector residuals use held-out cars and factors; F1 time-only team/development mu
 | f1/2026 | medium corner minimum | 36 | -31.506428 | 36.619035 | km/h |
 | f1/2026 | fast corner minimum | 4 | -21.290798 | 41.051409 | km/h |
 | f1/2026 | straights | 142 | 10.530227 | 21.257482 | km/h |
-| f1/2026 | brakes | 115 | 39.563246 | 67.540732 | m |
+| f1/2026 | brakes | 109 | 9.750692 | 35.465071 | m |
 
-Lap-part n counts observations, not independent laps. F1 corner bands use measured minimum speed: slow <150, medium 150–250, fast ≥250 km/h. Minima and straight-end maxima are matched within ±50 m. Braking onset comes from the speed trace; positive distance bias means simulated braking starts later. This is not a verified pedal landmark. WEC has no measured corner-speed or braking-point channel in these saved inputs. Full per-row sectors, corners, straight maxima and braking matches are in baseline-residuals.json.
+Lap-part n counts observations, not independent laps. F1 corner bands use measured minimum speed: slow <150, medium 150–250, fast ≥250 km/h. Minima and straight-end maxima are matched within ±50 m. Observed braking onset uses saved brake-active rising edges. Simulated onset is inferred from the speed profile; positive bias means later simulated braking. Pairing is one-to-one within 200 m; unmatched events are recorded. This is not a measured brake-pressure comparison. WEC has no measured corner-speed or braking-point channel in these saved inputs. Full per-row sectors, corners, straight maxima and braking matches are in baseline-residuals.json.
 
 ## F1: feature correlations
 
@@ -114,6 +114,7 @@ Pearson r against signed percent residual. “Within group” removes each class
 | airDensityKgM3 | 34 | 21 | -0.001 | -0.002 | -0.074 | 0.137 |
 | altitudeM | 0 | 0 | unknown | unknown | unknown | unknown |
 | factorSourceLatestSeason | 34 | 21 | -0.022 | -0.030 | -0.090 | 0.040 |
+| fullThrottleDistanceShare | 34 | 21 | 0.221 | 0.223 | 0.037 | 0.290 |
 | fullThrottleShare | 34 | 21 | 0.203 | 0.208 | 0.035 | 0.264 |
 | meanCornerSpeedKph | 34 | 21 | 0.173 | 0.173 | 0.062 | 0.296 |
 | trackDrag | 34 | 21 | -0.252 | -0.263 | -0.303 | -0.139 |
@@ -204,7 +205,7 @@ Sector residuals use held-out cars and factors; F1 time-only team/development mu
 | wec-lmh/2026 | sector 3 | 6 | -0.097532 | 0.554005 | seconds |
 | wec-lmh/2026 | lap maximum vs measured trap (positions differ) | 6 | 7.463132 | 19.416476 | km/h |
 
-Lap-part n counts observations, not independent laps. F1 corner bands use measured minimum speed: slow <150, medium 150–250, fast ≥250 km/h. Minima and straight-end maxima are matched within ±50 m. Braking onset comes from the speed trace; positive distance bias means simulated braking starts later. This is not a verified pedal landmark. WEC has no measured corner-speed or braking-point channel in these saved inputs. Full per-row sectors, corners, straight maxima and braking matches are in baseline-residuals.json.
+Lap-part n counts observations, not independent laps. F1 corner bands use measured minimum speed: slow <150, medium 150–250, fast ≥250 km/h. Minima and straight-end maxima are matched within ±50 m. Observed braking onset uses saved brake-active rising edges. Simulated onset is inferred from the speed profile; positive bias means later simulated braking. Pairing is one-to-one within 200 m; unmatched events are recorded. This is not a measured brake-pressure comparison. WEC has no measured corner-speed or braking-point channel in these saved inputs. Full per-row sectors, corners, straight maxima and braking matches are in baseline-residuals.json.
 
 ## WEC: feature correlations
 
@@ -234,7 +235,7 @@ F1 factors are jointly fitted from the other seasons in each fold. The JSON list
 
 ## Three patterns and their possible meaning
 
-The largest F1 error is Monaco 2026: it contributes about 31% of F1 squared percentage error, so the aggregate is sensitive to one low-speed circuit; this points first to a session/geometry/energy audit, not a broad tyre-temperature fit. Across F1 laps, medium-speed corner minima are too slow while straight-end speeds and braking locations are too high/late, especially in 2026: errors cancel across the lap, pointing to aero-mode, energy-delivery or braking-shape mismatch rather than one scalar grip correction. WEC has shared track signs across classes—Lusail and Spa too slow, Imola and Interlagos too fast—and a strong raw track-length correlation; this points to common geometry/track-factor transfer or sector allocation, with weather and BoP correlations confounded by track. These are explainable diagnostic patterns, not proof of one cause; the independent track count is small.
+The largest F1 error is Monaco 2026: it contributes about 31% of F1 squared percentage error, so the aggregate is sensitive to one low-speed circuit; this points first to a session/geometry/energy audit, not a broad tyre-temperature fit. Across F1 laps, medium-speed corner minima are too slow while straight-end speeds are too high, especially in 2026: errors cancel across the lap, pointing to aero-mode, energy-delivery or braking-shape mismatch rather than one scalar grip correction. WEC has shared track signs across classes—Lusail and Spa too slow, Imola and Interlagos too fast—and a strong raw track-length correlation; this points to common geometry/track-factor transfer or sector allocation, with weather and BoP correlations confounded by track. These are explainable diagnostic patterns, not proof of one cause; the independent track count is small.
 
 ## Recommended next experiment
 
@@ -246,8 +247,53 @@ Run `node scripts/sim/analyse-owner-residuals.mjs`, then `python scripts/sim/rep
 
 - Altitude is not available as a verified track feature in these inputs; pressure is not substituted for surveyed altitude.
 - F1 slow/medium/fast bins use measured minima below150/150–250/at least250kmh; extrema and ±50m alignment are proxies.
-- Braking points are inferred from speed, limited to ±200m; no direct pedal-position landmark claim.
+- Observed brake-active rising edges from the pinned OpenF1 brake channel, paired one-to-one with simulated speed-deceleration landmarks within 200m. Positive bias = simulated onset later. Matching remains approximate; unmatched edges are recorded. Brake indicator is not pressure. Original speed-only comparison retained in brakesSpeedProxy.
 - WEC lap maximum vs trap is not an end-of-straight position match.
 - WEC measured full-throttle share and corner minimum speeds are unavailable.
 - Fold factors use multiple other seasons; main-fit factors must not replace hidden-fold factors.
 - Old-kernel replay holds current fitted states fixed; it does not recreate missing production held-out fits.
+
+## Observed brake and throttle audit
+
+Observed brake-active rising edges from the pinned OpenF1 brake channel, paired one-to-one with simulated speed-deceleration landmarks within 200m. Positive bias = simulated onset later. Matching remains approximate; unmatched edges are recorded. Brake indicator is not pressure. Original speed-only comparison retained in brakesSpeedProxy.
+
+fullThrottleShare is the sample fraction at throttle>=98 among valid 0–100 readings. fullThrottleDistanceShare weights adjacent flags by projected travel distance, excluding invalid throttle readings and backwards/over-200m intervals and requiring 80–120% lap coverage. It is distance share, not time share; timestamps are absent from this normalized snapshot.
+
+| Season | Track | Observed brake edges | Simulated landmarks | Matched n | Unmatched observed | Mean signed bias m | Throttle distance coverage |
+|---:|---|---:|---:|---:|---:|---:|---:|
+| 2025 | monza | 7 | 6 | 6 | 1 | 22.319537 | 0.993750 |
+| 2025 | singapore | 12 | 12 | 12 | 0 | -0.786057 | 0.996577 |
+| 2025 | austin | 9 | 11 | 9 | 0 | 0.178732 | 0.997751 |
+| 2025 | mexico-city | 10 | 9 | 8 | 2 | -2.377130 | 0.995732 |
+| 2025 | yas-marina-circuit | 7 | 8 | 7 | 0 | 16.352479 | 0.996715 |
+| 2025 | sakhir | 8 | 8 | 8 | 0 | -5.213353 | 0.993001 |
+| 2025 | jeddah | 7 | 7 | 7 | 0 | 22.794975 | 0.997250 |
+| 2025 | miami | 8 | 8 | 8 | 0 | 8.524019 | 0.996709 |
+| 2025 | catalunya | 6 | 7 | 6 | 0 | 13.302345 | 0.993906 |
+| 2025 | spa-francorchamps | 7 | 8 | 6 | 1 | 55.093145 | 0.999138 |
+| 2025 | zandvoort | 9 | 8 | 7 | 2 | 23.509821 | 0.987218 |
+| 2025 | shanghai | 9 | 8 | 8 | 1 | 37.779732 | 0.996103 |
+| 2025 | monte-carlo | 13 | 12 | 12 | 1 | 16.179401 | 0.993181 |
+| 2025 | spielberg | 6 | 7 | 6 | 0 | 19.875150 | 0.990409 |
+| 2025 | hungaroring | 13 | 11 | 11 | 2 | 37.646148 | 0.997117 |
+| 2025 | lusail | 7 | 9 | 7 | 0 | 56.931389 | 0.996333 |
+| 2025 | melbourne | 7 | 9 | 6 | 1 | 25.078779 | 0.993192 |
+| 2025 | suzuka | 6 | 9 | 5 | 1 | 30.171020 | 0.990324 |
+| 2025 | imola | 8 | 8 | 8 | 0 | 13.320232 | 0.991153 |
+| 2025 | silverstone | 7 | 8 | 6 | 1 | 9.872290 | 0.994267 |
+| 2026 | miami | 8 | 8 | 8 | 0 | 7.272703 | 0.996541 |
+| 2026 | silverstone | 7 | 8 | 7 | 0 | 16.488309 | 0.995005 |
+| 2026 | austin | 10 | 9 | 9 | 1 | -5.075016 | 0.994764 |
+| 2026 | monte-carlo | 13 | 11 | 11 | 2 | 11.807061 | 0.992569 |
+| 2026 | baku | 12 | 10 | 10 | 2 | 11.985361 | 1.000453 |
+| 2026 | singapore | 12 | 12 | 12 | 0 | -9.876567 | 0.996227 |
+| 2026 | melbourne | 5 | 7 | 5 | 0 | 6.715846 | 0.993363 |
+| 2026 | catalunya | 7 | 8 | 6 | 1 | 0.449861 | 0.995292 |
+| 2026 | spa-francorchamps | 7 | 9 | 6 | 1 | 39.489854 | 0.995007 |
+| 2026 | monza | 6 | 6 | 5 | 1 | -7.699302 | 0.944440 |
+| 2026 | shanghai | 8 | 9 | 6 | 2 | 39.319051 | 0.998713 |
+| 2026 | spielberg | 8 | 7 | 6 | 2 | 25.255867 | 0.999336 |
+| 2026 | hungaroring | 10 | 11 | 10 | 0 | 24.269969 | 0.994574 |
+| 2026 | mexico-city | 10 | 9 | 8 | 2 | -7.647744 | 0.994247 |
+
+Reproduce this addendum with node scripts/sim/analyse-owner-brake-observations.mjs after restoring pinned aligned traces. This replays the same 34 saved F1 folds and changes no fit, model or gate.
