@@ -256,59 +256,92 @@ Section 13 of the programme document applies: map-built tracks are about 5 % off
 - Hold-out: leave one venue out; class-best and per-car errors reported separately with n.
 - Comparison point: a "regulation-only" car (section 1 inputs, Gen3 Evo aero and grip) run in the same job, so any gain is measured.
 
-## 7. First model: the prior car (built 2026-11-11, not calibrated)
+## 7. First model: the prior car (built and revised 2026-11-11, not calibrated)
 
 Built the same way as the F1 model: values printed in the regulations are fixed, the unknowns start from a prior with
 bounds, and the fit comes later from timing data. Code is on branch `lapsim-fe-gen4/prior-model-2026-11-11`:
-`worker/lapsim/fe-gen4.js` (car, aero packages, session modes, power split, straight-line check, lap energy),
-`scripts/sim/fe-gen4-prior.mjs` (run and report), `tests/lapsim-fe-gen4.test.mjs`. The kernel is not changed and the
-product entry stays `coming-soon`.
+`worker/lapsim/fe-gen4.js` (Gen4 car, aero packages, session modes, power split, straight-line check, lap energy, and a
+Gen3 Evo reference car), `scripts/sim/fe-gen4-prior.mjs` (run and report, output in `scripts/sim/data/fe-gen4-prior.json`),
+`tests/lapsim-fe-gen4.test.mjs`. The kernel is not changed and the product entry stays `coming-soon`.
 
-Start values (bounds in the code): lateral grip 1.6, traction grip 1.65, braking grip 1.5, drive efficiency 0.97,
-speed cap 340 km/h; low downforce SCz 2.0 / SCx 0.65 and high downforce SCz 3.0 / SCx 0.75 (the tender targets).
+### 7.1 Check on real laps (Gen3 Evo, Monaco)
 
-Check against published claims (prior car, no fitting):
+Monaco is the one venue where Formula E races on the layout the simulator has. A Gen3 Evo reference car (859 kg,
+350 kW, four-wheel drive, tender aero SCz 1.5 to 2.0) was run against the best duel lap, 1:26.217 (2026; 1:26.315 in 2025).
 
-| Check | Prior model | Claim |
+| Result | Value |
+|---|---|
+| Lateral grip the Gen3 Evo car needs for 1:26.217 | 1.50 to 1.54 (over the aero range) |
+| Gen4 qualifying gain over that lap, first prior (tender aero) | 4.9 s |
+| Gain quoted by engineers and the series | 8 to 10 s per lap |
+| High-downforce SCz needed for an 8 s gain (with 7.5 % more grip) | about 4.6 |
+| Porsche "up to 150 percent more downforce" applied to Gen3 Evo SCz 1.75 | 4.4 |
+
+The simulator's Monaco is 3267 m against 3337 m official, so absolute times run about 2 % short; the difference
+between the two cars is not affected.
+
+### 7.2 Revisions made from the checks
+
+| Value | First prior | Revised prior | Why |
+|---|---|---|---|
+| Drive efficiency, battery to wheel | 0.97 (series claim) | 0.90 (bounds 0.88 to 0.97) | 0.97 gives 0-200 km/h in 4.19 s; the published 4.4 s needs about 0.90, a normal inverter, motor and gear chain |
+| High-downforce package | SCz 3.0, SCx 0.75 (tender target) | SCz 4.4, SCx 1.10 (bounds 3.0 to 6.0, 0.75 to 1.18) | the Monaco gain and the Porsche claim agree on about 4.4 to 4.6; drag keeps the tender lift/drag ratio of 4.0 |
+| Lateral grip | 1.6, basis "below the F1 slick" | 1.6, basis Gen3 Evo 1.52 times 1.05 | same value, now tied to a real lap and the reported 5 to 10 % grippier tyre |
+| Low-downforce package | SCz 2.0, SCx 0.65 | unchanged | no evidence against the tender target |
+
+All other start values are unchanged: traction grip 1.65, braking grip 1.5, speed cap 340 km/h.
+
+### 7.3 Revised prior against the published claims
+
+| Check | Revised prior | Claim |
 |---|---|---|
-| 0-100 km/h, 600kW | 1.80 s (low downforce), 1.77 s (high downforce) | about 1.8 s |
-| 0-200 km/h, 600kW | 4.19 s | 4.4 s |
-| Top speed, 600kW | reaches the 340 km/h cap; not drag-limited | 335 km/h claimed, 338 km/h reported |
-| Monza lap, qualifying car (high downforce, 600kW) | 1:28.75 | Porsche test "1:32 range", used tyres, no qualifying run, package and power not confirmed |
-| Lateral grip needed to match 1:32.5 at Monza | 1.48 (low downforce, 600kW); 1.40 (high downforce, 600kW); 1.72 (low downforce, 450kW) | inside the prior bounds 1.3 to 2.0 |
+| 0-100 km/h, 600kW | 1.80 s low downforce, 1.75 s high downforce | about 1.8 s |
+| 0-200 km/h, 600kW | 4.38 s low downforce, 4.47 s high downforce | 4.4 s |
+| Top speed, low downforce, 600kW | reaches the 340 km/h cap | 335 km/h claimed, 338 km/h reported |
+| Monza top speed, high downforce, 600kW | 320 km/h | about 320 km/h (Porsche test, unofficial) |
+| Monza lap, qualifying car | 1:30.0 | "1:32 range" on used tyres, no qualifying run |
+| Grip needed to match 1:32.5 at Monza | 1.45 (high downforce), 1.52 (low downforce), both 600kW | inside the bounds 1.3 to 2.0 |
+| Monaco gain over the Gen3 Evo duel lap | 6.7 s (7.4 s with 7.5 % more grip) | 8 to 10 s |
 
-Prior lap times on the F1 layouts in the simulator (the Formula E layouts may differ, so these are not predictions for the events):
+Prior lap times on the F1 layouts in the simulator (the Formula E layouts may differ, so these are not event predictions):
 
-| Track | Qualifying | E-Prix Race Mode | E-Prix Attack Mode | Flat-out net energy per lap, E-Prix Race Mode |
-|---|---|---|---|---|
-| Monza | 1:28.75 | 1:34.24 | 1:30.03 | 5.76 kWh |
-| Zandvoort | 1:27.97 | 1:32.44 | 1:30.22 | 2.91 kWh |
-| Mexico City | 1:23.37 | 1:27.32 | 1:24.90 | 3.54 kWh |
-| Monte Carlo | 1:20.89 | 1:24.18 | 1:22.47 | 1.99 kWh |
+| Track | Qualifying | E-Prix Unleashed, Race Mode | E-Prix, Race Mode | E-Prix, Attack Mode | Flat-out net energy per lap, E-Prix Race Mode |
+|---|---|---|---|---|---|
+| Monza | 1:30.02 | 1:35.52 | 1:35.52 | 1:30.98 | 6.10 kWh |
+| Zandvoort | 1:26.32 | 1:29.51 | 1:33.09 | 1:30.75 | 3.24 kWh |
+| Mexico City | 1:22.91 | 1:26.26 | 1:28.07 | 1:25.45 | 3.84 kWh |
+| Monte Carlo | 1:19.56 | 1:21.89 | 1:24.72 | 1:22.85 | 2.30 kWh |
 
 Which unknown matters (Monza, qualifying car, change of lap time over the prior range):
 
 | Unknown | Range | Lap time change |
 |---|---|---|
-| Lateral grip | 1.3 to 2.0 | +4.4 s to -4.3 s |
-| Downforce, high package SCz | 2.0 to 5.0 | +1.7 s to -2.9 s |
-| Drag, high package SCx | 0.65 to 1.18 | -0.2 s to +1.0 s |
-| Braking grip | 1.3 to 1.9 | +0.7 s to -1.0 s |
-| Drive efficiency | 0.94 to 0.98 | +0.45 s to -0.14 s |
-| Traction grip | 1.5 to 2.0 | +0.2 s to -0.4 s |
-| Rolling resistance | 0.010 to 0.020 | -0.14 s to +0.15 s |
+| Lateral grip | 1.3 to 2.0 | +4.2 s to -4.3 s |
+| Downforce, high package SCz | 3.0 to 6.0 | +2.0 s to -2.0 s |
+| Drive efficiency | 0.88 to 0.97 | +0.4 s to -1.3 s |
+| Drag, high package SCx | 0.75 to 1.18 | -0.9 s to +0.2 s |
+| Braking grip | 1.3 to 1.9 | +0.5 s to -0.7 s |
+| Traction grip | 1.5 to 2.0 | +0.2 s to -0.3 s |
+| Rolling resistance | 0.010 to 0.020 | -0.25 s to +0.25 s |
 | Centre-of-gravity height, aero balance | full range | 0 s |
 
 Reading: tyre grip and downforce decide the lap time, so they are the first values to fit from the Jarama test.
-Centre-of-gravity height and aero balance do not enter this model at all (all four tyres drive and the car is a point
-mass), so they are not needed until the axle model is switched on. The straight-line claims already agree with the prior.
+Centre-of-gravity height and aero balance do not enter this model (all four tyres drive and the car is a point mass),
+so they are not needed until the axle model is switched on.
 
-Known limits of the prior model: one power value per lap (no Attack Mode timing inside a lap, no lift-and-coast, no
-race energy strategy yet); the front 250 kW and rear 350 kW caps are not applied per axle; regeneration is counted
-after the lap from the speed trace (share 0.9, 700 kW limit) and does not change the lap; no Formula E track layouts.
+Known limits: one power value per lap (no Attack Mode timing inside a lap, no lift-and-coast, no race energy strategy
+yet); the front 250 kW and rear 350 kW caps are not applied per axle; regeneration is counted after the lap from the
+speed trace (share 0.9, 700 kW limit) and does not change the lap; no Formula E track layouts except Monaco; the
+revised high-downforce values rest on two claims, not on a measurement.
 
-How it gets revised: after Jarama (16-20 November) fit lateral grip and the two aero packages on the Formula E Jarama
-layout with the Gen3 Evo lap as the reference, keep everything else fixed, and report the change against this prior.
+### 7.4 How it gets revised next
+
+1. Jarama test (16, 18, 20 November): build or accept the Formula E Jarama layout (3.934 km, extra chicane), solve the
+   Gen3 Evo grip there from 1m29.888s (350 kW) and 1m31.881s (300kW), then fit Gen4 lateral grip and SCz per package
+   from the session-best laps, all else fixed. Report the change against the table in 7.2.
+2. Jeddah Bulletins (about 27 November): replace the session plan in `FE_GEN4_MODES` with the published aero
+   configuration, Race Mode power, Attack Mode time and energy values.
+3. Jeddah race (18 and 19 December): first hide-and-predict check; then the race energy model.
 
 ## Sources
 
@@ -338,6 +371,7 @@ layout with the Gen3 Evo lap as the reference, keep everything else fixed, and r
 - https://e-formel.de/nachrichten/formel-e-news/formel-e-news-detail/formel-e-test-von-porsche-im-video-gen4-verbluefft-in-monza-mit-f2-rundenzeit-320-km-h-10601
 - https://www.the-race.com/formula-e/five-things-we-learned-formula-e-rookie-test-jarama/
 - https://racesimstudio.com/rss-formula-e
+- https://e-formula.news/news/formula-e-news/formula-e-news-detail/facts-figures-and-data-the-best-statistics-on-the-formula-e-races-in-monaco-2026
 - https://racingnews365.com/f1-drivers-hold-conversations-with-formula-e-ceo-over-gen4-private-test
 - https://www.bridgestone.com/corporate/news/2026100101.html
 - https://newsroom.porsche.com/en_US/2026/motorsport/porsche-975-rse-formula-e-gen4-presentation-42191.html
