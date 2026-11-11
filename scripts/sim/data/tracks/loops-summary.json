@@ -303,7 +303,63 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "sakhir-outer | BAHRAIN",
+     "officialM": 5412,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 13,
+     "loopM": 5420,
+     "errorPct": 0.15,
+     "accepted": true
+    },
+    {
+     "id": "sakhir-outer | BAHRAIN-OASIS CIRCUIT",
+     "officialM": 2554,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Right",
+     "widthM": 13,
+     "loopM": 2546,
+     "errorPct": 0.31,
+     "accepted": true
+    },
+    {
+     "id": "sakhir-outer | BAHRAIN-OUTER CIRCUIT",
+     "officialM": 3543,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 13,
+     "loopM": 3551,
+     "errorPct": 0.23,
+     "accepted": true
+    },
+    {
+     "id": "sakhir-outer | BAHRAIN-PADDOCK CIRCUIT",
+     "officialM": 3823,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 13,
+     "loopM": 3836,
+     "errorPct": 0.34,
+     "accepted": true
+    },
+    {
+     "id": "sakhir-outer | BAHRAIN \"ENDURANCE\"",
+     "officialM": 6299,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 13,
+     "loopM": 6315,
+     "errorPct": 0.25,
+     "accepted": true
+    }
+   ]
   },
   "le-mans": {
    "ways": 64,
@@ -673,7 +729,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "le-mans | LE MANS BUGATTI",
+     "officialM": 4180,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 9,
+     "loopM": 4196,
+     "errorPct": 0.38,
+     "accepted": true
+    }
+   ]
   },
   "mugello": {
    "ways": 45,
@@ -692,23 +760,22 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "mugello | MUGELLO",
+     "officialM": 5245,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Right",
+     "widthM": 9.6,
+     "loopM": 5245,
+     "errorPct": 0,
+     "accepted": true
+    }
+   ]
   },
   "yeongam": {
-   "ways": 11,
-   "edges": 566,
-   "junctions": 288,
-   "searchCapped": true,
-   "loopsFound": 199832,
-   "loopLengthsM": [
-    {
-     "m": 3027,
-     "names": [
-      "Permanent Circuit"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "indianapolis": {
    "ways": 41,
@@ -1078,7 +1145,30 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "indianapolis | INDIANAPOLIS GRAND PRIX",
+     "officialM": 4192,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 14.326,
+     "loopM": 4189,
+     "errorPct": 0.07,
+     "accepted": true
+    },
+    {
+     "id": "indianapolis | INDIANAPOLIS ROAD COURSE",
+     "officialM": 3910,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 12,
+     "loopM": 3911,
+     "errorPct": 0.03,
+     "accepted": true
+    }
+   ]
   },
   "sebring": {
    "ways": 26,
@@ -1168,7 +1258,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "sebring | SEBRING",
+     "officialM": 6019,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 5866,
+     "errorPct": 2.54,
+     "accepted": false
+    }
+   ]
   },
   "road-atlanta": {
    "ways": 9,
@@ -1261,7 +1363,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "road-atlanta | ROAD ATLANTA",
+     "officialM": 4088,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 12,
+     "loopM": 4090,
+     "errorPct": 0.05,
+     "accepted": true
+    }
+   ]
   },
   "yongin": {
    "ways": 7,
@@ -1353,7 +1467,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "inje | INJE",
+     "officialM": 3908,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 14,
+     "loopM": 3947,
+     "errorPct": 1,
+     "accepted": false
+    }
+   ]
   },
   "nurburgring": {
    "ways": 82,
@@ -1547,7 +1673,52 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "nurburgring | NÜRBURGRING GRAND PRIX",
+     "officialM": 5148,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 10,
+     "loopM": 5127,
+     "errorPct": 0.41,
+     "accepted": true
+    },
+    {
+     "id": "nurburgring | NÜRBURGRING SPRINT STRECKE",
+     "officialM": 3629,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 10,
+     "loopM": 3612,
+     "errorPct": 0.47,
+     "accepted": true
+    },
+    {
+     "id": "nurburgring | NÜRBURGRING \"OLDTIMER\"",
+     "officialM": 4638,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 10,
+     "loopM": 4611,
+     "errorPct": 0.58,
+     "accepted": false
+    },
+    {
+     "id": "nurburgring | NURBURGRING NORDSCHLEIFE",
+     "officialM": 25888,
+     "source": "FIA list 2026-03-31",
+     "grade": "3",
+     "pole": "Right",
+     "widthM": 8,
+     "loopM": 25838,
+     "errorPct": 0.19,
+     "accepted": true
+    }
+   ]
   },
   "brands-hatch": {
    "ways": 26,
@@ -1584,7 +1755,30 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "brands-hatch | BRANDS HATCH - INDY",
+     "officialM": 1944,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 9,
+     "loopM": 1927,
+     "errorPct": 0.87,
+     "accepted": false
+    },
+    {
+     "id": "brands-hatch | BRANDS HATCH GRAND PRIX",
+     "officialM": 3916,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Right",
+     "widthM": 9,
+     "loopM": 3895,
+     "errorPct": 0.54,
+     "accepted": false
+    }
+   ]
   },
   "kyalami": {
    "ways": 24,
@@ -1625,7 +1819,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "fuji | FUJI SPEEDWAY",
+     "officialM": 4563,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 15,
+     "loopM": 4554,
+     "errorPct": 0.2,
+     "accepted": true
+    }
+   ]
   },
   "daytona": {
    "ways": 23,
@@ -2219,7 +2425,30 @@
      "names": []
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "portimao | ALGARVE",
+     "officialM": 4653,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 14,
+     "loopM": 4648,
+     "errorPct": 0.11,
+     "accepted": true
+    },
+    {
+     "id": "portimao | ALGARVE",
+     "officialM": 4684,
+     "source": "FIA list 2025-12-01",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 14,
+     "loopM": 4682,
+     "errorPct": 0.04,
+     "accepted": true
+    }
+   ]
   },
   "paul-ricard": {
    "ways": 62,
@@ -2589,26 +2818,66 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "paul-ricard | PAUL RICARD",
+     "officialM": 5822,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 5822,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 2A",
+     "officialM": 4035,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 4035,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 2ASC",
+     "officialM": 4042,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 4042,
+     "errorPct": 0,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 2ASC SHORT",
+     "officialM": 3471,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 3477,
+     "errorPct": 0.17,
+     "accepted": true
+    },
+    {
+     "id": "paul-ricard | PAUL RICARD - 3C",
+     "officialM": 3826,
+     "source": "FIA list 2026-03-31",
+     "grade": "1",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 3826,
+     "errorPct": 0,
+     "accepted": true
+    }
+   ]
   },
   "laguna-seca": {
-   "ways": 8,
-   "edges": 8,
-   "junctions": 0,
-   "searchCapped": false,
-   "loopsFound": 1,
-   "loopLengthsM": [
-    {
-     "m": 3601,
-     "names": [
-      "WeatherTech Raceway Laguna Seca",
-      "Andretti Hairpin",
-      "Rahal Straight",
-      "The Corkscrew"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "watkins-glen": {
    "ways": 21,
@@ -2691,7 +2960,19 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "road-america | ROAD AMERICA – ELKHART LAKE",
+     "officialM": 6514,
+     "source": "FIA list 2026-03-31",
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 12,
+     "loopM": 6493,
+     "errorPct": 0.32,
+     "accepted": true
+    }
+   ]
   },
   "bathurst": {
    "ways": 0,
@@ -2700,7 +2981,14 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "bathurst | MOUNT PANORAMA - BATHURST",
+     "officialM": 6213,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "fe-berlin": {
    "ways": 0,
@@ -2709,7 +2997,14 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "fe-berlin | BERLIN FORMULA E",
+     "officialM": 2370,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "fe-tokyo": {
    "ways": 0,
@@ -2718,7 +3013,14 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "fe-tokyo | TOKYO E-PRIX",
+     "officialM": 2576,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "fe-sao-paulo": {
    "ways": 3,
@@ -2734,16 +3036,22 @@
      ]
     }
    ],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "fe-sao-paulo | SAO PAULO FE",
+     "officialM": 2960,
+     "source": "FIA list 2025-12-01",
+     "grade": "3E",
+     "pole": null,
+     "widthM": 10,
+     "loopM": 2931,
+     "errorPct": 0.98,
+     "accepted": false
+    }
+   ]
   },
   "fe-sanya": {
-   "ways": 0,
-   "edges": 0,
-   "junctions": 0,
-   "searchCapped": false,
-   "loopsFound": 0,
-   "loopLengthsM": [],
-   "accepted": []
+   "error": "no map data"
   },
   "jarama": {
    "ways": 5,
@@ -2752,7 +3060,20 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "jarama | JARAMA",
+     "officialM": 3850,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    },
+    {
+     "id": "jarama | JARAMA FE",
+     "officialM": 3931,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "long-beach": {
    "ways": 2,
@@ -2761,7 +3082,14 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "long-beach | LONG BEACH",
+     "officialM": 3168,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "detroit": {
    "ways": 0,
@@ -2770,631 +3098,29 @@
    "searchCapped": false,
    "loopsFound": 0,
    "loopLengthsM": [],
-   "accepted": []
+   "accepted": [
+    {
+     "id": "detroit | DETROIT GRAND PRIX STREET CIRCUIT",
+     "officialM": 2650,
+     "source": "FIA list 2026-03-31",
+     "accepted": false
+    }
+   ]
   },
   "mosport": {
-   "ways": 14,
-   "edges": 21,
-   "junctions": 7,
-   "searchCapped": false,
-   "loopsFound": 14,
-   "loopLengthsM": [
-    {
-     "m": 3032,
-     "names": []
-    },
-    {
-     "m": 2971,
-     "names": []
-    },
-    {
-     "m": 2954,
-     "names": []
-    },
-    {
-     "m": 2920,
-     "names": []
-    },
-    {
-     "m": 2893,
-     "names": []
-    },
-    {
-     "m": 2842,
-     "names": []
-    },
-    {
-     "m": 2488,
-     "names": []
-    },
-    {
-     "m": 2413,
-     "names": []
-    },
-    {
-     "m": 2343,
-     "names": []
-    },
-    {
-     "m": 2268,
-     "names": []
-    },
-    {
-     "m": 2190,
-     "names": []
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "vir": {
-   "ways": 34,
-   "edges": 51,
-   "junctions": 21,
-   "searchCapped": false,
-   "loopsFound": 150,
-   "loopLengthsM": [
-    {
-     "m": 6678,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 6656,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 6503,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 6481,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
-    {
-     "m": 5603,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 5581,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5492,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5470,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
-    {
-     "m": 5399,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 5377,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5288,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5266,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
-    {
-     "m": 4617,
-     "names": [
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen",
-      "Virginia International Raceway"
-     ]
-    },
-    {
-     "m": 4576,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 4538,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 4277,
-     "names": [
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen",
-      "Virginia International Raceway"
-     ]
-    },
-    {
-     "m": 4015,
-     "names": [
-      "Up Hill",
-      "Snake",
-      "Virginia International Raceway",
-      "Left Hook"
-     ]
-    },
-    {
-     "m": 3785,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3763,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 3674,
-     "names": [
-      "Up Hill",
-      "Snake",
-      "Virginia International Raceway",
-      "Left Hook"
-     ]
-    },
-    {
-     "m": 3245,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3223,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 3176,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3154,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 2921,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 2898,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Up Hill",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2879,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2862,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Fish Hook",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2684,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 2662,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Up Hill",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2647,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 2632,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2617,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2239,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Up Hill",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 1968,
-     "names": [
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 1854,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Up Hill",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 1583,
-     "names": [
-      "Patriot Course",
-      "Spiral"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "mid-ohio": {
-   "ways": 9,
-   "edges": 14,
-   "junctions": 6,
-   "searchCapped": false,
-   "loopsFound": 4,
-   "loopLengthsM": [
-    {
-     "m": 3646,
-     "names": [
-      "The Keyhole",
-      "Carousel",
-      "Thunder Valley"
-     ]
-    },
-    {
-     "m": 3616,
-     "names": [
-      "The Keyhole",
-      "Carousel",
-      "Thunder Valley"
-     ]
-    },
-    {
-     "m": 3068,
-     "names": [
-      "Thunder Valley",
-      "Carousel"
-     ]
-    },
-    {
-     "m": 2731,
-     "names": [
-      "Thunder Valley",
-      "Carousel"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "lime-rock": {
-   "ways": 26,
-   "edges": 37,
-   "junctions": 19,
-   "searchCapped": false,
-   "loopsFound": 4,
-   "loopLengthsM": [
-    {
-     "m": 2411,
-     "names": [
-      "West Chicane",
-      "Diving Turn",
-      "Sam Posey Straight",
-      "Big Bend"
-     ]
-    },
-    {
-     "m": 2372,
-     "names": [
-      "West Bend",
-      "Diving Turn",
-      "Sam Posey Straight",
-      "Big Bend"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   },
   "hockenheim": {
-   "ways": 21,
-   "edges": 32,
-   "junctions": 11,
-   "searchCapped": false,
-   "loopsFound": 28,
-   "loopLengthsM": [
-    {
-     "m": 4790,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 4690,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 4665,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 4565,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3852,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3813,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3727,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3688,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3611,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3586,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3510,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 2748,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2709,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2673,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2634,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2615,
-     "names": [
-      "Mobil 1 Kurve",
-      "Sachs-Kurve",
-      "Südkurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 2598,
-     "names": [
-      "Mobil 1 Kurve",
-      "Sachs-Kurve",
-      "Südkurve",
-      "Ravenol-Kurve"
-     ]
-    }
-   ],
-   "accepted": []
+   "error": "no map data"
   }
  }
 }
