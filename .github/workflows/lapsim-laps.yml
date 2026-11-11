@@ -50,7 +50,7 @@ jobs:
           path: .cache/lapsim/osm
           key: osm-ways-${{ github.run_id }}
           restore-keys: osm-ways-
-      - run: rm -f .cache/lapsim/osm/*-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia*
+      - run: rm -f .cache/lapsim/osm/*-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia* .cache/lapsim/osm/extra-tracks*
       - run: node scripts/sim/tracks/fetch-osm.mjs
         timeout-minutes: 22
         continue-on-error: true
@@ -61,12 +61,14 @@ jobs:
           key: osm-ways-${{ github.run_id }}
       - run: (which pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)) && node scripts/sim/tracks/fia-circuits.mjs
       - run: node scripts/sim/tracks/assemble.mjs
+      - run: node scripts/sim/tracks/build-extra.mjs
+        continue-on-error: true
       - uses: actions/upload-artifact@v4
         with: {name: osm-raceways, path: .cache/lapsim/osm, retention-days: 90}
       - name: Commit the summary
         run: |
           git fetch origin "${{ github.ref_name }}" && git reset --hard FETCH_HEAD
-          mkdir -p scripts/sim/data/tracks && cp .cache/lapsim/osm/osm-summary.json .cache/lapsim/osm/loops-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia-circuits.json scripts/sim/data/tracks/
+          mkdir -p scripts/sim/data/tracks && cp .cache/lapsim/osm/osm-summary.json .cache/lapsim/osm/loops-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia-circuits.json scripts/sim/data/tracks/; cp .cache/lapsim/osm/extra-tracks.json .cache/lapsim/osm/extra-tracks-report.txt scripts/sim/data/tracks/ || true
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add scripts/sim/data/tracks
