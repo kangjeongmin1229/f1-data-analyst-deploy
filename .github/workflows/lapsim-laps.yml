@@ -46,13 +46,14 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - run: node scripts/sim/tracks/fetch-osm.mjs
-        timeout-minutes: 25
+        timeout-minutes: 30
+      - run: node scripts/sim/tracks/assemble.mjs
       - uses: actions/upload-artifact@v4
         with: {name: osm-raceways, path: .cache/lapsim/osm, retention-days: 90}
       - name: Commit the summary
         run: |
           git fetch origin "${{ github.ref_name }}" && git reset --hard FETCH_HEAD
-          mkdir -p scripts/sim/data/tracks && cp .cache/lapsim/osm/osm-summary.json scripts/sim/data/tracks/
+          mkdir -p scripts/sim/data/tracks && cp .cache/lapsim/osm/osm-summary.json .cache/lapsim/osm/loops-summary.json .cache/lapsim/osm/accepted-lines.json scripts/sim/data/tracks/
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add scripts/sim/data/tracks
