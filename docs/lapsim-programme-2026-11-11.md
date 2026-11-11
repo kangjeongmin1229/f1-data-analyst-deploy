@@ -94,3 +94,22 @@ Still open:
 | Not accepted | Sebring (−2.5 %), Inje (+1.0 %), Brands Hatch GP (0.54 %), São Paulo (0.98 %), Mosport (map incomplete), Yeongam F1 lap, Le Mans 24 Hours lap |
 | No lap on the map | Jarama, Bathurst, Berlin, Tokyo, Sanya, Long Beach, Detroit, Nürburgring 24 Hours and NLS laps |
 | Private data repository | Could not be created from this session; the owner has to create it |
+
+## 9. Track geometry status, third pass (2026-11-11, run for commit 61fa4d9)
+
+Candidates: 44 layouts from the map (`extra-tracks.json`) and 2 from the TUM racetrack database (`extra-tracks-tum.json`: Brands Hatch Grand Prix, Oschersleben; no height), at 22 venues.
+New: Le Mans 24 Hours lap from its map relation (13,612 m against 13,626 m official, 0.10 %); Nürburgring 24 Hours lap and Nordschleife with sourced lengths; small map gaps between ways are closed (12 m, then 30 and 60 m only when nothing was accepted).
+
+Height warning: the elevation tiles are a surface model, so trees and buildings are in the height. Forest and city sections (Le Mans, Nordschleife) are not trustworthy until a bare-ground source is used.
+Direction is "as mapped" and differs between two Le Mans layouts, which shows it is not reliable: take direction from documents.
+
+Still failing, with the reason:
+
+| Venue | Reason |
+|---|---|
+| Sebring, Mosport, Jarama, Inje, São Paulo | The map ways are incomplete or imprecise; gap closing did not help. Needs another geometry source |
+| Yeongam F1 lap (5,615 m) | Only the 3,027 m permanent lap closes on the map |
+| Long Beach, Detroit, Tokyo, Berlin, Sanya, Bathurst | Public roads: many road loops have the right length, so the lap must be chosen with the official track map. Not automatic |
+| Nürburgring NLS lap | No sourced length stored |
+| Paul Ricard | Ambiguous (see section 8) |
+| Rwanda | The ribbon was extracted from the owner's diagram, but the drawing overlaps itself in the middle and is an oblique view. An automatic trace is not reliable; the lap order has to be set by hand. Not built |
