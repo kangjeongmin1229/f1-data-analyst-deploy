@@ -70,10 +70,11 @@ Rows without a prefix are Technical Regulations (TR). SR = Sporting Regulations;
 | Minimum Energy Consumption (MEC) | may be published for specific races; a lap below the MEC counts as the MEC; not on lap 1, last lap, FCY / Safety Car laps, "Wet Track", pit lane laps | SR 27.9 / p39 |
 | Pit-lane start energy offset | +X kWh, value in a Bulletin | SR 26.3 / p33 |
 | Pit Boost | mandatory only in races named by the FIA at least 21 days before; one stop; the Bulletin gives a table of energy quantities (kWh), each with a minimum stop time, and the SoC window; no tyre change before it is finished | SR 27.5-27.7 / p38-39 |
+| Testing limits | each competitor: Eight (8) days of testing, six (6) Official Test days and two (2) Test Days, 1 October 2026 to 30 September 2027; promotional running limited to 40kWh total discharge energy throughput and 350kW power output; "Rig testing, wind tunnel testing, and CFD studies are strictly forbidden" | SR 12.3, 12.8-12.11 / p11-13 |
 | Race distance | number of laps published by the FIA twenty-one (21) days before each event; maximum 7 "Added Laps" for FCY / Safety Car time | SR 2.6 / p2 (full page read); 27.2 / p36 |
 | Race time cap | Performance Race ("e-Prix Unleashed"): sixty (60) minutes, with a suspension up to ninety (90) minutes plus one lap; Efficiency Race ("e-Prix"): seventy-five (75) minutes, with a suspension up to three (3) hours plus one lap | SR 2.6 a), b) / p2-3 |
 | Event format | 1 race: 2 days (Shakedown and Free Practice; then Free Practice, Qualifying, Race); 2 races: 3 days (Shakedown; then two days of Free Practice, Qualifying, Race) | SR 2.5 / p2 |
-| Attack Mode activations and time split (Appendix 4) | "Maximum 2 activations during the race (Unfreeze activations not included)"; time split scenario 1 to 3 chosen by the driver on the steering wheel: 2 + 6min, 4 + 4min, 6 + 2min; choice frozen at the first successful activation; ignored in a race with a maximum of 1 activation; free practice: unlimited armings and activations | SR Appendix 4 / PDF p76 - REBUILT from the positions of the rotated diagram text, not seen by eye; check before use |
+| Attack Mode procedure (Appendix 4, "S13 v3") | driver arms with a push button, "Max 5s windows before first loop of Attack zone", unlimited armings; three timing loops in the zone; while active: "600 kW or PS", when the timer goes to 0 sec: "450 kW or PS" (PS = power schedule); "Maximum 2 activations during the race (Unfreeze activations not included)"; time split scenario 1 to 3 chosen on the steering wheel before the first activation, examples: "Scenario 1: 2 + 6min", "Scenario 2: 4 + 4min", "Scenario 3: 6 + 2min"; choice frozen at the first successful activation; ignored in a race with a maximum of 1 activation; a frozen timer must be unfrozen before the second activation; "For each race, number of armings, activations and time split scenario will be published in the race official Event Note"; free practice: unlimited armings and activations | SR Appendix 4 / PDF p76 - confirmed by eye on 2026-11-11 (page image from the owner) |
 
 Technical Regulations pages 42-79 hold no model input: safety equipment and structures (Articles 14-16), materials (17),
 safety tests, cameras and transponders (18-19), drawings 1-13 (pages 57-73) and the rear suspension appendix (74-79).
@@ -85,8 +86,9 @@ energy (7.5) and the DC-DC rule (7.5). They are now in the table. Pages 25-32 an
 
 Still not in either regulation (see section 2): tyre pressure numbers; Attack Mode total time; the energy value, Pit Boost
 table and aero configuration of each event. Sporting Regulations Appendix 4 (Attack Mode, PDF page 76) is a rotated diagram.
-The text reader returns it scrambled; the row above was rebuilt by sorting the words by their position. fia.com could not
-be opened in the browser or the shell, so the diagram itself was not seen.
+The text reader returns it scrambled; the row above was first rebuilt from word positions and then confirmed against the
+page image. The whole Sporting Regulations PDF (77 pages, supplied by the owner) was also scanned locally: pages not read
+before hold no further car input; the testing rules (Article 12) are in the table.
 
 Derived checks (arithmetic only on the rows above; not new inputs):
 
@@ -251,6 +253,60 @@ Section 13 of the programme document applies: map-built tracks are about 5 % off
   team differences only after 5 venues, with the shrink widths of `docs/lapsim-all-laps.md`.
 - Hold-out: leave one venue out; class-best and per-car errors reported separately with n.
 - Comparison point: a "regulation-only" car (section 1 inputs, Gen3 Evo aero and grip) run in the same job, so any gain is measured.
+
+## 7. First model: the prior car (built 2026-11-11, not calibrated)
+
+Built the same way as the F1 model: values printed in the regulations are fixed, the unknowns start from a prior with
+bounds, and the fit comes later from timing data. Code is on branch `lapsim-fe-gen4/prior-model-2026-11-11`:
+`worker/lapsim/fe-gen4.js` (car, aero packages, session modes, power split, straight-line check, lap energy),
+`scripts/sim/fe-gen4-prior.mjs` (run and report), `tests/lapsim-fe-gen4.test.mjs`. The kernel is not changed and the
+product entry stays `coming-soon`.
+
+Start values (bounds in the code): lateral grip 1.6, traction grip 1.65, braking grip 1.5, drive efficiency 0.97,
+speed cap 340 km/h; low downforce SCz 2.0 / SCx 0.65 and high downforce SCz 3.0 / SCx 0.75 (the tender targets).
+
+Check against published claims (prior car, no fitting):
+
+| Check | Prior model | Claim |
+|---|---|---|
+| 0-100 km/h, 600kW | 1.80 s (low downforce), 1.77 s (high downforce) | about 1.8 s |
+| 0-200 km/h, 600kW | 4.19 s | 4.4 s |
+| Top speed, 600kW | reaches the 340 km/h cap; not drag-limited | 335 km/h claimed, 338 km/h reported |
+| Monza lap, qualifying car (high downforce, 600kW) | 1:28.75 | Porsche test "1:32 range", used tyres, no qualifying run, package and power not confirmed |
+| Lateral grip needed to match 1:32.5 at Monza | 1.48 (low downforce, 600kW); 1.40 (high downforce, 600kW); 1.72 (low downforce, 450kW) | inside the prior bounds 1.3 to 2.0 |
+
+Prior lap times on the F1 layouts in the simulator (the Formula E layouts may differ, so these are not predictions for the events):
+
+| Track | Qualifying | E-Prix Race Mode | E-Prix Attack Mode | Flat-out net energy per lap, E-Prix Race Mode |
+|---|---|---|---|---|
+| Monza | 1:28.75 | 1:34.24 | 1:30.03 | 5.76 kWh |
+| Zandvoort | 1:27.97 | 1:32.44 | 1:30.22 | 2.91 kWh |
+| Mexico City | 1:23.37 | 1:27.32 | 1:24.90 | 3.54 kWh |
+| Monte Carlo | 1:20.89 | 1:24.18 | 1:22.47 | 1.99 kWh |
+
+Which unknown matters (Monza, qualifying car, change of lap time over the prior range):
+
+| Unknown | Range | Lap time change |
+|---|---|---|
+| Lateral grip | 1.3 to 2.0 | +4.4 s to -4.3 s |
+| Downforce, high package SCz | 2.0 to 5.0 | +1.7 s to -2.9 s |
+| Drag, high package SCx | 0.65 to 1.18 | -0.2 s to +1.0 s |
+| Braking grip | 1.3 to 1.9 | +0.7 s to -1.0 s |
+| Drive efficiency | 0.94 to 0.98 | +0.45 s to -0.14 s |
+| Traction grip | 1.5 to 2.0 | +0.2 s to -0.4 s |
+| Rolling resistance | 0.010 to 0.020 | -0.14 s to +0.15 s |
+| Centre-of-gravity height, aero balance | full range | 0 s |
+
+Reading: tyre grip and downforce decide the lap time, so they are the first values to fit from the Jarama test.
+Centre-of-gravity height and aero balance do not enter this model at all (all four tyres drive and the car is a point
+mass), so they are not needed until the axle model is switched on. The straight-line claims already agree with the prior.
+
+Known limits of the prior model: one power value per lap (no Attack Mode timing inside a lap, no lift-and-coast, no
+race energy strategy yet); the front 250 kW and rear 350 kW caps are not applied per axle; regeneration is counted
+after the lap from the speed trace (share 0.9, 700 kW limit) and does not change the lap; no Formula E track layouts.
+
+How it gets revised: after Jarama (16-20 November) fit lateral grip and the two aero packages on the Formula E Jarama
+layout with the Gen3 Evo lap as the reference, keep everything else fixed, and report the change against this prior.
 
 ## Sources
 
