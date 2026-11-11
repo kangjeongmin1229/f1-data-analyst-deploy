@@ -1,5 +1,8 @@
 # Saved-baseline residual analysis — 2026-11-11
 
+> Superseded measurement version. Read the [latest observed-brake and distance-weighted throttle report](https://github.com/kangjeongmin1229/f1-data-analyst-deploy/blob/e486ff4aec4b890e438cdf1386ca5eaf348a3b4f/docs/lapsim-owner-residual-analysis-2026-11-11.md) at commit e486ff4aec4b890e438cdf1386ca5eaf348a3b4f. The older speed-only braking comparison below is retained for provenance. All 67 saved lap predictions are unchanged.
+
+
 No fit. Every lap prediction was reconstructed from its original held-out state, with zero optimizer rounds; all 67 match the saved residual within 1e-8 s. Positive residual means the prediction is too slow. These are current experiment baselines: final Block 2 F1 control and WEC R control, not a recomputed frozen-production baseline.
 
 F1 is a hidden-season test on known tracks, not unseen-track validation. WEC hides a class-season lap while carrying F1/B track factors. Each feature association below is exploratory; these same rows cannot later be advertised as untouched validation after choosing a model from this analysis.
