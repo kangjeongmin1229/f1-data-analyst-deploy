@@ -1,8 +1,9 @@
 {
  "source": "OpenStreetMap via Overpass API (© OpenStreetMap contributors, ODbL)",
- "fetched": "2026-11-11T04:13:14.136Z",
+ "fetched": "2026-11-11T04:40:42.319Z",
  "tracks": {
   "sakhir-outer": {
+   "kind": "permanent",
    "ways": 27,
    "totalM": 12750,
    "closedLoops": [],
@@ -102,6 +103,7 @@
    ]
   },
   "le-mans": {
+   "kind": "permanent",
    "ways": 89,
    "totalM": 22421,
    "closedLoops": [
@@ -311,6 +313,7 @@
    ]
   },
   "mugello": {
+   "kind": "permanent",
    "ways": 49,
    "totalM": 9232,
    "closedLoops": [
@@ -487,6 +490,7 @@
    ]
   },
   "yeongam": {
+   "kind": "permanent",
    "ways": 20,
    "totalM": 19148,
    "closedLoops": [
@@ -600,6 +604,7 @@
    ]
   },
   "indianapolis": {
+   "kind": "permanent",
    "ways": 44,
    "totalM": 15689,
    "closedLoops": [
@@ -788,6 +793,7 @@
    ]
   },
   "sebring": {
+   "kind": "permanent",
    "ways": 27,
    "totalM": 8034,
    "closedLoops": [],
@@ -901,6 +907,7 @@
    ]
   },
   "road-atlanta": {
+   "kind": "permanent",
    "ways": 14,
    "totalM": 8627,
    "closedLoops": [
@@ -999,9 +1006,30 @@
    ]
   },
   "yongin": {
-   "error": "Error: https://overpass.kumi.systems/api/interpreter: The operation was aborted due to timeout"
+   "kind": "permanent",
+   "ways": 8,
+   "totalM": 5058,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | ",
+     [
+      7,
+      4577
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      481
+     ]
+    ]
+   ]
   },
   "inje": {
+   "kind": "permanent",
    "ways": 5,
    "totalM": 5696,
    "closedLoops": [
@@ -1050,6 +1078,7 @@
    ]
   },
   "nurburgring": {
+   "kind": "permanent",
    "ways": 99,
    "totalM": 29256,
    "closedLoops": [],
@@ -1233,6 +1262,7 @@
    ]
   },
   "brands-hatch": {
+   "kind": "permanent",
    "ways": 51,
    "totalM": 7610,
    "closedLoops": [
@@ -1433,6 +1463,7 @@
    ]
   },
   "kyalami": {
+   "kind": "permanent",
    "ways": 27,
    "totalM": 6648,
    "closedLoops": [
@@ -1558,6 +1589,7 @@
    ]
   },
   "fuji": {
+   "kind": "permanent",
    "ways": 20,
    "totalM": 10487,
    "closedLoops": [
@@ -1647,6 +1679,7 @@
    ]
   },
   "daytona": {
+   "kind": "permanent",
    "ways": 26,
    "totalM": 10103,
    "closedLoops": [
@@ -1741,6 +1774,7 @@
    ]
   },
   "portimao": {
+   "kind": "permanent",
    "ways": 62,
    "totalM": 10986,
    "closedLoops": [
@@ -1846,6 +1880,7 @@
    ]
   },
   "paul-ricard": {
+   "kind": "permanent",
    "ways": 85,
    "totalM": 18642,
    "closedLoops": [
@@ -2043,6 +2078,7 @@
    ]
   },
   "laguna-seca": {
+   "kind": "permanent",
    "ways": 9,
    "totalM": 4600,
    "closedLoops": [],
@@ -2093,6 +2129,7 @@
    ]
   },
   "watkins-glen": {
+   "kind": "permanent",
    "ways": 23,
    "totalM": 6825,
    "closedLoops": [],
@@ -2185,6 +2222,7 @@
    ]
   },
   "road-america": {
+   "kind": "permanent",
    "ways": 37,
    "totalM": 9543,
    "closedLoops": [],
@@ -2326,11 +2364,738 @@
    ]
   },
   "bathurst": {
+   "kind": "permanent",
    "ways": 0,
    "totalM": 0,
    "closedLoops": [],
    "relations": [],
    "byName": []
+  },
+  "fe-berlin": {
+   "kind": "temporary",
+   "roads": 3230,
+   "ways": 0,
+   "totalM": 0,
+   "closedLoops": [],
+   "relations": [],
+   "byName": []
+  },
+  "fe-tokyo": {
+   "kind": "street",
+   "roads": 743,
+   "ways": 1,
+   "totalM": 365,
+   "closedLoops": [
+    [
+     null,
+     365
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | karting | ",
+     [
+      1,
+      365
+     ]
+    ]
+   ]
+  },
+  "fe-sao-paulo": {
+   "kind": "street",
+   "roads": 1776,
+   "ways": 4,
+   "totalM": 3179,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "ABB FIA Formula E São Paulo E-Prix | motor | paved",
+     [
+      1,
+      2712
+     ]
+    ],
+    [
+     "Pit Lane | motor | paved",
+     [
+      1,
+      249
+     ]
+    ],
+    [
+     "ABB FIA Formula E São Paulo E-Prix | motor | ",
+     [
+      2,
+      218
+     ]
+    ]
+   ]
+  },
+  "fe-sanya": {
+   "kind": "street",
+   "roads": 57,
+   "ways": 0,
+   "totalM": 0,
+   "closedLoops": [],
+   "relations": [],
+   "byName": []
+  },
+  "jarama": {
+   "kind": "permanent",
+   "ways": 9,
+   "totalM": 5745,
+   "closedLoops": [
+    [
+     "Jarama Karting",
+     544
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "Circuito del Jarama | motor | ",
+     [
+      2,
+      3905
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      855
+     ]
+    ],
+    [
+     "Jarama Karting | karting | asphalt",
+     [
+      3,
+      616
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      3,
+      369
+     ]
+    ]
+   ]
+  },
+  "long-beach": {
+   "kind": "street",
+   "roads": 1894,
+   "ways": 2,
+   "totalM": 298,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "Grand Prix of Long Beach Infield Section | motor | ",
+     [
+      1,
+      273
+     ]
+    ],
+    [
+     "Grand Prix of Long Beach Hairpin | motor | ",
+     [
+      1,
+      25
+     ]
+    ]
+   ]
+  },
+  "detroit": {
+   "kind": "street",
+   "roads": 3064,
+   "ways": 1,
+   "totalM": 293,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "Detroit Grand Prix Pit Lane | motor | ",
+     [
+      1,
+      293
+     ]
+    ]
+   ]
+  },
+  "mosport": {
+   "kind": "permanent",
+   "ways": 21,
+   "totalM": 10058,
+   "closedLoops": [
+    [
+     null,
+     2842
+    ],
+    [
+     null,
+     1387
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | ",
+     [
+      5,
+      3745
+     ]
+    ],
+    [
+     "(no name) | karting | ",
+     [
+      6,
+      1673
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      3,
+      1472
+     ]
+    ],
+    [
+     "Mario Andretti Straight | motor | asphalt",
+     [
+      1,
+      1167
+     ]
+    ],
+    [
+     "Pit Lane |  | ",
+     [
+      1,
+      696
+     ]
+    ],
+    [
+     "Esses | motor | asphalt",
+     [
+      1,
+      454
+     ]
+    ],
+    [
+     "Clayton Corner | motor | asphalt",
+     [
+      1,
+      299
+     ]
+    ],
+    [
+     "Quebec Corner | motor | asphalt",
+     [
+      1,
+      284
+     ]
+    ],
+    [
+     "Moss Corner | motor | asphalt",
+     [
+      1,
+      184
+     ]
+    ],
+    [
+     "Whites Corner | motor | asphalt",
+     [
+      1,
+      84
+     ]
+    ]
+   ]
+  },
+  "vir": {
+   "kind": "permanent",
+   "ways": 42,
+   "totalM": 15535,
+   "closedLoops": [
+    [
+     "Karting Track",
+     746
+    ],
+    [
+     null,
+     111
+    ],
+    [
+     null,
+     245
+    ],
+    [
+     null,
+     114
+    ],
+    [
+     null,
+     999
+    ],
+    [
+     null,
+     1114
+    ],
+    [
+     null,
+     2983
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motocross | unpaved",
+     [
+      2,
+      4097
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      11,
+      3468
+     ]
+    ],
+    [
+     "Virginia International Raceway | motor | ",
+     [
+      6,
+      1723
+     ]
+    ],
+    [
+     "Patriot Course | motor | ",
+     [
+      1,
+      1377
+     ]
+    ],
+    [
+     "(no name) | motocross | ",
+     [
+      3,
+      1183
+     ]
+    ],
+    [
+     "Karting Track | karting | asphalt",
+     [
+      1,
+      746
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      663
+     ]
+    ],
+    [
+     "Hog Pen | motor | ",
+     [
+      1,
+      281
+     ]
+    ],
+    [
+     "Horseshoe | motor | ",
+     [
+      1,
+      249
+     ]
+    ],
+    [
+     "(no name) | karting | ",
+     [
+      1,
+      245
+     ]
+    ],
+    [
+     "Snake | motor | ",
+     [
+      1,
+      236
+     ]
+    ],
+    [
+     "Spiral | motor | ",
+     [
+      1,
+      200
+     ]
+    ],
+    [
+     "North Paddock | motor | asphalt",
+     [
+      1,
+      192
+     ]
+    ],
+    [
+     "(no name) | motor | asphalt",
+     [
+      3,
+      152
+     ]
+    ],
+    [
+     "Roller Coaster | motor | ",
+     [
+      1,
+      126
+     ]
+    ],
+    [
+     "Up Hill | motor | ",
+     [
+      1,
+      120
+     ]
+    ],
+    [
+     "Fish Hook | motor | ",
+     [
+      1,
+      117
+     ]
+    ],
+    [
+     "Madison Avenue | motor | ",
+     [
+      1,
+      108
+     ]
+    ],
+    [
+     "NASCAR Bend | motor | ",
+     [
+      1,
+      72
+     ]
+    ],
+    [
+     "Oak Tree Curve | motor | ",
+     [
+      1,
+      69
+     ]
+    ],
+    [
+     "Left Hook | motor | ",
+     [
+      1,
+      57
+     ]
+    ],
+    [
+     "South Bend | motor | ",
+     [
+      1,
+      54
+     ]
+    ]
+   ]
+  },
+  "mid-ohio": {
+   "kind": "permanent",
+   "ways": 10,
+   "totalM": 4707,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | asphalt",
+     [
+      6,
+      3139
+     ]
+    ],
+    [
+     "Pit Lane | motor | asphalt",
+     [
+      1,
+      631
+     ]
+    ],
+    [
+     "Thunder Valley | motor | asphalt",
+     [
+      1,
+      481
+     ]
+    ],
+    [
+     "Carousel | motor | asphalt",
+     [
+      1,
+      287
+     ]
+    ],
+    [
+     "The Keyhole | motor | asphalt",
+     [
+      1,
+      169
+     ]
+    ]
+   ]
+  },
+  "lime-rock": {
+   "kind": "permanent",
+   "ways": 28,
+   "totalM": 4741,
+   "closedLoops": [
+    [
+     "Autocross Course",
+     368
+    ],
+    [
+     "Autocross Course",
+     370
+    ],
+    [
+     "Skidpad",
+     218
+    ]
+   ],
+   "relations": [],
+   "byName": [
+    [
+     "Autocross Course | motor | ",
+     [
+      5,
+      917
+     ]
+    ],
+    [
+     "(no name) | motor | ",
+     [
+      8,
+      745
+     ]
+    ],
+    [
+     "Sam Posey Straight | motor | ",
+     [
+      1,
+      601
+     ]
+    ],
+    [
+     "Pit Lane | motor | ",
+     [
+      1,
+      421
+     ]
+    ],
+    [
+     "Paul Newman Straight | motor | ",
+     [
+      1,
+      331
+     ]
+    ],
+    [
+     "Big Bend | motor | ",
+     [
+      2,
+      236
+     ]
+    ],
+    [
+     "Climbing Turn | motor | ",
+     [
+      1,
+      229
+     ]
+    ],
+    [
+     "South Chicane | motor | ",
+     [
+      1,
+      222
+     ]
+    ],
+    [
+     "Skidpad | motor | ",
+     [
+      1,
+      218
+     ]
+    ],
+    [
+     "Diving Turn | motor | ",
+     [
+      1,
+      170
+     ]
+    ],
+    [
+     "The Lefthander | motor | ",
+     [
+      1,
+      155
+     ]
+    ],
+    [
+     "West Chicane | motor | ",
+     [
+      1,
+      151
+     ]
+    ],
+    [
+     "The Righthander | motor | ",
+     [
+      1,
+      114
+     ]
+    ],
+    [
+     "West Bend | motor | ",
+     [
+      1,
+      111
+     ]
+    ],
+    [
+     "Lime Rock Park | motor | ",
+     [
+      1,
+      108
+     ]
+    ],
+    [
+     "Climbing Turn |  | ",
+     [
+      1,
+      12
+     ]
+    ]
+   ]
+  },
+  "hockenheim": {
+   "kind": "permanent",
+   "ways": 26,
+   "totalM": 8575,
+   "closedLoops": [],
+   "relations": [],
+   "byName": [
+    [
+     "(no name) | motor | asphalt",
+     [
+      9,
+      3064
+     ]
+    ],
+    [
+     "Rico Anthes Quartermile | motor | asphalt",
+     [
+      1,
+      996
+     ]
+    ],
+    [
+     "Boxengasse | motor | asphalt",
+     [
+      1,
+      864
+     ]
+    ],
+    [
+     "Hochgeschwindigkeits-(Parabolika-)Kurve | motor | asphalt",
+     [
+      1,
+      772
+     ]
+    ],
+    [
+     "Kleiner Kurs Kurzanbindung | motor | asphalt",
+     [
+      1,
+      769
+     ]
+    ],
+    [
+     "Rallycross | motor | dirt",
+     [
+      2,
+      769
+     ]
+    ],
+    [
+     "Ravenol-Kurve | motor | asphalt",
+     [
+      2,
+      206
+     ]
+    ],
+    [
+     "Schikanenvariante | motor | asphalt",
+     [
+      1,
+      178
+     ]
+    ],
+    [
+     "Mobil 1 Kurve | motor | asphalt",
+     [
+      1,
+      156
+     ]
+    ],
+    [
+     "Südkurve | motor | asphalt",
+     [
+      1,
+      154
+     ]
+    ],
+    [
+     "Spitzkehre | motor | asphalt",
+     [
+      1,
+      148
+     ]
+    ],
+    [
+     "Einfahrt Parabolika | motor | asphalt",
+     [
+      1,
+      143
+     ]
+    ],
+    [
+     "Bernie-Ecclestone-Kurve | motor | asphalt",
+     [
+      1,
+      135
+     ]
+    ],
+    [
+     "Sachs-Kurve | motor | asphalt",
+     [
+      1,
+      121
+     ]
+    ],
+    [
+     "Rallycross | motor | asphalt",
+     [
+      2,
+      100
+     ]
+    ]
+   ]
   }
  }
 }
