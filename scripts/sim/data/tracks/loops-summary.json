@@ -364,268 +364,399 @@
    ]
   },
   "le-mans": {
-   "gapClosedM": 60,
-   "snappedEnds": 4,
-   "wayList": [
-    [
-     "Le « S » du Garage Bleu",
-     276
-    ],
-    [
-     "La Chapelle",
-     130
-    ],
-    [
-     "Chicane Daytona",
-     205
-    ],
-    [
-     null,
-     467
-    ],
-    [
-     "Virage Porsche",
-     162
-    ],
-    [
-     null,
-     393
-    ],
-    [
-     null,
-     105
-    ],
-    [
-     null,
-     180
-    ],
-    [
-     null,
-     69
-    ],
-    [
-     "Maison Blanche",
-     501
-    ],
-    [
-     null,
-     55
-    ],
-    [
-     "Chicane Ford",
-     132
-    ],
-    [
-     "Tertre Rouge",
-     384
-    ],
-    [
-     "Chicane Maison Blanche",
-     608
-    ],
-    [
-     "Chicane du Raccordement",
-     94
-    ],
-    [
-     "Esses de la Forêt",
-     324
-    ],
-    [
-     "Virage du Pont",
-     344
-    ],
-    [
-     null,
-     167
-    ],
-    [
-     null,
-     424
-    ],
-    [
-     "Virage de Mulsanne",
-     234
-    ],
-    [
-     "Chicane Michelin",
-     243
-    ],
-    [
-     "Pit Entry",
-     125
-    ],
-    [
-     "Pit Exit",
-     264
-    ],
-    [
-     "Safety Car Pit Entry",
-     67
-    ],
-    [
-     "Virage Corvette",
-     239
-    ],
-    [
-     "Circuit Maison Blanche",
-     912
-    ],
-    [
-     "Pit Entry",
-     434
-    ],
-    [
-     "Virage du Raccordement",
-     30
-    ],
-    [
-     "Moto Pit Exit",
-     649
-    ],
-    [
-     "Ligne Droite des Hunaudières",
-     17
-    ],
-    [
-     "Ligne Droite des Hunaudières",
-     125
-    ],
-    [
-     "Circuit Maison Blanche",
-     40
-    ],
-    [
-     "Porsche center",
-     60
-    ],
-    [
-     "Porsche center",
-     112
-    ],
-    [
-     "Chicane Dunlop",
-     92
-    ],
-    [
-     null,
-     264
-    ],
-    [
-     "Courbe Dunlop",
-     386
-    ],
-    [
-     null,
-     484
-    ],
-    [
-     null,
-     22
-    ],
-    [
-     null,
-     22
-    ],
-    [
-     "Circuit Maison Blanche",
-     34
-    ],
-    [
-     "Circuit Maison Blanche",
-     137
-    ],
-    [
-     null,
-     95
-    ],
-    [
-     null,
-     43
-    ],
-    [
-     "MotoGP Long lap penalty",
-     150
-    ],
-    [
-     "Porsche Center",
-     151
-    ],
-    [
-     "Pit Entry",
-     25
-    ],
-    [
-     "Porsche Center",
-     209
-    ],
-    [
-     "Virage d'Arnage",
-     31
-    ],
-    [
-     null,
-     93
-    ],
-    [
-     null,
-     131
-    ],
-    [
-     "Virage de la Chapelle",
-     186
-    ],
-    [
-     "La Chapelle",
-     61
-    ],
-    [
-     "Circuit Bugatti",
-     285
-    ],
-    [
-     "Virage du Musée",
-     241
-    ],
-    [
-     "Circuit Bugatti",
-     335
-    ],
-    [
-     "Virage du Garage Vert",
-     116
-    ],
-    [
-     "Circuit Bugatti",
-     662
-    ],
-    [
-     "Virage du Chemin aux Bœufs",
-     141
-    ],
-    [
-     "Circuit Bugatti",
-     269
-    ]
-   ],
-   "ways": 114,
-   "edges": 1735,
-   "junctions": 864,
+   "relationWays": 50,
+   "relationLoops": 3,
+   "gapClosedM": 12,
+   "snappedEnds": 2,
+   "ways": 64,
+   "edges": 88,
+   "junctions": 55,
    "searchCapped": true,
-   "loopsFound": 0,
-   "loopLengthsM": [],
+   "loopsFound": 2119,
+   "loopLengthsM": [
+    {
+     "m": 7315,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7298,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7282,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7264,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7243,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7227,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7209,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7189,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7172,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7156,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7138,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7121,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7106,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7091,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7073,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7054,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 7037,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7020,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 7003,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6986,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6969,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6951,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6936,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6920,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6905,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6890,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6873,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6858,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6843,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6828,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6810,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6792,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6776,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6761,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6746,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6730,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6715,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6700,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "MotoGP Long lap penalty"
+     ]
+    },
+    {
+     "m": 6685,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    },
+    {
+     "m": 6670,
+     "names": [
+      "Virage de la Chapelle",
+      "Circuit Bugatti",
+      "Virage du Musée",
+      "Virage du Garage Vert"
+     ]
+    }
+   ],
    "accepted": [
     {
      "id": "le-mans | LE MANS BUGATTI",
      "officialM": 4180,
      "source": "FIA list 2026-03-31",
-     "accepted": false
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 9,
+     "loopM": 4196,
+     "errorPct": 0.38,
+     "accepted": true
     },
     {
      "id": "le-mans | LE MANS 24 HEURES",
      "officialM": 13626,
      "source": "FIA list 2024-06-03",
-     "accepted": false
+     "grade": "2",
+     "pole": "Left",
+     "widthM": 8,
+     "loopM": 13612,
+     "errorPct": 0.1,
+     "accepted": true
     }
    ]
   },
