@@ -39,6 +39,8 @@ export function buildCar(g, x) {
     car[p.path] = v;
   });
   if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY; car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
+  // LAPSIM_TRAC candidate (off by default): exit traction grip as its own fitted factor on top of the link to cornering grip
+  if (car.tracK != null) car.muXTrac *= car.tracK;
   if (g.base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; }
   return {car, outside};
 }

@@ -81,14 +81,14 @@ jobs:
         with:
           pattern: exp-*
           path: results
-      - name: Compare axle variants with B
+      - name: Compare every variant with the first one (the baseline)
         run: |
           mkdir -p comparison
-          node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js \
-            results/exp-F/probe-out/cal-F.js \
-            results/exp-G/probe-out/cal-G.js \
-            results/exp-H/probe-out/cal-H.js \
-            results/exp-I/probe-out/cal-I.js | tee comparison/B-vs-axle.txt
+          names=$(jq -r '.configs[].name' scripts/sim/experiments.json)
+          files=""; for n in $names; do files="$files results/exp-$n/probe-out/cal-$n.js"; done
+          node scripts/sim/exp-compare.mjs $files | tee comparison/compare.txt
+          pfiles=""; for n in $names; do pfiles="$pfiles results/exp-$n/probe-out/cal-$n.js results/exp-$n/probe-out/validate-$n.json"; done
+          node scripts/sim/exp-compare.mjs --physics $pfiles | tee comparison/compare-physics.txt || true
       - uses: actions/upload-artifact@v4
         with:
           name: exp-comparison

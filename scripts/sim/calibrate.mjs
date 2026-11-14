@@ -106,6 +106,8 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
   });
+  // LAPSIM_TRAC candidate (off by default): F1 exit traction fitted separately from cornering grip (bounds LAPSIM_TRAC_LO..HI)
+  if (E.LAPSIM_TRAC === 'on') { base.tracK = 1; params.push({key: 'tracK', path: 'tracK', base: 1, step: 0.08, min: Number(E.LAPSIM_TRAC_LO || 0.6), max: Number(E.LAPSIM_TRAC_HI || 1.1)}); }
   groups.push({key: year, laps, base, params});
 }
 if (!ONLY_WEC) {
