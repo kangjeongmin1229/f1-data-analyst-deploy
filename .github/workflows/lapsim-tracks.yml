@@ -1,0 +1,55 @@
+name: Lap simulator track map experiments
+
+# Map work for circuits without an accepted lap (OpenStreetMap ways, FIA lengths, height tiles). Only the track job of
+# lapsim-laps.yml, so a push here does not start the lap-data jobs. Push to tracks-map/**. Raw ways stay in the artifact.
+on:
+  push:
+    branches: ['tracks-map/**']
+    paths-ignore: ['scripts/sim/data/tracks/**', 'docs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lapsim-tracks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  osm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache/lapsim/osm
+          key: osm-ways-${{ github.run_id }}
+          restore-keys: osm-ways-
+      - run: rm -f .cache/lapsim/osm/*-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia* .cache/lapsim/osm/extra-tracks*
+      - run: node scripts/sim/tracks/fetch-osm.mjs
+        timeout-minutes: 22
+        continue-on-error: true
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache/lapsim/osm
+          key: osm-ways-${{ github.run_id }}
+      - run: (which pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)) && node scripts/sim/tracks/fia-circuits.mjs
+      - run: node scripts/sim/tracks/assemble.mjs
+      - run: node scripts/sim/tracks/build-extra.mjs
+        continue-on-error: true
+      - run: node scripts/sim/tracks/b4mad-probe.mjs
+        continue-on-error: true
+        timeout-minutes: 15
+      - uses: actions/upload-artifact@v4
+        with: {name: osm-raceways, path: .cache/lapsim/osm, retention-days: 90}
+      - name: Commit the summary
+        run: |
+          git fetch origin "${{ github.ref_name }}" && git reset --hard FETCH_HEAD
+          mkdir -p scripts/sim/data/tracks && cp .cache/lapsim/osm/osm-summary.json .cache/lapsim/osm/loops-summary.json .cache/lapsim/osm/accepted-lines.json .cache/lapsim/osm/fia-circuits.json scripts/sim/data/tracks/; cp .cache/lapsim/osm/extra-tracks.json .cache/lapsim/osm/extra-tracks-report.txt .cache/lapsim/osm/b4mad-probe.json scripts/sim/data/tracks/ || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sim/data/tracks
+          git diff --cached --quiet || (git commit -m "Tracks: OpenStreetMap raceway summary" && (git push origin HEAD:"${{ github.ref_name }}" || (git pull --rebase origin "${{ github.ref_name }}" && git push origin HEAD:"${{ github.ref_name }}")))

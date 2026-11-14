@@ -174,7 +174,9 @@
      "source": "imsa.com/weathertech/weathertech-2025-schedule (3.74 miles, 17 corners)",
      "roundedTo": "0.01 mile"
     }
-   ]
+   ],
+   "tolPct": 2.5,
+   "tolReason": "Nearest map loops 5887 and 5869 m against 6019 m (2.2 to 2.5 % short). Experiment declared 2026-11-14: accept the nearest loop as a candidate; IMSA and WEC laps decide."
   },
   {
    "id": "road-atlanta",
@@ -224,7 +226,9 @@
      "lengthM": 3908,
      "source": "O-NE Superrace 2025 round 6 circuit map (Inje Speedium 3.908 km)"
     }
-   ]
+   ],
+   "tolPct": 1.5,
+   "tolReason": "Map lap 3947 m against the official 3908 m (1.0 %). Experiment declared 2026-11-14: accept as a ⚠️ candidate; no real lap of a fitted class exists, so it cannot pass a check."
   },
   {
    "id": "nurburgring",
@@ -451,7 +455,9 @@
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
    "kind": "street",
    "fia": "S.O PAULO|ANHEMBI",
-   "fiaNot": "INTERLAGOS|CARLOS PACE"
+   "fiaNot": "INTERLAGOS|CARLOS PACE",
+   "tolPct": 1.5,
+   "tolReason": "Map lap 2931 m against 2960 m (1.0 %). Experiment declared 2026-11-14: candidate only."
   },
   {
    "id": "fe-sanya",
@@ -476,7 +482,9 @@
    ],
    "radius": 3000,
    "need": "Formula E 2026/27 calendar (fiaformulae.com/en/news/1074658); layout not stated by the source",
-   "fia": "JARAMA"
+   "fia": "JARAMA",
+   "tolPct": 1.0,
+   "tolReason": "Map lap 3906 m against the Formula E layout 3931 m (0.6 %). Experiment declared 2026-11-14: candidate only; the map has no Formula E chicane."
   },
   {
    "id": "long-beach",
