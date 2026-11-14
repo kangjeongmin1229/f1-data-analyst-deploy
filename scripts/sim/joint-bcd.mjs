@@ -148,7 +148,7 @@ export async function fitJointBCD(groups, opts = {}) {
       o.log?.(`round ${r + 1}: score ${score.toFixed(4)}`);
       if (convergence) {
         scores.push(score);
-        const converged = bcdConverged(scores);
+        const converged = bcdConverged(scores, o.minRounds);
         if (o.convergenceDir) {
           await mkdir(o.convergenceDir, {recursive: true});
           await writeFile(join(o.convergenceDir, `fit-${fitNumber}.json`), JSON.stringify({
@@ -166,7 +166,7 @@ export async function fitJointBCD(groups, opts = {}) {
       const f = fOf(factors, l.name), m = lapMult(l, adj), e = lapScore(l, cars[g.key], f, o, m);
       perLap.push({group: g.key, name: l.name, grip: f.grip, drag: f.drag, rmsKph: e.rms * 3.6, dt: e.res.lapTime * m - l.lapSeconds, simLap: e.res.lapTime * m, realLap: l.lapSeconds, team: l.team, mult: m, rho: l.env.rho, vMaxSim: e.res.vMaxKph, meta: l.meta});
     }
-    return {cars, xs, factors, adj, grips: Object.fromEntries(names.map(n => [n, factors[n].grip])), perLap, score};
+    return {cars, xs, factors, adj, grips: Object.fromEntries(names.map(n => [n, factors[n].grip])), perLap, score, ...(convergence ? {scores} : {})};
   } finally { await pool.close(); }
 }
 
@@ -221,11 +221,13 @@ function carryBias(fit, groups, key) {
   return l => by[l.name]?.length ? w * by[l.name].reduce((a, b) => a + b, 0) / by[l.name].length : 0;
 }
 
-export async function holdoutBCD(groups, key, {folds = 4, ...opts} = {}) {
+export async function holdoutBCD(groups, key, {folds = 4, cache, ...opts} = {}) {
   const target = groups.find(g => g.key === key);
   const names = [...new Set(target.laps.map(l => l.name))].sort();
   const k = Math.min(folds, names.length), errors = [];
   for (let f = 0; f < k; f++) {
+    const hit = cache?.get(f); if (hit) { errors.push(...hit.errors); continue; } // experiment resume
+    const n0 = errors.length;
     const test = new Set(names.filter((_, i) => i % k === f));
     const train = groups.map(g => g.key === key ? {...g, laps: g.laps.filter(l => !test.has(l.name))} : g);
     const fit = await fitJointBCD(train, opts);
@@ -235,6 +237,7 @@ export async function holdoutBCD(groups, key, {folds = 4, ...opts} = {}) {
       const t = predict(l, fit.cars[key], fa, fit.adj) * (1 - corr(l, key)) * (1 + carry(l));
       errors.push({name: l.name, dt: t - l.lapSeconds, pct: (t / l.lapSeconds - 1) * 100});
     }
+    cache?.put(f, {errors: errors.slice(n0), scores: fit.scores, test: [...test]});
   }
   const rmsPct = errors.length ? Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length) : null;
   return {errors, rmsPct, n: errors.length};

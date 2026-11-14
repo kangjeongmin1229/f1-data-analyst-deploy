@@ -1,19 +1,22 @@
 {
+  "declared": "2026-11-14, rules section 9.5 task 1. F1 only. Baseline A = production flags. Fit length: convergence rule (score falls < 1 % between the last two rounds; main fit minimum 5 rounds, cap 10). Held-out: all 8 folds (2025 and 2026, 4 each), each fold started from the converged main fit of the same variant and run to the same rule (minimum 2 rounds). Method check before use: fold 2026:0 of A cold start vs warm start must agree within 0.05 percentage points per row. Metrics: held-out RMS per season (gate.mjs), corner minimum bias, trap error, bound hits (exp-compare --physics). Pass: gate accepted on F1, F1 2025 and 2026 not worse than A, no new bound hit, corner bias and trap error not worse. No variants added after results.",
   "input_url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
   "input_sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
   "common_env": {
     "LAPSIM_FITTER": "bcd",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
+    "LAPSIM_ROUNDS": "5",
+    "LAPSIM_BCD_ITERS": "200",
     "LAPSIM_WTIME": "20",
     "LAPSIM_WSECTOR": "2",
     "LAPSIM_TEAMS": "on",
-    "LAPSIM_WPRIOR": "8"
+    "LAPSIM_WPRIOR": "8",
+    "LAPSIM_SKIP_WEC": "1",
+    "LAPSIM_BCD_CONVERGENCE": "on",
+    "LAPSIM_HOLDOUT_WARM": "on"
   },
   "configs": [
+    {"name": "A", "env": {"LAPSIM_TRACK_DRAG": "on"}},
     {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
     {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
     {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
   ]

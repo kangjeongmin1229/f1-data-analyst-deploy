@@ -2,7 +2,7 @@
 // 2027 and 2028. Reads worker/lapsim/tracks-data.js and .cache/lapsim/traces.json (from
 // build-geometry.mjs); writes worker/lapsim/calibration-data.js and docs/lapsim-report.md.
 import {readFile, writeFile} from 'node:fs/promises';
-import {existsSync} from 'node:fs';
+import {existsSync, readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 import {objectiveTrace} from './objective-trace.mjs';
 import {wecNmStop} from './wec-nm-stop.mjs';
 import {splitWecSessions} from './wec-session-scope.mjs';
@@ -36,7 +36,15 @@ if (E.LAPSIM_BCD_CONVERGENCE === 'on') Object.assign(BCD, {convergence: true, co
 const MAX_POS = Number(E.LAPSIM_MAX_POS || 3);
 const HOLDOUT_YEARS = (E.LAPSIM_HOLDOUT_YEARS || '2025,2026').split(',').map(Number);
 const fitAll = gs => FITTER === 'bcd' ? fitJointBCD(gs, BCD) : fitJoint(gs, {iters: ITERS, wTime: WTIME});
-const holdoutOf = (gs, key) => FITTER === 'bcd' ? holdoutBCD(gs, key, {...BCD, rounds: Math.max(2, BCD.rounds - 1)}) : holdoutJoint(gs, key, {iters: HOLDOUT_ITERS, wTime: WTIME});
+// Experiment options for the F1 held-out folds (off by default): LAPSIM_F1_FOLD_CACHE=<dir> keeps each finished
+// fold; LAPSIM_HOLDOUT_WARM=on starts each fold from the main fit (needs the convergence rule, minimum 2 rounds).
+const FOLD_CACHE = E.LAPSIM_F1_FOLD_CACHE, WARM = E.LAPSIM_HOLDOUT_WARM === 'on';
+if (WARM && !BCD.convergence) throw new Error('LAPSIM_HOLDOUT_WARM needs LAPSIM_BCD_CONVERGENCE=on');
+const foldFile = (key, f) => join(FOLD_CACHE, `${key}-${f}.json`);
+const foldOpts = (key, start) => ({...(FOLD_CACHE ? {cache: {get: f => existsSync(foldFile(key, f)) ? JSON.parse(readFileSync(foldFile(key, f), 'utf8')) : null,
+  put: (f, v) => { mkdirSync(FOLD_CACHE, {recursive: true}); writeFileSync(foldFile(key, f), JSON.stringify(v)); }}} : {}),
+  ...(WARM ? {startFactors: start.factors, startX: start.xs, startAdj: start.adj, minRounds: 2} : {})});
+const holdoutOf = (gs, key, start) => FITTER === 'bcd' ? holdoutBCD(gs, key, {...BCD, rounds: Math.max(2, BCD.rounds - 1), ...foldOpts(key, start)}) : holdoutJoint(gs, key, {iters: HOLDOUT_ITERS, wTime: WTIME});
 const GRIP_LIMITS = E.LAPSIM_GRIP_LO ? [Number(E.LAPSIM_GRIP_LO), Number(E.LAPSIM_GRIP_HI)] : FITTER === 'bcd' ? [0.7, 1.3] : [0.85, 1.15];
 BCD.lo = GRIP_LIMITS[0]; BCD.hi = GRIP_LIMITS[1];
 // season progress 0 (1 March) … 1 (15 December), for in-season development
@@ -98,14 +106,26 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
 }
 if (!ONLY_WEC) {
 const t0 = Date.now();
-let joint = await fitAll(groups);
+// Experiment resume (off by default): LAPSIM_F1_STATE keeps the finished main fit in a file, so a long
+// run can be split over several processes. The saved laps dropped by the 4% rule are dropped again.
+const STATE = E.LAPSIM_F1_STATE, saved = STATE && existsSync(STATE) ? JSON.parse(readFileSync(STATE, 'utf8')) : null;
+const dropLaps = bad => { for (const g of groups) { const drop = new Set(bad.filter(p => p.group === g.key).map(p => p.name)); g.laps = g.laps.filter(l => !drop.has(l.name)); } };
+let joint;
+if (saved) {
+  dropLaps(saved.bad);
+  if (saved.bad.length) report.push(`Dropped (lap more than 4% off after the first fit): ${[...new Set(saved.bad.map(p => p.group + ' ' + p.name))].join(', ')}`, '');
+  joint = saved.joint;
+} else {
+joint = await fitAll(groups);
 // clean data (common rule): a lap more than 4% off after the fit is not a normal dry lap
 // (wet track, red flag, wrong lap); drop that season's laps on that track and fit again
 const bad = joint.perLap.filter(p => Math.abs(p.dt / p.realLap) > 0.04);
 if (bad.length) {
-  for (const g of groups) { const drop = new Set(bad.filter(p => p.group === g.key).map(p => p.name)); g.laps = g.laps.filter(l => !drop.has(l.name)); }
+  dropLaps(bad);
   report.push(`Dropped (lap more than 4% off after the first fit): ${[...new Set(bad.map(p => p.group + ' ' + p.name))].join(', ')}`, '');
   joint = await fitAll(groups);
+}
+if (STATE) writeFileSync(STATE, JSON.stringify({bad: bad.map(p => ({group: p.group, name: p.name})), joint}));
 }
 report.push(`F1 joint fit of ${groups.map(g => g.key).join(' and ')}: ${((Date.now() - t0) / 1000).toFixed(0)} s, score ${joint.score.toFixed(3)}.`, '');
 for (const g of groups) {
@@ -120,7 +140,7 @@ for (const g of groups) {
   }
   // holdout: this season's laps on a quarter of the tracks left out, predicted with the factor the
   // other season gives that track
-  const h = HOLDOUT_YEARS.includes(year) ? await holdoutOf(groups, year) : {n: 0, errors: [], rmsPct: null};
+  const h = HOLDOUT_YEARS.includes(year) ? await holdoutOf(groups, year, joint) : {n: 0, errors: [], rmsPct: null};
   const adj = joint.adj?.[year];
   if (adj) report.push(`### ${year} team pace and development`, '', `Development over the season: ${(adj.dev * 100).toFixed(2)}% lap time from March to December.`, '',
     ...Object.entries(adj.teams).sort((a, b) => a[1] - b[1]).map(([t, v]) => `- ${t}: ${v > 0 ? '+' : ''}${(v * 100).toFixed(2)}%`), '');
