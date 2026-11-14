@@ -1,0 +1,1638 @@
+{
+ "summary": {
+  "f1/2023": {
+   "tracks": 15,
+   "lapRmsPct": 0.465,
+   "sectorRmsPct": 2.289,
+   "cornerRmsKph": 21.194,
+   "cornerBiasKph": -11.342,
+   "trapRmsKph": 7.994,
+   "trapBiasKph": -3.37,
+   "brakeRmsM": 56.597,
+   "brakeBiasM": 28.772,
+   "holdout2025to2026Pct": null
+  },
+  "f1/2024": {
+   "tracks": 18,
+   "lapRmsPct": 0.522,
+   "sectorRmsPct": 2.652,
+   "cornerRmsKph": 23.063,
+   "cornerBiasKph": -11.822,
+   "trapRmsKph": 11.984,
+   "trapBiasKph": -8.953,
+   "brakeRmsM": 58.552,
+   "brakeBiasM": 36.076,
+   "holdout2025to2026Pct": null
+  },
+  "f1/2025": {
+   "tracks": 22,
+   "lapRmsPct": 0.397,
+   "sectorRmsPct": 2.573,
+   "cornerRmsKph": 22.706,
+   "cornerBiasKph": -12.133,
+   "trapRmsKph": 9.968,
+   "trapBiasKph": -7.328,
+   "brakeRmsM": 62.924,
+   "brakeBiasM": 36.267,
+   "holdout2025to2026Pct": 0.82
+  },
+  "f1/2026": {
+   "tracks": 17,
+   "lapRmsPct": 0.733,
+   "sectorRmsPct": 3.403,
+   "cornerRmsKph": 24.898,
+   "cornerBiasKph": -16.398,
+   "trapRmsKph": 15.883,
+   "trapBiasKph": -5.82,
+   "brakeRmsM": 68.641,
+   "brakeBiasM": 38.147,
+   "holdout2025to2026Pct": 1.09
+  }
+ },
+ "rows": [
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "sakhir",
+   "lapPct": -0.392,
+   "sectorPct": [
+    0.175,
+    -0.348,
+    -1.196
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 27.277,
+    "bias": -21.423
+   },
+   "trapKph": -6.678,
+   "brakeM": {
+    "n": 8,
+    "rms": 35.45,
+    "bias": 14.487
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "jeddah",
+   "lapPct": -0.205,
+   "sectorPct": [
+    -2.635,
+    3.365,
+    -0.979
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 25.062,
+    "bias": -9.688
+   },
+   "trapKph": -13.35,
+   "brakeM": {
+    "n": 7,
+    "rms": 74.852,
+    "bias": 62.379
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "baku",
+   "lapPct": 0.638,
+   "sectorPct": [
+    -1.596,
+    1.292,
+    2.752
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 21.843,
+    "bias": -17.587
+   },
+   "trapKph": 10.871,
+   "brakeM": {
+    "n": 12,
+    "rms": 39.697,
+    "bias": 36.508
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "miami",
+   "lapPct": 0.482,
+   "sectorPct": [
+    -0.639,
+    3.114,
+    -1.712
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 17.88,
+    "bias": -11.317
+   },
+   "trapKph": -5.067,
+   "brakeM": {
+    "n": 8,
+    "rms": 64.167,
+    "bias": 44.998
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "monte-carlo",
+   "lapPct": 0.179,
+   "sectorPct": [
+    2.579,
+    -2.956,
+    3.45
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 19.519,
+    "bias": -9.342
+   },
+   "trapKph": -2.45,
+   "brakeM": {
+    "n": 12,
+    "rms": 45.337,
+    "bias": 4.408
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "spielberg",
+   "lapPct": 0.579,
+   "sectorPct": [
+    1.361,
+    -3.086,
+    5.361
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 27.994,
+    "bias": -19.166
+   },
+   "trapKph": -6.594,
+   "brakeM": {
+    "n": 7,
+    "rms": 85.701,
+    "bias": 31.636
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "hungaroring",
+   "lapPct": 0.343,
+   "sectorPct": [
+    1.525,
+    -0.891,
+    0.371
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 15.567,
+    "bias": -5.043
+   },
+   "trapKph": 1.672,
+   "brakeM": {
+    "n": 11,
+    "rms": 34.013,
+    "bias": 12.861
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "monza",
+   "lapPct": -0.431,
+   "sectorPct": [
+    -1.085,
+    -0.611,
+    0.408
+   ],
+   "cornerKph": {
+    "n": 6,
+    "rms": 18.945,
+    "bias": -6.675
+   },
+   "trapKph": -12.028,
+   "brakeM": {
+    "n": 6,
+    "rms": 34.112,
+    "bias": 21.937
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "singapore",
+   "lapPct": -0.188,
+   "sectorPct": [
+    2.03,
+    -3.029,
+    1.758
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 19.577,
+    "bias": -13.194
+   },
+   "trapKph": -15.055,
+   "brakeM": {
+    "n": 12,
+    "rms": 14.635,
+    "bias": -2.461
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "suzuka",
+   "lapPct": 0.316,
+   "sectorPct": [
+    4.118,
+    -0.739,
+    -3.848
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 23.926,
+    "bias": -11.19
+   },
+   "trapKph": -10.871,
+   "brakeM": {
+    "n": 10,
+    "rms": 82.845,
+    "bias": 53.129
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "lusail",
+   "lapPct": -0.887,
+   "sectorPct": [
+    0.482,
+    -1.323,
+    -2.102
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 17.799,
+    "bias": -4.047
+   },
+   "trapKph": -1.144,
+   "brakeM": {
+    "n": 11,
+    "rms": 67.152,
+    "bias": 53.024
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "austin",
+   "lapPct": -0.581,
+   "sectorPct": [
+    3.079,
+    -0.803,
+    -3.278
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 27.596,
+    "bias": -15.567
+   },
+   "trapKph": 2.733,
+   "brakeM": {
+    "n": 11,
+    "rms": 41.637,
+    "bias": 31.187
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "mexico-city",
+   "lapPct": 0.051,
+   "sectorPct": [
+    1.427,
+    -0.662,
+    -0.764
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 11.422,
+    "bias": -6.533
+   },
+   "trapKph": -0.731,
+   "brakeM": {
+    "n": 9,
+    "rms": 57.725,
+    "bias": 11.562
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "las-vegas",
+   "lapPct": 0.306,
+   "sectorPct": [
+    -0.415,
+    0.887,
+    0.337
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 14.973,
+    "bias": -6.636
+   },
+   "trapKph": 6.025,
+   "brakeM": {
+    "n": 8,
+    "rms": 66.302,
+    "bias": 31.888
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2023,
+   "track": "yas-marina-circuit",
+   "lapPct": 0.623,
+   "sectorPct": [
+    6.042,
+    -0.758,
+    -0.803
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 20.353,
+    "bias": -12.729
+   },
+   "trapKph": 2.111,
+   "brakeM": {
+    "n": 9,
+    "rms": 52.217,
+    "bias": 24.041
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "sakhir",
+   "lapPct": 0.876,
+   "sectorPct": [
+    1.317,
+    1.107,
+    -0.082
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 25.383,
+    "bias": -20.654
+   },
+   "trapKph": -13.682,
+   "brakeM": {
+    "n": 8,
+    "rms": 42.622,
+    "bias": 30.626
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "jeddah",
+   "lapPct": 0.45,
+   "sectorPct": [
+    -1.492,
+    3.835,
+    -0.71
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 24.63,
+    "bias": -5.825
+   },
+   "trapKph": -12.69,
+   "brakeM": {
+    "n": 8,
+    "rms": 29.584,
+    "bias": 10.466
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "suzuka",
+   "lapPct": -0.848,
+   "sectorPct": [
+    2.582,
+    -1.11,
+    -6.261
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 20.319,
+    "bias": -8.577
+   },
+   "trapKph": -13.616,
+   "brakeM": {
+    "n": 9,
+    "rms": 43.612,
+    "bias": 37.335
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "shanghai",
+   "lapPct": -1.129,
+   "sectorPct": [
+    -5.527,
+    1.509,
+    -0.25
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 40.168,
+    "bias": -14.773
+   },
+   "trapKph": -2.177,
+   "brakeM": {
+    "n": 8,
+    "rms": 68.307,
+    "bias": 54.489
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "miami",
+   "lapPct": 0.003,
+   "sectorPct": [
+    -1.856,
+    2.472,
+    -1.163
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 17.957,
+    "bias": -11.052
+   },
+   "trapKph": -9.831,
+   "brakeM": {
+    "n": 9,
+    "rms": 61.33,
+    "bias": 21.106
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "imola",
+   "lapPct": 0.025,
+   "sectorPct": [
+    7.148,
+    -2.158,
+    -4.308
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 28.494,
+    "bias": -15.624
+   },
+   "trapKph": -31.965,
+   "brakeM": {
+    "n": 8,
+    "rms": 40.347,
+    "bias": 35.615
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "monte-carlo",
+   "lapPct": 0.949,
+   "sectorPct": [
+    2.317,
+    -1.179,
+    3.379
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 20.585,
+    "bias": -10.792
+   },
+   "trapKph": 2.756,
+   "brakeM": {
+    "n": 12,
+    "rms": 42.714,
+    "bias": 18.221
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "catalunya",
+   "lapPct": 0.447,
+   "sectorPct": [
+    1.942,
+    2.252,
+    -3.407
+   ],
+   "cornerKph": {
+    "n": 6,
+    "rms": 21.975,
+    "bias": -18.665
+   },
+   "trapKph": -6.756,
+   "brakeM": {
+    "n": 6,
+    "rms": 42.16,
+    "bias": 34.402
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "spielberg",
+   "lapPct": 0.396,
+   "sectorPct": [
+    1.632,
+    -3.45,
+    5.102
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 29.752,
+    "bias": -17.911
+   },
+   "trapKph": -7.914,
+   "brakeM": {
+    "n": 7,
+    "rms": 82.308,
+    "bias": 26.779
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "zandvoort",
+   "lapPct": -0.016,
+   "sectorPct": [
+    3.13,
+    -4.306,
+    1.483
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 26.142,
+    "bias": -11.365
+   },
+   "trapKph": -14.696,
+   "brakeM": {
+    "n": 9,
+    "rms": 99.18,
+    "bias": 80.422
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "monza",
+   "lapPct": 0.101,
+   "sectorPct": [
+    -0.375,
+    0.171,
+    0.509
+   ],
+   "cornerKph": {
+    "n": 6,
+    "rms": 18.512,
+    "bias": -8.856
+   },
+   "trapKph": -14.341,
+   "brakeM": {
+    "n": 6,
+    "rms": 30.391,
+    "bias": 23.053
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "baku",
+   "lapPct": 0.406,
+   "sectorPct": [
+    -1.839,
+    0.627,
+    3.27
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 20.562,
+    "bias": -16.205
+   },
+   "trapKph": -0.836,
+   "brakeM": {
+    "n": 12,
+    "rms": 60.561,
+    "bias": 42.921
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "singapore",
+   "lapPct": 0.43,
+   "sectorPct": [
+    1.452,
+    -1.794,
+    2.664
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 21.001,
+    "bias": -15.967
+   },
+   "trapKph": -15.066,
+   "brakeM": {
+    "n": 12,
+    "rms": 57.952,
+    "bias": 56.422
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "austin",
+   "lapPct": 0.045,
+   "sectorPct": [
+    2.597,
+    0.751,
+    -2.903
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 21.138,
+    "bias": -13.502
+   },
+   "trapKph": -2.765,
+   "brakeM": {
+    "n": 10,
+    "rms": 60.11,
+    "bias": 36.412
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "mexico-city",
+   "lapPct": -0.194,
+   "sectorPct": [
+    2.29,
+    -1.563,
+    -1.571
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 14.452,
+    "bias": -4.017
+   },
+   "trapKph": -4.949,
+   "brakeM": {
+    "n": 11,
+    "rms": 53.822,
+    "bias": 23.573
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "las-vegas",
+   "lapPct": -0.159,
+   "sectorPct": [
+    -0.294,
+    -1.028,
+    0.691
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 9.557,
+    "bias": -0.55
+   },
+   "trapKph": -4.076,
+   "brakeM": {
+    "n": 7,
+    "rms": 72.027,
+    "bias": 45.295
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "lusail",
+   "lapPct": 0.482,
+   "sectorPct": [
+    1.3,
+    0.16,
+    -0.172
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 17.901,
+    "bias": -7.343
+   },
+   "trapKph": -10.522,
+   "brakeM": {
+    "n": 9,
+    "rms": 69.48,
+    "bias": 49.446
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2024,
+   "track": "yas-marina-circuit",
+   "lapPct": -0.142,
+   "sectorPct": [
+    4.797,
+    -0.982,
+    -1.939
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 20.335,
+    "bias": -11.118
+   },
+   "trapKph": 1.963,
+   "brakeM": {
+    "n": 9,
+    "rms": 48.715,
+    "bias": 22.788
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "melbourne",
+   "lapPct": 0.395,
+   "sectorPct": [
+    -1.914,
+    8.376,
+    -1.96
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 27.917,
+    "bias": -14.088
+   },
+   "trapKph": -11.314,
+   "brakeM": {
+    "n": 9,
+    "rms": 47.303,
+    "bias": 35.635
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "shanghai",
+   "lapPct": 0.941,
+   "sectorPct": [
+    -2.833,
+    4.094,
+    1.061
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 41.071,
+    "bias": -23.377
+   },
+   "trapKph": 6.644,
+   "brakeM": {
+    "n": 8,
+    "rms": 79.069,
+    "bias": 48.164
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "suzuka",
+   "lapPct": -0.261,
+   "sectorPct": [
+    3.405,
+    -0.565,
+    -6.028
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 16.936,
+    "bias": -8.907
+   },
+   "trapKph": -14.964,
+   "brakeM": {
+    "n": 8,
+    "rms": 78.728,
+    "bias": 54.666
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "sakhir",
+   "lapPct": -0.351,
+   "sectorPct": [
+    -0.03,
+    -0.236,
+    -0.957
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 24.012,
+    "bias": -19.476
+   },
+   "trapKph": -3.832,
+   "brakeM": {
+    "n": 8,
+    "rms": 37.152,
+    "bias": 22.299
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "jeddah",
+   "lapPct": -0.115,
+   "sectorPct": [
+    -1.234,
+    3.01,
+    -1.95
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 24.391,
+    "bias": -11.292
+   },
+   "trapKph": -13.196,
+   "brakeM": {
+    "n": 7,
+    "rms": 76.896,
+    "bias": 65.909
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "miami",
+   "lapPct": -0.065,
+   "sectorPct": [
+    -0.422,
+    1.639,
+    -1.925
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 20.131,
+    "bias": -13.382
+   },
+   "trapKph": -6.595,
+   "brakeM": {
+    "n": 9,
+    "rms": 67.493,
+    "bias": 14.518
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "imola",
+   "lapPct": -0.241,
+   "sectorPct": [
+    5.553,
+    -1.26,
+    -4.635
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 34.951,
+    "bias": -18.417
+   },
+   "trapKph": -19.716,
+   "brakeM": {
+    "n": 8,
+    "rms": 48.126,
+    "bias": 35.27
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "monte-carlo",
+   "lapPct": 0.376,
+   "sectorPct": [
+    2.432,
+    -2.42,
+    3.38
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 22.695,
+    "bias": -12.93
+   },
+   "trapKph": 3.107,
+   "brakeM": {
+    "n": 12,
+    "rms": 46.813,
+    "bias": 13.538
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "catalunya",
+   "lapPct": -0.541,
+   "sectorPct": [
+    1.159,
+    1.15,
+    -4.432
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 20.776,
+    "bias": -17.204
+   },
+   "trapKph": -7.674,
+   "brakeM": {
+    "n": 7,
+    "rms": 38.103,
+    "bias": 29.503
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "montreal",
+   "lapPct": -0.032,
+   "sectorPct": [
+    0.07,
+    1.075,
+    -0.959
+   ],
+   "cornerKph": {
+    "n": 6,
+    "rms": 23.059,
+    "bias": -15.667
+   },
+   "trapKph": -6.739,
+   "brakeM": {
+    "n": 6,
+    "rms": 52.136,
+    "bias": 15.024
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "spielberg",
+   "lapPct": -0.596,
+   "sectorPct": [
+    0.544,
+    -3.56,
+    2.819
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 25.15,
+    "bias": -15.706
+   },
+   "trapKph": -6.365,
+   "brakeM": {
+    "n": 7,
+    "rms": 80.846,
+    "bias": 36.537
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "silverstone",
+   "lapPct": -0.302,
+   "sectorPct": [
+    1.802,
+    0.563,
+    -4.024
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 13.952,
+    "bias": -3.383
+   },
+   "trapKph": -8.913,
+   "brakeM": {
+    "n": 8,
+    "rms": 77.535,
+    "bias": 28.82
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "spa-francorchamps",
+   "lapPct": 0.359,
+   "sectorPct": [
+    2.639,
+    -1.159,
+    0.224
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 17.688,
+    "bias": -8.204
+   },
+   "trapKph": -15.316,
+   "brakeM": {
+    "n": 10,
+    "rms": 80.052,
+    "bias": 46.502
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "hungaroring",
+   "lapPct": -0.766,
+   "sectorPct": [
+    1.112,
+    -2.206,
+    -1.401
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 18.205,
+    "bias": -5.053
+   },
+   "trapKph": -2.607,
+   "brakeM": {
+    "n": 11,
+    "rms": 65.093,
+    "bias": 45.319
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "zandvoort",
+   "lapPct": 0.2,
+   "sectorPct": [
+    3.837,
+    -3.827,
+    0.852
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 25.374,
+    "bias": -13.395
+   },
+   "trapKph": -8.323,
+   "brakeM": {
+    "n": 8,
+    "rms": 72.59,
+    "bias": 52.989
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "monza",
+   "lapPct": -0.258,
+   "sectorPct": [
+    -0.118,
+    -0.784,
+    0.137
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 16.295,
+    "bias": -3.208
+   },
+   "trapKph": -12.371,
+   "brakeM": {
+    "n": 7,
+    "rms": 66.021,
+    "bias": 50.249
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "singapore",
+   "lapPct": 0.064,
+   "sectorPct": [
+    1.515,
+    -1.746,
+    1.213
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 19.609,
+    "bias": -14.767
+   },
+   "trapKph": -15.597,
+   "brakeM": {
+    "n": 12,
+    "rms": 15.855,
+    "bias": 4.822
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "austin",
+   "lapPct": -0.189,
+   "sectorPct": [
+    1.816,
+    -0.744,
+    -1.156
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 18.641,
+    "bias": -10.447
+   },
+   "trapKph": 5.872,
+   "brakeM": {
+    "n": 11,
+    "rms": 16.814,
+    "bias": 9.558
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "mexico-city",
+   "lapPct": 0.12,
+   "sectorPct": [
+    2.376,
+    -1.003,
+    -1.311
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 14.868,
+    "bias": -9.436
+   },
+   "trapKph": -1.899,
+   "brakeM": {
+    "n": 10,
+    "rms": 84.475,
+    "bias": 49.217
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "interlagos",
+   "lapPct": 0.088,
+   "sectorPct": [
+    3.837,
+    -2.32,
+    1.213
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 16.606,
+    "bias": -12.974
+   },
+   "trapKph": -11.099,
+   "brakeM": {
+    "n": 8,
+    "rms": 61.769,
+    "bias": 50.849
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "lusail",
+   "lapPct": 0.631,
+   "sectorPct": [
+    1.593,
+    0.28,
+    -0.171
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 19.775,
+    "bias": -8.084
+   },
+   "trapKph": -7.744,
+   "brakeM": {
+    "n": 9,
+    "rms": 77.809,
+    "bias": 64.11
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2025,
+   "track": "yas-marina-circuit",
+   "lapPct": -0.043,
+   "sectorPct": [
+    5.031,
+    -1.181,
+    -1.557
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 17.667,
+    "bias": -7.527
+   },
+   "trapKph": -2.578,
+   "brakeM": {
+    "n": 8,
+    "rms": 39.154,
+    "bias": 24.379
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "melbourne",
+   "lapPct": -0.372,
+   "sectorPct": [
+    -8.53,
+    11.406,
+    0.244
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 32.446,
+    "bias": -24.318
+   },
+   "trapKph": 5.615,
+   "brakeM": {
+    "n": 6,
+    "rms": 62.092,
+    "bias": 48.384
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "shanghai",
+   "lapPct": 0.553,
+   "sectorPct": [
+    -0.53,
+    0.55,
+    1.198
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 34.306,
+    "bias": -23.511
+   },
+   "trapKph": 3.171,
+   "brakeM": {
+    "n": 7,
+    "rms": 57.716,
+    "bias": 39.253
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "suzuka",
+   "lapPct": 2.1,
+   "sectorPct": [
+    3.388,
+    2.938,
+    -2.111
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 29.332,
+    "bias": -19.163
+   },
+   "trapKph": -15.238,
+   "brakeM": {
+    "n": 5,
+    "rms": 70.159,
+    "bias": 7.392
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "miami",
+   "lapPct": -0.309,
+   "sectorPct": [
+    0.921,
+    -1.486,
+    -0.195
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 23.355,
+    "bias": -13.974
+   },
+   "trapKph": -13.584,
+   "brakeM": {
+    "n": 6,
+    "rms": 88.308,
+    "bias": 54.822
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "monte-carlo",
+   "lapPct": -1.51,
+   "sectorPct": [
+    0.893,
+    -4.553,
+    1.517
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 20.088,
+    "bias": -10.693
+   },
+   "trapKph": 21.317,
+   "brakeM": {
+    "n": 12,
+    "rms": 68.088,
+    "bias": 30.149
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "catalunya",
+   "lapPct": 0.186,
+   "sectorPct": [
+    0.691,
+    0.733,
+    -1.024
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 24.708,
+    "bias": -20.318
+   },
+   "trapKph": -20.361,
+   "brakeM": {
+    "n": 7,
+    "rms": 53.978,
+    "bias": 47.303
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "spielberg",
+   "lapPct": -0.709,
+   "sectorPct": [
+    -2.371,
+    -6.447,
+    9.118
+   ],
+   "cornerKph": {
+    "n": 7,
+    "rms": 30.483,
+    "bias": -20.985
+   },
+   "trapKph": -4.323,
+   "brakeM": {
+    "n": 7,
+    "rms": 78.868,
+    "bias": 57.479
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "silverstone",
+   "lapPct": 0.27,
+   "sectorPct": [
+    -0.771,
+    1.702,
+    -0.611
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 24.805,
+    "bias": -15.397
+   },
+   "trapKph": -12.324,
+   "brakeM": {
+    "n": 5,
+    "rms": 86.153,
+    "bias": 58.155
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "spa-francorchamps",
+   "lapPct": -0.107,
+   "sectorPct": [
+    1.053,
+    -1.61,
+    1.108
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 28.688,
+    "bias": -15.984
+   },
+   "trapKph": -20.384,
+   "brakeM": {
+    "n": 8,
+    "rms": 108.854,
+    "bias": 79.358
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "hungaroring",
+   "lapPct": 0.566,
+   "sectorPct": [
+    0.383,
+    0.246,
+    1.19
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 15.555,
+    "bias": -11.269
+   },
+   "trapKph": -8.769,
+   "brakeM": {
+    "n": 11,
+    "rms": 62.368,
+    "bias": 47.37
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "monza",
+   "lapPct": 0.403,
+   "sectorPct": [
+    -5.237,
+    1.492,
+    4.846
+   ],
+   "cornerKph": {
+    "n": 6,
+    "rms": 30.358,
+    "bias": -25.931
+   },
+   "trapKph": -2.941,
+   "brakeM": {
+    "n": 6,
+    "rms": 76.976,
+    "bias": 38.755
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "madring",
+   "lapPct": -0.318,
+   "sectorPct": [
+    -2.715,
+    3.907,
+    -2.62
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 21.279,
+    "bias": -17.058
+   },
+   "trapKph": -31.306,
+   "brakeM": {
+    "n": 8,
+    "rms": 33.036,
+    "bias": 21.927
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "baku",
+   "lapPct": -0.013,
+   "sectorPct": [
+    -3.794,
+    -0.525,
+    6.323
+   ],
+   "cornerKph": {
+    "n": 11,
+    "rms": 23.157,
+    "bias": -18.136
+   },
+   "trapKph": 10.278,
+   "brakeM": {
+    "n": 11,
+    "rms": 48.31,
+    "bias": 25.981
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "kuala-lumpur",
+   "lapPct": 0.221,
+   "sectorPct": [
+    -2.788,
+    2.94,
+    -0.077
+   ],
+   "cornerKph": {
+    "n": 8,
+    "rms": 16.586,
+    "bias": -4.906
+   },
+   "trapKph": 9.015,
+   "brakeM": {
+    "n": 7,
+    "rms": 76.978,
+    "bias": 39.384
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "singapore",
+   "lapPct": -0.177,
+   "sectorPct": [
+    -1.357,
+    -2.049,
+    3.846
+   ],
+   "cornerKph": {
+    "n": 12,
+    "rms": 18.72,
+    "bias": -13.715
+   },
+   "trapKph": 16.157,
+   "brakeM": {
+    "n": 12,
+    "rms": 19.063,
+    "bias": 4.532
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "austin",
+   "lapPct": 0.445,
+   "sectorPct": [
+    2.665,
+    0.803,
+    -1.769
+   ],
+   "cornerKph": {
+    "n": 9,
+    "rms": 23.739,
+    "bias": -15.809
+   },
+   "trapKph": -28.584,
+   "brakeM": {
+    "n": 8,
+    "rms": 59.297,
+    "bias": 23.227
+   }
+  },
+  {
+   "series": "f1",
+   "year": 2026,
+   "track": "mexico-city",
+   "lapPct": 0.644,
+   "sectorPct": [
+    2.059,
+    -0.842,
+    0.984
+   ],
+   "cornerKph": {
+    "n": 10,
+    "rms": 13.406,
+    "bias": -7.605
+   },
+   "trapKph": -6.682,
+   "brakeM": {
+    "n": 9,
+    "rms": 64.048,
+    "bias": 25.03
+   }
+  }
+ ]
+}
