@@ -77,6 +77,7 @@ if (E.LAPSIM_KV === 'on') for (const tr of Object.values(tracks)) if (tr.grade) 
   const g = tr.grade, n = g.length; tr.kv = Float64Array.from(g, (_, i) => (g[(i + 1) % n] - g[(i - 1 + n) % n]) / (2 * tr.ds));
 }
 const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce'];
+const PICE_MEASURED = E.LAPSIM_PICE_MEASURED === 'on' ? JSON.parse(await readFile('scripts/sim/data/f1-power-estimate.json', 'utf8')) : null;
 // physical bounds, so geometry error cannot be absorbed by impossible cars. ClA up to 8 m²:
 // modern F1 cars make about 3.5x their weight in downforce near 300 km/h (ClA ≈ 6.5–7). The fitted
 // values are effective ones: they also absorb what the quasi-steady-state model leaves out.
@@ -102,7 +103,10 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
-  const params = PARAMS.map(k => {
+  // LAPSIM_PICE_MEASURED candidate (off by default): F1 engine power from the telemetry estimate
+  // (scripts/sim/data/f1-power-estimate.json, evidence layer 3) instead of a fitted value; not fitted in those seasons
+  const measuredP = PICE_MEASURED?.seasons?.[year]?.pIceW; if (measuredP) base.pIce = measuredP;
+  const params = PARAMS.filter(k => !(measuredP && k === 'pIce')).map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
   });

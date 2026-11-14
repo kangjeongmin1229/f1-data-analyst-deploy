@@ -1,0 +1,37 @@
+{
+  "source": "scripts/sim/estimate-power.mjs on the pinned .cache/lapsim/traces.json (OpenF1 qualifying laps, positions 1-3)",
+  "method": "full throttle for 5 samples, no brake, 180-260 km/h, lateral under 6 m/s2, outside low-drag zones; mass, rolling resistance and rotating-mass factor from the season prior",
+  "evidenceLayer": 3,
+  "seasons": {
+    "2023": {
+      "points": 3160,
+      "tracks": 15,
+      "wheelPowerW": 613047,
+      "wheelPowerSeW": 5274,
+      "cdA": 1.511,
+      "pIceW": 524591,
+      "pIceOverPrior": 0.937,
+      "assumes": "ERS-K at 120 kW on these points, etaDrive 0.96, etaErs 0.95, rotating-mass factor 1.06, mass 806 kg"
+    },
+    "2024": {
+      "points": 3840,
+      "tracks": 18,
+      "wheelPowerW": 610772,
+      "wheelPowerSeW": 8715,
+      "cdA": 1.439,
+      "pIceW": 522221,
+      "pIceOverPrior": 0.933,
+      "assumes": "ERS-K at 120 kW on these points, etaDrive 0.96, etaErs 0.95, rotating-mass factor 1.06, mass 806 kg"
+    },
+    "2025": {
+      "points": 3696,
+      "tracks": 22,
+      "wheelPowerW": 599607,
+      "wheelPowerSeW": 7884,
+      "cdA": 1.355,
+      "pIceW": 510591,
+      "pIceOverPrior": 0.912,
+      "assumes": "ERS-K at 120 kW on these points, etaDrive 0.96, etaErs 0.95, rotating-mass factor 1.06, mass 806 kg"
+    }
+  }
+}
