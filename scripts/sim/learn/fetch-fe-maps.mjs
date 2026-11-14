@@ -15,11 +15,11 @@ const list = async id => { for (let i = 0; ; i++) { try { return await officialA
 const dec = (p, n) => { if (p.length <= n) return p; const k = p.length / n; return Array.from({length: n}, (_, i) => p[Math.floor(i * k)]); };
 const r1 = v => Math.round(v * 10) / 10;
 export function summarise(svg, words, page) {
-  const P = svgPaths(svg).map(p => { const s = p.subpaths.map(q => ({q, L: polyLen(q)})).sort((a, b) => b.L - a.L)[0], xs = s.q.map(v => v[0]), ys = s.q.map(v => v[1]);
+  const P = svgPaths(svg).map(p => { const s = p.subpaths.map(q => ({q, L: polyLen(q)})).sort((a, b) => b.L - a.L)[0], bb = s.q.reduce((b, [x, y]) => [Math.min(b[0], x), Math.min(b[1], y), Math.max(b[2], x), Math.max(b[3], y)], [Infinity, Infinity, -Infinity, -Infinity]);
     return {stroke: p.stroke, fill: p.fill, width: p.width && r1(p.width), dash: p.dash, subpaths: p.subpaths.length, closed: !!s.q.closed || Math.hypot(s.q[0][0] - s.q.at(-1)[0], s.q[0][1] - s.q.at(-1)[1]) < 2,
-      length: r1(s.L), bbox: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)].map(r1), points: dec(s.q, 700).map(([a, b]) => [r1(a), r1(b)])}; });
+      length: r1(s.L), bbox: bb.map(r1), points: dec(s.q, 700).map(([a, b]) => [r1(a), r1(b)])}; });
   const big = Math.max(page.w, page.h) * 1.2; // a lap drawn on the page is longer than one page side
-  return {page, paths: P.filter(p => p.length > big).sort((a, b) => b.length - a.length).slice(0, 14), words: words.slice(0, 500)};
+  return {page, paths: P.filter(p => p.length > big).sort((a, b) => b.length - a.length).slice(0, 20), words: words.slice(0, 500)};
 }
 if (process.argv[1]?.endsWith('fetch-fe-maps.mjs')) {
   const seasons = (await list()).catalogs.filter(c => +(c.name.match(/Season (\d+)/) || [])[1] >= FROM);
