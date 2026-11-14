@@ -327,9 +327,20 @@
      "name": "Road course (IMSA)",
      "lengthM": 5729,
      "source": "imsa.com/weathertech/weathertech-2026-schedule (3.56 miles, 12 corners)",
-     "roundedTo": "0.01 mile"
+     "roundedTo": "0.01 mile",
+     "must": [
+      "Le Mans Chicane",
+      "International Horseshoe",
+      "West Horseshoe"
+     ],
+     "not": [
+      "2021 NASCAR chicane"
+     ],
+     "identitySource": "IMSA road course: infield with both horseshoes and the Le Mans chicane on the back straight; the front-stretch chicane is NASCAR only. Found 2026-11-14: the loop accepted by length alone had no Le Mans chicane and every simulated lap was 5 to 9 % too fast."
     }
-   ]
+   ],
+   "tolPct": 1.0,
+   "tolReason": "Length source is rounded to 0.01 mile; the loop is now chosen by its named ways, the length only bounds it."
   },
   {
    "id": "portimao",
@@ -352,7 +363,8 @@
    ],
    "radius": 4000,
    "fia": "PAUL RICARD",
-   "ambiguous": "31,776 loops on the map, so several different loops match each official length to the metre. Layout identity is not verified; one loop lost 13 % in smoothing. Not usable until each layout is checked against the official layout drawing."
+   "ambiguous": "31,776 loops on the map, so several different loops match each official length to the metre. Layout identity is not verified; one loop lost 13 % in smoothing. Not usable until each layout is checked against the official layout drawing.",
+   "debugWays": true
   },
   {
    "id": "laguna-seca",
