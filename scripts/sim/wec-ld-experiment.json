@@ -1,0 +1,10 @@
+{
+  "declared": "2026-11-14, rules section 9.5 task 2, downforce-to-drag limit. WEC only, standard setting R, repository geometry, pinned input archive. Baseline R0 = production flags. Candidate LD4: fitted Hypercar (LMH, LMDh) downforce / drag <= 4.0. Sensitivity LD5: <= 5.0. LMGT3 is not constrained (no homologation value found). Evidence for the ratio: layer 4 (secondary sources only: Racecar Engineering reports a homologation window near CzA 4.05-4.25 with efficiency slightly above 4; the FIA appendix with the numbers is not public). Metrics: held-out RMS per class-season and pooled WEC (gate.mjs), trap error, bound hits. Pass: gate accepted on pooled WEC, no group worse, trap RMS not worse. No variants added after results.",
+  "input_sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
+  "common_env": {"LAPSIM_ONLY": "wec", "LAPSIM_WEC_NM_TOL": "1e-4", "LAPSIM_WEC_NM_CAP": "2000"},
+  "configs": [
+    {"name": "R0", "env": {}},
+    {"name": "LD4", "env": {"LAPSIM_WEC_LD_MAX": "4"}},
+    {"name": "LD5", "env": {"LAPSIM_WEC_LD_MAX": "5"}}
+  ]
+}

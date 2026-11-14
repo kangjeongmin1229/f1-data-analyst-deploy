@@ -159,7 +159,7 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, trace, 
 // The car parameters are optimised in log space around the base values.
 // A lap with a fixed track factor (l.grip, e.g. shared from F1) is not given its own grip fit;
 // a lap with l.trapKph is also scored on top speed.
-export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, trace, stop} = {}) {
+export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, trace, stop, ldMax} = {}) {
   const prepared = laps.map(l => {
     const env = conditionsFromWeather(l.weather || {}, l.conditionOptions);
     const lapSeconds = l.lapSeconds ?? l.trace.lap_seconds;
@@ -184,6 +184,8 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
       if (p.max != null && o[last] > p.max) { outside += Math.log(o[last] / p.max) ** 2; o[last] = p.max; }
     });
     if (base.linkMu) { car.muX = base.muX * car.muY / base.muY; car.muXTrac = base.muXTrac * car.muY / base.muY; }
+    // experiment option: downforce-to-drag limit (homologation window), handled like a bound
+    if (ldMax && car.clA > ldMax * car.cdA) { outside += Math.log(car.clA / (ldMax * car.cdA)) ** 2; car.clA = ldMax * car.cdA; }
     if (base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; } // no DRS / straight mode
     return car;
   };
