@@ -1,6 +1,6 @@
 {
  "source": "OpenStreetMap raceway ways (© OpenStreetMap contributors, ODbL); loops found by scripts/sim/tracks/assemble.mjs",
- "rule": "accepted = within 0.5 % of the official lap length",
+ "rule": "accepted = within 0.5 % of the official lap length, or within the venue's declared tolPct (experiment: such a lap is a candidate to be judged by real lap times)",
  "tracks": {
   "sakhir-outer": {
    "gapClosedM": 12,
@@ -66,7 +66,8 @@
       "Grand Prix Circuit",
       "Paddock Layout",
       "Outer Circuit",
-      "Endurance Circuit"
+      "Endurance Circuit",
+      "Inner Circuit"
      ]
     },
     {
@@ -84,7 +85,8 @@
       "Grand Prix Circuit",
       "Paddock Layout",
       "Outer Circuit",
-      "Endurance Circuit"
+      "Endurance Circuit",
+      "Inner Circuit"
      ]
     },
     {
@@ -143,7 +145,8 @@
       "Grand Prix Circuit",
       "Paddock Layout",
       "Inner Circuit",
-      "Endurance Circuit"
+      "Endurance Circuit",
+      "Outer Circuit"
      ]
     },
     {
@@ -152,7 +155,8 @@
       "Grand Prix Circuit",
       "Paddock Layout",
       "Inner Circuit",
-      "Endurance Circuit"
+      "Endurance Circuit",
+      "Outer Circuit"
      ]
     },
     {
@@ -255,7 +259,8 @@
       "Grand Prix Circuit",
       "Paddock Layout",
       "Inner Circuit",
-      "Endurance Circuit"
+      "Endurance Circuit",
+      "Outer Circuit"
      ]
     },
     {
@@ -272,7 +277,8 @@
       "Grand Prix Circuit",
       "Outer Circuit",
       "Endurance Circuit",
-      "Inner Circuit"
+      "Inner Circuit",
+      "Paddock Layout"
      ]
     },
     {
@@ -382,7 +388,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -391,7 +401,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -400,7 +414,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -409,7 +427,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -418,7 +440,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -427,7 +453,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -436,7 +466,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -445,7 +479,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -454,7 +492,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -463,7 +505,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -472,7 +518,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -481,7 +531,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -490,7 +544,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -499,7 +557,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -508,7 +570,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -517,7 +583,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -526,7 +596,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -535,7 +609,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -544,7 +622,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -553,7 +635,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -562,7 +648,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -571,7 +661,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -580,7 +674,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -589,7 +687,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -598,7 +700,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -607,7 +713,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -616,7 +726,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -625,7 +739,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -634,7 +752,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -643,7 +765,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -652,7 +778,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -661,7 +791,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -670,7 +804,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Chicane Maison Blanche"
      ]
     },
     {
@@ -679,7 +817,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Virage du Raccordement",
+      "Pit Entry"
      ]
     },
     {
@@ -688,7 +830,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -697,7 +843,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -706,7 +856,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Porsche Center",
+      "Pit Entry"
      ]
     },
     {
@@ -715,7 +869,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "MotoGP Long lap penalty"
+      "MotoGP Long lap penalty",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -724,7 +882,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     },
     {
@@ -733,7 +895,11 @@
       "Virage de la Chapelle",
       "Circuit Bugatti",
       "Virage du Musée",
-      "Virage du Garage Vert"
+      "Virage du Garage Vert",
+      "Virage du Chemin aux Bœufs",
+      "Le « S » du Garage Bleu",
+      "Pit Entry",
+      "Virage du Raccordement"
      ]
     }
    ],
@@ -778,7 +944,11 @@
       "Curva Savelli",
       "Curva Casanova",
       "Curva Borgo San Lorenzo",
-      "Curva Materassi"
+      "Curva Materassi",
+      "Curva Poggio Secco",
+      "Curva Luco",
+      "Curva San Donato",
+      "Curva Bucine"
      ]
     }
    ],
@@ -913,7 +1083,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Oval - Pit Entry"
      ]
     },
     {
@@ -922,7 +1096,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight"
      ]
     },
     {
@@ -931,7 +1109,11 @@
       "IMS Road Course",
       "IMS Road Course - Pit Exit",
       "IMS Road Course - Alternate Pit Exit",
-      "IMS Road Course - Alternate Corner 1 Entry"
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Start-Finish Line",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Grand Prix Circuit"
      ]
     },
     {
@@ -940,7 +1122,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Road Course Corner 1 Escape Road",
       "IMS Road Course",
-      "IMS Road Course = Alternate Corner 2"
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Main Straigt"
      ]
     },
     {
@@ -949,7 +1135,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Oval - Pit Entry"
      ]
     },
     {
@@ -958,7 +1148,10 @@
       "IMS Road Course",
       "IMS Road Course = Alternate Corner 2",
       "IMS Road Course - Alternate Corner 1",
-      "IMS Road Course - Alternate Corner 1 Entry"
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Start-Finish Line",
+      "IMS Road Course - Alternate Corners 12 & 12A"
      ]
     },
     {
@@ -967,7 +1160,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Road Course Corner 1 Escape Road",
       "IMS Road Course",
-      "IMS Road Course = Alternate Corner 2"
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Pit Exit",
+      "IMS Start-Finish Line"
      ]
     },
     {
@@ -989,7 +1186,10 @@
       "IMS Road Course",
       "IMS Road Course = Alternate Corner 2",
       "IMS Road Course - Alternate Corner 1",
-      "IMS Road Course - Alternate Corner 1 Entry"
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Start-Finish Line",
+      "IMS Grand Prix Circuit"
      ]
     },
     {
@@ -998,7 +1198,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course = Alternate Corner 2"
      ]
     },
     {
@@ -1007,7 +1211,11 @@
       "Indianapolis Motor Speedway - Backstretch",
       "Indianapolis Motor Speedway - Turn 3",
       "Indianapolis Motor Speedway - North Straight",
-      "Indianapolis Motor Speedway - Turn 4"
+      "Indianapolis Motor Speedway - Turn 4",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Main Straigt",
+      "Indianapolis Motor Speedway - Turn 1",
+      "Indianapolis Motor Speedway - South Straight"
      ]
     },
     {
@@ -1016,7 +1224,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
@@ -1025,7 +1237,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight"
      ]
     },
     {
@@ -1034,7 +1250,8 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Road Course - Alternate Corners 12 & 12A"
      ]
     },
     {
@@ -1043,7 +1260,9 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Road Course - Alternate Corners 12 & 12A"
      ]
     },
     {
@@ -1052,7 +1271,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Road Course - Alternate Corners 12 & 12A",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight"
      ]
     },
     {
@@ -1070,7 +1293,8 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit"
      ]
     },
     {
@@ -1079,7 +1303,11 @@
       "IMS Road Course - Corner 5",
       "IMS Road Course - Corner 6",
       "IMS Road Course - Hulman Straight",
-      "IMS Road Course"
+      "IMS Road Course",
+      "IMS Grand Prix Circuit",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
@@ -1088,7 +1316,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Oval - Warmup Lane to Pit Entry",
       "IMS Oval - Pit Entry",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course",
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
@@ -1097,7 +1329,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Oval - Warmup Lane to Pit Entry",
       "IMS Oval - Pit Entry",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Turn 4"
      ]
     },
     {
@@ -1106,7 +1342,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Road Course Corner 1 Escape Road",
       "IMS Road Course",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Oval - Pit Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Turn 4",
+      "Indianapolis Motor Speedway - North Straight"
      ]
     },
     {
@@ -1115,7 +1355,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Road Course Corner 1 Escape Road",
       "IMS Road Course",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Turn 4"
      ]
     },
     {
@@ -1124,7 +1368,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Road Course Corner 1 Escape Road",
       "IMS Road Course",
-      "IMS Road Course = Alternate Corner 2"
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Turn 4"
      ]
     },
     {
@@ -1133,7 +1381,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Oval - Warmup Lane to Pit Entry",
       "IMS Oval - Pit Entry",
-      "Indianapolis Motor Speedway - Main Straight"
+      "Indianapolis Motor Speedway - Main Straight",
+      "Indianapolis Motor Speedway - Turn 4",
+      "Indianapolis Motor Speedway - North Straight",
+      "Indianapolis Motor Speedway - Turn 3",
+      "Indianapolis Motor Speedway - Backstretch"
      ]
     },
     {
@@ -1142,7 +1394,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Oval - Warmup Lane to Pit Entry",
       "IMS Oval - Pit Entry",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
@@ -1151,7 +1407,11 @@
       "IMS Oval - Warmup Lane/Pit Entry",
       "IMS Oval - Warmup Lane to Pit Entry",
       "IMS Oval - Pit Entry",
-      "IMS Road Course - Pit Exit"
+      "IMS Road Course - Pit Exit",
+      "IMS Road Course - Alternate Pit Exit",
+      "IMS Road Course - Alternate Corner 1 Entry",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Start-Finish Line"
      ]
     },
     {
@@ -1160,7 +1420,11 @@
       "IMS Oval - Pit Entry",
       "IMS Road Course - Pit Exit",
       "IMS Road Course - Alternate Pit Exit",
-      "IMS Road Course - Alternate Corner 1"
+      "IMS Road Course - Alternate Corner 1",
+      "IMS Road Course = Alternate Corner 2",
+      "IMS Road Course",
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight"
      ]
     },
     {
@@ -1169,7 +1433,8 @@
       "IMS Oval - Pit Entry",
       "IMS Road Course - Pit Exit",
       "IMS Road Course",
-      "IMS Start-Finish Line"
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight"
      ]
     },
     {
@@ -1178,7 +1443,9 @@
       "IMS Road Course - Alternate Corner 1",
       "IMS Road Course = Alternate Corner 2",
       "IMS Road Course",
-      "IMS Start-Finish Line"
+      "IMS Start-Finish Line",
+      "Indianapolis Motor Speedway - Main Straight",
+      "IMS Road Course - Alternate Corner 1 Entry"
      ]
     },
     {
@@ -1187,7 +1454,9 @@
       "IMS Road Course - Alternate Pit Exit",
       "IMS Road Course - Alternate Corner 1 Entry",
       "Indianapolis Motor Speedway - Main Straight",
-      "IMS Start-Finish Line"
+      "IMS Start-Finish Line",
+      "IMS Road Course",
+      "IMS Road Course - Pit Exit"
      ]
     }
    ],
@@ -1217,120 +1486,13 @@
    ]
   },
   "sebring": {
-   "gapClosedM": 60,
+   "gapClosedM": 30,
    "snappedEnds": 2,
-   "wayList": [
-    [
-     "Sunset Bend",
-     391
-    ],
-    [
-     null,
-     328
-    ],
-    [
-     null,
-     1468
-    ],
-    [
-     null,
-     557
-    ],
-    [
-     null,
-     180
-    ],
-    [
-     null,
-     239
-    ],
-    [
-     null,
-     133
-    ],
-    [
-     null,
-     328
-    ],
-    [
-     "Club Circuit",
-     141
-    ],
-    [
-     "Ullman Straight",
-     901
-    ],
-    [
-     "Le Mans Curve",
-     69
-    ],
-    [
-     null,
-     118
-    ],
-    [
-     "Gendebien Bend",
-     135
-    ],
-    [
-     null,
-     276
-    ],
-    [
-     null,
-     98
-    ],
-    [
-     "Bishop Bend",
-     81
-    ],
-    [
-     null,
-     333
-    ],
-    [
-     "Tower Turn",
-     75
-    ],
-    [
-     null,
-     206
-    ],
-    [
-     "Cunningham Corner",
-     71
-    ],
-    [
-     null,
-     119
-    ],
-    [
-     "Collier Curve",
-     98
-    ],
-    [
-     "Hairpin",
-     203
-    ],
-    [
-     "Fangio",
-     280
-    ],
-    [
-     "Gurney Bend",
-     366
-    ],
-    [
-     null,
-     347
-    ]
-   ],
    "ways": 26,
    "edges": 35,
    "junctions": 10,
    "searchCapped": false,
    "duplicateEdgesDropped": 0,
-   "openEnds": [],
    "loopsFound": 27,
    "loopLengthsM": [
     {
@@ -1339,7 +1501,11 @@
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
-      "Gendebien Bend"
+      "Gendebien Bend",
+      "Bishop Bend",
+      "Tower Turn",
+      "Collier Curve",
+      "Cunningham Corner"
      ]
     },
     {
@@ -1348,7 +1514,11 @@
       "Sunset Bend",
       "Ullman Straight",
       "Gendebien Bend",
-      "Bishop Bend"
+      "Bishop Bend",
+      "Tower Turn",
+      "Collier Curve",
+      "Cunningham Corner",
+      "Fangio"
      ]
     },
     {
@@ -1357,7 +1527,11 @@
       "Sunset Bend",
       "Ullman Straight",
       "Gendebien Bend",
-      "Bishop Bend"
+      "Bishop Bend",
+      "Tower Turn",
+      "Collier Curve",
+      "Cunningham Corner",
+      "Fangio"
      ]
     },
     {
@@ -1366,7 +1540,9 @@
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
-      "Gendebien Bend"
+      "Gendebien Bend",
+      "Bishop Bend",
+      "Club Circuit"
      ]
     },
     {
@@ -1375,7 +1551,8 @@
       "Sunset Bend",
       "Ullman Straight",
       "Gendebien Bend",
-      "Bishop Bend"
+      "Bishop Bend",
+      "Club Circuit"
      ]
     },
     {
@@ -1384,7 +1561,8 @@
       "Sunset Bend",
       "Ullman Straight",
       "Gendebien Bend",
-      "Bishop Bend"
+      "Bishop Bend",
+      "Club Circuit"
      ]
     },
     {
@@ -1393,7 +1571,8 @@
       "Sunset Bend",
       "Ullman Straight",
       "Le Mans Curve",
-      "Gendebien Bend"
+      "Gendebien Bend",
+      "Bishop Bend"
      ]
     },
     {
@@ -1420,7 +1599,9 @@
       "Gurney Bend",
       "Hairpin",
       "Fangio",
-      "Cunningham Corner"
+      "Cunningham Corner",
+      "Collier Curve",
+      "Tower Turn"
      ]
     },
     {
@@ -1429,7 +1610,10 @@
       "Gurney Bend",
       "Hairpin",
       "Fangio",
-      "Cunningham Corner"
+      "Cunningham Corner",
+      "Collier Curve",
+      "Tower Turn",
+      "Club Circuit"
      ]
     },
     {
@@ -1448,8 +1632,8 @@
      "source": "imsa.com/weathertech/weathertech-2025-schedule (3.74 miles, 17 corners) [rounded to 0.01 mile]",
      "loopM": 5887,
      "errorPct": 2.19,
-     "accepted": false,
-     "gapClosedM": 60
+     "accepted": true,
+     "gapClosedM": 30
     },
     {
      "id": "sebring | SEBRING",
@@ -1460,8 +1644,8 @@
      "widthM": 12,
      "loopM": 5887,
      "errorPct": 2.19,
-     "accepted": false,
-     "gapClosedM": 60
+     "accepted": true,
+     "gapClosedM": 30
     }
    ]
   },
@@ -1574,152 +1758,10 @@
    ]
   },
   "yongin": {
-   "gapClosedM": 12,
-   "snappedEnds": 0,
-   "ways": 7,
-   "edges": 13,
-   "junctions": 6,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "loopsFound": 8,
-   "loopLengthsM": [
-    {
-     "m": 4353,
-     "names": []
-    },
-    {
-     "m": 4109,
-     "names": []
-    },
-    {
-     "m": 2929,
-     "names": []
-    },
-    {
-     "m": 2685,
-     "names": []
-    },
-    {
-     "m": 2618,
-     "names": []
-    },
-    {
-     "m": 2374,
-     "names": []
-    },
-    {
-     "m": 1853,
-     "names": []
-    },
-    {
-     "m": 1536,
-     "names": []
-    }
-   ],
-   "accepted": [
-    {
-     "id": "yongin | Everland Speedway full course",
-     "officialM": 4346,
-     "source": "hyundai-n.com/en/motorsport/nf-calendar-ncup-r4.do (4.346 km, 16 corners, pole left)",
-     "loopM": 4353,
-     "errorPct": 0.16,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   },
   "inje": {
-   "gapClosedM": 60,
-   "snappedEnds": 0,
-   "wayList": [
-    [
-     "풀코스",
-     3947
-    ],
-    [
-     "A 코스",
-     176
-    ],
-    [
-     "B 코스",
-     144
-    ],
-    [
-     null,
-     302
-    ]
-   ],
-   "ways": 4,
-   "edges": 10,
-   "junctions": 6,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "openEnds": [],
-   "loopsFound": 6,
-   "loopLengthsM": [
-    {
-     "m": 3973,
-     "names": [
-      "풀코스"
-     ]
-    },
-    {
-     "m": 3947,
-     "names": [
-      "풀코스"
-     ]
-    },
-    {
-     "m": 2885,
-     "names": [
-      "풀코스",
-      "B 코스"
-     ]
-    },
-    {
-     "m": 2634,
-     "names": [
-      "풀코스",
-      "A 코스"
-     ]
-    },
-    {
-     "m": 1691,
-     "names": [
-      "풀코스",
-      "A 코스"
-     ]
-    },
-    {
-     "m": 1665,
-     "names": [
-      "풀코스",
-      "A 코스"
-     ]
-    }
-   ],
-   "accepted": [
-    {
-     "id": "inje | Full course",
-     "officialM": 3908,
-     "source": "O-NE Superrace 2025 round 6 circuit map (Inje Speedium 3.908 km)",
-     "loopM": 3947,
-     "errorPct": 1,
-     "accepted": false,
-     "gapClosedM": 60
-    },
-    {
-     "id": "inje | INJE",
-     "officialM": 3908,
-     "source": "FIA list 2026-03-31",
-     "grade": "2",
-     "pole": "Left",
-     "widthM": 14,
-     "loopM": 3947,
-     "errorPct": 1,
-     "accepted": false,
-     "gapClosedM": 60
-    }
-   ]
+   "error": "no map data"
   },
   "nurburgring": {
    "gapClosedM": 12,
@@ -1757,7 +1799,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1766,7 +1812,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1775,7 +1825,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1784,7 +1838,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1793,7 +1851,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1802,7 +1864,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1811,7 +1877,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Sabine-Schmitz-Kurve",
-      "Hatzenbogen"
+      "Hatzenbogen",
+      "Hatzenbach",
+      "Hocheichen",
+      "Quiddelbacher Höhe",
+      "Flugplatz"
      ]
     },
     {
@@ -1820,7 +1890,11 @@
       "T13",
       "Hohenrain",
       "Tiergarten",
-      "Antoniusbuche"
+      "Antoniusbuche",
+      "Döttinger Höhe",
+      "Nürburgring Nordschleife",
+      "Galgenkopf",
+      "Mini-Karussell"
      ]
     },
     {
@@ -1829,7 +1903,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Anbindung zum GP Kurs",
-      "Nürburgring Sprintstrecke"
+      "Nürburgring Sprintstrecke",
+      "Anbindung zur Müllenbachschleife",
+      "Ford-Kurve",
+      "Goodyear-Kehre",
+      "Michael-Schumacher-S"
      ]
     },
     {
@@ -1838,7 +1916,9 @@
       "Nürburgring Sprintstrecke",
       "Anbindung zur Sprintstrecke",
       "Michael-Schumacher-S",
-      "Goodyear-Kehre"
+      "Goodyear-Kehre",
+      "Ford-Kurve",
+      "Anbindung zur Müllenbachschleife"
      ]
     },
     {
@@ -1847,7 +1927,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Anbindung zum GP Kurs",
-      "Nürburgring Sprintstrecke"
+      "Nürburgring Sprintstrecke",
+      "Variante 24h-Rennen",
+      "Anbindung zur Müllenbachschleife",
+      "Ford-Kurve",
+      "Goodyear-Kehre"
      ]
     },
     {
@@ -1856,7 +1940,10 @@
       "Nürburgring Sprintstrecke",
       "Anbindung zur Sprintstrecke",
       "Michael-Schumacher-S",
-      "Goodyear-Kehre"
+      "Goodyear-Kehre",
+      "Ford-Kurve",
+      "Anbindung zur Müllenbachschleife",
+      "Variante 24h-Rennen"
      ]
     },
     {
@@ -1865,7 +1952,10 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Anbindung zum GP Kurs",
-      "Nürburgring Sprintstrecke"
+      "Nürburgring Sprintstrecke",
+      "Anbindung zur Müllenbachschleife",
+      "Müllenbachschleife",
+      "Anbindung zur Sprintstrecke"
      ]
     },
     {
@@ -1892,7 +1982,11 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Anbindung zum GP Kurs",
-      "Nürburgring Sprintstrecke"
+      "Nürburgring Sprintstrecke",
+      "Variante 24h-Rennen",
+      "Anbindung zur Müllenbachschleife",
+      "Müllenbachschleife",
+      "Anbindung zur Sprintstrecke"
      ]
     },
     {
@@ -1907,7 +2001,8 @@
       "Nürburgring Sprintstrecke",
       "Anbindung zur Sprintstrecke",
       "Müllenbachschleife",
-      "Anbindung zur Müllenbachschleife"
+      "Anbindung zur Müllenbachschleife",
+      "Variante 24h-Rennen"
      ]
     },
     {
@@ -1916,7 +2011,8 @@
       "Anbindung zur Nordschleife",
       "T13",
       "Anbindung zum GP Kurs",
-      "Nürburgring Sprintstrecke"
+      "Nürburgring Sprintstrecke",
+      "Variante 24h-Rennen"
      ]
     },
     {
@@ -1932,7 +2028,9 @@
       "Anbindung zur Sprintstrecke",
       "Nürburgring Sprintstrecke",
       "Anbindung zur Müllenbachschleife",
-      "Ford-Kurve"
+      "Ford-Kurve",
+      "Goodyear-Kehre",
+      "Michael-Schumacher-S"
      ]
     }
    ],
@@ -2144,7 +2242,11 @@
       "Surtees",
       "Cooper Straight",
       "Graham Hill Bend",
-      "Druids Bend"
+      "Druids Bend",
+      "Hailwoods Hill",
+      "Paddock Hill",
+      "Brabham Straight",
+      "Clark Curve"
      ]
     },
     {
@@ -2153,7 +2255,11 @@
       "McLaren",
       "Clearways",
       "Stirlings Bend",
-      "Sheene Curve"
+      "Sheene Curve",
+      "Dingle Dell Corner",
+      "Dingle Dell",
+      "Westfield Bend",
+      "Derek Minter Straight"
      ]
     },
     {
@@ -2162,7 +2268,11 @@
       "McLaren",
       "Clearways",
       "Clark Curve",
-      "Brabham Straight"
+      "Brabham Straight",
+      "Paddock Hill",
+      "Hailwoods Hill",
+      "Druids Bend",
+      "Graham Hill Bend"
      ]
     }
    ],
@@ -2209,7 +2319,11 @@
       "Kyalami Grand Prix Circuit",
       "The Kink",
       "Crowthorne",
-      "Juksei Sweep"
+      "Juksei Sweep",
+      "Barbeque",
+      "Sunset",
+      "Clubhouse",
+      "The Esses"
      ]
     }
    ],
@@ -2288,7 +2402,9 @@
       "Speedway",
       "2021 NASCAR chicane",
       "Le Mans Chicane",
-      "West Horseshoe"
+      "West Horseshoe",
+      "Dogleg",
+      "International Horseshoe"
      ]
     },
     {
@@ -2297,7 +2413,8 @@
       "Speedway",
       "2021 NASCAR chicane",
       "West Horseshoe",
-      "Dogleg"
+      "Dogleg",
+      "International Horseshoe"
      ]
     },
     {
@@ -2306,7 +2423,8 @@
       "Speedway",
       "2021 NASCAR chicane",
       "Le Mans Chicane",
-      "West Horseshoe"
+      "West Horseshoe",
+      "Dogleg"
      ]
     },
     {
@@ -2315,7 +2433,8 @@
       "Speedway",
       "2021 NASCAR chicane",
       "Le Mans Chicane",
-      "Dogleg"
+      "Dogleg",
+      "International Horseshoe"
      ]
     },
     {
@@ -2389,7 +2508,8 @@
       "Speedway",
       "2021 NASCAR chicane",
       "Le Mans Chicane",
-      "West Horseshoe"
+      "West Horseshoe",
+      "International Horseshoe"
      ]
     },
     {
@@ -2464,7 +2584,8 @@
       "Speedway",
       "2021 NASCAR chicane",
       "Le Mans Chicane",
-      "Dogleg"
+      "Dogleg",
+      "International Horseshoe"
      ]
     },
     {
@@ -2602,311 +2723,260 @@
      "id": "daytona | Road course (IMSA)",
      "officialM": 5729,
      "source": "imsa.com/weathertech/weathertech-2026-schedule (3.56 miles, 12 corners) [rounded to 0.01 mile]",
-     "loopM": 5731,
-     "errorPct": 0.03,
+     "loopM": 5762,
+     "errorPct": 0.58,
      "accepted": true
     }
    ]
   },
   "portimao": {
-   "gapClosedM": 12,
-   "snappedEnds": 3,
-   "ways": 61,
-   "edges": 88,
-   "junctions": 41,
-   "searchCapped": true,
-   "duplicateEdgesDropped": 1,
-   "loopsFound": 951,
-   "loopLengthsM": [
-    {
-     "m": 4682,
-     "names": [
-      "Curva da Torre Vip",
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 4661,
-     "names": [
-      "Curva da Torre Vip",
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres"
-     ]
-    },
-    {
-     "m": 4627,
-     "names": [
-      "Curva da Torre Vip",
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres"
-     ]
-    },
-    {
-     "m": 4546,
-     "names": [
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Galp",
-      "Curva Sagres"
-     ]
-    },
-    {
-     "m": 4526,
-     "names": [
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres",
-      "Curva Portimão"
-     ]
-    },
-    {
-     "m": 4500,
-     "names": [
-      "Curva da Torre Vip",
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 4480,
-     "names": [
-      "Curva da Torre Vip",
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres"
-     ]
-    },
-    {
-     "m": 4399,
-     "names": [
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Galp",
-      "Curva Sagres"
-     ]
-    },
-    {
-     "m": 4379,
-     "names": [
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres",
-      "Curva Portimão"
-     ]
-    },
-    {
-     "m": 4345,
-     "names": [
-      "Curva Lagos",
-      "Autódromo Internacional do Algarve",
-      "Curva Sagres",
-      "Curva Portimão"
-     ]
-    },
-    {
-     "m": 4234,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 4213,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 4179,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 4098,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 4078,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 4053,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 4032,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 3951,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Curva Galp"
-     ]
-    },
-    {
-     "m": 3931,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 3897,
-     "names": [
-      "Curva Craig Jones",
-      "Curva Portimão",
-      "Curva Sagres",
-      "Autódromo Internacional do Algarve"
-     ]
-    },
-    {
-     "m": 2063,
-     "names": []
-    },
-    {
-     "m": 2040,
-     "names": []
-    },
-    {
-     "m": 1991,
-     "names": []
-    },
-    {
-     "m": 1974,
-     "names": []
-    },
-    {
-     "m": 1958,
-     "names": []
-    },
-    {
-     "m": 1939,
-     "names": []
-    },
-    {
-     "m": 1922,
-     "names": []
-    },
-    {
-     "m": 1899,
-     "names": []
-    },
-    {
-     "m": 1881,
-     "names": []
-    },
-    {
-     "m": 1865,
-     "names": []
-    },
-    {
-     "m": 1850,
-     "names": []
-    },
-    {
-     "m": 1835,
-     "names": []
-    },
-    {
-     "m": 1820,
-     "names": []
-    },
-    {
-     "m": 1803,
-     "names": []
-    },
-    {
-     "m": 1788,
-     "names": []
-    },
-    {
-     "m": 1773,
-     "names": []
-    },
-    {
-     "m": 1758,
-     "names": []
-    },
-    {
-     "m": 1743,
-     "names": []
-    },
-    {
-     "m": 1728,
-     "names": []
-    },
-    {
-     "m": 1713,
-     "names": []
-    }
-   ],
-   "accepted": [
-    {
-     "id": "portimao | ALGARVE",
-     "officialM": 4653,
-     "source": "FIA list 2026-03-31",
-     "grade": "1",
-     "pole": "Left",
-     "widthM": 14,
-     "loopM": 4648,
-     "errorPct": 0.11,
-     "accepted": true
-    },
-    {
-     "id": "portimao | ALGARVE",
-     "officialM": 4684,
-     "source": "FIA list 2025-12-01",
-     "grade": "1",
-     "pole": "Left",
-     "widthM": 14,
-     "loopM": 4682,
-     "errorPct": 0.04,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   },
   "paul-ricard": {
    "gapClosedM": 12,
    "snappedEnds": 5,
+   "wayList": [
+    [
+     "Courbe de Signes",
+     113
+    ],
+    [
+     "Pinede",
+     60
+    ],
+    [
+     null,
+     68
+    ],
+    [
+     null,
+     130
+    ],
+    [
+     null,
+     29
+    ],
+    [
+     null,
+     207
+    ],
+    [
+     null,
+     25
+    ],
+    [
+     "\"S\" de la Verrerie",
+     293
+    ],
+    [
+     null,
+     305
+    ],
+    [
+     null,
+     30
+    ],
+    [
+     null,
+     75
+    ],
+    [
+     "\"S\" de la Verrerie",
+     145
+    ],
+    [
+     null,
+     55
+    ],
+    [
+     null,
+     120
+    ],
+    [
+     "Chicane Nord",
+     329
+    ],
+    [
+     null,
+     206
+    ],
+    [
+     null,
+     108
+    ],
+    [
+     null,
+     49
+    ],
+    [
+     null,
+     32
+    ],
+    [
+     null,
+     39
+    ],
+    [
+     null,
+     65
+    ],
+    [
+     null,
+     38
+    ],
+    [
+     null,
+     87
+    ],
+    [
+     null,
+     34
+    ],
+    [
+     null,
+     40
+    ],
+    [
+     null,
+     41
+    ],
+    [
+     null,
+     41
+    ],
+    [
+     null,
+     1159
+    ],
+    [
+     null,
+     127
+    ],
+    [
+     null,
+     30
+    ],
+    [
+     "Circuit Paul Ricard",
+     137
+    ],
+    [
+     "Double droite du Beausset",
+     373
+    ],
+    [
+     "Circuit Paul Ricard",
+     164
+    ],
+    [
+     "Virage de Bendor",
+     127
+    ],
+    [
+     "Courbe du Garlaban",
+     337
+    ],
+    [
+     "Virage du Lac",
+     190
+    ],
+    [
+     "Circuit Paul Ricard",
+     40
+    ],
+    [
+     "Virage du Pont",
+     90
+    ],
+    [
+     "Ligne droite des stands",
+     770
+    ],
+    [
+     "Virage de l'hotel",
+     180
+    ],
+    [
+     "Virage du camp",
+     129
+    ],
+    [
+     "Virage de la Sainte-Baume",
+     192
+    ],
+    [
+     "Circuit Paul Ricard",
+     163
+    ],
+    [
+     "Ligne droite du Mistral",
+     1123
+    ],
+    [
+     null,
+     113
+    ],
+    [
+     "\"S\" de la Verrerie",
+     329
+    ],
+    [
+     null,
+     231
+    ],
+    [
+     "Circuit Paul Ricard",
+     335
+    ],
+    [
+     "Stand",
+     861
+    ],
+    [
+     "Terrain dévolution",
+     523
+    ],
+    [
+     null,
+     233
+    ],
+    [
+     null,
+     76
+    ],
+    [
+     null,
+     200
+    ],
+    [
+     "Stand",
+     423
+    ],
+    [
+     "Ligne droite des stands",
+     106
+    ],
+    [
+     "Pinede",
+     89
+    ],
+    [
+     "Pinede",
+     38
+    ],
+    [
+     "Ligne droite du Mistral",
+     725
+    ],
+    [
+     null,
+     112
+    ],
+    [
+     "Circuit Paul Ricard",
+     63
+    ]
+   ],
    "ways": 62,
    "edges": 105,
    "junctions": 68,
@@ -2920,7 +2990,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2929,7 +3003,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2938,7 +3016,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2947,7 +3029,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2956,7 +3042,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2965,7 +3055,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2974,7 +3068,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2983,7 +3081,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -2992,7 +3094,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3001,7 +3107,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3010,7 +3120,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3019,7 +3133,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3028,7 +3146,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3037,7 +3159,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3046,7 +3172,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3055,7 +3185,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Ligne droite du Mistral"
      ]
     },
     {
@@ -3064,7 +3198,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3073,7 +3211,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3082,7 +3224,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3091,7 +3237,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3100,7 +3250,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3109,7 +3263,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3118,7 +3276,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3127,7 +3289,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3136,7 +3302,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3145,7 +3315,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3154,7 +3328,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3163,7 +3341,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3172,7 +3354,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3181,7 +3367,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3190,7 +3380,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3199,7 +3393,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3208,7 +3406,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3217,7 +3419,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3226,7 +3432,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3235,7 +3445,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3244,7 +3458,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3253,7 +3471,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     },
     {
@@ -3262,7 +3484,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "\"S\" de la Verrerie",
+      "Virage de l'hotel"
      ]
     },
     {
@@ -3271,7 +3497,11 @@
       "Courbe de Signes",
       "Circuit Paul Ricard",
       "Courbe du Garlaban",
-      "Virage du Lac"
+      "Virage du Lac",
+      "Virage du Pont",
+      "Ligne droite des stands",
+      "Pinede",
+      "\"S\" de la Verrerie"
      ]
     }
    ],
@@ -3426,7 +3656,8 @@
       "WeatherTech Raceway Laguna Seca",
       "Andretti Hairpin",
       "Rahal Straight",
-      "The Corkscrew"
+      "The Corkscrew",
+      "Rainey Curve"
      ]
     }
    ],
@@ -3460,7 +3691,11 @@
       "Watkins Glen International",
       "The Chute",
       "The Toe",
-      "The Heel"
+      "The Heel",
+      "The Boot",
+      "The Fast Lefthander",
+      "The Ninety",
+      "The Esses"
      ]
     },
     {
@@ -3469,7 +3704,11 @@
       "Watkins Glen International",
       "The Chute",
       "The Toe",
-      "The Heel"
+      "The Heel",
+      "The Boot",
+      "The Fast Lefthander",
+      "The Ninety",
+      "The Esses"
      ]
     },
     {
@@ -3478,7 +3717,10 @@
       "Outer Loop",
       "Inner Loop",
       "Watkins Glen International",
-      "The Esses"
+      "The Esses",
+      "The Ninety",
+      "The Fast Lefthander",
+      "Short Course"
      ]
     },
     {
@@ -3487,7 +3729,9 @@
       "Outer Loop",
       "Watkins Glen International",
       "The Esses",
-      "The Ninety"
+      "The Ninety",
+      "The Fast Lefthander",
+      "Short Course"
      ]
     },
     {
@@ -3496,7 +3740,9 @@
       "Watkins Glen International",
       "The Chute",
       "The Toe",
-      "The Heel"
+      "The Heel",
+      "The Boot",
+      "Short Course"
      ]
     }
    ],
@@ -3527,7 +3773,11 @@
       "Kettle Bottoms",
       "Canada Corner",
       "Thunder Valley",
-      "Road America Straight"
+      "Road America Straight",
+      "Road America",
+      "Moraine Sweep",
+      "Hurry Downs",
+      "Carousel"
      ]
     },
     {
@@ -3536,7 +3786,11 @@
       "Kettle Bottoms",
       "Canada Corner",
       "Thunder Valley",
-      "Road America Straight"
+      "Road America Straight",
+      "Road America",
+      "Moraine Sweep",
+      "Hurry Downs",
+      "Carousel"
      ]
     }
    ],
@@ -3639,28 +3893,13 @@
    ]
   },
   "fe-sao-paulo": {
-   "gapClosedM": 60,
+   "gapClosedM": 12,
    "snappedEnds": 0,
-   "wayList": [
-    [
-     "ABB FIA Formula E São Paulo E-Prix",
-     2712
-    ],
-    [
-     "ABB FIA Formula E São Paulo E-Prix",
-     195
-    ],
-    [
-     "ABB FIA Formula E São Paulo E-Prix",
-     23
-    ]
-   ],
    "ways": 3,
    "edges": 3,
    "junctions": 0,
    "searchCapped": false,
    "duplicateEdgesDropped": 0,
-   "openEnds": [],
    "loopsFound": 1,
    "loopLengthsM": [
     {
@@ -3680,8 +3919,7 @@
      "widthM": 10,
      "loopM": 2931,
      "errorPct": 0.98,
-     "accepted": false,
-     "gapClosedM": 60
+     "accepted": true
     }
    ]
   },
@@ -3699,35 +3937,13 @@
    "accepted": []
   },
   "jarama": {
-   "gapClosedM": 60,
-   "snappedEnds": 2,
-   "wayList": [
-    [
-     "Circuito del Jarama",
-     3053
-    ],
-    [
-     null,
-     20
-    ],
-    [
-     null,
-     226
-    ],
-    [
-     null,
-     112
-    ],
-    [
-     "Circuito del Jarama",
-     852
-    ]
-   ],
+   "gapClosedM": 12,
+   "snappedEnds": 1,
    "ways": 5,
-   "edges": 9,
-   "junctions": 3,
+   "edges": 10,
+   "junctions": 5,
    "searchCapped": false,
-   "duplicateEdgesDropped": 1,
+   "duplicateEdgesDropped": 0,
    "openEnds": [],
    "loopsFound": 1,
    "loopLengthsM": [
@@ -3748,8 +3964,7 @@
      "widthM": 12,
      "loopM": 3906,
      "errorPct": 1.45,
-     "accepted": false,
-     "gapClosedM": 60
+     "accepted": false
     },
     {
      "id": "jarama | JARAMA FE",
@@ -3760,8 +3975,7 @@
      "widthM": 12,
      "loopM": 3906,
      "errorPct": 0.64,
-     "accepted": false,
-     "gapClosedM": 60
+     "accepted": true
     }
    ]
   },
@@ -3815,722 +4029,22 @@
    ]
   },
   "detroit": {
-   "gapClosedM": 60,
-   "snappedEnds": 0,
-   "wayList": [],
-   "ways": 0,
-   "edges": 0,
-   "junctions": 0,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "openEnds": [],
-   "loopsFound": 0,
-   "loopLengthsM": [],
-   "accepted": [
-    {
-     "id": "detroit | DETROIT GRAND PRIX STREET CIRCUIT",
-     "officialM": 2650,
-     "source": "FIA list 2026-03-31",
-     "accepted": false
-    }
-   ]
+   "error": "no map data"
   },
   "mosport": {
-   "gapClosedM": 12,
-   "snappedEnds": 0,
-   "ways": 14,
-   "edges": 21,
-   "junctions": 7,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "loopsFound": 15,
-   "loopLengthsM": [
-    {
-     "m": 3943,
-     "names": [
-      "Moss Corner",
-      "Mario Andretti Straight",
-      "Esses",
-      "Whites Corner"
-     ]
-    },
-    {
-     "m": 3032,
-     "names": []
-    },
-    {
-     "m": 2971,
-     "names": []
-    },
-    {
-     "m": 2954,
-     "names": []
-    },
-    {
-     "m": 2920,
-     "names": []
-    },
-    {
-     "m": 2893,
-     "names": []
-    },
-    {
-     "m": 2842,
-     "names": []
-    },
-    {
-     "m": 2488,
-     "names": []
-    },
-    {
-     "m": 2413,
-     "names": []
-    },
-    {
-     "m": 2343,
-     "names": []
-    },
-    {
-     "m": 2268,
-     "names": []
-    },
-    {
-     "m": 2190,
-     "names": []
-    }
-   ],
-   "accepted": [
-    {
-     "id": "mosport | Grand Prix track (IMSA)",
-     "officialM": 3957,
-     "source": "imsa.com/weathertech/weathertech-2024-schedule (2.459 miles, 10 corners)",
-     "loopM": 3943,
-     "errorPct": 0.35,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   },
   "vir": {
-   "gapClosedM": 12,
-   "snappedEnds": 2,
-   "ways": 34,
-   "edges": 51,
-   "junctions": 21,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 1,
-   "loopsFound": 114,
-   "loopLengthsM": [
-    {
-     "m": 5399,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Roller Coaster"
-     ]
-    },
-    {
-     "m": 5377,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5288,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 5266,
-     "names": [
-      "Virginia International Raceway",
-      "Roller Coaster",
-      "Hog Pen",
-      "Horseshoe"
-     ]
-    },
-    {
-     "m": 4617,
-     "names": [
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen",
-      "Virginia International Raceway"
-     ]
-    },
-    {
-     "m": 4576,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 4538,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Roller Coaster",
-      "Hog Pen"
-     ]
-    },
-    {
-     "m": 4277,
-     "names": [
-      "Patriot Course",
-      "Roller Coaster",
-      "Hog Pen",
-      "Virginia International Raceway"
-     ]
-    },
-    {
-     "m": 4015,
-     "names": [
-      "Up Hill",
-      "Snake",
-      "Virginia International Raceway",
-      "Left Hook"
-     ]
-    },
-    {
-     "m": 3785,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3763,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 3674,
-     "names": [
-      "Up Hill",
-      "Snake",
-      "Virginia International Raceway",
-      "Left Hook"
-     ]
-    },
-    {
-     "m": 3245,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3223,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 3176,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 3154,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Spiral",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 2921,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 2898,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Up Hill",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2879,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2862,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Fish Hook",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2684,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Up Hill"
-     ]
-    },
-    {
-     "m": 2662,
-     "names": [
-      "Virginia International Raceway",
-      "Patriot Course",
-      "Up Hill",
-      "South Bend"
-     ]
-    },
-    {
-     "m": 2647,
-     "names": [
-      "Virginia International Raceway",
-      "Madison Avenue",
-      "Patriot Course",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 2632,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2617,
-     "names": [
-      "Oak Tree Curve",
-      "South Bend",
-      "Fish Hook",
-      "Patriot Course"
-     ]
-    },
-    {
-     "m": 2239,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Up Hill",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 1968,
-     "names": [
-      "Patriot Course",
-      "Spiral"
-     ]
-    },
-    {
-     "m": 1854,
-     "names": [
-      "Patriot Course",
-      "Spiral",
-      "Up Hill",
-      "Fish Hook"
-     ]
-    },
-    {
-     "m": 1583,
-     "names": [
-      "Patriot Course",
-      "Spiral"
-     ]
-    }
-   ],
-   "accepted": [
-    {
-     "id": "vir | Full course (IMSA)",
-     "officialM": 5263,
-     "source": "imsa.com/virginia-international-raceway (3.27 miles) [rounded to 0.01 mile]",
-     "loopM": 5262,
-     "errorPct": 0.02,
-     "accepted": true
-    },
-    {
-     "id": "vir | VIRGINIA INT. RACEWAY - ALTON",
-     "officialM": 5248,
-     "source": "FIA list 2024-06-03",
-     "grade": "2",
-     "pole": "Right",
-     "widthM": 10,
-     "loopM": 5262,
-     "errorPct": 0.27,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   },
   "mid-ohio": {
-   "gapClosedM": 12,
-   "snappedEnds": 0,
-   "ways": 9,
-   "edges": 14,
-   "junctions": 6,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "loopsFound": 4,
-   "loopLengthsM": [
-    {
-     "m": 3646,
-     "names": [
-      "The Keyhole",
-      "Carousel",
-      "Thunder Valley"
-     ]
-    },
-    {
-     "m": 3616,
-     "names": [
-      "The Keyhole",
-      "Carousel",
-      "Thunder Valley"
-     ]
-    },
-    {
-     "m": 3068,
-     "names": [
-      "Thunder Valley",
-      "Carousel"
-     ]
-    },
-    {
-     "m": 2731,
-     "names": [
-      "Thunder Valley",
-      "Carousel"
-     ]
-    }
-   ],
-   "accepted": [
-    {
-     "id": "mid-ohio | IMSA layout",
-     "officialM": 3634,
-     "source": "imsa.com/vpracingsportscarchallenge/imsa-vp-racing-sportscar-challenge-2024-schedule (2.258 miles, 13 corners)",
-     "loopM": 3646,
-     "errorPct": 0.33,
-     "accepted": true
-    },
-    {
-     "id": "mid-ohio | MID-OHIO",
-     "officialM": 3630,
-     "source": "FIA list 2026-03-31",
-     "grade": "2",
-     "pole": "Right",
-     "widthM": 12,
-     "loopM": 3616,
-     "errorPct": 0.39,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   },
   "lime-rock": {
-   "gapClosedM": 12,
-   "snappedEnds": 0,
-   "ways": 26,
-   "edges": 37,
-   "junctions": 19,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "openEnds": [
-    {
-     "at": [
-      41.9290323,
-      -73.3836516
-     ],
-     "nearestOtherM": 18,
-     "way": null,
-     "wayM": 18
-    },
-    {
-     "at": [
-      41.9291988,
-      -73.383779
-     ],
-     "nearestOtherM": 21,
-     "way": null,
-     "wayM": 31
-    },
-    {
-     "at": [
-      41.9276326,
-      -73.3870753
-     ],
-     "nearestOtherM": 46,
-     "way": null,
-     "wayM": 131
-    },
-    {
-     "at": [
-      41.9273925,
-      -73.3875249
-     ],
-     "nearestOtherM": 46,
-     "way": null,
-     "wayM": 101
-    }
-   ],
-   "loopsFound": 4,
-   "loopLengthsM": [
-    {
-     "m": 2411,
-     "names": [
-      "West Chicane",
-      "Diving Turn",
-      "Sam Posey Straight",
-      "Big Bend"
-     ]
-    },
-    {
-     "m": 2372,
-     "names": [
-      "West Bend",
-      "Diving Turn",
-      "Sam Posey Straight",
-      "Big Bend"
-     ]
-    }
-   ],
-   "accepted": [
-    {
-     "id": "lime-rock | IMSA layout",
-     "officialM": 2414,
-     "source": "imsa.com/weathertech/weathertech-2022-schedule (1.50 miles, 7 corners) [rounded to 0.01 mile]",
-     "loopM": 2411,
-     "errorPct": 0.12,
-     "accepted": true
-    },
-    {
-     "id": "lime-rock | LIME ROCK",
-     "officialM": 2448,
-     "source": "FIA list 2026-03-31",
-     "grade": "2",
-     "pole": "Right",
-     "widthM": 9,
-     "loopM": 2411,
-     "errorPct": 1.51,
-     "accepted": false
-    }
-   ]
+   "error": "no map data"
   },
   "hockenheim": {
-   "gapClosedM": 12,
-   "snappedEnds": 0,
-   "ways": 21,
-   "edges": 32,
-   "junctions": 11,
-   "searchCapped": false,
-   "duplicateEdgesDropped": 0,
-   "loopsFound": 27,
-   "loopLengthsM": [
-    {
-     "m": 4690,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 4665,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 4565,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3852,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3813,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3727,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3688,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 3611,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3586,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 3510,
-     "names": [
-      "Spitzkehre",
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve"
-     ]
-    },
-    {
-     "m": 2748,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2709,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2673,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2634,
-     "names": [
-      "Hochgeschwindigkeits-(Parabolika-)Kurve",
-      "Einfahrt Parabolika",
-      "Bernie-Ecclestone-Kurve",
-      "Kleiner Kurs Kurzanbindung"
-     ]
-    },
-    {
-     "m": 2615,
-     "names": [
-      "Mobil 1 Kurve",
-      "Sachs-Kurve",
-      "Südkurve",
-      "Ravenol-Kurve"
-     ]
-    },
-    {
-     "m": 2598,
-     "names": [
-      "Mobil 1 Kurve",
-      "Sachs-Kurve",
-      "Südkurve",
-      "Ravenol-Kurve"
-     ]
-    }
-   ],
-   "accepted": [
-    {
-     "id": "hockenheim | HOCKENHEIM GRAND PRIX",
-     "officialM": 4574,
-     "source": "FIA list 2026-03-31",
-     "grade": "1",
-     "pole": "Left",
-     "widthM": 9,
-     "loopM": 4565,
-     "errorPct": 0.2,
-     "accepted": true
-    },
-    {
-     "id": "hockenheim | HOCKENHEIM - SHORT",
-     "officialM": 3692,
-     "source": "FIA list 2024-06-03",
-     "grade": "3",
-     "pole": "Left",
-     "widthM": null,
-     "loopM": 3688,
-     "errorPct": 0.11,
-     "accepted": true
-    }
-   ]
+   "error": "no map data"
   }
  }
 }

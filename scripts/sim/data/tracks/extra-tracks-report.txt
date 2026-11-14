@@ -11,8 +11,9 @@ yeongam-korea-permanent-1: 3027 m (official 3031, smoothing shrink 0.24 %), raw 
 yeongam-korea-permanent-2: 2961 m (official 2964, smoothing shrink 0.19 %), raw height range 1 m, height 0–0 m, max grade 0.4 %, turn -360°
 indianapolis-indianapolis-grand-prix: 4187 m (official 4192, smoothing shrink 0.18 %), raw height range 3 m, height 221–224 m, max grade 0.5 %, turn 360°
 indianapolis-indianapolis-road-course: 3911 m (official 3910, smoothing shrink 0.18 %), raw height range 4 m, height 221–224 m, max grade 0.5 %, turn -360°
+sebring-imsa-layout: 5887 m (official 6019, smoothing shrink 0.12 %), raw height range 2 m, height 18–20 m, max grade 0.6 %, turn 360°
+sebring-sebring: 5887 m (official 6019, smoothing shrink 0.12 %), raw height range 2 m, height 18–20 m, max grade 0.6 %, turn 360°
 road-atlanta-road-atlanta: 4090 m (official 4088, smoothing shrink 0.10 %), raw height range 37 m, height 275–308 m, max grade 10.9 %, turn -360°
-yongin-everland-speedway-full-course: 4353 m (official 4346, smoothing shrink 0.35 %), raw height range 60 m, height 92–146 m, max grade 12.3 %, turn 0°
 nurburgring-24-hours-combined-lap: 25321 m (official 25378, smoothing shrink 0.09 %), raw height range 290 m, height 340–627 m, max grade 16.7 %, turn -360°
 nurburgring-nordschleife-alone: 20746 m (official 20832, smoothing shrink 0.08 %), raw height range 290 m, height 340–627 m, max grade 16.7 %, turn 360°
 nurburgring-nurburgring-grand-prix: 5127 m (official 5148, smoothing shrink 0.17 %), raw height range 56 m, height 567–621 m, max grade 7.5 %, turn 360°
@@ -22,8 +23,7 @@ nurburgring-nurburgring-sprint-strecke-ngk: 3612 m (official 3618, smoothing shr
 kyalami-grand-prix-circuit: 4525 m (official 4522, smoothing shrink 0.16 %), raw height range 49 m, height 1458–1501 m, max grade 10.0 %, turn 360°
 kyalami-kyalami: 4525 m (official 4522, smoothing shrink 0.16 %), raw height range 49 m, height 1458–1501 m, max grade 10.0 %, turn 360°
 fuji-fuji-speedway: 4554 m (official 4563, smoothing shrink 0.16 %), raw height range 57 m, height 544–594 m, max grade 9.8 %, turn 360°
-daytona-road-course-imsa: 5731 m (official 5729, smoothing shrink 0.07 %), raw height range 6 m, height 8–14 m, max grade 2.1 %, turn -360°
-portimao-algarve: 4648 m (official 4653, smoothing shrink -0.50 %), raw height range 33 m, height 95–124 m, max grade 8.0 %, turn 360°
+daytona-road-course-imsa: 5762 m (official 5729, smoothing shrink 0.09 %), raw height range 6 m, height 8–14 m, max grade 2.1 %, turn -360°
 paul-ricard-paul-ricard: 5822 m (official 5822, smoothing shrink 1.06 %), raw height range 28 m, height 414–441 m, max grade 3.3 %, turn -360°
 paul-ricard-paul-ricard-2a: 4035 m (official 4035, smoothing shrink 13.31 %), raw height range 21 m, height 421–441 m, max grade 2.9 %, turn -360°
 paul-ricard-paul-ricard-2asc: 4042 m (official 4042, smoothing shrink 0.91 %), raw height range 23 m, height 419–441 m, max grade 3.3 %, turn -360°
@@ -38,11 +38,5 @@ laguna-seca-laguna-seca-raceway: 3601 m (official 3602, smoothing shrink 0.17 %)
 watkins-glen-long-course-imsa: 5473 m (official 5472, smoothing shrink 0.12 %), raw height range 45 m, height 454–496 m, max grade 8.1 %, turn -360°
 road-america-road-america-elkhart-lake: 6493 m (official 6514, smoothing shrink 0.08 %), raw height range 56 m, height 270–324 m, max grade 9.6 %, turn -360°
 bathurst-mount-panorama-bathurst: 6197 m (official 6213, smoothing shrink 0.09 %), raw height range 179 m, height 700–874 m, max grade 13.9 %, turn 360°
-mosport-grand-prix-track-imsa: 3943 m (official 3957, smoothing shrink 0.11 %), raw height range 56 m, height 289–340 m, max grade 9.7 %, turn -360°
-vir-full-course-imsa: 5262 m (official 5263, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°
-vir-virginia-int-raceway-alton: 5262 m (official 5248, smoothing shrink 0.11 %), raw height range 40 m, height 113–151 m, max grade 7.2 %, turn 360°
-mid-ohio-imsa-layout: 3646 m (official 3634, smoothing shrink 0.17 %), raw height range 42 m, height 398–437 m, max grade 4.5 %, turn 360°
-mid-ohio-mid-ohio: 3616 m (official 3630, smoothing shrink 0.14 %), raw height range 42 m, height 398–437 m, max grade 4.9 %, turn 360°
-lime-rock-imsa-layout: 2411 m (official 2414, smoothing shrink 0.19 %), raw height range 16 m, height 164–180 m, max grade 7.5 %, turn -360°
-hockenheim-hockenheim-grand-prix: 4565 m (official 4574, smoothing shrink 0.16 %), raw height range 19 m, height 101–118 m, max grade 3.8 %, turn 360°
-hockenheim-hockenheim-short: 3688 m (official 3692, smoothing shrink 0.16 %), raw height range 19 m, height 101–118 m, max grade 3.8 %, turn 360°
+fe-sao-paulo-sao-paulo-fe: 2931 m (official 2960, smoothing shrink 0.48 %), raw height range 13 m, height 722–728 m, max grade 3.9 %, turn -360°
+jarama-jarama-fe: 3906 m (official 3931, smoothing shrink 0.17 %), raw height range 31 m, height 609–638 m, max grade 6.3 %, turn -360°
