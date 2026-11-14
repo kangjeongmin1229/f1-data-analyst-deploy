@@ -1,0 +1,93 @@
+{
+ "class": "lmh",
+ "year": "2026",
+ "samplesPerInput": 1024,
+ "laps": 10240,
+ "tracks": [
+  "imola",
+  "spa-francorchamps",
+  "interlagos",
+  "austin",
+  "catalunya",
+  "monza"
+ ],
+ "totalSobol": {
+  "meanLapErrorPct": {
+   "muY": 0.817,
+   "clA": 0.127,
+   "cdA": 0.031,
+   "dmuDfz": 0.017,
+   "mass": 0.007,
+   "pIce": 0.004,
+   "cRoll": 0.0,
+   "etaDrive": 0.001
+  },
+  "lapErrorSpreadPct": {
+   "muY": 0.688,
+   "clA": 0.259,
+   "cdA": 0.467,
+   "dmuDfz": 0.055,
+   "mass": 0.001,
+   "pIce": 0.019,
+   "cRoll": 0.003,
+   "etaDrive": 0.005
+  },
+  "meanTopSpeedKph": {
+   "muY": 0.016,
+   "clA": 0.002,
+   "cdA": 0.929,
+   "dmuDfz": 0.003,
+   "mass": 0.003,
+   "pIce": 0.034,
+   "cRoll": 0.007,
+   "etaDrive": 0.01
+  }
+ },
+ "matching": {
+  "rule": "lap RMS <= 1.15 x fitted car, trap RMS <= fitted car + 2 km/h",
+  "fittedLapRmsPct": 0.802,
+  "fittedTrapRmsKph": 3.4,
+  "n": 15,
+  "range": {
+   "muY": [
+    1.490885,
+    1.756322
+   ],
+   "clA": [
+    3.574213,
+    6.885246
+   ],
+   "cdA": [
+    0.821046,
+    1.050352
+   ],
+   "dmuDfz": [
+    -5.5e-05,
+    -2e-06
+   ],
+   "mass": [
+    1081.628351,
+    1162.065916
+   ],
+   "pIce": [
+    476043.466199,
+    522983.95196
+   ],
+   "cRoll": [
+    0.010086,
+    0.019513
+   ],
+   "etaDrive": [
+    0.920535,
+    0.967917
+   ]
+  },
+  "corr_muY_clA": -0.919,
+  "corr_clA_dmuDfz": -0.349,
+  "nWithLD_le_4.25": 1,
+  "liftToDragRange": [
+   4.01,
+   7.51
+  ]
+ }
+}

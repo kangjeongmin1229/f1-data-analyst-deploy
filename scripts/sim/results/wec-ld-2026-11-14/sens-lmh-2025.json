@@ -1,0 +1,92 @@
+{
+ "class": "lmh",
+ "year": "2025",
+ "samplesPerInput": 1024,
+ "laps": 10240,
+ "tracks": [
+  "lusail",
+  "imola",
+  "spa-francorchamps",
+  "interlagos",
+  "sakhir"
+ ],
+ "totalSobol": {
+  "meanLapErrorPct": {
+   "muY": 0.824,
+   "clA": 0.124,
+   "cdA": 0.027,
+   "dmuDfz": 0.016,
+   "mass": 0.006,
+   "pIce": 0.004,
+   "cRoll": 0.0,
+   "etaDrive": 0.001
+  },
+  "lapErrorSpreadPct": {
+   "muY": 0.476,
+   "clA": 0.445,
+   "cdA": 0.023,
+   "dmuDfz": 0.123,
+   "mass": 0.003,
+   "pIce": 0.001,
+   "cRoll": 0.0,
+   "etaDrive": 0.0
+  },
+  "meanTopSpeedKph": {
+   "muY": 0.017,
+   "clA": 0.002,
+   "cdA": 0.929,
+   "dmuDfz": 0.004,
+   "mass": 0.003,
+   "pIce": 0.033,
+   "cRoll": 0.007,
+   "etaDrive": 0.009
+  }
+ },
+ "matching": {
+  "rule": "lap RMS <= 1.15 x fitted car, trap RMS <= fitted car + 2 km/h",
+  "fittedLapRmsPct": 0.926,
+  "fittedTrapRmsKph": 10.0,
+  "n": 11,
+  "range": {
+   "muY": [
+    1.500531,
+    1.654085
+   ],
+   "clA": [
+    5.638513,
+    6.994504
+   ],
+   "cdA": [
+    0.961993,
+    1.141068
+   ],
+   "dmuDfz": [
+    -4.2e-05,
+    -2e-06
+   ],
+   "mass": [
+    1078.51671,
+    1162.275099
+   ],
+   "pIce": [
+    479365.290096,
+    522137.507889
+   ],
+   "cRoll": [
+    0.013157,
+    0.018112
+   ],
+   "etaDrive": [
+    0.926014,
+    0.960339
+   ]
+  },
+  "corr_muY_clA": -0.894,
+  "corr_clA_dmuDfz": -0.78,
+  "nWithLD_le_4.25": 0,
+  "liftToDragRange": [
+   5.02,
+   6.97
+  ]
+ }
+}
