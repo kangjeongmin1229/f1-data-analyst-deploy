@@ -108,6 +108,8 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   });
   // LAPSIM_TRAC candidate (off by default): F1 exit traction fitted separately from cornering grip (bounds LAPSIM_TRAC_LO..HI)
   if (E.LAPSIM_TRAC === 'on') { base.tracK = 1; params.push({key: 'tracK', path: 'tracK', base: 1, step: 0.08, min: Number(E.LAPSIM_TRAC_LO || 0.6), max: Number(E.LAPSIM_TRAC_HI || 1.1)}); }
+  // LAPSIM_FEXP candidate (off by default): F1 combined-grip exponent of the friction ellipse fitted per season (2 = ellipse, 1 = straight trade)
+  if (E.LAPSIM_FEXP === 'on') { base.frictionExp = 1.5; params.push({key: 'frictionExp', path: 'frictionExp', base: 1.5, step: 0.08, min: Number(E.LAPSIM_FEXP_LO || 1), max: Number(E.LAPSIM_FEXP_HI || 3)}); }
   groups.push({key: year, laps, base, params});
 }
 if (!ONLY_WEC) {

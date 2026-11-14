@@ -1,5 +1,5 @@
 {
-  "declared": "2026-11-14, pIce-at-bound diagnosis. F1 only. Finding: with the production car, on corner exits (real part throttle) the simulated acceleration is 12-35 % above the real one, corner minimum speed is 11-14 km/h too low, and the fit holds pIce at its lower bound (0.85) and F1 2025 downforce at its upper bound. Hypothesis: exit traction is too high because muXTrac is tied to muY. Candidate: LAPSIM_TRAC=on fits one factor tracK on muXTrac per season. Variants: A = production flags (baseline), T6 = A + tracK in [0.6, 1.1], T4 = A + tracK in [0.4, 1.1]. Fit length and held-out method: identical to the f1-converged run of the same day (convergence rule, warm folds, all 8 folds). Metrics: held-out RMS per season (gate.mjs), corner minimum bias, trap error, bound hits (exp-compare --physics). Pass: gate accepted on F1, F1 2025 and 2026 not worse than A, pIce and clA off their bounds, corner bias and trap error not worse. tracK at its own bound is reported as a finding and blocks acceptance of that variant. Local screen before this declaration (3 rounds, 60 iterations, no folds, not converged, fit error only): A score 26.21, T6 score 21.25 with tracK at 0.6 in 2025 and 2026. No variants added after results.",
+  "declared": "2026-11-14, second step of the pIce-at-bound diagnosis (first step: lapsim-exp/trac-2026-11-14). F1 only. Finding from the trac screen: tracK at 0.6 halves the corner minimum bias but makes exit acceleration too low (2025, 100-140 km/h: real 7.86, sim 5.87 m/s2), so traction grip alone is the wrong lever. Hypothesis: the friction ellipse (exponent 2) lets the car brake and drive too hard while cornering. Candidate: LAPSIM_FEXP=on fits the exponent frictionExp per season in [1, 3] (the kernel allows no value below 1). Variants: A = production flags (baseline), K = A + FEXP, KT = A + FEXP + TRAC with tracK in [0.4, 1.1]. Fit length and held-out method: identical to the f1-converged run of the same day (convergence rule, warm folds, all 8 folds). Metrics: held-out RMS per season (gate.mjs), corner minimum bias, trap error, bound hits (exp-compare --physics). Pass: gate accepted on F1, F1 2025 and 2026 not worse than A, corner bias and trap error not worse, no new value at a bound. frictionExp or tracK at a bound is a finding and blocks acceptance. pIce and clA positions are reported. Local screens before this declaration (3 rounds, 60 iterations, no folds, not converged, fit error only): score A 26.21, T6 21.25, KT 19.90, K 19.15; K corner minimum bias 2025 -12.3 -> -4.3 km/h, 2026 -15.2 -> -5.3 km/h; K frictionExp 1.11 (2025), 1.01 (2026); pIce 2025 still at its bound in K, 0.90 of nominal in KT. No variants added after results.",
   "input_url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
   "input_sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
   "common_env": {
@@ -22,17 +22,17 @@
       }
     },
     {
-      "name": "T6",
+      "name": "K",
       "env": {
         "LAPSIM_TRACK_DRAG": "on",
-        "LAPSIM_TRAC": "on",
-        "LAPSIM_TRAC_LO": "0.6"
+        "LAPSIM_FEXP": "on"
       }
     },
     {
-      "name": "T4",
+      "name": "KT",
       "env": {
         "LAPSIM_TRACK_DRAG": "on",
+        "LAPSIM_FEXP": "on",
         "LAPSIM_TRAC": "on",
         "LAPSIM_TRAC_LO": "0.4"
       }
