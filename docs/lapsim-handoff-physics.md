@@ -796,3 +796,77 @@ Dry reproduction: 39 rows per arm, largest error 0 s. All 18 checkpoint hashes m
 Candidate 2026 fold 1 stopped at six rounds without numerical convergence.
 Las Vegas 2026 experiment prediction: 93.875 s control, 94.491 s candidate.
 Final local review checks: 114 physics/reproduction tests passed; no new model code.
+
+## 15. Status on 2026-11-14: converged F1 screen (A, B, H, I) and Hypercar downforce-to-drag limit
+
+Branch `lapsim-exp/f1-converged-2026-11-14` (based on the open review branch `feat/lapsim-wec-timing`). No production change.
+
+### 15.1 Task 1: A, B, H, I on F1 only, converged
+
+Declaration: `scripts/sim/experiments.json`. Run: Actions 43548177095 (4 jobs, 1 h 42 min to 4 h 52 min each, so the 60-minute budget was **not** met). Variant A was also run on a 2-CPU machine and gave the same numbers (0.944 / 0.825 / 1.091). Inputs pinned by checksum. Node 22.
+
+New experiment flags, all off by default: `LAPSIM_F1_STATE`, `LAPSIM_F1_FOLD_CACHE` (resume), `LAPSIM_HOLDOUT_WARM` (folds start from the main fit, minimum 2 rounds).
+
+Convergence (rule 5.1): passed in every fit. Main fit rounds A 6, B 6, H 5, I 5; last fall 0.45 / 0.57 / 0.75 / 0.84 %. Folds 2 to 4 rounds, last fall 0.07 to 0.80 %. At 5 rounds (production length) A was still falling 1.18 %.
+
+Held-out RMS (%), n = 34 (2025: 20, 2026: 14). Gate against A.
+
+| Variant | F1 all | F1 2025 | F1 2026 | Gate (all) |
+|---|---|---|---|---|
+| A production flags | 0.944 | 0.825 | 1.091 | baseline |
+| B no per-track drag | 0.951 | 0.793 (noise) | 1.139 (worse) | rejected: worse |
+| H drag + axle + vertical curvature | 0.920 | 0.768 (accepted) | 1.102 (worse) | rejected: gain within noise |
+| I no drag + axle + vertical curvature, exponent 0.75 | 0.906 | 0.808 (noise) | 1.030 (noise) | rejected: gain within noise |
+
+Physical sense (in-sample, `exp-compare.mjs --physics`):
+
+| Variant | Corner minimum bias 2025 / 2026 (km/h) | Trap RMS 2025 / 2026 (km/h) | Values at a bound |
+|---|---|---|---|
+| A | −12.1 / −16.4 | 10.0 / 15.9 | downforce upper 2025; engine power lower 2023–2025 |
+| B | −12.8 / −16.4 | 8.2 / 13.0 | as A, plus downforce upper 2024 (new) |
+| H | −12.4 / −14.9 | 8.9 / 12.9 | as A, plus downforce upper 2024 (new) |
+| I | −15.7 / −16.5 | 8.8 / 17.5 | as A, plus downforce upper 2024 (new) |
+
+**Decision: no change. The axle model stays off.** Reasons: no variant passes the gate on all F1 rows; H is worse on F1 2026 (the earlier "accepted on F1 2026" came from an unconverged run and does not repeat); every variant adds a bound hit; corner bias moves by 1.5 km/h at most. This is the second rejection of the axle model as built. The inputs are still guesses (section 9.5 task 3), so it is not rejected for good.
+
+### 15.2 Method check failed: warm-started folds are not clean held-out numbers
+
+Declared check: fold 2026:0 of A, cold start against warm start, must agree within 0.05 percentage points per row.
+
+| Row | Cold start (6 rounds, score 24.544) | Warm start (2 rounds, score 24.587) |
+|---|---|---|
+| Miami | −0.142 % | −0.365 % |
+| Silverstone | +1.111 % | +0.756 % |
+| Austin | +0.680 % | +0.536 % |
+| RMS | 0.756 % | 0.575 % |
+
+Rows differ by 0.14 to 0.36 points: **failed**. A fold that starts from the main fit keeps some memory of the rows it should not have seen, and the 1 % rule lets it stop before that memory is gone. So the numbers in 15.1 are a like-for-like ranking of variants, not honest held-out errors, and they are probably too low. The same applies to every experiment that used `LAPSIM_HOLDOUT_WARM` (`lapsim-exp/trac`, `fexp`, `power`, `power-full`, 2026-11-14): **confirm any "accepted" result there with cold-start folds before a production change.** Only one fold was checked (n = 3 rows).
+
+### 15.3 Task 2: Hypercar downforce-to-drag limit (`LAPSIM_WEC_LD_MAX`, off by default)
+
+Declaration: `scripts/sim/wec-ld-experiment.json`. WEC only, setting R, repository geometry. Control R0 reproduces the R yardstick (pooled 1.167 %, n = 33). Evidence for the ratio is layer 4 (secondary sources: window near 4 to 1; the FIA appendix is not public).
+
+| Variant | Pooled WEC | LMH 25 / 26 | LMDh 25 / 26 | Gate |
+|---|---|---|---|---|
+| R0 | 1.167 | 1.112 / 1.110 | 1.282 / 1.055 | baseline |
+| LD4 (ratio ≤ 4) | 1.341 | 1.638 / 1.168 | 1.632 / 1.153 | rejected: worse |
+| LD5 (ratio ≤ 5) | 1.219 | 1.380 / 1.053 | 1.423 / 1.021 | rejected: worse |
+
+With the limit the cars look right (downforce 7.0 → 4.0–4.6, grip 1.55 → 1.72) but predict worse. Checks:
+- Independent optimizer (SciPy differential evolution, `wec-ld-optimizer-check.py`): best lap RMS with ratio ≤ 4 is 1.302 % (LMH 2025) and 0.965 % (2026); the Nelder–Mead fit had 1.33 % and 0.97 %; without the limit 0.926 % and 0.802 %. The loss comes from the limit, not from a stuck fit.
+- Sensitivity (SALib Sobol, `wec-sensitivity.py`, 10,240 cars per season): mean lap error is driven by grip (total index 0.82) and downforce (0.12); mass, power, rolling resistance and drivetrain efficiency are below 0.01. In LMH 2025 no car with a ratio under 5.0 matches the laps and traps as well as the fitted car; grip and downforce trade against each other (correlation −0.89). In 2026 one of 15 matching cars has a ratio ≤ 4.25 (range 4.0–7.5).
+- Meaning: the missing corner speed is not in the assumed inputs. It is in physics the point-mass model lacks, or in the F1-derived track factors.
+
+Trap position: still blocked. Only 1 of 13 track-years has a numeric trap distance. From existing data: in 14 of 31 rows the simulated lap maximum is already below the real trap, and reading the speed at the trap can only lower it, so trap position cannot be the main cause. Interlagos (+14 to +23 km/h) is the one track where it may matter.
+Sector times: tested on `feat/lapsim-wec-timing` (rejected). Not repeated.
+
+### 15.4 Other findings
+
+- Node version changes the fit: round 1 score 36.4730 on Node 26 against 36.1849 on Node 22 (same inputs). Use Node 22 only.
+- MATLAB on the owner's PC has no Optimization Toolbox, so `scripts/sim/matlab/ld_check.m` (fmincon) did not run; SciPy was used.
+
+### 15.5 Next
+
+1. Cold-start confirmation of the fold method on all 8 folds of A (about 40 minutes per fold on 4 cores), then decide: keep warm start with a stricter stop rule, or drop it.
+2. Section 9.5 task 3 (per-car axle inputs from regulations, fitted load exponent) only after 1.
+3. Engine power at its lower bound in 2023–2025 is the clearest bound signal in F1: see `lapsim-exp/power-2026-11-14`.
