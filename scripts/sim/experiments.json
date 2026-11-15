@@ -13,25 +13,30 @@
   "configs": [
     {
       "name": "base",
-      "env": {}
+      "env": {
+        "LAPSIM_TRACK_DRAG": "on"
+      }
     },
     {
       "name": "zones",
       "env": {
-        "LAPSIM_FIA_ZONES": "on"
+        "LAPSIM_FIA_ZONES": "on",
+        "LAPSIM_TRACK_DRAG": "on"
       }
     },
     {
       "name": "cap",
       "env": {
-        "LAPSIM_KAPPA_CAP_G": "6.5"
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on"
       }
     },
     {
       "name": "capzones",
       "env": {
         "LAPSIM_FIA_ZONES": "on",
-        "LAPSIM_KAPPA_CAP_G": "6.5"
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on"
       }
     }
   ]
