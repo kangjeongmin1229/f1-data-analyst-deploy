@@ -48,7 +48,7 @@ const tracks = Object.fromEntries(Object.entries(lapsimTracks).map(([id, d]) => 
 // F1 cars open DRS (to 2025) or Straight Mode (2026) only in the FIA zones of the event notes (f1-zones-data.js); without a
 // document the automatic straight finder stands in. LAPSIM_FIA_ZONES=on (2026-11-15: the finder gave Jeddah 880 m of DRS, the FIA 2025 m)
 const ZT = new Map(), f1Track = (id, year) => {
-  if (E.LAPSIM_FIA_ZONES !== 'on' || !tracks[id]) return tracks[id];
+  if (!['on', '2025'].includes(E.LAPSIM_FIA_ZONES) || !tracks[id] || (E.LAPSIM_FIA_ZONES === '2025' && year >= 2026)) return tracks[id]; // 2025: DRS zones only
   const z = lapsimF1Zones.tracks?.[id]?.[year >= 2026 ? '2026' : '2025'], key = id + ':' + (year >= 2026 ? 2026 : 2025);
   if (!z?.zones?.length) return tracks[id];
   if (!ZT.has(key)) ZT.set(key, {...tracks[id], aeroLow: trackFromData({...lapsimTracks[id], aeroZones: z.zones.map(q => [q.from, q.to])}, {aero: 'fia'}).aeroLow});

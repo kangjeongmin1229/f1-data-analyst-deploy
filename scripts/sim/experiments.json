@@ -12,30 +12,26 @@
   },
   "configs": [
     {
-      "name": "base",
+      "name": "cap25",
       "env": {
-        "LAPSIM_TRACK_DRAG": "on"
-      }
-    },
-    {
-      "name": "zones",
-      "env": {
-        "LAPSIM_FIA_ZONES": "on",
-        "LAPSIM_TRACK_DRAG": "on"
-      }
-    },
-    {
-      "name": "cap",
-      "env": {
+        "LAPSIM_FIA_ZONES": "2025",
         "LAPSIM_KAPPA_CAP_G": "6.5",
         "LAPSIM_TRACK_DRAG": "on"
       }
     },
     {
-      "name": "capzones",
+      "name": "cap25g7",
+      "env": {
+        "LAPSIM_FIA_ZONES": "2025",
+        "LAPSIM_KAPPA_CAP_G": "7",
+        "LAPSIM_TRACK_DRAG": "on"
+      }
+    },
+    {
+      "name": "capzonesg7",
       "env": {
         "LAPSIM_FIA_ZONES": "on",
-        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_KAPPA_CAP_G": "7",
         "LAPSIM_TRACK_DRAG": "on"
       }
     }
