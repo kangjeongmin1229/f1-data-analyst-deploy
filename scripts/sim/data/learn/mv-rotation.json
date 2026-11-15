@@ -1,0 +1,257 @@
+{
+ "source": "api.multiviewer.app circuit info (rotation and outline); derived angles only",
+ "tracks": {
+  "sakhir": {
+   "circuitKey": 63,
+   "year": 2025,
+   "mvRotation": 92,
+   "rawToTrueDeg": -1.2,
+   "mirror": false,
+   "fitRmsM": 5.8,
+   "openDeg": 93.2
+  },
+  "jeddah": {
+   "circuitKey": 149,
+   "year": 2025,
+   "mvRotation": 104,
+   "rawToTrueDeg": 0,
+   "mirror": false,
+   "fitRmsM": 12.4,
+   "openDeg": 104
+  },
+  "imola": {
+   "circuitKey": 6,
+   "year": 2025,
+   "mvRotation": 0,
+   "rawToTrueDeg": -1.1,
+   "mirror": false,
+   "fitRmsM": 6.8,
+   "openDeg": 1.1
+  },
+  "interlagos": {
+   "circuitKey": 14,
+   "year": 2025,
+   "mvRotation": 258,
+   "rawToTrueDeg": -0.9,
+   "mirror": false,
+   "fitRmsM": 0.4,
+   "openDeg": -101.1
+  },
+  "las-vegas": {
+   "circuitKey": 152,
+   "year": 2025,
+   "mvRotation": 90,
+   "rawToTrueDeg": -2.7,
+   "mirror": false,
+   "fitRmsM": 12.7,
+   "openDeg": 92.7
+  },
+  "lusail": {
+   "circuitKey": 150,
+   "year": 2025,
+   "mvRotation": 61,
+   "rawToTrueDeg": 0.7,
+   "mirror": false,
+   "fitRmsM": 11.3,
+   "openDeg": 60.3
+  },
+  "yas-marina-circuit": {
+   "circuitKey": 70,
+   "year": 2025,
+   "mvRotation": 280,
+   "rawToTrueDeg": 1,
+   "mirror": false,
+   "fitRmsM": 13.1,
+   "openDeg": -81
+  },
+  "melbourne": {
+   "circuitKey": 10,
+   "year": 2026,
+   "mvRotation": 44,
+   "rawToTrueDeg": -0.9,
+   "mirror": false,
+   "fitRmsM": 0.6,
+   "openDeg": 44.9
+  },
+  "shanghai": {
+   "circuitKey": 49,
+   "year": 2026,
+   "mvRotation": 237,
+   "rawToTrueDeg": 0.8,
+   "mirror": false,
+   "fitRmsM": 6.1,
+   "openDeg": -123.8
+  },
+  "suzuka": {
+   "circuitKey": 46,
+   "year": 2026,
+   "mvRotation": 49,
+   "rawToTrueDeg": -1.1,
+   "mirror": false,
+   "fitRmsM": 4.9,
+   "openDeg": 50.1
+  },
+  "miami": {
+   "circuitKey": 151,
+   "year": 2026,
+   "mvRotation": 2,
+   "rawToTrueDeg": -0.5,
+   "mirror": false,
+   "fitRmsM": 9.2,
+   "openDeg": 2.5
+  },
+  "montreal": {
+   "circuitKey": 23,
+   "year": 2026,
+   "mvRotation": 62,
+   "rawToTrueDeg": -1.6,
+   "mirror": false,
+   "fitRmsM": 9.9,
+   "openDeg": 63.6
+  },
+  "monte-carlo": {
+   "circuitKey": 22,
+   "year": 2026,
+   "mvRotation": 315,
+   "rawToTrueDeg": 1.2,
+   "mirror": false,
+   "fitRmsM": 7.2,
+   "openDeg": -46.2
+  },
+  "catalunya": {
+   "circuitKey": 15,
+   "year": 2026,
+   "mvRotation": 303,
+   "rawToTrueDeg": 0.8,
+   "mirror": false,
+   "fitRmsM": 7.5,
+   "openDeg": -57.8
+  },
+  "spielberg": {
+   "circuitKey": 19,
+   "year": 2026,
+   "mvRotation": 1,
+   "rawToTrueDeg": 1.3,
+   "mirror": false,
+   "fitRmsM": 6,
+   "openDeg": -0.3
+  },
+  "silverstone": {
+   "circuitKey": 2,
+   "year": 2026,
+   "mvRotation": 92,
+   "rawToTrueDeg": -1.7,
+   "mirror": false,
+   "fitRmsM": 4.3,
+   "openDeg": 93.7
+  },
+  "spa-francorchamps": {
+   "circuitKey": 7,
+   "year": 2026,
+   "mvRotation": 91,
+   "rawToTrueDeg": -3.1,
+   "mirror": false,
+   "fitRmsM": 14.6,
+   "openDeg": 94.1
+  },
+  "hungaroring": {
+   "circuitKey": 4,
+   "year": 2026,
+   "mvRotation": 40,
+   "rawToTrueDeg": 2.2,
+   "mirror": false,
+   "fitRmsM": 3.4,
+   "openDeg": 37.8
+  },
+  "zandvoort": {
+   "circuitKey": 55,
+   "year": 2026,
+   "mvRotation": 0,
+   "rawToTrueDeg": -1.6,
+   "mirror": false,
+   "fitRmsM": 4.3,
+   "openDeg": 1.6
+  },
+  "monza": {
+   "circuitKey": 39,
+   "year": 2026,
+   "mvRotation": 95,
+   "rawToTrueDeg": -0.3,
+   "mirror": false,
+   "fitRmsM": 6,
+   "openDeg": 95.3
+  },
+  "baku": {
+   "circuitKey": 144,
+   "year": 2026,
+   "mvRotation": 357,
+   "rawToTrueDeg": 0.9,
+   "mirror": false,
+   "fitRmsM": 8.4,
+   "openDeg": -3.9
+  },
+  "singapore": {
+   "circuitKey": 61,
+   "year": 2026,
+   "mvRotation": 335,
+   "rawToTrueDeg": 0.9,
+   "mirror": false,
+   "fitRmsM": 12,
+   "openDeg": -25.9
+  },
+  "austin": {
+   "circuitKey": 9,
+   "year": 2026,
+   "mvRotation": 0,
+   "rawToTrueDeg": -0.3,
+   "mirror": false,
+   "fitRmsM": 12.6,
+   "openDeg": 0.3
+  },
+  "mexico-city": {
+   "circuitKey": 65,
+   "year": 2026,
+   "mvRotation": 36,
+   "rawToTrueDeg": 0.7,
+   "mirror": false,
+   "fitRmsM": 6.3,
+   "openDeg": 35.3
+  },
+  "sakhir-outer": {
+   "circuitKey": 63,
+   "year": 2020,
+   "mvRotation": 92,
+   "rawToTrueDeg": 90.3,
+   "mirror": false,
+   "fitRmsM": 358.4,
+   "openDeg": 1.7
+  },
+  "istanbul": {
+   "circuitKey": 9,
+   "year": 2021,
+   "mvRotation": 0,
+   "rawToTrueDeg": -168.2,
+   "mirror": false,
+   "fitRmsM": 169.1,
+   "openDeg": 168.2
+  },
+  "sochi": {
+   "circuitKey": 61,
+   "year": 2020,
+   "mvRotation": 335,
+   "rawToTrueDeg": -47.3,
+   "mirror": false,
+   "fitRmsM": 166.4,
+   "openDeg": 22.3
+  }
+ },
+ "log": [
+  "madring: HTTP 404",
+  "kuala-lumpur: HTTP 404",
+  "mugello: HTTP 404",
+  "nurburgring-gp: HTTP 404",
+  "portimao: HTTP 404",
+  "hockenheim: HTTP 404",
+  "paul-ricard-f1: HTTP 404"
+ ]
+}
