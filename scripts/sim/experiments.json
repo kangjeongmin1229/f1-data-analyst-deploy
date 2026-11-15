@@ -11,10 +11,48 @@
     "LAPSIM_WPRIOR": "8"
   },
   "configs": [
-    {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
+    {
+      "name": "ctl",
+      "env": {
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on"
+      }
+    },
+    {
+      "name": "z",
+      "env": {
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on",
+        "LAPSIM_FIA_ZONES": "on"
+      }
+    },
+    {
+      "name": "zq",
+      "env": {
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on",
+        "LAPSIM_FIA_ZONES": "on",
+        "LAPSIM_PU_QUALI": "on"
+      }
+    },
+    {
+      "name": "zqr",
+      "env": {
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on",
+        "LAPSIM_FIA_ZONES": "on",
+        "LAPSIM_PU_QUALI": "on",
+        "LAPSIM_PU_RAMP": "on"
+      }
+    },
+    {
+      "name": "qr",
+      "env": {
+        "LAPSIM_KAPPA_CAP_G": "6.5",
+        "LAPSIM_TRACK_DRAG": "on",
+        "LAPSIM_PU_QUALI": "on",
+        "LAPSIM_PU_RAMP": "on"
+      }
+    }
   ]
 }

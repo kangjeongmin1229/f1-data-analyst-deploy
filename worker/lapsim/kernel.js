@@ -166,7 +166,7 @@ export function lapsimKernel() {
     if (env.puRamp && car.ers && car.ers.rule === 'f1-2026' && !opts.noRamp) {
       const o = Object.assign({}, opts, {noRamp: true}); let r = simulateLap(track, car, env, o), cap = track.ersCap ? Float32Array.from(track.ersCap) : null, k = 0;
       // the new ceiling moves the speeds, which can make new cuts: repeat until none is left (at most 5 rounds)
-      for (; k < 5; k++) { const c = rampCaps(track, r, env.puRamp); if (!c) break; cap = cap ? cap.map((x, i) => Math.min(x, c[i])) : c; r = simulateLap(Object.assign({}, track, {ersCap: cap}), car, env, o); }
+      for (; k < (env.puRamp.rounds || 5); k++) { const c = rampCaps(track, r, env.puRamp); if (!c) break; cap = cap ? cap.map((x, i) => Math.min(x, c[i])) : c; r = simulateLap(Object.assign({}, track, {ersCap: cap}), car, env, o); }
       r.puRamp = {rateKWs: env.puRamp.rateKWs || 100, rounds: k}; return r;
     }
     const n = track.kappa.length, ds = track.ds;
