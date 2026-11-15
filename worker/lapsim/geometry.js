@@ -149,3 +149,20 @@ export function lonLatToLocal(coords) {
   const R = 6371008.8, lat0 = coords.reduce((a, c) => a + c[1], 0) / coords.length * Math.PI / 180, lon0 = coords[0][0], la0 = coords[0][1];
   return {x: coords.map(c => R * Math.cos(lat0) * (c[0] - lon0) * Math.PI / 180), y: coords.map(c => R * (c[1] - la0) * Math.PI / 180)};
 }
+
+// Speed-implied curvature cap (2026-11-15). F1 timing positions are snapped to one reference path, so fast corners come out tighter
+// than the line the cars drive (Paul Ricard T7: 75 m at 270 km/h, 8.4 g). Where the real speed of the fastest laps implies more than
+// gMax of lateral acceleration, |kappa| is cut to gMax/v². kappa ×1e5 integers; laps: [{s: [m], v: [km/h]}] on the track's distance.
+export function capCurvature(kappa, ds, laps, gMax = 6.5) {
+  const n = kappa.length, v = new Float64Array(n);
+  for (const lap of laps) {
+    const idx = lap.s.map((s, k) => [s, lap.v[k]]).filter(p => Number.isFinite(p[0]) && p[1] > 0).sort((a, b) => a[0] - b[0]);
+    if (idx.length < 50) continue;
+    for (let i = 0, j = 0; i < n; i++) { const s = i * ds; while (j + 1 < idx.length && idx[j + 1][0] < s) j++;
+      const a = idx[j], b = idx[Math.min(j + 1, idx.length - 1)], t = b[0] > a[0] ? Math.min(1, Math.max(0, (s - a[0]) / (b[0] - a[0]))) : 0;
+      v[i] = Math.max(v[i], (a[1] + (b[1] - a[1]) * t) / 3.6); }
+  }
+  let points = 0;
+  const out = kappa.map((k, i) => { if (!v[i]) return k; const cap = Math.round(gMax * 9.81 / v[i] ** 2 * 1e5); if (Math.abs(k) <= cap) return k; points++; return Math.sign(k) * cap; });
+  return {kappa: out, points};
+}
