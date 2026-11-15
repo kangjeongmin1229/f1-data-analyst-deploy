@@ -21,7 +21,7 @@ const want = /event notes|circuit map|competition notes|power unit information|d
 const out = [], log = [];
 async function readAll(url) {
   const lines = []; let start = 1;
-  for (let k = 0; k < 8 && start; k++) {
+  for (let k = 0; k < (/event notes v|event notes$|director.s event notes/i.test(url) ? 3 : 1) && start; k++) { // maps: the zone table is on page 2; notes: the DRS section within 15 pages
     const r = await call('fia_read_document', {url, start_page: start, page_count: 5});
     for (const p of r.pages || []) for (const row of p.rows || []) { const t = row.cells.map(c => c.text).join(' '); if (line.test(t)) lines.push({page: p.page, y: row.y, text: t, cells: row.cells}); }
     start = r.next_page;
@@ -39,7 +39,7 @@ for (const [y, ev, id] of events.filter(e => !only || only.includes(e[0] + ':' +
     await sleep(2000); let d = null; for (let k = 0; k < 6 && !d; k++) { try { d = await eventDocuments(y, ev); break; } catch (e) { if (!/429/.test(e.message) || k === 5) throw e; await sleep(20000 * (k + 1)); } } if (!d) { log.push(`${y} ${ev}: not found`); continue; }
     const docs = d.records.filter(r => want.test(r.title) && !r.recalled && !/rescinded/i.test(r.title));
     // newest version of each kind first
-    const pick = []; for (const kind of [/event notes/i, /circuit map/i, /competition notes/i, /power unit information/i, /drs/i]) { const r = docs.filter(x => kind.test(x.title)); if (r.length) pick.push(r[0]); }
+    const kinds = y >= 2025 ? [/circuit map/i] : [/circuit map/i, /director.?s.? event notes|event notes version/i]; const pick = []; for (const kind of kinds) { const r = docs.filter(x => kind.test(x.title)); if (r.length) pick.push(r[0]); }
     const got = [];
     for (const r of pick) { try { const url = fixUrl(r, y, d.event); got.push({title: r.title, url, published: r.published, lines: await readAll(url)}); } catch (e) { log.push(`${y} ${ev} ${r.title}: ${e.message}`); } }
     out.push({year: y, event: d.event, track: id, docs: got});
