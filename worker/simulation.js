@@ -36,6 +36,7 @@ import {lapsimFeZones} from './lapsim/fe-zones-data.js';
 import {SURFACE_ERAS} from './lapsim/surface.js';
 import {ZONES_ON, DRS_ONLY, PU_QUALI} from './lapsim/zones.js';
 import {lapsimStartLines} from './lapsim/start-lines.js';
+import {lapsimMapShape} from './lapsim/map-shape-data.js';
 
 const K = lapsimKernel();
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -177,14 +178,17 @@ function renderMap(map, v, opts) {
       let k = 2.2, lab = at(a, k), fz = sw * 2.4, bx = () => { const [x, y] = P(lab).split(' ').map(Number), hw = z.label.length * fz * 0.32; return [x - hw, y - fz * 0.6, x + hw, y + fz * 0.6]; };
       while (k < 8 && zBoxes.some(o => !(bx()[2] < o[0] || bx()[0] > o[2] || bx()[3] < o[1] || bx()[1] > o[3]))) { k += 1.4; lab = at(a, k); }
       zBoxes.push(bx());
-      zones += '<path class="ls-zone ls-zone-' + opts.zones.kind + '" d="M' + pts.map(P).join('L') + '" stroke-width="' + (sw * 0.4).toFixed(1) + '"/><text class="ls-zone-t" x="' + P(lab).split(' ')[0] + '" y="' + P(lab).split(' ')[1] + '" font-size="' + (sw * 2.4).toFixed(1) + '">' + z.label + '</text>';
+      // shown part as a dash on a unit-length path, so a change of option can animate it (vs = start of the shown part, show = drawn at all)
+      const vs = z.vs || 0, on = z.show !== false, zk = z.key ? ' data-zk="' + z.key + '"' : '';
+      zones += '<path class="ls-zone ls-zone-' + opts.zones.kind + '"' + zk + ' pathLength="1" style="stroke-dasharray:' + (on ? (1 - vs).toFixed(4) : 0) + ' 2;stroke-dashoffset:' + (-vs).toFixed(4) + ';opacity:' + (on ? 0.9 : 0) + '" d="M' + pts.map(P).join('L') + '" stroke-width="' + (sw * 0.4).toFixed(1) + '"/><text class="ls-zone-t"' + zk + ' style="opacity:' + (on ? 1 : 0) + '" x="' + P(lab).split(' ')[0] + '" y="' + P(lab).split(' ')[1] + '" font-size="' + (sw * 2.4).toFixed(1) + '">' + z.label + '</text>';
     }
     // a mark crosses the whole track (both edges plus a little), from the centre line
     const across = (i, dd) => { const p = (i - 2 + nn) % nn, q = (i + 2) % nn, tx = cx[q] - cx[p], ty = cy[q] - cy[p], l = Math.hypot(tx, ty) || 1; return [cx[i] + out * -ty / l * dd, cy[i] + out * tx / l * dd]; }, half = i => (hw ? hw[i] : 0) + off * 0.565;
     for (const m of opts.zones.marks || []) { const k = idx(m.s), a = P(across(k, -half(k))).split(' '), b = P(across(k, half(k))).split(' '), fm = sw * 2, hw = m.label.length * fm * 0.32; let o = 2.7, r = P(at(k, o)).split(' ').map(Number);
       const box = () => [r[0] - hw, r[1] - fm * 0.6, r[0] + hw, r[1] + fm * 0.6], busy = () => zBoxes.some(q => !(box()[2] < q[0] || box()[0] > q[2] || box()[3] < q[1] || box()[1] > q[3]));
       while (o < 9 && busy()) { o += 1.3; r = P(at(k, o)).split(' ').map(Number); } zBoxes.push(box());
-      zones += '<line class="ls-zone-m ls-zone-m-' + m.kind + '" x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '" stroke-width="' + (sw * 0.2).toFixed(1) + '"/><text class="ls-zone-mt ls-zone-mt-' + m.kind + '" x="' + r[0] + '" y="' + r[1] + '" font-size="' + (sw * 2).toFixed(1) + '">' + m.label + '</text>'; }
+      const mk = ' data-zk="m' + m.kind + m.label.replace(/\W/g, '') + '" style="opacity:' + (m.show === false ? 0 : 1) + '"';
+      zones += '<line class="ls-zone-m ls-zone-m-' + m.kind + '"' + mk + ' x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '" stroke-width="' + (sw * 0.2).toFixed(1) + '"/><text class="ls-zone-mt ls-zone-mt-' + m.kind + '"' + mk + ' x="' + r[0] + '" y="' + r[1] + '" font-size="' + (sw * 2).toFixed(1) + '">' + m.label + '</text>'; }
   }
   let corners = '', i0 = Math.round((opts.start || 0) * n) % n;
   for (const c of opts.corners || []) {
@@ -345,9 +349,11 @@ const UI = {
 export const VIEW = {
   fuji: {longest: 'top'}, monza: {longest: 'bottom'}, interlagos: {straight: [3, 4], side: 'bottom'}, sakhir: {straight: [10, 11], side: 'bottom'}, 'sakhir-outer': {longest: 'bottom'},
   silverstone: {left: 15, right: 9}, suzuka: {deg: 0}, portimao: {longest: 'bottom', back: true},
+  'le-mans': {straight: [6, 9], side: 'top'}, // owner 2026-11-16: the Mulsanne straight (Tertre Rouge to Mulsanne corner) level at the top
 };
 export function landscapeRot(map, north, spec, corners, length) {
-  const X = map?.x, Y = map?.y, n = X?.length || 0; if (n < 8) return 0;
+  // 5 m maps (2026-11-16): metre rounding makes 5 m steps wobble a few degrees, which split straights; pick the view on ≤400 points
+  const st = Math.max(1, Math.ceil((map?.x?.length || 0) / 400)), X = map?.x?.filter((_, i) => i % st === 0), Y = map?.y?.filter((_, i) => i % st === 0), n = X?.length || 0; if (n < 8) return 0;
   if (spec && Number.isFinite(spec.deg)) return spec.deg;
   const at = num => { const c = (corners || []).find(k => k.number === num && !k.letter) || (corners || []).find(k => k.number === num); return c ? Math.min(n - 1, Math.round(c.s / length * n)) : null; };
   const turnY = (deg, i) => { const t = deg * Math.PI / 180; return X[i] * Math.sin(t) + Y[i] * Math.cos(t); };
@@ -423,8 +429,27 @@ const LINE_CACHE = new Map();
 // (owner 2026-11-15: no wrinkled edges) and keeps the shape of real corners (Monaco hairpin, Montreal chicane checked)
 const SG7 = [-2, 3, 6, 7, 6, 3, -2].map(v => v / 21);
 const smoothClosed = P => { let a = P; for (let p = 0; p < 2; p++) { const n = a.length, b = a; a = b.map((q, i) => q.map((_, c) => SG7.reduce((s, w, k) => s + w * b[(i + k - 3 + n) % n][c], 0))); } return a; };
-export function lineData(id) {
-  if (LINE_CACHE.has(id)) return LINE_CACHE.get(id);
+// Line offsets (0.1 m) on a closed lap, Gaussian σ = LINE_SIGMA_M (owner 2026-11-16: no zig-zag lines). The per-car SPSA offsets carry
+// point-to-point noise of up to ±1 m that drew as kinks on the map (1561 kinks over 26 tracks → 41); a real line moves smoothly across the
+// track. The least-curvature lines (base, sp) are smooth already: smoothing their offsets would undo how they straighten the midline.
+const LINE_SIGMA_M = 8;
+const gaussW = sg => { const r = Math.ceil(3 * sg), w = []; for (let k = -r; k <= r; k++) w.push(Math.exp(-k * k / (2 * sg * sg))); const W = w.reduce((s, x) => s + x, 0); return {r, w: w.map(x => x / W)}; };
+const smoothPts = (P, sg) => { const n = P.length, {r, w} = gaussW(sg); return P.map((_, i) => [0, 1].map(c => w.reduce((s, x, k) => s + x * P[(i + k - r + n * 4) % n][c], 0))); };
+const smoothOff = (o, step) => { const n = o.length, {r, w} = gaussW(LINE_SIGMA_M / (step || 5)); return o.map((_, i) => Math.round(w.reduce((s, x, k) => s + x * o[(i + k - r + n * 4) % n], 0))); };
+// Side steps in a source line where the real track runs straight (owner 2026-11-16: "Daytona T1 squashed"), found by the kink scan
+// (tests/track-map-detail.test.mjs) and checked by eye one by one against the circuit maps: lap distance of the step (m).
+// Drawing only: the points within ±MAP_REPAIR_M are replaced by a cubic Hermite curve between the line on either side. The simulator's
+// own geometry (kappa) is unchanged here; its fix is a separate physics change.
+export const MAP_STEPS = {daytona: [290], autopolis: [185], 'ricardo-tormo': [3400], 'laguna-seca': [2286]};
+const MAP_REPAIR_M = 45;
+function mapRepair(id, P, len) {
+  const steps = MAP_STEPS[id]; if (!steps) return P; const n = P.length, st = (len || n * 5) / n, h = Math.round(MAP_REPAIR_M / st), Q = P.map(p => p.slice()), at = i => P[((i % n) + n) % n];
+  for (const s of steps) { const c = Math.round(s / st), a = c - h, b = c + h, ta = [at(a)[0] - at(a - 3)[0], at(a)[1] - at(a - 3)[1]].map(v => v / 3), tb = [at(b + 3)[0] - at(b)[0], at(b + 3)[1] - at(b)[1]].map(v => v / 3), m = b - a;
+    for (let k = 1; k < m; k++) { const t = k / m, h00 = 2 * t ** 3 - 3 * t * t + 1, h10 = t ** 3 - 2 * t * t + t, h01 = -2 * t ** 3 + 3 * t * t, h11 = t ** 3 - t * t;
+      Q[((a + k) % n + n) % n] = [0, 1].map(j => h00 * at(a)[j] + h10 * m * ta[j] + h01 * at(b)[j] + h11 * m * tb[j]); } }
+  return Q; }
+export function lineData(id, {shape = true} = {}) {
+  if (shape && LINE_CACHE.has(id)) return LINE_CACHE.get(id);
   const L = lapsimRacingLines?.tracks?.[id], C = lapsimCarLines?.tracks?.[id], r1 = p => [+p[0].toFixed(1), +p[1].toFixed(1)];
   const normals = mid => mid.map((_, i, a) => { const n = a.length, p = a[(i - 1 + n) % n], q = a[(i + 1) % n], dx = q[0] - p[0], dy = q[1] - p[1], l = Math.hypot(dx, dy) || 1; return [+(-dy / l).toFixed(4), +(dx / l).toFixed(4)]; });
   // Width where no TUM edges exist (task H): the circuit's own figure, else the map's width, else 12 m assumed
@@ -437,17 +462,30 @@ export function lineData(id) {
     left = mid.map((p, i) => [p[0] + nrm[i][0] * hw[i], p[1] + nrm[i][1] * hw[i]]); right = mid.map((p, i) => [p[0] - nrm[i][0] * hw[i], p[1] - nrm[i][1] * hw[i]]);
     half = hw.map(h => Math.max(0.5, h - 1));
     base = line.map((p, i) => Math.round(Math.max(-half[i], Math.min(half[i], (p[0] - mid[i][0]) * nrm[i][0] + (p[1] - mid[i][1]) * nrm[i][1])) * 10));
+    // shape from the checked atlas midline (owner 2026-11-16: "Barcelona T1 goes straight, then right"): the TUM / car-position outline
+    // bends into some corners too early. The midline moves sideways by the stored correction; every line keeps its place on the track.
+    const cs = shape && lapsimMapShape?.tracks?.[id]?.corr;
+    if (cs?.length === mid.length) { mid = mid.map((p, i) => [p[0] + nrm[i][0] * cs[i] / 10, p[1] + nrm[i][1] * cs[i] / 10]); nrm = normals(mid);
+      left = mid.map((p, i) => [p[0] + nrm[i][0] * hw[i], p[1] + nrm[i][1] * hw[i]]); right = mid.map((p, i) => [p[0] - nrm[i][0] * hw[i], p[1] - nrm[i][1] * hw[i]]); }
   } else {
     const m = lapsimTracks[id]?.map; if (!m?.x?.length) { LINE_CACHE.set(id, null); return null; }
     const h = widthM / 2; edges = wS ? 'stated' : wM ? 'map' : 'assumed';
-    mid = smoothClosed(m.x.map((x, i) => [x, m.y[i]])); nrm = normals(mid); half = mid.map(() => Math.max(0.5, h - 1));
+    // map points are whole metres 5 m apart: their rounding turns the heading by up to ±0.1 rad per point, which the normals carry to
+    // the line and the edges as a zig-zag; a Gaussian (σ = LINE_SIGMA_M / 1.6, about 5 m) first removes it (shape change under 0.5 m)
+    const P0 = mapRepair(id, m.x.map((x, i) => [x, m.y[i]]), lapsimTracks[id].length), st0 = (lapsimTracks[id].length || P0.length * 5) / P0.length;
+    mid = smoothClosed(smoothPts(P0, LINE_SIGMA_M / 1.6 / st0)); nrm = normals(mid); half = mid.map(() => Math.max(0.5, h - 1));
+    const cs = shape && lapsimMapShape?.tracks?.[id]?.corr; // checked atlas midline, as on the F1 tracks above
+    if (cs?.length === mid.length) { mid = smoothClosed(smoothPts(mid.map((p, i) => [p[0] + nrm[i][0] * cs[i] / 10, p[1] + nrm[i][1] * cs[i] / 10]), LINE_SIGMA_M / 1.6 / st0)); nrm = normals(mid); }
     left = mid.map((p, i) => [p[0] + nrm[i][0] * h, p[1] + nrm[i][1] * h]); right = mid.map((p, i) => [p[0] - nrm[i][0] * h, p[1] - nrm[i][1] * h]);
     base = minCurvatureLine(mid.map(p => p[0]), mid.map(p => p[1]), half).offset.map(v => Math.round(v * 10));
   }
   const sp = minCurvatureLine(mid.map(p => p[0]), mid.map(p => p[1]), half, {order: 2}).offset.map(v => Math.round(v * 10));
+  const step = mid.reduce((s, p, i) => s + Math.hypot(p[0] - mid[(i + 1) % mid.length][0], p[1] - mid[(i + 1) % mid.length][1]), 0) / mid.length;
+  const clampOff = o => o.map((v, i) => Math.max(-half[i] * 10, Math.min(half[i] * 10, v)));
+  const cars = Object.fromEntries(Object.entries(C || {}).map(([k, v]) => [k, Object.fromEntries(Object.entries(v).map(([m, q]) => [m, q?.off ? {...q, off: clampOff(smoothOff(q.off, step))} : q]))]));
   const xs = [...left, ...right].map(p => p[0]), ys = [...left, ...right].map(p => p[1]);
-  const out = {mid: mid.map(r1), left: left.map(r1), right: right.map(r1), nrm, base, sp, edges, widthM, minX: Math.min(...xs), maxY: Math.max(...ys), pad: 40, cars: C || {}};
-  LINE_CACHE.set(id, out); return out;
+  const out = {mid: mid.map(r1), left: left.map(r1), right: right.map(r1), nrm, base, sp, edges, widthM, minX: Math.min(...xs), maxY: Math.max(...ys), pad: 40, cars};
+  if (shape) LINE_CACHE.set(id, out); return out;
 }
 // Map controls: racing line on/off, qualifying/race line, zoom (+, −, fit; wheel/pinch and drag on the map)
 function lineControls(lang, view) {
@@ -728,7 +766,11 @@ function computeView(K, data, state, R) {
       bl = computeView.blend[bk] = computeView.blend[bk] || R.blendLine(K, [LD.mid.map(p => p[0]), LD.mid.map(p => p[1])], LD.nrm, LD.base.map(x => x / 10), LD.sp.map(x => x / 10), sel.car, env, (sel.grip || 1) / Math.pow(sel.timeScale || 1, 2)); // a model's learned pace (time scale) counts as grip for its line
       off = bl.off.map(x => x * 10);
     }
-    const P = LD.mid.map((m, i) => [m[0] + LD.nrm[i][0] * off[i] / 10, m[1] + LD.nrm[i][1] * off[i] / 10]);
+    // drawn and simulated line smoothed in position, Gaussian σ = 5 m (owner 2026-11-16: no zig-zag lines; the least-curvature solutions
+    // and the SPSA car lines keep ±0.5 m point noise that drew as kinks). Self-contained: this function also runs in the browser.
+    const P = (Q => { const N = Q.length, st = Q.reduce((s, p, i) => s + Math.hypot(p[0] - Q[(i + 1) % N][0], p[1] - Q[(i + 1) % N][1]), 0) / N, sg = 5 / (st || 5), r = Math.ceil(3 * sg), w = [];
+      for (let k = -r; k <= r; k++) w.push(Math.exp(-k * k / (2 * sg * sg))); const W = w.reduce((s, x) => s + x, 0);
+      return Q.map((_, i) => [0, 1].map(c => w.reduce((s, x, k) => s + x * Q[(i + k - r + N * 4) % N][c], 0) / W)); })(LD.mid.map((m, i) => [m[0] + LD.nrm[i][0] * off[i] / 10, m[1] + LD.nrm[i][1] * off[i] / 10]));
     const tr = R.lineTrack(K, P.map(p => p[0]), P.map(p => p[1]));
     const car = mode === 'r' && cl ? Object.assign({}, sel.car, {mass: sel.car.mass + cl.fuelKg}) : sel.car;
     tr.mu.fill((sel.grip || 1) * (mode === 'r' && cl ? cl.grip : 1));
@@ -740,12 +782,17 @@ function computeView(K, data, state, R) {
       if (e - i < 2 || (v[i] - v[a]) * 3.6 < 10) continue;
       marks.push([i, 'b'], [a, 'a'], [j, 't']); last = j < i ? n : j;
     }
-    // kerbs (owner 2026-11-15, estimated where OpenStreetMap has none): inside at each apex (±20 m), outside at the corner exit (±25 m
-    // around the full-throttle point); the inside is the side the line turns to there
-    const dsp = (tr.length || n * 5) / n, kerbs = [];
-    for (let q = 0; q + 2 < marks.length; q += 3) { const a = marks[q + 1][0], t = marks[q + 2][0], p0 = P[(a - 2 + n) % n], p1 = P[a], p2 = P[(a + 2) % n];
-      const left = (p1[0] - p0[0]) * (p2[1] - p1[1]) - (p1[1] - p0[1]) * (p2[0] - p1[0]) > 0, w = k => Math.round(k / dsp);
-      kerbs.push([left ? 'L' : 'R', a - w(20), a + w(20)], [left ? 'R' : 'L', t - w(25), t + w(25)]); }
+    // owner 2026-11-16 ("Barcelona T1 has no outside kerb"): one inside and one outside kerb per official corner, not per braking zone
+    // (T1-T2-T3 is one braking zone). Side from the turn of the track midline; inside kerb where the line comes closest to the inside
+    // within ±30 m of the corner, outside kerb where it runs out widest within 80 m after it (±15 m each). Kerb data are not
+    // published for most circuits, so they stay estimated.
+    const dsp = (tr.length || n * 5) / n, kerbs = [], w = k => Math.round(k / dsp), M = LD.mid, Lc = d0.length || n * dsp;
+    const lat = i => { const k = (i % n + n) % n; return (P[k][0] - M[k][0]) * LD.nrm[k][0] + (P[k][1] - M[k][1]) * LD.nrm[k][1]; };
+    for (const c of d0.corners || []) { const ic = Math.round(c.s / Lc * n), p0 = M[(ic - w(25) + n * 4) % n], p1 = M[(ic % n + n) % n], p2 = M[(ic + w(25)) % n];
+      const left = (p1[0] - p0[0]) * (p2[1] - p1[1]) - (p1[1] - p0[1]) * (p2[0] - p1[0]) > 0, sg = left ? 1 : -1;
+      let a = ic, e = ic + w(20); for (let k = ic - w(30); k <= ic + w(30); k++) if (sg * lat(k) > sg * lat(a)) a = k;
+      for (let k = a + w(10); k <= a + w(80); k++) if (-sg * lat(k) > -sg * lat(e)) e = k;
+      kerbs.push([left ? 'L' : 'R', a - w(15), a + w(15)], [left ? 'R' : 'L', e - w(15), e + w(15)]); }
     line = {pts: P, v, marks, kerbs, surf: data.surface?.spans || [], left: LD.left, right: LD.right};
     const edge = (LT0.edges[LD.edges] || '').replace('{m}', LD.widthM);
     const dname = (k, r) => (r.name || k) + (r.name && !sel.series ? ' (' + k + ')' : '') + (r.team ? ' · ' + r.team : r.manufacturer ? ' · ' + r.manufacturer : '');
@@ -761,9 +808,13 @@ function computeView(K, data, state, R) {
   const ZD = data.zones, zy = !sel.series && ZD ? (sel.year >= 2025 ? ZD[slotOf(sel.year)] : null) : null;
   // the chosen options (owner 2026-11-16): Alt draws the low-grip zones (n/a ones left out), Off or DRS off draws none, Overtake off hides OT marks
   const om = zy ? optOf(sel) : null, LZ = d0.kappa.length * d0.ds;
-  const zlist = !zy ? [] : (zy.kind === 'drs' ? !om.drs : om.sm === 'off') ? [] : om.sm === 'alt' && zy.kind !== 'drs' ? zy.zones.filter(z => z.low !== null).map(z => Object.assign({}, z, {from: z.low != null ? z.low : (z.from + 50) % LZ})) : zy.zones;
-  let zoneOpts = zy ? {kind: zy.kind, list: zlist.map(z => ({from: z.from, to: z.to, label: (zy.kind === 'drs' ? 'DRS' : 'SM') + (zy.zones.length > 1 ? ' ' + z.n : '')})),
-    marks: (zy.marks || []).filter(m => zy.kind === 'drs' || om.ot).map(m => ({s: m.s, kind: m.kind, label: m.label}))} : null;
+  // every zone stays in the drawing with the part shown (owner 2026-11-16: zones grow and shrink, OT marks fade, when the option changes):
+  // vs = where the shown part starts along the zone (Alt starts at the low-grip point), show = false for Off / DRS off / n/a in Alt
+  const zoff = !zy ? true : zy.kind === 'drs' ? !om.drs : om.sm === 'off', zalt = zy && om.sm === 'alt' && zy.kind !== 'drs';
+  const zlist = !zy ? [] : zy.zones.map(z => { const len = ((z.to - z.from) % LZ + LZ) % LZ || 1, st = zalt ? (z.low != null ? z.low : (z.from + 50) % LZ) : z.from;
+    return Object.assign({}, z, {vs: zalt && z.low !== null ? Math.min(1, (((st - z.from) % LZ + LZ) % LZ) / len) : 0, show: !zoff && !(zalt && z.low === null)}); });
+  let zoneOpts = zy ? {kind: zy.kind, list: zlist.map(z => ({from: z.from, to: z.to, vs: z.vs, show: z.show, key: zy.kind + (z.n ?? ''), label: (zy.kind === 'drs' ? 'DRS' : 'SM') + (zy.zones.length > 1 ? ' ' + z.n : '')})),
+    marks: (zy.marks || []).map(m => ({s: m.s, kind: m.kind, label: m.label, show: zy.kind === 'drs' || om.ot}))} : null;
   const rq = zy && zy.real, rqp = rq ? [rq.grip === 'low' ? t.realAeroParts.low : '', rq.ot === 'off' ? t.realAeroParts.otOff : '', rq.drs === 'off' ? t.realAeroParts.drsOff : ''].filter(Boolean) : [];
   // Formula E (owner 2026-11-16): the Attack Zone of the car's rule set (Gen3 Evo / Gen4), real where the circuit map prints it, else estimated.
   // The zone only arms Attack Mode (the extra power lasts a set time, not one zone), so the lap itself does not change.
@@ -986,6 +1037,16 @@ function lapsimClient(K, computeView, renderMap, renderTrace, evolutionDelta, ev
   }
   const data = JSON.parse(el.textContent);
   const q = s => document.querySelector('[data-ls="' + s + '"]'), evoKeys = Object.values(data.evoOf);
+  // zone animation (owner 2026-11-16): a zone grows or shrinks along the line (400 ms) and OT marks fade and scale (250 ms) when SM / DRS /
+  // OT options change; native WAAPI; instant for prefers-reduced-motion
+  const zoneState = () => Object.fromEntries([...(q('map')?.querySelectorAll('[data-zk]') || [])].map(e => [e.tagName + e.dataset.zk, {strokeDasharray: e.style.strokeDasharray, strokeDashoffset: e.style.strokeDashoffset, opacity: e.style.opacity || '1'}]));
+  const animZones = prev => { if (!prev || !Element.prototype.animate || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    for (const e of q('map').querySelectorAll('[data-zk]')) { const p = prev[e.tagName + e.dataset.zk]; if (!p) continue; const path = e.tagName === 'path';
+      // a hidden zone keeps opacity 0 (a zero-length dash with round caps would leave a dot)
+      const to = path ? {strokeDasharray: e.style.strokeDasharray, strokeDashoffset: e.style.strokeDashoffset, opacity: e.style.opacity || '1'} : {opacity: e.style.opacity || '1'}, from = path ? {strokeDasharray: p.strokeDasharray, strokeDashoffset: p.strokeDashoffset, opacity: p.opacity} : {opacity: p.opacity};
+      if (JSON.stringify(to) === JSON.stringify(from)) continue;
+      if (!path && e.classList.contains('ls-zone-m') || e.classList.contains('ls-zone-mt')) { from.transform = to.opacity === '0' ? 'scale(1)' : 'scale(.4)'; to.transform = to.opacity === '0' ? 'scale(.4)' : 'scale(1)'; }
+      e.animate([from, to], {duration: path ? 400 : 250, easing: 'cubic-bezier(.2,.8,.2,1)'}); } };
   const yearKey = data.conds['2026'] ? '2026' : Object.keys(data.conds)[0];
   const state = {carId: data.carId, compareId: '', mode: 'real', manual: Object.assign({pressureHpa: 1013, airTempC: 25, humidityPct: 50, trackTempC: 35, windSpeed: 0, windFromDeg: 0}, data.conds[yearKey] || {}), active: {}, strength: 1, sm: 'normal', ot: true, drs: true, evo: {type: 'qualifying', tyre: '', useCurve: true, over: {}}};
   const sliders = document.querySelectorAll('[data-cond]');
@@ -1001,7 +1062,7 @@ function lapsimClient(K, computeView, renderMap, renderTrace, evolutionDelta, ev
         if (q('sm')) { q('sm').value = state.sm; q('ot').value = state.ot ? '1' : '0'; q('drs').value = state.drs ? '1' : '0'; } }
       const v = computeView(K, data, state, R); lastTel = v.tel; lastView = v;
       q('lap').textContent = v.lap; q('pole').innerHTML = v.poleHtml; q('facts').innerHTML = v.factsHtml; q('air').innerHTML = v.airHtml;
-      q('map').innerHTML = v.mapSvg; apply(); needle(v.compassDeg); q('trace').innerHTML = v.traceSvg; q('soc').innerHTML = v.socHtml; q('brakes').innerHTML = v.brakeHtml; q('key').innerHTML = v.keyHtml; q('wind').innerHTML = v.windHtml;
+      { const prev = zoneState(); q('map').innerHTML = v.mapSvg; animZones(prev); } apply(); needle(v.compassDeg); q('trace').innerHTML = v.traceSvg; q('soc').innerHTML = v.socHtml; q('brakes').innerHTML = v.brakeHtml; q('key').innerHTML = v.keyHtml; q('wind').innerHTML = v.windHtml;
       { const c = data.cars[state.carId], f1 = !c.series && c.year; if (q('smWrap')) { q('smWrap').hidden = !(f1 && c.year >= 2026); q('otWrap').hidden = !(f1 && c.year >= 2026); q('drsWrap').hidden = !(f1 && c.year < 2026); } }
       q('carLabel').textContent = data.cars[state.carId].label; q('carKind').textContent = v.kindLabel;
       if (q('lineNote')) q('lineNote').textContent = v.lineNote;
@@ -1218,7 +1279,7 @@ const CSS = `:root{--sim-slow:#ffa94d;--kb-zone:#c4c9ce;--kb-zone-mark:#00d2be}:
 .ls-surf{fill:color-mix(in oklab,var(--mint) 35%,transparent);stroke:none}.ls-kerb-w{fill:none;stroke:#fff;stroke-width:1.5}.ls-kerb{fill:none;stroke:#e5484d;stroke-dasharray:2.5 2.5;stroke-width:1.5}.ls-zoombox{overflow:hidden;position:relative;touch-action:pan-y;border-radius:12px}.ls-zoombox.is-zoomed{touch-action:none;cursor:grab}.ls-line-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}.ls-zoom-btns{margin-left:auto;display:inline-flex;flex-wrap:wrap;gap:6px;max-width:100%}.ls-map .ls-mk{stroke:#fff;transform-box:fill-box;transform-origin:center;scale:var(--inv,1)}.ls-zoombox text{transform-box:fill-box;transform-origin:center;scale:var(--inv,1)}.ls-map .ls-band{fill:#e6e8ea;stroke:none}:root[data-theme="light"] .ls-band{fill:#1f1f1f}@media(prefers-color-scheme:light){:root:not([data-theme]) .ls-band{fill:#1f1f1f}}
 .ls-mk-b{fill:#e5484d}.ls-mk-a{fill:#f5a524}.ls-mk-t{fill:#30a46c}.ls-line-key [class^=ls-mk]{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 4px 0 10px;vertical-align:middle}.ls-line-key [class^=ls-mk]:first-child{margin-left:0}.ls-line-key .ls-mk-b{background:#e5484d}.ls-line-key .ls-mk-a{background:#f5a524}.ls-line-key .ls-mk-t{background:#30a46c}
 .ls-evo .ls-controls{grid-template-columns:repeat(3,minmax(0,1fr));margin:12px 0 16px}.ls-check{display:flex;align-items:center;gap:8px;align-self:end;min-height:40px}.ls-check input{width:20px;height:20px;min-height:0;accent-color:var(--mint)}.ls-evo .ls-facts{margin-top:16px}
-.ls-line-2{stroke:var(--text);stroke-dasharray:2 3}.ls-zone{fill:none;stroke-linecap:round;opacity:.9}.ls-zone-drs,.ls-zone-sm{stroke:var(--kb-zone)}.ls-zone-attack{stroke:#2fa4ff}.ls-zone-t{fill:var(--text);font-weight:700;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:var(--bg);stroke-width:3px}.ls-zone-m{stroke:var(--kb-zone-mark)}.ls-zone-m-act{stroke:var(--kb-zone)}.ls-zone-mt{fill:var(--kb-zone-mark);font-weight:700;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:var(--bg);stroke-width:3px}.ls-key-2{background:var(--text)}.ls-key-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.ls-line-2{stroke:var(--text);stroke-dasharray:2 3}.ls-zone{fill:none;stroke-linecap:round;opacity:.9}.ls-zone-m,.ls-zone-mt{transform-box:fill-box;transform-origin:center}.ls-zone-drs,.ls-zone-sm{stroke:var(--kb-zone)}.ls-zone-attack{stroke:#2fa4ff}.ls-zone-t{fill:var(--text);font-weight:700;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:var(--bg);stroke-width:3px}.ls-zone-m{stroke:var(--kb-zone-mark)}.ls-zone-m-act{stroke:var(--kb-zone)}.ls-zone-mt{fill:var(--kb-zone-mark);font-weight:700;text-anchor:middle;dominant-baseline:central;paint-order:stroke;stroke:var(--bg);stroke-width:3px}.ls-key-2{background:var(--text)}.ls-key-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
 main:not(.kb-cmp-view) .ls-cmp-only{display:none!important}
 .ls-export{display:inline-flex;gap:6px;flex-wrap:wrap}.ls-panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.ls-panel-head h2{margin:0}.ls-panel-head .pill{min-height:44px}
 .ls-chans{display:flex;flex-wrap:nowrap;gap:6px;margin:12px 0 4px;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}.ls-chan{display:inline-flex;flex:0 0 auto;min-width:0;align-items:center;gap:6px;min-height:40px;padding:0 12px;white-space:nowrap;touch-action:pan-x;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--text);cursor:pointer;user-select:none}.ls-chan input{width:18px;height:18px;margin:0;accent-color:var(--mint)}.ls-chan:has(input:not(:checked)){color:var(--muted)}
