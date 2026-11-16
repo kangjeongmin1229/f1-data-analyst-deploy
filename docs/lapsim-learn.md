@@ -585,3 +585,24 @@ Variants (one flag each, off = byte-identical output):
 Metrics: eventOut and modelOut per group and per group × series (layoutOut reported). Pass check (same as 13): every group's eventOut
 <= baseline + 0.02, and the all-rows eventOut drop is larger than the baseline's half/double width sensitivity. Widths are fixed above,
 not tuned on these rows (rule 3). A passing variant is shipped as its own PR; the others are written down here as rejected.
+
+### 13.2 Result (run 2026-11-16, same session, same rows and settings; flags off = A)
+
+Event-hidden RMS %, per group (model-hidden in brackets). All-rows = row-weighted RMS over the four groups.
+
+| Group | A production | B practice | C published BoP | D both |
+|---|---|---|---|---|
+| gt3 | 1.07 (0.94) | 1.05 (0.91) | 1.08 (0.94) | 1.05 (0.91) |
+| lmdh | 0.82 (0.82) | 0.71 (0.67) | 0.79 (0.92) | 0.69 (0.75) |
+| lmh | 0.84 (1.48) | 0.72 (1.16) | 0.76 (1.61) | **0.66** (1.27) |
+| lmp2 | 1.21 (2.61) | 1.38 (2.39) | 1.21 (2.61) | 1.36 (2.40) |
+| lmp2 wec / elms | 1.27 / 1.64 | 0.96 / 1.58 | 1.27 / 1.64 | 1.01 / 1.60 |
+| all rows | 1.046 | 1.026 | 1.050 | 1.022 |
+
+Baseline width sensitivity (half / double, all rows): 0.009. Gate: **B rejected** (lmp2 1.21 → 1.38, over +0.02; the IMSA LMP2 rows
+get worse while WEC LMP2 improves). **C rejected** (every group within +0.02, but the all-rows error does not drop: −0.004; model-hidden
+LMH and LMDh get worse, 1.48 → 1.61 and 0.82 → 0.92). **D rejected** (lmp2 1.36). No production change.
+
+Reading: same-weekend practice pace is strong for the Hypercars (LMH 0.84 → 0.72, LMDh 0.82 → 0.71) but its slope is shared by all
+prototypes, and LMP2 practice runs (fuel, Pro-Am driver mix) say less about the qualifying lap. Next variant, to be declared before
+running: the practice slope and offset per group (LMP2 its own), the published BoP not used.
