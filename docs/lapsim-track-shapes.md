@@ -182,3 +182,11 @@ Test: tests/track-map-detail.test.mjs (no right turn between 200 and 400 m). Dra
   FE street tracks (their numbered maps are in the FE event documents: next source).
 - Charts: on name tracks the telemetry charts mark the same corner names (a name tick is left out when it would overlap the
   previous one; its dashed line stays).
+
+## Inje Speedium: official turn numbers (owner 2026-11-17)
+
+The owner sent the official circuit map (20 curves). Our raw midline was fitted onto the map's track pixels (similarity ICP with
+mirror and rotation searched: median 0.5 px, 0.8 px per m), each numbered label went to the nearest point of our line and snapped
+to our own bend peak (19 of 20 within 70 m). All 20 run once round the lap in order. Input and result:
+`scripts/sim/data/tracks/inje-official-map.json`; data in `worker/lapsim/corner-numbers-data.js`. Note: our lap starts near T12
+("first mapped point, not verified"); the real line is on the main straight between T20 and T1 (start-line fix is a separate task).
