@@ -637,6 +637,15 @@ next accepted refit.
   per series (IMSA, WEC, ELMS, Asian LMS), each with the same widths as F.
 Same metrics and pass check, baseline A of 13.3.
 
+Result: G LMDh 0.71, LMH 0.71, GT3 1.07, LMP2 1.36 (IMSA LMP2 1.52, ELMS 1.61), all rows 1.042, drop 0.003 → rejected. LMP2 also got worse in
+E, which has no LMP2 term at all (1.18 → 1.27), so the harm comes through the terms LMP2 shares with the other groups, not from the
+LMP2 practice term.
+
+### 13.5 Fifth variant (declared 2026-11-16 19:10 KST, before the run)
+
+- H `FIT_PRACTICE_GROUP=1 FIT_PRACTICE_HYPER=1` — E for LMH and LMDh only: no practice term for GT3 or LMP2.
+Same metrics and pass check, baseline A of 13.3. If LMP2 still gets worse, the next step is to fit LMP2 apart from the other groups (C1).
+
 ## 13. Driver ratings (data) (2026-11-16, task P1)
 
 Data only: no fit term and no flag uses it yet (the main session adds that variant after the track refit).
