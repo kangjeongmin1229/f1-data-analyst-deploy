@@ -1,0 +1,12 @@
+== results/exp-z/probe-out/cal-z.js
+all              {"n":67,"base":1.235,"cand":1.248,"reason":"rejected: worse on held-out rows"}
+f1               {"n":34,"base":1.008,"cand":1.149,"reason":"rejected: worse on held-out rows"}
+wec              {"n":33,"base":1.432,"cand":1.342,"reason":"accepted: held-out error lower beyond noise"}
+f1/2025          {"n":20,"base":0.976,"cand":1.038,"reason":"rejected: worse on held-out rows"}
+f1/2026          {"n":14,"base":1.051,"cand":1.291,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2025     {"n":5,"base":1.528,"cand":1.528,"reason":"rejected: worse on held-out rows"}
+wec-lmh/2026     {"n":6,"base":1.415,"cand":1.159,"reason":"rejected: gain within noise"}
+wec-lmdh/2025    {"n":5,"base":1.483,"cand":1.483,"reason":"rejected: worse on held-out rows"}
+wec-lmdh/2026    {"n":6,"base":1.356,"cand":1.192,"reason":"rejected: gain within noise"}
+wec-lmgt3/2025   {"n":5,"base":1.564,"cand":1.564,"reason":"rejected: worse on held-out rows"}
+wec-lmgt3/2026   {"n":6,"base":1.275,"cand":1.152,"reason":"rejected: gain within noise"}
