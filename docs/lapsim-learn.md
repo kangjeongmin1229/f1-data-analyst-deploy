@@ -646,6 +646,10 @@ LMP2 practice term.
 - H `FIT_PRACTICE_GROUP=1 FIT_PRACTICE_HYPER=1` — E for LMH and LMDh only: no practice term for GT3 or LMP2.
 Same metrics and pass check, baseline A of 13.3. If LMP2 still gets worse, the next step is to fit LMP2 apart from the other groups (C1).
 
+Result: H LMDh 0.79, LMH 0.87, GT3 1.07, LMP2 1.24, all rows 1.046 (drop −0.002) → rejected. Without the GT3 practice term the
+Hypercar gain mostly goes away (LMDh 0.71 in G → 0.79), and LMP2 is still worse. Decision: no more practice variants in the shared
+fit. A6 ships A (production + Oreca 05 fix); LMP2 gets its own fit in C1, where practice can be tried without moving the other groups.
+
 ## 13. Driver ratings (data) (2026-11-16, task P1)
 
 Data only: no fit term and no flag uses it yet (the main session adds that variant after the track refit).
