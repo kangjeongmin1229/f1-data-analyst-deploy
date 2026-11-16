@@ -607,6 +607,18 @@ LMH and LMDh get worse, 1.48 → 1.61 and 0.82 → 0.92). **D rejected** (lmp2 1
 Reading: same-weekend practice pace is strong for the Hypercars (LMH 0.84 → 0.72, LMDh 0.82 → 0.71) but its slope is shared by all
 prototypes, and LMP2 practice runs (fuel, Pro-Am driver mix) say less about the qualifying lap. Next variant, to be declared before
 running: the practice slope and offset per group (LMP2 its own), the published BoP not used.
+### 13.3 Third variant set (declared 2026-11-16 17:10 KST, before any run)
+
+Data fix in every variant, baseline included: `modelOf` no longer reads "Oreca 05" as an Oreca 07 (P1 finding: WEC 2026 Imola and Spa
+LMP2 #46 is an Oreca 05 of a historic support race in the same Al Kamel folder). So A is production plus this fix, rerun in the same session.
+- E `FIT_PRACTICE_GROUP=1` — the same-event practice term of 13.2 B, but with its own slope `PG` (width 1) and offset `PG0` (width 0.05)
+  per group, for LMH, LMDh and GT3 only. LMP2 gets no practice term.
+- F `FIT_PRACTICE_GROUP=1 FIT_LMP2_FIELD=1` — E, and for LMP2 the class-best dry practice lap of the event (ln of practice / simulated
+  lap, the same value for every LMP2 car of the event) with slope `PF` (width 1) and offset `PF0` (width 0.05). Valid only for
+  predictions made during the weekend.
+Metrics and pass check as 13.2 (every group's eventOut ≤ baseline + 0.02, all-rows drop larger than the half/double width sensitivity).
+A passing variant goes to its own PR after the full refit.
+
 ## 13. Driver ratings (data) (2026-11-16, task P1)
 
 Data only: no fit term and no flag uses it yet (the main session adds that variant after the track refit).
