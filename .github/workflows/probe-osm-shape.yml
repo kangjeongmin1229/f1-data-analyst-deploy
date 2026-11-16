@@ -1,37 +1,43 @@
-name: Probe OSM raceway ways (A3 shape check)
+name: Probe OSM raceway ways
 on:
   push:
-    branches: ['probe/osm-shape']
+    branches: ['probe/osm-pits']
 permissions:
   contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Fetch raceway ways (© OpenStreetMap contributors, ODbL)
+      - name: Fetch raceway and pit ways (© OpenStreetMap contributors, ODbL)
         run: |
           cat > /tmp/f.mjs <<'JS'
-          import {writeFileSync, mkdirSync} from 'node:fs';
-          const S = {'nurburgring-gp': [50.3356, 6.9475], 'sakhir-outer': [26.0325, 50.5106], 'paul-ricard': [43.2506, 5.7917], istanbul: [40.9517, 29.405], sochi: [43.4057, 39.9578], 'brands-hatch': [51.3569, 0.2631]};
+          import {writeFileSync, mkdirSync, readFileSync, existsSync} from 'node:fs';
+          const S = JSON.parse(readFileSync('probe-seeds.json', 'utf8'));
           const API = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
-          mkdirSync('probe-out', {recursive: true}); const out = {};
+          mkdirSync('probe-out/pits', {recursive: true});
           for (const [id, [la, lo]] of Object.entries(S)) {
+            const f = `probe-out/pits/${id}.json`; if (existsSync(f)) continue;
+            const r0 = /nurburgring-24h/.test(id) ? 7000 : /^fe-|madring|las-vegas|monte-carlo|baku|singapore|jeddah|miami|long-beach|detroit|melbourne|montreal/.test(id) ? 2500 : 3000;
+            const q = `[out:json][timeout:90];(way["highway"="raceway"](around:${r0},${la},${lo});way["service"~"pit",i](around:${r0},${la},${lo});way["name"~"pit|boxen|box lane|stand",i]["highway"](around:${r0},${la},${lo}););out geom tags;`;
             for (let n = 0; n < 9; n++) {
-              try { const r = await fetch(API[n % 3], {method: 'POST', body: 'data=' + encodeURIComponent(`[out:json][timeout:60];way["highway"="raceway"](around:2500,${la},${lo});out geom tags;`), headers: {'content-type': 'application/x-www-form-urlencoded', 'user-agent': 'kongboda-lapsim'}, signal: AbortSignal.timeout(90000)});
+              try { const r = await fetch(API[n % 3], {method: 'POST', body: 'data=' + encodeURIComponent(q), headers: {'content-type': 'application/x-www-form-urlencoded', 'user-agent': 'kongboda-lapsim'}, signal: AbortSignal.timeout(120000)});
                 if (!r.ok) throw new Error(r.status); const d = await r.json();
-                out[id] = {seed: [la, lo], ways: d.elements.filter(e => e.geometry).map(e => ({id: e.id, tags: e.tags || {}, g: e.geometry.map(p => [+p.lat.toFixed(7), +p.lon.toFixed(7)])}))}; console.log(id, out[id].ways.length); break;
-              } catch (e) { console.log(id, 'retry', e.message); await new Promise(f => setTimeout(f, 5000)); }
+                writeFileSync(f, JSON.stringify({seed: [la, lo], radius: r0, ways: d.elements.filter(e => e.geometry).map(e => ({id: e.id, tags: e.tags || {}, g: e.geometry.map(p => [+p.lat.toFixed(6), +p.lon.toFixed(6)])}))}));
+                console.log(id, d.elements.length); break;
+              } catch (e) { console.log(id, 'retry', e.message); await new Promise(f => setTimeout(f, 6000)); }
             }
-            await new Promise(f => setTimeout(f, 3000));
+            await new Promise(f => setTimeout(f, 2500));
           }
-          writeFileSync('probe-out/osm-raceways.json', JSON.stringify(out));
           JS
           node /tmp/f.mjs
+      - name: Commit
+        if: always()
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add -f probe-out && git commit -m "OSM raceway ways for A3 (© OpenStreetMap contributors, ODbL)" && git push
+          git add -f probe-out/pits && git commit -m "OSM raceway and pit ways (© OpenStreetMap contributors, ODbL)" && git push
