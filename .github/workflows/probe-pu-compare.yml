@@ -1,0 +1,28 @@
+name: Probe — compare PU-zones experiment artifacts (run 43775148422)
+on:
+  push:
+    branches: ['probe/pu-zones-compare']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - env: {GH_TOKEN: '${{ github.token }}'}
+        run: gh run download 43775148422 -R ${{ github.repository }} -D results && find results -maxdepth 3 | head -50
+      - run: |
+          mkdir -p probe-out
+          find results -name 'cal-*.js' | sort | tee probe-out/files.txt
+          C=$(find results -name 'cal-ctl.js' | head -1)
+          for v in z zq zqr qr; do F=$(find results -name "cal-$v.js" | head -1); [ -n "$F" ] && node scripts/sim/exp-compare.mjs "$C" "$F" > "probe-out/ctl-vs-$v.txt" 2>&1 || echo "missing $v" >> probe-out/files.txt; done
+          node scripts/sim/exp-compare.mjs "$C" $(for v in z zq zqr qr; do find results -name "cal-$v.js" | head -1; done) > probe-out/ctl-vs-all.txt 2>&1 || true
+          ls -la probe-out
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f probe-out && git commit -m "PU-zones comparison (run 43775148422)" && git push origin HEAD:probe/pu-zones-compare
