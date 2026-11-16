@@ -117,6 +117,10 @@ export function loadRows(files = SOURCES) {
     for (let i = pending.length - 1; i >= 0; i--) { const p = pending[i], m = ref.get(p.tr.layout + '|' + p.group); if (p.r.src === 'sro' && m && p.r.best < 0.95 * m) { pending.splice(i, 1); skip('SRO lap far below the event bests of its layout'); } } }
   const covered = new Set(pending.filter(p => p.r.src !== 'sro' && p.r.type === 'Q' && p.group === 'gt3').map(p => p.tr.layout + '|' + p.r.season));
   const thick = new Set(Object.entries([...covered].reduce((o, k) => { const l = k.split('|')[0]; o[l] = (o[l] || 0) + 1; return o; }, {})).filter(([, n]) => n >= 3).map(([l]) => l));
+  // FIT_PRACTICE (section 13.2): each car model's best dry practice lap of the same event, before qualifying, as an input
+  const practice = new Map();
+  if (FLAG.practice) for (const {r, group, tr, w} of pending) if (r.type === 'P' && tr.sim && !(+r.rainShare > 0.02) && r.src !== 'sro') {
+    const k = [r.series, r.season, r.event, group, r.model.key].join('|'), x = r.best / simLap(tr.sim, group, r.season, w); if (!(practice.get(k) <= x)) practice.set(k, x); }
   for (const {r, group, tr, w, b, num} of pending) {
     // a layout found from the lap time alone must also fit the class car: within 8 % of its simulated lap there (no track factor;
     // 12 % was only needed while the Paul Ricard map was broken)
@@ -132,7 +136,7 @@ export function loadRows(files = SOURCES) {
     const why = !dry ? 'wet qualifying' : !tr.layout ? 'layout not resolved: ' + (tr.how || '').slice(0, 40) : !(tr.sim || tr.near) ? 'no simulator geometry: ' + tr.layout : null; // a ⚠️ track is learned too: its layout term absorbs the geometry error and the held-out error decides the mark
     if (why) { skip(why); continue; }
     const k = [r.series, r.season, r.event, group, r.model.key].join('|'), p = best.get(k);
-    if (!p || r.best < p.real) best.set(k, {...o, sim: tr.sim || tr.near, sibling: !tr.sim, trap: num(r.trapKph), eventKey: [r.series, r.season, r.event].join('|')});
+    if (!p || r.best < p.real) best.set(k, {...o, sim: tr.sim || tr.near, sibling: !tr.sim, trap: num(r.trapKph), eventKey: [r.series, r.season, r.event].join('|'), ...(practice.has(k) ? {practice: practice.get(k)} : {})});
   }
   // a best lap more than 10 % off the class best of its event is not a push lap (traffic, incomplete timing, Code 60): not fitted
   const top = new Map(); for (const r of best.values()) { const k = r.eventKey + '|' + r.group; top.set(k, Math.min(top.get(k) ?? Infinity, r.real)); }
@@ -144,9 +148,17 @@ export function loadRows(files = SOURCES) {
   return {rows, skipped, zStat, records};
 }
 // Experiment flags (docs/lapsim-learn.md section 13; off = production): LMP2 own layout kind, street-circuit term per kind
-const FLAG = {lmp2kind: process.env.FIT_LMP2KIND === '1', street: process.env.FIT_STREET === '1'};
+const FLAG = {lmp2kind: process.env.FIT_LMP2KIND === '1', street: process.env.FIT_STREET === '1', practice: process.env.FIT_PRACTICE === '1', bop: process.env.FIT_BOP === '1'};
 const STREET = /street|detroit|long-beach|st-petersburg|baku|monte-carlo|monaco|singapore|jeddah|las-vegas|miami|macau|^fe-|madring|marina-bay|adelaide|guia/;
-const EXTRA_WIDTH = {ST: 0.02}; // experiment terms, kept out of WIDTH so the production output is unchanged
+const EXTRA_WIDTH = {ST: 0.02, PR: 1, PR0: 0.05, BK: 1, BP: 1};
+// FIT_BOP (section 13.2): the published Hypercar BoP of the event as a fixed input (WEC 2024-2025 tables, IMSA GTP bulletins): ln of the car's
+// minimum weight and power over the event's field mean. Estimated BoP (WEC 2026) is not used: it is learned from these same laps.
+const BOPW = FLAG.bop ? JSON.parse(readFileSync('scripts/sim/data/wec-bop.json', 'utf8')) : {}, BOPI = FLAG.bop ? JSON.parse(readFileSync('scripts/sim/data/imsa-bop.json', 'utf8')).events : [];
+const bopOf = r => { if (!FLAG.bop || (r.group !== 'lmh' && r.group !== 'lmdh')) return null; const mk = String(r.model).toLowerCase().split(/\s+/)[0];
+  const tab = r.series === 'wec' ? BOPW[r.sim]?.[r.season]?.cars : r.series === 'imsa' ? BOPI.find(e => e.year === r.season && e.track === r.sim)?.gtp : null; if (!tab) return null;
+  const rows = Object.entries(tab).filter(([, v]) => v && v.kg), me = rows.find(([c]) => c.toLowerCase().startsWith(mk)); if (!me) return null;
+  const pw = v => v.kW ?? v.pHigh, mean = f => rows.reduce((a, [, v]) => a + f(v), 0) / rows.length;
+  return {k: Math.log(me[1].kg / mean(v => v.kg)), p: pw(me[1]) && rows.every(([, v]) => pw(v)) ? Math.log(pw(me[1]) / mean(pw)) : 0}; }; // experiment terms, kept out of WIDTH so the production output is unchanged
 const kind = g => g === 'gt3' ? 'gt' : FLAG.lmp2kind && g === 'lmp2' ? 'lmp2' : 'proto';
 const terms = r => { const f = F1G[r.sim] ?? 0, e = era(r.layout, r.season), t = [['S', r.group + '|' + r.series + '|' + r.season, 1], ['SS', r.group + '|' + r.series, 1], ['SY', r.group + '|' + r.season, 1],
   ['T', e, 1], ['TG', e + '|' + kind(r.group), 1], ['M', r.model, 1], ['MB', r.model + '|' + body(r.series), 1], ['MY', r.model + '|' + body(r.series) + '|' + r.season, 1], ['B', r.model, zc(r.z)],
@@ -154,6 +166,9 @@ const terms = r => { const f = F1G[r.sim] ?? 0, e = era(r.layout, r.season), t =
   if (Number.isFinite(r.w?.trackC)) t.push(['HOT', 'all', Math.max(0, r.w.trackC - 45) / 10]); // grip above 45 °C track temperature: the simulator loses too much
   if (BANKED.has(r.layout)) t.push(['TR', r.layout, 10 * drho(r.w || {})]);
   if (FLAG.street && STREET.test(r.layout)) t.push(['ST', kind(r.group), 1]);
+  // practice: ln(practice best / simulated lap) of the same model at the same event, and an offset per kind (fuel and tyre programme)
+  { const bp = bopOf(r); if (bp) t.push(['BK', 'proto', bp.k], ['BP', 'proto', bp.p]); }
+  if (FLAG.practice && r.practice) t.push(['PR', kind(r.group), Math.log(r.practice)], ['PR0', kind(r.group), 1]);
   return t; };
 // Ridge least squares with Huber weights (a wet-suspect or disrupted session is down-weighted, never deleted: rule 4.3 no. 7).
 export function fit(rows, widths = WIDTH) {
