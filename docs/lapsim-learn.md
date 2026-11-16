@@ -569,3 +569,19 @@ faster or slower than the track and season terms say. A model term per car or pe
 Next variants (to be declared before running): (1) practice-informed prediction: the same weekend's practice best of the class sets an
 event offset (only for predictions made during the weekend, the owner's briefing rule); (2) LMP2 tyre/power era per series (Goodyear
 ELMS/WEC 2021-23, Le Mans power restriction) as known inputs; (3) model-hidden LMH: BoP of the event as a fixed input (rule 4.1.3).
+
+### 13.2 Second variant set (declared 2026-11-16 14:00 KST, before any run)
+
+Baseline A: production `fit-endurance.mjs` (all flags off), rerun in the same session with the same rows and settings (rule 6).
+Variants (one flag each, off = byte-identical output):
+- B `FIT_PRACTICE=1` — the same event's best dry practice lap of that car model (before qualifying, not SRO) enters as
+  ln(practice best / simulated lap), with a slope `PR` (width 1) and an offset `PR0` per kind (width 0.05: fuel and tyre programme).
+  Rows without practice get no term. Valid only for predictions made during the weekend (briefing rule).
+- C `FIT_BOP=1` — the published Hypercar BoP of the event as a fixed input (WEC 2024–2025 tables in wec-bop.json, IMSA GTP bulletins
+  in imsa-bop.json): ln(car minimum weight / field mean) with slope `BK`, ln(power / field mean) with slope `BP` (width 1 each).
+  WEC 2026 estimated BoP is not used (it is learned from these laps). Only lmh and lmdh rows get the terms.
+- D both flags.
+
+Metrics: eventOut and modelOut per group and per group × series (layoutOut reported). Pass check (same as 13): every group's eventOut
+<= baseline + 0.02, and the all-rows eventOut drop is larger than the baseline's half/double width sensitivity. Widths are fixed above,
+not tuned on these rows (rule 3). A passing variant is shipped as its own PR; the others are written down here as rejected.
