@@ -619,6 +619,24 @@ LMP2 #46 is an Oreca 05 of a historic support race in the same Al Kamel folder).
 Metrics and pass check as 13.2 (every group's eventOut ≤ baseline + 0.02, all-rows drop larger than the half/double width sensitivity).
 A passing variant goes to its own PR after the full refit.
 
+Result (eventOut %, mean abs; all rows 1.044 for A, half/double width sensitivity 0.010):
+
+| Variant | GT3 | LMDh | LMH | LMP2 | All rows | Pass |
+|---|---|---|---|---|---|---|
+| A (production + Oreca 05 fix) | 1.07 | 0.82 | 0.83 | 1.18 | 1.044 | baseline |
+| E | 1.06 | 0.79 | 0.87 | 1.27 | 1.039 | no (LMH, LMP2 worse; drop 0.005) |
+| F | 1.06 | 0.73 | 0.75 | 1.41 | 1.038 | no (LMP2 worse; drop 0.006) |
+
+Both rejected. In F the hypercars gain most (LMDh −0.09, LMH −0.08), but the LMP2 class-best term makes IMSA LMP2 much worse
+(0.91 → 1.64) while WEC LMP2 improves (1.22 → 0.75): one slope for both series does not hold. The Oreca 05 fix ships with the
+next accepted refit.
+
+### 13.4 Fourth variant set (declared 2026-11-16 18:05 KST, before any run)
+
+- G `FIT_PRACTICE_GROUP=1 FIT_LMP2_FIELD=1 FIT_LMP2_FIELD_SERIES=1` — F, but the LMP2 class-best slope `PF` and offset `PF0` are
+  per series (IMSA, WEC, ELMS, Asian LMS), each with the same widths as F.
+Same metrics and pass check, baseline A of 13.3.
+
 ## 13. Driver ratings (data) (2026-11-16, task P1)
 
 Data only: no fit term and no flag uses it yet (the main session adds that variant after the track refit).

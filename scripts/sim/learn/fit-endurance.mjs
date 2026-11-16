@@ -150,7 +150,7 @@ export function loadRows(files = SOURCES) {
 }
 // Experiment flags (docs/lapsim-learn.md section 13; off = production): LMP2 own layout kind, street-circuit term per kind
 const FLAG = {lmp2kind: process.env.FIT_LMP2KIND === '1', street: process.env.FIT_STREET === '1', practice: process.env.FIT_PRACTICE === '1', bop: process.env.FIT_BOP === '1',
-  practiceGroup: process.env.FIT_PRACTICE_GROUP === '1', lmp2Field: process.env.FIT_LMP2_FIELD === '1'}; // 13.3: practice per group (LMH, LMDh, GT3; not LMP2); LMP2 field practice
+  practiceGroup: process.env.FIT_PRACTICE_GROUP === '1', lmp2Field: process.env.FIT_LMP2_FIELD === '1', lmp2FieldSeries: process.env.FIT_LMP2_FIELD_SERIES === '1'}; // 13.3: practice per group (LMH, LMDh, GT3; not LMP2); LMP2 field practice
 const STREET = /street|detroit|long-beach|st-petersburg|baku|monte-carlo|monaco|singapore|jeddah|las-vegas|miami|macau|^fe-|madring|marina-bay|adelaide|guia/;
 const EXTRA_WIDTH = {ST: 0.02, PR: 1, PR0: 0.05, BK: 1, BP: 1, PG: 1, PG0: 0.05, PF: 1, PF0: 0.05};
 // FIT_BOP (section 13.2): the published Hypercar BoP of the event as a fixed input (WEC 2024-2025 tables, IMSA GTP bulletins): ln of the car's
@@ -174,7 +174,7 @@ const terms = r => { const f = F1G[r.sim] ?? 0, e = era(r.layout, r.season), t =
   // 13.3: own practice slope and offset per group (LMP2 left out: its practice runs say little about its qualifying lap); LMP2 gets the
   // class-best practice lap of the event (the field's pace that weekend) instead of its own
   if (FLAG.practiceGroup && r.practice && r.group !== 'lmp2') t.push(['PG', r.group, Math.log(r.practice)], ['PG0', r.group, 1]);
-  if (FLAG.lmp2Field && r.group === 'lmp2' && r.fieldPractice) t.push(['PF', 'lmp2', Math.log(r.fieldPractice)], ['PF0', 'lmp2', 1]);
+  if (FLAG.lmp2Field && r.group === 'lmp2' && r.fieldPractice) { const g = FLAG.lmp2FieldSeries ? 'lmp2 ' + r.series : 'lmp2'; t.push(['PF', g, Math.log(r.fieldPractice)], ['PF0', g, 1]); } // 13.4 G: per series
   return t; };
 // Ridge least squares with Huber weights (a wet-suspect or disrupted session is down-weighted, never deleted: rule 4.3 no. 7).
 export function fit(rows, widths = WIDTH) {
