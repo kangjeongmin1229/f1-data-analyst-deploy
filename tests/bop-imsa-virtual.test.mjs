@@ -40,3 +40,9 @@ test('the route passes the tab and circuit to the BoP page (owner 2026-11-16: th
   const {readFileSync} = await import('node:fs'), src = readFileSync(new URL('../worker/website.js', import.meta.url), 'utf8');
   assert.match(src, /bopPage\(Object\.fromEntries\(\[[^\]]*'mode'[^\]]*'track'/);
 });
+
+test('IMSA GTP: WEC-only Hypercars as just-for-fun rows, carried over through the cars in both series (owner 2026-11-16)', () => {
+  const h = strip(bopPage({sc: 'imsa.gtp', year: '2026', event: 'daytona'}, 'en')), fun = h.slice(h.indexOf('Just for fun'));
+  for (const c of ['Ferrari 499P', 'Toyota GR010 Hybrid', 'Peugeot 9X8']) assert.match(fun, new RegExp(c));
+  assert.doesNotMatch(fun.split('</tbody>')[0], /BMW M Hybrid V8|Cadillac/);
+});

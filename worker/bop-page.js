@@ -153,10 +153,15 @@ function imsaPage(o) {
   const H = [t('차량', 'Car'), t('최소 무게 kg', 'Min weight kg'), ...(pctPower ? [t('출력 % (V1 이하)', 'Power % (≤ V1)'), t('출력 % (V2 이상)', 'Power % (≥ V2)'), 'V1/V2 km/h'] : rows.some(([, v]) => v.kW) ? [t('최대 출력 kW', 'Max power kW'), t('V2 이상 변화 %', 'Change above V2 %')] : []),
     ...(cid === 'gtd' && pctPower ? [t('리어윙 각 (최소/최대)', 'Rear wing (min/max)')] : []), ...(rows.some(([, v]) => v.MJ) ? [t('스틴트 에너지 MJ', 'Stint energy MJ')] : [])];
   const body = rows.map(([m, v]) => `<tr><td>${esc(m)}</td><td data-l="${H[1]}">${v.kg}</td>${pctPower ? `<td data-l="${H[2]}">${f(v.pLow)}</td><td data-l="${H[3]}">${f(v.pHigh)}</td><td data-l="${H[4]}">${f(v.v1)}/${f(v.v2)}</td>` : v.kW ? `<td data-l="${H[2]}">${v.kW}</td><td data-l="${H[3]}">${v.gainPct ?? '–'}</td>` : ''}${cid === 'gtd' && pctPower ? `<td data-l="${H[5]}">${v.wingMin != null ? `${v.wingMin}° / ${v.wingMax}°` : v.wing != null ? `${v.wing}°` : '–'}</td>` : ''}${v.MJ ? `<td data-l="${H.at(-1)}">${v.MJ}</td>` : ''}</tr>`).join('');
+  // just for fun (owner 2026-11-16, as in WEC): WEC Hypercars that do not race IMSA, carried over through the cars that race both
+  // (BMW, Cadillac, Aston Martin): their 2026 WEC estimate minus the common cars' mean (weight in kg, power and stint energy as ratios),
+  // added to the common cars' mean in this IMSA table. Le Mans left out (another table basis).
+  const fun = cid === 'gtp' && !o.virtual ? funImsa(ev?.gtp || {}) : [], fmt = x => Math.round(x * 10) / 10;
+  const funRows = fun.length ? `<tr class="bop-fun-head"><td colspan="${H.length}">${t('재미로: 이 차들이 이 대회에 나온다면 (가상)', 'Just for fun: if these cars raced here (hypothetical)')}</td></tr>` + fun.map(([m, x]) => `<tr class="bop-fun"><td>${esc(m)} <span class="bop-sd">${t('WEC 2026 추정에서', 'from the WEC 2026 estimates')}</span></td><td data-l="${H[1]}">${Math.round(x.kg)}</td>${pctPower ? `<td data-l="${H[2]}">${fmt(x.pLow)}</td><td data-l="${H[3]}">${fmt(x.pHigh)}</td><td data-l="${H[4]}">${f(x.v1)}/${f(x.v2)}</td>` : rows.some(([, v]) => v.kW) ? `<td data-l="${H[2]}">${Math.round(x.kW)}</td><td data-l="${H[3]}">–</td>` : ''}${rows.some(([, v]) => v.MJ) ? `<td data-l="${H.at(-1)}">${Math.round(x.MJ)}</td>` : ''}</tr>`).join('') : '';
   return `<section class="hero"><h1>IMSA ${cid === 'gtp' ? 'GTP' : 'GTD PRO · GTD'} ${t('BoP', 'BoP')}</h1><p class="lead">${o.lead ?? t('IMSA는 대회마다 BoP를 기술 회보로 공개합니다. 공식 표를 그대로 보여 줍니다(추정 아님). 가상 BoP 탭에서는 이 표들로 학습해 아무 서킷의 BoP를 예상합니다.', 'IMSA publishes every event BoP as a technical bulletin. This is the official table, not an estimate. The Virtual BoP tab learns from these tables to predict the BoP at any circuit.')}</p></section>
 <section class="panel" aria-label="${t('대회 선택', 'Choose an event')}">${chips}</section>
 <section class="panel"><h2>${o.name} · ${o.title ?? t('공식 BoP', 'Official BoP')}</h2>${(ev?.docs || []).map(u => `<p class="fine"><a href="${esc(u)}">${esc(u.split('/').pop())}</a></p>`).join('')}
-<div class="bop-wrap"><table class="bop-table bop-cards"><thead><tr>${H.map(x => `<th>${x}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>
+<div class="bop-wrap"><table class="bop-table bop-cards"><thead><tr>${H.map(x => `<th>${x}</th>`).join('')}</tr></thead><tbody>${body}${funRows}</tbody></table></div>${fun.length ? `<p class="fine">${t('재미로 넣은 가상의 값입니다(공식 아님). IMSA와 WEC를 함께 달리는 차(BMW·캐딜락·애스턴마틴)를 다리로, 이 차의 2026 WEC 추정 BoP가 그 차들 평균과 다른 만큼(무게는 kg, 출력·에너지는 비율) 이 IMSA 표의 그 차들 평균에 더했습니다. IMSA 출력 %는 각 차가 신고한 출력 곡선 기준이라 이 차들 값은 근사입니다. 르망은 표 기준이 달라 뺐습니다.', 'Hypothetical, just for fun (not official). Carried over through the cars that race both series (BMW, Cadillac, Aston Martin): how far this car\'s 2026 WEC BoP estimate sits from their mean (weight in kg, power and energy as ratios) is added to their mean in this IMSA table. IMSA power % refers to each car\'s own declared curve, so these values are approximate. Le Mans is left out (another table basis).')}</p>` : ''}
 <p class="fine">${o.note ?? t('2024 GTD 표는 리스트릭터·부스트 방식이라 무게만 옮겼습니다. 출력 %는 각 차가 신고한 최대 출력 곡선 대비 비율(V1과 V2 사이는 선형 보간). 회보 PDF의 표를 읽어 옮겼으며, 읽지 못한 행은 빠져 있을 수 있습니다.', '2024 GTD tables use restrictors and boost, so only the weight is copied. Power % is of each car\'s declared maximum power curve (linear between V1 and V2). Rows were read from the bulletin PDFs; a row the reader could not tie to a car may be missing.')}</p></section>${o.acc ?? ''}`;
 }
 
@@ -195,3 +200,16 @@ ${sel('track', t('서킷', 'Circuit'), ids.map(k => [k, esc(trackLabel(k, lapsim
 }
 // virtual base lap for the BoP calculator: a raced WEC track keeps its real typical lap; elsewhere ~18.5 s per km (WEC Hypercar average)
 function lapOf(id) { const known = Object.entries(WEC_TRACK_EVENT).find(([, t]) => t === id); if (known && LAP[known[0]]) return LAP[known[0]]; const L = lapsimAllTracks[id]?.kappa?.length * lapsimAllTracks[id]?.ds; return Math.round((L || 5000) / 1000 * 18.5); }
+
+function funImsa(tab) {
+  const mk = n => String(n).toLowerCase().split(' ')[0], events = D.events.filter(e => e.event !== 'LEMANS');
+  const common = Object.keys(tab).filter(c => events.some(e => Object.keys(e.cars).some(w => mk(w) === mk(c))));
+  if (common.length < 2) return [];
+  const wec = (car, f) => { const v = events.map(e => e.cars[car]?.[f]).filter(Number.isFinite); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+  const wecCommon = f => { const v = common.map(c => wec(Object.keys(events[0].cars).find(w => mk(w) === mk(c)), f)).filter(Number.isFinite); return v.reduce((a, b) => a + b, 0) / v.length; };
+  const imsa = f => { const v = common.map(c => tab[c][f]).filter(Number.isFinite); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+  const ref = tab[common[0]], others = Object.keys(events.at(-1).cars).filter(w => !Object.keys(tab).some(c => mk(c) === mk(w)));
+  return others.map(w => { const r = f => wec(w, f) / wecCommon(f);
+    return [w, {kg: imsa('kg') + (wec(w, 'kg') - wecCommon('kg')), pLow: imsa('pLow') != null ? Math.min(100, imsa('pLow') * r('kW')) : null, pHigh: imsa('pHigh') != null ? Math.min(100, imsa('pHigh') * r('kW')) : null,
+      kW: imsa('kW') != null ? imsa('kW') * r('kW') : null, v1: ref.v1, v2: ref.v2, MJ: imsa('MJ') * r('MJ')}]; }).filter(([, x]) => Number.isFinite(x.kg));
+}
