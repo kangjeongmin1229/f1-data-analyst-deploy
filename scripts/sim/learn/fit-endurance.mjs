@@ -143,17 +143,22 @@ export function loadRows(files = SOURCES) {
   for (const g of new Set(rows.map(r => r.group))) { const R = rows.filter(r => r.group === g), v = r => Math.log(ALL[r.sim].length / simLap(r.sim, g, 2026, {})), m = R.reduce((a, r) => a + v(r), 0) / R.length, sd = Math.sqrt(R.reduce((a, r) => a + (v(r) - m) ** 2, 0) / R.length) || 1; for (const r of R) r.z = (v(r) - m) / sd; zStat[g] = {m, sd}; }
   return {rows, skipped, zStat, records};
 }
-const kind = g => g === 'gt3' ? 'gt' : 'proto';
+// Experiment flags (docs/lapsim-learn.md section 13; off = production): LMP2 own layout kind, street-circuit term per kind
+const FLAG = {lmp2kind: process.env.FIT_LMP2KIND === '1', street: process.env.FIT_STREET === '1'};
+const STREET = /street|detroit|long-beach|st-petersburg|baku|monte-carlo|monaco|singapore|jeddah|las-vegas|miami|macau|^fe-|madring|marina-bay|adelaide|guia/;
+const EXTRA_WIDTH = {ST: 0.02}; // experiment terms, kept out of WIDTH so the production output is unchanged
+const kind = g => g === 'gt3' ? 'gt' : FLAG.lmp2kind && g === 'lmp2' ? 'lmp2' : 'proto';
 const terms = r => { const f = F1G[r.sim] ?? 0, e = era(r.layout, r.season), t = [['S', r.group + '|' + r.series + '|' + r.season, 1], ['SS', r.group + '|' + r.series, 1], ['SY', r.group + '|' + r.season, 1],
   ['T', e, 1], ['TG', e + '|' + kind(r.group), 1], ['M', r.model, 1], ['MB', r.model + '|' + body(r.series), 1], ['MY', r.model + '|' + body(r.series) + '|' + r.season, 1], ['B', r.model, zc(r.z)],
   ['F', kind(r.group), f], ['F2', 'all', 10 * f * f], ['AGE', 'all', age(r.layout, r.season)]];
   if (Number.isFinite(r.w?.trackC)) t.push(['HOT', 'all', Math.max(0, r.w.trackC - 45) / 10]); // grip above 45 °C track temperature: the simulator loses too much
   if (BANKED.has(r.layout)) t.push(['TR', r.layout, 10 * drho(r.w || {})]);
+  if (FLAG.street && STREET.test(r.layout)) t.push(['ST', kind(r.group), 1]);
   return t; };
 // Ridge least squares with Huber weights (a wet-suspect or disrupted session is down-weighted, never deleted: rule 4.3 no. 7).
 export function fit(rows, widths = WIDTH) {
   const idx = new Map(), id = (t, k) => { const key = t + ':' + k; if (!idx.has(key)) idx.set(key, {i: idx.size, t}); return idx.get(key).i; }, X = rows.map(r => terms(r).map(([t, k, v]) => [id(t, k), v])), P = idx.size;
-  const lam = new Float64Array(P); for (const {i, t} of idx.values()) lam[i] = (SIGMA / widths[t]) ** 2;
+  const lam = new Float64Array(P); for (const {i, t} of idx.values()) lam[i] = (SIGMA / (widths[t] ?? EXTRA_WIDTH[t])) ** 2;
   let beta = new Float64Array(P), wt = rows.map(() => 1);
   for (let it = 0; it < 4; it++) {
     const A = Array.from({length: P}, (_, i) => { const a = new Float64Array(P); a[i] = lam[i]; return a; }), b = new Float64Array(P);

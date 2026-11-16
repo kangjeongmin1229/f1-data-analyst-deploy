@@ -531,3 +531,41 @@ Data rules changed the same day:
 - Wet or disrupted sessions (rule 3.3.1) are searched again until no new one is found (at most 3 passes), and another class of an event with a wet class is dropped from 2 % slow (WEC 2025 COTA GT3 was 3.9 % slow, its Hypercar classes 7.6-8.7 %).
 - A layout found from the lap time alone must fit the simulated lap within 8 % (was 12 %, needed only while the Paul Ricard map was broken), and such SRO laps are not records unless `sroSure` (Sydney Brabham, GTWC 2019 no-chicane laps, Baku 2013 were shown as real laps).
 - Not kept: a learned track-temperature slope, an air-density slope on every track (GT3 1.07), a level per GTWC region (GT3 1.11), a class × track term for LMH vs LMDh, Monza and Sonoma surface eras (no gain).
+
+## 13. Refit experiment, every car (owner 2026-11-16, task #5) — declared before the run
+
+Goal: held-out error under 1 % for every group. Baseline (production, same settings, same run): `fit-endurance.mjs` as on main 780c990.
+Baseline event-hidden RMS (eventOut, %): gt3 0.99, lmdh 0.82, lmh 0.84 (class 0.80), lmp2 1.25 (wec 1.25, elms 1.74, alms 0.98, imsa 0.81).
+Model-hidden (modelOut): lmh 1.48 (WEC 1.56), others under 1. The 25 worst rows are whole sessions (Detroit 2025 GT3 −4.7 %, WGI 2026 GT3 −3.5 %,
+ELMS 2023 LMP2 ±3 %): street circuits and LMP2 dominate.
+
+Variants (one flag each, off = byte-identical output):
+- `FIT_LMP2KIND=1` — the layout × kind term TG has three kinds (prototype, LMP2, GT) instead of two: LMP2 is simulated with the LMDh car,
+  so its track interaction differs from the Hypercars'.
+- `FIT_STREET=1` — a street-circuit term per kind (temporary circuits: walls, dust, bumps), width 0.02.
+- both together.
+
+Metrics: eventOut and modelOut per group and per group × series; layoutOut reported. Pass check: a variant is kept only if every group's
+eventOut is lower or equal (within 0.02) and the all-rows eventOut drops by more than the half/double width sensitivity of the baseline;
+F1 is not touched by this fit (rule 2). Widths stay as in the code (not tuned on these rows, rule 3).
+
+### 13.1 Result (run locally 2026-11-16, same rows and settings for all four; flags off = byte-identical to the pre-flag output, checked)
+
+Event-hidden RMS %, per group (model-hidden in brackets):
+
+| Group | A production | B LMP2 kind | C street | D both |
+|---|---|---|---|---|
+| gt3 (n 906) | 0.99 (0.87) | 0.99 (0.87) | 0.99 (0.87) | 0.99 (0.87) |
+| lmdh (237) | 0.82 (0.82) | 0.84 (0.82) | 0.82 (0.82) | 0.84 (0.82) |
+| lmh (115) | 0.84 (1.50) | **0.78** (1.50) | 0.84 (1.50) | 0.78 (1.50) |
+| lmp2 (105) | 1.25 (2.77) | 1.25 (3.06) | 1.25 (2.78) | 1.25 (3.05) |
+| lmp2 wec (22) / elms (30) | 1.25 / 1.74 | 1.43 / 1.66 | 1.25 / 1.74 | 1.43 / 1.66 |
+
+Baseline width sensitivity (half / double): 0.01–0.02. Gate: **C rejected** (no change). **B and D rejected**: LMH improves (0.84 → 0.78)
+but LMP2 WEC gets worse (1.25 → 1.43, n = 22) and LMDh by 0.02. No production change.
+
+Reading: the largest errors are whole sessions (Detroit 2025 GT3 −4.7 %, WGI 2026 GT3 −3.5 %, ELMS 2023 LMP2 ±3 %): the session ran
+faster or slower than the track and season terms say. A model term per car or per track cannot predict that for a hidden event.
+Next variants (to be declared before running): (1) practice-informed prediction: the same weekend's practice best of the class sets an
+event offset (only for predictions made during the weekend, the owner's briefing rule); (2) LMP2 tyre/power era per series (Goodyear
+ELMS/WEC 2021-23, Le Mans power restriction) as known inputs; (3) model-hidden LMH: BoP of the event as a fixed input (rule 4.1.3).
