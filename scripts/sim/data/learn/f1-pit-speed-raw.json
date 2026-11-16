@@ -1,0 +1,75 @@
+{
+ "source": "FIA F1 event documents (fia.com): Race Director's event / competition notes",
+ "events": [
+  {
+   "year": 2024,
+   "track": "jeddah",
+   "event": "Saudi Arabian Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "imola",
+   "event": "Emilia Romagna Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "las-vegas",
+   "event": "Las Vegas Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "yas-marina-circuit",
+   "event": "Abu Dhabi Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "melbourne",
+   "event": "Australian Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "suzuka",
+   "event": "Japanese Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "hungaroring",
+   "event": "Hungarian Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2024,
+   "track": "madring",
+   "event": "Spanish Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2025,
+   "track": "sakhir",
+   "event": "Bahrain Grand Prix",
+   "kph": [],
+   "rows": []
+  },
+  {
+   "year": 2025,
+   "track": "jeddah",
+   "event": "Saudi Arabian Grand Prix",
+   "kph": [],
+   "rows": []
+  }
+ ]
+}
