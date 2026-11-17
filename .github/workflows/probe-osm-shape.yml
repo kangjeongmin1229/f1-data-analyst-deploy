@@ -1,7 +1,7 @@
 name: Probe OSM raceway ways
 on:
   push:
-    branches: ['probe/osm-pits']
+    branches: ['probe/osm-pits-all']
 permissions:
   contents: write
 jobs:
