@@ -65,6 +65,10 @@ jobs:
       - name: Choose track smoothing and build tracks
         run: node scripts/sim/tune-geometry.mjs
       - run: npm ci --omit=dev --ignore-scripts
+      # build-geometry.mjs rewrites the whole tracks file; the extra tracks (no F1 car positions) are appended again here,
+      # otherwise calibrate.mjs fails on the missing lapsimExtraTracks export (run 43976872149)
+      - name: Extra tracks
+        run: node scripts/sim/build-geometry-extra.mjs
       - name: Fetch WEC timing (Al Kamel)
         run: node scripts/sim/fetch-wec.mjs && node scripts/sim/wec-poles.mjs
       # derived speed traces and tracks for local calibration experiments (not committed)
