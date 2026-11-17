@@ -1,0 +1,47 @@
+name: Probe OSM roads, areas and barriers
+on:
+  push:
+    branches: ['probe/osm-roads']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch road and raceway ways, surface areas, barriers and kerbs (© OpenStreetMap contributors, ODbL)
+        run: |
+          cat > /tmp/f.mjs <<'JS'
+          import {writeFileSync, mkdirSync, readFileSync, existsSync} from 'node:fs';
+          import {execSync} from 'node:child_process';
+          const S = JSON.parse(readFileSync('probe-seeds.json', 'utf8'));
+          const API = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+          const first = ['le-mans', 'baku', 'monza', 'imola', 'long-beach'];
+          mkdirSync('probe-out/roads', {recursive: true});
+          const commit = m => { try { execSync(`git config user.name "github-actions[bot]" && git config user.email "41898283+github-actions[bot]@users.noreply.github.com" && git add -f probe-out/roads && git commit -m "OSM roads: ${m} (© OpenStreetMap contributors, ODbL)" && git pull --rebase && git push`, {stdio: 'inherit'}); } catch (e) { console.log('commit', e.message); } };
+          const ids = [...first.filter(k => S[k]), ...Object.keys(S).filter(k => !first.includes(k))];
+          const hw = '^(raceway|motorway|trunk|primary|secondary|tertiary|unclassified|residential|service|living_street|road)(_link)?$';
+          for (const [k, id] of ids.entries()) {
+            const [la, lo] = S[id], f = `probe-out/roads/${id}.json`;
+            if (!existsSync(f)) {
+              const r0 = /nurburgring-24h|le-mans/.test(id) ? 7000 : /^fe-|madring|las-vegas|monte-carlo|baku|singapore|jeddah|miami|long-beach|detroit|melbourne|montreal/.test(id) ? 2500 : 3000;
+              const q = `[out:json][timeout:180];(way["highway"~"${hw}"](around:${r0},${la},${lo});way["area:highway"](around:${r0},${la},${lo});way["highway"]["area"="yes"](around:${r0},${la},${lo});way["barrier"~"wall|guard_rail|jersey_barrier|kerb|fence"](around:${r0},${la},${lo});way["kerb"](around:${r0},${la},${lo});node["kerb"](around:${r0},${la},${lo}););out geom tags;`;
+              for (let n = 0; n < 9; n++) {
+                try {
+                  const r = await fetch(API[n % 3], {method: 'POST', body: 'data=' + encodeURIComponent(q), headers: {'content-type': 'application/x-www-form-urlencoded', 'user-agent': 'kongboda-lapsim'}, signal: AbortSignal.timeout(200000)});
+                  if (!r.ok) throw new Error(r.status); const d = await r.json();
+                  writeFileSync(f, JSON.stringify({seed: [la, lo], radius: r0, els: d.elements.map(e => ({type: e.type, id: e.id, tags: e.tags || {}, g: e.geometry ? e.geometry.map(p => [+p.lat.toFixed(6), +p.lon.toFixed(6)]) : e.lat != null ? [[+e.lat.toFixed(6), +e.lon.toFixed(6)]] : []}))}));
+                  console.log(id, d.elements.length); break;
+                } catch (e) { console.log(id, 'retry', e.message); await new Promise(r => setTimeout(r, 8000)); }
+              }
+              await new Promise(r => setTimeout(r, 3000));
+            }
+            if (k === first.length - 1) commit('pilot tracks');
+          }
+          commit('all tracks');
+          JS
+          node /tmp/f.mjs
