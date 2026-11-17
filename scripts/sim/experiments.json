@@ -11,10 +11,21 @@
     "LAPSIM_WPRIOR": "8"
   },
   "configs": [
-    {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
+    {
+      "name": "BE0",
+      "env": {}
+    },
+    {
+      "name": "BE1",
+      "env": {
+        "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234"
+      }
+    },
+    {
+      "name": "BE2",
+      "env": {
+        "LAPSIM_BRAKE_ENV_HYPER": "9.92,0.003719"
+      }
+    }
   ]
 }
