@@ -51,8 +51,12 @@ jobs:
           echo '${{ needs.plan.outputs.input_sha256 }}  /tmp/lapsim-inputs.tgz' | sha256sum --check
           tar xzf /tmp/lapsim-inputs.tgz
           node -e "const fs=require('fs');const W=JSON.parse(fs.readFileSync('scripts/sim/data/wet-sessions.json','utf8')).wec;const p='.cache/lapsim/wec.json';const rows=JSON.parse(fs.readFileSync(p,'utf8'));let n=0;for(const row of rows)if(row.weather&&W[row.year+' '+row.track]){row.weather.rain=true;n++}fs.writeFileSync(p,JSON.stringify(rows));console.log('wet sessions marked:',n)"
+      - run: npm ci
+      - name: Extra tracks (the pinned archive predates lapsimExtraTracks)
+        run: node scripts/sim/build-geometry-extra.mjs
       - name: Calibrate (${{ matrix.config.name }})
         run: |
+          set -o pipefail
           for kv in $(echo '${{ needs.plan.outputs.common_env }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"'); do export "$kv"; done
           for kv in $(echo '${{ toJson(matrix.config.env) }}' | jq -r 'to_entries[] | "\(.key)=\(.value)"'); do export "$kv"; done
           env | grep '^LAPSIM_' | sort
@@ -81,14 +85,10 @@ jobs:
         with:
           pattern: exp-*
           path: results
-      - name: Compare axle variants with B
+      - name: Compare variants with the first config
         run: |
           mkdir -p comparison
-          node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js \
-            results/exp-F/probe-out/cal-F.js \
-            results/exp-G/probe-out/cal-G.js \
-            results/exp-H/probe-out/cal-H.js \
-            results/exp-I/probe-out/cal-I.js | tee comparison/B-vs-axle.txt
+          ls results/*/probe-out/cal-*.js | sort | xargs node scripts/sim/exp-compare.mjs | tee comparison/compare.txt
       - uses: actions/upload-artifact@v4
         with:
           name: exp-comparison
