@@ -108,7 +108,10 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
       feat: {ftf: t.throttle?.length ? t.throttle.filter(x => x >= 98).length / t.throttle.length : null, vmean: tracks[t.track].kappa.length * tracks[t.track].ds / t.lap_seconds},
       obs: {s: t.s, v: t.v.map(x => x / 3.6)}, weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
+  // LAPSIM_CAUSAL_SOC=off (experiment 2026-11-21): 2026+ deployment with one energy cut-off for the lap instead of the running 4 MJ
+  // battery window (W17 clipping rows: kernel 203.1 -> 169.8 m, gain 33.4 +/- 6.6 m); kept only if the pole gate passes too
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
+  if (E.LAPSIM_CAUSAL_SOC === 'off' && base.ers?.rule === 'f1-2026') base.ers = {...base.ers, causalSoc: false};
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
   const params = PARAMS.map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
