@@ -7,14 +7,24 @@
     "LAPSIM_BCD_ITERS": "100",
     "LAPSIM_WTIME": "20",
     "LAPSIM_WSECTOR": "2",
+    "LAPSIM_TRACK_DRAG": "on",
     "LAPSIM_TEAMS": "on",
-    "LAPSIM_WPRIOR": "8"
+    "LAPSIM_WPRIOR": "8",
+    "LAPSIM_FIA_ZONES": "on",
+    "LAPSIM_PU_QUALI": "on",
+    "LAPSIM_PU_RAMP": "on",
+    "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234"
   },
   "configs": [
-    {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
+    {
+      "name": "B",
+      "env": {}
+    },
+    {
+      "name": "L",
+      "env": {
+        "LAPSIM_DEPLOY_LOOKAHEAD": "on"
+      }
+    }
   ]
 }
