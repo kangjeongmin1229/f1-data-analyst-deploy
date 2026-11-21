@@ -159,7 +159,7 @@ jobs:
           LAPSIM_PU_QUALI: 'on'
           # C5.12 power-reduction ramp in the fit (run 44886079566, Gate G v2 correctness, m = 2, k = 1.45): F1 1.070 -> 0.983 %, RMS loss
           # bound 0.019 <= 0.054 (pass). WEC moved only through the shared F1 track grip, which is frozen for WEC since #381
-          LAPSIM_PU_RAMP: 'on'
+          LAPSIM_PU_RAMP: 'off' # attribution run (Session C 2026-11-22): A6 without the ramp, to split the F1 2026 change
           # Hypercar (LMH/LMDh) peak braking capped at the iRacing GTP envelope 8.63 + 0.003234 v^2 m/s^2 (owner rule 14: learned from
           # iRacing, "model"). Experiment 44043761033: hypercar holdout mean 1.24 -> 1.16 % (BE0 -> BE1; 1.15x envelope BE2: 1.20 %)
           LAPSIM_BRAKE_ENV_HYPER: '8.63,0.003234'
