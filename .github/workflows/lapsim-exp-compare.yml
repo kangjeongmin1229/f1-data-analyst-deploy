@@ -20,14 +20,14 @@ jobs:
         with:
           pattern: exp-*
           path: results
-          run-id: 44887271869
+          run-id: 44886079566
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Compare
         run: |
           mkdir -p comparison
-          for v in G; do node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js results/exp-$v/probe-out/cal-$v.js | tee comparison/B-vs-$v.txt; done
-          for v in B G; do cp results/exp-$v/probe-out/intervals-$v.json results/exp-$v/probe-out/cal-$v.js comparison/ 2>/dev/null || true; done
+          for v in R S; do node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js results/exp-$v/probe-out/cal-$v.js | tee comparison/B-vs-$v.txt; done
+          for v in B R S; do cp results/exp-$v/probe-out/intervals-$v.json results/exp-$v/probe-out/cal-$v.js comparison/ 2>/dev/null || true; done
       - name: Commit result
         run: |
           git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add comparison && git commit -m "Experiment compare B vs G with calibration files (run 44887271869)" && git push
+          git add comparison && git commit -m "Experiment compare B vs R, S with calibration files (run 44886079566)" && git push
