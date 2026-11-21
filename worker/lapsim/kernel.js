@@ -178,7 +178,7 @@ export function lapsimKernel() {
     const pr = env.puRamp && ers.rule === 'f1-2026' ? env.puRamp : null, inZ = (list, x) => (list || []).find(z => z.to >= z.from ? x >= z.from && x <= z.to : x >= z.from || x <= z.to);
     // HOLD_MIN 100 kW: a step that already reaches 100 kW may drop at once. C5.12.4 read strictly also holds steps below 100 kW for 1 s
     // (HOLD_MIN 0); that variant waits for its own Gate G test (claude/release/c512-hold-wip-2026-11-21.patch)
-    const ramp = pr ? {R: (pr.rateKWs || 100) * 1e3} : null, HOLD_MIN = 100e3;
+    const ramp = pr ? {R: (pr.rateKWs || 100) * 1e3} : null, HOLD_MIN = (pr?.holdMinKW ?? 100) * 1e3;
     const rampStep = i => { const b = inZ(pr.bigCut, i * track.ds); return b ? (b.maxKW || 350) * 1e3 : 150e3; };
     const rampVMin = i => { const z = inZ(pr.speed, i * track.ds); return (z ? z.kph : 210) / 3.6; };
     const vMaxCar = car.vMax ?? 110;

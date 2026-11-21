@@ -12,29 +12,16 @@
       "env": {}
     },
     {
-      "name": "F",
+      "name": "R",
       "env": {
-        "LAPSIM_CAUSAL_SOC": "off"
+        "LAPSIM_PU_RAMP": "on"
       }
     },
     {
-      "name": "G",
+      "name": "S",
       "env": {
-        "LAPSIM_AXLE": "on"
-      }
-    },
-    {
-      "name": "H",
-      "env": {
-        "LAPSIM_CAUSAL_SOC": "off",
-        "LAPSIM_AXLE": "on"
-      }
-    },
-    {
-      "name": "I",
-      "env": {
-        "LAPSIM_AXLE": "on",
-        "LAPSIM_LOADEXP": "0.75"
+        "LAPSIM_PU_RAMP": "on",
+        "LAPSIM_PU_HOLDMIN": "0"
       }
     }
   ]
