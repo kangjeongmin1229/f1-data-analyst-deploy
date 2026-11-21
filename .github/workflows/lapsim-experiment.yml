@@ -84,14 +84,10 @@ jobs:
         with:
           pattern: exp-*
           path: results
-      - name: Compare axle variants with B
+      - name: Compare the axle model with B (3 x 100 fit)
         run: |
           mkdir -p comparison
-          node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js \
-            results/exp-F/probe-out/cal-F.js \
-            results/exp-G/probe-out/cal-G.js \
-            results/exp-H/probe-out/cal-H.js \
-            results/exp-I/probe-out/cal-I.js | tee comparison/B-vs-axle.txt
+          node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js results/exp-G/probe-out/cal-G.js | tee comparison/B-vs-axle.txt
       - uses: actions/upload-artifact@v4
         with:
           name: exp-comparison

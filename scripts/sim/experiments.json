@@ -4,7 +4,9 @@
   "common_env": {
     "LAPSIM_FIA_ZONES": "on",
     "LAPSIM_PU_QUALI": "on",
-    "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234"
+    "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234",
+    "LAPSIM_ROUNDS": "3",
+    "LAPSIM_BCD_ITERS": "100"
   },
   "configs": [
     {
@@ -12,29 +14,9 @@
       "env": {}
     },
     {
-      "name": "F",
-      "env": {
-        "LAPSIM_CAUSAL_SOC": "off"
-      }
-    },
-    {
       "name": "G",
       "env": {
         "LAPSIM_AXLE": "on"
-      }
-    },
-    {
-      "name": "H",
-      "env": {
-        "LAPSIM_CAUSAL_SOC": "off",
-        "LAPSIM_AXLE": "on"
-      }
-    },
-    {
-      "name": "I",
-      "env": {
-        "LAPSIM_AXLE": "on",
-        "LAPSIM_LOADEXP": "0.75"
       }
     }
   ]
