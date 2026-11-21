@@ -2,19 +2,28 @@
   "input_url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
   "input_sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
   "common_env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_WPRIOR": "8"
+    "LAPSIM_FIA_ZONES": "on",
+    "LAPSIM_PU_QUALI": "on",
+    "LAPSIM_PU_RAMP": "on",
+    "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234"
   },
   "configs": [
-    {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
+    {
+      "name": "B",
+      "env": {}
+    },
+    {
+      "name": "X",
+      "env": {
+        "LAPSIM_SUPERCLIP_FULL": "on"
+      }
+    },
+    {
+      "name": "Y",
+      "env": {
+        "LAPSIM_SUPERCLIP_FULL": "on",
+        "LAPSIM_DEPLOY_LOOKAHEAD": "on"
+      }
+    }
   ]
 }

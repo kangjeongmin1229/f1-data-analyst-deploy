@@ -285,8 +285,9 @@ export function lapsimKernel() {
     const maxOf = a => { let m = -Infinity; for (let i = 0; i < a.length; i++) { const x = a[i]; if (x !== x) return NaN; if (x > m) m = x; } return m; }; // Math.max(...a) for the speeds (no ±0 case)
     for (let i = 0; i < n; i++) { const low = lowAt(i); clF[i] = clAt(i, low); cdF[i] = cdAt(i, low); muXF[i] = muAt(i) * (t.muXTrac / t.muY0); }
     const below = (vi, vCut) => vi < vCut ? (vi > cLo && (cLo = vi), true) : (vi < cHi && (cHi = vi), false);
+    let emptyHit = false;
     const forward = (vCut, vH = Infinity) => {
-      const v = fwd; vhLo = -Infinity; vhHi = Infinity; cLo = -Infinity; cHi = Infinity;
+      const v = fwd; vhLo = -Infinity; vhHi = Infinity; cLo = -Infinity; cHi = Infinity; emptyHit = false;
       v[iMin] = Math.min(vLat[iMin], vBack[iMin]);
       let soc = socMax, got = 0;
       for (let pass = 0; pass < 2; pass++) {
@@ -297,6 +298,7 @@ export function lapsimKernel() {
           const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vi, i, L);
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]));
           let pErs = below(vi, vCut) && (!track || soc > 0) ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
+          if (track && soc <= 0 && vi < vCut && lim > 0) emptyHit = true; // experiment L: the store ran empty where the car wanted to deploy
           // C5.12 (2026 PU documents): a voluntary cut of ERS-K power while accelerating is one step of at most 150 kW (the event's
           // value in a listed corner zone) held 1 s, then a ramp at rateKWs down to 100 kW; below 100 kW it may stop at once
           // (C5.12.4/6/7). Done here, inside the deployment, so the cut-off speed is solved with the ramp's energy included (the
@@ -393,6 +395,9 @@ export function lapsimKernel() {
       // super-clipping: if the lap is short of the recharge limit, harvest at full throttle at the top of
       // the straights (above vH) and spend the energy lower down, when that is faster
       const limit = env.rechargeMax ?? ers.rechargeMax ?? 8.5e6, soc = ers.socWindow ?? 4e6;
+      // experiment (Session A 21:11, Las Vegas): real 2026 cars harvest the whole qualifying recharge (super-clipping on the long
+      // straights); fullRec keeps the legal plan nearest the recharge limit instead of the fastest one
+      const fullRec = env.superclipFull ?? ers.superclipFull ?? (typeof process !== 'undefined' && process.env?.LAPSIM_SUPERCLIP_FULL === 'on');
       if (throttleHarvest && acc.eRegen < limit - 1e4) {
         // super-clipping plan: deploy below a cut-off, harvest at full throttle above vH. The earlier single try (cut-off for a full
         // recharge, then vH) missed the energy limit by a few kJ when grip rose and fell back to the slower plan (Daytona, bug
@@ -409,9 +414,24 @@ export function lapsimKernel() {
           const b = runAt(cut, lo);
           // tolerance 1.5 kJ: the forward pass caps deploy by its own state of charge, and the lap account differs from it by
           // about 1 kJ (the old 1 kJ tolerance rejected legal plans)
-          if (b.eDeploy <= budget(b.eRegen) + 1.5e3 && b.time < acc.time) { vCut = cut; vH = lo; acc = b; } } }
+          if (b.eDeploy <= budget(b.eRegen) + 1.5e3 && (fullRec ? b.eRegen > acc.eRegen + 1e3 || (Math.abs(b.eRegen - acc.eRegen) <= 1e3 && b.time < acc.time) : b.time < acc.time)) { vCut = cut; vH = lo; acc = b; } } }
         v = forward(vCut, vH); acc = account(v); // forward() reuses its buffers: run the chosen plan last
       }
+    }
+    // experiment L (Las Vegas 2026, pre-registered in claude/status-2026-11-21-C.md): the causal 4 MJ store spends its energy on the first
+    // straights and reaches the longest one empty; real cars clip early on the short straights to save it (deploy where a joule gains
+    // the most time, i.e. at low speed). Try deploy cut-off speeds below the top speed and keep the fastest legal lap.
+    const LOOK = env.deployLookahead ?? ers.deployLookahead ?? (typeof process !== 'undefined' && process.env?.LAPSIM_DEPLOY_LOOKAHEAD === 'on');
+    if (LOOK && causal && ers.pMax && (forward(vCut, vH), emptyHit)) {
+      const vTop = lastTop ?? maxOf(v), base = {cut: vCut, time: acc.time};
+      let best = base;
+      // with super-clipping on the short straights (harvest at full throttle above vH) to refill the store for the long one
+      const base2 = {...base, vh: vH}; best = base2;
+      for (const fc of [1.01, 0.86, 0.74, 0.62]) for (const fh of [Infinity, 0.93, 0.84, 0.76]) {
+        const cut = Math.min(vCut, vTop * fc), vh = throttleHarvest ? Math.min(vH, vTop * fh) : vH, a = account(forward(cut, vh));
+        if (a.eDeploy <= budget(a.eRegen) + 1.5e3 && a.time < best.time - 1e-4) best = {cut, vh, time: a.time};
+      }
+      vCut = best.cut; vH = best.vh; v = forward(vCut, vH); acc = account(v);
     }
 
     // Results
