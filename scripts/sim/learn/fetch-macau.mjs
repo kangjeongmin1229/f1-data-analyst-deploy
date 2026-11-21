@@ -41,7 +41,7 @@ if (process.argv[1]?.endsWith('fetch-macau.mjs')) {
       if (!s.pdf || /combined|grid|entry/i.test(s.title)) continue;
       const buf = await get(s.pdf, true); if (!buf) continue;
       const text = pdfText(buf, TMP), rows = itsRows(text), ob = overallBest(text);
-      if (!rows.length) { console.log(`${year} ${ev.title} ${s.title}: no text rows (scanned PDF?), skipped`); continue; }
+      if (!rows.length) { const t = text.replace(/\s+/g, " ").trim(); console.log(`${year} ${ev.title} ${s.title}: no rows (${t.length} chars of text${t.length > 40 ? ": " + t.slice(0, 300) : ", scanned"}), skipped`); continue; }
       const check = ob ? (rows.find(r => r.car === ob.car)?.best === ob.best ? 'overall best ok' : 'overall best ✗') : 'no overall line';
       for (const r of rows) out.push({series: 'macau', season: +year, event: ev.title, session: s.title.trim(), kind: kindOf(s.title), ...r});
       console.log(`${year} ${ev.title} ${s.title}: ${rows.length} cars, ${check}`);
