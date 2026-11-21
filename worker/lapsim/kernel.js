@@ -393,6 +393,9 @@ export function lapsimKernel() {
       // super-clipping: if the lap is short of the recharge limit, harvest at full throttle at the top of
       // the straights (above vH) and spend the energy lower down, when that is faster
       const limit = env.rechargeMax ?? ers.rechargeMax ?? 8.5e6, soc = ers.socWindow ?? 4e6;
+      // experiment (Session A 21:11, Las Vegas): real 2026 cars harvest the whole qualifying recharge (super-clipping on the long
+      // straights); fullRec keeps the legal plan nearest the recharge limit instead of the fastest one
+      const fullRec = env.superclipFull ?? ers.superclipFull ?? (typeof process !== 'undefined' && process.env?.LAPSIM_SUPERCLIP_FULL === 'on');
       if (throttleHarvest && acc.eRegen < limit - 1e4) {
         // super-clipping plan: deploy below a cut-off, harvest at full throttle above vH. The earlier single try (cut-off for a full
         // recharge, then vH) missed the energy limit by a few kJ when grip rose and fell back to the slower plan (Daytona, bug
@@ -409,7 +412,7 @@ export function lapsimKernel() {
           const b = runAt(cut, lo);
           // tolerance 1.5 kJ: the forward pass caps deploy by its own state of charge, and the lap account differs from it by
           // about 1 kJ (the old 1 kJ tolerance rejected legal plans)
-          if (b.eDeploy <= budget(b.eRegen) + 1.5e3 && b.time < acc.time) { vCut = cut; vH = lo; acc = b; } } }
+          if (b.eDeploy <= budget(b.eRegen) + 1.5e3 && (fullRec ? b.eRegen > acc.eRegen + 1e3 || (Math.abs(b.eRegen - acc.eRegen) <= 1e3 && b.time < acc.time) : b.time < acc.time)) { vCut = cut; vH = lo; acc = b; } } }
         v = forward(vCut, vH); acc = account(v); // forward() reuses its buffers: run the chosen plan last
       }
     }
