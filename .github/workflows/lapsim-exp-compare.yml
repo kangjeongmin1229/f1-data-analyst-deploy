@@ -1,6 +1,6 @@
-name: Lap simulator experiment compare (finished variants only)
-# Fork-only helper (Session C, 2026-11-21): the soc-axle run 44857392756 cancelled G and I at the job limit, so its compare job was
-# skipped. This compares the finished variants (B, F, H) and commits the text back to this branch.
+name: Lap simulator A6 derived data (fork helper)
+# Fork-only helper (Session C, 2026-11-21): A6 run 44858524098 failed one test after the fit, so its derived data was not committed.
+# This copies the run's lapsim-derived artifact into this branch so the failure can be reproduced and checked.
 on:
   push:
     branches: ['lapsim-cmp/**']
@@ -8,26 +8,19 @@ permissions:
   contents: write
   actions: read
 jobs:
-  compare:
+  copy:
     if: github.repository == 'kangjeongmin1229/f1-data-analyst-deploy'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
       - uses: actions/download-artifact@v4
         with:
-          pattern: exp-*
-          path: results
-          run-id: 44857392756
+          name: lapsim-derived
+          path: a6-derived
+          run-id: 44858524098
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Compare
-        run: |
-          mkdir -p comparison
-          for v in F H; do node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js results/exp-$v/probe-out/cal-$v.js | tee comparison/B-vs-$v.txt; done
-          for v in B F H; do cp results/exp-$v/probe-out/intervals-$v.json results/exp-$v/probe-out/cal-$v.js comparison/ 2>/dev/null || true; done
-      - name: Commit result
+      - name: Commit
         run: |
           git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add comparison && git commit -m "Experiment compare B vs F, H with calibration files (run 44857392756)" && git push
+          find a6-derived -type f | head -50
+          git add a6-derived && git commit -m "A6 derived data from run 44858524098" && git push
