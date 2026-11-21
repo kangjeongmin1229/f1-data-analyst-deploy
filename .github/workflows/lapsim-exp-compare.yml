@@ -26,8 +26,8 @@ jobs:
         run: |
           mkdir -p comparison
           for v in F H; do node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js results/exp-$v/probe-out/cal-$v.js | tee comparison/B-vs-$v.txt; done
-          for v in B F H; do cp results/exp-$v/probe-out/intervals-$v.json comparison/ 2>/dev/null || true; done
+          for v in B F H; do cp results/exp-$v/probe-out/intervals-$v.json results/exp-$v/probe-out/cal-$v.js comparison/ 2>/dev/null || true; done
       - name: Commit result
         run: |
           git config user.name github-actions[bot]; git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add comparison && git commit -m "Experiment compare B vs F, H (run 44857392756)" && git push
+          git add comparison && git commit -m "Experiment compare B vs F, H with calibration files (run 44857392756)" && git push
