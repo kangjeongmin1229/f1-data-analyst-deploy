@@ -50,6 +50,9 @@ jobs:
           curl --fail --location --retry 3 '${{ needs.plan.outputs.input_url }}' --output /tmp/lapsim-inputs.tgz
           echo '${{ needs.plan.outputs.input_sha256 }}  /tmp/lapsim-inputs.tgz' | sha256sum --check
           tar xzf /tmp/lapsim-inputs.tgz
+          # calibrate on the committed track shapes (as lapsim-data keep mode): the archive's tracks are older and lack lapsimExtraTracks
+          # (2026-11-21 run 44849394307 failed); its traces are scaled to the committed lengths
+          cp worker/lapsim/tracks-data.js /tmp/built-tracks.mjs && git checkout -- worker/lapsim/tracks-data.js && node scripts/sim/traces-to-tracks.mjs /tmp/built-tracks.mjs
           node -e "const fs=require('fs');const W=JSON.parse(fs.readFileSync('scripts/sim/data/wet-sessions.json','utf8')).wec;const p='.cache/lapsim/wec.json';const rows=JSON.parse(fs.readFileSync(p,'utf8'));let n=0;for(const row of rows)if(row.weather&&W[row.year+' '+row.track]){row.weather.rain=true;n++}fs.writeFileSync(p,JSON.stringify(rows));console.log('wet sessions marked:',n)"
       - name: Calibrate (${{ matrix.config.name }})
         run: |
