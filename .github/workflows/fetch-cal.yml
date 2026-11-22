@@ -12,7 +12,7 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     env:
-      RUNS: '45007471423'
+      RUNS: ''
     steps:
       - uses: actions/checkout@v4
       - name: Download
@@ -20,7 +20,18 @@ jobs:
         run: |
           for r in $RUNS; do mkdir -p cal/$r; gh run download $r -R ${{ github.repository }} -n calibration-output -D cal/$r || echo "missing $r"; done
           ls -R cal | head -40
-      - name: Commit
+      - name: OpenF1 trace scan (rule A+, report only)
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          mkdir -p /tmp/der scan/worker/lapsim scan/scripts/sim
+          gh run download 44935367129 -R ${{ github.repository }} -n lapsim-derived -D /tmp/der || echo "no lapsim-derived"
+          find /tmp/der -name traces.json | head -1
+          U=https://raw.githubusercontent.com/MisterKinn/f1-data-analyst/main
+          curl -sSf $U/worker/lapsim/real-tel-gaps.js -o scan/worker/lapsim/real-tel-gaps.js
+          curl -sSf $U/scripts/sim/trace-gaps-scan.mjs -o scan/scripts/sim/trace-gaps-scan.mjs
+          echo '{"type":"module"}' > scan/package.json
+          T=$(find /tmp/der -name traces.json | head -1); [ -n "$T" ] && node scan/scripts/sim/trace-gaps-scan.mjs "$T" > cal/trace-scan.md || echo "no traces" > cal/trace-scan.md
+          cat cal/trace-scan.md
         run: |
           git config user.name "kongboda-probe[bot]"; git config user.email "probe@users.noreply.github.com"
           git add cal && git commit -m "calibration artifacts $RUNS" && git push
