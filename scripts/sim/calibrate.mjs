@@ -85,7 +85,9 @@ const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce', ...(E.LAPSIM_FIT_DMU === 
 // physical bounds, so geometry error cannot be absorbed by impossible cars. ClA up to 8 m²:
 // modern F1 cars make about 3.5x their weight in downforce near 300 km/h (ClA ≈ 6.5–7). The fitted
 // values are effective ones: they also absorb what the quasi-steady-state model leaves out.
-const BOUNDS = {muY: [1.5, 2.4], clA: [2.5, 8], cdA: [0.7, 1.9], cdALow: [0.45, 1.6], pIce: [0.85, 1.15], dmuMag: [5e-6, 2.5e-4], clAExp: [0.7, 1.3]};
+const BOUNDS = {muY: [1.5, 2.4], clA: [2.5, 8], cdA: [0.7, 1.9], cdALow: [0.45, 1.6], pIce: [0.85, 1.15]};
+// candidate parameters (flags only; kept apart so the report bounds in exp-physics.mjs stay the production set)
+BOUNDS.dmuMag = [5e-6, 2.5e-4]; BOUNDS.clAExp = [0.7, 1.3];
 
 const seasons = {};
 if (ONLY_WEC) Object.assign(seasons, prevCal.seasons);
