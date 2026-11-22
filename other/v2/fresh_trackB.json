@@ -1,0 +1,236 @@
+{
+ "laps": {
+  "lv24_fp2": {
+   "track": "Las Vegas",
+   "event": "2024 Las Vegas Grand Prix Practice 2 HAM L14",
+   "rpm_corr": 0.967,
+   "up": [
+    0.83,
+    0.95,
+    -0.34
+   ],
+   "brake": [
+    1.0,
+    0.71,
+    0.11
+   ],
+   "brake3_ref": [
+    1.0,
+    0.71,
+    0.11
+   ]
+  },
+  "lv24_q": {
+   "track": "Las Vegas",
+   "event": "2024 Las Vegas Grand Prix Qualifying RUS L24",
+   "rpm_corr": 0.961,
+   "up": [
+    1.0,
+    0.96,
+    -0.28
+   ],
+   "brake": [
+    0.6,
+    0.43,
+    0.01
+   ],
+   "brake3_ref": [
+    0.67,
+    0.57,
+    0.06
+   ]
+  },
+  "ru21_fp2": {
+   "track": "Sochi",
+   "event": "2021 Russian FP2 BOT L7",
+   "rpm_corr": 0.932,
+   "up": [
+    0.88,
+    0.64,
+    -0.27
+   ],
+   "brake": [
+    1.0,
+    1.0,
+    0.0
+   ],
+   "brake3_ref": [
+    1.0,
+    1.0,
+    0.0
+   ]
+  },
+  "tu20_q": {
+   "track": "Mugello",
+   "event": "2020 Tuscan Q HAM L10",
+   "rpm_corr": 0.958,
+   "up": [
+    0.86,
+    0.5,
+    -0.42
+   ],
+   "brake": [
+    1.0,
+    1.0,
+    -0.09
+   ],
+   "brake3_ref": [
+    0.86,
+    1.0,
+    -0.09
+   ]
+  },
+  "tu20_fp3": {
+   "track": "Mugello",
+   "event": "2020 Tuscan FP3 BOT L11",
+   "rpm_corr": 0.95,
+   "up": [
+    1.0,
+    0.33,
+    -0.34
+   ],
+   "brake": [
+    1.0,
+    1.0,
+    0.01
+   ],
+   "brake3_ref": [
+    1.0,
+    1.0,
+    0.01
+   ]
+  },
+  "ei20_q": {
+   "track": "Nürburgring",
+   "event": "2020 Eifel Q BOT L18",
+   "rpm_corr": 0.954,
+   "up": [
+    0.82,
+    0.76,
+    -0.31
+   ],
+   "brake": [
+    1.0,
+    0.8,
+    0.04
+   ],
+   "brake3_ref": [
+    0.83,
+    1.0,
+    0.04
+   ]
+  },
+  "ei20_fp3": {
+   "track": "Nürburgring",
+   "event": "2020 Eifel FP3 BOT L21",
+   "rpm_corr": 0.982,
+   "up": [
+    0.81,
+    0.65,
+    -0.33
+   ],
+   "brake": [
+    1.0,
+    0.8,
+    0.16
+   ],
+   "brake3_ref": [
+    0.8,
+    0.8,
+    0.16
+   ]
+  },
+  "de19_q": {
+   "track": "Hockenheim",
+   "event": "2019 German Q HAM L15",
+   "rpm_corr": 0.966,
+   "up": [
+    1.0,
+    0.7,
+    -0.28
+   ],
+   "brake": [
+    0.8,
+    0.8,
+    -0.05
+   ],
+   "brake3_ref": [
+    0.8,
+    0.8,
+    -0.05
+   ]
+  }
+ },
+ "summary": {
+  "brake": {
+   "tracks": {
+    "Las Vegas": [
+     0.8,
+     0.57
+    ],
+    "Sochi": [
+     1.0,
+     1.0
+    ],
+    "Mugello": [
+     1.0,
+     1.0
+    ],
+    "Nürburgring": [
+     1.0,
+     0.8
+    ],
+    "Hockenheim": [
+     0.8,
+     0.8
+    ]
+   },
+   "n_tracks": 5,
+   "P": 1.0,
+   "P_ci90": [
+    0.8,
+    1.0
+   ],
+   "R": 0.8,
+   "R_ci90": [
+    0.57,
+    1.0
+   ]
+  },
+  "up": {
+   "tracks": {
+    "Las Vegas": [
+     0.915,
+     0.955
+    ],
+    "Sochi": [
+     0.88,
+     0.64
+    ],
+    "Mugello": [
+     0.9299999999999999,
+     0.41500000000000004
+    ],
+    "Nürburgring": [
+     0.815,
+     0.7050000000000001
+    ],
+    "Hockenheim": [
+     1.0,
+     0.7
+    ]
+   },
+   "n_tracks": 5,
+   "P": 0.915,
+   "P_ci90": [
+    0.815,
+    1.0
+   ],
+   "R": 0.7,
+   "R_ci90": [
+    0.41500000000000004,
+    0.955
+   ]
+  }
+ }
+}
