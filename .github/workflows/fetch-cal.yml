@@ -1,0 +1,26 @@
+name: Fetch calibration artifacts (probe)
+# Session C 2026-11-22: copies the calibration-output artifact of experiment runs into this branch (the session cannot download
+# artifacts directly). Edit RUNS and push. Never merge.
+on:
+  push:
+    branches: ['probe-cal-artifacts']
+    paths: ['.github/workflows/fetch-cal.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      RUNS: '44987064528'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          for r in $RUNS; do mkdir -p cal/$r; gh run download $r -R ${{ github.repository }} -n calibration-output -D cal/$r || echo "missing $r"; done
+          ls -R cal | head -40
+      - name: Commit
+        run: |
+          git config user.name "kongboda-probe[bot]"; git config user.email "probe@users.noreply.github.com"
+          git add cal && git commit -m "calibration artifacts $RUNS" && git push
