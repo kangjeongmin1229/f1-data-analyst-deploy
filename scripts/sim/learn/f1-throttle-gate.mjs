@@ -64,6 +64,10 @@ for (const year of ['2025', '2026']) {
       const q = key === 'tau' ? 'rise' : 'pick'; if (Number.isFinite(E.base[tr][q]) && Number.isFinite(E[key][tr][bj])) gains.push(E.base[tr][q] - E[key][tr][bj]); }
     const all = j => T.reduce((s, x) => s + (E[key][x][j] ?? 0), 0) / T.length; let bj = 0; for (let j = 1; j < grid.length; j++) if (all(j) < all(bj)) bj = j;
     return {...stat(gains), chosenOnAll: grid[bj], chosenPerFold: [...new Set(chosen)]}; };
-  result[year] = {tau: pickBest('tau', TAU), lead: pickBest('lead', LEAD)}; console.log(year, JSON.stringify(result[year]));
+  result[year] = {tau: pickBest('tau', TAU), lead: pickBest('lead', LEAD)};
+  // per held-out track gains (v3 pooling): the grid value picked on the other tracks, judged on this one
+  result[year].perTrack = Object.fromEntries(T.map(tr => { const o = T.filter(x => x !== tr), at = (key, grid) => { const mean = j => o.reduce((s, x) => s + (E[key][x][j] ?? 0), 0) / o.length; let k = 0; for (let j = 1; j < grid.length; j++) if (mean(j) < mean(k)) k = j; return k; };
+    return [tr, {tau: E.base[tr].rise - E.tau[tr][at('tau', TAU)], lead: E.base[tr].pick - E.lead[tr][at('lead', LEAD)]}]; }));
+  console.log(year, JSON.stringify({tau: result[year].tau, lead: result[year].lead}));
 }
 if (jsonOut) writeFileSync(jsonOut, JSON.stringify(result, null, 1));
