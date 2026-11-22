@@ -114,7 +114,7 @@ export function lapsimKernel() {
     const m = car.mass, wb = car.wheelbase ?? 3.6, h = car.cogHeight ?? 0.3;
     return {
       m, hOverWb: h / wb,
-      muX0: car.muX, muY0: car.muY, dmu: car.dmuDfz ?? -5e-5, fz0: car.fz0 ?? 3000,
+      muX0: car.muX, muY0: car.muY, dmu: car.dmuMag != null ? -car.dmuMag : car.dmuDfz ?? -5e-5, fz0: car.fz0 ?? 3000, // dmuMag: fitted load sensitivity (gate candidate A, off when unset)
       rearStatic: car.rearWeight ?? 0.55, rearAero: car.rearAero ?? 0.55,
       muXTrac: car.muXTrac ?? car.muX, inertia: car.inertiaFactor ?? 1.0, awdAbove: car.awdAboveKph != null ? car.awdAboveKph / 3.6 : null,
       axle: !!car.axle, q: car.loadExp ?? 0.85, hOverTw: h / (car.trackWidth ?? 1.6), rollFront: car.rollFront ?? 0.5,
@@ -214,6 +214,8 @@ export function lapsimKernel() {
     const cdAt = (i, low) => car.cdA + low * ((car.cdALow ?? car.cdA) - car.cdA);
     const muAt = i => grip * (mu ? mu[i] : 1);
     const vAir = (v, i) => Math.max(0, v - tail[i]);
+    // gate candidate B (corner-speed pre-registration 2026-11-22): ClA ∝ (air speed / 80 m/s)^(clAExp − 1); unset = constant ClA
+    const clV = car.clAExp != null ? va => Math.pow(Math.max(va, 1) / 80, car.clAExp - 1) : null;
 
     // 1) Lateral limit per point (aero in corner mode; the driver closes Straight Mode for corners)
     const vLat = new Float64Array(n);
@@ -222,7 +224,7 @@ export function lapsimKernel() {
       if (kap < 1e-5) { vLat[i] = vMaxCar; continue; }
       const m = muAt(i), cl = car.clA;
       const f = v => {
-        const va = vAir(v, i), L = aeroFactor * cl * va * va;
+        const va = vAir(v, i), L = aeroFactor * (clV ? cl * clV(va) : cl) * va * va;
         return m * latCap(v, i, L) - (bank ? bankLat(v, i) : t.m * v * v * kap);
       };
       let lo = 1, hi = vMaxCar;
@@ -236,7 +238,7 @@ export function lapsimKernel() {
       const kap = Math.abs(track.kappa[i]);
       if (kap < 1e-6) return 1;
       const ay = bank ? bankLat(v, i) / t.m : v * v * kap;
-      const va = vAir(v, i), L = aeroFactor * car.clA * va * va;
+      const va = vAir(v, i), L = aeroFactor * (clV ? car.clA * clV(va) : car.clA) * va * va;
       const ayMax = muAt(i) * latCap(v, i, L) / t.m;
       const r = Math.min(1, ay / ayMax);
       return Math.pow(Math.max(0, 1 - Math.pow(r, k)), 1 / k);
@@ -245,7 +247,7 @@ export function lapsimKernel() {
     // 2) Backward pass (braking): independent of the ERS strategy, so computed once.
     //    Straight Mode is closed under braking: corner-mode aero.
     const brakeAcc = (v, i) => {
-      const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
+      const va = vAir(v, i), L = aeroFactor * (clV ? car.clA * clV(va) : car.clA) * va * va, N = normalAt(v, i, L);
       const fx = muAt(i) * (t.muX0 / t.muY0) * pureCap(i, N) * ellipse(v, i);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N;
       let a = (fx + drag + roll) / t.m + G * sinG[i];
@@ -294,7 +296,7 @@ export function lapsimKernel() {
         for (let c = 0; c < n; c++) {
           const i = (start + c) % n, j = (i + 1) % n;
           const vi = Math.max(v[i], 1);
-          const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vi, i, L);
+          const va = vAir(vi, i), L = aeroFactor * (clV ? clF[i] * clV(va) : clF[i]) * va * va, N = normalAt(vi, i, L);
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]));
           let pErs = below(vi, vCut) && (!track || soc > 0) ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
           // C5.12 (2026 PU documents): a voluntary cut of ERS-K power while accelerating is one step of at most 150 kW (the event's

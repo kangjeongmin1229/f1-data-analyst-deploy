@@ -80,11 +80,12 @@ if (E.LAPSIM_BANK === 'on') { const bd = JSON.parse(await readFile('scripts/sim/
 if (E.LAPSIM_KV === 'on') for (const tr of Object.values(tracks)) if (tr.grade) {
   const g = tr.grade, n = g.length; tr.kv = Float64Array.from(g, (_, i) => (g[(i + 1) % n] - g[(i - 1 + n) % n]) / (2 * tr.ds));
 }
-const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce'];
+// corner-speed gate candidates (claude/gate-corner-speed-prereg-2026-11-22.md): A fits the tyre load sensitivity, B also ClA's speed exponent
+const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce', ...(E.LAPSIM_FIT_DMU === 'on' ? ['dmuMag'] : []), ...(E.LAPSIM_FIT_CLAEXP === 'on' ? ['clAExp'] : [])];
 // physical bounds, so geometry error cannot be absorbed by impossible cars. ClA up to 8 m²:
 // modern F1 cars make about 3.5x their weight in downforce near 300 km/h (ClA ≈ 6.5–7). The fitted
 // values are effective ones: they also absorb what the quasi-steady-state model leaves out.
-const BOUNDS = {muY: [1.5, 2.4], clA: [2.5, 8], cdA: [0.7, 1.9], cdALow: [0.45, 1.6], pIce: [0.85, 1.15]};
+const BOUNDS = {muY: [1.5, 2.4], clA: [2.5, 8], cdA: [0.7, 1.9], cdALow: [0.45, 1.6], pIce: [0.85, 1.15], dmuMag: [5e-6, 2.5e-4], clAExp: [0.7, 1.3]};
 
 const seasons = {};
 if (ONLY_WEC) Object.assign(seasons, prevCal.seasons);
@@ -109,10 +110,12 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
       obs: {s: t.s, v: t.v.map(x => x / 3.6)}, weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
+  if (E.LAPSIM_FIT_DMU === 'on') base.dmuMag = -(base.dmuDfz ?? -5e-5);
+  if (E.LAPSIM_FIT_CLAEXP === 'on') base.clAExp = 1;
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
   const params = PARAMS.map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
-    return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
+    return {key: k, path: k, base: base[k], step: k === 'dmuMag' ? 0.3 : 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
   });
   groups.push({key: year, laps, base, params});
 }
