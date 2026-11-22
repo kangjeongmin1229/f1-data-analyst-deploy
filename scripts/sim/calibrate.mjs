@@ -141,11 +141,14 @@ for (const g of groups) {
   // holdout: this season's laps on a quarter of the tracks left out, predicted with the factor the
   // other season gives that track
   const h = HOLDOUT_YEARS.includes(year) ? await holdoutOf(groups, year) : {n: 0, errors: [], rmsPct: null};
+  // level C with refit (LAPSIM_HOLDOUT_C=on, diagnostic, no model change): the track leaves every season's rows; class-mean factor
+  const hC = E.LAPSIM_HOLDOUT_C === 'on' && FITTER === 'bcd' && HOLDOUT_YEARS.includes(year) ? await holdoutBCD(groups, year, {...BCD, rounds: Math.max(2, BCD.rounds - 1), levelC: true}) : null;
   const adj = joint.adj?.[year];
   if (adj) report.push(`### ${year} team pace and development`, '', `Development over the season: ${(adj.dev * 100).toFixed(2)}% lap time from March to December.`, '',
     ...Object.entries(adj.teams).sort((a, b) => a[1] - b[1]).map(([t, v]) => `- ${t}: ${v > 0 ? '+' : ''}${(v * 100).toFixed(2)}%`), '');
   seasons[year] = {car, tracks: perTrack, laps: g.laps.length, adj: adj || undefined,
-    holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)}))}};
+    holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)}))},
+    ...(hC ? {holdoutC: {rmsPct: hC.rmsPct != null ? +hC.rmsPct.toFixed(2) : null, n: hC.n, tracks: hC.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)}))}} : {})};
   report.push(`## ${year}`, '', `${g.laps.length} laps. Holdout: ${h.n ? `predicted ${h.n} unseen pole laps, typical error ${h.rmsPct.toFixed(2)}% (RMS)` : 'no track had a factor from another season'}.`, '',
     `Car: grip μy ${car.muY.toFixed(3)}, downforce ClA ${car.clA.toFixed(2)} m², drag CdA ${car.cdA.toFixed(3)} m², low-drag CdA ${car.cdALow.toFixed(3)} m², ICE ${(car.pIce / 1e3).toFixed(0)} kW.`, '',
     '| Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |', '|---|---|---|---|---|---|',

@@ -194,17 +194,23 @@ function carryBias(fit, groups, key) {
   return l => by[l.name]?.length ? w * by[l.name].reduce((a, b) => a + b, 0) / by[l.name].length : 0;
 }
 
-export async function holdoutBCD(groups, key, {folds = 4, ...opts} = {}) {
+// levelC (Gate G v3.1 level C, refit version): the test tracks leave every season's training rows, and the factor is the
+// geometric mean of the fitted factors of the other tracks (a track the model has never seen)
+export async function holdoutBCD(groups, key, {folds = 4, levelC = false, ...opts} = {}) {
   const target = groups.find(g => g.key === key);
   const names = [...new Set(target.laps.map(l => l.name))].sort();
   const k = Math.min(folds, names.length), errors = [];
+  const gmeanFactor = F => { const v = Object.values(F); if (!v.length) return null; const o = {};
+    for (const key of Object.keys(v[0])) { const xs = v.map(f => f[key]).filter(x => Number.isFinite(x) && x > 0); if (xs.length) o[key] = Math.exp(xs.reduce((a, x) => a + Math.log(x), 0) / xs.length); else o[key] = v[0][key]; }
+    return o; };
   for (let f = 0; f < k; f++) {
     const test = new Set(names.filter((_, i) => i % k === f));
-    const train = groups.map(g => g.key === key ? {...g, laps: g.laps.filter(l => !test.has(l.name))} : g);
+    const train = groups.map(g => g.key === key || levelC ? {...g, laps: g.laps.filter(l => !test.has(l.name))} : g).filter(g => g.laps.length);
     const fit = await fitJointBCD(train, opts);
     const corr = opts.residual ? residualCorrector(fit, prepGroups(train), opts.residualLambda ?? 1) : () => 0, carry = carryBias(fit, train, key);
+    const mean = levelC ? gmeanFactor(fit.factors) : null;
     for (const l of prepGroups([target])[0].laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
-      const fa = fit.factors[l.name]; if (!fa || !train.some(g => g.laps.some(x => x.name === l.name))) continue;
+      const fa = levelC ? mean : fit.factors[l.name]; if (!fa || (!levelC && !train.some(g => g.laps.some(x => x.name === l.name)))) continue;
       const t = predict(l, fit.cars[key], fa, fit.adj) * (1 - corr(l, key)) * (1 + carry(l));
       errors.push({name: l.name, dt: t - l.lapSeconds, pct: (t / l.lapSeconds - 1) * 100});
     }
