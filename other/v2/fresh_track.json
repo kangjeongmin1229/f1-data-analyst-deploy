@@ -1,0 +1,283 @@
+{
+ "laps": {
+  "v5": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "rpm_corr": 0.871,
+   "up": [
+    0.7,
+    0.88,
+    -0.41
+   ],
+   "brake": [
+    0.5,
+    0.8,
+    -0.12
+   ]
+  },
+  "v6": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "rpm_corr": 0.873,
+   "up": [
+    1.0,
+    0.75,
+    -0.39
+   ],
+   "brake": [
+    0.5,
+    1.0,
+    -0.14
+   ]
+  },
+  "f_VT8ULSU6em8": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.281
+  },
+  "v52": {
+   "track": "Suzuka",
+   "event": "2026 Japanese Grand Prix Qualifying ANT L11",
+   "skip": "sound not aligned",
+   "rpm_corr": -0.042
+  },
+  "v110": {
+   "track": "Suzuka",
+   "event": "2026 Japanese Grand Prix Practice 2 PIA L9",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.765
+  },
+  "v2": {
+   "track": "Melbourne",
+   "event": "2025 Australian Grand Prix Qualifying NOR L19",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.621
+  },
+  "f_DwEPWRAFcn0": {
+   "track": "Melbourne",
+   "event": "2025 Australian Grand Prix Qualifying NOR L19",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.588
+  },
+  "v48": {
+   "track": "Melbourne",
+   "event": "2026 Australian Grand Prix Qualifying RUS L21",
+   "rpm_corr": 0.947,
+   "up": [
+    1.0,
+    0.84,
+    -0.37
+   ],
+   "brake": [
+    0.83,
+    1.0,
+    0.08
+   ]
+  },
+  "v106": {
+   "track": "Melbourne",
+   "event": "2026 Australian Grand Prix Practice 2 PIA L12",
+   "rpm_corr": 0.861,
+   "up": [
+    0.79,
+    0.57,
+    -0.41
+   ],
+   "brake": [
+    0.5,
+    0.5,
+    0.04
+   ]
+  },
+  "v43": {
+   "track": "Las Vegas",
+   "event": "2025 Las Vegas Grand Prix Qualifying NOR L24",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.778
+  },
+  "f_wtXxkGvrokA": {
+   "track": "Las Vegas",
+   "event": "2025 Las Vegas Grand Prix Qualifying NOR L24",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.735
+  },
+  "fr22_fp2": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Practice 2 SAI L6",
+   "rpm_corr": 0.981,
+   "up": [
+    0.75,
+    0.3,
+    -0.48
+   ],
+   "brake": [
+    0.67,
+    0.73,
+    -0.13
+   ]
+  },
+  "fr22_fp3": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Practice 3 VER L18",
+   "rpm_corr": 0.965,
+   "up": [
+    0.8,
+    0.41,
+    -0.31
+   ],
+   "brake": [
+    0.69,
+    0.82,
+    -0.06
+   ]
+  },
+  "fr22_q": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Qualifying LEC L16",
+   "rpm_corr": 0.976,
+   "up": [
+    0.74,
+    0.73,
+    -0.34
+   ],
+   "brake": [
+    0.67,
+    0.89,
+    -0.05
+   ]
+  },
+  "pt21_fp1": {
+   "track": "Portimão",
+   "event": "2021 Portuguese FP1 BOT L22",
+   "rpm_corr": 0.989,
+   "up": [
+    1.0,
+    0.65,
+    -0.37
+   ],
+   "brake": [
+    0.88,
+    1.0,
+    0.04
+   ]
+  },
+  "pt21_fp2": {
+   "track": "Portimão",
+   "event": "2021 Portuguese FP2 HAM L10",
+   "rpm_corr": 0.985,
+   "up": [
+    0.84,
+    0.9,
+    -0.28
+   ],
+   "brake": [
+    1.0,
+    0.86,
+    0.07
+   ]
+  },
+  "pt21_q": {
+   "track": "Portimão",
+   "event": "2021 Portuguese Q BOT L18",
+   "rpm_corr": 0.991,
+   "up": [
+    0.81,
+    0.71,
+    -0.27
+   ],
+   "brake": [
+    0.86,
+    0.86,
+    0.06
+   ]
+  },
+  "tr21_fp2": {
+   "track": "Istanbul Park",
+   "event": "2021 Turkish FP2 HAM L12",
+   "rpm_corr": 0.988,
+   "up": [
+    1.0,
+    0.95,
+    -0.38
+   ],
+   "brake": [
+    1.0,
+    0.78,
+    -0.12
+   ]
+  }
+ },
+ "summary": {
+  "brake": {
+   "tracks": {
+    "Suzuka": [
+     0.5,
+     0.9
+    ],
+    "Melbourne": [
+     0.665,
+     0.75
+    ],
+    "Paul Ricard": [
+     0.67,
+     0.82
+    ],
+    "Portimão": [
+     0.88,
+     0.86
+    ],
+    "Istanbul Park": [
+     1.0,
+     0.78
+    ]
+   },
+   "n_tracks": 5,
+   "P": 0.67,
+   "P_ci90": [
+    0.5,
+    1.0
+   ],
+   "R": 0.82,
+   "R_ci90": [
+    0.75,
+    0.9
+   ]
+  },
+  "up": {
+   "tracks": {
+    "Suzuka": [
+     0.85,
+     0.815
+    ],
+    "Melbourne": [
+     0.895,
+     0.705
+    ],
+    "Paul Ricard": [
+     0.75,
+     0.41
+    ],
+    "Portimão": [
+     0.84,
+     0.71
+    ],
+    "Istanbul Park": [
+     1.0,
+     0.95
+    ]
+   },
+   "n_tracks": 5,
+   "P": 0.85,
+   "P_ci90": [
+    0.75,
+    1.0
+   ],
+   "R": 0.71,
+   "R_ci90": [
+    0.41,
+    0.95
+   ]
+  }
+ }
+}
