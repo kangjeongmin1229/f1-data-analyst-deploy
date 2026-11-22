@@ -1,0 +1,142 @@
+{
+ "2025-chinese-s": {
+  "video": 24,
+  "truth": 25,
+  "e_rel": -0.04
+ },
+ "2025-bahrain-s": {
+  "video": 27,
+  "truth": 31,
+  "e_rel": -0.129
+ },
+ "2025-saudi-arabian-s": {
+  "video": 21,
+  "truth": 20,
+  "e_rel": 0.05
+ },
+ "2025-miami-s": {
+  "video": 21,
+  "truth": 20,
+  "e_rel": 0.05
+ },
+ "2025-emilia-romagna-s": {
+  "video": 20,
+  "truth": 21,
+  "e_rel": -0.048
+ },
+ "2025-spanish-s": {
+  "video": 17,
+  "truth": 18,
+  "e_rel": -0.056
+ },
+ "2025-canadian-s": {
+  "video": 29,
+  "truth": 25,
+  "e_rel": 0.16
+ },
+ "2025-british-s": {
+  "video": 17,
+  "truth": 17,
+  "e_rel": 0.0
+ },
+ "2025-hungarian-s": {
+  "video": 17,
+  "truth": 22,
+  "e_rel": -0.227
+ },
+ "2025-dutch-s": {
+  "video": 17,
+  "truth": 17,
+  "e_rel": 0.0
+ },
+ "2025-italian-s": {
+  "video": 20,
+  "truth": 18,
+  "e_rel": 0.111
+ },
+ "2025-azerbaijan-s": {
+  "video": 36,
+  "truth": 31,
+  "e_rel": 0.161
+ },
+ "2025-singapore-s": {
+  "video": 37,
+  "truth": 31,
+  "e_rel": 0.194
+ },
+ "2025-united-states-s": {
+  "video": 25,
+  "truth": 24,
+  "e_rel": 0.042
+ },
+ "2025-mexico-city-s": {
+  "video": 24,
+  "truth": 18,
+  "e_rel": 0.333
+ },
+ "2025-sao-paulo-s": {
+  "video": 19,
+  "truth": 19,
+  "e_rel": 0.0
+ },
+ "2025-qatar-s": {
+  "video": 20,
+  "truth": 19,
+  "e_rel": 0.053
+ },
+ "2025-abu-dhabi-s": {
+  "video": 28,
+  "truth": 23,
+  "e_rel": 0.217
+ },
+ "2026-chinese-s": {
+  "video": 26,
+  "truth": 31,
+  "e_rel": -0.161
+ },
+ "2026-miami-s": {
+  "video": 23,
+  "truth": 22,
+  "e_rel": 0.045
+ },
+ "2026-canadian-s": {
+  "video": 26,
+  "truth": 28,
+  "e_rel": -0.071
+ },
+ "2026-monaco-s": {
+  "video": 32,
+  "truth": 28,
+  "e_rel": 0.143
+ },
+ "2026-barcelona-s": {
+  "video": 19,
+  "truth": 20,
+  "e_rel": -0.05
+ },
+ "2026-austrian-s": {
+  "video": 23,
+  "truth": 24,
+  "e_rel": -0.042
+ },
+ "2026-british-s": {
+  "video": 15,
+  "truth": 18,
+  "e_rel": -0.167
+ },
+ "2026-belgian-s": {
+  "video": 20,
+  "truth": 26,
+  "e_rel": -0.231
+ },
+ "2026-hungarian-s": {
+  "video": 28,
+  "truth": 26,
+  "e_rel": 0.077
+ },
+ "2026-spanish-s": {
+  "video": 29,
+  "truth": 32,
+  "e_rel": -0.094
+ }
+}
