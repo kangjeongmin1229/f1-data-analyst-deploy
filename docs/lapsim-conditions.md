@@ -7,16 +7,16 @@ it becomes a model term only through a pre-registered gate. Real laps and weathe
 
 | Group | Condition | n | Slope (%/unit) | 90 % interval | R² |
 |---|---|---|---|---|---|
-| all | track temperature (°C) | 68 | -0.0335 | -0.0514 … -0.0150 | 0.10 |
-| all | air temperature (°C) | 68 | -0.0736 | -0.1034 … -0.0458 | 0.19 |
-| all | wind (m/s) | 68 | 0.1295 | -0.1138 … 0.3425 | 0.02 |
-| all | humidity (%) | 68 | 0.0034 | -0.0083 … 0.0148 | 0.00 |
-| all | air pressure (hPa) | 68 | 0.0026 | -0.0014 … 0.0103 | 0.01 |
-| f1 | track temperature (°C) | 35 | -0.0104 | -0.0351 … 0.0157 | 0.01 |
-| f1 | air temperature (°C) | 35 | -0.0236 | -0.0555 … 0.0107 | 0.02 |
-| f1 | wind (m/s) | 35 | 0.1279 | -0.0700 … 0.3463 | 0.03 |
-| f1 | humidity (%) | 35 | -0.0074 | -0.0220 … 0.0071 | 0.02 |
-| f1 | air pressure (hPa) | 35 | -0.0009 | -0.0041 … 0.0048 | 0.00 |
+| all | track temperature (°C) | 68 | -0.0327 | -0.0508 … -0.0138 | 0.09 |
+| all | air temperature (°C) | 68 | -0.0721 | -0.1026 … -0.0435 | 0.18 |
+| all | wind (m/s) | 68 | 0.1344 | -0.1139 … 0.3524 | 0.02 |
+| all | humidity (%) | 68 | 0.0040 | -0.0080 … 0.0153 | 0.00 |
+| all | air pressure (hPa) | 68 | 0.0035 | -0.0001 … 0.0109 | 0.02 |
+| f1 | track temperature (°C) | 35 | -0.0082 | -0.0374 … 0.0177 | 0.01 |
+| f1 | air temperature (°C) | 35 | -0.0199 | -0.0579 … 0.0176 | 0.01 |
+| f1 | wind (m/s) | 35 | 0.1370 | -0.0808 … 0.3779 | 0.03 |
+| f1 | humidity (%) | 35 | -0.0063 | -0.0209 … 0.0084 | 0.02 |
+| f1 | air pressure (hPa) | 35 | 0.0003 | -0.0025 … 0.0069 | 0.00 |
 | wec | track temperature (°C) | 33 | -0.0418 | -0.0710 … -0.0186 | 0.14 |
 | wec | air temperature (°C) | 33 | -0.0990 | -0.1644 … -0.0614 | 0.31 |
 | wec | wind (m/s) | 33 | 0.1528 | -0.3528 … 0.4763 | 0.02 |
