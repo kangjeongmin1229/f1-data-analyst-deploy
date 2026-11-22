@@ -28,6 +28,7 @@ def sad_shift(a, b, R, axis, w=None):
     errs = np.array(errs); j = int(errs.argmin())
     return j - R, float(1 - errs[j] / (errs[R] + 1e-6))
 
+FORCE_FF = False
 BANDS = ((0.0, 0.22), (0.20, 0.45), (0.40, 0.65))  # top band validated on F1 (corr ~0.9, gain ~0.83)
 
 def frames_ffmpeg(path, hz, W, H):
@@ -55,8 +56,8 @@ def rows_from(frames, hz, H):
 
 def video_track(path, W=320, H=180):
     cap = cv2.VideoCapture(path); fps = cap.get(cv2.CAP_PROP_FPS) or 25
-    if not cap.read()[0]:
-        dur = float(subprocess.run(['ffprobe', '-v', 'quiet', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True).stdout or 0)
+    dur = float(subprocess.run(['ffprobe', '-v', 'quiet', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True).stdout or 0)
+    if FORCE_FF or not cap.read()[0]:
         hz = 25 if dur < 1200 else 10
         return {'fps': fps, 'hz': hz, 'px_per_rad': 217.0, 'decoder': 'ffmpeg', 'yaw_sign': 'yaw_rad_s = px_s / 217 (left turn > 0 as TI heading rate)',
                 'bands': BANDS, 'cols': ['t', 'yawA_px_s', 'qA', 'yawB_px_s', 'qB', 'yawC_px_s', 'qC', 'pitch_px_s', 'cut'], 'rows': rows_from(frames_ffmpeg(path, hz, W, H), hz, H)}
@@ -83,6 +84,10 @@ def video_track(path, W=320, H=180):
                 out.append(row)
             prev = g
         i += 1
+    if dur and (out[-1][0] if out else 0) < 0.9 * dur:  # cv2 stopped early (codec it cannot fully decode): redo with ffmpeg
+        hz = 25 if dur < 1200 else 10
+        return {'fps': fps, 'hz': hz, 'px_per_rad': 217.0, 'decoder': 'ffmpeg', 'yaw_sign': 'yaw_rad_s = px_s / 217 (left turn > 0 as TI heading rate)',
+                'bands': BANDS, 'cols': ['t', 'yawA_px_s', 'qA', 'yawB_px_s', 'qB', 'yawC_px_s', 'qC', 'pitch_px_s', 'cut'], 'rows': rows_from(frames_ffmpeg(path, hz, W, H), hz, H)}
     return {'fps': fps, 'hz': fps / step, 'px_per_rad': 217.0, 'yaw_sign': 'yaw_rad_s = px_s / 217 (left turn > 0 as TI heading rate)',
             'bands': BANDS, 'cols': ['t', 'yawA_px_s', 'qA', 'yawB_px_s', 'qB', 'yawC_px_s', 'qC', 'pitch_px_s', 'cut'], 'rows': out}
 
