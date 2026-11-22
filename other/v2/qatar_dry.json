@@ -1,0 +1,61 @@
+{
+ "laps": {
+  "f_j63gdbihAF8": {
+   "event": "2025 Qatar Grand Prix Qualifying PIA L17",
+   "rpm_corr": 0.962,
+   "brake": [
+    0.83,
+    0.71,
+    -0.08
+   ],
+   "up": [
+    0.65,
+    0.74,
+    -0.45
+   ],
+   "upcount": [
+    20,
+    19,
+    0.053
+   ]
+  }
+ },
+ "summary": {
+  "n_laps": 1,
+  "brake": {
+   "P": 0.83,
+   "P_ci90": [
+    0.83,
+    0.83
+   ],
+   "R": 0.71,
+   "R_ci90": [
+    0.71,
+    0.71
+   ],
+   "verdict": "not enough data"
+  },
+  "up": {
+   "P": 0.65,
+   "P_ci90": [
+    0.65,
+    0.65
+   ],
+   "R": 0.74,
+   "R_ci90": [
+    0.74,
+    0.74
+   ],
+   "verdict": "not enough data"
+  },
+  "upcount": {
+   "median_abs_rel": 0.053,
+   "ci90": [
+    0.053,
+    0.053
+   ],
+   "rms_rel": 0.053,
+   "verdict": "not enough data"
+  }
+ }
+}
