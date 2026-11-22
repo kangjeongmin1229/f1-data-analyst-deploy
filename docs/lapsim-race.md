@@ -1,6 +1,6 @@
 # Race pace model
 
-Generated 2026-11-21T01:42:50.290Z. Season 2026; race-ratio change vs earlier seasons ×0.9836, slope change ×0.862.
+Generated 2026-11-22T05:48:26.904Z. Season 2026; race-ratio change vs earlier seasons ×0.9836, slope change ×0.862.
 
 Leave-out test (leading race pace, earlier seasons + real pole): 0.67% RMS over 16 races.
 
@@ -63,35 +63,35 @@ Races already run (all seasons), reproduced from the stored factors: largest err
 | kuala-lumpur | 1.0800 (2026) | -0.078 | 27.0 | 0.053 / 0.068 / 0.112 | 0.21 / -0.20 |
 | madring | 1.0915 (2026) | -0.075 | 26.5 | 0.020 / 0.052 / 0.008 | 0.45 / 0.01 |
 
-## las-vegas: pole 1:32.840, 50 laps
+## las-vegas: pole 1:32.696, 50 laps
 
 | Strategy | Race time | Gap |
 |---|---|---|
-| H30-M20 | 81:45.668 | +0.0 s |
-| M20-H30 | 81:45.668 | +0.0 s |
-| H33-S17 | 81:51.029 | +5.4 s |
+| M20-H30 | 81:38.131 | +0.0 s |
+| H30-M20 | 81:38.131 | +0.0 s |
+| H33-S17 | 81:43.492 | +5.4 s |
 
-Lap times (best strategy): L1 98.87, L6 98.72, L11 98.56, L16 98.40, L21 98.24, L26 98.08, L31 118.70, L36 96.55, L41 96.55, L46 96.56, L50 96.56
+Lap times (best strategy): L1 98.53, L6 98.53, L11 98.54, L16 98.54, L21 119.45, L26 97.14, L31 96.98, L36 96.82, L41 96.67, L46 96.51, L50 96.38
 
-## lusail: pole 1:24.082, 57 laps
-
-| Strategy | Race time | Gap |
-|---|---|---|
-| M32-H25 | 85:01.181 | +0.0 s |
-| H25-M32 | 85:01.181 | +0.0 s |
-| M49-S8 | 85:07.421 | +6.2 s |
-
-Lap times (best strategy): L1 90.79, L6 90.50, L11 90.20, L16 89.90, L21 89.60, L26 89.31, L31 89.01, L36 88.37, L41 88.11, L46 87.84, L51 87.58, L56 87.32, L57 87.27
-
-## yas-marina-circuit: pole 1:24.339, 58 laps
+## lusail: pole 1:26.355, 57 laps
 
 | Strategy | Race time | Gap |
 |---|---|---|
-| H34-M24 | 87:25.913 | +0.0 s |
-| M24-H34 | 87:25.913 | +0.0 s |
-| S22-H36 | 87:28.919 | +3.0 s |
+| M32-H25 | 87:18.184 | +0.0 s |
+| H25-M32 | 87:18.184 | +0.0 s |
+| S8-M49 | 87:24.424 | +6.2 s |
 
-Lap times (best strategy): L1 90.73, L6 90.72, L11 90.71, L16 90.70, L21 90.70, L26 90.69, L31 90.68, L36 88.82, L41 88.97, L46 89.12, L51 89.27, L56 89.42, L58 89.48
+Lap times (best strategy): L1 93.20, L6 92.90, L11 92.60, L16 92.30, L21 92.01, L26 91.71, L31 91.41, L36 90.77, L41 90.51, L46 90.25, L51 89.99, L56 89.73, L57 89.67
+
+## yas-marina-circuit: pole 1:24.654, 58 laps
+
+| Strategy | Race time | Gap |
+|---|---|---|
+| H34-M24 | 87:45.206 | +0.0 s |
+| M24-H34 | 87:45.206 | +0.0 s |
+| H36-S22 | 87:48.212 | +3.0 s |
+
+Lap times (best strategy): L1 91.06, L6 91.05, L11 91.04, L16 91.04, L21 91.03, L26 91.02, L31 91.02, L36 89.15, L41 89.31, L46 89.46, L51 89.61, L56 89.76, L58 89.82
 
 ## Fit log
 
