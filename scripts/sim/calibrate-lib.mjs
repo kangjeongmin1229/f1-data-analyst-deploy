@@ -160,7 +160,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
       if (p.min != null && o[last] < p.min) { outside += Math.log(p.min / o[last]) ** 2; o[last] = p.min; }
       if (p.max != null && o[last] > p.max) { outside += Math.log(o[last] / p.max) ** 2; o[last] = p.max; }
     });
-    if (base.linkMu) { car.muX = base.muX * car.muY / base.muY; car.muXTrac = base.muXTrac * car.muY / base.muY; }
+    if (base.linkMu) { car.muX = base.muX * car.muY / base.muY * (car.muRatio ?? 1); car.muXTrac = base.muXTrac * car.muY / base.muY; }
     if (base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; } // no DRS / straight mode
     return car;
   };
@@ -229,7 +229,7 @@ export function fitJoint(groups, {iters = 90, wTime = 2, wGrip = 50, lo = 0.85, 
       if (p.max != null && v > p.max) { outside += Math.log(v / p.max) ** 2; v = p.max; }
       car[p.path] = v;
     });
-    if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY; car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
+    if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY * (car.muRatio ?? 1); car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
     if (g.base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; }
     return car;
   };

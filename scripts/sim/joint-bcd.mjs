@@ -26,7 +26,7 @@ export function buildCar(g, x) {
     if (p.max != null && v > p.max) { outside += Math.log(v / p.max) ** 2; v = p.max; }
     car[p.path] = v;
   });
-  if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY; car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
+  if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY * (car.muRatio ?? 1); car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
   if (g.base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; }
   return {car, outside};
 }

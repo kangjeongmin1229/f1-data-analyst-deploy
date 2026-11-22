@@ -80,11 +80,13 @@ if (E.LAPSIM_BANK === 'on') { const bd = JSON.parse(await readFile('scripts/sim/
 if (E.LAPSIM_KV === 'on') for (const tr of Object.values(tracks)) if (tr.grade) {
   const g = tr.grade, n = g.length; tr.kv = Float64Array.from(g, (_, i) => (g[(i + 1) % n] - g[(i - 1 + n) % n]) / (2 * tr.ds));
 }
-const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce'];
+// grip-ratio gate candidate (claude/gate-grip-ratio-prereg-2026-11-22.md): fit muX/muY (braking vs cornering grip); off = unchanged
+const PARAMS = ['muY', 'clA', 'cdA', 'cdALow', 'pIce', ...(E.LAPSIM_FIT_MURATIO === 'on' ? ['muRatio'] : [])];
 // physical bounds, so geometry error cannot be absorbed by impossible cars. ClA up to 8 m²:
 // modern F1 cars make about 3.5x their weight in downforce near 300 km/h (ClA ≈ 6.5–7). The fitted
 // values are effective ones: they also absorb what the quasi-steady-state model leaves out.
 const BOUNDS = {muY: [1.5, 2.4], clA: [2.5, 8], cdA: [0.7, 1.9], cdALow: [0.45, 1.6], pIce: [0.85, 1.15]};
+BOUNDS.muRatio = [0.7, 1.1]; // candidate only, kept apart from the production bounds literal
 
 const seasons = {};
 if (ONLY_WEC) Object.assign(seasons, prevCal.seasons);
@@ -109,6 +111,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
       obs: {s: t.s, v: t.v.map(x => x / 3.6)}, weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
+  if (E.LAPSIM_FIT_MURATIO === 'on') base.muRatio = 1;
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
   const params = PARAMS.map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
