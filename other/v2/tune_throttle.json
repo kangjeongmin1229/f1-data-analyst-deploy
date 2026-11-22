@@ -1,0 +1,149 @@
+{
+ "n_laps": 28,
+ "variants": [
+  {
+   "variant": {
+    "alpha": 0.5,
+    "w": 0.2,
+    "rise": false
+   },
+   "median_abs_pp": 8.92,
+   "bias_pp": 8.92
+  },
+  {
+   "variant": {
+    "alpha": 0.5,
+    "w": 0.2,
+    "rise": true
+   },
+   "median_abs_pp": 3.26,
+   "bias_pp": 1.25
+  },
+  {
+   "variant": {
+    "alpha": 0.5,
+    "w": 0.5,
+    "rise": false
+   },
+   "median_abs_pp": 11.45,
+   "bias_pp": 11.45
+  },
+  {
+   "variant": {
+    "alpha": 0.5,
+    "w": 0.5,
+    "rise": true
+   },
+   "median_abs_pp": 3.34,
+   "bias_pp": 2.49
+  },
+  {
+   "variant": {
+    "alpha": 0.6,
+    "w": 0.2,
+    "rise": false
+   },
+   "median_abs_pp": 5.64,
+   "bias_pp": 0.01
+  },
+  {
+   "variant": {
+    "alpha": 0.6,
+    "w": 0.2,
+    "rise": true
+   },
+   "median_abs_pp": 5.72,
+   "bias_pp": -5.43
+  },
+  {
+   "variant": {
+    "alpha": 0.6,
+    "w": 0.5,
+    "rise": false
+   },
+   "median_abs_pp": 6.11,
+   "bias_pp": 1.21
+  },
+  {
+   "variant": {
+    "alpha": 0.6,
+    "w": 0.5,
+    "rise": true
+   },
+   "median_abs_pp": 5.63,
+   "bias_pp": -5.18
+  },
+  {
+   "variant": {
+    "alpha": 0.7,
+    "w": 0.2,
+    "rise": false
+   },
+   "median_abs_pp": 7.8,
+   "bias_pp": -7.47
+  },
+  {
+   "variant": {
+    "alpha": 0.7,
+    "w": 0.2,
+    "rise": true
+   },
+   "median_abs_pp": 11.61,
+   "bias_pp": -11.61
+  },
+  {
+   "variant": {
+    "alpha": 0.7,
+    "w": 0.5,
+    "rise": false
+   },
+   "median_abs_pp": 7.06,
+   "bias_pp": -6.48
+  },
+  {
+   "variant": {
+    "alpha": 0.7,
+    "w": 0.5,
+    "rise": true
+   },
+   "median_abs_pp": 11.39,
+   "bias_pp": -11.39
+  },
+  {
+   "variant": {
+    "alpha": 0.8,
+    "w": 0.2,
+    "rise": false
+   },
+   "median_abs_pp": 16.04,
+   "bias_pp": -16.04
+  },
+  {
+   "variant": {
+    "alpha": 0.8,
+    "w": 0.2,
+    "rise": true
+   },
+   "median_abs_pp": 19.94,
+   "bias_pp": -19.94
+  },
+  {
+   "variant": {
+    "alpha": 0.8,
+    "w": 0.5,
+    "rise": false
+   },
+   "median_abs_pp": 14.6,
+   "bias_pp": -14.6
+  },
+  {
+   "variant": {
+    "alpha": 0.8,
+    "w": 0.5,
+    "rise": true
+   },
+   "median_abs_pp": 19.96,
+   "bias_pp": -19.96
+  }
+ ]
+}

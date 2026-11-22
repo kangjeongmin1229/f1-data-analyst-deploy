@@ -1,0 +1,149 @@
+{
+ "laps": {
+  "v5": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "rpm_corr": 0.871,
+   "video_pp": 66.8,
+   "truth_pp": 67.58,
+   "e_pp": -0.78
+  },
+  "v6": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "rpm_corr": 0.873,
+   "video_pp": 67.08,
+   "truth_pp": 67.58,
+   "e_pp": -0.5
+  },
+  "f_VT8ULSU6em8": {
+   "track": "Suzuka",
+   "event": "2025 Japanese Grand Prix Qualifying VER L16",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.281
+  },
+  "v52": {
+   "track": "Suzuka",
+   "event": "2026 Japanese Grand Prix Qualifying ANT L11",
+   "skip": "sound not aligned",
+   "rpm_corr": -0.042
+  },
+  "v110": {
+   "track": "Suzuka",
+   "event": "2026 Japanese Grand Prix Practice 2 PIA L9",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.765
+  },
+  "v2": {
+   "track": "Melbourne",
+   "event": "2025 Australian Grand Prix Qualifying NOR L19",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.621
+  },
+  "f_DwEPWRAFcn0": {
+   "track": "Melbourne",
+   "event": "2025 Australian Grand Prix Qualifying NOR L19",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.588
+  },
+  "v48": {
+   "track": "Melbourne",
+   "event": "2026 Australian Grand Prix Qualifying RUS L21",
+   "rpm_corr": 0.947,
+   "video_pp": 65.77,
+   "truth_pp": 62.61,
+   "e_pp": 3.16
+  },
+  "v106": {
+   "track": "Melbourne",
+   "event": "2026 Australian Grand Prix Practice 2 PIA L12",
+   "rpm_corr": 0.861,
+   "video_pp": 63.34,
+   "truth_pp": 60.4,
+   "e_pp": 2.94
+  },
+  "v43": {
+   "track": "Las Vegas",
+   "event": "2025 Las Vegas Grand Prix Qualifying NOR L24",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.778
+  },
+  "f_wtXxkGvrokA": {
+   "track": "Las Vegas",
+   "event": "2025 Las Vegas Grand Prix Qualifying NOR L24",
+   "skip": "sound not aligned",
+   "rpm_corr": 0.735
+  },
+  "lv24_fp2": {
+   "track": "Las Vegas",
+   "event": "2024 Las Vegas Grand Prix Practice 2 HAM L14",
+   "rpm_corr": 0.967,
+   "video_pp": 62.06,
+   "truth_pp": 66.67,
+   "e_pp": -4.6
+  },
+  "lv24_q": {
+   "track": "Las Vegas",
+   "event": "2024 Las Vegas Grand Prix Qualifying RUS L24",
+   "rpm_corr": 0.961,
+   "video_pp": 65.51,
+   "truth_pp": 68.74,
+   "e_pp": -3.23
+  },
+  "fr22_fp2": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Practice 2 SAI L6",
+   "rpm_corr": 0.981,
+   "video_pp": 56.7,
+   "truth_pp": 59.24,
+   "e_pp": -2.54
+  },
+  "fr22_fp3": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Practice 3 VER L18",
+   "rpm_corr": 0.965,
+   "video_pp": 60.77,
+   "truth_pp": 59.24,
+   "e_pp": 1.53
+  },
+  "fr22_q": {
+   "track": "Paul Ricard",
+   "event": "2022 French Grand Prix Qualifying LEC L16",
+   "rpm_corr": 0.976,
+   "video_pp": 63.16,
+   "truth_pp": 61.05,
+   "e_pp": 2.11
+  },
+  "v74": {
+   "track": "Sepang",
+   "event": "2026 Bahrain Grand Prix Qualifying VER L11",
+   "rpm_corr": 0.97,
+   "video_pp": 58.72,
+   "truth_pp": 54.24,
+   "e_pp": 4.48
+  },
+  "v104": {
+   "track": "Sepang",
+   "event": "2026 Bahrain Grand Prix Practice 1 VER L9",
+   "rpm_corr": 0.967,
+   "video_pp": 62.59,
+   "truth_pp": 49.05,
+   "e_pp": 13.54
+  }
+ },
+ "summary": {
+  "tracks": {
+   "Suzuka": 0.64,
+   "Melbourne": 3.05,
+   "Las Vegas": 3.915,
+   "Paul Ricard": 2.11,
+   "Sepang": 9.01
+  },
+  "n_tracks": 5,
+  "median_abs_pp": 3.05,
+  "ci90": [
+   0.64,
+   9.01
+  ]
+ }
+}
