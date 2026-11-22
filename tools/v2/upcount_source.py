@@ -10,7 +10,7 @@ def s(*a):
     try: return o(*a)
     except ZeroDivisionError: return None
 learn.closure = s
-R = json.load(open('results.json')); IDX = json.load(open('/home/claude/ser/yt/index_rows.json')); T = json.load(open('tune_upcount.json'))
+os.chdir('/home/claude/ser/yt'); R = json.load(open('/home/claude/ser/f1/results.json')); IDX = json.load(open('/home/claude/ser/yt/index_rows.json')); T = json.load(open('/home/claude/ser/f1/tune_upcount.json'))
 suffix = sys.argv[1] if len(sys.argv) > 1 else ''   # '' = PC copy; '_cl' = cloud mp4 copy in out2/<row>_cl.json
 out = {}
 for r in IDX:
@@ -21,7 +21,7 @@ for r in IDX:
     k = R[key]
     try:
         A = audio_align(f'/home/claude/ser/yt/out2/{row}.json', int(m.group(1)), k['event'], k['drv'], k['lap'])
-        L = learn.one(f'/home/claude/ser/yt/out2/{row}.json') if not os.path.exists(f'/home/claude/ser/yt/learn/{row}.json') else json.load(open(f'/home/claude/ser/yt/learn/{row}.json'))
+        os.path.exists(f'/home/claude/ser/yt/learn/{row}.json') or learn.one(f'/home/claude/ser/yt/out2/{row}.json'); L = json.load(open(f'/home/claude/ser/yt/learn/{row}.json'))
     except Exception as e: out[key] = {'err': str(e)[:60]}; continue
     if A['rpm_corr'] < 0.8: out[key] = {'skip': 'not aligned'}; continue
     Tl = load(f"/home/claude/ti{m.group(1)}", f"{k['event']}/Qualifying/{k['drv']}/{k['lap']}_tel.json")['tel']

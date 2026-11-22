@@ -1,0 +1,101 @@
+{
+ "laps": {
+  "2025-chinese-s": {
+   "row": "v4_cl",
+   "video": 21,
+   "truth": 25,
+   "e_rel": -0.16,
+   "yt_e_rel": -0.04
+  },
+  "2025-bahrain-s": {
+   "row": "v8_cl",
+   "video": 27,
+   "truth": 31,
+   "e_rel": -0.129,
+   "yt_e_rel": -0.129
+  },
+  "2025-saudi-arabian-s": {
+   "row": "v10_cl",
+   "video": 20,
+   "truth": 20,
+   "e_rel": 0.0,
+   "yt_e_rel": 0.05
+  },
+  "2025-miami-s": {
+   "row": "v12_cl",
+   "video": 19,
+   "truth": 20,
+   "e_rel": -0.05,
+   "yt_e_rel": 0.05
+  },
+  "2025-emilia-romagna-s": {
+   "row": "v14_cl",
+   "video": 18,
+   "truth": 21,
+   "e_rel": -0.143,
+   "yt_e_rel": -0.048
+  },
+  "2025-spanish-s": {
+   "row": "v18_cl",
+   "video": 17,
+   "truth": 18,
+   "e_rel": -0.056,
+   "yt_e_rel": -0.056
+  },
+  "2025-canadian-s": {
+   "row": "v20_cl",
+   "video": 26,
+   "truth": 25,
+   "e_rel": 0.04,
+   "yt_e_rel": 0.16
+  },
+  "2025-hungarian-s": {
+   "row": "v27_cl",
+   "video": 12,
+   "truth": 22,
+   "e_rel": -0.455,
+   "yt_e_rel": -0.227
+  },
+  "2025-italian-s": {
+   "row": "v31_cl",
+   "video": 17,
+   "truth": 18,
+   "e_rel": -0.056,
+   "yt_e_rel": 0.111
+  },
+  "2025-singapore-s": {
+   "row": "v35_cl",
+   "video": 33,
+   "truth": 31,
+   "e_rel": 0.065,
+   "yt_e_rel": 0.194
+  },
+  "2025-mexico-city-s": {
+   "row": "v39_cl",
+   "video": 18,
+   "truth": 18,
+   "e_rel": 0.0,
+   "yt_e_rel": 0.333
+  },
+  "2025-qatar-s": {
+   "row": "v45_cl",
+   "video": 17,
+   "truth": 19,
+   "e_rel": -0.105,
+   "yt_e_rel": 0.053
+  },
+  "2026-chinese-s": {
+   "row": "v50_cl",
+   "video": 20,
+   "truth": 31,
+   "e_rel": -0.355,
+   "yt_e_rel": -0.161
+  }
+ },
+ "summary": {
+  "n": 13,
+  "median_abs_rel": 0.065,
+  "bias": -0.056,
+  "youtube_same_laps_median_abs_rel": 0.111
+ }
+}
