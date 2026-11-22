@@ -1,0 +1,99 @@
+[
+ {
+  "variant": {},
+  "tracks": 25,
+  "S": 0.789,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "h": 0.2
+  },
+  "tracks": 25,
+  "S": 0.8,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "h": 0.3
+  },
+  "tracks": 25,
+  "S": 0.789,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "dist": 0.7
+  },
+  "tracks": 25,
+  "S": 0.75,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "dist": 1.5
+  },
+  "tracks": 25,
+  "S": 0.775,
+  "count_err": 4.0
+ },
+ {
+  "variant": {
+   "w": 0.3
+  },
+  "tracks": 25,
+  "S": 0.778,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "w": 0.6
+  },
+  "tracks": 25,
+  "S": 0.766,
+  "count_err": 3.0
+ },
+ {
+  "variant": {
+   "win": 0.8
+  },
+  "tracks": 25,
+  "S": 0.765,
+  "count_err": 3.0
+ },
+ {
+  "variant": {
+   "win": 0.3
+  },
+  "tracks": 25,
+  "S": 0.789,
+  "count_err": 2.0
+ },
+ {
+  "variant": {
+   "h": 0.2,
+   "dist": 0.7
+  },
+  "tracks": 25,
+  "S": 0.765,
+  "count_err": 3.0
+ },
+ {
+  "variant": {
+   "h": 0.3,
+   "w": 0.6
+  },
+  "tracks": 25,
+  "S": 0.766,
+  "count_err": 3.0
+ },
+ {
+  "variant": {
+   "h": 0.2,
+   "win": 0.8
+  },
+  "tracks": 25,
+  "S": 0.778,
+  "count_err": 2.0
+ }
+]
