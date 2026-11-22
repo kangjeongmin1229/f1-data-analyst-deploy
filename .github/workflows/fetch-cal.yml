@@ -26,7 +26,7 @@ jobs:
           mkdir -p /tmp/der scan/worker/lapsim scan/scripts/sim
           gh run download 44935367129 -R ${{ github.repository }} -n lapsim-derived -D /tmp/der || echo "no lapsim-derived"
           find /tmp/der -name traces.json | head -1
-          U=https://raw.githubusercontent.com/MisterKinn/f1-data-analyst/main
+          U=https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/trace-scan-fix
           curl -sSf $U/worker/lapsim/real-tel-gaps.js -o scan/worker/lapsim/real-tel-gaps.js
           curl -sSf $U/scripts/sim/trace-gaps-scan.mjs -o scan/scripts/sim/trace-gaps-scan.mjs
           echo '{"type":"module"}' > scan/package.json
