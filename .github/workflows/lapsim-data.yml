@@ -33,6 +33,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: lapsim-data-${{ github.ref }}
@@ -42,7 +43,9 @@ jobs:
   # Two jobs, each under the 340-minute limit (2026-11-18: the 2 h track build plus the A6 calibration, 3.5 h and still running,
   # hit the limit in run 44112257363): `prepare` fetches and builds the tracks, `rebuild` calibrates and commits.
   prepare:
-    if: github.event_name != 'schedule' || github.repository == 'MisterKinn/f1-data-analyst'
+    # experiment branch (2026-11-22): OpenF1 refuses every request while an F1 session is live, so all variants of this experiment
+    # calibrate on the same build, the lapsim-prep artifact of fork run 44935367129 (2026-11-21); the fetch job is skipped
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 340
     steps:
@@ -119,7 +122,6 @@ jobs:
           path: /tmp/lapsim-prep.tgz
           retention-days: 2
   rebuild:
-    needs: prepare
     runs-on: ubuntu-latest
     timeout-minutes: 340
     steps:
@@ -137,6 +139,9 @@ jobs:
         with:
           name: lapsim-prep
           path: /tmp
+          run-id: 44935367129
+          repository: kangjeongmin1229/f1-data-analyst-deploy
+          github-token: ${{ github.token }}
       - name: Unpack the build
         run: tar xzf /tmp/lapsim-prep.tgz
       - run: npm ci --omit=dev --ignore-scripts
@@ -163,6 +168,8 @@ jobs:
           # Hypercar (LMH/LMDh) peak braking capped at the iRacing GTP envelope 8.63 + 0.003234 v^2 m/s^2 (owner rule 14: learned from
           # iRacing, "model"). Experiment 44043761033: hypercar holdout mean 1.24 -> 1.16 % (BE0 -> BE1; 1.15x envelope BE2: 1.20 %)
           LAPSIM_BRAKE_ENV_HYPER: '8.63,0.003234'
+          # grip-ratio gate candidate (claude/gate-grip-ratio-prereg-2026-11-22.md); experiment branch only
+          LAPSIM_FIT_MURATIO: 'on'
         run: node scripts/sim/calibrate.mjs
       # TracingInsights race laps 2018 on; reference = mean of the best 8 qualifying laps (script defaults)
       # Hypercar per maker (LapSim × BoPSim × SetupSim, owner 2026-11-21): the residuals are learned on the class cars just fitted
