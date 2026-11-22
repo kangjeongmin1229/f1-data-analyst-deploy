@@ -1,0 +1,275 @@
+{
+ "v96": {
+  "event": "2026 S\u00e3o Paulo Grand Prix FP2 ANT L13",
+  "rpm_corr": 0.886,
+  "up_prec_rec_bias": [
+   1.0,
+   0.79,
+   -0.34
+  ],
+  "brake_prec_rec_bias": [
+   0.8,
+   0.57,
+   -0.13
+  ]
+ },
+ "v97": {
+  "event": "2026 Spanish Grand Prix FP2 ANT L11",
+  "rpm_corr": 0.944,
+  "up_prec_rec_bias": [
+   0.88,
+   0.87,
+   0.03
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.7,
+   -0.11
+  ]
+ },
+ "v98": {
+  "event": "2026 Mexico City Grand Prix FP2 LEC L17",
+  "rpm_corr": 0.955,
+  "up_prec_rec_bias": [
+   0.84,
+   0.78,
+   -0.27
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.8,
+   -0.04
+  ]
+ },
+ "v99": {
+  "skip": "no timing Barcelona-Catalunya Grand Prix/Practice 2/NOR"
+ },
+ "v100": {
+  "event": "2026 Austrian Grand Prix FP2 ANT L18",
+  "rpm_corr": 0.919,
+  "up_prec_rec_bias": [
+   0.94,
+   0.91,
+   0.2
+  ],
+  "brake_prec_rec_bias": [
+   0.67,
+   0.57,
+   0.03
+  ]
+ },
+ "v101": {
+  "event": "2026 Monaco Grand Prix FP2 HAM L22",
+  "rpm_corr": 0.973,
+  "up_prec_rec_bias": [
+   0.64,
+   0.56,
+   -0.21
+  ],
+  "brake_prec_rec_bias": [
+   0.7,
+   0.64,
+   -0.14
+  ]
+ },
+ "v102": {
+  "event": "2026 United States Grand Prix FP2 LEC L10",
+  "rpm_corr": 0.907,
+  "up_prec_rec_bias": [
+   0.81,
+   0.52,
+   -0.38
+  ],
+  "brake_prec_rec_bias": [
+   0.69,
+   0.9,
+   -0.05
+  ]
+ },
+ "v103": {
+  "event": "2026 Italian Grand Prix FP2 RUS L14",
+  "rpm_corr": 0.964,
+  "up_prec_rec_bias": [
+   1.0,
+   0.57,
+   -0.3
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.71,
+   0.03
+  ]
+ },
+ "v104": {
+  "event": "2026 Bahrain Grand Prix FP1 VER L9",
+  "rpm_corr": 0.967,
+  "up_prec_rec_bias": [
+   0.89,
+   0.69,
+   -0.32
+  ],
+  "brake_prec_rec_bias": [
+   0.75,
+   0.75,
+   0.05
+  ]
+ },
+ "v105": {
+  "event": "2025 British Grand Prix FP1 HAM L15",
+  "rpm_corr": 0.912,
+  "up_prec_rec_bias": [
+   0.8,
+   0.29,
+   -0.31
+  ],
+  "brake_prec_rec_bias": [
+   0.6,
+   0.86,
+   -0.12
+  ]
+ },
+ "v106": {
+  "event": "2026 Australian Grand Prix FP2 PIA L12",
+  "rpm_corr": 0.861,
+  "up_prec_rec_bias": [
+   0.79,
+   0.57,
+   -0.41
+  ],
+  "brake_prec_rec_bias": [
+   0.5,
+   0.5,
+   0.04
+  ]
+ },
+ "v107": {
+  "event": "2024 Hungarian Grand Prix FP3 NOR L10",
+  "rpm_corr": 0.963,
+  "up_prec_rec_bias": [
+   0.76,
+   0.68,
+   -0.33
+  ],
+  "brake_prec_rec_bias": [
+   0.86,
+   0.6,
+   -0.16
+  ]
+ },
+ "v108": {
+  "event": "2022 Singapore Grand Prix FP3 LEC L7",
+  "rpm_corr": 0.907,
+  "up_prec_rec_bias": [
+   0.59,
+   0.8,
+   -0.34
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.88,
+   -0.05
+  ]
+ },
+ "v109": {
+  "event": "2023 Bahrain Grand Prix FP3 ALO L7",
+  "rpm_corr": 0.986,
+  "up_prec_rec_bias": [
+   0.87,
+   0.7,
+   -0.38
+  ],
+  "brake_prec_rec_bias": [
+   0.64,
+   0.88,
+   -0.05
+  ]
+ },
+ "v110": {
+  "skip": "sound not aligned",
+  "rpm_corr": 0.765
+ },
+ "v111": {
+  "event": "2025 Italian Grand Prix FP1 HAM L16",
+  "rpm_corr": 0.914,
+  "up_prec_rec_bias": [
+   0.8,
+   0.3,
+   -0.32
+  ],
+  "brake_prec_rec_bias": [
+   0.57,
+   0.57,
+   -0.05
+  ]
+ },
+ "v112": {
+  "event": "2024 S\u00e3o Paulo Grand Prix FP1 NOR L27",
+  "rpm_corr": 0.979,
+  "up_prec_rec_bias": [
+   0.86,
+   0.67,
+   -0.37
+  ],
+  "brake_prec_rec_bias": [
+   0.71,
+   0.62,
+   -0.03
+  ]
+ },
+ "v113": {
+  "event": "2025 Austrian Grand Prix FP2 NOR L13",
+  "rpm_corr": 0.967,
+  "up_prec_rec_bias": [
+   0.88,
+   0.8,
+   -0.44
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.86,
+   -0.13
+  ]
+ },
+ "v114": {
+  "event": "2025 Canadian Grand Prix FP2 RUS L10",
+  "rpm_corr": 0.98,
+  "up_prec_rec_bias": [
+   0.77,
+   0.88,
+   -0.31
+  ],
+  "brake_prec_rec_bias": [
+   0.75,
+   0.86,
+   -0.1
+  ]
+ },
+ "v115": {
+  "event": "2025 Azerbaijan Grand Prix FP2 HAM L14",
+  "rpm_corr": 0.945,
+  "up_prec_rec_bias": [
+   0.67,
+   0.61,
+   -0.33
+  ],
+  "brake_prec_rec_bias": [
+   1.0,
+   0.58,
+   -0.02
+  ]
+ },
+ "v116": {
+  "event": "2025 Italian Grand Prix FP2 NOR L10",
+  "rpm_corr": 0.978,
+  "up_prec_rec_bias": [
+   0.9,
+   0.53,
+   -0.37
+  ],
+  "brake_prec_rec_bias": [
+   0.62,
+   0.71,
+   -0.12
+  ]
+ }
+}

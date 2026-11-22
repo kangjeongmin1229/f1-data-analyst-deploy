@@ -48,6 +48,29 @@ def braking2(t, r, q, fall=2000, win=2.0):
     return z
 
 
+def braking3(t, r, q, ty=None, yaw=None, drop=float(os.environ.get('QDROP', 0.25)), w=0.4):
+    """Braking onset = lift: comb strength q collapses (engine note drops) while rpm is near a local max.
+    Found from event-locked averages on F1 pole laps: q 1.24 -> 0.49 within 0.4 s of brake-on."""
+    dt = t[1] - t[0]; n = max(1, int(w / dt)); qs = median_filter(q, 3)
+    d = qs[:-n] - qs[n:]
+    z = []
+    for i in find_peaks(d, height=drop, distance=int(float(os.environ.get('BDIST', 1.5)) / dt))[0]:
+        if qs[i] < 0.8: continue
+        a, b = i + int(float(os.environ.get('QW0', 0.3)) / dt), i + int(float(os.environ.get('QWIN', 1.2)) / dt); c = min(len(r) - 1, i + int(2.0 / dt))
+        if b >= len(qs): continue
+        pre = qs[max(0, i - int(1.0 / dt)):i + 1].mean()
+        if qs[a:b].mean() > float(os.environ.get('QSTAY', 0.75)) * pre: continue  # note stays down (lift), not a short upshift cut
+        turn = False
+        if ty is not None:  # a corner follows a braking lift; upshift cuts happen on straights
+            t_i = t[i]; m0 = (ty > t_i - 1.0) & (ty < t_i); m1 = (ty > t_i + 0.5) & (ty < t_i + 2.0)
+            if m0.any() and m1.any(): turn = np.abs(yaw[m1]).mean() - np.abs(yaw[m0]).mean() > float(os.environ.get('YRISE', 0.05))
+        if r[i] - r[c] < float(os.environ.get('RFALL', 600)) and not turn: continue  # speed (rpm) falls after the lift, or the car turns
+        if os.environ.get('RNOUP') and r[min(len(r) - 1, i + int(1.0 / dt))] > r[i] + 200: continue  # no re-acceleration (an upshift cut is followed by rising rpm)
+        k = i + int(np.argmax(r[max(0, i - n):i + n + 1])) - min(i, n)
+        z.append({'onset': round(float(t[i + n // 2]) + float(os.environ.get('BOFF', 0.13)), 2), 'rpm_at_lift': int(r[k]), 'q_drop': round(float(d[i]), 2)})
+    return z
+
+
 def corners(ty, yaw):
     dt = ty[1] - ty[0]; s = median_filter(yaw, max(3, int(0.5 / dt) | 1))
     pk = find_peaks(np.abs(s), height=0.25, distance=int(1.0 / dt), width=int(0.4 / dt))
@@ -85,7 +108,7 @@ def one(path):
     t = np.array(A['t'], float); r = median_filter(np.array(A['rpm'], float), 5); q = np.array(A['q'], float)
     R = np.array(V['rows'], float); ty = R[:, 0]; qa = R[:, 2]; yaw = np.where(R[:, 8] > 0, 0, R[:, 1]) / F0
     up, dn = shifts(t, r, q)
-    zones = braking2(t, r, q, float(os.environ.get('BFALL', 2000)))
+    zones = braking3(t, r, q, ty, median_filter(yaw, 13)) if os.environ.get('BRK', '3') == '3' else braking2(t, r, q, float(os.environ.get('BFALL', 2000)))
     cs, ys = corners(ty, yaw)
     P, pc = lap_period(t, r)
     cl = closure(ty, ys, P, qa) if pc > 0.3 else None

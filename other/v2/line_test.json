@@ -1,0 +1,138 @@
+{
+ "2025-bahrain-s": {
+  "lap_m": 5369,
+  "heading_total_deg": -276.2,
+  "rms_m": 218.6,
+  "p95_m": 383.9,
+  "closure_m": 804.9,
+  "yaw_corr": 0.896
+ },
+ "2025-emilia-romagna-s": {
+  "lap_m": 4883,
+  "heading_total_deg": 426.4,
+  "rms_m": 193.6,
+  "p95_m": 332.4,
+  "closure_m": 274.3,
+  "yaw_corr": 0.868
+ },
+ "2025-spanish-s": {
+  "lap_m": 4642,
+  "heading_total_deg": -438.5,
+  "rms_m": 176.0,
+  "p95_m": 358.5,
+  "closure_m": 504.2,
+  "yaw_corr": 0.931
+ },
+ "2025-british-s": {
+  "lap_m": 5825,
+  "heading_total_deg": -148.9,
+  "rms_m": 571.4,
+  "p95_m": 1087.1,
+  "closure_m": 1547.1,
+  "yaw_corr": 0.816
+ },
+ "2025-hungarian-s": {
+  "lap_m": 4352,
+  "heading_total_deg": -395.4,
+  "rms_m": 141.1,
+  "p95_m": 261.3,
+  "closure_m": 318.4,
+  "yaw_corr": 0.941
+ },
+ "2025-singapore-s": {
+  "lap_m": 4882,
+  "heading_total_deg": 317.2,
+  "rms_m": 135.4,
+  "p95_m": 264.8,
+  "closure_m": 503.0,
+  "yaw_corr": 0.878
+ },
+ "2025-united-states-s": {
+  "lap_m": 5448,
+  "heading_total_deg": 361.7,
+  "rms_m": 176.2,
+  "p95_m": 348.5,
+  "closure_m": 171.8,
+  "yaw_corr": 0.84
+ },
+ "2025-sao-paulo-s": {
+  "lap_m": 4229,
+  "heading_total_deg": 365.7,
+  "rms_m": 187.5,
+  "p95_m": 295.0,
+  "closure_m": 545.2,
+  "yaw_corr": 0.839
+ },
+ "2025-qatar-s": {
+  "lap_m": 5384,
+  "heading_total_deg": -391.7,
+  "rms_m": 212.7,
+  "p95_m": 360.6,
+  "closure_m": 538.1,
+  "yaw_corr": 0.939
+ },
+ "2025-abu-dhabi-s": {
+  "lap_m": 5225,
+  "heading_total_deg": 282.2,
+  "rms_m": 123.0,
+  "p95_m": 270.0,
+  "closure_m": 220.3,
+  "yaw_corr": 0.898
+ },
+ "2026-chinese-s": {
+  "lap_m": 5399,
+  "heading_total_deg": -342.5,
+  "rms_m": 303.5,
+  "p95_m": 453.4,
+  "closure_m": 524.7,
+  "yaw_corr": 0.81
+ },
+ "2026-canadian-s": {
+  "lap_m": 4323,
+  "heading_total_deg": -344.9,
+  "rms_m": 105.1,
+  "p95_m": 204.9,
+  "closure_m": 186.4,
+  "yaw_corr": 0.854
+ },
+ "2026-barcelona-s": {
+  "lap_m": 4637,
+  "heading_total_deg": -373.5,
+  "rms_m": 85.4,
+  "p95_m": 134.9,
+  "closure_m": 262.2,
+  "yaw_corr": 0.928
+ },
+ "2026-austrian-s": {
+  "lap_m": 4298,
+  "heading_total_deg": -370.5,
+  "rms_m": 200.8,
+  "p95_m": 335.0,
+  "closure_m": 493.6,
+  "yaw_corr": 0.87
+ },
+ "2026-british-s": {
+  "lap_m": 5826,
+  "heading_total_deg": -224.6,
+  "rms_m": 240.1,
+  "p95_m": 484.2,
+  "closure_m": 1173.1,
+  "yaw_corr": 0.857
+ },
+ "2026-belgian-s": {
+  "lap_m": 6951,
+  "heading_total_deg": -239.8,
+  "rms_m": 635.3,
+  "p95_m": 1421.1,
+  "closure_m": 2367.3,
+  "yaw_corr": 0.841
+ },
+ "2026-hungarian-s": {
+  "lap_m": 4343,
+  "heading_total_deg": -351.9,
+  "rms_m": 89.7,
+  "p95_m": 152.6,
+  "closure_m": 24.6,
+  "yaw_corr": 0.936
+ }
+}
