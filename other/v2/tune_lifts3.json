@@ -1,0 +1,23 @@
+{
+ "n_laps": 28,
+ "variants": [
+  {
+   "extra_d": null,
+   "median_abs_rel": 0.134,
+   "bias_rel": -0.125,
+   "p90_abs_rel": 0.391
+  },
+  {
+   "extra_d": 0.5,
+   "median_abs_rel": 0.5,
+   "bias_rel": 0.5,
+   "p90_abs_rel": 1.0
+  },
+  {
+   "extra_d": 0.8,
+   "median_abs_rel": 0.438,
+   "bias_rel": 0.438,
+   "p90_abs_rel": 1.0
+  }
+ ]
+}
