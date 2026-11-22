@@ -1,0 +1,199 @@
+{
+ "laps": {
+  "2025-chinese-s": {
+   "row": "v4",
+   "video": 20,
+   "truth": 25,
+   "e_rel": -0.2,
+   "yt_e_rel": -0.04
+  },
+  "2025-bahrain-s": {
+   "row": "v8",
+   "video": 29,
+   "truth": 31,
+   "e_rel": -0.065,
+   "yt_e_rel": -0.129
+  },
+  "2025-saudi-arabian-s": {
+   "row": "v10",
+   "video": 23,
+   "truth": 20,
+   "e_rel": 0.15,
+   "yt_e_rel": 0.05
+  },
+  "2025-miami-s": {
+   "row": "v12",
+   "video": 16,
+   "truth": 20,
+   "e_rel": -0.2,
+   "yt_e_rel": 0.05
+  },
+  "2025-emilia-romagna-s": {
+   "row": "v14",
+   "video": 18,
+   "truth": 21,
+   "e_rel": -0.143,
+   "yt_e_rel": -0.048
+  },
+  "2025-spanish-s": {
+   "row": "v18",
+   "video": 16,
+   "truth": 18,
+   "e_rel": -0.111,
+   "yt_e_rel": -0.056
+  },
+  "2025-canadian-s": {
+   "row": "v20",
+   "video": 24,
+   "truth": 25,
+   "e_rel": -0.04,
+   "yt_e_rel": 0.16
+  },
+  "2025-british-s": {
+   "row": "v24",
+   "video": 14,
+   "truth": 17,
+   "e_rel": -0.176,
+   "yt_e_rel": 0.0
+  },
+  "2025-hungarian-s": {
+   "row": "v27",
+   "video": 10,
+   "truth": 22,
+   "e_rel": -0.545,
+   "yt_e_rel": -0.227
+  },
+  "2025-dutch-s": {
+   "row": "v29",
+   "video": 13,
+   "truth": 17,
+   "e_rel": -0.235,
+   "yt_e_rel": 0.0
+  },
+  "2025-italian-s": {
+   "row": "v31",
+   "video": 17,
+   "truth": 18,
+   "e_rel": -0.056,
+   "yt_e_rel": 0.111
+  },
+  "2025-azerbaijan-s": {
+   "row": "v33",
+   "video": 29,
+   "truth": 31,
+   "e_rel": -0.065,
+   "yt_e_rel": 0.161
+  },
+  "2025-singapore-s": {
+   "row": "v35",
+   "video": 32,
+   "truth": 31,
+   "e_rel": 0.032,
+   "yt_e_rel": 0.194
+  },
+  "2025-united-states-s": {
+   "row": "v37",
+   "video": 16,
+   "truth": 24,
+   "e_rel": -0.333,
+   "yt_e_rel": 0.042
+  },
+  "2025-mexico-city-s": {
+   "row": "v39",
+   "video": 20,
+   "truth": 18,
+   "e_rel": 0.111,
+   "yt_e_rel": 0.333
+  },
+  "2025-sao-paulo-s": {
+   "row": "v41",
+   "video": 12,
+   "truth": 19,
+   "e_rel": -0.368,
+   "yt_e_rel": 0.0
+  },
+  "2025-qatar-s": {
+   "row": "v45",
+   "video": 11,
+   "truth": 19,
+   "e_rel": -0.421,
+   "yt_e_rel": 0.053
+  },
+  "2025-abu-dhabi-s": {
+   "row": "v47",
+   "video": 24,
+   "truth": 23,
+   "e_rel": 0.043,
+   "yt_e_rel": 0.217
+  },
+  "2026-chinese-s": {
+   "row": "v50",
+   "video": 21,
+   "truth": 31,
+   "e_rel": -0.323,
+   "yt_e_rel": -0.161
+  },
+  "2026-miami-s": {
+   "row": "v54",
+   "video": 21,
+   "truth": 22,
+   "e_rel": -0.045,
+   "yt_e_rel": 0.045
+  },
+  "2026-canadian-s": {
+   "row": "v56",
+   "video": 26,
+   "truth": 28,
+   "e_rel": -0.071,
+   "yt_e_rel": -0.071
+  },
+  "2026-monaco-s": {
+   "row": "v58",
+   "video": 28,
+   "truth": 28,
+   "e_rel": 0.0,
+   "yt_e_rel": 0.143
+  },
+  "2026-austrian-s": {
+   "row": "v61",
+   "video": 23,
+   "truth": 24,
+   "e_rel": -0.042,
+   "yt_e_rel": -0.042
+  },
+  "2026-british-s": {
+   "row": "v63",
+   "video": 10,
+   "truth": 18,
+   "e_rel": -0.444,
+   "yt_e_rel": -0.167
+  },
+  "2026-belgian-s": {
+   "row": "v65",
+   "video": 18,
+   "truth": 26,
+   "e_rel": -0.308,
+   "yt_e_rel": -0.231
+  },
+  "2026-hungarian-s": {
+   "row": "v67",
+   "video": 27,
+   "truth": 26,
+   "e_rel": 0.038,
+   "yt_e_rel": 0.077
+  },
+  "2026-spanish-s": {
+   "row": "v72",
+   "video": 24,
+   "truth": 32,
+   "e_rel": -0.25,
+   "yt_e_rel": -0.094
+  }
+ },
+ "summary": {
+  "n": 27,
+  "median_abs_rel": 0.143,
+  "bias": -0.111,
+  "youtube_same_laps_median_abs_rel": 0.077
+ }
+}
