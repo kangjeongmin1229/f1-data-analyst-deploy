@@ -163,6 +163,9 @@ jobs:
           # Hypercar (LMH/LMDh) peak braking capped at the iRacing GTP envelope 8.63 + 0.003234 v^2 m/s^2 (owner rule 14: learned from
           # iRacing, "model"). Experiment 44043761033: hypercar holdout mean 1.24 -> 1.16 % (BE0 -> BE1; 1.15x envelope BE2: 1.20 %)
           LAPSIM_BRAKE_ENV_HYPER: '8.63,0.003234'
+          # corner-speed gate candidate (claude/gate-corner-speed-prereg-2026-11-22.md); experiment branch only
+          LAPSIM_FIT_DMU: 'on'
+          LAPSIM_FIT_CLAEXP: 'on'
         run: node scripts/sim/calibrate.mjs
       # TracingInsights race laps 2018 on; reference = mean of the best 8 qualifying laps (script defaults)
       # Hypercar per maker (LapSim × BoPSim × SetupSim, owner 2026-11-21): the residuals are learned on the class cars just fitted
