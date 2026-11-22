@@ -1,0 +1,8 @@
+{
+ "part_vs_off_auc": 0.951,
+ "full_vs_part_auc": 0.911,
+ "acc_3class": 0.851,
+ "part_recall": 0.562,
+ "share_median_abs_pp_cv": 3.39,
+ "share_p90_abs_pp_cv": 9.46
+}

@@ -1,0 +1,40 @@
+{
+ "n_laps": 28,
+ "variants": [
+  {
+   "rule": "argmax",
+   "dmin": 0.3,
+   "median_abs_rel": 0.216,
+   "bias_rel": 0.216,
+   "p90_abs_rel": 0.429
+  },
+  {
+   "rule": "argmax",
+   "dmin": 0.5,
+   "median_abs_rel": 0.143,
+   "bias_rel": 0.143,
+   "p90_abs_rel": 0.342
+  },
+  {
+   "rule": "p05",
+   "dmin": 0.3,
+   "median_abs_rel": 0.182,
+   "bias_rel": 0.162,
+   "p90_abs_rel": 0.346
+  },
+  {
+   "rule": "p05",
+   "dmin": 0.5,
+   "median_abs_rel": 0.143,
+   "bias_rel": 0.143,
+   "p90_abs_rel": 0.333
+  }
+ ],
+ "frozen": {
+  "rule": "argmax",
+  "dmin": 0.5,
+  "median_abs_rel": 0.143,
+  "bias_rel": 0.143,
+  "p90_abs_rel": 0.342
+ }
+}
