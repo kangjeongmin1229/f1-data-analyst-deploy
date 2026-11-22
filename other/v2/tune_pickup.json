@@ -1,0 +1,49 @@
+{
+ "n_laps": 28,
+ "variants": [
+  {
+   "D": 0.5,
+   "rise": true,
+   "P_median": 0.235,
+   "R_median": 0.33,
+   "bias_median_s": 0.0,
+   "n_pick_video_truth": [
+    11,
+    8
+   ]
+  },
+  {
+   "D": 0.5,
+   "rise": false,
+   "P_median": 0.245,
+   "R_median": 0.315,
+   "bias_median_s": 0.005,
+   "n_pick_video_truth": [
+    10,
+    8
+   ]
+  },
+  {
+   "D": 1.0,
+   "rise": true,
+   "P_median": 0.26,
+   "R_median": 0.33,
+   "bias_median_s": 0.0,
+   "n_pick_video_truth": [
+    10,
+    7
+   ]
+  },
+  {
+   "D": 1.0,
+   "rise": false,
+   "P_median": 0.25,
+   "R_median": 0.315,
+   "bias_median_s": 0.01,
+   "n_pick_video_truth": [
+    9,
+    7
+   ]
+  }
+ ]
+}
