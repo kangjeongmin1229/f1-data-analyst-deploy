@@ -7,21 +7,21 @@ it becomes a model term only through a pre-registered gate. Real laps and weathe
 
 | Group | Condition | n | Slope (%/unit) | 90 % interval | R² |
 |---|---|---|---|---|---|
-| all | track temperature (°C) | 68 | -0.0335 | -0.0514 … -0.0150 | 0.10 |
-| all | air temperature (°C) | 68 | -0.0736 | -0.1034 … -0.0458 | 0.19 |
-| all | wind (m/s) | 68 | 0.1295 | -0.1138 … 0.3425 | 0.02 |
-| all | humidity (%) | 68 | 0.0034 | -0.0083 … 0.0148 | 0.00 |
-| all | air pressure (hPa) | 68 | 0.0026 | -0.0014 … 0.0103 | 0.01 |
-| f1 | track temperature (°C) | 35 | -0.0104 | -0.0351 … 0.0157 | 0.01 |
-| f1 | air temperature (°C) | 35 | -0.0236 | -0.0555 … 0.0107 | 0.02 |
-| f1 | wind (m/s) | 35 | 0.1279 | -0.0700 … 0.3463 | 0.03 |
-| f1 | humidity (%) | 35 | -0.0074 | -0.0220 … 0.0071 | 0.02 |
-| f1 | air pressure (hPa) | 35 | -0.0009 | -0.0041 … 0.0048 | 0.00 |
-| wec | track temperature (°C) | 33 | -0.0418 | -0.0710 … -0.0186 | 0.14 |
-| wec | air temperature (°C) | 33 | -0.0990 | -0.1644 … -0.0614 | 0.31 |
-| wec | wind (m/s) | 33 | 0.1528 | -0.3528 … 0.4763 | 0.02 |
-| wec | humidity (%) | 33 | 0.0129 | -0.0065 … 0.0326 | 0.03 |
-| wec | air pressure (hPa) | 33 | 0.0139 | -0.0008 … 0.0231 | 0.11 |
+| all | track temperature (°C) | 68 | -0.0318 | -0.0592 … -0.0079 | 0.07 |
+| all | air temperature (°C) | 68 | -0.0550 | -0.0943 … -0.0201 | 0.09 |
+| all | wind (m/s) | 68 | 0.2550 | 0.0055 … 0.4777 | 0.05 |
+| all | humidity (%) | 68 | 0.0006 | -0.0109 … 0.0143 | 0.00 |
+| all | air pressure (hPa) | 68 | 0.0007 | -0.0033 … 0.0063 | 0.00 |
+| f1 | track temperature (°C) | 35 | 0.0047 | -0.0252 … 0.0326 | 0.00 |
+| f1 | air temperature (°C) | 35 | -0.0090 | -0.0487 … 0.0277 | 0.00 |
+| f1 | wind (m/s) | 35 | 0.0645 | -0.1278 … 0.2747 | 0.01 |
+| f1 | humidity (%) | 35 | -0.0131 | -0.0294 … 0.0033 | 0.07 |
+| f1 | air pressure (hPa) | 35 | 0.0002 | -0.0030 … 0.0078 | 0.00 |
+| wec | track temperature (°C) | 33 | -0.0537 | -0.0974 … -0.0221 | 0.17 |
+| wec | air temperature (°C) | 33 | -0.0873 | -0.1558 … -0.0423 | 0.18 |
+| wec | wind (m/s) | 33 | 0.4484 | -0.0365 … 0.7567 | 0.11 |
+| wec | humidity (%) | 33 | 0.0155 | -0.0028 … 0.0416 | 0.03 |
+| wec | air pressure (hPa) | 33 | 0.0024 | -0.0135 … 0.0137 | 0.00 |
 
 Rows without weather: none.
 Not recorded in the data (cannot be checked yet): tyre age / set, tow (slipstream), fuel load, track evolution (rubber).
