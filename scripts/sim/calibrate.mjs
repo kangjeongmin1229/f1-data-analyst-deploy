@@ -45,9 +45,12 @@ const ONLY_WEC = E.LAPSIM_ONLY === 'wec';
 const prevCal = ONLY_WEC ? (await import('../../worker/lapsim/calibration-data.js')).lapsimCalibration : null;
 const traces = ONLY_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'traces.json'), 'utf8'));
 // LAPSIM_KAPPA_CAP_G=6.5: the speed-implied curvature cap (geometry.js) on tracks whose stored data predates it (experiment inputs)
-if (E.LAPSIM_KAPPA_CAP_G && !ONLY_WEC) for (const [id, d] of Object.entries(lapsimTracks)) { if (d.quality?.kappaCap || id === 'zandvoort') continue;
+// corner-speed gate attempt 2 (claude/gate-curvature-cap-prereg-2026-11-22.md): a gMax below the stored cap's re-caps already capped tracks
+if (E.LAPSIM_KAPPA_CAP_G && !ONLY_WEC) for (const [id, d] of Object.entries(lapsimTracks)) { if ((d.quality?.kappaCap && !(d.quality.kappaCap.gMax > Number(E.LAPSIM_KAPPA_CAP_G))) || id === 'zandvoort') continue;
   const dry = traces.filter(x => x.track === id && !x.weather?.rain && x.position <= 3), own = dry.filter(x => x.year === d.year), laps = own.length ? own : dry;
-  if (laps.length) d.kappa = capCurvature(d.kappa, d.ds, laps, Number(E.LAPSIM_KAPPA_CAP_G)).kappa; }
+  if (laps.length) { const r = capCurvature(d.kappa, d.ds, laps, Number(E.LAPSIM_KAPPA_CAP_G)); d.kappa = r.kappa; d.quality = {...d.quality, kappaCap: {gMax: Number(E.LAPSIM_KAPPA_CAP_G), points: r.points, laps: laps.length}}; } }
+// the page and tool read tracks-data.js: write the capped tracks so a candidate is judged on the line it was fitted on
+if (E.LAPSIM_KAPPA_CAP_G && E.LAPSIM_KAPPA_CAP_WRITE === 'on' && !ONLY_WEC) await writeFile('worker/lapsim/tracks-data.js', (await readFile('worker/lapsim/tracks-data.js', 'utf8')).replace(/export const lapsimTracks=[\s\S]*?;\n/, () => `export const lapsimTracks=${JSON.stringify(lapsimTracks)};\n`));
 const tracks = Object.fromEntries(Object.entries(lapsimTracks).map(([id, d]) => [id, trackFromData(d)]));
 // F1 cars open DRS (to 2025) or Straight Mode (2026) only in the FIA zones of the event notes (f1-zones-data.js); without a
 // document the automatic straight finder stands in. LAPSIM_FIA_ZONES=on (2026-11-15: the finder gave Jeddah 880 m of DRS, the FIA 2025 m)
