@@ -21,5 +21,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           mkdir -p probe-out && cp track-limits.log probe-out/track-limits.log
-          git add worker/lapsim/track-limits-data.js probe-out/track-limits.log
+          git add -f worker/lapsim/track-limits-data.js probe-out/track-limits.log
           git commit -m 'data: track-limit catalogue fetch [skip ci]' && git push
