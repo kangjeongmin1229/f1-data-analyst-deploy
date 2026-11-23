@@ -6,10 +6,11 @@ name: Lap simulator experiment
 on:
   push:
     branches: ['lapsim-exp/**']
+    paths-ignore: ['docs/experiments/**']
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 concurrency:
@@ -23,6 +24,7 @@ jobs:
       configs: ${{ steps.p.outputs.configs }}
       common_env: ${{ steps.p.outputs.common_env }}
       base_run: ${{ steps.p.outputs.base_run }}
+      base_commit: ${{ steps.p.outputs.base_commit }}
       cand_run: ${{ steps.p.outputs.cand_run }}
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +33,7 @@ jobs:
           echo "configs=$(jq -c '.configs' scripts/sim/experiments.json)" >> "$GITHUB_OUTPUT"
           echo "common_env=$(jq -c '.common_env' scripts/sim/experiments.json)" >> "$GITHUB_OUTPUT"
           echo "base_run=$(jq -r '.base_run' scripts/sim/experiments.json)" >> "$GITHUB_OUTPUT"
+          echo "base_commit=$(jq -r '.base_commit // ""' scripts/sim/experiments.json)" >> "$GITHUB_OUTPUT"
           echo "cand_run=$(jq -r '.cand_run // ""' scripts/sim/experiments.json)" >> "$GITHUB_OUTPUT"
   run:
     needs: plan
@@ -52,13 +55,12 @@ jobs:
           path: /tmp
           run-id: ${{ needs.plan.outputs.base_run }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/download-artifact@v4
+      # base calibration = the one the shared base run committed (bot commit, experiments.json base_commit)
+      - name: Base calibration from the base run's commit
         if: matrix.config.name == 'base'
-        with:
-          name: calibration-output
-          path: /tmp/base-cal
-          run-id: ${{ needs.plan.outputs.base_run }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch --no-tags --depth=1 origin '${{ needs.plan.outputs.base_commit }}' || git fetch --no-tags origin 'refs/heads/lapsim/gate-w2-base-2026-11-24'
+          mkdir -p /tmp/base-cal/worker/lapsim && git show '${{ needs.plan.outputs.base_commit }}:worker/lapsim/calibration-data.js' > /tmp/base-cal/worker/lapsim/calibration-data.js
       - name: Unpack the build
         run: tar xzf /tmp/lapsim-prep.tgz
       - run: npm ci --omit=dev --ignore-scripts
@@ -89,6 +91,18 @@ jobs:
             probe-out/
             docs/lapsim-report.md
           retention-days: 14
+      # outputs on the branch too (as step 13 does), so nobody needs an artifact download
+      - name: Commit outputs to the branch
+        if: always()
+        run: |
+          d='docs/experiments/step2a-a2/${{ matrix.config.name }}'; mkdir -p "$d"
+          cp probe-out/validate-*.json probe-out/levelc-*.json probe-out/forward-*.json "$d"/ 2>/dev/null || true
+          tail -c 200000 probe-out/log-*.txt > "$d/calibrate-log-tail.txt" 2>/dev/null || true
+          [ '${{ matrix.config.name }}' = base ] || cp probe-out/cal-*.js "$d"/ 2>/dev/null || true
+          git config user.name 'kongboda-lapsim[bot]'; git config user.email 'lapsim@users.noreply.github.com'
+          git add "$d"; git diff --cached --quiet && exit 0
+          git commit -qm "Step 2a a2 experiment outputs: ${{ matrix.config.name }} (run ${{ github.run_id }})"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin '${{ github.ref_name }}' && git push -q origin 'HEAD:${{ github.ref_name }}' && exit 0; sleep $((i*7)); done; exit 1
   compare:
     needs: [plan, run]
     if: always() && needs.run.result == 'success'
@@ -120,3 +134,11 @@ jobs:
           name: exp-comparison
           path: comparison/
           retention-days: 14
+      - name: Commit the gate result to the branch
+        run: |
+          [ -s comparison/cda-gate.json ] || exit 0
+          d=docs/experiments/step2a-a2; mkdir -p "$d"; cp comparison/cda-gate.json "$d/"
+          git config user.name 'kongboda-lapsim[bot]'; git config user.email 'lapsim@users.noreply.github.com'
+          git add "$d"; git diff --cached --quiet && exit 0
+          git commit -qm "Step 2a a2 gate result (run ${{ github.run_id }})"
+          for i in 1 2 3 4 5; do git pull -q --rebase origin '${{ github.ref_name }}' && git push -q origin 'HEAD:${{ github.ref_name }}' && exit 0; sleep $((i*7)); done; exit 1

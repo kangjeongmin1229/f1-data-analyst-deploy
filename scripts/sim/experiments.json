@@ -1,5 +1,5 @@
 {
-  "note": "Step 2a attempt 2 (claude/gate-cda-measured-prereg-2026-11-23-amendment-a2.md): base = the shared base run (central rule v2) on wave-2 base b4041cf; its calibration and lapsim-prep build; VD2 = measured per-track drag (all clean push laps) + ERS law (b) for 2023-25; R10 = law (b) only (reported, not judged). Production settings as in lapsim-data.yml (script defaults: 5 x 200, WEC held-out rule). Plan 4d.1 (amendment A2 rev 3): VD2 and R10 change F1 only (WEC cars and laps hash-identical, flags on vs off), so both run with LAPSIM_SKIP_WEC=1 and the gate reuses the base's WEC numbers.",
+  "note": "Step 2a attempt 2 (claude/gate-cda-measured-prereg-2026-11-23-amendment-a2.md): base = the shared base run (central rule v2) on wave-2 base b4041cf; its calibration and lapsim-prep build; VD2 = measured per-track drag (all clean push laps) + ERS law (b) for 2023-25; R10 = law (b) only (reported, not judged). Production settings as in lapsim-data.yml (script defaults: 5 x 200, WEC held-out rule). Plan 4d.1 (amendment A2 rev 3): VD2 and R10 change F1 only (WEC cars and laps hash-identical, flags on vs off), so both run with LAPSIM_SKIP_WEC=1 and the gate reuses the base's WEC numbers. Rebased on the split workflow (0fdb386). Base = calibration committed by the shared base run (a428459), its reports recomputed here on the same build and code. worker/lapsim/f1-zones-data.js kept at the base's version (bot commit 2622903 moved one Yas DRS zone end by 5 m after the base run; experiment branch only).",
   "common_env": {
     "LAPSIM_FIA_ZONES": "on",
     "LAPSIM_PU_QUALI": "on",
@@ -8,6 +8,10 @@
     "LAPSIM_TRACE_MASK": "1"
   },
   "configs": [
+    {
+      "name": "base",
+      "env": {}
+    },
     {
       "name": "VD2",
       "env": {
@@ -24,5 +28,6 @@
       }
     }
   ],
-  "base_run": "45191678721"
+  "base_run": "45191678721",
+  "base_commit": "a428459"
 }
