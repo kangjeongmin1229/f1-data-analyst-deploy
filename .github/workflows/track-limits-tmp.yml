@@ -1,0 +1,25 @@
+# Temporary (step 4a): fetch the track-limit catalogue on the fork and commit it back. Removed before the PR.
+name: Track limits catalogue (temporary)
+on:
+  push:
+    branches: ['lapsim-exp/track-limits-4a']
+    paths: ['scripts/sim/track-limits.mjs', '.github/workflows/track-limits-tmp.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - run: node scripts/sim/track-limits.mjs 2>&1 | tee track-limits.log
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p probe-out && cp track-limits.log probe-out/track-limits.log
+          git add worker/lapsim/track-limits-data.js probe-out/track-limits.log
+          git commit -m 'data: track-limit catalogue fetch [skip ci]' && git push
