@@ -19,19 +19,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci --ignore-scripts
-      - name: Probe WEC / IMSA notice boards
-        run: |
-          mkdir -p probe-out; : > probe-out/probe.txt
-          for u in \
-            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/' \
-            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/07_6%20Hours%20of%20Fuji/' \
-            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/07_6%20Hours%20of%20Fuji/006_Doc%206%20-%20BRIEFING%20NOTES.pdf' \
-            'https://fiawec.alkamelsystems.com/' \
-            'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/' \
-            'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/09_Briefing%20Photos/01_IWSC%20DRIVER%20BRIEFING.pdf' \
-            'https://imsa.results.alkamelcloud.com/' ; do
-            { echo "=== $u"; curl -sSL --max-time 30 -o /tmp/p -w '%{http_code} %{content_type} %{size_download}\n' "$u"; head -c 4000 /tmp/p | tr -c '[:print:]\n' '.'; echo; } >> probe-out/probe.txt 2>&1 || true
-          done
+      - run: mkdir -p probe-out && : > probe-out/probe.txt
       - run: node scripts/sim/track-limits.mjs 2>&1 | tee track-limits.log
       - run: |
           git config user.name 'github-actions[bot]'

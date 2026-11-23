@@ -12,8 +12,8 @@ const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?[.)]?\s*\|?\s*[^\n|]{0,40}\btrack[- ]l
 const SUB = /^\s*\d{1,2}\.\d{1,2}\.?\s*\|?\s*[A-Z]/;
 const NEXT = /^\s*(\d{1,2})[.)]\s*\|?\s*[A-Z“"][^\n]{2,90}$/;
 const ALL = /\ball (?:the )?(?:corners|turns)\b|\bentire (?:circuit|track)\b|\bthroughout the (?:circuit|lap)\b|\bat every corner\b/i;
-const EDGES = /\bwhite lines?\b[^.]{0,40}\b(?:define|are)\b[^.]{0,20}\btrack edges?\b/i;
-const PLACE = /\b(?:corner|kerb|curb|exit|apex|bollard|chicane|hairpin|loop|sausage)\b/i;
+const EDGES = /\b(?:white|yellow) lines?\b[^.]{0,40}\b(?:define|are)\b[^.]{0,20}\btrack edges?\b/i;
+const PLACE = /\b(?:corner|kerb|curb|exit|entry|apex|bollard|chicane|hairpin|loop|sausage)\b/i;
 
 // rule type of one sentence; a loop or kerb edge is more specific than "white line"
 export function ruleOf(s) {
@@ -21,7 +21,7 @@ export function ruleOf(s) {
   if (/bollard|\bblock\b|polystyrene|re-?join|escape road/i.test(s)) return 'other';
   if (/\bloops?\b|timing line|detection (?:line|system)/i.test(s)) return 'loop';
   if (/\bkerbs?\b|\bcurbs?\b/i.test(s) && !/\bwhite lines?\b[^.]*\bnot\b[^.]*\bkerb/i.test(s)) return 'kerb';
-  if (/\bwhite lines?\b|\btrack edge|\bedges? of the track/i.test(s)) return 'line';
+  if (/\b(?:white|yellow) lines?\b|\btrack edge|\bedges? of the track/i.test(s)) return 'line';
   return 'other';
 }
 
@@ -104,8 +104,8 @@ export function tracksFor(event, year) {
     && !(id === 'kuala-lumpur' && year !== 2026) && !(id === 'sakhir' && year === 2026)).map(([id]) => id);
 }
 
-const NOTES = /race director'?s? (?:event|competition) notes|^(?:doc \d+ - )?(?:event|competition) notes(?: v\d+)?$|track limits?/i;
-const rank = d => (/race director/i.test(d.title) ? 0 : /track limit/i.test(d.title) ? 1 : 2) * 100 - Number(d.title.match(/\bV(\d+)\b/i)?.[1] || 1);
+const NOTES = /race director[’'s]*\s+(?:event|competition) notes|^(?:doc \d+ - )?(?:event|competition) notes(?: v\d+)?$|track limits?/i;
+const rank = d => (/race director/i.test(d.title) ? 0 : /track limit/i.test(d.title) ? 1 : 2) * 100 - Number(d.title.match(/\b(?:V|Version\s*)(\d+)\b/i)?.[1] || 1);
 
 // shortcut: worker/fia.js parseDocuments cuts a double-quoted href at an apostrophe ("Race Director's ..."),
 // so the event page is read again here with quote-paired hrefs; drop this when fia.js is fixed.
@@ -159,6 +159,80 @@ async function fetchAll(years) {
   return out;
 }
 
+// docs table: one row per track, one cell per year (P n = parsed with n named corners, + = all-corners rule,
+// U = notes found but nothing parsed, – = no document or no F1 event that year)
+export function coverageTable(rows, years) {
+  const tracks = [...new Set(rows.map(r => r.track))].sort();
+  const cell = (t, y) => {
+    const rs = rows.filter(r => r.track === t && r.year === y);
+    if (!rs.length) return '–';
+    return rs.map(r => r.status === 'parsed' ? `P ${r.corners.length}${r.allCorners ? '+' : ''}` : r.status === 'unparsed' ? 'U' : '–').join(' / ');
+  };
+  return ['| Track | ' + years.join(' | ') + ' |', '|---|' + years.map(() => '---').join('|') + '|',
+    ...tracks.map(t => `| ${t} | ${years.map(y => cell(t, y)).join(' | ')} |`)].join('\n');
+}
+
+// IMSA WeatherTech: driver-briefing slides on the Al Kamel notice board ("TRACK LIMITS – TURN 1" slide titles and
+// a general bullet such as "Two wheels must remain on racing surface, including painted curbing").
+export function parseImsaBriefing(text) {
+  const lines = String(text || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  const body = lines.join(' ');
+  const generalRule = /painted curb|including (?:the )?curb|curbing/i.test(body) ? 'kerb' : /white lines?/i.test(body) ? 'line' : null;
+  const corners = [], unparsed = [], seen = new Set();
+  for (const l of lines) {
+    if (!/track limits?|short ?cut/i.test(l) || l.length > 120) continue;
+    const refs = cornerRefs(l);
+    if (!refs.length) { if (/[–-]/.test(l) && !/^track limits?$/i.test(l)) unparsed.push(l); continue; }
+    const rule = /short ?cut/i.test(l) ? 'other' : generalRule || ruleOf(l);
+    for (const r of refs) {
+      if (seen.has(r.turn + r.letter + rule)) continue;
+      seen.add(r.turn + r.letter + rule);
+      corners.push({turn: r.turn, ...(r.letter ? {letter: r.letter} : {}), rule, text: l});
+    }
+  }
+  corners.sort((a, b) => a.turn - b.turn);
+  return {corners, allCorners: /two wheels must remain|track limits (?:will be|are) enforced/i.test(body), generalRule, unparsed};
+}
+
+export const IMSA_TRACKS = [['daytona', /Daytona International/i], ['sebring', /Sebring/i], ['long-beach', /Long Beach/i],
+  ['laguna-seca', /Laguna Seca/i], ['watkins-glen', /Watkins Glen/i], ['mosport', /Canadian Tire|Mosport/i], ['road-america', /Road America/i],
+  ['vir', /VIRginia|Virginia International/i], ['indianapolis', /Indianapolis/i], ['road-atlanta', /Road Atlanta|Petit Le Mans/i],
+  ['mid-ohio', /Mid-Ohio/i], ['lime-rock', /Lime Rock/i], ['detroit', /Detroit/i], ['austin', /Circuit of the Americas/i]];
+
+async function fetchImsa(years) {
+  const {extractText, getDocumentProxy} = await import('unpdf');
+  const ROOT = 'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/';
+  const get = async (url, bin) => { await sleep(500); const r = await fetch(url, {signal: AbortSignal.timeout(30000)}); if (!r.ok) throw Error('IMSA HTTP ' + r.status); return bin ? new Uint8Array(await r.arrayBuffer()) : r.text(); };
+  const dir = async url => [...(await get(url)).matchAll(/<a href="([^"?/][^"]*)">[^<]*<\/a><\/td><td[^>]*>([^<]*)</g)].map(m => ({href: m[1], name: decodeURIComponent(m[1]).replace(/\/$/, ''), url: new URL(m[1], url).href, modified: m[2].trim(), isDir: m[1].endsWith('/')}));
+  const out = [];
+  for (const year of years) {
+    const season = (await dir(ROOT).catch(() => [])).find(d => d.isDir && d.name.endsWith('_' + year));
+    if (!season) { console.log(`imsa ${year}: no notice-board season`); continue; }
+    for (const ev of (await dir(season.url)).filter(d => d.isDir && !/roar|test/i.test(d.name))) {
+      const track = IMSA_TRACKS.find(([, re]) => re.test(ev.name))?.[0];
+      if (!track) continue;
+      try {
+        const top = await dir(ev.url), folders = top.filter(d => d.isDir && /brief/i.test(d.name));
+        const files = [...top.filter(d => !d.isDir), ...(await Promise.all(folders.map(f => dir(f.url)))).flat()];
+        const doc = files.filter(f => /\.pdf$/i.test(f.name) && /brief/i.test(f.name) && /iwsc|weathertech|wtsc/i.test(f.name)).sort((a, b) => b.modified.localeCompare(a.modified))[0];
+        const meta = {track, year, event: ev.name.replace(/^\d+_/, ''), doc: doc ? {title: doc.name, url: doc.url, published: doc.modified || null} : null};
+        if (!doc && !top.some(d => /iwsc|weathertech/i.test(d.name)) && !files.some(f => /iwsc|weathertech/i.test(f.name))) continue; // not a WeatherTech event
+        let p = {corners: [], allCorners: false, generalRule: null, unparsed: []}, raw = '';
+        if (doc) {
+          const {text} = await extractText(await getDocumentProxy(await get(doc.url, true)), {mergePages: false});
+          raw = text.join('\n');
+          p = parseImsaBriefing(raw);
+        }
+        const status = !doc ? 'no document' : p.corners.length || p.allCorners ? 'parsed' : 'unparsed';
+        out.push({track, year, series: 'imsa', event: meta.event, status, ...p, doc: meta.doc, sectionFound: /track limits?/i.test(raw),
+          raw: raw.split('\n').filter(l => /track limit|short ?cut|two wheels|curb|white line/i.test(l)).join('\n').slice(0, 3000)});
+        console.log(`imsa ${track} ${year} ${meta.event}: ${status}, ${p.corners.length} corners`);
+      } catch (e) { console.log(`imsa ${track} ${year}: ${e.message}`); }
+    }
+  }
+  return out;
+}
+
 const write = rows => writeFile('worker/lapsim/track-limits-data.js', `// Generated by scripts/sim/track-limits.mjs from FIA Race Director's Event / Competition Notes ("Track limits").\n// Data only (step 4a): not used by any lap. raw = the section text the corners were read from.\nexport const lapsimTrackLimits=${JSON.stringify(rows)};\n`);
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
@@ -167,6 +241,10 @@ if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
     await write(lapsimTrackLimits.map(r => r.series !== 'f1' ? r : {...entryFrom(r, r.raw ? r.raw.split('\n') : []), ...(r.error ? {error: r.error} : {})}));
   } else {
     const years = (process.env.TL_YEARS || '2019,2020,2021,2022,2023,2024,2025,2026').split(',').map(Number);
-    await write(await fetchAll(years));
+    const series = (process.env.TL_SERIES || 'f1,imsa').split(',');
+    const {lapsimTrackLimits: old = []} = await import('../../worker/lapsim/track-limits-data.js').catch(() => ({}));
+    const rows = [];
+    for (const s of ['f1', 'imsa']) rows.push(...(series.includes(s) ? await (s === 'f1' ? fetchAll : fetchImsa)(years) : old.filter(r => r.series === s)));
+    await write(rows);
   }
 }
