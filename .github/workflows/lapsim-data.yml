@@ -35,6 +35,11 @@ on:
         required: false
         default: ''
 
+# gate 10b (claude/gate-ers-law-prereg-2026-11-23-amendment.md §9.7; branch lapsim/gate-10b-*, never merged): the only difference to
+# the shared base run is ERS law (b) on the F1 cars, for every part job. Build pinned in .github/lapsim-prep-run (45191678721).
+env:
+  LAPSIM_ERS_LAW: 'b'
+
 permissions:
   contents: write
   actions: read
@@ -273,6 +278,14 @@ jobs:
           for f in docs/lapsim-level-c.json docs/lapsim-forward.json; do
             node -e "const s=require('./'+process.argv[1]).summary;console.log('### '+process.argv[1]+'\n\n| group | n | RMS % |\n|---|---|---|\n'+Object.entries(s).map(([k,v])=>'| '+k+' | '+v.n+' | '+v.rmsPct+' |').join('\n'))" "$f" >> "$GITHUB_STEP_SUMMARY"
           done
+      - name: Gate 10b inputs (validate base and candidate full-fit cars on the same traces)
+        if: inputs.calibrate != 'false'
+        continue-on-error: true
+        run: |
+          mkdir -p probe-out && git show HEAD:worker/lapsim/calibration-data.js > probe-out/cal-base.mjs
+          node scripts/sim/validate.mjs cand > /dev/null
+          LAPSIM_CAL_FILE="$PWD/probe-out/cal-base.mjs" node scripts/sim/validate.mjs base > /dev/null
+          cp worker/lapsim/calibration-data.js probe-out/cal-cand.mjs; cp docs/lapsim-level-c.json probe-out/levelc-cand.json; cp docs/lapsim-forward.json probe-out/forward-cand.json
       - name: Test
         if: inputs.calibrate != 'false'
         run: node --test tests/lapsim*.test.mjs
@@ -287,6 +300,7 @@ jobs:
           path: |
             worker/lapsim/calibration-data.js
             docs/lapsim-report.md
+            probe-out/
           if-no-files-found: ignore
           retention-days: 14
       - name: Commit derived data
