@@ -1,0 +1,58 @@
+name: Lap simulator I3 geometry (OSM + open elevation)
+
+# I3 (claude/gate-i3-geometry-prereg-2026-11-23.md): car-independent geometry for Jeddah, Shanghai, Imola, Suzuka.
+# Fetches OpenStreetMap raceway ways (Overpass, one query per track) and the best open elevation model per place, builds the
+# least-curvature line and writes scripts/sim/data/i3/ (derived data only; raw DEM crops stay in the run). Push to lapsim-exp/i3-geom-**.
+on:
+  push:
+    branches: ['lapsim-exp/i3-geom-**']
+    paths: ['scripts/sim/i3/**', '.github/workflows/lapsim-i3-geometry.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lapsim-i3-geometry-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.2.6 pyproj==3.7.1 rasterio==1.4.3 requests pillow
+      - name: OpenStreetMap ways and elevation models
+        run: python scripts/sim/i3/fetch.py 2>&1 | tee .cache-fetch.log
+      - name: Centre line and least-curvature line
+        run: node scripts/sim/i3/build.mjs --line
+      - name: Elevation along the line
+        run: python scripts/sim/i3/sample.py jeddah shanghai imola suzuka
+      - name: Grade, vertical curvature, banking
+        run: |
+          node scripts/sim/i3/build.mjs --finish | tee .cache/i3/finish.log
+          cp .cache/i3/dem-*.json scripts/sim/data/i3/ 2>/dev/null || true
+          { echo '```'; cat .cache/i3/finish.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: i3-geometry
+          path: |
+            .cache/i3/
+            .cache-fetch.log
+          retention-days: 14
+      - name: Commit derived data
+        run: |
+          git config user.name "kongboda-lapsim[bot]"
+          git config user.email "lapsim@users.noreply.github.com"
+          git add scripts/sim/data/i3/
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "I3 geometry: OSM line and open elevation (derived)"
+          git push origin HEAD:${{ github.ref_name }} || { git fetch origin ${{ github.ref_name }} && git rebase FETCH_HEAD && git push origin HEAD:${{ github.ref_name }}; }

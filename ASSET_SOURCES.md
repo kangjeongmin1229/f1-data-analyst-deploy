@@ -14,3 +14,11 @@ The original mint silhouette was redrawn with reference to the official McLaren 
 ## Selected brand icon — 2026-10-29
 
 User-selected artwork: 민트 깃발과 압축된 레이싱카 로고.png. The original PNG bytes are preserved in worker/brand-art/part-*.js as Base64 (SHA-256 6ccce3395d0bcfb36314f7bcb7a747fb062c4b5c8214c6ca104c928169c1b6e2). The SVG viewport fits the transparent margins; the existing Korean wordmark and font license remain intact.
+
+## Lap simulator I3 geometry data (2026-11-23)
+
+Derived tables in `scripts/sim/data/i3/` (physics experiment, not drawn on the site; raw elevation crops are not committed):
+- OpenStreetMap `highway=raceway` ways via the Overpass API, one query per track with a user agent and pauses (Overpass usage policy). © OpenStreetMap contributors, ODbL 1.0 — https://www.openstreetmap.org/copyright
+- Suzuka: GSI elevation tiles (国土地理院 標高タイル, 基盤地図情報数値標高モデル DEM5A/5B/5C, 5 m), edited. GSI Website Terms of Use (compatible with CC BY 4.0) — https://www.gsi.go.jp/ENGLISH/page_e30286.html
+- Imola: Regione Emilia-Romagna DTM 5x5 ed. 2014 (WCS), CC BY 4.0 — https://geoportale.regione.emilia-romagna.it
+- Jeddah, Shanghai (and fallback): Copernicus DEM GLO-30 Public (AWS open data). © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved — https://registry.opendata.aws/copernicus-dem/
