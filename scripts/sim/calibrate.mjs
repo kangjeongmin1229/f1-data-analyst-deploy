@@ -158,6 +158,9 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
+  // LAPSIM_ERS_LAW=b (experiment only, step 2a attempt 2 / step 10b law (b)): the 2014-25 MGU-K deploys at every full-throttle point;
+  // the ES lap budget does not bind (MGU-H -> MGU-K is not limited). Same lap as withErsLaw (10b test); finite so it survives JSON.
+  if (E.LAPSIM_ERS_LAW === 'b' && base.ers?.rule === 'f1-2014') base.ers = {...base.ers, deployMax: 1e12};
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow'))).map(k => {

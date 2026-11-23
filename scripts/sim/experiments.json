@@ -1,20 +1,30 @@
 {
-  "input_url": "https://raw.githubusercontent.com/kangjeongmin1229/f1-data-analyst-deploy/probe/lapsim-export/probe-out/lapsim-inputs.tgz.part-aa",
-  "input_sha256": "268039a6acd2fd589336fede690e3321d723f6f50665718a55f6021cde1ac186",
+  "note": "Step 2a attempt 2 (claude/gate-cda-measured-prereg-2026-11-23-amendment-a2.md): base = the shared base run (central rule v2) on wave-2 base b4041cf; its calibration and lapsim-prep build; VD2 = measured per-track drag (all clean push laps) + ERS law (b) for 2023-25; R10 = law (b) only (reported, not judged). Production settings as in lapsim-data.yml (script defaults: 5 x 200, WEC held-out rule).",
   "common_env": {
-    "LAPSIM_FITTER": "bcd",
-    "LAPSIM_ROUNDS": "3",
-    "LAPSIM_BCD_ITERS": "100",
-    "LAPSIM_WTIME": "20",
-    "LAPSIM_WSECTOR": "2",
-    "LAPSIM_TEAMS": "on",
-    "LAPSIM_WPRIOR": "8"
+    "LAPSIM_FIA_ZONES": "on",
+    "LAPSIM_PU_QUALI": "on",
+    "LAPSIM_PU_RAMP": "on",
+    "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234",
+    "LAPSIM_TRACE_MASK": "1"
   },
   "configs": [
-    {"name": "B", "env": {"LAPSIM_TRACK_DRAG": "off"}},
-    {"name": "F", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on"}},
-    {"name": "G", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "H", "env": {"LAPSIM_TRACK_DRAG": "on", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on"}},
-    {"name": "I", "env": {"LAPSIM_TRACK_DRAG": "off", "LAPSIM_AXLE": "on", "LAPSIM_KV": "on", "LAPSIM_LOADEXP": "0.75"}}
-  ]
+    {
+      "name": "base",
+      "env": {}
+    },
+    {
+      "name": "VD2",
+      "env": {
+        "LAPSIM_CDA_MEASURED": "on",
+        "LAPSIM_ERS_LAW": "b"
+      }
+    },
+    {
+      "name": "R10",
+      "env": {
+        "LAPSIM_ERS_LAW": "b"
+      }
+    }
+  ],
+  "base_run": "TBD"
 }
