@@ -1,0 +1,53 @@
+## Learned circuit-change effects
+
+| Change | Cases | Corner speed | Applied factor | Spread |
+|---|---|---|---|---|
+| kerb_raised | 7 | ×1.0006 | cornerSpeed ×1.0004 | ±0.0018 |
+| kerb_lowered | 11 | ×1.0063 | cornerSpeed ×1.005 | ±0.0063 |
+| kerb_changed | 7 | ×0.9879 | cornerSpeed ×0.9915 | ±0.0121 |
+| resurfacing | 13 | ×0.9941 | grip ×0.9905 | ±0.0104 |
+| bump_removal | 6 | ×1.0348 | grip ×1.0469 | ±0.0337 |
+- kerb_raised suzuka 2025 T9: ×1.0200 — New double kerb at Turn 9.
+- kerb_raised silverstone 2026 T15: ×1.0025 — At the entrance of Turn 15 left hand side was added a strip of tarmac behind the kerb
+- kerb_raised monza 2026 T1: ×1.0097 — New negative kerb left hand side before Turn 1 from the 100 meter brake marker.
+- kerb_raised monza 2026 T4: ×1.0006 — New negative kerb right hand side before Turn 4 from the 100 meter brake marker.
+- kerb_raised monza 2026 T8: ×0.9993 — New negative kerb right hand side before Turn 8 from the 100 meter brake marker.
+- kerb_raised austin 2024 T10: ×1.0006 — Installation of new kerbs in Turn 10 LHS.
+- kerb_raised austin 2024 T18: ×0.9960 — Installation of new kerbs in Turn 18 RHS.
+- kerb_lowered shanghai 2026 T3: ×1.0373 — Reduced the height of the back of the kerb at the apex of Turn 3.
+- kerb_lowered monte-carlo 2026 T10: ×1.0000 — Reduced height of the sausage kerb at Turn 10.
+- kerb_lowered monte-carlo 2026 T16: ×0.9297 — Reduced height of the sausage kerb at Turn 16.
+- kerb_lowered spielberg 2024 T8: ×1.0102 — The verge behind the kerb in Turn 8 on RHS has been removed.
+- kerb_lowered spielberg 2026 T3: ×1.0090 — Removed inner high kerb at the apex of Turn 3.
+- kerb_lowered spielberg 2026 T10: ×0.9606 — Removed inner high kerb at the apex of Turn 10.
+- kerb_lowered austin 2026 T1: ×1.0100 — Yellow kerb at turn 1 apex reduced in height.
+- kerb_lowered austin 2026 T11: ×1.0100 — Yellow kerb at turn 11 apex reduced in height.
+- kerb_lowered mexico-city 2026 T9: ×0.9999 — End of kerb at Turn 9 on the left-hand side has been flattened to an easier rejoin.
+- kerb_lowered yas-marina-circuit 2025 T4: ×1.0063 — Grind down the kerb at Turn 4 apex.
+- kerb_lowered yas-marina-circuit 2025 T6: ×0.9635 — Grind the apex kerb at Turn 6.
+- kerb_changed shanghai 2025 T2,6,10,11,16: ×1.0349 — Combination kerb at Turns 2, 6, 10, 11 and 16 apex.
+- kerb_changed monte-carlo 2026 T6: ×0.9783 — Beginning of kerb at Turn 6 on the left-hand side smoother.
+- kerb_changed monte-carlo 2026 T7: ×1.0000 — Entry kerb at Turn 7 on the left-hand side smoother.
+- kerb_changed monte-carlo 2026 T19: ×0.9540 — End of kerb smoother at the exit of Turn 19 right hand side.
+- kerb_changed silverstone 2026 T17,18: ×0.9879 — Removal of the red sausage behind the kerb at the apex of Turn 17 and 18.
+- kerb_changed spa-francorchamps 2026 T19: ×1.0692 — Smother beginning of the kerb at the apex Turn 19.
+- kerb_changed zandvoort 2025 T6: ×0.9830 — Reprofile the end of the kerb at the apex of Turn 6.
+- resurfacing suzuka 2025 T1,8: ×1.0345 — Resurfacing between Turn 1 until entry Turn 8.
+- resurfacing suzuka 2026 T7,17: ×1.0033 — Track resurfaced from Turn 7 to Turn 17.
+- resurfacing monte-carlo 2026 T19,1: ×0.9556 — Track resurfaced from Turn 19 to Turn 1.
+- resurfacing monte-carlo 2026 T7: ×1.0000 — Track resurfaced from Turn 7 to the entry of the tunnel.
+- resurfacing spielberg 2025 T2,3: ×1.0112 — Resurface from Turn 2 to exit Turn 3
+- resurfacing monza 2026 T2: ×0.9687 — New asphalt patch at Turn 2.
+- resurfacing austin 2024 T16,3: ×0.9849 — Resurfacing between entry Turn 16 until entry Turn 3.
+- resurfacing austin 2025 T3,7: ×0.9978 — Resurface from before Turn 3 to before Turn 7.
+- resurfacing austin 2026 T9,11: ×0.9941 — Circuit resurfaced from entry to turn 9 until entry of turn 11.
+- resurfacing mexico-city 2024 T11,12: ×0.9837 — Between Turn 11 and Turn 12, in the area of the medical center, a part of 50 meters distance has been resurfaced.
+- resurfacing mexico-city 2024 T12,15: ×0.9719 — The track has been resurfaced between Turn 12 and Turn 15.
+- resurfacing mexico-city 2026 T11,1: ×0.9490 — Resurface from after Turn 11 until before Turn 1.
+- resurfacing yas-marina-circuit 2025 T1,4: ×1.0022 — Resurface between Turn 1 and Turn 4.
+- bump_removal suzuka 2025 T14: ×1.0660 — Grinding asphalt exit T14 RHS
+- bump_removal spa-francorchamps 2026 T14: ×1.0368 — The track surface has been ground down at turn 14 to remove a bump.
+- bump_removal austin 2024 T12: ×1.0709 — Removal of the bump at the entry of Turn 12.
+- bump_removal austin 2026 T12: ×0.9878 — Smoothing of track surface approaching turn 12 to remove bump.
+- bump_removal mexico-city 2025 T12: ×1.0327 — Asphalt grinding at Turn 12 near the 150 meters brake marker.
+- bump_removal yas-marina-circuit 2025 T6: ×0.9635 — New patch of asphalt to remove a bump at the exit of turn 6 right-hand side
