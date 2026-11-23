@@ -102,7 +102,8 @@ test('FIA notes: circuit changes are read, classified and mapped to corners', ()
   assert.equal(changes.filter(c => c.affectsLap).length, 3);
   const n = 1000, track = {ds: 5, kappa: new Float64Array(n)};
   const corners = Array.from({length: 20}, (_, i) => ({number: i + 1, letter: '', s: 200 + i * 230}));
-  const {track: t2, applied} = applyTrackChanges(track, changes, corners);
+  // the defaults are factor 1 since step 5b (no assumed effect); a gated factor arrives through the changeFactors hook
+  const {track: t2, applied} = applyTrackChanges({...track, changeFactors: c => c.effect && {kind: c.effect.kind, factor: 1.02}}, changes, corners);
   const r = applied.find(a => a.type === 'resurfacing');
   assert.ok(r.applied && r.sStart < corners[8].s && r.sEnd < corners[10].s && r.sEnd > corners[9].s);
   assert.ok(t2.mu[Math.round(corners[9].s / 5)] > 1.019);
@@ -184,7 +185,7 @@ test('FIA notes: lists, distances, numbered items, raised kerbs and sentences', 
   const list = one('- | Kerbs at Turn 4 and Turn 9 lowered.')[0];
   assert.deepEqual(list.range.list.map(r => r.turn), [4, 9]);
   const corners = Array.from({length: 12}, (_, i) => ({number: i + 1, letter: '', s: 200 + i * 300}));
-  const {track, applied} = applyTrackChanges({ds: 5, kappa: new Float64Array(800)}, [list], corners);
+  const {track, applied} = applyTrackChanges({ds: 5, kappa: new Float64Array(800), changeFactors: c => ({kind: c.effect.kind, factor: 1.005})}, [list], corners);
   assert.ok(track.vScale[Math.round(corners[3].s / 5)] > 1 && track.vScale[Math.round(corners[8].s / 5)] > 1);
   assert.equal(track.vScale[Math.round(corners[6].s / 5)], 1, 'turns between the listed ones stay unchanged');
   assert.equal(applied[0].spans.length, 2);

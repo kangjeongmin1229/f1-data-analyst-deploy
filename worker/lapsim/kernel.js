@@ -770,12 +770,14 @@ export function lapsimKernel() {
     return track;
   }
 
-  // Default scenario factors. Kept small and explicit; the page shows them next to each change.
+  // Circuit-change types that can affect a lap, with factor 1 (no assumed effect). Step 5b (#483) set every type to strength 0
+  // (worker/lapsim/change-gate-data.js); a measured, gated factor replaces this in scenario.js gateChange. The old assumed
+  // defaults (+2 % / +1 % grip, ±0.5 % corner speed; kerb_raised had the wrong sign, measured +0.25 %, n 18) were removed.
   const CHANGE_EFFECTS = {
-    resurfacing: {kind: 'grip', factor: 1.02, ko: '새 노면: 그립 +2% 가정', en: 'New surface: +2% grip assumed'},
-    bump_removal: {kind: 'grip', factor: 1.01, ko: '범프 제거: 그립 +1% 가정', en: 'Bump removed: +1% grip assumed'},
-    kerb_lowered: {kind: 'cornerSpeed', factor: 1.005, ko: '연석 낮춤: 코너 속도 +0.5% 가정', en: 'Lower kerb: +0.5% corner speed assumed'},
-    kerb_raised: {kind: 'cornerSpeed', factor: 0.995, ko: '연석 높임·추가: 코너 속도 −0.5% 가정', en: 'Higher or added kerb: −0.5% corner speed assumed'},
+    resurfacing: {kind: 'grip', factor: 1, ko: '새 노면: 효과 가정 없음', en: 'New surface: no effect assumed'},
+    bump_removal: {kind: 'grip', factor: 1, ko: '범프 제거: 효과 가정 없음', en: 'Bump removed: no effect assumed'},
+    kerb_lowered: {kind: 'cornerSpeed', factor: 1, ko: '연석 낮춤: 효과 가정 없음', en: 'Lower kerb: no effect assumed'},
+    kerb_raised: {kind: 'cornerSpeed', factor: 1, ko: '연석 높임·추가: 효과 가정 없음', en: 'Higher or added kerb: no effect assumed'},
   };
 
   // Distance window (m) along the lap for a corner reference, from corner apex distances.
