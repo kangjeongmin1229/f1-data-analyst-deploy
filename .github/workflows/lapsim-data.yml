@@ -282,9 +282,12 @@ jobs:
         if: inputs.calibrate != 'false'
         continue-on-error: true
         run: |
-          mkdir -p probe-out && git show HEAD:worker/lapsim/calibration-data.js > probe-out/cal-base.mjs
+          # base = the shared base run's fitted cars (a428459); base0 = the start calibration, for a local reproduction check
+          mkdir -p probe-out && git show HEAD:worker/lapsim/calibration-data.js > probe-out/cal-base0.mjs
+          git fetch -q --depth 1 origin a428459a566a8ef0e9def8c2aa8130d617a20db3 && git show FETCH_HEAD:worker/lapsim/calibration-data.js > probe-out/cal-base.mjs
           node scripts/sim/validate.mjs cand > /dev/null
           LAPSIM_CAL_FILE="$PWD/probe-out/cal-base.mjs" node scripts/sim/validate.mjs base > /dev/null
+          LAPSIM_CAL_FILE="$PWD/probe-out/cal-base0.mjs" node scripts/sim/validate.mjs base0 > /dev/null
           cp worker/lapsim/calibration-data.js probe-out/cal-cand.mjs; cp docs/lapsim-level-c.json probe-out/levelc-cand.json; cp docs/lapsim-forward.json probe-out/forward-cand.json
       - name: Test
         if: inputs.calibrate != 'false'
