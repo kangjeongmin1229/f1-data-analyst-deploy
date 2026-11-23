@@ -128,6 +128,9 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     timeout-minutes: 340
+    # step 1 candidate: the converged kernel step for the fit, the reports and the tests (only difference to the baseline branch)
+    env:
+      LAPSIM_KERNEL_STEP: '2'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
