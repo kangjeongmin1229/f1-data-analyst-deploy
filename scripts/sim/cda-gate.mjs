@@ -10,6 +10,11 @@ const [dA, dV, dR] = process.argv.slice(2), name = d => d.split('/').find(x => x
 const cal = async (d, n) => (await import(pathToFileURL(join(d, `cal-${n}.js`)).href)).lapsimCalibration;
 const json = (d, f) => existsSync(join(d, f)) ? JSON.parse(readFileSync(join(d, f), 'utf8')) : null;
 const [cA, cV] = [await cal(dA, nA), await cal(dV, nV)];
+// Plan 4d.1 (amendment A2 rev 3): a candidate run with LAPSIM_SKIP_WEC has no WEC series; WEC is proved unchanged by hash, so the base's WEC is reused.
+const hasWec = c => Object.keys(c.series?.wec || {}).length > 0;
+const reuseWec = c => { if (hasWec(c) || !hasWec(cA)) return false; c.series = {...c.series, wec: cA.series.wec}; return true; };
+const reuseLevelC = (L, B) => { if (!L || !B || Object.keys(L.rows).some(k => k.startsWith('wec'))) return L; return {...L, rows: {...L.rows, ...Object.fromEntries(Object.entries(B.rows).filter(([k]) => k.startsWith('wec')))}}; };
+const wecReused = {VD: reuseWec(cV)};
 const median = a => { const q = [...a].sort((x, y) => x - y); return q.length ? (q[(q.length - 1) >> 1] + q[q.length >> 1]) / 2 : NaN; };
 const rms = a => Math.sqrt(a.reduce((s, x) => s + x * x, 0) / a.length), mean = a => a.reduce((s, x) => s + x, 0) / a.length;
 const sd = a => { const m = mean(a); return Math.sqrt(a.reduce((s, x) => s + (x - m) ** 2, 0) / (a.length - 1)); };
@@ -35,7 +40,7 @@ out.heldOut = ['all', 'f1', 'wec'].map(g => niPooled(hA, hV, x => g === 'all' ||
 out.heldOutF1_2026 = niPooled(hA, hV, x => x.key.startsWith('f1-2026'), 'f1-2026 (no own-season telemetry)');
 
 // level C (holdout-track.mjs rows): per class; F1 seasons pooled per track
-const lA = json(dA, `levelc-${nA}.json`), lV = json(dV, `levelc-${nV}.json`);
+const lA = json(dA, `levelc-${nA}.json`), lV = reuseLevelC(json(dV, `levelc-${nV}.json`), lA);
 if (lA && lV) {
   const rows = L => Object.entries(L.rows).flatMap(([cls, r]) => r.map(x => ({grp: cls.startsWith('f1') ? 'f1' : 'wec', key: cls + '|' + x.track, track: x.track, pct: x.errPct})));
   const a = rows(lA), v = rows(lV);
@@ -66,9 +71,10 @@ out.noise.wec.groups = out.noise.wec.groups.map(g => ({group: g.group, spreadPp:
 const f1Bounds = c => Object.values(out.cars[c]).reduce((n, s) => n + s.atBound.length, 0);
 out.boundHits = {f1SeasonCars: {base: f1Bounds('A'), cand: f1Bounds('VD')}, wecFolds: {base: boundHitCount(cA.series?.wec), cand: boundHitCount(cV.series?.wec)}};
 out.boundHits.noNew = out.boundHits.f1SeasonCars.cand <= out.boundHits.f1SeasonCars.base && out.boundHits.wecFolds.cand <= out.boundHits.wecFolds.base;
-if (dR) { const nR = name(dR), cR = await cal(dR, nR), hR = heldOut(cR), lR = json(dR, `levelc-${nR}.json`), vR = json(dR, `validate-${nR}.json`), tR = vR ? trapBy(vR) : null;
+if (dR) { const nR = name(dR), cR = await cal(dR, nR); wecReused.R = reuseWec(cR); const hR = heldOut(cR), lR = reuseLevelC(json(dR, `levelc-${nR}.json`), lA), vR = json(dR, `validate-${nR}.json`), tR = vR ? trapBy(vR) : null;
   out.reference = {name: nR, heldOut: ['all', 'f1', 'wec'].map(g => niPooled(hA, hR, x => g === 'all' || x.grp === g, g)), levelC: lR?.summary,
     trapMeanAbs: tR ? +mean(ids.filter(t => tR.has(t)).map(t => tR.get(t))).toFixed(2) : null, summaryValidate: vR?.summary,
     cars: Object.fromEntries(Object.entries(cR.seasons).map(([y, s]) => [y, {cdA: +s.car.cdA.toFixed(3), cdALow: +s.car.cdALow.toFixed(3), pIceKW: +(s.car.pIce / 1e3).toFixed(1), clA: +s.car.clA.toFixed(3), muY: +s.car.muY.toFixed(3)}]))}; }
+out.wecReusedFromBase = wecReused;
 out.pass = out.noise.wec.judgeable && out.boundHits.noNew && out.heldOut.every(r => r.accept) && Array.isArray(out.levelC) && out.levelC.every(r => r.accept) && out.trap.judgeable && out.trap.accept;
 console.log(JSON.stringify(out, null, 1));
