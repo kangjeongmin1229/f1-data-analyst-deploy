@@ -1,6 +1,6 @@
 # Race pace model
 
-Generated 2026-11-22T06:48:31.721Z. Season 2026; race-ratio change vs earlier seasons ×0.9836, slope change ×0.860.
+Generated 2026-11-23T05:27:39.414Z. Season 2026; race-ratio change vs earlier seasons ×0.9836, slope change ×0.860.
 
 Leave-out test (leading race pace, earlier seasons + real pole): 0.64% RMS over 17 races.
 
@@ -74,25 +74,25 @@ Races already run (all seasons), reproduced from the stored factors: largest err
 
 Lap times (best strategy): L1 99.32, L6 99.15, L11 98.99, L16 98.83, L21 98.67, L26 98.51, L31 98.35, L36 98.19, L41 98.03, L46 97.92, L50 97.79
 
-## lusail: pole 1:26.575, 57 laps
+## lusail: pole 1:26.393, 57 laps
 
 | Strategy | Race time | Gap |
 |---|---|---|
-| M32-H25 | 87:33.924 | +0.0 s |
-| H25-M32 | 87:33.924 | +0.0 s |
-| M49-S8 | 87:40.164 | +6.2 s |
+| H25-M32 | 87:22.949 | +0.0 s |
+| M32-H25 | 87:22.949 | +0.0 s |
+| M49-S8 | 87:29.189 | +6.2 s |
 
-Lap times (best strategy): L1 93.47, L6 93.17, L11 92.87, L16 92.58, L21 92.28, L26 91.99, L31 91.69, L36 91.05, L41 90.79, L46 90.53, L51 90.27, L56 90.01, L57 89.95
+Lap times (best strategy): L1 93.15, L6 92.89, L11 92.63, L16 92.37, L21 92.11, L26 119.50, L31 91.30, L36 91.01, L41 90.71, L46 90.41, L51 90.12, L56 89.82, L57 89.76
 
-## yas-marina-circuit: pole 1:24.678, 58 laps
+## yas-marina-circuit: pole 1:24.623, 58 laps
 
 | Strategy | Race time | Gap |
 |---|---|---|
-| H34-M24 | 87:49.141 | +0.0 s |
-| M24-H34 | 87:49.141 | +0.0 s |
-| S22-H36 | 87:52.146 | +3.0 s |
+| H34-M24 | 87:45.770 | +0.0 s |
+| M24-H34 | 87:45.770 | +0.0 s |
+| H36-S22 | 87:48.776 | +3.0 s |
 
-Lap times (best strategy): L1 91.12, L6 91.12, L11 91.11, L16 91.10, L21 91.10, L26 91.09, L31 91.08, L36 89.22, L41 89.37, L46 89.53, L51 89.68, L56 89.83, L58 89.89
+Lap times (best strategy): L1 91.07, L6 91.06, L11 91.05, L16 91.05, L21 91.04, L26 91.03, L31 91.03, L36 89.17, L41 89.32, L46 89.47, L51 89.62, L56 89.77, L58 89.83
 
 ## Fit log
 
