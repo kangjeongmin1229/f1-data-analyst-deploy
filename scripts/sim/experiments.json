@@ -9,10 +9,6 @@
   },
   "configs": [
     {
-      "name": "base",
-      "env": {}
-    },
-    {
       "name": "VD2",
       "env": {
         "LAPSIM_CDA_MEASURED": "on",
@@ -26,5 +22,5 @@
       }
     }
   ],
-  "base_run": "TBD"
+  "base_run": "45191678721"
 }
