@@ -84,11 +84,11 @@ miami 2023 Miami Grand Prix: parsed, 0 corners + all, 0 unparsed
 monte-carlo 2023 Monaco Grand Prix: parsed, 0 corners + all, 0 unparsed
 lusail 2023 Qatar Grand Prix: parsed, 1 corners + all, 0 unparsed
 interlagos 2023 SÃO PAULO GRAND PRIX: parsed, 0 corners + all, 0 unparsed
-jeddah 2023 Saudi Arabian Grand Prix: parsed, 0 corners + all, 0 unparsed
-singapore 2023 Singapore Grand Prix: parsed, 0 corners + all, 0 unparsed
-catalunya 2023 Spanish Grand Prix: parsed, 3 corners + all, 0 unparsed
-austin 2023 United States Grand Prix: parsed, 1 corners + all, 0 unparsed
-yas-marina-circuit 2024 Abu Dhabi Grand Prix: unparsed, 0 corners, 0 unparsed
+jeddah 2023: FIA source HTTP 429; source unavailable, not missing coverage.
+singapore 2023: FIA source HTTP 429; source unavailable, not missing coverage.
+catalunya 2023: FIA source HTTP 429; source unavailable, not missing coverage.
+austin 2023: FIA source HTTP 429; source unavailable, not missing coverage.
+yas-marina-circuit 2024 Abu Dhabi Grand Prix: parsed, 1 corners + all, 0 unparsed
 melbourne 2024 Australian Grand Prix: parsed, 0 corners + all, 0 unparsed
 spielberg 2024 Austrian Grand Prix: parsed, 1 corners + all, 0 unparsed
 baku 2024 Azerbaijan Grand Prix: parsed, 0 corners + all, 0 unparsed
@@ -102,11 +102,11 @@ imola 2024 Emilia Romagna Grand Prix: parsed, 0 corners + all, 0 unparsed
 hungaroring 2024 Hungarian Grand Prix: parsed, 1 corners + all, 0 unparsed
 monza 2024 Italian Grand Prix: parsed, 0 corners + all, 0 unparsed
 suzuka 2024 Japanese Grand Prix: no document, 0 corners, 0 unparsed
-las-vegas 2024 Las Vegas Grand Prix: unparsed, 0 corners, 0 unparsed
+las-vegas 2024 Las Vegas Grand Prix: parsed, 1 corners + all, 0 unparsed
 mexico-city 2024 Mexico City Grand Prix: parsed, 3 corners + all, 0 unparsed
 miami 2024 Miami Grand Prix: parsed, 0 corners + all, 0 unparsed
 monte-carlo 2024 Monaco Grand Prix: parsed, 0 corners + all, 0 unparsed
-lusail 2024 Qatar Grand Prix: unparsed, 0 corners, 0 unparsed
+lusail 2024 Qatar Grand Prix: parsed, 1 corners + all, 0 unparsed
 interlagos 2024 São Paulo Grand Prix: parsed, 0 corners + all, 0 unparsed
 jeddah 2024 Saudi Arabian Grand Prix: parsed, 0 corners + all, 0 unparsed
 singapore 2024 Singapore Grand Prix: parsed, 0 corners + all, 0 unparsed
@@ -165,63 +165,63 @@ imsa watkins-glen 2019 Watkins Glen International: no document, 0 corners
 imsa lime-rock 2019 Lime Rock Park: unparsed, 0 corners
 imsa road-atlanta 2019 Michelin Raceway Road Atlanta: unparsed, 0 corners
 imsa sebring 2020 Sebring International Raceway: unparsed, 0 corners
-imsa road-america 2020 Road America: unparsed, 0 corners
+imsa road-america 2020 Road America: parsed, 0 corners
 imsa road-atlanta 2020 Michelin Raceway Road Atlanta: no document, 0 corners
 imsa mid-ohio 2020 Mid-Ohio Sports Car Course: unparsed, 0 corners
-imsa road-atlanta 2020 Motul Petit Le Mans: unparsed, 0 corners
-imsa sebring 2020 Sebring International Raceway: unparsed, 0 corners
+imsa road-atlanta 2020 Motul Petit Le Mans: parsed, 0 corners
+imsa sebring 2020 Sebring International Raceway: parsed, 0 corners
 imsa daytona 2021 Daytona International Speedway: unparsed, 0 corners
-imsa sebring 2021 Sebring International Raceway: unparsed, 0 corners
+imsa sebring 2021 Sebring International Raceway: parsed, 0 corners
 imsa mid-ohio 2021 Mid-Ohio Sports Car Course: unparsed, 0 corners
 imsa watkins-glen 2021 6H - Watkins Glen International: parsed, 4 corners
-imsa lime-rock 2021 Lime Rock Park: unparsed, 0 corners
-imsa road-america 2021 Road America: unparsed, 0 corners
+imsa lime-rock 2021 Lime Rock Park: parsed, 0 corners
+imsa road-america 2021 Road America: parsed, 0 corners
 imsa laguna-seca 2021 WeatherTech Raceway Laguna Seca: parsed, 0 corners
 imsa long-beach 2021 Long Beach Street Circuit: parsed, 0 corners
-imsa vir 2021 VIRginia International Raceway: unparsed, 0 corners
-imsa road-atlanta 2021 Michelin Raceway Road Atlanta: unparsed, 0 corners
+imsa vir 2021 VIRginia International Raceway: parsed, 0 corners
+imsa road-atlanta 2021 Michelin Raceway Road Atlanta: parsed, 0 corners
 imsa daytona 2022 Daytona International Speedway: parsed, 1 corners
-imsa sebring 2022 Sebring International Raceway: unparsed, 0 corners
+imsa sebring 2022 Sebring International Raceway: parsed, 0 corners
 imsa long-beach 2022 Long Beach Street Circuit: unparsed, 0 corners
 imsa laguna-seca 2022 WeatherTech Raceway Laguna Seca: parsed, 0 corners
 imsa mid-ohio 2022 Mid-Ohio Sports Car Course: unparsed, 0 corners
 imsa watkins-glen 2022 Watkins Glen International: parsed, 5 corners
 imsa mosport 2022 Canadian Tire Motorsports Park: parsed, 2 corners
-imsa lime-rock 2022 14 Lime Rock Park: unparsed, 0 corners
-imsa road-america 2022 Road America: unparsed, 0 corners
-imsa vir 2022 VIRginia International Raceway: unparsed, 0 corners
-imsa road-atlanta 2022 Michelin Raceway Road Atlanta: unparsed, 0 corners
+imsa lime-rock 2022 14 Lime Rock Park: parsed, 0 corners
+imsa road-america 2022 Road America: parsed, 0 corners
+imsa vir 2022 VIRginia International Raceway: parsed, 0 corners
+imsa road-atlanta 2022 Michelin Raceway Road Atlanta: parsed, 0 corners
 imsa daytona 2023 Rolex 24 - Daytona International Speedway: parsed, 1 corners
-imsa sebring 2023 Sebring International Raceway: unparsed, 0 corners
+imsa sebring 2023 Sebring International Raceway: parsed, 0 corners
 imsa long-beach 2023 Long Beach Street Circuit: unparsed, 0 corners
 imsa laguna-seca 2023 WeatherTech Raceway Laguna Seca: parsed, 2 corners
 imsa watkins-glen 2023 Watkins Glen International: parsed, 5 corners
 imsa mosport 2023 Canadian Tire Motorsport Park: parsed, 2 corners
-imsa lime-rock 2023 Lime Rock Park: unparsed, 0 corners
+imsa lime-rock 2023 Lime Rock Park: parsed, 0 corners
 imsa road-america 2023 Road America: parsed, 1 corners
-imsa vir 2023 VIRginia International Raceway: unparsed, 0 corners
+imsa vir 2023 VIRginia International Raceway: parsed, 0 corners
 imsa indianapolis 2023 Indianapolis Motor Speedway: parsed, 1 corners
-imsa road-atlanta 2023 Michelin Raceway Road Atlanta: unparsed, 0 corners
+imsa road-atlanta 2023 Michelin Raceway Road Atlanta: parsed, 0 corners
 imsa daytona 2024 Rolex 24 - Daytona International Speedway: parsed, 1 corners
-imsa sebring 2024 Sebring International Raceway: unparsed, 0 corners
+imsa sebring 2024 Sebring International Raceway: parsed, 0 corners
 imsa long-beach 2024 Long Beach Street Circuit: unparsed, 0 corners
 imsa laguna-seca 2024 WeatherTech Raceway Laguna Seca: parsed, 3 corners
 imsa detroit 2024 Detroit Street Course: unparsed, 0 corners
 imsa watkins-glen 2024 Watkins Glen International: parsed, 5 corners
 imsa mosport 2024 Canadian Tire Motorsport Park: parsed, 2 corners
 imsa road-america 2024 Road America: parsed, 1 corners
-imsa vir 2024 VIRginia International Raceway: unparsed, 0 corners
+imsa vir 2024 VIRginia International Raceway: parsed, 0 corners
 imsa indianapolis 2024 Indianapolis Motor Speedway: parsed, 1 corners
 imsa road-atlanta 2024 Michelin Raceway Road Atlanta: unparsed, 0 corners
 imsa daytona 2025 Rolex 24 - Daytona International Speedway: parsed, 1 corners
-imsa sebring 2025 Sebring International Raceway: unparsed, 0 corners
+imsa sebring 2025 Sebring International Raceway: parsed, 0 corners
 imsa long-beach 2025 Long Beach Street Circuit: unparsed, 0 corners
 imsa laguna-seca 2025 WeatherTech Raceway Laguna Seca: parsed, 0 corners
 imsa detroit 2025 Detroit Street Course: unparsed, 0 corners
 imsa watkins-glen 2025 Watkins Glen International: parsed, 4 corners
 imsa mosport 2025 Canadian Tire Motorsport Park: parsed, 1 corners
 imsa road-america 2025 Road America: parsed, 1 corners
-imsa vir 2025 VIRginia International Raceway: unparsed, 0 corners
+imsa vir 2025 VIRginia International Raceway: parsed, 0 corners
 imsa indianapolis 2025 Indianapolis Motor Speedway: parsed, 1 corners
 imsa road-atlanta 2025 Michelin Raceway Road Atlanta: unparsed, 0 corners
 imsa 2026: no notice-board season
