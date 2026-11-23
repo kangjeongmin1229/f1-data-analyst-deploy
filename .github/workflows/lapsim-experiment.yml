@@ -50,6 +50,8 @@ jobs:
           curl --fail --location --retry 3 '${{ needs.plan.outputs.input_url }}' --output /tmp/lapsim-inputs.tgz
           echo '${{ needs.plan.outputs.input_sha256 }}  /tmp/lapsim-inputs.tgz' | sha256sum --check
           tar xzf /tmp/lapsim-inputs.tgz
+          # step 2a: the archive's tracks-data.js predates lapsimExtraTracks and breaks current main; keep the branch's tracks
+          git checkout -- worker/lapsim/tracks-data.js
           node -e "const fs=require('fs');const W=JSON.parse(fs.readFileSync('scripts/sim/data/wet-sessions.json','utf8')).wec;const p='.cache/lapsim/wec.json';const rows=JSON.parse(fs.readFileSync(p,'utf8'));let n=0;for(const row of rows)if(row.weather&&W[row.year+' '+row.track]){row.weather.rain=true;n++}fs.writeFileSync(p,JSON.stringify(rows));console.log('wet sessions marked:',n)"
       - name: Calibrate (${{ matrix.config.name }})
         run: |
@@ -61,6 +63,8 @@ jobs:
           node scripts/sim/validate.mjs '${{ matrix.config.name }}' > /tmp/validate-summary.json
           node scripts/sim/intervals.mjs "$PWD/worker/lapsim/calibration-data.js" > 'probe-out/intervals-${{ matrix.config.name }}.json'
           cp worker/lapsim/calibration-data.js 'probe-out/cal-${{ matrix.config.name }}.js'
+          node scripts/sim/holdout-track.mjs --json 'probe-out/levelc-${{ matrix.config.name }}.json' > /dev/null || true
+          node scripts/sim/backtest-forward.mjs --json 'probe-out/forward-${{ matrix.config.name }}.json' > /dev/null || true
           cp /tmp/calibrate.log 'probe-out/log-${{ matrix.config.name }}.txt'
       - uses: actions/upload-artifact@v4
         if: always()
@@ -81,14 +85,10 @@ jobs:
         with:
           pattern: exp-*
           path: results
-      - name: Compare axle variants with B
+      - name: Step 2a gate (VD vs A)
         run: |
           mkdir -p comparison
-          node scripts/sim/exp-compare.mjs results/exp-B/probe-out/cal-B.js \
-            results/exp-F/probe-out/cal-F.js \
-            results/exp-G/probe-out/cal-G.js \
-            results/exp-H/probe-out/cal-H.js \
-            results/exp-I/probe-out/cal-I.js | tee comparison/B-vs-axle.txt
+          node scripts/sim/cda-gate.mjs results/exp-A/probe-out results/exp-VD/probe-out | tee comparison/cda-gate.json
       - uses: actions/upload-artifact@v4
         with:
           name: exp-comparison
