@@ -1,0 +1,355 @@
+{
+ "summary": {
+  "f1-2025": {
+   "n": 22,
+   "rmsPct": 3.118,
+   "medAbsPct": 2.212
+  },
+  "f1-2026": {
+   "n": 18,
+   "rmsPct": 1.311,
+   "medAbsPct": 0.676
+  },
+  "f1": {
+   "n": 40,
+   "rmsPct": 2.474,
+   "medAbsPct": 1.432
+  },
+  "wec": {
+   "n": 0,
+   "rmsPct": null,
+   "medAbsPct": null
+  },
+  "all": {
+   "n": 40,
+   "rmsPct": 2.474,
+   "medAbsPct": 1.432
+  }
+ },
+ "rows": {
+  "f1-2025": [
+   {
+    "track": "melbourne",
+    "sessionKey": 9689,
+    "from": "mean of earlier events",
+    "real": 75.096,
+    "sim": 77.299,
+    "errPct": 2.9335783530414443
+   },
+   {
+    "track": "yas-marina-circuit",
+    "sessionKey": 9835,
+    "from": "mean of earlier events",
+    "real": 82.207,
+    "sim": 82.017,
+    "errPct": -0.23112387023002634
+   },
+   {
+    "track": "lusail",
+    "sessionKey": 9846,
+    "from": "mean of earlier events",
+    "real": 79.387,
+    "sim": 78.831,
+    "errPct": -0.7003665587564681
+   },
+   {
+    "track": "interlagos",
+    "sessionKey": 9865,
+    "from": "mean of earlier events",
+    "real": 69.511,
+    "sim": 66.459,
+    "errPct": -4.390671979974383
+   },
+   {
+    "track": "mexico-city",
+    "sessionKey": 9873,
+    "from": "mean of earlier events",
+    "real": 75.586,
+    "sim": 71.145,
+    "errPct": -5.875426666313871
+   },
+   {
+    "track": "austin",
+    "sessionKey": 9884,
+    "from": "mean of earlier events",
+    "real": 92.51,
+    "sim": 90.781,
+    "errPct": -1.86898713652578
+   },
+   {
+    "track": "singapore",
+    "sessionKey": 9892,
+    "from": "mean of earlier events",
+    "real": 89.158,
+    "sim": 85.872,
+    "errPct": -3.685591870611724
+   },
+   {
+    "track": "monza",
+    "sessionKey": 9908,
+    "from": "mean of earlier events",
+    "real": 78.792,
+    "sim": 79.616,
+    "errPct": 1.0457914509087194
+   },
+   {
+    "track": "zandvoort",
+    "sessionKey": 9916,
+    "from": "mean of earlier events",
+    "real": 68.662,
+    "sim": 70.126,
+    "errPct": 2.132183740642566
+   },
+   {
+    "track": "hungaroring",
+    "sessionKey": 9924,
+    "from": "mean of earlier events",
+    "real": 75.372,
+    "sim": 72.07,
+    "errPct": -4.380937218065073
+   },
+   {
+    "track": "spa-francorchamps",
+    "sessionKey": 9935,
+    "from": "mean of earlier events",
+    "real": 100.562,
+    "sim": 101.199,
+    "errPct": 0.6334400668244471
+   },
+   {
+    "track": "silverstone",
+    "sessionKey": 9943,
+    "from": "mean of earlier events",
+    "real": 84.892,
+    "sim": 82.833,
+    "errPct": -2.42543466993356
+   },
+   {
+    "track": "spielberg",
+    "sessionKey": 9951,
+    "from": "mean of earlier events",
+    "real": 63.971,
+    "sim": 64.529,
+    "errPct": 0.8722702474558782
+   },
+   {
+    "track": "montreal",
+    "sessionKey": 9959,
+    "from": "mean of earlier events",
+    "real": 70.899,
+    "sim": 71.05799999999999,
+    "errPct": 0.22426268353572237
+   },
+   {
+    "track": "catalunya",
+    "sessionKey": 9967,
+    "from": "mean of earlier events",
+    "real": 71.546,
+    "sim": 71.311,
+    "errPct": -0.32846001174069744
+   },
+   {
+    "track": "monte-carlo",
+    "sessionKey": 9975,
+    "from": "mean of earlier events",
+    "real": 69.954,
+    "sim": 68.351,
+    "errPct": -2.2915058466992515
+   },
+   {
+    "track": "imola",
+    "sessionKey": 9983,
+    "from": "mean of earlier events",
+    "real": 74.67,
+    "sim": 78.126,
+    "errPct": 4.628364805142632
+   },
+   {
+    "track": "shanghai",
+    "sessionKey": 9994,
+    "from": "mean of earlier events",
+    "real": 90.641,
+    "sim": 94.542,
+    "errPct": 4.303791882260782
+   },
+   {
+    "track": "suzuka",
+    "sessionKey": 10002,
+    "from": "mean of earlier events",
+    "real": 86.983,
+    "sim": 88.27799999999999,
+    "errPct": 1.4887966614165842
+   },
+   {
+    "track": "sakhir",
+    "sessionKey": 10010,
+    "from": "mean of earlier events",
+    "real": 89.841,
+    "sim": 86.37,
+    "errPct": -3.8634921694994375
+   },
+   {
+    "track": "jeddah",
+    "sessionKey": 10018,
+    "from": "mean of earlier events",
+    "real": 87.294,
+    "sim": 92.608,
+    "errPct": 6.087474511421183
+   },
+   {
+    "track": "miami",
+    "sessionKey": 10029,
+    "from": "mean of earlier events",
+    "real": 86.204,
+    "sim": 84.862,
+    "errPct": -1.5567723075495323
+   }
+  ],
+  "f1-2026": [
+   {
+    "track": "melbourne",
+    "sessionKey": 11230,
+    "from": "same track, earlier",
+    "real": 78.518,
+    "sim": 79.598,
+    "errPct": 1.3754807814768566
+   },
+   {
+    "track": "shanghai",
+    "sessionKey": 11241,
+    "from": "same track, earlier",
+    "real": 92.064,
+    "sim": 93.631,
+    "errPct": 1.702076816127919
+   },
+   {
+    "track": "suzuka",
+    "sessionKey": 11249,
+    "from": "same track, earlier",
+    "real": 89.076,
+    "sim": 91.40299999999999,
+    "errPct": 2.6123759486281357
+   },
+   {
+    "track": "miami",
+    "sessionKey": 11276,
+    "from": "same track, earlier",
+    "real": 87.798,
+    "sim": 88.565,
+    "errPct": 0.873596209480849
+   },
+   {
+    "track": "monte-carlo",
+    "sessionKey": 11295,
+    "from": "same track, earlier",
+    "real": 72.051,
+    "sim": 71.856,
+    "errPct": -0.27064162884624415
+   },
+   {
+    "track": "catalunya",
+    "sessionKey": 11303,
+    "from": "same track, earlier",
+    "real": 74.679,
+    "sim": 74.226,
+    "errPct": -0.6065962318724178
+   },
+   {
+    "track": "spielberg",
+    "sessionKey": 11311,
+    "from": "same track, earlier",
+    "real": 66.113,
+    "sim": 65.753,
+    "errPct": -0.5445222573472682
+   },
+   {
+    "track": "silverstone",
+    "sessionKey": 11322,
+    "from": "same track, earlier",
+    "real": 88.111,
+    "sim": 88.072,
+    "errPct": -0.04426235089830041
+   },
+   {
+    "track": "spa-francorchamps",
+    "sessionKey": 11330,
+    "from": "same track, earlier",
+    "real": 104.361,
+    "sim": 104.84100000000001,
+    "errPct": 0.459941932331047
+   },
+   {
+    "track": "hungaroring",
+    "sessionKey": 11338,
+    "from": "same track, earlier",
+    "real": 77.207,
+    "sim": 77.002,
+    "errPct": -0.2655199658062071
+   },
+   {
+    "track": "monza",
+    "sessionKey": 11357,
+    "from": "same track, earlier",
+    "real": 81.786,
+    "sim": 81.42699999999999,
+    "errPct": -0.43895043161422354
+   },
+   {
+    "track": "madring",
+    "sessionKey": 11365,
+    "from": "mean of earlier events",
+    "real": 91.824,
+    "sim": 93.763,
+    "errPct": 2.111648370796314
+   },
+   {
+    "track": "baku",
+    "sessionKey": 11373,
+    "from": "mean of earlier events",
+    "real": 102.526,
+    "sim": 104.75200000000001,
+    "errPct": 2.1711565846712184
+   },
+   {
+    "track": "singapore",
+    "sessionKey": 11384,
+    "from": "same track, earlier",
+    "real": 91.373,
+    "sim": 90.755,
+    "errPct": -0.6763485931292714
+   },
+   {
+    "track": "austin",
+    "sessionKey": 11392,
+    "from": "same track, earlier",
+    "real": 94.035,
+    "sim": 94.25999999999999,
+    "errPct": 0.2392726112617582
+   },
+   {
+    "track": "mexico-city",
+    "sessionKey": 11400,
+    "from": "same track, earlier",
+    "real": 76.514,
+    "sim": 75.997,
+    "errPct": -0.675693337167049
+   },
+   {
+    "track": "las-vegas",
+    "sessionKey": 11416,
+    "from": "mean of earlier events",
+    "real": 93.893,
+    "sim": 95.07300000000001,
+    "errPct": 1.2567497044508182
+   },
+   {
+    "track": "kuala-lumpur",
+    "sessionKey": 11730,
+    "from": "mean of earlier events",
+    "real": 95.13,
+    "sim": 92.872,
+    "errPct": -2.373594029223164
+   }
+  ]
+ }
+}
