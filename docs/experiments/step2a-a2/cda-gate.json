@@ -1,0 +1,759 @@
+{
+ "heldOut": [
+  {
+   "label": "all",
+   "rows": 68,
+   "units": 30,
+   "k": 1.442,
+   "rmsA": 0.84,
+   "rmsVD": 0.924,
+   "medianAbsA": 0.673,
+   "medianAbsVD": 0.701,
+   "upper": 0.1632,
+   "margin": 0.042,
+   "accept": false,
+   "reason": "rejected: RMS loss up to 0.163 > 0.042",
+   "k2": 1.442,
+   "acceptK2": false
+  },
+  {
+   "label": "f1",
+   "rows": 35,
+   "units": 22,
+   "k": 1.457,
+   "rmsA": 0.784,
+   "rmsVD": 0.903,
+   "medianAbsA": 0.442,
+   "medianAbsVD": 0.527,
+   "upper": 0.2385,
+   "margin": 0.0392,
+   "accept": false,
+   "reason": "rejected: RMS loss up to 0.238 > 0.039",
+   "k2": 1.457,
+   "acceptK2": false
+  },
+  {
+   "label": "wec",
+   "rows": 33,
+   "units": 8,
+   "k": 1.572,
+   "rmsA": 0.979,
+   "rmsVD": 0.979,
+   "medianAbsA": 0.785,
+   "medianAbsVD": 0.785,
+   "upper": 0,
+   "margin": 0.049,
+   "accept": true,
+   "reason": "accepted: RMS loss at most 0.000 <= 0.049",
+   "k2": 1.572,
+   "acceptK2": true
+  }
+ ],
+ "heldOutF1_2026": {
+  "label": "f1-2026 (no own-season telemetry)",
+  "rows": 15,
+  "units": 15,
+  "k": 1.484,
+  "rmsA": 0.93,
+  "rmsVD": 1.182,
+  "medianAbsA": 0.462,
+  "medianAbsVD": 0.527,
+  "upper": 0.5379,
+  "margin": 0.0465,
+  "accept": false,
+  "reason": "rejected: RMS loss up to 0.538 > 0.046",
+  "k2": 1.484,
+  "acceptK2": false
+ },
+ "levelC": [
+  {
+   "label": "all",
+   "rows": 58,
+   "units": 32,
+   "k": 1.44,
+   "rmsA": 2.809,
+   "rmsVD": 2.765,
+   "medianAbsA": 1.982,
+   "medianAbsVD": 1.824,
+   "upper": 0.0153,
+   "margin": 0.1405,
+   "accept": true,
+   "reason": "accepted: RMS loss at most 0.015 <= 0.140",
+   "k2": 1.44,
+   "acceptK2": true
+  },
+  {
+   "label": "f1",
+   "rows": 40,
+   "units": 26,
+   "k": 1.448,
+   "rmsA": 2.993,
+   "rmsVD": 2.942,
+   "medianAbsA": 2.635,
+   "medianAbsVD": 2.324,
+   "upper": 0.0181,
+   "margin": 0.1497,
+   "accept": true,
+   "reason": "accepted: RMS loss at most 0.018 <= 0.150",
+   "k2": 1.448,
+   "acceptK2": true
+  },
+  {
+   "label": "wec",
+   "rows": 18,
+   "units": 6,
+   "k": 1.649,
+   "rmsA": 1.805,
+   "rmsVD": 1.805,
+   "medianAbsA": 0.976,
+   "medianAbsVD": 0.976,
+   "upper": 0,
+   "margin": 0.0902,
+   "accept": true,
+   "reason": "accepted: RMS loss at most 0.000 <= 0.090",
+   "k2": 1.649,
+   "acceptK2": true
+  }
+ ],
+ "levelCSummary": {
+  "A": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.093,
+    "medAbsPct": 2.725
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 2.695,
+    "medAbsPct": 2.621
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 1.889,
+    "medAbsPct": 1.21
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 1.658,
+    "medAbsPct": 0.945
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 1.858,
+    "medAbsPct": 1.232
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.92,
+    "medAbsPct": 2.635
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 1.805,
+    "medAbsPct": 0.976
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.625,
+    "medAbsPct": 1.982
+   }
+  },
+  "VD": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.06,
+    "medAbsPct": 2.324
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 2.617,
+    "medAbsPct": 2.375
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.87,
+    "medAbsPct": 2.324
+   },
+   "wec": {
+    "n": 0,
+    "rmsPct": null,
+    "medAbsPct": null
+   },
+   "all": {
+    "n": 40,
+    "rmsPct": 2.87,
+    "medAbsPct": 2.324
+   }
+  }
+ },
+ "forward": {
+  "A": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.181,
+    "medAbsPct": 2.16
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 1.302,
+    "medAbsPct": 0.696
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 0.917,
+    "medAbsPct": 0.568
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 0.699,
+    "medAbsPct": 0.233
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 0.882,
+    "medAbsPct": 0.667
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.516,
+    "medAbsPct": 1.446
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 0.838,
+    "medAbsPct": 0.476
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.141,
+    "medAbsPct": 0.939
+   }
+  },
+  "VD": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.207,
+    "medAbsPct": 2.136
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 1.235,
+    "medAbsPct": 0.7
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.519,
+    "medAbsPct": 1.472
+   },
+   "wec": {
+    "n": 0,
+    "rmsPct": null,
+    "medAbsPct": null
+   },
+   "all": {
+    "n": 40,
+    "rmsPct": 2.519,
+    "medAbsPct": 1.472
+   }
+  }
+ },
+ "trap": {
+  "n": 26,
+  "meanAbsA": 7.04,
+  "meanAbsVD": 9.42,
+  "mde": 1.7,
+  "judgeable": true,
+  "gain": -2.38,
+  "ci90": [
+   -3.66,
+   -1.08
+  ],
+  "p": 0.9959,
+  "accept": false,
+  "reason": "rejected: worse on held-out units",
+  "perTrack": {
+   "austin": -1.43,
+   "baku": 4.38,
+   "catalunya": -5.69,
+   "hungaroring": -4.23,
+   "imola": 2.11,
+   "interlagos": -5.52,
+   "jeddah": -6.39,
+   "kuala-lumpur": 0.94,
+   "las-vegas": 4.81,
+   "lusail": -9.64,
+   "madring": -2.78,
+   "melbourne": -0.86,
+   "mexico-city": -5.41,
+   "miami": 0.26,
+   "monte-carlo": -4.67,
+   "montreal": 1.59,
+   "monza": 2.78,
+   "sakhir": -4.53,
+   "shanghai": -0.32,
+   "silverstone": -3.09,
+   "singapore": -0.1,
+   "spa-francorchamps": 1.99,
+   "spielberg": -2.3,
+   "suzuka": -6.53,
+   "yas-marina-circuit": -7.23,
+   "zandvoort": -10.04
+  }
+ },
+ "summaryValidate": {
+  "A": {
+   "f1/2023": {
+    "tracks": 15,
+    "lapRmsPct": 0.454,
+    "sectorRmsPct": 2.188,
+    "cornerRmsKph": 21.299,
+    "cornerBiasKph": -11.619,
+    "trapRmsKph": 7.562,
+    "trapBiasKph": 1.007,
+    "brakeRmsM": 55.86,
+    "brakeBiasM": 27.089,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2024": {
+    "tracks": 18,
+    "lapRmsPct": 0.482,
+    "sectorRmsPct": 2.575,
+    "cornerRmsKph": 23.613,
+    "cornerBiasKph": -12.574,
+    "trapRmsKph": 8.534,
+    "trapBiasKph": -1.299,
+    "brakeRmsM": 58.495,
+    "brakeBiasM": 34.06,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2025": {
+    "tracks": 22,
+    "lapRmsPct": 0.371,
+    "sectorRmsPct": 2.51,
+    "cornerRmsKph": 22.982,
+    "cornerBiasKph": -12.355,
+    "trapRmsKph": 8.21,
+    "trapBiasKph": -4.434,
+    "brakeRmsM": 63.131,
+    "brakeBiasM": 34.836,
+    "holdout2025to2026Pct": 0.73
+   },
+   "f1/2026": {
+    "tracks": 18,
+    "lapRmsPct": 0.486,
+    "sectorRmsPct": 4.691,
+    "cornerRmsKph": 21.023,
+    "cornerBiasKph": -13.598,
+    "trapRmsKph": 9.41,
+    "trapBiasKph": -4.374,
+    "brakeRmsM": 75.029,
+    "brakeBiasM": 36.048,
+    "holdout2025to2026Pct": 0.93
+   },
+   "wec-lmh/2025": {
+    "tracks": 5,
+    "lapRmsPct": 0.529,
+    "trapRmsKph": 9.888,
+    "trapBiasKph": -0.86,
+    "f1ToWecHoldoutPct": 0.66,
+    "clA": 7,
+    "muY": 1.614
+   },
+   "wec-lmh/2026": {
+    "tracks": 6,
+    "lapRmsPct": 0.757,
+    "trapRmsKph": 2.935,
+    "trapBiasKph": 0.88,
+    "f1ToWecHoldoutPct": 1.08,
+    "clA": 6.315,
+    "muY": 1.577
+   },
+   "wec-lmdh/2025": {
+    "tracks": 5,
+    "lapRmsPct": 0.651,
+    "trapRmsKph": 11.776,
+    "trapBiasKph": 0.38,
+    "f1ToWecHoldoutPct": 0.81,
+    "clA": 7,
+    "muY": 1.604
+   },
+   "wec-lmdh/2026": {
+    "tracks": 6,
+    "lapRmsPct": 0.619,
+    "trapRmsKph": 2.828,
+    "trapBiasKph": 0.38,
+    "f1ToWecHoldoutPct": 0.89,
+    "clA": 6.463,
+    "muY": 1.568
+   },
+   "wec-lmgt3/2025": {
+    "tracks": 5,
+    "lapRmsPct": 1.023,
+    "trapRmsKph": 5.832,
+    "trapBiasKph": -3.46,
+    "f1ToWecHoldoutPct": 1.28,
+    "clA": 3.5,
+    "muY": 1.606
+   },
+   "wec-lmgt3/2026": {
+    "tracks": 6,
+    "lapRmsPct": 0.828,
+    "trapRmsKph": 8.438,
+    "trapBiasKph": 2.3,
+    "f1ToWecHoldoutPct": 1.05,
+    "clA": 3.5,
+    "muY": 1.621
+   }
+  },
+  "VD": {
+   "f1/2023": {
+    "tracks": 15,
+    "lapRmsPct": 0.517,
+    "sectorRmsPct": 2.351,
+    "cornerRmsKph": 20.475,
+    "cornerBiasKph": -10.369,
+    "trapRmsKph": 10.806,
+    "trapBiasKph": -8.723,
+    "brakeRmsM": 53.96,
+    "brakeBiasM": 29.182,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2024": {
+    "tracks": 18,
+    "lapRmsPct": 0.544,
+    "sectorRmsPct": 2.607,
+    "cornerRmsKph": 22.547,
+    "cornerBiasKph": -10.957,
+    "trapRmsKph": 10.12,
+    "trapBiasKph": -7.408,
+    "brakeRmsM": 56.697,
+    "brakeBiasM": 36.066,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2025": {
+    "tracks": 22,
+    "lapRmsPct": 0.343,
+    "sectorRmsPct": 2.557,
+    "cornerRmsKph": 21.713,
+    "cornerBiasKph": -10.296,
+    "trapRmsKph": 10.614,
+    "trapBiasKph": -9.142,
+    "brakeRmsM": 62.484,
+    "brakeBiasM": 37.185,
+    "holdout2025to2026Pct": 0.74
+   },
+   "f1/2026": {
+    "tracks": 18,
+    "lapRmsPct": 0.64,
+    "sectorRmsPct": 4.368,
+    "cornerRmsKph": 21.146,
+    "cornerBiasKph": -13.585,
+    "trapRmsKph": 10.872,
+    "trapBiasKph": -4.627,
+    "brakeRmsM": 74.043,
+    "brakeBiasM": 38.203,
+    "holdout2025to2026Pct": 1.18
+   }
+  }
+ },
+ "cars": {
+  "A": {
+   "2023": {
+    "muY": 1.752,
+    "clA": 7.287,
+    "cdA": 1.269,
+    "cdALow": 0.761,
+    "pIceKW": 482.5,
+    "atBound": []
+   },
+   "2024": {
+    "muY": 1.738,
+    "clA": 8,
+    "cdA": 1.203,
+    "cdALow": 0.772,
+    "pIceKW": 476,
+    "atBound": [
+     "clA",
+     "pIce"
+    ]
+   },
+   "2025": {
+    "muY": 1.775,
+    "clA": 8,
+    "cdA": 1.178,
+    "cdALow": 0.79,
+    "pIceKW": 476,
+    "atBound": [
+     "clA",
+     "pIce"
+    ]
+   },
+   "2026": {
+    "muY": 1.719,
+    "clA": 6.645,
+    "cdA": 1.889,
+    "cdALow": 1.139,
+    "pIceKW": 460,
+    "atBound": [
+     "pIce"
+    ]
+   }
+  },
+  "VD": {
+   "2023": {
+    "muY": 1.876,
+    "clA": 6.475,
+    "cdA": 1.574,
+    "cdALow": 1.221,
+    "pIceKW": 476,
+    "atBound": [
+     "pIce"
+    ]
+   },
+   "2024": {
+    "muY": 1.778,
+    "clA": 8,
+    "cdA": 1.533,
+    "cdALow": 1.193,
+    "pIceKW": 476,
+    "atBound": [
+     "clA",
+     "pIce"
+    ]
+   },
+   "2025": {
+    "muY": 1.816,
+    "clA": 7.999,
+    "cdA": 1.515,
+    "cdALow": 1.201,
+    "pIceKW": 476,
+    "atBound": [
+     "clA",
+     "pIce"
+    ]
+   },
+   "2026": {
+    "muY": 1.722,
+    "clA": 6.815,
+    "cdA": 1.671,
+    "cdALow": 1.18,
+    "pIceKW": 424.4,
+    "atBound": []
+   }
+  }
+ },
+ "noise": {
+  "wec": {
+   "groups": [
+    {
+     "group": "lmh 2025",
+     "spreadPp": 0.001
+    },
+    {
+     "group": "lmh 2026",
+     "spreadPp": 0
+    },
+    {
+     "group": "lmdh 2025",
+     "spreadPp": 0
+    },
+    {
+     "group": "lmdh 2026",
+     "spreadPp": 0
+    },
+    {
+     "group": "lmgt3 2025",
+     "spreadPp": 0
+    },
+    {
+     "group": "lmgt3 2026",
+     "spreadPp": 0.026
+    }
+   ],
+   "rmsPct": 0.9864314205492467,
+   "rms2Pct": 0.9816007921529395,
+   "spreadPp": 0.004830628396307213,
+   "delta": 0.04932157102746234,
+   "judgeable": true,
+   "reason": "judgeable: WEC spread 0.005 < δ/3 0.016 pp"
+  },
+  "f1": {}
+ },
+ "boundHits": {
+  "f1SeasonCars": {
+   "base": 5,
+   "cand": 5
+  },
+  "wecFolds": {
+   "base": 30,
+   "cand": 30
+  },
+  "noNew": true
+ },
+ "reference": {
+  "name": "R10",
+  "heldOut": [
+   {
+    "label": "all",
+    "rows": 68,
+    "units": 30,
+    "k": 1.442,
+    "rmsA": 0.84,
+    "rmsVD": 0.898,
+    "medianAbsA": 0.673,
+    "medianAbsVD": 0.735,
+    "upper": 0.1001,
+    "margin": 0.042,
+    "accept": false,
+    "reason": "rejected: RMS loss up to 0.100 > 0.042",
+    "k2": 1.442,
+    "acceptK2": false
+   },
+   {
+    "label": "f1",
+    "rows": 35,
+    "units": 22,
+    "k": 1.457,
+    "rmsA": 0.784,
+    "rmsVD": 0.866,
+    "medianAbsA": 0.442,
+    "medianAbsVD": 0.662,
+    "upper": 0.1456,
+    "margin": 0.0392,
+    "accept": false,
+    "reason": "rejected: RMS loss up to 0.146 > 0.039",
+    "k2": 1.457,
+    "acceptK2": false
+   },
+   {
+    "label": "wec",
+    "rows": 33,
+    "units": 8,
+    "k": 1.572,
+    "rmsA": 0.979,
+    "rmsVD": 0.979,
+    "medianAbsA": 0.785,
+    "medianAbsVD": 0.785,
+    "upper": 0,
+    "margin": 0.049,
+    "accept": true,
+    "reason": "accepted: RMS loss at most 0.000 <= 0.049",
+    "k2": 1.572,
+    "acceptK2": true
+   }
+  ],
+  "levelC": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.018,
+    "medAbsPct": 2.41
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 2.668,
+    "medAbsPct": 2.54
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.866,
+    "medAbsPct": 2.515
+   },
+   "wec": {
+    "n": 0,
+    "rmsPct": null,
+    "medAbsPct": null
+   },
+   "all": {
+    "n": 40,
+    "rmsPct": 2.866,
+    "medAbsPct": 2.515
+   }
+  },
+  "trapMeanAbs": 6.78,
+  "summaryValidate": {
+   "f1/2023": {
+    "tracks": 15,
+    "lapRmsPct": 0.468,
+    "sectorRmsPct": 2.239,
+    "cornerRmsKph": 20.603,
+    "cornerBiasKph": -10.328,
+    "trapRmsKph": 7.531,
+    "trapBiasKph": 0.12,
+    "brakeRmsM": 55.105,
+    "brakeBiasM": 28,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2024": {
+    "tracks": 18,
+    "lapRmsPct": 0.523,
+    "sectorRmsPct": 2.564,
+    "cornerRmsKph": 22.711,
+    "cornerBiasKph": -11.045,
+    "trapRmsKph": 7.908,
+    "trapBiasKph": -0.7,
+    "brakeRmsM": 56.733,
+    "brakeBiasM": 35.03,
+    "holdout2025to2026Pct": null
+   },
+   "f1/2025": {
+    "tracks": 22,
+    "lapRmsPct": 0.345,
+    "sectorRmsPct": 2.497,
+    "cornerRmsKph": 22.279,
+    "cornerBiasKph": -10.943,
+    "trapRmsKph": 7.008,
+    "trapBiasKph": -3.013,
+    "brakeRmsM": 62.334,
+    "brakeBiasM": 36.218,
+    "holdout2025to2026Pct": 0.78
+   },
+   "f1/2026": {
+    "tracks": 18,
+    "lapRmsPct": 0.607,
+    "sectorRmsPct": 4.556,
+    "cornerRmsKph": 20.871,
+    "cornerBiasKph": -13.442,
+    "trapRmsKph": 10.625,
+    "trapBiasKph": -6.037,
+    "brakeRmsM": 75.107,
+    "brakeBiasM": 35.909,
+    "holdout2025to2026Pct": 1.04
+   }
+  },
+  "cars": {
+   "2023": {
+    "cdA": 1.461,
+    "cdALow": 0.985,
+    "pIceKW": 476,
+    "clA": 6.91,
+    "muY": 1.806
+   },
+   "2024": {
+    "cdA": 1.44,
+    "cdALow": 1,
+    "pIceKW": 476,
+    "clA": 8,
+    "muY": 1.759
+   },
+   "2025": {
+    "cdA": 1.389,
+    "cdALow": 1.02,
+    "pIceKW": 476,
+    "clA": 8,
+    "muY": 1.791
+   },
+   "2026": {
+    "cdA": 1.79,
+    "cdALow": 1.184,
+    "pIceKW": 460,
+    "clA": 6.808,
+    "muY": 1.704
+   }
+  }
+ },
+ "wecReusedFromBase": {
+  "VD": true,
+  "R": true
+ },
+ "pass": false
+}
