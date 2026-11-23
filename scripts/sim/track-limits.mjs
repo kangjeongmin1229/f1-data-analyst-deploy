@@ -8,7 +8,7 @@ import {pathToFileURL} from 'node:url';
 import {cornerRefs} from '../../worker/lapsim/track-changes.js';
 
 // "17. | Track Limits", "9.4 | Track limits at Turn 4" or an unnumbered "Track Limits" line
-const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?[.)]?\s*\|?\s*[^\n|]{0,40}\btrack[- ]limits?\b[^\n]{0,60}|Track[- ]limits?\b[^\n.]{0,50})$/i;
+const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?[.)]?\s+[^\n]{0,40}\btrack[- ]limits?\b[^\n]{0,60}|Track[- ]limits?\b[^\n.]{0,50})$/i;
 const SUB = /^\s*\d{1,2}\.\d{1,2}\.?\s*\|?\s*[A-Z]/;
 const NEXT = /^\s*(\d{1,2})[.)]\s*\|?\s*[A-Z“"][^\n]{2,90}$/;
 const ALL = /\ball (?:the )?(?:corners|turns)\b|\bentire (?:circuit|track)\b|\bthroughout the (?:circuit|lap)\b|\bat every corner\b/i;
@@ -27,7 +27,7 @@ export function ruleOf(s) {
 
 // Track-limit sections of one notes text (pages joined with newlines, cells joined with " | ").
 export function trackLimitSections(text) {
-  const lines = String(text || '').split(/\r?\n/), out = [];
+  const lines = String(text || '').split(/\r?\n/).map(l => l.replace(/\s*\|\s*/g, ' ')), out = [];
   for (let i = 0; i < lines.length; i++) {
     const h = lines[i].match(HEAD);
     // a heading is short and is not a sentence ending in a full stop
@@ -178,7 +178,8 @@ export function coverageTable(rows, years) {
 export function parseImsaBriefing(text) {
   const lines = String(text || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
   const body = lines.join(' ');
-  const generalRule = /painted curb|including (?:the )?curb|curbing/i.test(body) ? 'kerb' : /white lines?/i.test(body) ? 'line' : null;
+  // only a stated limit counts: "two wheels ... including painted curbing" (kerb usable) or "white lines define the track edges"
+  const generalRule = /two wheels[^•]{0,80}curb/i.test(body) ? 'kerb' : EDGES.test(body) ? 'line' : null;
   const corners = [], unparsed = [], seen = new Set();
   for (const l of lines) {
     if (!/track limits?|short ?cut/i.test(l) || l.length > 120) continue;
@@ -192,7 +193,7 @@ export function parseImsaBriefing(text) {
     }
   }
   corners.sort((a, b) => a.turn - b.turn);
-  return {corners, allCorners: /two wheels must remain|track limits (?:will be|are) enforced/i.test(body), generalRule, unparsed};
+  return {corners, allCorners: /two wheels must remain|(?:must remain|minimum) two wheels|track limits (?:will be|are) enforced/i.test(body), generalRule, unparsed};
 }
 
 export const IMSA_TRACKS = [['daytona', /Daytona International/i], ['sebring', /Sebring/i], ['long-beach', /Long Beach/i],
