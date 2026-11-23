@@ -1,0 +1,37 @@
+name: step5a fetch 3 (temporary)
+on:
+  push:
+    branches: ['tmp/step5a-fetch3']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: node scripts/sim/track-state.mjs alt | tee alt.log
+      - run: node scripts/sim/fia-changes.mjs | tee fia.log
+        env:
+          LAPSIM_CHANGE_YEARS: '2019,2020,2021,2022,2023,2024,2025,2026'
+      - name: Speed traces from the latest lapsim-data run (fork artifact)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/artifacts?name=lapsim-derived&per_page=1" --jq '.artifacts[0].workflow_run.id')
+          gh run download "$id" -n lapsim-derived -D dl && find dl -name traces.json
+      - name: Change effects (change-effects.mjs on the rebuilt notes)
+        continue-on-error: true
+        run: LAPSIM_CACHE=$(dirname $(find dl -name traces.json | head -1)) node scripts/sim/change-effects.mjs | tee effects.log
+      - name: Commit the result back to this branch
+        if: always()
+        run: |
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          mkdir -p out && cp .cache/track-state/altitude.json alt.log fia.log out/ ; cp effects.log out/ || true
+          git add -f out worker/lapsim/track-changes-data.js worker/lapsim/change-effects-data.js && git commit -m "fetch 2 result [skip ci]" && git push
