@@ -1,0 +1,28 @@
+{
+ "log": [
+  "bacinger/f1-circuits (MIT) 200 116166",
+  "jeddah osm https://overpass-api.de/api/interpreter HTTP 502",
+  "jeddah osm https://overpass-api.de/api/interpreter 17 ways",
+  "jeddah GLO-30 Copernicus_DSM_COG_10_N21_00_E039_00_DEM (115, 83)",
+  "shanghai osm https://overpass-api.de/api/interpreter 17 ways",
+  "shanghai GLO-30 Copernicus_DSM_COG_10_N31_00_E121_00_DEM (61, 77)",
+  "imola osm https://overpass-api.de/api/interpreter 37 ways",
+  "imola emilia WCS coverages ['Dtm10k_ed2014', '1']",
+  "imola emilia 1 GeoTIFF 200 image/tiff 2099014 ",
+  "rejected: picture, not heights 4 uint8",
+  "imola emilia low valid share 0",
+  "imola emilia 1 image/tiff 404 text/html 846 <!DOCTYPE html>\r\n<html lang=\"it\">\r\n<head>\r\n\t<title>404 - Contenuto non trovato</title>\r\n\r\n\t<style type=\"text/css\">\r\n\t    html,\r\n\t    body {\r\n\t      margin: 0;\r\n\t      padding: 0;\r\n\t      height: 100%;",
+  "imola emilia 1 TIFF 200 image/tiff 2099014 ",
+  "rejected: picture, not heights 4 uint8",
+  "imola emilia low valid share 0",
+  "imola emilia Dtm10k_ed2014 GeoTIFF 404 text/html 846 <!DOCTYPE html>\r\n<html lang=\"it\">\r\n<head>\r\n\t<title>404 - Contenuto non trovato</title>\r\n\r\n\t<style type=\"text/css\">\r\n\t    html,\r\n\t    body {\r\n\t      margin: 0;\r\n\t      padding: 0;\r\n\t      height: 100%;",
+  "imola emilia Dtm10k_ed2014 image/tiff 404 text/html 846 <!DOCTYPE html>\r\n<html lang=\"it\">\r\n<head>\r\n\t<title>404 - Contenuto non trovato</title>\r\n\r\n\t<style type=\"text/css\">\r\n\t    html,\r\n\t    body {\r\n\t      margin: 0;\r\n\t      padding: 0;\r\n\t      height: 100%;",
+  "imola emilia Dtm10k_ed2014 TIFF 404 text/html 846 <!DOCTYPE html>\r\n<html lang=\"it\">\r\n<head>\r\n\t<title>404 - Contenuto non trovato</title>\r\n\r\n\t<style type=\"text/css\">\r\n\t    html,\r\n\t    body {\r\n\t      margin: 0;\r\n\t      padding: 0;\r\n\t      height: 100%;",
+  "imola GLO-30 Copernicus_DSM_COG_10_N44_00_E011_00_DEM (69, 217)",
+  "imola GLO-30 Copernicus_DSM_COG_10_N44_00_E011_00_DEM (69, 217)",
+  "suzuka osm https://overpass-api.de/api/interpreter 62 ways",
+  "suzuka dem5a_png z15 tiles 9 missing 0 valid 0.978",
+  "suzuka GLO-30 Copernicus_DSM_COG_10_N34_00_E136_00_DEM (60, 109)"
+ ],
+ "fetched": "2026-11-23T02:57:36Z"
+}
