@@ -2,7 +2,7 @@
 
 Generated 2026-11-23. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
 
-F1 joint fit of 2023 and 2024 and 2025 and 2026: 1440 s, score 23.145.
+F1 joint fit of 2023 and 2024 and 2025 and 2026: 1455 s, score 23.145.
 
 ### 2023 team pace and development
 
@@ -171,12 +171,12 @@ Car: grip μy 1.719, downforce ClA 6.65 m², drag CdA 1.889 m², low-drag CdA 1.
 - 2028: rules -1.31% lap time, development -1.13% (historical range -0.2 to -2.13%).
 
 WEC lmh 2025: transfer track factors — holdout 0.67% → 0.99%, not used (worse) (rejected: worse on held-out rows)
-WEC lmh 2025: Timing71 rows 3 — holdout 0.67% → 0.66%, rejected: gain within noise
-WEC lmh 2025: per-event BoP — holdout 0.67% → 1.06%, rejected: worse on held-out rows
-WEC lmh 2025: held-out second start 0.667 % vs 0.667 % (spread 0.000 pp); fold iterations 97, 96, 76, 103, 99; fold bound hits clA at max (5)
+WEC lmh 2025: Timing71 rows 3 — holdout 0.67% → 0.66%, accepted: held-out error lower beyond noise
+WEC lmh 2025: per-event BoP — holdout 0.66% → 1.05%, rejected: worse on held-out rows
+WEC lmh 2025: held-out best of 0.08/0.05 0.659 % vs 0.658 % (spread 0.000 pp); fold iterations 95, 119, 90, 63, 128, 81; fold bound hits clA at max (6)
 ## WEC Hypercar LMH 2025
 
-15 laps on 5 tracks, fit score 4.094. Holdout (one track left out at a time): 0.67% RMS over 5 laps.
+18 laps on 5 tracks, fit score 3.474. Holdout (one track left out at a time): 0.66% RMS over 5 laps.
 
 Car: grip μy 1.614, downforce ClA 7.00 m², drag CdA 1.070 m² (mass 1120 kg and 500 kW fixed).
 
@@ -189,8 +189,8 @@ Car: grip μy 1.614, downforce ClA 7.00 m², drag CdA 1.070 m² (mass 1120 kg an
 | sakhir | 106.826 | 106.533 | -0.293 | 293.7 | 293.9 | 0.901 |
 
 WEC lmh 2026: transfer track factors — holdout 1.21% → 1.08%, used (rejected: gain within noise)
-WEC lmh 2026: Timing71 rows 3 — holdout 1.08% → 1.17%, rejected: worse on held-out rows
-WEC lmh 2026: held-out second start 1.084 % vs 1.084 % (spread 0.000 pp); fold iterations 147, 97, 114, 86, 76, 90; fold bound hits clA at max (2)
+WEC lmh 2026: Timing71 rows 3 — holdout 1.08% → 1.16%, rejected: worse on held-out rows
+WEC lmh 2026: held-out best of 0.08/0.05 1.084 % vs 1.084 % (spread 0.000 pp); fold iterations 92, 79, 84, 89, 76, 64; fold bound hits clA at max (2)
 ## WEC Hypercar LMH 2026
 
 18 laps on 6 tracks, fit score 0.890. Holdout (one track left out at a time): 1.08% RMS over 6 laps.
@@ -207,9 +207,9 @@ Car: grip μy 1.577, downforce ClA 6.32 m², drag CdA 0.945 m² (mass 1120 kg an
 | monza | 93.364 | 94.109 | +0.745 | 314 | 310.4 | 0.9907 |
 
 WEC lmdh 2025: transfer track factors — holdout 0.92% → 0.81%, used (rejected: gain within noise)
-WEC lmdh 2025: Timing71 rows 3 — holdout 0.81% → 0.87%, rejected: worse on held-out rows
+WEC lmdh 2025: Timing71 rows 3 — holdout 0.81% → 0.86%, rejected: worse on held-out rows
 WEC lmdh 2025: per-event BoP — holdout 0.81% → 1.19%, rejected: worse on held-out rows
-WEC lmdh 2025: held-out second start 0.818 % vs 0.811 % (spread 0.007 pp); fold iterations 75, 77, 96, 79, 102; fold bound hits clA at max (5)
+WEC lmdh 2025: held-out best of 0.08/0.05 0.810 % vs 0.810 % (spread 0.000 pp); fold iterations 100, 109, 96, 80, 102; fold bound hits clA at max (5)
 ## WEC Hypercar LMDh 2025
 
 15 laps on 5 tracks, fit score 3.606. Holdout (one track left out at a time): 0.81% RMS over 5 laps.
@@ -224,9 +224,9 @@ Car: grip μy 1.604, downforce ClA 7.00 m², drag CdA 1.087 m² (mass 1120 kg an
 | interlagos | 82.570 | 82.116 | -0.454 | 276.2 | 298.6 | 0.9823 |
 | sakhir | 107.543 | 107.802 | +0.259 | 290.5 | 292.9 | 0.8804 |
 
-WEC lmdh 2026: transfer track factors — holdout 1.24% → 0.89%, used (rejected: gain within noise)
+WEC lmdh 2026: transfer track factors — holdout 1.22% → 0.89%, used (rejected: gain within noise)
 WEC lmdh 2026: Timing71 rows 3 — holdout 0.89% → 0.96%, rejected: worse on held-out rows
-WEC lmdh 2026: held-out second start 0.900 % vs 0.893 % (spread 0.006 pp); fold iterations 103, 104, 102, 71, 91, 74; fold bound hits clA at max (2)
+WEC lmdh 2026: held-out best of 0.08/0.05 0.893 % vs 0.893 % (spread 0.000 pp); fold iterations 128, 104, 104, 71, 122, 56; fold bound hits clA at max (2)
 ## WEC Hypercar LMDh 2026
 
 18 laps on 6 tracks, fit score 0.748. Holdout (one track left out at a time): 0.89% RMS over 6 laps.
@@ -244,7 +244,7 @@ Car: grip μy 1.568, downforce ClA 6.46 m², drag CdA 0.932 m² (mass 1120 kg an
 
 WEC lmgt3 2025: transfer track factors — holdout 1.66% → 1.28%, used (accepted: held-out error lower beyond noise)
 WEC lmgt3 2025: Timing71 rows 5 — holdout 1.28% → 1.28%, rejected: gain within noise
-WEC lmgt3 2025: held-out second start 1.284 % vs 1.281 % (spread 0.003 pp); fold iterations 99, 100, 133, 140, 104; fold bound hits clA at max (5), cdA at max (1)
+WEC lmgt3 2025: held-out best of 0.08/0.05 1.281 % vs 1.281 % (spread 0.000 pp); fold iterations 101, 100, 133, 139, 104; fold bound hits clA at max (5), cdA at max (1)
 ## WEC LMGT3 2025
 
 15 laps on 5 tracks, fit score 2.329. Holdout (one track left out at a time): 1.28% RMS over 5 laps.
@@ -259,12 +259,12 @@ Car: grip μy 1.606, downforce ClA 3.50 m², drag CdA 1.300 m² (mass 1400 kg an
 | interlagos | 93.849 | 92.797 | -1.052 | 253.7 | 256.1 | 0.9823 |
 | sakhir | 121.661 | 120.799 | -0.862 | 254.4 | 254.6 | 0.8804 |
 
-WEC lmgt3 2026: transfer track factors — holdout 1.19% → 0.99%, used (rejected: gain within noise)
-WEC lmgt3 2026: Timing71 rows 5 — holdout 0.99% → 1.04%, rejected: worse on held-out rows
-WEC lmgt3 2026: held-out second start 1.125 % vs 0.994 % (spread 0.131 pp); fold iterations 179, 73, 105, 107, 161, 121; fold bound hits clA at max (6), cdA at max (3)
+WEC lmgt3 2026: transfer track factors — holdout 1.20% → 1.05%, used (rejected: gain within noise)
+WEC lmgt3 2026: Timing71 rows 5 — holdout 1.05% → 1.03%, rejected: gain within noise
+WEC lmgt3 2026: held-out best of 0.08/0.05 1.024 % vs 1.050 % (spread 0.026 pp); fold iterations 117, 73, 105, 175, 161, 139; fold bound hits clA at max (6), cdA at max (3)
 ## WEC LMGT3 2026
 
-18 laps on 6 tracks, fit score 2.838. Holdout (one track left out at a time): 0.99% RMS over 6 laps.
+18 laps on 6 tracks, fit score 2.838. Holdout (one track left out at a time): 1.05% RMS over 6 laps.
 
 Car: grip μy 1.621, downforce ClA 3.50 m², drag CdA 1.266 m² (mass 1400 kg and 380 kW fixed).
 
