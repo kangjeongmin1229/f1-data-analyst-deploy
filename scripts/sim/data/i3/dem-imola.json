@@ -1,0 +1,10 @@
+{
+ "source": "Regione Emilia-Romagna DTM 5x5 ed. 2014 (WCS coverage 1)",
+ "gridM": 5,
+ "kind": "terrain model",
+ "url": "https://servizigis.regione.emilia-romagna.it/wcs/dtm10k_ed2014",
+ "licence": "Regione Emilia-Romagna open data, CC BY 4.0 (geoportale.regione.emilia-romagna.it)",
+ "validShare": 1.0,
+ "zMin": 255.0,
+ "zMax": 255.0
+}
