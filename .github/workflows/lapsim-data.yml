@@ -43,6 +43,11 @@ concurrency:
   group: lapsim-data-${{ github.ref }}
   cancel-in-progress: false
 
+# gate 13 candidate (claude/gate-ice-density-prereg-2026-11-23-amendment-2.md): the per-class engine density β, seen by every
+# calibration job (f1-joint, parts, merge, reports). Experiment branch only, never merged.
+env:
+  LAPSIM_ICE_BETA: measured
+
 jobs:
   # Every job stays well under GitHub's 6 h job limit (run 45191678721: one calibration job ran over 4 h). `prepare` fetches and builds
   # the tracks (about 2 h); the calibration is split (LAPSIM_PART in scripts/sim/calibrate.mjs; same code and order as one process,
@@ -273,6 +278,17 @@ jobs:
           for f in docs/lapsim-level-c.json docs/lapsim-forward.json; do
             node -e "const s=require('./'+process.argv[1]).summary;console.log('### '+process.argv[1]+'\n\n| group | n | RMS % |\n|---|---|---|\n'+Object.entries(s).map(([k,v])=>'| '+k+' | '+v.n+' | '+v.rmsPct+' |').join('\n'))" "$f" >> "$GITHUB_STEP_SUMMARY"
           done
+      # gate 13 (amendment 2 item 4): F1 trap rows of the base calibration (shared base run 45191678721, bot commit a428459, flag
+      # unset) and of this candidate calibration, on this same build; committed below so nobody needs an artifact download
+      - name: Gate 13 trap rows (validate.mjs, base and candidate)
+        continue-on-error: true
+        run: |
+          git fetch --depth 1 origin a428459a566a8ef0e9def8c2aa8130d617a20db3
+          git show a428459a566a8ef0e9def8c2aa8130d617a20db3:worker/lapsim/calibration-data.js > "$RUNNER_TEMP/cal-base.mjs"
+          env -u LAPSIM_ICE_BETA LAPSIM_CAL_FILE="$RUNNER_TEMP/cal-base.mjs" node scripts/sim/validate.mjs gate13-base
+          LAPSIM_CAL_FILE="$PWD/worker/lapsim/calibration-data.js" node scripts/sim/validate.mjs gate13-cand
+          cp probe-out/validate-gate13-base.json docs/gate13-validate-base.json
+          cp probe-out/validate-gate13-cand.json docs/gate13-validate-cand.json
       - name: Test
         if: inputs.calibrate != 'false'
         run: node --test tests/lapsim*.test.mjs
@@ -298,7 +314,8 @@ jobs:
             worker/lapsim/race-data.js docs/lapsim-race.md worker/lapsim/change-effects-data.js worker/lapsim/energy-docs-data.js worker/lapsim/rules-data.js docs/lapsim-rules.md \
             worker/lapsim/racing-lines-data.js docs/lapsim-racing-lines.md \
             worker/lapsim/stint-data.js worker/lapsim/f1-wet-quali-data.js worker/lapsim/hypercar-maker-data.js scripts/sim/data/wec-stints.json worker/lapsim/brake-data.js worker/lapsim/wec-poles-data.js \
-            docs/lapsim-signature.md docs/lapsim-conditions.md docs/lapsim-level-c.json docs/lapsim-forward.json; do
+            docs/lapsim-signature.md docs/lapsim-conditions.md docs/lapsim-level-c.json docs/lapsim-forward.json \
+            docs/gate13-validate-base.json docs/gate13-validate-cand.json; do
             [ -e "$f" ] && git add "$f"
           done
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi

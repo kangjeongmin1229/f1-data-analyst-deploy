@@ -21,3 +21,12 @@ export function withIceDensity(cars, on = iceBetaOn()) {
   }
   return cars;
 }
+
+// the fit's car for a series and season/class (scripts/sim/calibrate.mjs builds its cars from the priors, not carsFor):
+// {iceDensityExp} with the flag on and a class value, else {} (the fit and its stored car stay as before)
+export function iceExpFor(series, key, on = iceBetaOn()) {
+  if (!on) return {};
+  const cls = series === 'f1' ? (D.f1Seasons?.includes(Number(key)) ? 'f1' : null) : key === 'lmgt3' ? 'lmgt3Wec' : key === 'lmh' || key === 'lmdh' ? 'hypercar' : null;
+  const b = D.classes[cls]?.beta;
+  return Number.isFinite(b) ? {iceDensityExp: b} : {};
+}

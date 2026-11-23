@@ -16,6 +16,7 @@ import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
 import {fitSeason, withGrip, holdout, fitJoint, holdoutJoint, addBanking} from './calibrate-lib.mjs';
 import {fitJointBCD, holdoutBCD, backtestBCD, poleMult} from './joint-bcd.mjs';
 import {SERIES} from '../../worker/lapsim/series.js';
+import {iceExpFor} from '../../worker/lapsim/ice-density.js';
 import {lapsimF1Zones} from '../../worker/lapsim/f1-zones-data.js';
 import {otWholeLap, PARTIAL} from '../../worker/lapsim/zones.js';
 import {lapsimPuDocs} from '../../worker/lapsim/pu-docs-data.js';
@@ -156,7 +157,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
       feat: {ftf: t.throttle?.length ? t.throttle.filter(x => x >= 98).length / t.throttle.length : null, vmean: tracks[t.track].kappa.length * tracks[t.track].ds / t.lap_seconds},
       obs: {s: t.s, v: t.v.map(x => x / 3.6)}, weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
-  const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
+  const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55), ...iceExpFor('f1', year)}; // β per class: LAPSIM_ICE_BETA only
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
@@ -317,7 +318,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session}})));
     let laps = lapsWith(f1Grip);
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
-    const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
+    const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65), ...iceExpFor('wec', cls)}; // LAPSIM_ICE_BETA only
     // owner 2026-11-17 (rule 14): Hypercar braking capped at the iRacing GTP envelope, LAPSIM_BRAKE_ENV_HYPER="a0,a2" (m/s², 1/m;
     // experiment 44043761033 BE1, hypercar holdout mean 1.24 -> 1.16 %)
     if (cls !== 'lmgt3' && E.LAPSIM_BRAKE_ENV_HYPER) base.brakeEnv = E.LAPSIM_BRAKE_ENV_HYPER.split(',').map(Number);

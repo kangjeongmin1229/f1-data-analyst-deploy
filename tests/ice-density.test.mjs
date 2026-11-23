@@ -6,7 +6,7 @@ import {carsFor} from '../worker/lapsim/scenario.js';
 import {lapsimKernel} from '../worker/lapsim/kernel.js';
 import {lapsimTracks} from '../worker/lapsim/tracks-data.js';
 import {lapsimIceDensity as D} from '../worker/lapsim/ice-density-data.js';
-import {iceClassOf} from '../worker/lapsim/ice-density.js';
+import {iceClassOf, iceExpFor} from '../worker/lapsim/ice-density.js';
 
 const K = lapsimKernel(), ID = 'spa-francorchamps';
 const withFlag = (v, f) => { const old = process.env.LAPSIM_ICE_BETA; if (v == null) delete process.env.LAPSIM_ICE_BETA; else process.env.LAPSIM_ICE_BETA = v; try { return f(); } finally { if (old == null) delete process.env.LAPSIM_ICE_BETA; else process.env.LAPSIM_ICE_BETA = old; } };
@@ -32,9 +32,13 @@ test('flag on does not mutate shared car objects', () => {
   withFlag(null, () => { for (const [k, e] of Object.entries(carsFor(ID))) assert.equal(e.car?.iceDensityExp, undefined, k); });
 });
 
-test('laps unchanged with the flag on until the kernel reads the field (gate 13)', () => {
+test('kernel reads car.iceDensityExp (gate 13): flag on changes β cars only; unset cars and flag off unchanged', () => {
   const off = withFlag(null, () => carsFor(ID)), on = withFlag('measured', () => carsFor(ID));
-  for (const k of ['2025', '2026', 'wec-lmh', 'wec-lmdh', 'wec-lmgt3']) assert.equal(lapOf(on, k), lapOf(off, k), k);
+  for (const k of ['2026', '2027']) assert.equal(lapOf(on, k), lapOf(off, k), k); // β unset: env factor (0.15)
+  for (const k of ['2025', 'wec-lmh', 'wec-lmgt3']) assert.notEqual(lapOf(on, k), lapOf(off, k), k);
+  const c = off['wec-lmh'], tr = K.trackFromData(lapsimTracks[ID]); tr.mu.fill(c.grip); // exp 0.15 = old env factor, bitwise
+  const e = K.conditionsFromWeather({airTempC: 32, pressureHpa: 990});
+  assert.equal(K.simulateLap(tr, {...c.car, iceDensityExp: 0.15}, e).lapTime, K.simulateLap(tr, c.car, e).lapTime);
 });
 
 test('class mapping', () => {
@@ -60,4 +64,13 @@ test('data file matches the measurement output; values physical', () => {
 test('kernel read used by the gate-13 patch: β 0.15 reproduces the env factor', () => {
   const e = K.conditionsFromWeather({airTempC: 35, pressureHpa: 780});
   assert.equal(K.icePowerFactor(e.rho, {beta: 0.15}), e.iceFactor);
+});
+
+test('fit cars (calibrate.mjs): β only with the flag, per class', () => {
+  assert.deepEqual(iceExpFor('f1', 2025, false), {});
+  assert.deepEqual(iceExpFor('f1', 2025, true), {iceDensityExp: D.classes.f1.beta});
+  assert.deepEqual(iceExpFor('f1', 2026, true), {});
+  assert.deepEqual(iceExpFor('wec', 'lmgt3', true), {iceDensityExp: D.classes.lmgt3Wec.beta});
+  assert.deepEqual(iceExpFor('wec', 'lmh', true), {iceDensityExp: D.classes.hypercar.beta});
+  assert.deepEqual(iceExpFor('wec', 'lmdh', true), {iceDensityExp: D.classes.hypercar.beta});
 });

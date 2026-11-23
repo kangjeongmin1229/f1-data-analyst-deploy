@@ -177,7 +177,7 @@ export function lapsimKernel() {
     const n = track.kappa.length, ds = track.ds, STEP = stepOf(opts);
     const rho = env.rho ?? RHO_REF;
     const grip = env.grip ?? 1;
-    const iceFactor = env.iceFactor ?? 1;
+    const iceFactor = Number.isFinite(car.iceDensityExp) ? icePowerFactor(rho, {beta: car.iceDensityExp}) : env.iceFactor ?? 1; // gate 13: per-class β, else env (β 0.15)
     const windSpeed = env.windSpeed ?? 0, windFrom = env.windFromDeg ?? 0;
     const t = makeTyre(car);
     const mg = t.m * G;
