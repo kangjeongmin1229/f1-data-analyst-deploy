@@ -3,7 +3,7 @@ on:
   push:
     branches: ['tmp/step5a-fetch']
 permissions:
-  contents: read
+  contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -15,6 +15,12 @@ jobs:
           node-version: '22'
       - run: npm ci --omit=dev --ignore-scripts
       - run: node scripts/sim/track-state.mjs fia 2019,2020,2021,2022,2023,2024,2025,2026 | tee fia.log
+      - name: Commit the result back to this branch
+        if: always()
+        run: |
+          git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
+          mkdir -p out && cp .cache/track-state/fia-notes.json fia.log out/ || true
+          git add -f out && git commit -m "fia notes [skip ci]" && git push
       - uses: actions/upload-artifact@v4
         if: always()
         with:
