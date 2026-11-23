@@ -6,28 +6,22 @@ on:
     paths: ['scripts/sim/track-limits.mjs', '.github/workflows/track-limits-tmp.yml']
 permissions:
   contents: write
+concurrency:
+  group: track-limits-tmp
+  cancel-in-progress: true
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm ci --ignore-scripts
-      - run: node scripts/sim/track-limits.mjs 2>&1 | tee track-limits.log
-      - run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          mkdir -p probe-out && cp track-limits.log probe-out/track-limits.log
-          git add -f worker/lapsim/track-limits-data.js probe-out/track-limits.log
-          git commit -m 'data: track-limit catalogue fetch [skip ci]' && git push
-  probe:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - run: |
+      - name: Probe WEC / IMSA notice boards
+        run: |
+          mkdir -p probe-out; : > probe-out/probe.txt
           for u in \
             'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/' \
             'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/07_6%20Hours%20of%20Fuji/' \
@@ -36,5 +30,12 @@ jobs:
             'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/' \
             'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/09_Briefing%20Photos/01_IWSC%20DRIVER%20BRIEFING.pdf' \
             'https://imsa.results.alkamelcloud.com/' ; do
-            echo "=== $u"; curl -sSL --max-time 30 -o /tmp/p -w '%{http_code} %{content_type} %{size_download}\n' "$u"; head -c 3000 /tmp/p | tr -c '[:print:]\n' '.' ; echo
+            { echo "=== $u"; curl -sSL --max-time 30 -o /tmp/p -w '%{http_code} %{content_type} %{size_download}\n' "$u"; head -c 4000 /tmp/p | tr -c '[:print:]\n' '.'; echo; } >> probe-out/probe.txt 2>&1 || true
           done
+      - run: node scripts/sim/track-limits.mjs 2>&1 | tee track-limits.log
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp track-limits.log probe-out/track-limits.log
+          git add -f worker/lapsim/track-limits-data.js probe-out/track-limits.log probe-out/probe.txt
+          git commit -m 'data: track-limit catalogue fetch [skip ci]' && git push
