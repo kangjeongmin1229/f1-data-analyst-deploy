@@ -12,6 +12,7 @@ const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?\.?\s*\|\s*[^\n|]{0,40}\btrack[- ]limi
 const SUB = /^\s*\d{1,2}\.\d{1,2}\.?\s*\|/;
 const NEXT = /^\s*(\d{1,2})\.\s*\|?\s*[A-Z“"][^\n]{2,90}$/;
 const ALL = /\ball (?:the )?(?:corners|turns)\b|\bentire (?:circuit|track)\b|\bthroughout the (?:circuit|lap)\b|\bat every corner\b/i;
+const EDGES = /\bwhite lines?\b[^.]{0,40}\b(?:define|are)\b[^.]{0,20}\btrack edges?\b/i;
 const PLACE = /\b(?:corner|kerb|curb|exit|apex|bollard|chicane|hairpin|loop|sausage)\b/i;
 
 // rule type of one sentence; a loop or kerb edge is more specific than "white line"
@@ -48,12 +49,15 @@ export function trackLimitSections(text) {
 export function parseTrackLimits(sections) {
   const corners = [], unparsed = [], seen = new Set();
   let allCorners = false;
+  // "the white lines define the track edges" (Article 33.3 SR) is the rule for every corner without its own mechanism
+  const general = sections.some(s => EDGES.test(s)) ? 'line' : null;
   const sentences = sections.flatMap(s => s.split(/(?<=[a-z0-9)”"])\.\s+(?=[A-Z“"(])/)).map(s => s.trim()).filter(Boolean);
   for (const s of sentences) {
-    if (ALL.test(s)) allCorners = true;
+    if (ALL.test(s) || EDGES.test(s)) allCorners = true;
     const refs = cornerRefs(s);
     if (!refs.length) { if (PLACE.test(s) && !ALL.test(s)) unparsed.push(s); continue; }
-    const rule = ruleOf(s);
+    let rule = ruleOf(s);
+    if (rule === 'other' && general && !/bollard|block|polystyrene|rejoin|escape road/i.test(s)) rule = general;
     for (const r of refs) {
       const key = r.turn + r.letter + rule;
       if (seen.has(key)) continue;
@@ -62,14 +66,20 @@ export function parseTrackLimits(sections) {
     }
   }
   corners.sort((a, b) => a.turn - b.turn || (a.letter || '').localeCompare(b.letter || ''));
-  return {corners, allCorners, unparsed};
+  return {corners, allCorners, generalRule: general, unparsed};
+}
+
+// lines around "track limit" mentions, kept when no section was found so the format can be checked by hand
+export function limitHits(text) {
+  const lines = String(text || '').split(/\r?\n/);
+  return lines.flatMap((l, i) => /track[- ]limit/i.test(l) ? [lines.slice(Math.max(0, i - 1), i + 3).join(' / ')] : []).slice(0, 8).map(x => x.slice(0, 400));
 }
 
 export function entryFrom(meta, sections) {
   const p = parseTrackLimits(sections);
   const status = !meta.doc ? 'no document' : p.corners.length || p.allCorners ? 'parsed' : 'unparsed';
   return {track: meta.track, year: meta.year, series: 'f1', event: meta.event || null, status, ...p,
-    doc: meta.doc || null, sectionFound: sections.length > 0, raw: sections.join('\n').slice(0, 6000)};
+    doc: meta.doc || null, sectionFound: sections.length > 0, raw: sections.join('\n').slice(0, 6000), ...(meta.hits?.length ? {hits: meta.hits} : {})};
 }
 
 // Simulator track → FIA event names (2019–2026). Sakhir GP 2020 used the outer loop: kept, flagged by its name.
@@ -95,8 +105,17 @@ export function tracksFor(event, year) {
 const NOTES = /race director'?s? (?:event|competition) notes|^(?:doc \d+ - )?(?:event|competition) notes(?: v\d+)?$|track limits?/i;
 const rank = d => (/race director/i.test(d.title) ? 0 : /track limit/i.test(d.title) ? 1 : 2) * 100 - Number(d.title.match(/\bV(\d+)\b/i)?.[1] || 1);
 
+// shortcut: worker/fia.js parseDocuments cuts a double-quoted href at an apostrophe ("Race Director's ..."),
+// so the event page is read again here with quote-paired hrefs; drop this when fia.js is fixed.
+export function docLinks(html, base) {
+  return [...html.matchAll(/<li\b[^>]*class=["'][^"']*\bdocument-row\b[^>]*>([\s\S]*?)<\/li>/gi)].flatMap(m => {
+    const h = m[1].match(/<a\b[^>]*\bhref=(?:"([^"]*)"|'([^']*)')/i), t = m[1].match(/class=["'][^"']*\btitle\b[^>]*>([\s\S]*?)<\/div>/i);
+    return h ? [{title: (t?.[1] || '').replace(/<[^>]+>/g, '').replace(/&#0?39;|&apos;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim(), url: new URL(h[1] ?? h[2], base).href}] : [];
+  });
+}
+
 async function fetchAll(years) {
-  const {fiaCall, eventDocuments, fiaDocumentText} = await import('../../worker/fia.js');
+  const {fiaCall, eventDocuments, fiaDocumentText, officialUrl} = await import('../../worker/fia.js');
   const out = [];
   for (const year of years) {
     let events;
@@ -106,11 +125,15 @@ async function fetchAll(years) {
       const meta = {track, year, event};
       try {
         const ev = await eventDocuments(year, event);
-        const docs = (ev?.records || []).filter(d => d.url && !d.recalled && NOTES.test(d.title) && !/pirelli|pit lane|circuit map|red zone|times|sc[12]\b/i.test(d.title)).sort((a, b) => rank(a) - rank(b));
+        const fixed = ev ? docLinks(await (await fetch(officialUrl(ev.url), {signal: AbortSignal.timeout(20000)})).text(), ev.url) : [];
+        const docs = (ev?.records || []).map((d, i) => ({...d, url: (fixed.length === ev.records.length ? fixed[i] : fixed.find(f => f.title === d.title))?.url || d.url}))
+          .filter(d => d.url && !d.recalled && NOTES.test(d.title) && !/pirelli|pit lane|circuit map|red zone|times|sc[12]\b|offence|summons|decision|infringement|deletion/i.test(d.title)).sort((a, b) => rank(a) - rank(b));
         let sections = [];
         for (const d of docs.slice(0, 3)) {
           meta.doc = {title: d.title, url: d.url, published: d.published || null};
-          sections = trackLimitSections(await fiaDocumentText(d.url, 30));
+          const text = await fiaDocumentText(d.url, 30);
+          sections = trackLimitSections(text);
+          meta.hits = sections.length ? [] : limitHits(text);
           if (sections.length) break;
         }
         const e = entryFrom(meta, sections);
