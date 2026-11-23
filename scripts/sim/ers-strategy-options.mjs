@@ -73,6 +73,8 @@ if (process.argv[1]?.endsWith('ers-strategy-options.mjs') && process.argv[2] !==
 
 // ---------- offline checks (step 10b-prep, prereg §9): energy ledger, clip onset vs telemetry, trap with 2a's measured CdA ----------
 // Usage: node scripts/sim/ers-strategy-options.mjs --checks [out.json]
+// TI lap length per track (m) that puts kernel-1 production onsets where 10a stored them (prep run on edccd74), fixed for the gate
+const LEN10A = {'interlagos':4251,'melbourne':5237,'shanghai':5406,'suzuka':5451,'miami':5345,'montreal':4319,'monte-carlo':3277,'catalunya':4639,'spielberg':4297,'silverstone':5834,'spa-francorchamps':6949,'hungaroring':4344,'zandvoort':4238,'monza':5791,'madring':5340,'baku':5952,'kuala-lumpur':5477,'singapore':4876,'austin':5449,'mexico-city':4237,'las-vegas':6167};
 const median = a => { const s = [...a].sort((x, y) => x - y); return s.length ? (s[(s.length - 1) >> 1] + s[s.length >> 1]) / 2 : NaN; };
 const mean = a => a.reduce((s, x) => s + x, 0) / a.length;
 
@@ -102,8 +104,9 @@ export async function checks() {
   const {lapsimCarMeasured: CM} = await import('../../worker/lapsim/car-measured-data.js'), {lapsimCalibration: CAL} = await import('../../worker/lapsim/calibration-data.js');
   const ev = JSON.parse(gunzipSync(readFileSync(new URL('./data/learn/ers-evidence.json.gz', import.meta.url))));
   const Ks = {}; for (const o of ['K', 'A', 'B']) Ks[o] = await kernelFor(o);
-  const cfg = [['production (kernel 1, no law)', 'K', 1, false], ['law, kernel 1, A', 'A', 1, true], ['law, kernel 1, B', 'B', 1, true],
-    ['law, kernel 2, A', 'A', 2, true], ['law, kernel 2, B', 'B', 2, true]];
+  // ERS_CHECKS=gate (gate 10b, prereg §9.6): only the stored calibration as it is, kernel default step (the cars carry their law)
+  const cfg = process.env.ERS_CHECKS === 'gate' ? [['calibration', 'K', undefined, false]] : [['production (kernel 1, no law)', 'K', 1, false],
+    ['law, kernel 1, A', 'A', 1, true], ['law, kernel 1, B', 'B', 1, true], ['law, kernel 2, A', 'A', 2, true], ['law, kernel 2, B', 'B', 2, true]];
   const out = {ledger: {}, clip: {}, trap: {}};
   const laps = {}; // cfg × track → {res, car, ds}
   for (const id of Object.keys(lapsimPuDocs.events)) { const s = eventSetup(Ks.K, id); if (!s) continue;
@@ -117,6 +120,7 @@ export async function checks() {
   //    the pole lap's length)
   const clipsOf = x => kernelClips(Ks.K, x.res, x.car, x.ds), lenOf = {};
   for (const id of Object.keys(laps[cfg[0][0]])) { const L0 = lapsimF1RealTel[id]?.['2026']?.len; if (!L0) continue; const kc = clipsOf(laps[cfg[0][0]][id]), q = [];
+    if (process.env.ERS_CHECKS === 'gate') { lenOf[id] = LEN10A[id] ?? L0; continue; }
     for (const r of ev.clipping.rows.filter(r => r.track === id && r.kernelOnsetM != null)) { const [a, b] = r.straight.replace(' m', '').split('-').map(Number), k = kc.find(p => p.clip && p.frac >= a / L0 && p.frac <= b / L0);
       if (k) q.push(r.kernelOnsetM / k.frac); }
     lenOf[id] = q.length ? median(q) : L0; }
