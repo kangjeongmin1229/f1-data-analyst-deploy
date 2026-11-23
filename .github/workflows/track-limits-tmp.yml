@@ -23,3 +23,18 @@ jobs:
           mkdir -p probe-out && cp track-limits.log probe-out/track-limits.log
           git add -f worker/lapsim/track-limits-data.js probe-out/track-limits.log
           git commit -m 'data: track-limit catalogue fetch [skip ci]' && git push
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: |
+          for u in \
+            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/' \
+            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/07_6%20Hours%20of%20Fuji/' \
+            'https://fiawec.alkamelsystems.com/Results_NoticeBoard/13_2025/07_6%20Hours%20of%20Fuji/006_Doc%206%20-%20BRIEFING%20NOTES.pdf' \
+            'https://fiawec.alkamelsystems.com/' \
+            'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/' \
+            'https://imsa.results.alkamelcloud.com/Results_NoticeBoard/25_2025/14_Watkins%20Glen%20International/09_Briefing%20Photos/01_IWSC%20DRIVER%20BRIEFING.pdf' \
+            'https://imsa.results.alkamelcloud.com/' ; do
+            echo "=== $u"; curl -sSL --max-time 30 -o /tmp/p -w '%{http_code} %{content_type} %{size_download}\n' "$u"; head -c 3000 /tmp/p | tr -c '[:print:]\n' '.' ; echo
+          done

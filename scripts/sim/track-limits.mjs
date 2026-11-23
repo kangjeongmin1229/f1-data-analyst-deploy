@@ -8,15 +8,17 @@ import {pathToFileURL} from 'node:url';
 import {cornerRefs} from '../../worker/lapsim/track-changes.js';
 
 // "17. | Track Limits", "9.4 | Track limits at Turn 4" or an unnumbered "Track Limits" line
-const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?\.?\s*\|\s*[^\n|]{0,40}\btrack[- ]limits?\b[^\n]{0,60}|Track[- ]limits?\b[^\n.]{0,50})$/i;
-const SUB = /^\s*\d{1,2}\.\d{1,2}\.?\s*\|/;
-const NEXT = /^\s*(\d{1,2})\.\s*\|?\s*[A-Z“"][^\n]{2,90}$/;
+const HEAD = /^\s*(?:(\d{1,2})(\.\d{1,2})?[.)]?\s*\|?\s*[^\n|]{0,40}\btrack[- ]limits?\b[^\n]{0,60}|Track[- ]limits?\b[^\n.]{0,50})$/i;
+const SUB = /^\s*\d{1,2}\.\d{1,2}\.?\s*\|?\s*[A-Z]/;
+const NEXT = /^\s*(\d{1,2})[.)]\s*\|?\s*[A-Z“"][^\n]{2,90}$/;
 const ALL = /\ball (?:the )?(?:corners|turns)\b|\bentire (?:circuit|track)\b|\bthroughout the (?:circuit|lap)\b|\bat every corner\b/i;
 const EDGES = /\bwhite lines?\b[^.]{0,40}\b(?:define|are)\b[^.]{0,20}\btrack edges?\b/i;
 const PLACE = /\b(?:corner|kerb|curb|exit|apex|bollard|chicane|hairpin|loop|sausage)\b/i;
 
 // rule type of one sentence; a loop or kerb edge is more specific than "white line"
 export function ruleOf(s) {
+  // where to rejoin after missing a corner (bollards, blocks, escape roads) is a procedure, not an edge
+  if (/bollard|\bblock\b|polystyrene|re-?join|escape road/i.test(s)) return 'other';
   if (/\bloops?\b|timing line|detection (?:line|system)/i.test(s)) return 'loop';
   if (/\bkerbs?\b|\bcurbs?\b/i.test(s) && !/\bwhite lines?\b[^.]*\bnot\b[^.]*\bkerb/i.test(s)) return 'kerb';
   if (/\bwhite lines?\b|\btrack edge|\bedges? of the track/i.test(s)) return 'line';
@@ -51,13 +53,13 @@ export function parseTrackLimits(sections) {
   let allCorners = false;
   // "the white lines define the track edges" (Article 33.3 SR) is the rule for every corner without its own mechanism
   const general = sections.some(s => EDGES.test(s)) ? 'line' : null;
-  const sentences = sections.flatMap(s => s.split(/(?<=[a-z0-9)”"])\.\s+(?=[A-Z“"(])/)).map(s => s.trim()).filter(Boolean);
+  const sentences = sections.flatMap(s => s.split(/(?<=[a-z0-9)”"])\.\s+(?=[A-Z“"(])|\s+(?=\d{1,2}\.\d{1,2}\.?\s+[A-Z])/)).map(s => s.trim()).filter(Boolean);
   for (const s of sentences) {
     if (ALL.test(s) || EDGES.test(s)) allCorners = true;
     const refs = cornerRefs(s);
     if (!refs.length) { if (PLACE.test(s) && !ALL.test(s)) unparsed.push(s); continue; }
     let rule = ruleOf(s);
-    if (rule === 'other' && general && !/bollard|block|polystyrene|rejoin|escape road/i.test(s)) rule = general;
+    if (rule === 'other' && general && !/bollard|\bblock\b|polystyrene|re-?join|escape road/i.test(s)) rule = general;
     for (const r of refs) {
       const key = r.turn + r.letter + rule;
       if (seen.has(key)) continue;
@@ -114,8 +116,20 @@ export function docLinks(html, base) {
   });
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+// fia.com answers 429 when read fast: wait and retry
+async function polite(fn) {
+  for (let i = 0; ; i++) {
+    await sleep(1500);
+    try { return await fn(); } catch (e) { if (!/429/.test(e.message) || i >= 4) throw e; await sleep(30000 * (i + 1)); }
+  }
+}
+
 async function fetchAll(years) {
-  const {fiaCall, eventDocuments, fiaDocumentText, officialUrl} = await import('../../worker/fia.js');
+  const fia = await import('../../worker/fia.js'), {officialUrl} = fia;
+  const fiaCall = (...a) => polite(() => fia.fiaCall(...a)), eventDocuments = (...a) => polite(() => fia.eventDocuments(...a));
+  const fiaDocumentText = (...a) => polite(() => fia.fiaDocumentText(...a));
+  const page = url => polite(async () => { const r = await fetch(officialUrl(url), {signal: AbortSignal.timeout(20000)}); if (!r.ok) throw Error('FIA source HTTP ' + r.status); return r.text(); });
   const out = [];
   for (const year of years) {
     let events;
@@ -125,7 +139,7 @@ async function fetchAll(years) {
       const meta = {track, year, event};
       try {
         const ev = await eventDocuments(year, event);
-        const fixed = ev ? docLinks(await (await fetch(officialUrl(ev.url), {signal: AbortSignal.timeout(20000)})).text(), ev.url) : [];
+        const fixed = ev ? docLinks(await page(ev.url), ev.url) : [];
         const docs = (ev?.records || []).map((d, i) => ({...d, url: (fixed.length === ev.records.length ? fixed[i] : fixed.find(f => f.title === d.title))?.url || d.url}))
           .filter(d => d.url && !d.recalled && NOTES.test(d.title) && !/pirelli|pit lane|circuit map|red zone|times|sc[12]\b|offence|summons|decision|infringement|deletion/i.test(d.title)).sort((a, b) => rank(a) - rank(b));
         let sections = [];
