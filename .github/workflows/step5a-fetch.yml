@@ -1,0 +1,25 @@
+name: step5a fetch (temporary)
+on:
+  push:
+    branches: ['tmp/step5a-fetch']
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: node scripts/sim/track-state.mjs fia 2019,2020,2021,2022,2023,2024,2025,2026 | tee fia.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: step5a-fia
+          path: |
+            .cache/track-state/fia-notes.json
+            fia.log
+          include-hidden-files: true
