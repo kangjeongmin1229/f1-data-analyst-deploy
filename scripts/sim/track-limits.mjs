@@ -38,7 +38,7 @@ export function trackLimitSections(text) {
       const n = lines[j].match(NEXT);
       if (n && (!own || Number(n[1]) !== own)) break;
       if (sub && SUB.test(lines[j])) break;
-      if (/^\s*\d{1,3}\s*$/.test(lines[j])) continue; // page number
+      if (/^\s*(?:\d{1,3}|\[page \d+\])\s*$/.test(lines[j])) continue; // page number or page marker
       body.push(lines[j].replace(/\s*\|\s*/g, ' ').trim());
     }
     out.push(body.filter(Boolean).join(' '));
@@ -53,10 +53,11 @@ export function parseTrackLimits(sections) {
   let allCorners = false;
   // "the white lines define the track edges" (Article 33.3 SR) is the rule for every corner without its own mechanism
   const general = sections.some(s => EDGES.test(s)) ? 'line' : null;
-  const sentences = sections.flatMap(s => s.split(/(?<=[a-z0-9)”"])\.\s+(?=[A-Z“"(])|\s+(?=\d{1,2}\.\d{1,2}\.?\s+[A-Z])/)).map(s => s.trim()).filter(Boolean);
+  const sentences = sections.map(s => s.replace(/\s*\[page \d+\]\s*/g, ' ')).flatMap(s => s.split(/(?<=[a-z0-9)”"])\.\s+(?=[A-Z“"(])|\s+(?=\d{1,2}\.\d{1,2}\.?\s+[A-Z])/)).map(s => s.trim()).filter(Boolean);
   for (const s of sentences) {
     if (ALL.test(s) || EDGES.test(s)) allCorners = true;
-    const refs = cornerRefs(s);
+    // "turns 18 or and 19": cornerRefs joins lists with "and", not "or"
+    const refs = cornerRefs(s.replace(/(\d)\s+or(?:\s+and)?\s+(?=\d)/gi, '$1 and '));
     if (!refs.length) { if (PLACE.test(s) && !ALL.test(s)) unparsed.push(s); continue; }
     let rule = ruleOf(s);
     if (rule === 'other' && general && !/bollard|\bblock\b|polystyrene|re-?join|escape road/i.test(s)) rule = general;
