@@ -32,6 +32,12 @@ jobs:
       - name: Commit the result back to this branch
         if: always()
         run: |
+          set -x
           git config user.name github-actions && git config user.email github-actions@users.noreply.github.com
-          mkdir -p out && cp .cache/track-state/altitude.json alt.log fia.log out/ ; cp effects.log out/ || true
-          git add -f out worker/lapsim/track-changes-data.js worker/lapsim/change-effects-data.js && git commit -m "fetch 2 result [skip ci]" && git push
+          mkdir -p out
+          for f in .cache/track-state/altitude.json alt.log fia.log effects.log worker/lapsim/track-changes-data.js worker/lapsim/change-effects-data.js; do [ -f "$f" ] && cp "$f" out/; done
+          git status --short > out/git-status.txt 2>&1 || true
+          ls -la dl > out/dl.txt 2>&1 || true
+          git add -f out
+          git commit -m "fetch 3 result [skip ci]" || true
+          for k in 1 2 3; do git push origin HEAD:refs/heads/tmp/step5a-fetch3-out --force && break; sleep 10; done
