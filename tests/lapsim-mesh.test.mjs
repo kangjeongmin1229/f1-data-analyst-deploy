@@ -26,9 +26,13 @@ const car26 = C.seasons['2026'].car;
 // 2026 car of the refit on main's zones (pipeline run 45402981435): it sat where ERS power balances drag at Silverstone, and the
 // deploy booked only on rising speed gave it free energy there (86.055 → 86.069 → 87.033 s with the step, 2026-11-25)
 const car26r = {...car26, clA: 6.502055602462231, cdA: 1.8860441517752422, cdALow: 1.1228467564077358, muX: 1.541227178706808, muY: 1.7280425943076334, muXTrac: 1.821450302108046, pIce: 459999.99999999994};
+// 2026 car of the refit with the deploy fix (run 45497360228) under the C5.12 ramp: throttle harvest booked on slowing drive steps
+// flipped with the step at Spoon's apex (~14 kJ), and the empty-battery ramp turned that into 0.032 % at Suzuka (2026-11-25)
+const car26s = {...car26, clA: 7.3745782652127865, cdA: 1.8551502096858588, cdALow: 1.1244802560510854, muX: 1.4755821579216195, muY: 1.6544406013060582, muXTrac: 1.7438698229982774, pIce: 459999.99999999994};
 const car26b = {...car26, clA: 5.969180809129887, cdA: 1.2945351785963244, cdALow: 0.9476271230188951, muX: 1.5708229173677148, muY: 1.7612256952304683, muXTrac: 1.8564270841618449, pIce: 403306.39983400214, ers: {...car26.ers, law: 'b'}};
 const RULES = {
   'f1-2026 refit car (run 45402981435)': {car: car26r},
+  'f1-2026 refit car puRamp (run 45497360228)': {car: car26s, env: id => ({puRamp: rampOf(id)})},
   'f1-2014': {car: C.seasons['2025'].car},
   'f1-2026': {car: car26},
   'f1-2026 puRamp': {car: car26, env: id => ({puRamp: rampOf(id)})},
