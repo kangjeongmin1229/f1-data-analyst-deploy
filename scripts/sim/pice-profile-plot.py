@@ -17,7 +17,8 @@ for f in fits:
         L = [l for l in f['laps'] if key(l) in common[s]]; W = sum(l['w'] for l in L)
         m = {c: sum(l['w'] * l[c] for l in L) / W for c in C}
         poles = [l for l in L if l['pos'] == 1]
-        rows.append({'law': f['law'], 'fix': f['fix'], 'season': s, 'pIceKW': f['cars'][str(s)]['pIce'] / 1e3, **m, 'total': sum(m.values()),
+        bands = [sum(l['w'] * l['cornerBand'][k] for l in L) / W for k in range(4)] if 'cornerBand' in L[0] else None
+        rows.append({'law': f['law'] + ('' if f.get('geom', 'production') == 'production' else ', geometry ' + f['geom']), 'geom': f.get('geom', 'production'), 'bands': bands, 'nBand': [sum(l['nBand'][k] for l in L) for k in range(4)] if bands else None, 'fix': f['fix'], 'season': s, 'pIceKW': f['cars'][str(s)]['pIce'] / 1e3, **m, 'total': sum(m.values()),
                      'trapBiasKph': sum(l['trapKph'] for l in poles) / len(poles), 'trapRmsKph': (sum(l['trapKph'] ** 2 for l in poles) / len(poles)) ** .5,
                      'trapLoss': sum(l['w'] * 0.5 * (l['trapKph'] / 3.6) ** 2 for l in L) / W,
                      'ftRmsKph': sum(l['ftRmsKph'] or 0 for l in poles) / len(poles), 'otherRmsKph': sum(l['otherRmsKph'] or 0 for l in poles) / len(poles),
@@ -43,4 +44,17 @@ for i, law in enumerate(laws):
 ax[0][0].legend(fontsize=7, loc='best')
 fig.suptitle('F1 2023–25 joint fit: data-only loss vs fixed pIce (grey band: measured 540 ± 24 kW, law b)')
 fig.tight_layout(); fig.savefig(f'{out}/pice-profile.png', dpi=130)
+if rows[0]['bands']:
+    fig, ax = plt.subplots(len(laws), len(seasons), figsize=(5 * len(seasons), 4 * len(laws)), squeeze=False, sharex=True)
+    names = ['< 120 km/h', '120–180', '180–240', '> 240']
+    for i, law in enumerate(laws):
+        for j, s in enumerate(seasons):
+            R = sorted([r for r in rows if r['law'] == law and r['season'] == s], key=lambda r: r['fix']); a = ax[i][j]
+            ref = next(r for r in R if abs(r['fix'] - 1) < 1e-9)
+            for k in range(4): a.plot([r['pIceKW'] for r in R], [r['bands'][k] - ref['bands'][k] for r in R], marker='o', ms=3, color=f'C{k}', label=f"{names[k]} ({ref['nBand'][k]} minima)")
+            a.plot([r['pIceKW'] for r in R], [r['corner'] - ref['corner'] for r in R], color='k', marker='o', ms=3, label='(a) all corners')
+            a.axvspan(516, 564, color='0.85', zorder=0); a.axvline(540, color='0.4', ls='--', lw=1); a.axhline(0, color='0.6', lw=0.6)
+            a.set_title(f'{s}, ERS law {law}'); a.set_xlabel('pIce fixed (kW)'); a.set_ylabel('corner loss − at prior'); a.legend(fontsize=7)
+    fig.suptitle('Limit-corner loss (a) by real apex speed vs fixed pIce (grey band: measured 540 ± 24 kW)')
+    fig.tight_layout(); fig.savefig(f'{out}/pice-profile-bands.png', dpi=130)
 print(json.dumps([{k: (round(v, 4) if isinstance(v, float) else v) for k, v in r.items() if k not in ('car', 'bounds')} for r in rows]))

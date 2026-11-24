@@ -189,7 +189,7 @@ const J = await piece('f1-joint', async () => {
     joint = await fitAll(groups);
   }
   report.push(`F1 joint fit of ${groups.map(g => g.key).join(' and ')}: ${((Date.now() - t0) / 1000).toFixed(0)} s, score ${joint.score.toFixed(3)}.`, '');
-  return {joint, drop, report: report.splice(r0), ...(all ? {diag: {fix: PICE_FIX, law: E.LAPSIM_ERS_LAW || 'default', ...diagnose(all, joint, BCD, drop)}} : {})};
+  return {joint, drop, report: report.splice(r0), ...(all ? {diag: {fix: PICE_FIX, law: E.LAPSIM_ERS_LAW || 'default', geom: E.LAPSIM_GEOM_INDEP || 'production', ...diagnose(all, joint, BCD, drop)}} : {})};
 });
 const joint = J.joint;
 for (const g of groups) { const d = new Set(J.drop.filter(([k]) => k === g.key).map(([, n]) => n)); if (d.size) g.laps = g.laps.filter(l => !d.has(l.name)); }
