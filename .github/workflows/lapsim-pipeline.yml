@@ -215,5 +215,7 @@ jobs:
       - name: Attach the report to the releases
         run: |
           id=${{ github.run_id }}; cp out/pipeline-report.json "pipeline-report-$id.json"; cp out/pipeline-report.md "pipeline-report-$id.md"
-          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+          # the fit's own outputs (calibration-data.js, reports) next to the report: a refit PR commits exactly these files
+          if [ -d fit ]; then tar czf "calibration-output-$id.tgz" -C fit . ; set -- "calibration-output-$id.tgz"; else set --; fi
+          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" "$@" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
