@@ -11,10 +11,14 @@ import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
 
 export const DEFAULTS = {rounds: 4, iters: 150, wTime: 2, wSector: 0, wPrior: 2, lo: 0.7, hi: 1.3, trackDrag: false, dragLo: 0.85, dragHi: 1.15};
 
+// LAPSIM_CORNER_W=<w> (pIce-profile diagnostic, probe branch only): weight of the corner minima in the speed-trace term
+const CW = process.env.LAPSIM_CORNER_W != null ? Number(process.env.LAPSIM_CORNER_W) : null;
+const cornerW = ext => CW == null ? ext : ext.map(e => e.min ? {...e, w: CW} : e);
+
 export function prepGroups(groups) {
   return groups.map(g => ({key: g.key, base: g.base, params: g.params, laps: g.laps.map(l => ({...l, group: g.key,
     env: conditionsFromWeather(l.weather || {}),
-    obs: l.obs && process.env.LAPSIM_TRACE_ERROR !== 'rms' ? {...l.obs, ext: realExtremes(l.obs)} : l.obs}))}));
+    obs: l.obs && process.env.LAPSIM_TRACE_ERROR !== 'rms' ? {...l.obs, ext: cornerW(realExtremes(l.obs))} : l.obs}))}));
 }
 
 export function buildCar(g, x) {
