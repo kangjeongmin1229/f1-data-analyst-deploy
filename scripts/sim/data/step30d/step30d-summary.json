@@ -1,0 +1,919 @@
+{
+ "check": [
+  {
+   "corner": "suzuka 2025 T11",
+   "theta": 179.6,
+   "R": 21.8,
+   "kerb_in": 1.5,
+   "kerb_out": 0.8,
+   "dR_formula": 0.81,
+   "solverR_base": 27.7,
+   "solverR_kerb": 28.6,
+   "dR_solver": 0.84,
+   "rel_err": -0.041
+  },
+  {
+   "corner": "suzuka 2025 T9",
+   "theta": 89.9,
+   "R": 45.6,
+   "kerb_in": 1.5,
+   "kerb_out": 0.75,
+   "dR_formula": 6.19,
+   "solverR_base": 49.4,
+   "solverR_kerb": 56.8,
+   "dR_solver": 7.42,
+   "rel_err": -0.166
+  },
+  {
+   "corner": "montreal 2025 T13",
+   "theta": 42.7,
+   "R": 40.0,
+   "kerb_in": 0.0,
+   "kerb_out": 0.85,
+   "dR_formula": 12.39,
+   "solverR_base": 62.9,
+   "solverR_kerb": 67.6,
+   "dR_solver": 4.63,
+   "rel_err": 1.673
+  }
+ ],
+ "check_pass": false,
+ "budget_uses": "solver",
+ "bands": {
+  "60-120": {
+   "gain_pct_kerb": [
+    4.367,
+    3.1,
+    5.915
+   ],
+   "gain_kmh_kerb": [
+    3.737,
+    2.562,
+    5.204
+   ],
+   "solver_gain_pct_kerb": [
+    2.341,
+    1.759,
+    2.89
+   ],
+   "solver_gain_kmh_kerb": [
+    1.9,
+    1.497,
+    2.267
+   ],
+   "gain_pct_width": [
+    2.704,
+    1.364,
+    4.579
+   ],
+   "gain_kmh_width": [
+    2.424,
+    1.157,
+    4.236
+   ],
+   "solver_gain_pct_width": [
+    1.804,
+    0.989,
+    2.666
+   ],
+   "solver_gain_kmh_width": [
+    1.57,
+    0.845,
+    2.405
+   ],
+   "gain_pct_both": [
+    6.752,
+    4.817,
+    9.417
+   ],
+   "gain_kmh_both": [
+    6.016,
+    4.15,
+    8.718
+   ],
+   "solver_gain_pct_both": [
+    3.853,
+    2.674,
+    5.128
+   ],
+   "solver_gain_kmh_both": [
+    3.373,
+    2.351,
+    4.618
+   ],
+   "n": 64,
+   "tracks": 14,
+   "theta_med": 162.5,
+   "R_med": 23.2,
+   "model_kmh_med": 78.9
+  },
+  "120-180": {
+   "gain_pct_kerb": [
+    4.852,
+    2.282,
+    8.7
+   ],
+   "gain_kmh_kerb": [
+    5.986,
+    3.028,
+    10.312
+   ],
+   "solver_gain_pct_kerb": [
+    2.809,
+    1.73,
+    4.435
+   ],
+   "solver_gain_kmh_kerb": [
+    3.518,
+    2.201,
+    5.37
+   ],
+   "gain_pct_width": [
+    1.851,
+    0.226,
+    4.466
+   ],
+   "gain_kmh_width": [
+    2.276,
+    0.282,
+    5.52
+   ],
+   "solver_gain_pct_width": [
+    1.571,
+    0.182,
+    4.158
+   ],
+   "solver_gain_kmh_width": [
+    2.086,
+    0.193,
+    5.669
+   ],
+   "gain_pct_both": [
+    6.399,
+    3.03,
+    11.521
+   ],
+   "gain_kmh_both": [
+    8.086,
+    3.807,
+    14.126
+   ],
+   "solver_gain_pct_both": [
+    4.163,
+    1.99,
+    7.671
+   ],
+   "solver_gain_kmh_both": [
+    5.446,
+    2.497,
+    10.416
+   ],
+   "n": 28,
+   "tracks": 9,
+   "theta_med": 144.5,
+   "R_med": 46.5,
+   "model_kmh_med": 130.0
+  },
+  "180-240": {
+   "gain_pct_kerb": [
+    4.156,
+    2.626,
+    6.808
+   ],
+   "gain_kmh_kerb": [
+    6.972,
+    5.08,
+    9.655
+   ],
+   "solver_gain_pct_kerb": [
+    2.033,
+    1.396,
+    3.488
+   ],
+   "solver_gain_kmh_kerb": [
+    3.419,
+    2.712,
+    4.844
+   ],
+   "gain_pct_width": [
+    2.958,
+    1.591,
+    4.467
+   ],
+   "gain_kmh_width": [
+    5.105,
+    2.831,
+    7.482
+   ],
+   "solver_gain_pct_width": [
+    2.341,
+    1.128,
+    3.838
+   ],
+   "solver_gain_kmh_width": [
+    4.268,
+    1.943,
+    6.92
+   ],
+   "gain_pct_both": [
+    6.737,
+    4.525,
+    10.051
+   ],
+   "gain_kmh_both": [
+    11.793,
+    8.689,
+    15.266
+   ],
+   "solver_gain_pct_both": [
+    4.602,
+    3.172,
+    6.633
+   ],
+   "solver_gain_kmh_both": [
+    8.247,
+    5.976,
+    10.96
+   ],
+   "n": 25,
+   "tracks": 11,
+   "theta_med": 99.2,
+   "R_med": 68.7,
+   "model_kmh_med": 186.9
+  },
+  "120-240": {
+   "gain_pct_kerb": [
+    4.524,
+    2.653,
+    7.157
+   ],
+   "gain_kmh_kerb": [
+    6.451,
+    4.224,
+    9.25
+   ],
+   "solver_gain_pct_kerb": [
+    2.443,
+    1.689,
+    3.557
+   ],
+   "solver_gain_kmh_kerb": [
+    3.471,
+    2.721,
+    4.403
+   ],
+   "gain_pct_width": [
+    2.373,
+    0.909,
+    4.141
+   ],
+   "gain_kmh_width": [
+    3.61,
+    1.43,
+    6.156
+   ],
+   "solver_gain_pct_width": [
+    1.934,
+    0.608,
+    3.715
+   ],
+   "solver_gain_kmh_width": [
+    3.116,
+    0.976,
+    6.014
+   ],
+   "gain_pct_both": [
+    6.558,
+    3.945,
+    10.033
+   ],
+   "gain_kmh_both": [
+    9.835,
+    6.223,
+    13.759
+   ],
+   "solver_gain_pct_both": [
+    4.37,
+    2.683,
+    6.501
+   ],
+   "solver_gain_kmh_both": [
+    6.767,
+    4.218,
+    9.962
+   ],
+   "n": 53,
+   "tracks": 13,
+   "theta_med": 104.9,
+   "R_med": 56.7,
+   "model_kmh_med": 158.3
+  }
+ },
+ "bands_old_layout": {
+  "60-120": {
+   "gain_pct_kerb": [
+    4.801,
+    2.459,
+    6.403
+   ],
+   "gain_kmh_kerb": [
+    4.446,
+    2.495,
+    6.195
+   ],
+   "solver_gain_pct_kerb": [
+    3.171,
+    1.235,
+    5.152
+   ],
+   "solver_gain_kmh_kerb": [
+    2.87,
+    1.253,
+    4.947
+   ],
+   "gain_pct_width": [
+    0.431,
+    0.0,
+    1.078
+   ],
+   "gain_kmh_width": [
+    0.434,
+    0.0,
+    1.085
+   ],
+   "solver_gain_pct_width": [
+    0.819,
+    0.0,
+    2.048
+   ],
+   "solver_gain_kmh_width": [
+    0.83,
+    0.0,
+    2.074
+   ],
+   "gain_pct_both": [
+    5.21,
+    3.483,
+    6.403
+   ],
+   "gain_kmh_both": [
+    4.87,
+    3.553,
+    6.195
+   ],
+   "solver_gain_pct_both": [
+    4.409,
+    3.083,
+    5.152
+   ],
+   "solver_gain_kmh_both": [
+    4.146,
+    1.952,
+    4.947
+   ],
+   "n": 10,
+   "tracks": 3,
+   "theta_med": 142.0,
+   "R_med": 28.4,
+   "model_kmh_med": 98.6
+  },
+  "120-180": {
+   "gain_pct_kerb": [
+    6.715,
+    5.216,
+    12.752
+   ],
+   "gain_kmh_kerb": [
+    9.25,
+    6.544,
+    22.018
+   ],
+   "solver_gain_pct_kerb": [
+    5.518,
+    3.074,
+    12.266
+   ],
+   "solver_gain_kmh_kerb": [
+    7.06,
+    3.885,
+    14.446
+   ],
+   "gain_pct_width": [
+    1.568,
+    0.0,
+    2.352
+   ],
+   "gain_kmh_width": [
+    1.982,
+    0.0,
+    2.974
+   ],
+   "solver_gain_pct_width": [
+    0.784,
+    0.0,
+    1.177
+   ],
+   "solver_gain_kmh_width": [
+    0.99,
+    0.0,
+    1.485
+   ],
+   "gain_pct_both": [
+    8.067,
+    6.673,
+    12.752
+   ],
+   "gain_kmh_both": [
+    11.089,
+    6.544,
+    22.018
+   ],
+   "solver_gain_pct_both": [
+    6.204,
+    4.103,
+    12.266
+   ],
+   "solver_gain_kmh_both": [
+    7.973,
+    5.255,
+    14.446
+   ],
+   "n": 6,
+   "tracks": 3,
+   "theta_med": 103.4,
+   "R_med": 42.7,
+   "model_kmh_med": 120.8
+  },
+  "180-240": {
+   "gain_pct_kerb": [
+    10.527,
+    10.527,
+    10.527
+   ],
+   "gain_kmh_kerb": [
+    18.99,
+    18.99,
+    18.99
+   ],
+   "solver_gain_pct_kerb": [
+    6.629,
+    6.629,
+    6.629
+   ],
+   "solver_gain_kmh_kerb": [
+    11.938,
+    11.938,
+    11.938
+   ],
+   "gain_pct_width": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "gain_kmh_width": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "solver_gain_pct_width": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "solver_gain_kmh_width": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "gain_pct_both": [
+    10.527,
+    10.527,
+    10.527
+   ],
+   "gain_kmh_both": [
+    18.99,
+    18.99,
+    18.99
+   ],
+   "solver_gain_pct_both": [
+    6.629,
+    6.629,
+    6.629
+   ],
+   "solver_gain_kmh_both": [
+    11.938,
+    11.938,
+    11.938
+   ],
+   "n": 4,
+   "tracks": 1,
+   "theta_med": 64.1,
+   "R_med": 53.5,
+   "model_kmh_med": 169.9
+  },
+  "120-240": {
+   "gain_pct_kerb": [
+    8.24,
+    5.216,
+    10.972
+   ],
+   "gain_kmh_kerb": [
+    13.146,
+    6.544,
+    19.596
+   ],
+   "solver_gain_pct_kerb": [
+    5.963,
+    3.074,
+    12.266
+   ],
+   "solver_gain_kmh_kerb": [
+    9.011,
+    3.885,
+    12.439
+   ],
+   "gain_pct_width": [
+    0.941,
+    0.0,
+    2.352
+   ],
+   "gain_kmh_width": [
+    1.189,
+    0.0,
+    2.974
+   ],
+   "solver_gain_pct_width": [
+    0.471,
+    0.0,
+    1.177
+   ],
+   "solver_gain_kmh_width": [
+    0.594,
+    0.0,
+    1.485
+   ],
+   "gain_pct_both": [
+    9.051,
+    6.673,
+    10.972
+   ],
+   "gain_kmh_both": [
+    14.249,
+    6.544,
+    19.596
+   ],
+   "solver_gain_pct_both": [
+    6.374,
+    4.103,
+    12.266
+   ],
+   "solver_gain_kmh_both": [
+    9.559,
+    5.255,
+    12.439
+   ],
+   "n": 10,
+   "tracks": 3,
+   "theta_med": 85.3,
+   "R_med": 47.5,
+   "model_kmh_med": 144.8
+  }
+ },
+ "per_track": {
+  "austin": {
+   "n_all": 12,
+   "n_120_240": 4,
+   "kerb_src": "iRacing",
+   "width_d": 0.99,
+   "tum_w_med": 13.0,
+   "w_official": 15,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 6.69,
+   "gain_pct_width_120_240": 5.29,
+   "gain_pct_both_120_240": 11.34,
+   "gain_kmh_both_120_240": 17.92,
+   "solver_gain_pct_both_120_240": 7.19
+  },
+  "catalunya": {
+   "n_all": 8,
+   "n_120_240": 4,
+   "kerb_src": "default 1.3",
+   "width_d": 0.56,
+   "tum_w_med": 10.9,
+   "w_official": 12,
+   "old_layout": 1,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 5.22,
+   "gain_pct_width_120_240": 2.35,
+   "gain_pct_both_120_240": 7.24,
+   "gain_kmh_both_120_240": 9.49,
+   "solver_gain_pct_both_120_240": 4.1
+  },
+  "hungaroring": {
+   "n_all": 14,
+   "n_120_240": 8,
+   "kerb_src": "iRacing",
+   "width_d": 0.0,
+   "tum_w_med": 10.0,
+   "w_official": null,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.45,
+   "gain_pct_kerb_120_240": 1.68,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 1.68,
+   "gain_kmh_both_120_240": 2.39,
+   "solver_gain_pct_both_120_240": 1.22
+  },
+  "interlagos": {
+   "n_all": 4,
+   "n_120_240": 0,
+   "kerb_src": "default 1.3",
+   "width_d": 0.88,
+   "tum_w_med": 11.7,
+   "w_official": 13.5,
+   "old_layout": 0,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": null,
+   "gain_pct_width_120_240": null,
+   "gain_pct_both_120_240": null,
+   "gain_kmh_both_120_240": null,
+   "solver_gain_pct_both_120_240": null
+  },
+  "kuala-lumpur": {
+   "n_all": 7,
+   "n_120_240": 1,
+   "kerb_src": "default 1.3",
+   "width_d": 0.75,
+   "tum_w_med": 14.5,
+   "w_official": 16,
+   "old_layout": 0,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 2.22,
+   "gain_pct_width_120_240": 1.3,
+   "gain_pct_both_120_240": 3.46,
+   "gain_kmh_both_120_240": 6.15,
+   "solver_gain_pct_both_120_240": 6.55
+  },
+  "melbourne": {
+   "n_all": 10,
+   "n_120_240": 5,
+   "kerb_src": "default 1.3",
+   "width_d": 0.0,
+   "tum_w_med": 12.2,
+   "w_official": null,
+   "old_layout": 1,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 10.97,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 10.97,
+   "gain_kmh_both_120_240": 19.6,
+   "solver_gain_pct_both_120_240": 7.01
+  },
+  "mexico-city": {
+   "n_all": 12,
+   "n_120_240": 4,
+   "kerb_src": "iRacing",
+   "width_d": 0.0,
+   "tum_w_med": 11.6,
+   "w_official": null,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 8.17,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 8.17,
+   "gain_kmh_both_120_240": 13.57,
+   "solver_gain_pct_both_120_240": 2.29
+  },
+  "montreal": {
+   "n_all": 6,
+   "n_120_240": 3,
+   "kerb_src": "iRacing",
+   "width_d": 0.0,
+   "tum_w_med": 9.0,
+   "w_official": null,
+   "old_layout": 0,
+   "kerb_in_med": 0.0,
+   "kerb_out_med": 0.42,
+   "gain_pct_kerb_120_240": 12.34,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 12.34,
+   "gain_kmh_both_120_240": 14.08,
+   "solver_gain_pct_both_120_240": 4.12
+  },
+  "monza": {
+   "n_all": 8,
+   "n_120_240": 5,
+   "kerb_src": "iRacing",
+   "width_d": 1.0,
+   "tum_w_med": 9.0,
+   "w_official": 11,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.47,
+   "gain_pct_kerb_120_240": 3.71,
+   "gain_pct_width_120_240": 5.11,
+   "gain_pct_both_120_240": 8.21,
+   "gain_kmh_both_120_240": 16.44,
+   "solver_gain_pct_both_120_240": 6.11
+  },
+  "sakhir": {
+   "n_all": 3,
+   "n_120_240": 1,
+   "kerb_src": "default 1.3",
+   "width_d": 0.65,
+   "tum_w_med": 12.9,
+   "w_official": 14.2,
+   "old_layout": 0,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 3.13,
+   "gain_pct_width_120_240": 1.59,
+   "gain_pct_both_120_240": 4.62,
+   "gain_kmh_both_120_240": 6.05,
+   "solver_gain_pct_both_120_240": 7.28
+  },
+  "shanghai": {
+   "n_all": 12,
+   "n_120_240": 3,
+   "kerb_src": "default 1.3",
+   "width_d": 0.63,
+   "tum_w_med": 12.7,
+   "w_official": 14,
+   "old_layout": 0,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 17.02,
+   "gain_pct_width_120_240": 9.15,
+   "gain_pct_both_120_240": 23.35,
+   "gain_kmh_both_120_240": 21.68,
+   "solver_gain_pct_both_120_240": 11.36
+  },
+  "silverstone": {
+   "n_all": 10,
+   "n_120_240": 4,
+   "kerb_src": "iRacing",
+   "width_d": 0.62,
+   "tum_w_med": 13.8,
+   "w_official": 15,
+   "old_layout": 0,
+   "kerb_in_med": 0.1,
+   "kerb_out_med": 0.65,
+   "gain_pct_kerb_120_240": 2.18,
+   "gain_pct_width_120_240": 1.57,
+   "gain_pct_both_120_240": 3.68,
+   "gain_kmh_both_120_240": 8.45,
+   "solver_gain_pct_both_120_240": 2.61
+  },
+  "spa-francorchamps": {
+   "n_all": 8,
+   "n_120_240": 6,
+   "kerb_src": "iRacing",
+   "width_d": 0.0,
+   "tum_w_med": 9.2,
+   "w_official": null,
+   "old_layout": 0,
+   "kerb_in_med": 1.25,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 1.28,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 1.28,
+   "gain_kmh_both_120_240": 2.46,
+   "solver_gain_pct_both_120_240": 1.9
+  },
+  "spielberg": {
+   "n_all": 10,
+   "n_120_240": 6,
+   "kerb_src": "iRacing",
+   "width_d": 0.59,
+   "tum_w_med": 10.8,
+   "w_official": 12,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 3.73,
+   "gain_pct_width_120_240": 1.93,
+   "gain_pct_both_120_240": 5.49,
+   "gain_kmh_both_120_240": 9.74,
+   "solver_gain_pct_both_120_240": 2.75
+  },
+  "suzuka": {
+   "n_all": 8,
+   "n_120_240": 5,
+   "kerb_src": "iRacing",
+   "width_d": 1.91,
+   "tum_w_med": 9.2,
+   "w_official": 13,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 2.83,
+   "gain_pct_width_120_240": 6.17,
+   "gain_pct_both_120_240": 8.51,
+   "gain_kmh_both_120_240": 12.95,
+   "solver_gain_pct_both_120_240": 10.45
+  },
+  "yas-marina-circuit": {
+   "n_all": 3,
+   "n_120_240": 1,
+   "kerb_src": "default 1.3",
+   "width_d": 0.0,
+   "tum_w_med": 12.8,
+   "w_official": null,
+   "old_layout": 1,
+   "kerb_in_med": 1.3,
+   "kerb_out_med": 1.3,
+   "gain_pct_kerb_120_240": 6.67,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 6.67,
+   "gain_kmh_both_120_240": 6.54,
+   "solver_gain_pct_both_120_240": 12.27
+  },
+  "zandvoort": {
+   "n_all": 4,
+   "n_120_240": 3,
+   "kerb_src": "iRacing",
+   "width_d": 0.0,
+   "tum_w_med": 9.5,
+   "w_official": null,
+   "old_layout": 0,
+   "kerb_in_med": 1.5,
+   "kerb_out_med": 0.75,
+   "gain_pct_kerb_120_240": 0.68,
+   "gain_pct_width_120_240": 0.0,
+   "gain_pct_both_120_240": 0.68,
+   "gain_kmh_both_120_240": 0.92,
+   "solver_gain_pct_both_120_240": 0.86
+  }
+ },
+ "budget_120_240": {
+  "total_old": [
+   17.3,
+   12.28,
+   25.29
+  ],
+  "matching": [
+   0.66,
+   -0.34,
+   2.21
+  ],
+  "total_corrected": [
+   16.65,
+   10.68,
+   25.18
+  ],
+  "gap_tum_set": [
+   15.12,
+   8.08,
+   25.45
+  ],
+  "geometry": [
+   1.15,
+   -4.67,
+   8.37
+  ],
+  "geometry_tail": [
+   2.13,
+   0.0,
+   7.51
+  ],
+  "kerb_only": [
+   3.67,
+   2.72,
+   5.06
+  ],
+  "width_only": [
+   3.24,
+   1.03,
+   6.1
+  ],
+  "kerb_width": [
+   7.07,
+   4.31,
+   10.41
+  ],
+  "remainder": [
+   6.9,
+   0.69,
+   13.12
+  ],
+  "model_mean": [
+   157.88,
+   138.66,
+   176.23
+  ]
+ },
+ "budget_n": {
+  "old": 70,
+  "corrected": 65,
+  "tum_matched": 53,
+  "tracks": 14
+ }
+}
