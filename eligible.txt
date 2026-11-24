@@ -1,0 +1,22 @@
+sakhir               eligible (3 laps, pole LEC 90.558, zones FIA 2025 (matched by 2022 measured DRS))
+jeddah               eligible (3 laps, pole PER 88.2, zones FIA 2025 (matched by 2022 measured DRS))
+imola                out: wet: rain in the session
+interlagos           out: wet: rain in the session
+lusail               out: not raced in 2022
+yas-marina-circuit   eligible (3 laps, pole VER 83.824, zones FIA 2025 (matched by 2022 measured DRS))
+shanghai             out: not raced in 2022
+suzuka               eligible (3 laps, pole VER 89.304, zones FIA 2022 document; measured openings match)
+miami                eligible (3 laps, pole LEC 88.796, zones FIA 2025 (matched by 2022 measured DRS))
+montreal             out: wet: rain in the session
+catalunya            out: layout: 2022 era differs from the G3 source (5a registry)
+spielberg            eligible (3 laps, pole VER 64.984, zones FIA 2022 document; measured openings match)
+silverstone          out: wet: rain in the session
+spa-francorchamps    eligible (3 laps, pole VER 103.665, zones FIA 2025 (matched by 2022 measured DRS))
+hungaroring          out: DRS: no 2022 FIA zones and the 2022 openings (2) do not match the 2025 zones (2)
+zandvoort            out: DRS: no 2022 FIA zones and the 2022 openings (2) do not match the 2025 zones (2)
+monza                eligible (3 laps, pole LEC 80.161, zones FIA 2025 (matched by 2022 measured DRS))
+kuala-lumpur         out: not raced in 2022
+austin               eligible (3 laps, pole SAI 94.356, zones FIA 2025 (matched by 2022 measured DRS))
+mexico-city          eligible (3 laps, pole VER 77.775, zones FIA 2025 (matched by 2022 measured DRS))
+n = 10 eligible tracks: sakhir, jeddah, yas-marina-circuit, suzuka, miami, spielberg, spa-francorchamps, monza, austin, mexico-city
+raw inputs: 621 files, list sha256 295c68f7bcc2028a
