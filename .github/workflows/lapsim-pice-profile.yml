@@ -1,0 +1,61 @@
+name: LapSim pIce profile (diagnostic)
+
+# claude/status-2026-11-24-pice-profile.md: F1 2023-25 joint fit with pIce fixed at 0.80-1.10 x prior, default ERS law and law (b);
+# production fit settings, no held-out folds, no WEC. Diagnostic only: no gate, no production change. Output: probe/pice-profile-out.
+on:
+  push:
+    branches: ['probe/pice-profile-2026-11-24']
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: lapsim-pice-profile
+  cancel-in-progress: true
+
+jobs:
+  fit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 290
+    strategy:
+      fail-fast: false
+      matrix:
+        law: ['default', 'b']
+        fix: ['0.80', '0.85', '0.90', '0.95', '1.00', '1.05', '1.10']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lapsim-setup
+        with:
+          prep-run: '45191678721' # the wave-2 base build (also 10b's)
+      - name: Joint fit, pIce fixed
+        run: |
+          set -a; . .github/lapsim-fit.env; set +a
+          [ '${{ matrix.law }}' = b ] && export LAPSIM_ERS_LAW=b
+          LAPSIM_SKIP_WEC=1 LAPSIM_SEASONS=2023,2024,2025 LAPSIM_PICE_FIX=${{ matrix.fix }} LAPSIM_PART=f1-joint \
+            LAPSIM_PARTS_DIR=out/${{ matrix.law }}-${{ matrix.fix }} node scripts/sim/calibrate.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pice-${{ matrix.law }}-${{ matrix.fix }}
+          path: out/
+          retention-days: 14
+
+  plot:
+    needs: fit
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pice-*
+          path: dl
+          merge-multiple: true
+      - run: pip install matplotlib
+      - run: mkdir -p result && python3 scripts/sim/pice-profile-plot.py dl result > result/summary.json
+      - name: Push the result to probe/pice-profile-out
+        run: |
+          cp -r dl result/fits
+          cd result && git init -q -b probe/pice-profile-out && git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898299+github-actions[bot]@users.noreply.github.com' commit -qm "pIce profile, run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe/pice-profile-out
