@@ -1,0 +1,46 @@
+name: LapSim wave-3 sensitivity (joint fit only)
+
+# claude/gate-wave3-fit-restructure-prereg-2026-11-24.md r3: arm A at pIce 516 and 564 kW (± 24), joint fit only, reported, not deciding.
+on:
+  push:
+    branches: ['probe/w3-sens-2026-11-24']
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  fit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 290
+    strategy:
+      fail-fast: false
+      matrix:
+        kw: ['516', '564']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lapsim-setup
+        with:
+          prep-run: '45191678721'
+      - name: Joint fit
+        run: |
+          set -a; . .github/lapsim-fit.env; set +a
+          LAPSIM_ERS_LAW=b LAPSIM_PICE_FIXED=${{ matrix.kw }} LAPSIM_TRACK_CENTRE=on LAPSIM_PART=f1-joint LAPSIM_PARTS_DIR=out/kw${{ matrix.kw }} node scripts/sim/calibrate.mjs
+          node -e "const j=require('./out/kw${{ matrix.kw }}/f1-joint.json').joint;const f=Object.values(j.factors);console.log(JSON.stringify({cars:Object.fromEntries(Object.entries(j.cars).map(([k,c])=>[k,{muY:c.muY,clA:c.clA,cdA:c.cdA,cdALow:c.cdALow,pIce:c.pIce}])),score:j.score,meanLnG:f.reduce((a,x)=>a+Math.log(x.grip),0)/f.length,meanLnD:f.reduce((a,x)=>a+Math.log(x.drag),0)/f.length}))" > out/kw${{ matrix.kw }}/summary.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sens-${{ matrix.kw }}
+          path: out/
+  push:
+    needs: fit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: sens-*
+          merge-multiple: true
+          path: result
+      - run: |
+          cd result && find . -name f1-joint.json -delete && git init -q -b probe/w3-sens-out && git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898299+github-actions[bot]@users.noreply.github.com' commit -qm "w3 sensitivity, run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe/w3-sens-out
