@@ -39,6 +39,11 @@ on:
         required: false
         default: ''
 
+# wave-3 gate B (claude/gate-wave3-fit-restructure-prereg-2026-11-24.md; branch lapsim/w3-restructure-base-*, never merged): production
+# fit settings on the pinned build 45191678721, plus the F1 second-start held-out (noise check, one job per fold)
+env:
+  LAPSIM_F1_NOISE: 'on'
+
 permissions:
   contents: write
   actions: read
@@ -200,7 +205,7 @@ jobs:
       fail-fast: false
       matrix:
         # F1 held-out: one job per (season, fold) of holdoutBCD (4 folds; ~30-60 min each with production settings)
-        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, f1-ho-2026-0, f1-ho-2026-1, f1-ho-2026-2, f1-ho-2026-3, wec-lmh, wec-lmdh, wec-lmgt3]
+        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, f1-ho-2026-0, f1-ho-2026-1, f1-ho-2026-2, f1-ho-2026-3, f1-noise-2025-0, f1-noise-2025-1, f1-noise-2025-2, f1-noise-2025-3, f1-noise-2026-0, f1-noise-2026-1, f1-noise-2026-2, f1-noise-2026-3, wec-lmh, wec-lmdh, wec-lmgt3]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/lapsim-setup
@@ -305,6 +310,7 @@ jobs:
           done
       - name: Test
         if: inputs.calibrate != 'false'
+        continue-on-error: true # gate branch: keep the bot commit with the fit output even if a test fails
         run: node --test tests/lapsim*.test.mjs
         env:
           LAPSIM_TRACKS_REBUILT: ${{ (inputs.tracks || 'keep') == 'rebuild' && '1' || '0' }}

@@ -217,7 +217,11 @@ for (const g of groups) {
     return {errors, rmsPct: errors.length ? Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length) : null, n: errors.length};
   };
   const h = HOLDOUT_YEARS.includes(year) ? await heldOut() ?? none.h : none.h;
-  const hF1b = F1_NOISE && h.n && FITTER === 'bcd' ? await piece('f1-noise-' + year, () => holdoutBCD(groups, year, {...BCD, rounds: Math.max(2, BCD.rounds - 1), nmStep: 0.04}), null) : null;
+  // gate branch: the second start split per fold like the held-out (pieces f1-noise-<year>-<fold>), so each job stays under the limit
+  const hF1b = F1_NOISE && (h.n || PART) && FITTER === 'bcd' ? await (async () => { const fs = [];
+    for (let f = 0; f < HO_FOLDS; f++) fs.push(await piece(`f1-noise-${year}-${f}`, () => holdoutBCD(groups, year, {...BCD, rounds: Math.max(2, BCD.rounds - 1), nmStep: 0.04, fold: f}), null));
+    if (fs.some(x => !x)) return null; const errors = fs.flatMap(x => x.errors);
+    return {errors, rmsPct: Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length), n: errors.length}; })() : null;
   if (hF1b) report.push(`F1 ${year}: held-out second start (step 0.04) ${hF1b.rmsPct.toFixed(3)} % vs ${h.rmsPct.toFixed(3)} % (spread ${Math.abs(hF1b.rmsPct - h.rmsPct).toFixed(3)} pp, information only)`);
   const adj = joint.adj?.[year];
   if (adj) report.push(`### ${year} team pace and development`, '', `Development over the season: ${(adj.dev * 100).toFixed(2)}% lap time from March to December.`, '',
