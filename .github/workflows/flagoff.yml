@@ -1,0 +1,50 @@
+name: Flag-off byte check (unseen-season gate code, #496)
+# probe only: short calibrate (1 round, 6 iterations, all parts in one process) on main before #496 (85fb462) and after (8b96891),
+# same pinned build (lapsim-prep of run 45296179722), same settings; the outputs must be byte-identical apart from the date.
+on:
+  push:
+    branches: ['probe/flagoff-check']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  cal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 290
+    strategy:
+      matrix:
+        ref: [85fb462e1ae3d8ce9a2ed3e75cc8a9a00be36d6a, 8b96891]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: MisterKinn/f1-data-analyst
+          ref: ${{ matrix.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: lapsim-prep
+          path: /tmp
+          run-id: 45296179722
+          repository: kangjeongmin1229/f1-data-analyst-deploy
+          github-token: ${{ github.token }}
+      - run: tar xzf /tmp/lapsim-prep.tgz && npm ci --omit=dev --ignore-scripts
+      - name: Short calibrate (flags off)
+        run: set -a; . .github/lapsim-fit.env; set +a; LAPSIM_ROUNDS=1 LAPSIM_BCD_ITERS=6 node scripts/sim/calibrate.mjs > /tmp/cal.log 2>&1; tail -3 /tmp/cal.log
+      - run: mkdir -p /tmp/o && sed -E 's/"generatedAt":"[^"]*"//' worker/lapsim/calibration-data.js > /tmp/o/calibration-data.js && sed -E 's/^Generated [0-9-]+\.//' docs/lapsim-report.md > /tmp/o/lapsim-report.md && sha256sum /tmp/o/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ strategy.job-index }}
+          path: /tmp/o
+  compare:
+    needs: cal
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: /tmp/a
+      - run: |
+          sha256sum /tmp/a/*/*
+          cmp /tmp/a/out-0/calibration-data.js /tmp/a/out-1/calibration-data.js && cmp /tmp/a/out-0/lapsim-report.md /tmp/a/out-1/lapsim-report.md && echo "BYTE-IDENTICAL (calibration-data.js, lapsim-report.md; date removed)" >> "$GITHUB_STEP_SUMMARY"
