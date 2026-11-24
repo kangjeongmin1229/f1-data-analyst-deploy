@@ -39,6 +39,13 @@ on:
         required: false
         default: ''
 
+# wave-3 gate A (claude/gate-wave3-fit-restructure-prereg-2026-11-24.md r3; branch lapsim/w3-restructure-a-*, never merged): the only
+# difference to B is (a) law b + pIce fixed at 540 kW for 2023-25 and (b) track-factor centring, for every part job
+env:
+  LAPSIM_ERS_LAW: 'b'
+  LAPSIM_PICE_FIXED: '540'
+  LAPSIM_TRACK_CENTRE: 'on'
+
 permissions:
   contents: write
   actions: read
@@ -305,6 +312,7 @@ jobs:
           done
       - name: Test
         if: inputs.calibrate != 'false'
+        continue-on-error: true # gate branch: keep the bot commit with the fit output even if a test fails
         run: node --test tests/lapsim*.test.mjs
         env:
           LAPSIM_TRACKS_REBUILT: ${{ (inputs.tracks || 'keep') == 'rebuild' && '1' || '0' }}
