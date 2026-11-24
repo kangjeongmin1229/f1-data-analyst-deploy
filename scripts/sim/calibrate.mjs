@@ -218,7 +218,7 @@ for (const g of groups) {
   };
   const h = HOLDOUT_YEARS.includes(year) ? await heldOut() ?? none.h : none.h;
   // gate branch: the second start split per fold like the held-out (pieces f1-noise-<year>-<fold>), so each job stays under the limit
-  const hF1b = F1_NOISE && (h.n || PART) && FITTER === 'bcd' ? await (async () => { const fs = [];
+  const hF1b = F1_NOISE && HOLDOUT_YEARS.includes(year) && (h.n || PART) && FITTER === 'bcd' ? await (async () => { const fs = [];
     for (let f = 0; f < HO_FOLDS; f++) fs.push(await piece(`f1-noise-${year}-${f}`, () => holdoutBCD(groups, year, {...BCD, rounds: Math.max(2, BCD.rounds - 1), nmStep: 0.04, fold: f}), null));
     if (fs.some(x => !x)) return null; const errors = fs.flatMap(x => x.errors);
     return {errors, rmsPct: Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length), n: errors.length}; })() : null;
