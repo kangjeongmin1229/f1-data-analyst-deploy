@@ -11,7 +11,7 @@ from scipy.spatial import cKDTree
 
 ROOT, TUMDIR, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
 os.makedirs(OUT, exist_ok=True)
-E = json.load(open(f'{ROOT}/scripts/sim/data/step30b/kernel-export.json'))
+E = json.load(open(os.environ.get('STEP30B_EXPORT', f'{ROOT}/scripts/sim/data/step30b/kernel-export.json')))
 HD = json.load(open(f'{ROOT}/scripts/sim/data/step30b/heading-export.json'))
 TUM = {'austin': 'Austin', 'hungaroring': 'Budapest', 'catalunya': 'Catalunya', 'melbourne': 'Melbourne', 'mexico-city': 'MexicoCity',
        'montreal': 'Montreal', 'monza': 'Monza', 'sakhir': 'Sakhir', 'interlagos': 'SaoPaulo', 'shanghai': 'Shanghai', 'silverstone': 'Silverstone',
