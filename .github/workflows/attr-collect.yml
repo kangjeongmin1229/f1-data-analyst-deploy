@@ -1,0 +1,24 @@
+name: Attribution collect (research, never merged)
+# Copies calibration-output of the step-27 attribution runs into release attr-2026-11-25 (the session cannot download artifacts)
+on:
+  push:
+    branches: ['attr/collect-2026-11-25']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set -u; mkdir out
+          for r in $(cat .github/attr-runs.txt); do
+            if gh run download "$r" -R ${{ github.repository }} -n calibration-output -D "x$r"; then
+              (cd "x$r" && tar czf "../out/cal-$r.tgz" .); else echo "no calibration-output in $r"; fi
+          done
+          ls -la out
+          gh release view attr-2026-11-25 >/dev/null 2>&1 || gh release create attr-2026-11-25 --prerelease --title "Step 27 attribution outputs (research)" --notes "calibration-output of the attribution runs; research, never production"
+          gh release upload attr-2026-11-25 out/*.tgz --clobber
