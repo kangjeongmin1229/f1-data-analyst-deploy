@@ -13,7 +13,7 @@ jobs:
     timeout-minutes: 290
     strategy:
       matrix:
-        ref: [85fb462e1ae3d8ce9a2ed3e75cc8a9a00be36d6a, 8b96891]
+        ref: [85fb462b3418e6b79109e83ba7b85d21db3a0f78, 8b96891a64460907f53f683c19d3155840a6bfeb]
     steps:
       - uses: actions/checkout@v4
         with:
