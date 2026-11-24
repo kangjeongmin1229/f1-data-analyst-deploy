@@ -247,6 +247,9 @@ export function lapsimKernel() {
     // capacity a_y(v) of the car at grip 1, as data — {kind: 'quad', a0 m/s², k 1/m} or {kind: 'table', kph: [...], ay: [...]} (PCHIP,
     // flat outside), rhoRef (kg/m³), braking (also the braking capacity). Speed is the air speed scaled to the density, ve = va·√(ρ/ρref);
     // the weight part keeps grade, vertical curvature and banking: F = m·(a_w·N_w/(m·g) + a_y(ve) − a_w), a_w = a_y(0). Still × grip.
+    // car.decoupled (step 31, docs/prereg/step31-decoupled-2026-11-25.md; unset = today): own tyre limits, not tied to lateral μ —
+    // braking force m·(b0 + b2·v_air²), traction cap m·aTr (m/s², 1/m), both × track grip × the same friction ellipse
+    const dc = car.decoupled || null;
     const lc = car.lateralCap || null, capAt = lc ? lateralCapFn(lc) : null, aW = lc ? capAt(0) : 0, rhoS = lc ? Math.sqrt(rho / (lc.rhoRef ?? 1.2)) : 1;
     const lcCap = (v, i, L) => t.m * (aW * (normalAt(v, i, L) - L) / mg + capAt(vAir(v, i) * rhoS) - aW);
     // Lateral capacity (N) at speed v on point i with aero load L (axle model or point mass)
@@ -300,7 +303,7 @@ export function lapsimKernel() {
     //    Straight Mode is closed under braking: corner-mode aero.
     const brakeAcc = (v, i) => {
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
-      const fx = muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellipse(v, i);
+      const fx = dc ? muAt(i) * t.m * (dc.b0 + dc.b2 * va * va) * ellipse(v, i) : muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellipse(v, i);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N;
       let a = (fx + drag + roll) / t.m + G * sinG[i];
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
@@ -318,7 +321,7 @@ export function lapsimKernel() {
     };
     const brakeAcc2 = (v, i) => {
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
-      const fx = muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellN(v, i, L, N);
+      const fx = dc ? muAt(i) * t.m * (dc.b0 + dc.b2 * va * va) * ellN(v, i, L, N) : muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellN(v, i, L, N);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N;
       let a = (fx + drag + roll) / t.m + G * sinG[i];
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
@@ -412,7 +415,7 @@ export function lapsimKernel() {
           const muX = muXF[i] * pureCap(i, N) / N;
           // LMH hybrids also drive the front axle above a set speed (awdAboveKph): all four tyres
           const awd = t.awdAbove != null && vi > t.awdAbove;
-          const fTrac = (awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * ellipse(vi, i);
+          const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * ellipse(vi, i);
           let fDrive = Math.min(fPow, fTrac);
           powerLimited[i] = fPow <= fTrac ? 1 : 0;
           harv[i] = 0;
@@ -481,7 +484,7 @@ export function lapsimKernel() {
       const nRear = t.rearStatic * (kv ? N - L : mg * cosG[i]) + t.rearAero * L;
       const muX = muXF[i] * pureCap(i, N) / N;
       const awd = t.awdAbove != null && vv > t.awdAbove;
-      dEl = clF[i] === car.clA ? ellN(vv, i, L, N) : ellipse(vv, i); const fTrac = (awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * dEl;
+      dEl = clF[i] === car.clA ? ellN(vv, i, L, N) : ellipse(vv, i); const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * dEl;
       let fDrive = Math.min(fPow, fTrac); dPl = fPow <= fTrac ? 1 : 0; dHarv = 0;
       if (throttleHarvest) {
         const spare = pI * etaD - fDrive * vv;
