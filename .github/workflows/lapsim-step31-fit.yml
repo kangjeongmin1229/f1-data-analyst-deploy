@@ -1,0 +1,67 @@
+name: Lap simulator step 31 fit (decoupled limits + kerb corridor, research)
+
+# Step 31 (docs/prereg/step31-decoupled-2026-11-25.md): leave-one-track-out fit on the committed 2023-25 quali traces, judged against
+# the step 28 A2 baseline. Manual only (workflow_dispatch, research mode, fork). Never reads the 2022 LOCKED set. Writes nothing back.
+on:
+  workflow_dispatch:
+    inputs:
+      variant: {description: "V1 (attempt 1) or V2 (attempt 2, only if V1 fails)", required: true, default: "V1"}
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      tracks: ${{ steps.t.outputs.tracks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - name: Flag off is byte-identical and the A2 baseline rows are reproduced (sha256 of the committed pre-reg file)
+        run: |
+          set -o pipefail
+          node scripts/sim/learn/step31-baseline.mjs a2.json
+          sha256sum a2.json scripts/sim/data/step31/a2-baseline-traces.json scripts/sim/data/step31/corridor.json docs/prereg/step31-decoupled-2026-11-25.md
+          cmp a2.json scripts/sim/data/step31/a2-baseline-traces.json
+          python3 -m pip install --quiet --break-system-packages scipy numpy
+          python3 -I scripts/sim/learn/step31_power.py . a2.json a2-power.json | tail -40
+      - id: t
+        run: echo "tracks=$(jq -c '[.events[].track] | unique' scripts/sim/data/f1-envelope/traces.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with: {name: a2-check, path: 'a2*.json', retention-days: 90}
+  fold:
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        track: ${{ fromJson(needs.check.outputs.tracks) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: node scripts/sim/learn/step31-fit.mjs '${{ matrix.track }}' '${{ inputs.variant }}' 'fold-${{ matrix.track }}.json'
+      - uses: actions/upload-artifact@v4
+        with: {name: 'fold-${{ matrix.track }}', path: 'fold-${{ matrix.track }}.json', retention-days: 90}
+  verdict:
+    needs: fold
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'fold-*', path: folds, merge-multiple: true}
+      - run: python3 -m pip install --quiet --break-system-packages scipy numpy
+      - name: Verdict (fold files hashed first)
+        run: |
+          set -o pipefail
+          sha256sum folds/*.json
+          python3 -I scripts/sim/learn/step31_verdict.py folds scripts/sim/data/f1-envelope/traces.json verdict.json | tee verdict.txt
+      - uses: actions/upload-artifact@v4
+        with: {name: verdict, path: 'verdict.*', retention-days: 90}
