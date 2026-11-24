@@ -1,0 +1,24 @@
+name: Copy a run artifact to a branch
+# probe only: the session proxy cannot reach the artifact blob host, so the artifact is copied to probe/fetched-artifact
+on:
+  push:
+    branches: ['probe/fetch-artifact']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "RUN=$(cat run-id)" >> "$GITHUB_ENV"; echo "NAME=$(cat artifact-name)" >> "$GITHUB_ENV"
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.NAME }}
+          path: /tmp/out
+          run-id: ${{ env.RUN }}
+          github-token: ${{ github.token }}
+      - run: |
+          cd /tmp/out && find . -type f | xargs sha256sum > SHA256SUMS && git init -q -b probe/fetched-artifact && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -qm "artifact ${{ env.NAME }} of run ${{ env.RUN }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/probe/fetched-artifact
