@@ -2,10 +2,15 @@ name: Lap simulator step 31 fit (decoupled limits + kerb corridor, research)
 
 # Step 31 (docs/prereg/step31-decoupled-2026-11-25.md): leave-one-track-out fit on the committed 2023-25 quali traces, judged against
 # the step 28 A2 baseline. Manual only (workflow_dispatch, research mode, fork). Never reads the 2022 LOCKED set. Writes nothing back.
+# Trigger: workflow_dispatch needs the file on the default branch, which a research branch never reaches, so a push that changes
+# scripts/sim/data/step31/run-request.txt on this branch starts the run; that file names the variant (mechanical, no other change).
 on:
   workflow_dispatch:
     inputs:
       variant: {description: "V1 (attempt 1) or V2 (attempt 2, only if V1 fails)", required: true, default: "V1"}
+  push:
+    branches: [step31-k2]
+    paths: [scripts/sim/data/step31/run-request.txt]
 
 permissions:
   contents: read
@@ -16,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       tracks: ${{ steps.t.outputs.tracks }}
+      variant: ${{ steps.t.outputs.variant }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,12 +31,15 @@ jobs:
         run: |
           set -o pipefail
           node scripts/sim/learn/step31-baseline.mjs a2.json
-          sha256sum a2.json scripts/sim/data/step31/a2-baseline-traces.json scripts/sim/data/step31/corridor.json docs/prereg/step31-decoupled-2026-11-25.md
+          sha256sum a2.json scripts/sim/data/step31/a2-baseline-traces.json scripts/sim/data/step31/corridor.json docs/prereg/step31-decoupled-2026-11-25.md docs/prereg/step31-decoupled-A1-2026-11-25.md
           cmp a2.json scripts/sim/data/step31/a2-baseline-traces.json
           python3 -m pip install --quiet --break-system-packages scipy numpy
-          python3 -I scripts/sim/learn/step31_power.py . a2.json a2-power.json | tail -40
+          python3 scripts/sim/learn/step31_power.py . a2.json a2-power.json | tail -40
       - id: t
-        run: echo "tracks=$(jq -c '[.events[].track] | unique' scripts/sim/data/f1-envelope/traces.json)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "tracks=$(jq -c '[.events[].track] | unique' scripts/sim/data/f1-envelope/traces.json)" >> "$GITHUB_OUTPUT"
+          v='${{ inputs.variant }}'; [ -z "$v" ] && v=$(awk 'NR==1{print $1}' scripts/sim/data/step31/run-request.txt)
+          case "$v" in V1|V2) echo "variant=$v" >> "$GITHUB_OUTPUT";; *) echo "bad variant $v"; exit 1;; esac
       - uses: actions/upload-artifact@v4
         with: {name: a2-check, path: 'a2*.json', retention-days: 90}
   fold:
@@ -46,7 +55,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - run: npm ci --ignore-scripts
-      - run: node scripts/sim/learn/step31-fit.mjs '${{ matrix.track }}' '${{ inputs.variant }}' 'fold-${{ matrix.track }}.json'
+      - run: node scripts/sim/learn/step31-fit.mjs '${{ matrix.track }}' '${{ needs.check.outputs.variant }}' 'fold-${{ matrix.track }}.json'
       - uses: actions/upload-artifact@v4
         with: {name: 'fold-${{ matrix.track }}', path: 'fold-${{ matrix.track }}.json', retention-days: 90}
   verdict:
@@ -62,6 +71,6 @@ jobs:
         run: |
           set -o pipefail
           sha256sum folds/*.json
-          python3 -I scripts/sim/learn/step31_verdict.py folds scripts/sim/data/f1-envelope/traces.json verdict.json | tee verdict.txt
+          python3 scripts/sim/learn/step31_verdict.py folds scripts/sim/data/f1-envelope/traces.json verdict.json | tee verdict.txt
       - uses: actions/upload-artifact@v4
         with: {name: verdict, path: 'verdict.*', retention-days: 90}
