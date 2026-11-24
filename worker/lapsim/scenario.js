@@ -15,7 +15,7 @@ import {FE_GENS} from './fe-cars.js';
 import {withPowertrain} from './powertrains.js';
 import {lapsimRaceRecords} from './race-records-data.js';
 import {lapsimTrackChanges} from './track-changes-data.js';
-import {lapsimChangeEffects} from './change-effects-data.js';
+import {lapsimChangeGate} from './change-gate-data.js';
 import {TUM_2019, PRIOR, applyRules, applyDevelopment} from './cars.js';
 import {SERIES} from './series.js';
 import {HYPERCARS, hypercarFor, hypercarRanking} from './hypercar-makers.js';
@@ -24,6 +24,7 @@ import {lapsimF1WetQuali} from './f1-wet-quali-data.js';
 import {lapsimKernel} from './kernel.js';
 import {lapsimAllTracks} from './tracks.js';
 import {lapsimHypercarMakers} from './hypercar-maker-data.js';
+import {withIceDensity} from './ice-density.js';
 
 // GT3 is shown per car model (base model + Evo tick box); F1, LMH and LMDh are shown per regulation (owner rule, 2026-11-14)
 // Hypercar per maker (owner 2026-11-21): one car per maker with that track's BoP and the learned residual (carsFor, the tool; the page menu
@@ -115,7 +116,7 @@ export function carsFor(id) {
   if (lapsimAllTracks[id] && Object.keys(out).some(k => k.startsWith('hyper-'))) { const r = hypercarRanking(HK ||= lapsimKernel(), id, lapsimAllTracks[id], out);
     r.forEach((x, i) => { out[x.key].bopRank = i + 1; }); if (r[0]) out[r[0].key].bopFastest = true; }
   for (const c of Object.values(out)) { c.car = withPowertrain(c.car, c); c.unc = uncertainty(c, id); } // engine curve and gears (powertrains.js)
-  return out;
+  return withIceDensity(out); // LAPSIM_ICE_BETA=measured only (step 13-prep)
 }
 
 // Error range (1 sigma, % of lap time) and confidence label (common rule).
@@ -182,23 +183,28 @@ export function raceRecords(id) {
   return out;
 }
 
-// Latest "Changes to the circuit" list read from the race director's notes
+// Latest "Changes to the circuit" list read from the race director's notes, each change through the step-5b gate (gateChange)
 export function latestChanges(id) {
   const years = Object.keys(lapsimTrackChanges[id] || {}).sort();
   if (!years.length) return null;
   const e = lapsimTrackChanges[id][years.at(-1)];
   // drop a signature line read by older parser versions ("… The FIA Formula 1 Race Director")
-  return {year: Number(years.at(-1)), ...e, changes: (e.changes || []).filter(c => !/race director\s*$/i.test(c.text)).map(learnedEffect)};
+  return {year: Number(years.at(-1)), ...e, coverage: lapsimChangeGate.coverage[id] || 'no-history',
+    changes: (e.changes || []).filter(c => !/race director\s*$/i.test(c.text)).map(gateChange)};
 }
 
-// Use the effect size learned from past changes (speed traces before/after) instead of the assumed
-// one when at least 3 earlier cases of that kind exist.
-export function learnedEffect(c) {
-  const l = lapsimChangeEffects?.learned?.[c.type];
-  if (!c.effect || !l || l.n < 3) return c;
-  const pct = ((l.kind === 'grip' ? Math.sqrt(l.factor) : l.factor) - 1) * 100, sign = pct > 0 ? '+' : '';
-  return {...c, effect: {...c.effect, kind: l.kind, factor: l.factor, learned: true,
-    ko: `과거 ${l.n}건의 실제 변화에서 학습: 코너 속도 ${sign}${pct.toFixed(2)}%`, en: `Learned from ${l.n} past cases: ${sign}${pct.toFixed(2)}% corner speed`}};
+// Step-5b gate (docs/lapsim-change-gate.md): a change type moves the lap only when it passed the pre-registered gate
+// (n ≥ 10, 90 % interval excluding 0). Every other change stays in the list as information only: no switch, no lap effect.
+export function gatedChangeFactors(c) {
+  const g = lapsimChangeGate.types[c.type];
+  return c.effect && g?.strength > 0 ? {kind: g.kind, factor: g.factor} : null;
+}
+export function gateChange(c) {
+  if (!c.effect) return c;
+  const f = gatedChangeFactors(c);
+  if (!f) return {...c, affectsLap: false, effect: null, infoOnly: true};
+  const pct = ((f.kind === 'grip' ? Math.sqrt(f.factor) : f.factor) - 1) * 100, sign = pct > 0 ? '+' : '', n = lapsimChangeGate.types[c.type].n;
+  return {...c, effect: {...c.effect, ...f, gated: true, ko: `검증된 효과(${n}건): 코너 속도 ${sign}${pct.toFixed(2)}%`, en: `Validated on ${n} cases: ${sign}${pct.toFixed(2)}% corner speed`}};
 }
 
 // Latest season whose real lap on this track the cars were fitted to (null when none)

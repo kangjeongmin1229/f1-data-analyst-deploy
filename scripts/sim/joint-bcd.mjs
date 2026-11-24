@@ -57,7 +57,7 @@ export function fitGroup(g, factors, x0, o, adj) {
     let s = 0; for (const l of laps) s += (l.weight ?? 1) * lapScore(l, car, fOf(factors, l.name), o, lapMult(l, adj)).score;
     return s / wsum + 100 * outside;
   };
-  const r = nelderMead(objective, x0 || g.params.map(() => 0), {step: 0.06, iters: o.iters});
+  const r = nelderMead(objective, x0 || g.params.map(() => 0), {step: o.nmStep ?? 0.06, iters: o.iters}); // nmStep: second-start noise check (LAPSIM_F1_NOISE)
   return {x: r.x, value: r.value};
 }
 
@@ -70,10 +70,12 @@ export function fitTrack(laps, cars, prev, o, adj) {
     for (let it = 0; it < iters; it++) { if (fc < fd) { b = d; d = c; fd = fc; c = b - phi * (b - a); fc = fn(c); } else { a = c; c = d; fc = fd; d = a + phi * (b - a); fd = fn(d); } }
     return fc < fd ? c : d;
   };
-  let f = {grip: prev?.grip ?? 1, drag: prev?.drag ?? 1};
-  for (let pass = 0; pass < (o.trackDrag ? 2 : 1); pass++) {
+  // o.fixedDrag[name] (LAPSIM_CDA_MEASURED, step 2a): the drag factor is measured, not fitted
+  const fixed = o.fixedDrag?.[laps[0]?.name], fitDrag = o.trackDrag && fixed == null;
+  let f = {grip: prev?.grip ?? 1, drag: fixed ?? prev?.drag ?? 1};
+  for (let pass = 0; pass < (fitDrag ? 2 : 1); pass++) {
     f.grip = golden(g => score({...f, grip: g}), o.lo, o.hi, 16);
-    if (o.trackDrag) f.drag = golden(d => score({...f, drag: d}), o.dragLo, o.dragHi, 12);
+    if (fitDrag) f.drag = golden(d => score({...f, drag: d}), o.dragLo, o.dragHi, 12);
   }
   return {...f, score: score(f)};
 }
@@ -109,6 +111,22 @@ class Pool {
   close() { return Promise.all(this.workers.map(w => w.terminate())); }
 }
 
+// LAPSIM_TRACK_CENTRE=on (wave 3 (b), claude/gate-wave3-fit-restructure-prereg-2026-11-24.md; off by default): Σ ln G_t = Σ ln D_t = 0
+// over the fitted tracks. The removed mean goes into every group's μy (grip) and CdA, CdA-low (drag): drag folds exactly (lapScore
+// scales CdA and CdA-low); grip folds up to the kernel's load term on the car μ (about 1 % of the shift: 0.04 % of a lap for 4.8 %), which the next
+// group step absorbs.
+// A measured (fixed) drag factor is not moved, so drag is centred only when no factor is fixed.
+export function centreFactors(prep, names, factors, xs, o = {}) {
+  const lg = names.reduce((a, n) => a + Math.log(factors[n].grip), 0) / names.length;
+  const ld = o.fixedDrag ? 0 : names.reduce((a, n) => a + Math.log(factors[n].drag), 0) / names.length;
+  for (const n of names) { factors[n].grip /= Math.exp(lg); if (ld) factors[n].drag /= Math.exp(ld); }
+  for (const g of prep) g.params.forEach((p, i) => {
+    const d = p.key === 'muY' ? lg : (p.key === 'cdA' || p.key === 'cdALow') ? ld : 0;
+    if (d) xs[g.key][i] = (xs[g.key][i] ?? 0) + d;
+  });
+  return {lg, ld};
+}
+
 export async function fitJointBCD(groups, opts = {}) {
   const o = {...DEFAULTS, ...opts};
   const prep = prepGroups(groups);
@@ -118,6 +136,7 @@ export async function fitJointBCD(groups, opts = {}) {
     const names = [...new Set(prep.flatMap(g => g.laps.map(l => l.name)))].sort();
     let factors = o.startFactors ? structuredClone(o.startFactors) : Object.fromEntries(names.map(n => [n, {grip: 1, drag: 1}]));
     for (const n of names) factors[n] ||= {grip: 1, drag: 1};
+    if (o.fixedDrag) for (const n of names) if (o.fixedDrag[n] != null) factors[n].drag = o.fixedDrag[n];
     let xs = Object.fromEntries(prep.map(g => [g.key, o.startX?.[g.key] || g.params.map(() => 0)]));
     let score = Infinity, adj = o.teams ? (o.startAdj ? structuredClone(o.startAdj) : {}) : null;
     for (let r = 0; r < o.rounds; r++) {
@@ -130,6 +149,7 @@ export async function fitJointBCD(groups, opts = {}) {
       }
       const tf = await Promise.all(names.map(n => pool.run({type: 'track', name: n, xs, prev: factors[n], adj})));
       factors = Object.fromEntries(names.map((n, k) => [n, {grip: tf[k].grip, drag: tf[k].drag}]));
+      if (o.centre) centreFactors(prep, names, factors, xs, o);
       score = tf.reduce((a, t) => a + t.score, 0) / prep.reduce((a, g) => a + g.laps.length, 0);
       o.log?.(`round ${r + 1}: score ${score.toFixed(4)}`);
     }
@@ -194,11 +214,13 @@ function carryBias(fit, groups, key) {
   return l => by[l.name]?.length ? w * by[l.name].reduce((a, b) => a + b, 0) / by[l.name].length : 0;
 }
 
-export async function holdoutBCD(groups, key, {folds = 4, ...opts} = {}) {
+// fold: compute only that fold (split CI run: one job per fold; the folds' errors joined in fold order = the full result)
+export async function holdoutBCD(groups, key, {folds = 4, fold = null, ...opts} = {}) {
   const target = groups.find(g => g.key === key);
   const names = [...new Set(target.laps.map(l => l.name))].sort();
   const k = Math.min(folds, names.length), errors = [];
   for (let f = 0; f < k; f++) {
+    if (fold != null && f !== fold) continue;
     const test = new Set(names.filter((_, i) => i % k === f));
     const train = groups.map(g => g.key === key ? {...g, laps: g.laps.filter(l => !test.has(l.name))} : g);
     const fit = await fitJointBCD(train, opts);

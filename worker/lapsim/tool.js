@@ -1,16 +1,17 @@
 // lapsim_simulate: the lap simulator as a connector tool. Same engine, tracks and calibration as
 // the /simulation page (worker/lapsim/scenario.js), so the page and the tool agree.
 import {withZones, simulateWithOptions, slotOf, puRampOf, PU_RAMP} from './zones.js';
+import {erskKnots} from './event-energy.js';
 import {lapsimF1Zones} from './f1-zones-data.js';
 import {lapsimKernel} from './kernel.js';
 import {lapsimAllTracks as lapsimTracks} from './tracks.js';
 import {lapsimCalibration} from './calibration-data.js';
 import {RULE_CHANGES} from './cars.js';
 import {TRACK_NAMES, resolveTrack} from './names.js';
-import {carsFor, realConditions, latestChanges, fittedYear, SERIES_CARS, CAR_ORDER, HYPER_KEYS, raceRecords} from './scenario.js';
+import {carsFor, realConditions, latestChanges, gatedChangeFactors, fittedYear, SERIES_CARS, CAR_ORDER, HYPER_KEYS, raceRecords} from './scenario.js';
 import {rechargeLimitMJ} from './energy-limits.js';
 import {lapsimLearned} from './learned-data.js';
-import {evolutionCoeffs, evolutionDelta, evolutionCurve} from './evolution.js';
+import {evolutionCoeffs, evolutionDelta, evolutionCurve, warmupClassOf} from './evolution.js';
 import {wetGap} from './wet-gap.js';
 import {lapsimWetGap} from './wet-gap-data.js';
 import {driveEnergyJ} from './stint-energy.js';
@@ -134,12 +135,14 @@ export function simulate(args = {}, opts = {}) {
   // per-event ERS recharge limit (2026 values; 2027/2028 reuse them), ignored by older rule sets
   const rechargeMJ = rechargeLimitMJ(id, 2026);
   const w = {airTempC, trackTempC, humidityPct, pressureHpa, windSpeed, windFromDeg, rechargeMJ: rechargeMJ ?? undefined};
-  const env = K.conditionsFromWeather(w);
+  const env = K.conditionsFromWeather(w), knots = erskKnots(id, sel.year);
+  if (knots) env.erskKnots = knots; // flag LAPSIM_EVENT_ENERGY (off by default): the event's printed taper (Rev 1)
   // FIA changes
   const ch = latestChanges(id);
   let track = base, applied = [];
   if (args.apply_fia_changes && ch?.changes?.length) {
-    const r = K.applyTrackChanges(base, ch.changes.filter(c => c.affectsLap), d.corners || [], {strength: args.change_strength ?? 1});
+    // step-5b gate through the change hook: only a validated change type moves the lap
+    const r = K.applyTrackChanges({...base, changeFactors: gatedChangeFactors}, ch.changes.filter(c => c.affectsLap), d.corners || [], {strength: args.change_strength ?? 1});
     track = r.track; applied = r.applied;
   }
   // sector correction on raced tracks (same rule as the /simulation page): real pole sectors minus the
@@ -209,7 +212,7 @@ export function simulate(args = {}, opts = {}) {
     r3(bare(plus(k, 1.1)) - b0)]));
   // track evolution: only when asked, so the default output is unchanged
   if (['session_type', 'session_minute', 'rubber_gain_pct', 'saturation_min', 'track_wetness_start', 'drying_time_min', 'tyre', 'tyre_warmup_laps', 'car_model', 'wet_season', 'wet_session'].some(k => args[k] !== undefined)) {
-    const se = sel.series === 'wec' ? 'wec' : 'f1', type = args.session_type || 'qualifying', c = evolutionCoeffs(se, id, type), qc = evolutionCoeffs(se, id, 'qualifying');
+    const se = sel.series === 'wec' ? 'wec' : 'f1', type = args.session_type || 'qualifying', c = evolutionCoeffs(se, id, type, {cls: se === 'wec' ? warmupClassOf(sel.cls) : null}), qc = evolutionCoeffs(se, id, 'qualifying');
     const endOf = x => x.curve ? x.curve.at(-1)[0] : se === 'wec' ? (type === 'qualifying' ? 20 : 90) : 60;
     const formula = Number.isFinite(args.rubber_gain_pct) || Number.isFinite(args.saturation_min);
     const P = {...c, session: type, tyre: se === 'wec' && args.tyre === 'inter' ? 'wet' : args.tyre || 'slick', useCurve: !formula && !!c.curve, wetStart: args.track_wetness_start ?? 0, dryMin: args.drying_time_min ?? 20,
@@ -255,11 +258,12 @@ export function simulate(args = {}, opts = {}) {
   if (sel.kind === 'projected') out.projection = {rules: RULE_CHANGES[sel.year]?.note?.en, rules_effect_pct: proj?.rulesEffectPct ?? null,
     development_pct: proj?.developmentTargetPct ?? null, development_band_pct: proj?.bandPct ?? null};
   if (ch) out.fia_changes = {event: ch.event, year: ch.year, document: ch.document,
-    items: ch.changes.map(c => ({text: c.text, type: c.type, affects_lap: c.affectsLap, assumed_effect: c.affectsLap ? c.effect?.en : null})),
+    coverage: ch.coverage,
+    items: ch.changes.map(c => ({text: c.text, type: c.type, affects_lap: c.affectsLap, effect: c.affectsLap ? c.effect?.en : c.infoOnly ? 'information only, no lap effect (not validated, step 5b gate)' : null})),
     applied: applied.map(a => ({type: a.type, applied: a.applied, from_m: a.sStart != null ? Math.round(a.sStart) : null, to_m: a.sEnd != null ? Math.round(a.sEnd) : null})),
     note: fittedYear(id) >= ch.year ? `The cars were fitted on a real ${fittedYear(id)} lap that already ran with these changes; switching them on adds them a second time.` : 'Not yet in the fitted laps: switch them on to estimate their effect.'};
   out.assumptions = [...(given.length ? [`Given by you: ${given.join(', ')}; the real-lap correction of the unchanged car is kept, so the result is the real lap plus the simulated difference.`] : []), 'Engine power follows a torque curve and gear ratios (preset per rule set in powertrains.js unless given), capped at the regulation or BoP power.', 'Grip versus track temperature is an assumed curve (best near 35 °C).', 'Engine power changes with air density as (density/1.18)^0.15 (assumed for a turbocharged engine).',
-    'FIA change effects are assumed sizes, not measurements.', 'No gear shifts, tyre temperature, fuel burn or car-to-car effects.', '2026-2028 energy: recovered under braking and, on throttle, from engine power the tyres cannot use; harvesting at full throttle at the end of straights ("super-clipping") is used only when it makes the lap faster; per-event qualifying recharge limit from the FIA Power Unit Information document of the event (a press-report or estimated value until it is published), reused for 2027/2028.'];
+    ch?.changes?.some(c => c.affectsLap) ? 'FIA change effects are validated sizes (step 5b gate).' : 'FIA changes are information only: no change type has a validated lap effect (step 5b gate), so switching them on does not move the lap.', 'No gear shifts, tyre temperature, fuel burn or car-to-car effects.', '2026-2028 energy: recovered under braking and, on throttle, from engine power the tyres cannot use; harvesting at full throttle at the end of straights ("super-clipping") is used only when it makes the lap faster; per-event qualifying recharge limit from the FIA Power Unit Information document of the event (a press-report or estimated value until it is published), reused for 2027/2028.'];
   // qualifying with rain (owner 2026-11-22): the lap is that session's real pole; a dry pole estimate (model) is given beside it
   if (sel.fix?.wet && conds[own]?.wet) { const w = conds[own];
     out.wet_qualifying = {session: sel.fix.session, real_pole_s: w.realLap, driver: w.driver, tyre: w.tyre, rain_minutes: w.rainMinutes,

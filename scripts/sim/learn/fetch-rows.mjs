@@ -9,6 +9,7 @@ import {gunzipSync, gzipSync} from 'node:zlib';
 import {join} from 'node:path';
 import {COLS, csvLine} from './build-endurance.mjs';
 import {modelOf} from './models.mjs';
+import {wecEventIds} from './wec-lap-sanity.mjs';
 
 const DIR = process.env.T71_ROWS || '.cache/t71-rows', HARD = ['no_time', 'pit_in', 'pit_out', 'not_green', 'deleted', 'wet_lap', 'wet_session', 'sector_sum', 'inaccurate', 'sim'];
 const files = d => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? files(p) : /\.ndjson(\.gz)?$/.test(f) ? [p] : []; });
@@ -19,7 +20,8 @@ for (const f of files(DIR)) { const text = f.endsWith('.gz') ? gunzipSync(readFi
     const k0 = r.series + '|' + (r.cls || ''); seen[k0] = (seen[k0] || 0) + 1; if (!samples[r.series] || samples[r.series].length < 3) (samples[r.series] ||= []).push({...r, q: undefined, wx: undefined});
     const wec = r.source === 'alkamel' && r.series === 'wec'; if (wec) r.cls = WEC_CLS[String(r.cls || '').toLowerCase()] || String(r.cls || '').toUpperCase();
     if (!wec) { const m = modelOf(r.carModel, r.season, 'GT3'); if (!m || !/GT3|GTD/.test(m.base)) continue; } // Timing71: GT3 models only (GT4, Cup and others are not matched)
-    const k = [r.series, r.season, r.session, r.entry].join('|'), c = cars.get(k) || cars.set(k, {r, laps: 0, clean: [], best: null, trap: 0, w: {a: [], t: [], h: [], p: []}, rain: 0}).get(k);
+    // event in the key: without it one season's same-named sessions merged into one row (Lusail bug 2026-11-24)
+    const k = [r.series, r.season, r.event, r.session, r.entry].join('|'), c = cars.get(k) || cars.set(k, {r, laps: 0, clean: [], best: null, trap: 0, w: {a: [], t: [], h: [], p: []}, rain: 0}).get(k);
     c.laps++; if (r.rain === 1) c.rain++;
     for (const [x, y] of [['a', r.airC], ['t', r.trackC], ['h', r.humidityPct], ['p', r.pressureHpa]]) if (Number.isFinite(y) && y !== 0 && y !== 255) c.w[x].push(y);
     if ((r.q || []).some(q => HARD.includes(q)) || !(r.time > 20)) continue;
@@ -28,6 +30,7 @@ const out = [], outW = []; for (const c of cars.values()) { if (!c.best) continu
   (r.source === 'alkamel' ? outW : out).push([r.series, r.season, String(r.event || '').replace(/,/g, ' '), String(r.session || '').replace(/,/g, ' '), r.sessionType, r.cls || '', r.entry, r.carModel, '', r.team || '', '',
     b.time.toFixed(3), ...sx.map(v => Number.isFinite(v) ? v.toFixed(3) : ''), sx.every(Number.isFinite) ? (sx[0] + sx[1] + sx[2]).toFixed(3) : '', c.trap || '', '', c.laps, c.clean.length, '',
     ...[mean(c.w.a), mean(c.w.t), mean(c.w.h), mean(c.w.p)].map(v => v == null ? '' : v.toFixed(1)), (c.rain / c.laps).toFixed(3), r.track || '', r.series]); }
+wecEventIds(outW.map(a => ({season: a[1], event: a[2], venue: a.at(-2)}))).forEach((e, i) => { outW[i][2] = e; }); // short track ids (hygiene 2026-11-24)
 writeFileSync('scripts/sim/data/learn/wec-alkamel-cars.csv.gz', gzipSync([[...COLS, 'venue', 'feed'].join(','), ...outW.map(csvLine)].join('\n') + '\n', {level: 9}));
 writeFileSync('scripts/sim/data/learn/t71-gt3-cars.csv.gz', gzipSync([[...COLS, 'venue', 'feed'].join(','), ...out.map(csvLine)].join('\n') + '\n', {level: 9}));
 writeFileSync('scripts/sim/data/learn/t71-gt3-info.json', JSON.stringify({source: 'Timing71 archive rows (Actions run 42927630531)', rows: out.length, classes: Object.entries(seen).sort((a, b) => b[1] - a[1]).slice(0, 400), samples}, null, 1));
