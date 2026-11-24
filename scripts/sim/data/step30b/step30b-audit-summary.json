@@ -1,0 +1,786 @@
+{
+ "estimator": "Savitzky-Golay quadratic, window 30.0 m at 1 m; peak within +-40 m; source accepted within 6.0 m",
+ "tracks": {
+  "austin": {
+   "headingPathVsMapRms": 2.2639409784550817,
+   "tumFitRms": 3.429113425069085,
+   "tumMirror": 1,
+   "tumWidthMed": 13.0275,
+   "lineEdges": "TUM"
+  },
+  "baku": {
+   "headingPathVsMapRms": 2.2842189384970157,
+   "lineEdges": "assumed"
+  },
+  "catalunya": {
+   "headingPathVsMapRms": 2.3264445302596957,
+   "tumFitRms": 7.08401235724654,
+   "tumMirror": 1,
+   "tumWidthMed": 10.876999999999999,
+   "lineEdges": "TUM-widths"
+  },
+  "hungaroring": {
+   "headingPathVsMapRms": 2.3133061846663163,
+   "tumFitRms": 2.8621624121748983,
+   "tumMirror": 1,
+   "tumWidthMed": 9.9585,
+   "lineEdges": "TUM"
+  },
+  "imola": {
+   "headingPathVsMapRms": 2.305044121310573,
+   "lineEdges": "assumed"
+  },
+  "interlagos": {
+   "headingPathVsMapRms": 2.3048226381793704,
+   "tumFitRms": 3.832092420614147,
+   "tumMirror": 1,
+   "tumWidthMed": 11.734,
+   "lineEdges": "TUM"
+  },
+  "jeddah": {
+   "headingPathVsMapRms": 2.2387808405340537,
+   "lineEdges": "assumed"
+  },
+  "lusail": {
+   "headingPathVsMapRms": 2.2992336777624085,
+   "lineEdges": "assumed"
+  },
+  "melbourne": {
+   "headingPathVsMapRms": 2.3266739059152344,
+   "tumFitRms": 6.43152883894856,
+   "tumMirror": 1,
+   "tumWidthMed": 12.24,
+   "lineEdges": "TUM-widths"
+  },
+  "mexico-city": {
+   "headingPathVsMapRms": 2.2858809887466918,
+   "tumFitRms": 3.9608969536219734,
+   "tumMirror": 1,
+   "tumWidthMed": 11.646,
+   "lineEdges": "TUM"
+  },
+  "miami": {
+   "headingPathVsMapRms": 2.319346692148075,
+   "lineEdges": "assumed"
+  },
+  "monte-carlo": {
+   "headingPathVsMapRms": 2.1699696844164764,
+   "lineEdges": "assumed"
+  },
+  "montreal": {
+   "headingPathVsMapRms": 2.312344433901928,
+   "tumFitRms": 2.718568522493739,
+   "tumMirror": 1,
+   "tumWidthMed": 8.999500000000001,
+   "lineEdges": "TUM"
+  },
+  "monza": {
+   "headingPathVsMapRms": 2.309287609720871,
+   "tumFitRms": 2.591982111166353,
+   "tumMirror": 1,
+   "tumWidthMed": 9.004,
+   "lineEdges": "TUM"
+  },
+  "sakhir": {
+   "headingPathVsMapRms": 2.2707685953102206,
+   "tumFitRms": 3.471522213851506,
+   "tumMirror": 1,
+   "tumWidthMed": 12.903,
+   "lineEdges": "TUM"
+  },
+  "shanghai": {
+   "headingPathVsMapRms": 2.253382352629964,
+   "tumFitRms": 1.68487875116595,
+   "tumMirror": 1,
+   "tumWidthMed": 12.7345,
+   "lineEdges": "TUM"
+  },
+  "silverstone": {
+   "headingPathVsMapRms": 2.328093653600062,
+   "tumFitRms": 4.2584402808967825,
+   "tumMirror": 1,
+   "tumWidthMed": 13.755500000000001,
+   "lineEdges": "TUM"
+  },
+  "singapore": {
+   "headingPathVsMapRms": 2.295445513054242,
+   "lineEdges": "assumed"
+  },
+  "spa-francorchamps": {
+   "headingPathVsMapRms": 2.289630375474715,
+   "tumFitRms": 2.836417471891771,
+   "tumMirror": 1,
+   "tumWidthMed": 9.206,
+   "lineEdges": "TUM"
+  },
+  "spielberg": {
+   "headingPathVsMapRms": 2.3059027850526395,
+   "tumFitRms": 3.942367686827366,
+   "tumMirror": 1,
+   "tumWidthMed": 10.8275,
+   "lineEdges": "TUM"
+  },
+  "suzuka": {
+   "headingPathVsMapRms": 2.2566994237761815,
+   "tumFitRms": 1.9574250968825073,
+   "tumMirror": 1,
+   "tumWidthMed": 9.171,
+   "lineEdges": "TUM"
+  },
+  "yas-marina-circuit": {
+   "headingPathVsMapRms": 2.294223047959134,
+   "tumFitRms": 12.612649932989484,
+   "tumMirror": 1,
+   "tumWidthMed": 12.762,
+   "lineEdges": "TUM-widths"
+  },
+  "zandvoort": {
+   "headingPathVsMapRms": 2.292420277570488,
+   "tumFitRms": 3.958274873990391,
+   "tumMirror": 1,
+   "tumWidthMed": 9.4765,
+   "lineEdges": "TUM"
+  },
+  "kuala-lumpur": {
+   "headingPathVsMapRms": 2.2498019567264866,
+   "tumFitRms": 3.3034766196153758,
+   "tumMirror": 1,
+   "tumWidthMed": 14.495000000000001,
+   "lineEdges": "assumed"
+  },
+  "las-vegas": {
+   "headingPathVsMapRms": 2.3126651660714725,
+   "lineEdges": "assumed"
+  },
+  "madring": {
+   "headingPathVsMapRms": 2.2252773095776304,
+   "lineEdges": "assumed"
+  }
+ },
+ "bands": {
+  "0-120": {
+   "n": 151,
+   "R_med": {
+    "kernel": [
+     24.752475247524753,
+     151
+    ],
+    "raw": [
+     21.740733868511818,
+     151
+    ],
+    "kh": [
+     23.517508475856015,
+     151
+    ],
+    "km": [
+     22.746316792147805,
+     151
+    ],
+    "tc": [
+     16.797916899986966,
+     73
+    ],
+    "tr": [
+     27.667106517188913,
+     73
+    ],
+    "ml": [
+     25.06528819535887,
+     137
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     2.608677527340456,
+     151
+    ],
+    "kh": [
+     2.7634610622214772,
+     151
+    ],
+    "tc": [
+     4.175855277989631,
+     73
+    ],
+    "tr": [
+     2.3703483070084195,
+     73
+    ],
+    "ml": [
+     2.6298757161020347,
+     137
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.06470001972988944,
+    -0.07833477905577757,
+    -0.05118698304256976,
+    151,
+    25
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.12476052579902727,
+    -0.13602556533032695,
+    -0.1123633868358588,
+    151,
+    25
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.3655768237476457,
+    -0.4399945969594721,
+    -0.28891828508996314,
+    73,
+    16
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.1240940379157227,
+    0.06844700024973278,
+    0.18107819740037776,
+    73,
+    16
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    0.06803632457638235,
+    0.01973285697783244,
+    0.11228081547111705,
+    73,
+    16
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    -0.07026564213398752,
+    -0.1866851305222219,
+    0.041646503752878435,
+    137,
+    25
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.48967086166336843,
+    0.41835787635627514,
+    0.5515125929201726,
+    73,
+    16
+   ]
+  },
+  "120-180": {
+   "n": 79,
+   "R_med": {
+    "kernel": [
+     44.03346543372963,
+     79
+    ],
+    "raw": [
+     36.235238888410684,
+     79
+    ],
+    "kh": [
+     42.443739498985366,
+     79
+    ],
+    "km": [
+     38.289911481906536,
+     79
+    ],
+    "tc": [
+     38.61304499946844,
+     36
+    ],
+    "tr": [
+     48.10930215736076,
+     36
+    ],
+    "ml": [
+     47.68316542332357,
+     75
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     3.66686605693359,
+     79
+    ],
+    "kh": [
+     3.907670984587997,
+     79
+    ],
+    "tc": [
+     4.8695480485751705,
+     36
+    ],
+    "tr": [
+     3.269700378775629,
+     36
+    ],
+    "ml": [
+     3.5644750771569202,
+     75
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.050298027437749165,
+    -0.06497936428795718,
+    -0.036033271366648,
+    79,
+    23
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.19930585128925538,
+    -0.22785346294454165,
+    -0.17217713594735076,
+    79,
+    23
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.2624541588183811,
+    -0.4446114151788772,
+    -0.13145389406355099,
+    36,
+    12
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.11872180306302482,
+    0.054921041283675615,
+    0.22107724226557507,
+    36,
+    12
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    0.0707600265000919,
+    0.0044250620026660414,
+    0.17345479670364125,
+    36,
+    12
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    0.051175892263078636,
+    -0.04552062271840581,
+    0.15639255332633245,
+    75,
+    22
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.3811759618814059,
+    0.24510142525015816,
+    0.5863409206185952,
+    36,
+    12
+   ]
+  },
+  "180-240": {
+   "n": 48,
+   "R_med": {
+    "kernel": [
+     63.817144942297816,
+     48
+    ],
+    "raw": [
+     48.56233068905577,
+     48
+    ],
+    "kh": [
+     57.85795227163445,
+     48
+    ],
+    "km": [
+     49.36667202912111,
+     48
+    ],
+    "tc": [
+     43.749697229310414,
+     32
+    ],
+    "tr": [
+     66.30600105460337,
+     32
+    ],
+    "ml": [
+     62.54337619321356,
+     47
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     5.053620683417021,
+     48
+    ],
+    "kh": [
+     5.480148425289068,
+     48
+    ],
+    "tc": [
+     6.608223046823285,
+     32
+    ],
+    "tr": [
+     4.9687343017700965,
+     32
+    ],
+    "ml": [
+     5.440907461801753,
+     47
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.08708823173860768,
+    -0.09678627363112166,
+    -0.07580981517948995,
+    48,
+    21
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.30444773840053774,
+    -0.33377069684565713,
+    -0.2781148472155822,
+    48,
+    21
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.3900149363684705,
+    -0.5842582416275043,
+    -0.24333860595030343,
+    32,
+    12
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.08233416373249064,
+    0.012889913705181518,
+    0.17845262191714423,
+    32,
+    12
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    -0.009642731464110044,
+    -0.07548258195046907,
+    0.08661337644833403,
+    32,
+    12
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    -0.020973956781194986,
+    -0.11199885587334076,
+    0.09449586229641764,
+    47,
+    21
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.47234910010096115,
+    0.29866990623177964,
+    0.7003233075144567,
+    32,
+    12
+   ]
+  },
+  "240-999": {
+   "n": 5,
+   "R_med": {
+    "kernel": [
+     79.05138339920948,
+     5
+    ],
+    "raw": [
+     58.830049367831194,
+     5
+    ],
+    "kh": [
+     74.22227889362816,
+     5
+    ],
+    "km": [
+     55.97327284477978,
+     5
+    ],
+    "tc": [
+     56.66173812985459,
+     3
+    ],
+    "tr": [
+     88.00694586068208,
+     3
+    ],
+    "ml": [
+     81.9083226518149,
+     5
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     6.693268081197066,
+     5
+    ],
+    "kh": [
+     7.776208581875013,
+     5
+    ],
+    "tc": [
+     8.062508465124541,
+     3
+    ],
+    "tr": [
+     5.766024382857182,
+     3
+    ],
+    "ml": [
+     6.558891081329239,
+     5
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.10510718475399908,
+    -0.13123872095593941,
+    -0.07932034194174842,
+    5,
+    5
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.2962489291541366,
+    -0.33230585344024716,
+    -0.2709929257470324,
+    5,
+    5
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.23895690377102044,
+    -0.3870747408306994,
+    -0.09083906671134141,
+    3,
+    3
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.2297386927144042,
+    0.12217960554922087,
+    0.33729777987958753,
+    3,
+    3
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    0.1202896617761016,
+    0.00887513931157411,
+    0.2317041842406291,
+    3,
+    3
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    0.016484085738536804,
+    -0.11013218071330907,
+    0.1707181045215047,
+    5,
+    5
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.46869559648542464,
+    0.3321373538273486,
+    0.6052538391435007,
+    3,
+    3
+   ]
+  },
+  "120-240": {
+   "n": 127,
+   "R_med": {
+    "kernel": [
+     49.504950495049506,
+     127
+    ],
+    "raw": [
+     40.63387730864783,
+     127
+    ],
+    "kh": [
+     47.980578917648394,
+     127
+    ],
+    "km": [
+     42.00177442956475,
+     127
+    ],
+    "tc": [
+     42.24433410893928,
+     68
+    ],
+    "tr": [
+     57.35958267394042,
+     68
+    ],
+    "ml": [
+     51.74095873806213,
+     122
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     4.248062807540806,
+     127
+    ],
+    "kh": [
+     4.619194856717362,
+     127
+    ],
+    "tc": [
+     5.772965578466977,
+     68
+    ],
+    "tr": [
+     4.199771434662388,
+     68
+    ],
+    "ml": [
+     4.216549536190647,
+     122
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.06420298654358546,
+    -0.0748917113562297,
+    -0.05282537658660563,
+    127,
+    25
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.2390445172840708,
+    -0.2607919738147052,
+    -0.2160112445128839,
+    127,
+    25
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.3224827600184232,
+    -0.46585975805380353,
+    -0.20540823939361472,
+    68,
+    16
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.10159820808394991,
+    0.043553834748215274,
+    0.18359236324887324,
+    68,
+    16
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    0.032923434516938056,
+    -0.028060526560603052,
+    0.11463770450074845,
+    68,
+    16
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    0.023380458614874863,
+    -0.06141741342860137,
+    0.11316328681755898,
+    122,
+    25
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.4240809681023731,
+    0.29149807843210557,
+    0.584916973077215,
+    68,
+    16
+   ]
+  },
+  "0-999": {
+   "n": 283,
+   "R_med": {
+    "kernel": [
+     33.3889816360601,
+     283
+    ],
+    "raw": [
+     28.90680097282355,
+     283
+    ],
+    "kh": [
+     31.763844027724744,
+     283
+    ],
+    "km": [
+     29.26530785803986,
+     283
+    ],
+    "tc": [
+     22.298361846596492,
+     144
+    ],
+    "tr": [
+     38.915487378922094,
+     144
+    ],
+    "ml": [
+     36.44050781480803,
+     264
+    ]
+   },
+   "g_med": {
+    "kernel": [
+     3.1164698720126847,
+     283
+    ],
+    "kh": [
+     3.2723117204043444,
+     283
+    ],
+    "tc": [
+     4.827153270944148,
+     144
+    ],
+    "tr": [
+     2.998236018963735,
+     144
+    ],
+    "ml": [
+     3.4262643257556373,
+     264
+    ]
+   },
+   "ln_kh_over_kernel (processing: same path, kernel kappa vs common estimator)": [
+    -0.06519087701066661,
+    -0.07510308434651002,
+    -0.05524879860947396,
+    283,
+    26
+   ],
+   "ln_raw_over_kernel (spacing smoothing)": [
+    -0.17907681178975543,
+    -0.19275051889476078,
+    -0.16597478337305147,
+    283,
+    26
+   ],
+   "ln_tc_over_kh (path vs TUM centreline, same estimator)": [
+    -0.3425889342093331,
+    -0.4210252625101461,
+    -0.26450624240164444,
+    144,
+    17
+   ],
+   "ln_tr_over_kh (TUM raceline vs kernel path)": [
+    0.11567193747013585,
+    0.06957849179351844,
+    0.17922142404752606,
+    144,
+    17
+   ],
+   "ln_tr_over_kernel (TUM raceline vs driven kappa)": [
+    0.0525438487955278,
+    0.011471489641009584,
+    0.10737346207671591,
+    144,
+    17
+   ],
+   "ln_ml_over_kernel (our least-curvature line vs driven kappa)": [
+    -0.025346805275185125,
+    -0.10810463494657382,
+    0.05537268206715074,
+    264,
+    26
+   ],
+   "ln_tr_over_tc (line gain inside TUM corridor)": [
+    0.45826087167946894,
+    0.3678521356588762,
+    0.548772553008621,
+    144,
+    17
+   ]
+  }
+ }
+}
