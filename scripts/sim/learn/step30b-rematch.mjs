@@ -13,6 +13,10 @@ import {lapsimF1WetQuali} from '../../../worker/lapsim/f1-wet-quali-data.js';
 import {isLockedF1} from '../locked-set.mjs';
 import {cleanTel} from '../../../worker/lapsim/real-tel-gaps.js';
 import {page, kapOf, metrics, pairs} from './f1-pedal-metrics.mjs';
+import {lapsimTracks} from '../../../worker/lapsim/tracks-data.js';
+import {applyGeomTumLine} from '../../../worker/lapsim/geom-tumline.js';
+const GEOM = process.env.LAPSIM_GEOM_TUMLINE === 'on';
+if (GEOM) console.log('LAPSIM_GEOM_TUMLINE=on:', applyGeomTumLine(lapsimTracks).length, 'tracks patched');
 
 const years = (process.argv[2] || '2025,2026').split(',');
 if (years.includes('2022')) throw new Error('2022 is the locked set');
@@ -57,7 +61,8 @@ for (const y of years) for (const tr of tracks) {
   const oldRows = oldPairs.map(([m, p], k) => { const i = mC.indexOf(m), jNew = pairNew.has(i) ? pairNew.get(i) : -1, jOld = S.corners.indexOf(p);
     return {corner_id: k + 1, meas: m.kph, modelOld: p.kph, modelNew: jNew >= 0 ? S.corners[jNew].kph : null, sameModel: jNew === jOld,
       dAligned: dist(mPos[i], sPos[jOld]), mShare: m.s, modelShareOld: p.s}; });
-  audit.push({track: tr, season: y, lag_whole_m: whole[0], corr: +whole[1].toFixed(3), lag_thirds_m: thirds.map(t => t[0]), corr_thirds: thirds.map(t => +t[1].toFixed(3)), oldRows});
+  let lapS = 0; for (let i = 1; i < P.x.length; i++) lapS += (P.x[i] - P.x[i - 1]) / Math.max(1, (P.v[i] + P.v[i - 1]) / 2);
+  audit.push({track: tr, season: y, lapSimS: lapS, lag_whole_m: whole[0], corr: +whole[1].toFixed(3), lag_thirds_m: thirds.map(t => t[0]), corr_thirds: thirds.map(t => +t[1].toFixed(3)), oldRows});
   let k = 0;
   for (const [i, j] of [...pairNew].sort((u, v) => sPos[u[1]] - sPos[v[1]])) {
     const m = mC[i], p = S.corners[j], o = oldPairs.find(([mm]) => mm === m);
@@ -65,7 +70,7 @@ for (const y of years) for (const tr of tracks) {
   }
 }
 mkdirSync('scripts/sim/data/step30b', {recursive: true});
-const tag = years.join('-'), body = rows.join('\n') + '\n', OUT = `scripts/sim/data/step30b/corners-rematched-${tag}.csv`;
+const tag = years.join('-') + (GEOM ? '-tumline' : ''), body = rows.join('\n') + '\n', OUT = `scripts/sim/data/step30b/corners-rematched-${tag}.csv`;
 writeFileSync(OUT, body); writeFileSync(OUT + '.sha256', sha(body) + '  ' + OUT.split('/').pop() + '\n');
 writeFileSync(`scripts/sim/data/step30b/rematch-audit-${tag}.json`, JSON.stringify(audit));
 console.log(OUT, rows.length - 1, 'rows', sha(body));

@@ -1,0 +1,245 @@
+{
+ "label": "DIAGNOSTIC, UNDERPOWERED (MDE 7.4 km/h); report-only; not a pipeline run",
+ "cornersCsvSha256": "19c2e5c0a5308030598bacc66ad9ec471afd25789fe775b48cf6b1fa3ab977b4",
+ "lostInCandidateMatch": [
+  [
+   "shanghai",
+   "2025",
+   "2",
+   "U"
+  ],
+  [
+   "shanghai",
+   "2024",
+   "2",
+   "U"
+  ]
+ ],
+ "S": {
+  "n": 106,
+  "tracks": 14,
+  "rmsBefore": 22.0899769781733,
+  "rmsAfter": 16.68332387389072,
+  "rmsGain": 5.406653104282579,
+  "rmsGain90": [
+   -6.7680395330402545,
+   16.15707113856152
+  ],
+  "rmsGainOneSided90LB": -4.895519892134361,
+  "harmOneSided90UB": 4.895519892134361,
+  "meanAbsGain": 3.2607735849056607,
+  "meanAbsGain90": [
+   -3.5391825933500467,
+   10.090419882215178
+  ],
+  "meanSignedBefore": -12.027575471698114,
+  "meanSignedAfter": -4.644216981132076,
+  "perTrack": {
+   "austin": {
+    "n": 8,
+    "rmsBefore": 27.36,
+    "rmsAfter": 12.68
+   },
+   "hungaroring": {
+    "n": 6,
+    "rmsBefore": 14.48,
+    "rmsAfter": 12.13
+   },
+   "interlagos": {
+    "n": 8,
+    "rmsBefore": 11.12,
+    "rmsAfter": 8.59
+   },
+   "kuala-lumpur": {
+    "n": 3,
+    "rmsBefore": 10.07,
+    "rmsAfter": 3.7
+   },
+   "mexico-city": {
+    "n": 13,
+    "rmsBefore": 12.45,
+    "rmsAfter": 14.29
+   },
+   "montreal": {
+    "n": 4,
+    "rmsBefore": 25.97,
+    "rmsAfter": 13.39
+   },
+   "monza": {
+    "n": 6,
+    "rmsBefore": 18.3,
+    "rmsAfter": 4.16
+   },
+   "sakhir": {
+    "n": 6,
+    "rmsBefore": 9.43,
+    "rmsAfter": 6.98
+   },
+   "shanghai": {
+    "n": 17,
+    "rmsBefore": 42.97,
+    "rmsAfter": 8.55
+   },
+   "silverstone": {
+    "n": 8,
+    "rmsBefore": 15.56,
+    "rmsAfter": 34.89
+   },
+   "spa-francorchamps": {
+    "n": 3,
+    "rmsBefore": 12.65,
+    "rmsAfter": 22.21
+   },
+   "spielberg": {
+    "n": 8,
+    "rmsBefore": 8.38,
+    "rmsAfter": 11.63
+   },
+   "suzuka": {
+    "n": 14,
+    "rmsBefore": 8.23,
+    "rmsAfter": 25.86
+   },
+   "zandvoort": {
+    "n": 2,
+    "rmsBefore": 17.49,
+    "rmsAfter": 3.55
+   }
+  }
+ },
+ "U": {
+  "n": 146,
+  "tracks": 13,
+  "rmsBefore": 17.688425619712728,
+  "rmsAfter": 17.59201496028848,
+  "rmsGain": 0.09641065942424731,
+  "rmsGain90": [
+   -1.6907547886513883,
+   1.8841141790686953
+  ],
+  "rmsGainOneSided90LB": -1.2203645554110998,
+  "harmOneSided90UB": 1.2203645554110998,
+  "meanAbsGain": 0.47352739726027393,
+  "meanAbsGain90": [
+   -0.8218793246753248,
+   1.7665822435897436
+  ],
+  "meanSignedBefore": -6.6011780821917805,
+  "meanSignedAfter": -6.294678082191781,
+  "perTrack": {
+   "austin": {
+    "n": 24,
+    "rmsBefore": 7.61,
+    "rmsAfter": 7.21
+   },
+   "hungaroring": {
+    "n": 18,
+    "rmsBefore": 11.74,
+    "rmsAfter": 11.62
+   },
+   "interlagos": {
+    "n": 4,
+    "rmsBefore": 24.28,
+    "rmsAfter": 8.46
+   },
+   "kuala-lumpur": {
+    "n": 5,
+    "rmsBefore": 17.83,
+    "rmsAfter": 15.98
+   },
+   "mexico-city": {
+    "n": 16,
+    "rmsBefore": 11.79,
+    "rmsAfter": 20.14
+   },
+   "montreal": {
+    "n": 2,
+    "rmsBefore": 11.4,
+    "rmsAfter": 5.76
+   },
+   "monza": {
+    "n": 14,
+    "rmsBefore": 18.91,
+    "rmsAfter": 17.39
+   },
+   "sakhir": {
+    "n": 18,
+    "rmsBefore": 28.73,
+    "rmsAfter": 28.28
+   },
+   "silverstone": {
+    "n": 4,
+    "rmsBefore": 5.85,
+    "rmsAfter": 13.26
+   },
+   "spa-francorchamps": {
+    "n": 12,
+    "rmsBefore": 11.61,
+    "rmsAfter": 7.44
+   },
+   "spielberg": {
+    "n": 16,
+    "rmsBefore": 24.1,
+    "rmsAfter": 25.23
+   },
+   "suzuka": {
+    "n": 5,
+    "rmsBefore": 16.94,
+    "rmsAfter": 15.5
+   },
+   "zandvoort": {
+    "n": 8,
+    "rmsBefore": 19.47,
+    "rmsAfter": 15.85
+   }
+  }
+ },
+ "guard2": {
+  "rows": 73,
+  "rmsBeforePct": 0.4464935024589808,
+  "rmsAfterPct": 1.623955318569876,
+  "pairedUBpp": 1.3266182314127848,
+  "pass": false,
+  "note": "shipped calibration simLap + page lap delta (base vs candidate), F1 pole rows 2023-2026 in the calibration; in-sample shipped grip",
+  "perTrackDeltaS": {
+   "austin 2025": -1.864,
+   "hungaroring 2025": 1.536,
+   "interlagos 2025": -1.17,
+   "mexico-city 2025": 2.101,
+   "montreal 2025": 0.188,
+   "monza 2025": 0.66,
+   "sakhir 2025": -0.611,
+   "shanghai 2025": -3.754,
+   "silverstone 2025": 1.891,
+   "spa-francorchamps 2025": 1.105,
+   "spielberg 2025": 0.536,
+   "suzuka 2025": -2.744,
+   "zandvoort 2025": -1.963,
+   "austin 2026": -1.896,
+   "hungaroring 2026": 1.5,
+   "kuala-lumpur 2026": -1.599,
+   "mexico-city 2026": 1.962,
+   "monza 2026": 0.663,
+   "shanghai 2026": -3.534,
+   "silverstone 2026": 2.356,
+   "spa-francorchamps 2026": -0.566,
+   "spielberg 2026": 0.4,
+   "suzuka 2026": -2.514,
+   "austin 2023": -1.864,
+   "hungaroring 2023": 1.536,
+   "mexico-city 2023": 2.101,
+   "monza 2023": 0.66,
+   "sakhir 2023": -0.611,
+   "spielberg 2023": 0.536,
+   "suzuka 2023": -2.744,
+   "austin 2024": -1.864,
+   "mexico-city 2024": 2.101,
+   "monza 2024": 0.66,
+   "sakhir 2024": -0.611,
+   "shanghai 2024": -3.754,
+   "spielberg 2024": 0.536,
+   "suzuka 2024": -2.744,
+   "zandvoort 2024": -1.963
+  }
+ }
+}
