@@ -1,0 +1,20 @@
+S: 106 corners on 14 tracks (45 from 2023-24); per track {'austin': 8, 'hungaroring': 6, 'interlagos': 8, 'kuala-lumpur': 3, 'mexico-city': 13, 'montreal': 4, 'monza': 6, 'sakhir': 6, 'shanghai': 17, 'silverstone': 8, 'spa-francorchamps': 3, 'spielberg': 8, 'suzuka': 14, 'zandvoort': 2}
+   sign: R_TUMline > R_kernel in 67, < in 39
+   base RMS 22.1 km/h, projected cand 14.5; projected gain 7.5, cluster SE 4.0, MDE 7.4, 90% one-sided LB 1.2
+   judgeable (MDE <= gain and MDE <= 2.0): False; n_tracks needed for MDE 2.0: 191
+   austin             n  8 base  27.4 cand  17.5
+   hungaroring        n  6 base  14.5 cand  12.4
+   interlagos         n  8 base  11.1 cand   6.1
+   kuala-lumpur       n  3 base  10.1 cand   2.1
+   mexico-city        n 13 base  12.4 cand  10.6
+   montreal           n  4 base  26.0 cand  17.1
+   monza              n  6 base  18.3 cand   8.9
+   sakhir             n  6 base   9.4 cand   3.6
+   shanghai           n 17 base  43.0 cand  21.4
+   silverstone        n  8 base  15.6 cand  21.5
+   spa-francorchamps  n  3 base  12.7 cand  17.1
+   spielberg          n  8 base   8.4 cand   6.6
+   suzuka             n 14 base   8.2 cand  14.2
+   zandvoort          n  2 base  17.5 cand   6.6
+   without shanghai: gain 2.3, MDE 3.6
+U: 148 corners (unchanged in the projection; guard 1 cannot be projected)
