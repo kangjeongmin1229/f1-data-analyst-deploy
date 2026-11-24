@@ -45,7 +45,7 @@ export function extremaRms(simV, ds, ext, window = 50) {
   for (const e of ext) {
     const i0 = Math.round(e.s / ds); let x = e.min ? Infinity : -Infinity;
     for (let j = -h; j <= h; j++) { const y = simV[((i0 + j) % n + n) % n]; x = e.min ? Math.min(x, y) : Math.max(x, y); }
-    se += (x - e.v) ** 2;
+    se += (e.w ?? 1) * (x - e.v) ** 2; // e.w: pIce-profile diagnostic weight (LAPSIM_CORNER_W), unset in production
   }
   return Math.sqrt(se / ext.length);
 }
