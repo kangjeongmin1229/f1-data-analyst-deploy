@@ -1,0 +1,24 @@
+name: probe fia-docs dump
+on:
+  push:
+    branches: ['probe/fia-docs-dump']
+permissions:
+  contents: write
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: kangjeongmin1229/f1-data-analyst-deploy
+          ref: auto/fia-docs-collectors-2026-11-24
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: node scripts/sim/fia-docs/dump.mjs scripts/sim/data/fia-docs/f1-2026-power-unit-information.csv scripts/sim/data/fia-docs/f1-low-drag-zones-2022-2026.csv scripts/sim/data/fia-docs/f1-circuit-changes-track-limits-2022-2026.csv scripts/sim/data/fia-docs/wec-bop-2023-2026.csv | tee /tmp/dump.log
+      - run: |
+          cd .cache/fia-docs && cp /tmp/dump.log . && git init -q -b probe/fia-docs-cache && git add -A
+          git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -qm "fia-docs cache, run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:refs/heads/probe/fia-docs-cache
