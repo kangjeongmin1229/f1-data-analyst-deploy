@@ -34,11 +34,11 @@ jobs:
           sha256sum a2.json scripts/sim/data/step31/a2-baseline-traces.json scripts/sim/data/step31/corridor.json docs/prereg/step31-decoupled-2026-11-25.md
           cmp a2.json scripts/sim/data/step31/a2-baseline-traces.json
           python3 -m pip install --quiet --break-system-packages scipy numpy
-          python3 -I scripts/sim/learn/step31_power.py . a2.json a2-power.json | tail -40
+          python3 scripts/sim/learn/step31_power.py . a2.json a2-power.json | tail -40
       - id: t
         run: |
           echo "tracks=$(jq -c '[.events[].track] | unique' scripts/sim/data/f1-envelope/traces.json)" >> "$GITHUB_OUTPUT"
-          v='${{ inputs.variant }}'; [ -z "$v" ] && v=$(tr -d '[:space:]' < scripts/sim/data/step31/run-request.txt)
+          v='${{ inputs.variant }}'; [ -z "$v" ] && v=$(awk 'NR==1{print $1}' scripts/sim/data/step31/run-request.txt)
           case "$v" in V1|V2) echo "variant=$v" >> "$GITHUB_OUTPUT";; *) echo "bad variant $v"; exit 1;; esac
       - uses: actions/upload-artifact@v4
         with: {name: a2-check, path: 'a2*.json', retention-days: 90}
@@ -71,6 +71,6 @@ jobs:
         run: |
           set -o pipefail
           sha256sum folds/*.json
-          python3 -I scripts/sim/learn/step31_verdict.py folds scripts/sim/data/f1-envelope/traces.json verdict.json | tee verdict.txt
+          python3 scripts/sim/learn/step31_verdict.py folds scripts/sim/data/f1-envelope/traces.json verdict.json | tee verdict.txt
       - uses: actions/upload-artifact@v4
         with: {name: verdict, path: 'verdict.*', retention-days: 90}
