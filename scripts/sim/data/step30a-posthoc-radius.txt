@@ -1,0 +1,4 @@
+0 120 n 151 Rkernel med 25 Rmap8(tightest ±40m) med 27 Rline med 28 | Rmap8/Rkernel med 1.07 Rline/Rkernel med 1.07 | meas g on kernel R 2.61 on line R 2.34 | corr y vs ln(Rline/Rk) 0.25 slope 0.20 mean ½ln 0.048 mean y 0.071
+120 180 n 79 Rkernel med 44 Rmap8(tightest ±40m) med 43 Rline med 50 | Rmap8/Rkernel med 1.01 Rline/Rkernel med 1.05 | meas g on kernel R 3.67 on line R 3.39 | corr y vs ln(Rline/Rk) 0.52 slope 0.44 mean ½ln 0.056 mean y 0.139
+180 240 n 48 Rkernel med 64 Rmap8(tightest ±40m) med 60 Rline med 62 | Rmap8/Rkernel med 0.93 Rline/Rkernel med 0.96 | meas g on kernel R 5.05 on line R 5.05 | corr y vs ln(Rline/Rk) 0.56 slope 0.52 mean ½ln 0.014 mean y 0.144
+240 999 n 5 Rkernel med 79 Rmap8(tightest ±40m) med 75 Rline med 112 | Rmap8/Rkernel med 0.95 Rline/Rkernel med 1.13 | meas g on kernel R 6.69 on line R 6.37 | corr y vs ln(Rline/Rk) 0.26 slope 0.13 mean ½ln 0.082 mean y 0.077

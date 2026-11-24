@@ -1,0 +1,1352 @@
+{
+ "lagKappaVsMapM": {
+  "austin": 0,
+  "baku": 0,
+  "catalunya": 0,
+  "hungaroring": 0,
+  "imola": 0,
+  "interlagos": 0,
+  "jeddah": 0,
+  "lusail": 0,
+  "melbourne": 0,
+  "mexico-city": 0,
+  "miami": 0,
+  "monte-carlo": 0,
+  "montreal": 0,
+  "monza": 0,
+  "sakhir": 0,
+  "shanghai": 0,
+  "silverstone": 0,
+  "singapore": 0,
+  "spa-francorchamps": 0,
+  "spielberg": 0,
+  "suzuka": 0,
+  "yas-marina-circuit": 0,
+  "zandvoort": 0,
+  "kuala-lumpur": 0,
+  "las-vegas": 0,
+  "madring": 0
+ },
+ "prereg": "claude/prereg-step30a-line-vs-grip-2026-11-25.md sha256 d66215b8b96cac90219696e3dc1228e4133cfab29687bbe5fc552666354ce4ba",
+ "inputs": {
+  "csv": "3598af140e1f0265c98ba84a7a852755841ffe56e88f90ef713856b56a91fd6a",
+  "racingLines": "7de4c4509b9dd2bbd16d44771b3be5b6847ac7abf4c701701acf3b9afe3e09ca",
+  "tracks": "321bddb688a03589cc62bc912b959188b00479f0a92a36ad5f02f2d9a418c187"
+ },
+ "rows": 283,
+ "refPoints": {
+  "austin": {
+   "line": 677,
+   "map8m": 680,
+   "edgeMidFromRefMedianM": 2.02
+  },
+  "baku": {
+   "line": 744,
+   "map8m": 746,
+   "edgeMidFromRefMedianM": 0.2
+  },
+  "catalunya": {
+   "line": 577,
+   "map8m": 579,
+   "edgeMidFromRefMedianM": 0.29
+  },
+  "hungaroring": {
+   "line": 541,
+   "map8m": 543,
+   "edgeMidFromRefMedianM": 1.82
+  },
+  "imola": {
+   "line": 609,
+   "map8m": 610,
+   "edgeMidFromRefMedianM": 0.2
+  },
+  "interlagos": {
+   "line": 529,
+   "map8m": 531,
+   "edgeMidFromRefMedianM": 2.62
+  },
+  "jeddah": {
+   "line": 763,
+   "map8m": 766,
+   "edgeMidFromRefMedianM": 0.17
+  },
+  "lusail": {
+   "line": 674,
+   "map8m": 676,
+   "edgeMidFromRefMedianM": 0.23
+  },
+  "melbourne": {
+   "line": 655,
+   "map8m": 658,
+   "edgeMidFromRefMedianM": 0.27
+  },
+  "mexico-city": {
+   "line": 530,
+   "map8m": 532,
+   "edgeMidFromRefMedianM": 2.7
+  },
+  "miami": {
+   "line": 668,
+   "map8m": 671,
+   "edgeMidFromRefMedianM": 0.16
+  },
+  "monte-carlo": {
+   "line": 410,
+   "map8m": 410,
+   "edgeMidFromRefMedianM": 0.11
+  },
+  "montreal": {
+   "line": 539,
+   "map8m": 541,
+   "edgeMidFromRefMedianM": 1.67
+  },
+  "monza": {
+   "line": 720,
+   "map8m": 723,
+   "edgeMidFromRefMedianM": 1.79
+  },
+  "sakhir": {
+   "line": 668,
+   "map8m": 669,
+   "edgeMidFromRefMedianM": 2.01
+  },
+  "shanghai": {
+   "line": 679,
+   "map8m": 682,
+   "edgeMidFromRefMedianM": 0.91
+  },
+  "silverstone": {
+   "line": 728,
+   "map8m": 731,
+   "edgeMidFromRefMedianM": 3
+  },
+  "singapore": {
+   "line": 608,
+   "map8m": 610,
+   "edgeMidFromRefMedianM": 0.18
+  },
+  "spa-francorchamps": {
+   "line": 868,
+   "map8m": 872,
+   "edgeMidFromRefMedianM": 1.7
+  },
+  "spielberg": {
+   "line": 537,
+   "map8m": 538,
+   "edgeMidFromRefMedianM": 3
+  },
+  "suzuka": {
+   "line": 721,
+   "map8m": 723,
+   "edgeMidFromRefMedianM": 0.87
+  },
+  "yas-marina-circuit": {
+   "line": 654,
+   "map8m": 656,
+   "edgeMidFromRefMedianM": 0.26
+  },
+  "zandvoort": {
+   "line": 527,
+   "map8m": 528,
+   "edgeMidFromRefMedianM": 2.23
+  },
+  "kuala-lumpur": {
+   "line": 686,
+   "map8m": 689,
+   "edgeMidFromRefMedianM": 0.2
+  },
+  "las-vegas": {
+   "line": 769,
+   "map8m": 771,
+   "edgeMidFromRefMedianM": 0.11
+  },
+  "madring": {
+   "line": 668,
+   "map8m": 670,
+   "edgeMidFromRefMedianM": 0.2
+  }
+ },
+ "bands": {
+  "60-120": {
+   "mean": {
+    "n": 151,
+    "tracks": 25,
+    "mean": 0.07070602758144143,
+    "ci95": [
+     0.046126182966406144,
+     0.09203526629618931
+    ]
+   },
+   "medianKph": 91,
+   "theta": {
+    "n": 151,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.09600736832312895,
+      "seCR1": 0.03796084836440848,
+      "ci95": [
+       0.01372105770213557,
+       0.16222629147371073
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.010415849066436882,
+      "seCR1": 0.013959075034907781,
+      "ci95": [
+       -0.03613021223626943,
+       0.017766683128245246
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "thetaRangeRad": [
+    1.403725981083568,
+    3.5558535370513007
+   ],
+   "width": {
+    "n": 151,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.03239960940565838,
+      "seCR1": 0.03570136045164488,
+      "ci95": [
+       -0.15327901154246626,
+       0.09754499553061688
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0030361778410359958,
+      "seCR1": 0.0025621623077284107,
+      "ci95": [
+       -0.0015046171045040803,
+       0.01883146576387709
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "widthMeasured": {
+    "n": 80,
+    "tracks": 15,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.03452429573873001,
+      "seCR1": 0.04056663135287412,
+      "ci95": [
+       -0.15570415052524703,
+       0.1101028818417789
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0030295645216172574,
+      "seCR1": 0.0027425549393536664,
+      "ci95": [
+       -0.0016183424086666663,
+       0.01952571470022779
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "joint": {
+    "n": 151,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.054237294453825705,
+      "seCR1": 0.04017982714522468,
+      "ci95": [
+       -0.13452979954294997,
+       0.12331930137563064
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.012673302831349613,
+      "seCR1": 0.015043176682097979,
+      "ci95": [
+       -0.042857437426203696,
+       0.018950919944794583
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0037453418839114238,
+      "seCR1": 0.0032225687415026335,
+      "ci95": [
+       -0.0015087716163749792,
+       0.023770291083341416
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "theta2000": {
+    "n": 151,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.09531867837020337,
+      "seCR1": 0.03821703571959474,
+      "ci95": [
+       0.010968760271500348,
+       0.16248008164176156
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.01007124209991612,
+      "seCR1": 0.013940887648887821,
+      "ci95": [
+       -0.03560574700626759,
+       0.01892693600566518
+      ]
+     }
+    ],
+    "draws": 10000
+   }
+  },
+  "120-180": {
+   "mean": {
+    "n": 79,
+    "tracks": 23,
+    "mean": 0.13928276470390644,
+    "ci95": [
+     0.10020420673629257,
+     0.18595383247138558
+    ]
+   },
+   "medianKph": 143,
+   "theta": {
+    "n": 79,
+    "tracks": 23,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.20868412352964724,
+      "seCR1": 0.057497680781261586,
+      "ci95": [
+       0.10402456895048809,
+       0.33020124192008965
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.030441090344931317,
+      "seCR1": 0.020435462979080155,
+      "ci95": [
+       -0.07303235263611817,
+       0.00843219172879111
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "thetaRangeRad": [
+    1.14792996988462,
+    3.420225374340546
+   ],
+   "width": {
+    "n": 79,
+    "tracks": 23,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.057186129323030396,
+      "seCR1": 0.07985218580397505,
+      "ci95": [
+       -0.1593967097792467,
+       0.2941756844294895
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0071206917971719215,
+      "seCR1": 0.006194091158519576,
+      "ci95": [
+       -0.01152861391096042,
+       0.026510444248748058
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "widthMeasured": {
+    "n": 51,
+    "tracks": 14,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.0603422048403423,
+      "seCR1": 0.07902002608097292,
+      "ci95": [
+       -0.14055945492326824,
+       0.30635321940059623
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.006857379333579196,
+      "seCR1": 0.00551804484757725,
+      "ci95": [
+       -0.01125453018285719,
+       0.024794000121481405
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "joint": {
+    "n": 79,
+    "tracks": 23,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.1320418889189498,
+      "seCR1": 0.0935537006032339,
+      "ci95": [
+       -0.07394704202262525,
+       0.4078849739367057
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.029763994806004647,
+      "seCR1": 0.019971294131198872,
+      "ci95": [
+       -0.07167744403493587,
+       0.007186370132894635
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.006513709703942953,
+      "seCR1": 0.005826003170604033,
+      "ci95": [
+       -0.013699928011324749,
+       0.023716327578509753
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "theta2000": {
+    "n": 79,
+    "tracks": 23,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.199664057808759,
+      "seCR1": 0.05819203071336374,
+      "ci95": [
+       0.08953292730197233,
+       0.31525749785643153
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.02619446284890338,
+      "seCR1": 0.020784036418951088,
+      "ci95": [
+       -0.06732379979891105,
+       0.014249661206933101
+      ]
+     }
+    ],
+    "draws": 10000
+   }
+  },
+  "180-240": {
+   "mean": {
+    "n": 48,
+    "tracks": 21,
+    "mean": 0.1437367961609548,
+    "ci95": [
+     0.09878939516143909,
+     0.20489195944593136
+    ]
+   },
+   "medianKph": 202,
+   "theta": {
+    "n": 48,
+    "tracks": 21,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.27945224352368786,
+      "seCR1": 0.05920061929431884,
+      "ci95": [
+       0.17370081187082095,
+       0.4227218098376167
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.07685289541719366,
+      "seCR1": 0.024287428373960297,
+      "ci95": [
+       -0.14169369870539644,
+       -0.034737373532520266
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "thetaRangeRad": [
+    1.101181484974851,
+    3.023886768381936
+   ],
+   "width": {
+    "n": 48,
+    "tracks": 21,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.13516026839154002,
+      "seCR1": 0.17443281184981138,
+      "ci95": [
+       -0.21934521427938594,
+       0.7042970611572206
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0007671038197603066,
+      "seCR1": 0.015503431051110154,
+      "ci95": [
+       -0.04418821946561058,
+       0.034391613727622186
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "widthMeasured": {
+    "n": 34,
+    "tracks": 13,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.1879530839240149,
+      "seCR1": 0.140718686214082,
+      "ci95": [
+       -0.1473280674539737,
+       0.6668026694362119
+      ]
+     },
+     {
+      "term": "w",
+      "est": -0.006197860220657153,
+      "seCR1": 0.0120995610270806,
+      "ci95": [
+       -0.0434687940255215,
+       0.027672116329422496
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "joint": {
+    "n": 48,
+    "tracks": 21,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.2701323580049605,
+      "seCR1": 0.20768742703593543,
+      "ci95": [
+       -0.09978112855854349,
+       0.9705574327430277
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.07685697187344195,
+      "seCR1": 0.02454134854630611,
+      "ci95": [
+       -0.14231042057263837,
+       -0.03648361447066396
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0008342352634164625,
+      "seCR1": 0.0171035232490896,
+      "ci95": [
+       -0.049800377485039085,
+       0.03689035715938613
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "theta2000": {
+    "n": 48,
+    "tracks": 21,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.27507844702786294,
+      "seCR1": 0.058491252643735024,
+      "ci95": [
+       0.17288587794027782,
+       0.4109712153496151
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.07364913796230489,
+      "seCR1": 0.023623802030291248,
+      "ci95": [
+       -0.1337741392869481,
+       -0.03327574646164083
+      ]
+     }
+    ],
+    "draws": 10000
+   }
+  },
+  ">=240": {
+   "mean": {
+    "n": 5,
+    "tracks": 5,
+    "mean": 0.07663512171773276,
+    "ci95": [
+     0.022933434522469383,
+     0.13273476263937278
+    ]
+   },
+   "medianKph": 254,
+   "theta": {
+    "n": 5,
+    "tracks": 5,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.3120933140026287,
+      "seCR1": 0.059423268894635665,
+      "ci95": [
+       0.01150823618070909,
+       0.8742362194629276
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.1779291910954738,
+      "seCR1": 0.04602819059278397,
+      "ci95": [
+       -0.6125008587104279,
+       0.007353018540865878
+      ]
+     }
+    ],
+    "draws": 9994
+   },
+   "thetaRangeRad": [
+    0.8630339685040822,
+    1.7829390663195537
+   ],
+   "width": {
+    "n": 5,
+    "tracks": 5,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.16553228864007188,
+      "seCR1": 0.2307064398009962,
+      "ci95": [
+       -0.18628654230309785,
+       2.6216031573460628
+      ]
+     },
+     {
+      "term": "w",
+      "est": -0.008224607098433935,
+      "seCR1": 0.020041311029530832,
+      "ci95": [
+       -0.2070766462683563,
+       0.02508119061957888
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "widthMeasured": null,
+   "joint": {
+    "n": 5,
+    "tracks": 5,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.24358359498076695,
+      "seCR1": 0.0924544474396526,
+      "ci95": [
+       0.0008249053141069163,
+       6.606773909027382
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.21433093303743628,
+      "seCR1": 0.06689414830930386,
+      "ci95": [
+       -0.926600463839156,
+       0.4509399684491115
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.010795123581392682,
+      "seCR1": 0.013402769708766882,
+      "ci95": [
+       -0.5840399317162327,
+       0.08589430866408092
+      ]
+     }
+    ],
+    "draws": 9999
+   },
+   "theta2000": {
+    "n": 5,
+    "tracks": 5,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.3162485944616635,
+      "seCR1": 0.058752058677474094,
+      "ci95": [
+       0.01719759496150444,
+       0.8505853297897807
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.18031404741410603,
+      "seCR1": 0.04578901065361455,
+      "ci95": [
+       -0.5895075990184518,
+       0.004381783337427789
+      ]
+     }
+    ],
+    "draws": 9993
+   }
+  },
+  "120-240": {
+   "mean": {
+    "n": 127,
+    "tracks": 25,
+    "mean": 0.1409661781679877,
+    "ci95": [
+     0.10640986709082301,
+     0.18396834146483013
+    ]
+   },
+   "medianKph": 165,
+   "theta": {
+    "n": 127,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.22623185693935197,
+      "seCR1": 0.047311272135751724,
+      "ci95": [
+       0.14539657719437676,
+       0.3284410170341557
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.04088283754153366,
+      "seCR1": 0.01696057295030661,
+      "ci95": [
+       -0.07751604095138427,
+       -0.011516961233893024
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "thetaRangeRad": [
+    1.1207596790762162,
+    3.396884744347708
+   ],
+   "width": {
+    "n": 127,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.0833567677491249,
+      "seCR1": 0.08820187682584517,
+      "ci95": [
+       -0.09031256594728197,
+       0.351452208003197
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0050545938109453,
+      "seCR1": 0.0070472904041895285,
+      "ci95": [
+       -0.016212360498807508,
+       0.02043602174212014
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "widthMeasured": {
+    "n": 85,
+    "tracks": 16,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.0937262968935741,
+      "seCR1": 0.08234995117094558,
+      "ci95": [
+       -0.04910374027196545,
+       0.35529084292766877
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.0033469543086861965,
+      "seCR1": 0.006274716866870841,
+      "ci95": [
+       -0.016920906919753374,
+       0.015963185804912586
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "joint": {
+    "n": 127,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.16977137983365992,
+      "seCR1": 0.10180116333440102,
+      "ci95": [
+       -0.007768587940245364,
+       0.47551551947846327
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.040816357843304264,
+      "seCR1": 0.01686961116874709,
+      "ci95": [
+       -0.07931020460131281,
+       -0.011881745359797746
+      ]
+     },
+     {
+      "term": "w",
+      "est": 0.004941622432621658,
+      "seCR1": 0.007302208996297324,
+      "ci95": [
+       -0.017243102856939096,
+       0.02083268410528272
+      ]
+     }
+    ],
+    "draws": 10000
+   },
+   "theta2000": {
+    "n": 127,
+    "tracks": 25,
+    "coef": [
+     {
+      "term": "a",
+      "est": 0.22021608239547547,
+      "seCR1": 0.04716107705106606,
+      "ci95": [
+       0.13869071671932556,
+       0.3262752028659414
+      ]
+     },
+     {
+      "term": "theta",
+      "est": -0.03759642293033266,
+      "seCR1": 0.016738237753986182,
+      "ci95": [
+       -0.07477839484851422,
+       -0.008225511571618086
+      ]
+     }
+    ],
+    "draws": 10000
+   }
+  }
+ },
+ "hairpins": {
+  "n": 94,
+  "tracks": 23,
+  "mean": 0.07444096747706777,
+  "ci95": [
+   0.051183785069550174,
+   0.0988033760468816
+  ],
+  "list": [
+   "austin 2025 T1 84/78",
+   "austin 2025 T11 80/76",
+   "austin 2025 T13 100/93",
+   "austin 2025 T15 88/78",
+   "catalunya 2025 T4 167/151",
+   "catalunya 2025 T5 107/101",
+   "catalunya 2025 T10 119/103",
+   "catalunya 2025 T12 129/123",
+   "hungaroring 2025 T1 95/82",
+   "hungaroring 2025 T2 123/108",
+   "hungaroring 2025 T5 162/149",
+   "hungaroring 2025 T13 108/107",
+   "hungaroring 2025 T14 143/156",
+   "imola 2025 T7 108/107",
+   "imola 2025 T17 123/120",
+   "interlagos 2025 T4 170/135",
+   "interlagos 2025 T8 89/81",
+   "interlagos 2025 T9 104/101",
+   "interlagos 2025 T10 85/73",
+   "interlagos 2025 T12 127/119",
+   "jeddah 2025 T13 158/124",
+   "lusail 2025 T4 222/194",
+   "lusail 2025 T6 99/88",
+   "lusail 2025 T7 153/165",
+   "lusail 2025 T10 159/145",
+   "mexico-city 2025 T16 105/85",
+   "miami 2025 T8 139/123",
+   "miami 2025 T17 69/74",
+   "monte-carlo 2025 T6 46/45",
+   "monte-carlo 2025 T18 65/73",
+   "montreal 2025 T2 80/73",
+   "montreal 2025 T3 146/121",
+   "montreal 2025 T10 65/69",
+   "monza 2025 T11 217/226",
+   "sakhir 2025 T8 79/67",
+   "sakhir 2025 T10 76/71",
+   "sakhir 2025 T11 161/120",
+   "shanghai 2025 T2 98/99",
+   "shanghai 2025 T3 97/99",
+   "shanghai 2025 T6 82/73",
+   "shanghai 2025 T14 65/54",
+   "silverstone 2025 T4 89/70",
+   "silverstone 2025 T7 116/107",
+   "singapore 2025 T3 88/88",
+   "spa-francorchamps 2025 T1 83/73",
+   "spa-francorchamps 2025 T8 127/126",
+   "spa-francorchamps 2025 T14 170/168",
+   "spielberg 2025 T4 112/108",
+   "suzuka 2025 T2 178/170",
+   "suzuka 2025 T11 77/79",
+   "suzuka 2025 T14 186/171",
+   "yas-marina-circuit 2025 T1 168/141",
+   "yas-marina-circuit 2025 T5 101/102",
+   "yas-marina-circuit 2025 T9 188/186",
+   "yas-marina-circuit 2025 T12 103/100",
+   "zandvoort 2025 T1 126/112",
+   "zandvoort 2025 T3 150/113",
+   "zandvoort 2025 T9 121/100",
+   "zandvoort 2025 T13 209/185",
+   "austin 2026 T1 84/76",
+   "austin 2026 T11 75/71",
+   "austin 2026 T13 99/90",
+   "austin 2026 T15 83/77",
+   "catalunya 2026 T4 147/145",
+   "catalunya 2026 T5 103/98",
+   "catalunya 2026 T10 112/99",
+   "catalunya 2026 T12 120/112",
+   "hungaroring 2026 T1 92/80",
+   "hungaroring 2026 T2 121/105",
+   "hungaroring 2026 T5 150/144",
+   "hungaroring 2026 T13 98/102",
+   "hungaroring 2026 T14 132/140",
+   "kuala-lumpur 2026 T2 71/76",
+   "kuala-lumpur 2026 T 76/67",
+   "kuala-lumpur 2026 T11 150/120",
+   "kuala-lumpur 2026 T14 109/115",
+   "kuala-lumpur 2026 T15 79/98",
+   "las-vegas 2026 T1 111/115",
+   "mexico-city 2026 T16 103/82",
+   "miami 2026 T8 130/104",
+   "miami 2026 T17 69/70",
+   "monte-carlo 2026 T6 44/44",
+   "monte-carlo 2026 T18 60/71",
+   "monte-carlo 2026 T19 83/81",
+   "monza 2026 T11 211/193",
+   "shanghai 2026 T6 81/73",
+   "shanghai 2026 T14 68/51",
+   "silverstone 2026 T4 87/70",
+   "silverstone 2026 T7 114/99",
+   "singapore 2026 T3 89/84",
+   "spa-francorchamps 2026 T1 80/71",
+   "spa-francorchamps 2026 T8 125/122",
+   "spa-francorchamps 2026 T14 177/158",
+   "spielberg 2026 T4 106/101"
+  ]
+ },
+ "lineGain": {
+  "all": {
+   "n": 138,
+   "tracks": 13,
+   "coef": [
+    {
+     "term": "a",
+     "est": 0.09278106625981294,
+     "seCR1": 0.017814249990898996,
+     "ci95": [
+      0.06567625253026539,
+      0.1297754146859002
+     ]
+    },
+    {
+     "term": "g",
+     "est": 0.2439958780444179,
+     "seCR1": 0.21946205787488568,
+     "ci95": [
+      -0.06945083805619623,
+      0.6898328162529547
+     ]
+    }
+   ],
+   "draws": 10000
+  },
+  "band120_240": {
+   "n": 68,
+   "tracks": 13,
+   "coef": [
+    {
+     "term": "a",
+     "est": 0.11031790537206164,
+     "seCR1": 0.020091826799758922,
+     "ci95": [
+      0.07691041027817215,
+      0.15162564497350434
+     ]
+    },
+    {
+     "term": "g",
+     "est": 0.3523381590201261,
+     "seCR1": 0.39889841924141145,
+     "ci95": [
+      -0.11982102246417625,
+      1.2898270474735654
+     ]
+    }
+   ],
+   "draws": 10000
+  },
+  "gMean": {
+   "n": 138,
+   "tracks": 13,
+   "mean": 0.011005876479477487,
+   "ci95": [
+    -0.012157309078259378,
+    0.03742467267491853
+   ]
+  },
+  "posthocTightest": {
+   "n": 138,
+   "tracks": 13,
+   "coef": [
+    {
+     "term": "a",
+     "est": 0.1113260075023542,
+     "seCR1": 0.02617248733673791,
+     "ci95": [
+      0.06877343018585193,
+      0.15872557680839283
+     ]
+    },
+    {
+     "term": "g",
+     "est": 0.5182511984630112,
+     "seCR1": 0.29224236863057884,
+     "ci95": [
+      0.01856605698055518,
+      0.9577210844097565
+     ]
+    }
+   ],
+   "draws": 10000
+  }
+ },
+ "corridor": {
+  "tracks": [
+   {
+    "track": "austin",
+    "edges": "TUM",
+    "n": 16,
+    "wMedianM": 16.26790931502371,
+    "refFromInsideMedianM": 5.4997011834187495,
+    "mcFromInsideMedianM": 2.8103121256097348,
+    "refShareMedian": 0.3380705582332989,
+    "mcShareMedian": 0.25692699988863216
+   },
+   {
+    "track": "baku",
+    "edges": "assumed",
+    "n": 18,
+    "wMedianM": 12.054714902485134,
+    "refFromInsideMedianM": 6.699751940028921,
+    "mcFromInsideMedianM": 1.116629897853393,
+    "refShareMedian": 0.5513184653561203,
+    "mcShareMedian": 0.09247799975279163
+   },
+   {
+    "track": "catalunya",
+    "edges": "TUM-widths",
+    "n": 12,
+    "wMedianM": 10.601914138476959,
+    "refFromInsideMedianM": 5.934005649926013,
+    "mcFromInsideMedianM": 1.3928692067644484,
+    "refShareMedian": 0.5340561198468196,
+    "mcShareMedian": 0.1333896144699448
+   },
+   {
+    "track": "hungaroring",
+    "edges": "TUM",
+    "n": 16,
+    "wMedianM": 10.039172045020843,
+    "refFromInsideMedianM": 2.5915101395595204,
+    "mcFromInsideMedianM": 1.579415561936179,
+    "refShareMedian": 0.24418206106843016,
+    "mcShareMedian": 0.16661176328329982
+   },
+   {
+    "track": "imola",
+    "edges": "assumed",
+    "n": 7,
+    "wMedianM": 12.133728994116607,
+    "refFromInsideMedianM": 6.441712382342894,
+    "mcFromInsideMedianM": 1.5768241816936177,
+    "refShareMedian": 0.5295505695951905,
+    "mcShareMedian": 0.13005874928739164
+   },
+   {
+    "track": "interlagos",
+    "edges": "TUM",
+    "n": 6,
+    "wMedianM": 13.59774081576597,
+    "refFromInsideMedianM": 2.7784195973691572,
+    "mcFromInsideMedianM": 1.4229455284450994,
+    "refShareMedian": 0.20432950112916584,
+    "mcShareMedian": 0.0965282061635049
+   },
+   {
+    "track": "jeddah",
+    "edges": "assumed",
+    "n": 6,
+    "wMedianM": 12.022153414195692,
+    "refFromInsideMedianM": 6.845613964030578,
+    "mcFromInsideMedianM": 1.0943580752970048,
+    "refShareMedian": 0.56370217275611,
+    "mcShareMedian": 0.09102845701542893
+   },
+   {
+    "track": "lusail",
+    "edges": "assumed",
+    "n": 8,
+    "wMedianM": 12.165471040133735,
+    "refFromInsideMedianM": 6.565070459145273,
+    "mcFromInsideMedianM": 1.5442155990481847,
+    "refShareMedian": 0.5360995791079997,
+    "mcShareMedian": 0.12333531361151376
+   },
+   {
+    "track": "melbourne",
+    "edges": "TUM-widths",
+    "n": 12,
+    "wMedianM": 12.645586143799449,
+    "refFromInsideMedianM": 6.625289511985776,
+    "mcFromInsideMedianM": 0.9965139447222446,
+    "refShareMedian": 0.5315550265864034,
+    "mcShareMedian": 0.08880887830903775
+   },
+   {
+    "track": "mexico-city",
+    "edges": "TUM",
+    "n": 16,
+    "wMedianM": 11.180041937336096,
+    "refFromInsideMedianM": 3.1322957100880737,
+    "mcFromInsideMedianM": 2.1174390656643856,
+    "refShareMedian": 0.29273447858874724,
+    "mcShareMedian": 0.164355182758275
+   },
+   {
+    "track": "miami",
+    "edges": "assumed",
+    "n": 14,
+    "wMedianM": 12.150253420421699,
+    "refFromInsideMedianM": 6.412182924996447,
+    "mcFromInsideMedianM": 1.304075528017818,
+    "refShareMedian": 0.5113414111646113,
+    "mcShareMedian": 0.10472358359467816
+   },
+   {
+    "track": "monte-carlo",
+    "edges": "assumed",
+    "n": 17,
+    "wMedianM": 12.036925343503476,
+    "refFromInsideMedianM": 5.927590010442916,
+    "mcFromInsideMedianM": 1.0799394534485849,
+    "refShareMedian": 0.5005726949025622,
+    "mcShareMedian": 0.08968415477225476
+   },
+   {
+    "track": "montreal",
+    "edges": "TUM",
+    "n": 6,
+    "wMedianM": 9.82913761078538,
+    "refFromInsideMedianM": 3.8281630411322807,
+    "mcFromInsideMedianM": 1.3557779408628965,
+    "refShareMedian": 0.26885259716236637,
+    "mcShareMedian": 0.14705476486148356
+   },
+   {
+    "track": "monza",
+    "edges": "TUM",
+    "n": 10,
+    "wMedianM": 8.485150556046973,
+    "refFromInsideMedianM": 2.1299561345930673,
+    "mcFromInsideMedianM": 0.9203093646477288,
+    "refShareMedian": 0.24796713965396025,
+    "mcShareMedian": 0.120843071349982
+   },
+   {
+    "track": "sakhir",
+    "edges": "TUM",
+    "n": 8,
+    "wMedianM": 17.258457427250168,
+    "refFromInsideMedianM": 3.436600393153816,
+    "mcFromInsideMedianM": 2.4501870952698535,
+    "refShareMedian": 0.241853153386255,
+    "mcShareMedian": 0.141970225647232
+   },
+   {
+    "track": "shanghai",
+    "edges": "TUM",
+    "n": 12,
+    "wMedianM": 12.461052029959045,
+    "refFromInsideMedianM": 5.985631735370123,
+    "mcFromInsideMedianM": 1.4133289562520401,
+    "refShareMedian": 0.4675675422981297,
+    "mcShareMedian": 0.11163419412073028
+   },
+   {
+    "track": "silverstone",
+    "edges": "TUM",
+    "n": 13,
+    "wMedianM": 13.999967192120595,
+    "refFromInsideMedianM": 5.800247494725672,
+    "mcFromInsideMedianM": 1.9909531578338142,
+    "refShareMedian": 0.4132824953787622,
+    "mcShareMedian": 0.1445391211268528
+   },
+   {
+    "track": "singapore",
+    "edges": "assumed",
+    "n": 22,
+    "wMedianM": 12.03005448307196,
+    "refFromInsideMedianM": 6.125403598945101,
+    "mcFromInsideMedianM": 1.0850395903356143,
+    "refShareMedian": 0.5126962582027595,
+    "mcShareMedian": 0.08715050458197651
+   },
+   {
+    "track": "spa-francorchamps",
+    "edges": "TUM",
+    "n": 13,
+    "wMedianM": 9.41609657530869,
+    "refFromInsideMedianM": 1.433218357563565,
+    "mcFromInsideMedianM": 1.0393427378864426,
+    "refShareMedian": 0.15197968690568328,
+    "mcShareMedian": 0.11044183176990952
+   },
+   {
+    "track": "spielberg",
+    "edges": "TUM",
+    "n": 12,
+    "wMedianM": 10.547454472865033,
+    "refFromInsideMedianM": 3.9834047190922286,
+    "mcFromInsideMedianM": 1.67920326257887,
+    "refShareMedian": 0.3909862794594279,
+    "mcShareMedian": 0.16138656868737752
+   },
+   {
+    "track": "suzuka",
+    "edges": "TUM",
+    "n": 6,
+    "wMedianM": 10.736166456775857,
+    "refFromInsideMedianM": 4.80759986144022,
+    "mcFromInsideMedianM": 1.5660143616060966,
+    "refShareMedian": 0.35678387145591306,
+    "mcShareMedian": 0.15941899391163433
+   },
+   {
+    "track": "yas-marina-circuit",
+    "edges": "TUM-widths",
+    "n": 6,
+    "wMedianM": 12.47273451675288,
+    "refFromInsideMedianM": 6.620222955464598,
+    "mcFromInsideMedianM": 1.3936070594975414,
+    "refShareMedian": 0.5344566950746434,
+    "mcShareMedian": 0.09871386649894401
+   },
+   {
+    "track": "zandvoort",
+    "edges": "TUM",
+    "n": 4,
+    "wMedianM": 12.036579944939106,
+    "refFromInsideMedianM": 1.6000000000000045,
+    "mcFromInsideMedianM": 0.848253577235095,
+    "refShareMedian": 0.17391304347826134,
+    "mcShareMedian": 0.07608695652173912
+   },
+   {
+    "track": "kuala-lumpur",
+    "edges": "assumed",
+    "n": 8,
+    "wMedianM": 12.028113489397748,
+    "refFromInsideMedianM": 6.436935124668472,
+    "mcFromInsideMedianM": 1.0646327391011985,
+    "refShareMedian": 0.5459822475532213,
+    "mcShareMedian": 0.08851202975758628
+   },
+   {
+    "track": "las-vegas",
+    "edges": "assumed",
+    "n": 6,
+    "wMedianM": 11.645804463170077,
+    "refFromInsideMedianM": 6.8604130827689245,
+    "mcFromInsideMedianM": 1.568357993636754,
+    "refShareMedian": 0.5726353109085439,
+    "mcShareMedian": 0.12897384775407467
+   },
+   {
+    "track": "madring",
+    "edges": "assumed",
+    "n": 9,
+    "wMedianM": 12.040312117727249,
+    "refFromInsideMedianM": 6.205345690650292,
+    "mcFromInsideMedianM": 1.1167123663329583,
+    "refShareMedian": 0.5012551370702114,
+    "mcShareMedian": 0.09242599954108077
+   }
+  ]
+ }
+}
