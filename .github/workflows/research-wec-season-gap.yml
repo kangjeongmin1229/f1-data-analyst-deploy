@@ -1,0 +1,20 @@
+name: Research - WEC season gap (step 22 option 3, report-only)
+# Lives only on the research branch (never merged). Runs scripts/sim/learn/season-gap-check.mjs once; the output is an artifact.
+on:
+  push:
+    branches: ['research/wec-season-gap-a-2026-11-25']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: node scripts/sim/learn/season-gap-check.mjs probe-out/season-gap-check.json
+      - run: sha256sum probe-out/season-gap-check.json
+      - uses: actions/upload-artifact@v4
+        with: {name: season-gap-check, path: probe-out/season-gap-check.json, retention-days: 90}
