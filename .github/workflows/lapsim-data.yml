@@ -200,7 +200,8 @@ jobs:
       fail-fast: false
       matrix:
         # F1 held-out: one job per (season, fold) of holdoutBCD (4 folds; ~30-60 min each with production settings)
-        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, f1-ho-2026-0, f1-ho-2026-1, f1-ho-2026-2, f1-ho-2026-3, wec-lmh, wec-lmdh, wec-lmgt3]
+        # unseen-season gate (2022 in the 2025 slot, LAPSIM_SEASONS=2025): no 2026 folds
+        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, wec-lmh, wec-lmdh, wec-lmgt3]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/lapsim-setup
@@ -228,9 +229,36 @@ jobs:
           path: .cache/lapsim/parts/${{ matrix.part }}.json
           include-hidden-files: true
           retention-days: 3
-  rebuild:
+  # unseen-season gate: F1 second-start spread (LAPSIM_F1_NOISE=on) needs the held-out folds, so it runs after them
+  noise:
     needs: [plan, prepare, f1-joint, parts]
-    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.prepare.result != 'failure' && (inputs.calibrate == 'false' || (needs.f1-joint.result == 'success' && needs.parts.result == 'success')) }}
+    if: ${{ !cancelled() && needs.parts.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/lapsim-setup
+        with:
+          prep-run: ${{ needs.plan.outputs.prep_run }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: lapsim-stage
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lapsim-part-*
+          path: .cache/lapsim/parts
+          merge-multiple: true
+      - name: Calibrate (f1-noise-2025)
+        run: set -a; . .github/lapsim-fit.env; set +a; LAPSIM_PART=f1-noise-2025 node scripts/sim/calibrate.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lapsim-part-f1-noise-2025
+          path: .cache/lapsim/parts/f1-noise-2025.json
+          include-hidden-files: true
+          retention-days: 3
+  rebuild:
+    needs: [plan, prepare, f1-joint, parts, noise]
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.prepare.result != 'failure' && (inputs.calibrate == 'false' || (needs.f1-joint.result == 'success' && needs.parts.result == 'success' && needs.noise.result == 'success')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:

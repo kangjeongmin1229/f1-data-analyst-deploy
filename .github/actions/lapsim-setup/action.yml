@@ -35,6 +35,10 @@ runs:
       run: tar xzf /tmp/lapsim-prep.tgz
     - shell: bash
       run: npm ci --omit=dev --ignore-scripts
+    # unseen-season gate (step 3, 2022): .github/lapsim-f1-2022 line 1 = the step-0 file, line 2 = seasons kept as fit inputs (rev 4: 2023); the 2022 laps take the 2025 slot (before the geometry flag)
+    - name: Apply the 2022 season inputs (gate branches only)
+      shell: bash
+      run: f=$(sed -n 1p .github/lapsim-f1-2022 2>/dev/null | tr -d '[:space:]'); w=$(sed -n 2p .github/lapsim-f1-2022 2>/dev/null | tr -d '[:space:]'); [ -z "$f" ] || LAPSIM_F1_2022=on LAPSIM_F1_2022_WITH="$w" node scripts/sim/geom-indep/apply-2022.mjs "$f"
     # gate flag for geometry candidates (step 3): .github/lapsim-geom-indep holds the LAPSIM_GEOM_INDEP value; absent = no change
     - name: Apply the candidate geometry (gate branches only)
       shell: bash
