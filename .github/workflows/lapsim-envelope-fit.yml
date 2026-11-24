@@ -5,7 +5,7 @@ name: Lap simulator envelope fit (step 28, research)
 on:
   workflow_dispatch:
     inputs:
-      variant: {description: 'V1 or V2 (A2.4; V3 not before owner review)', required: true, default: 'V2'}
+      variant: {description: "V1-A3 (attempt 2) or V2-A3 (attempt 3, only if attempt 2 fails)", required: true, default: "V1-A3"}
       folds_from_run: {description: 'verdict only: run id whose fold artifacts are scored (no fit)', required: false, default: ''}
 
 permissions:

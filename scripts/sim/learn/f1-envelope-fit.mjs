@@ -1,5 +1,5 @@
 // Step 28 (pre-reg 6e944cd1…, A1): envelope + DRS fit on 2023–25 quali speed traces, one leave-one-track-out fold per call.
-// usage: node scripts/sim/learn/f1-envelope-fit.mjs <heldOutTrack> <variant V1|V2> <out.json>
+// usage: node scripts/sim/learn/f1-envelope-fit.mjs <heldOutTrack> <variant V1|V2|V1-A3|V2-A3> <out.json>   (-A3: J = sum over laps, amendment A3)
 //        node scripts/sim/learn/f1-envelope-fit.mjs --a2-baseline <out.json>   (A2 baseline rows: shipped car, held-out grip = geometric mean of the other tracks')
 //        node scripts/sim/learn/f1-envelope-fit.mjs --baseline-check <out.json>   (node baseline vs the python rows; no candidate)
 // Inputs (repo): scripts/sim/data/f1-envelope/traces.json, scripts/sim/data/f1-delta/f1-delta-cases-pooled-2026-11-24.csv.
@@ -95,8 +95,9 @@ if (mode === '--baseline-check') {
   console.log('A2 baseline rows', rows.length, 'drs', drs.length);
 } else {
   const [held, variant, out] = process.argv.slice(2);
-  if (!['V1', 'V2'].includes(variant)) throw new Error('V1 or V2 only (V3 not before the owner review, A2.5)');
-  const train = EV.filter(e => e.track !== held), test = EV.filter(e => e.track === held), N = train.length;
+  if (!['V1', 'V2', 'V1-A3', 'V2-A3'].includes(variant)) throw new Error('V1, V2, V1-A3 or V2-A3 only (V3 dropped, A3.3)');
+  const form = variant.slice(0, 2), DIV = variant.endsWith('-A3') ? 1 : null; // A3: sum over training laps (DIV 1), else mean (divide by N)
+  const train = EV.filter(e => e.track !== held), test = EV.filter(e => e.track === held), N = DIV ?? train.length;
   if (!test.length) throw new Error('no events for ' + held);
   const tracks = [...new Set(train.map(e => e.track))].sort();
   const u = Object.fromEntries(tracks.map(t => [t, 0])), P = Object.fromEntries(SEASONS.map(s => [s, Object.fromEntries(KEYS.map(k => [k, PRIOR[k][0]]))]));
@@ -106,9 +107,9 @@ if (mode === '--baseline-check') {
   for (let round = 0; round < 3; round++) {
     for (const s of SEASONS) {
       if (!train.some(e => e.year === s)) continue;
-      const KS = variant === 'V2' ? [...KEYS, 'ky'] : KEYS, ky0 = p => kyPrior(p, carsFor('monza')['2025'].car);
-      const draw = () => { const p = Object.fromEntries(KEYS.map(k => [k, PRIOR[k][0] + (rand() - 0.5) * PRIOR[k][1]])); if (variant === 'V2') p.ky = ky0(p) * (1 + (rand() - 0.5) * 0.5); return KS.map(k => p[k]); };
-      if (variant === 'V2' && P[s].ky == null) P[s].ky = ky0(P[s]);
+      const KS = form === 'V2' ? [...KEYS, 'ky'] : KEYS, ky0 = p => kyPrior(p, carsFor('monza')['2025'].car);
+      const draw = () => { const p = Object.fromEntries(KEYS.map(k => [k, PRIOR[k][0] + (rand() - 0.5) * PRIOR[k][1]])); if (form === 'V2') p.ky = ky0(p) * (1 + (rand() - 0.5) * 0.5); return KS.map(k => p[k]); };
+      if (form === 'V2' && P[s].ky == null) P[s].ky = ky0(P[s]);
       const starts = [KS.map(k => P[s][k]), draw(), draw()];
       let best = null;
       for (const x0 of starts) { const r = nelderMead(x => seasonJ(s, Object.fromEntries(KS.map((k, i) => [k, x[i]]))), x0, {step: KS.map(k => k === 'ky' ? 0.1 * ky0(P[s]) : STEP[k]), iters: 300, relTol: 1e-4}); if (!best || r.value < best.value) best = r; }
