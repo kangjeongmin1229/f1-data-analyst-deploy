@@ -1,18 +1,14 @@
-name: LapSim pIce profile (diagnostic)
+name: LapSim ClA profile (diagnostic)
 
-# claude/status-2026-11-24-pice-profile.md: F1 2023-25 joint fit with pIce fixed at 0.80-1.10 x prior, default ERS law and law (b);
-# production fit settings, no held-out folds, no WEC. Diagnostic only: no gate, no production change. Output: probe/pice-profile-s3-out.
+# claude/status-2026-11-24-wave3-restructure.md: production F1 joint fit (gate B's settings and build) with 2023-25 ClA fixed at
+# 6.0-8.0 m² (9 points), everything else refitted. Report only. Output: probe/cla-profile-out.
 on:
   push:
-    branches: ['probe/pice-profile-2026-11-24', 'probe/pice-profile-g3-2026-11-24', 'probe/pice-profile-s3-2026-11-24']
+    branches: ['probe/cla-profile-2026-11-24']
 
 permissions:
   contents: write
   actions: read
-
-concurrency:
-  group: lapsim-pice-profile-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   fit:
@@ -21,28 +17,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        geom: ['production']
-        cw: ['0']
-        fix: ['0.80', '0.85', '0.90', '0.95', '1.00', '1.05', '1.10']
-        include:
-          - {geom: production, cw: '1', fix: '1.00'}
+        cla: ['6.00', '6.25', '6.50', '6.75', '7.00', '7.25', '7.50', '7.75', '8.00']
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/lapsim-setup
         with:
-          prep-run: '45191678721' # the wave-2 base build (also 10b's)
-      - name: Joint fit, pIce fixed
+          prep-run: '45191678721' # gate B's build
+      - name: Joint fit, ClA fixed
         run: |
           set -a; . .github/lapsim-fit.env; set +a
-          export LAPSIM_ERS_LAW=b
-          [ '${{ matrix.cw }}' = 1 ] || export LAPSIM_CORNER_W=${{ matrix.cw }}
-          [ '${{ matrix.geom }}' = production ] || LAPSIM_GEOM_INDEP=${{ matrix.geom }} node scripts/sim/geom-indep/apply.mjs
-          [ '${{ matrix.geom }}' = production ] || export LAPSIM_GEOM_INDEP=${{ matrix.geom }}
-          LAPSIM_SKIP_WEC=1 LAPSIM_SEASONS=2023,2024,2025 LAPSIM_PICE_FIX=${{ matrix.fix }} LAPSIM_PART=f1-joint \
-            LAPSIM_PARTS_DIR=out/${{ matrix.geom }}-cw${{ matrix.cw }}-${{ matrix.fix }} node scripts/sim/calibrate.mjs
+          LAPSIM_SKIP_WEC=1 LAPSIM_CLA_FIX=${{ matrix.cla }} LAPSIM_PART=f1-joint LAPSIM_PARTS_DIR=out/cla-${{ matrix.cla }} node scripts/sim/calibrate.mjs
       - uses: actions/upload-artifact@v4
         with:
-          name: pice-${{ matrix.geom }}-cw${{ matrix.cw }}-${{ matrix.fix }}
+          name: cla-${{ matrix.cla }}
           path: out/
           retention-days: 14
 
@@ -54,14 +41,13 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          pattern: pice-*
+          pattern: cla-*
           path: dl
           merge-multiple: true
       - run: pip install matplotlib
-      - run: mkdir -p result && python3 scripts/sim/pice-profile-s3.py dl result > result/summary.json
-      - name: Push the result to probe/pice-profile-s3-out
+      - run: mkdir -p result && python3 scripts/sim/cla-profile-plot.py dl result > result/summary.json
+      - name: Push the result to probe/cla-profile-out
         run: |
-          cp -r dl result/fits
-          cd result && git init -q -b probe/pice-profile-s3-out && git add -A
-          git -c user.name='github-actions[bot]' -c user.email='41898299+github-actions[bot]@users.noreply.github.com' commit -qm "pIce profile, run ${{ github.run_id }}"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe/pice-profile-s3-out
+          cd result && git init -q -b probe/cla-profile-out && git add -A
+          git -c user.name='github-actions[bot]' -c user.email='41898299+github-actions[bot]@users.noreply.github.com' commit -qm "ClA profile, run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe/cla-profile-out

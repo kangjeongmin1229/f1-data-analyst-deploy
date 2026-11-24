@@ -26,6 +26,8 @@ import {lapsimCarMeasured} from '../../worker/lapsim/car-measured-data.js';
 import {diagnose} from './pice-profile.mjs';
 // LAPSIM_PICE_FIX=<factor> (pIce profile diagnostic, probe branch only): pIce fixed at factor × prior, the rest refitted
 const PICE_FIX = process.env.LAPSIM_PICE_FIX ? Number(process.env.LAPSIM_PICE_FIX) : null;
+// LAPSIM_CLA_FIX=<m²> (ClA profile diagnostic, probe branch only): 2023–25 ClA fixed, the rest refitted
+const CLA_FIX = process.env.LAPSIM_CLA_FIX ? Number(process.env.LAPSIM_CLA_FIX) : null, DIAG = PICE_FIX || CLA_FIX;
 
 const CACHE = process.env.LAPSIM_CACHE || '.cache/lapsim';
 const ITERS = Number(process.env.LAPSIM_ITERS || 70), HOLDOUT_ITERS = Number(process.env.LAPSIM_HOLDOUT_ITERS || 25);
@@ -158,7 +160,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
       // non-pole laps: other cars, so by default they count for the speed trace shape only
       timeScale: t.position === 1 || E.LAPSIM_NONPOLE === 'time' || BCD.teams ? 1 : 0, sectors: t.sectors, date: t.date, team: t.team, tau: tauOf(t.date, year),
       feat: {ftf: t.throttle?.length ? t.throttle.filter(x => x >= 98).length / t.throttle.length : null, vmean: tracks[t.track].kappa.length * tracks[t.track].ds / t.lap_seconds},
-      obs: {s: t.s, v: t.v.map(x => x / 3.6)}, ...(PICE_FIX ? {thr: t.throttle} : {}), weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
+      obs: {s: t.s, v: t.v.map(x => x / 3.6)}, ...(DIAG ? {thr: t.throttle} : {}), weather: withEnergy(t.weather, t.track, year), meta: {sessionKey: t.session_key, driver: t.driver_number, position: t.position}}));
   if (laps.length < 4) { report.push(`${year}: not enough laps (${laps.length})`); continue; }
   const base = {...structuredClone(prior), linkMu: true, ...AXLE(1.55)};
   if (process.env.LAPSIM_THROTTLE_HARVEST === 'off' && base.ers) base.ers.throttleHarvest = false;
@@ -166,10 +168,16 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   // car.ers.law = 'b': brake-force regen, 2014–25 deploy at every full-throttle point, 2026 strategy B) and the 2023–25 pIce prior
   // 540 kW (P_wheel 628 ± 21 kW measured, §8; the relative bounds move with it)
   if (E.LAPSIM_ERS_LAW === 'b' && base.ers) { base.ers = {...base.ers, law: 'b'}; if (year <= 2025) base.pIce = 540e3; }
+  // LAPSIM_PICE_FIXED=<kW> (wave 3 (a), claude/gate-wave3-fit-restructure-prereg-2026-11-24.md; off by default): 2023–25 pIce fixed to
+  // the measured value and not fitted (the laps do not identify power: claude/status-2026-11-24-pice-profile.md)
+  const piceFixed = E.LAPSIM_PICE_FIXED && year <= 2025;
+  if (piceFixed) base.pIce = Number(E.LAPSIM_PICE_FIXED) * 1e3;
   if (PICE_FIX) base.pIce *= PICE_FIX;
+  const claFixed = CLA_FIX && year <= 2025;
+  if (claFixed) base.clA = CLA_FIX;
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
-  const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(PICE_FIX && k === 'pIce')).map(k => {
+  const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !((piceFixed || PICE_FIX) && k === 'pIce') && !(claFixed && k === 'clA')).map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
   });
@@ -177,7 +185,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
 }
 if (!ONLY_WEC) {
 const J = await piece('f1-joint', async () => {
-  const r0 = report.length, t0 = Date.now(), all = PICE_FIX ? groups.map(g => ({...g, laps: g.laps.slice()})) : null;
+  const r0 = report.length, t0 = Date.now(), all = DIAG ? groups.map(g => ({...g, laps: g.laps.slice()})) : null;
   let joint = await fitAll(groups), drop = [];
   // clean data (common rule): a lap more than 4% off after the fit is not a normal dry lap
   // (wet track, red flag, wrong lap); drop that season's laps on that track and fit again
@@ -189,7 +197,7 @@ const J = await piece('f1-joint', async () => {
     joint = await fitAll(groups);
   }
   report.push(`F1 joint fit of ${groups.map(g => g.key).join(' and ')}: ${((Date.now() - t0) / 1000).toFixed(0)} s, score ${joint.score.toFixed(3)}.`, '');
-  return {joint, drop, report: report.splice(r0), ...(all ? {diag: {fix: PICE_FIX, law: E.LAPSIM_ERS_LAW || 'default', geom: E.LAPSIM_GEOM_INDEP || 'production', cornerW: E.LAPSIM_CORNER_W != null ? Number(E.LAPSIM_CORNER_W) : 1, ...diagnose(all, joint, BCD, drop)}} : {})};
+  return {joint, drop, report: report.splice(r0), ...(all ? {diag: {fix: PICE_FIX, claFix: CLA_FIX, law: E.LAPSIM_ERS_LAW || 'default', geom: E.LAPSIM_GEOM_INDEP || 'production', cornerW: E.LAPSIM_CORNER_W != null ? Number(E.LAPSIM_CORNER_W) : 1, ...diagnose(all, joint, BCD, drop)}} : {})};
 });
 const joint = J.joint;
 for (const g of groups) { const d = new Set(J.drop.filter(([k]) => k === g.key).map(([, n]) => n)); if (d.size) g.laps = g.laps.filter(l => !d.has(l.name)); }
