@@ -1,0 +1,23 @@
+{
+ "log": [
+  "bacinger/f1-circuits (MIT) 200 116167",
+  "baku osm now 9 elements",
+  "baku elevation not fetched: no GLO-30 tiles for Azerbaijan; source incomplete; production geometry in B and G3",
+  "fe-shanghai osm now 17 elements",
+  "fe-shanghai GLO-30 1 tile(s) (61, 77)",
+  "jarama osm now 9 elements",
+  "jarama PNOA MDT05 200 image/tiff 311328 ",
+  "madring osm now 8 elements",
+  "madring PNOA MDT05 200 image/tiff 526078 ",
+  "mugello osm now 49 elements",
+  "mugello GLO-30 2 tile(s) (68, 82)",
+  "road-america osm now 37 elements",
+  "road-america USGS 3DEP 200 image/tiff 2294846",
+  "spa-francorchamps osm now 35 elements",
+  "spa-francorchamps GLO-30 1 tile(s) (93, 70)",
+  "zhuhai osm now 4 elements",
+  "zhuhai GLO-30 1 tile(s) (56, 66)",
+  "baku cached raw input, not fetched again"
+ ],
+ "fetched": "2026-11-24T03:40:47Z"
+}
