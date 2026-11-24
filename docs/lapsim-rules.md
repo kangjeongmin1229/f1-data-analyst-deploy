@@ -1,6 +1,6 @@
 # Regulation values used by the lap simulator
 
-Checked 2026-11-23 10:02 UTC.
+Checked 2026-11-23 21:39 UTC.
 No value changed in this check.
 
 
