@@ -1,182 +1,184 @@
 # Lap simulator calibration
 
-Generated 2026-11-23. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
+Generated 2026-11-24. Real qualifying laps from OpenF1 on tracks built from OpenF1 car positions.
 
-F1 joint fit of 2023 and 2024 and 2025 and 2026: 1440 s, score 23.145.
+F1 joint fit of 2023 and 2024 and 2025 and 2026: 850 s, score 23.133.
 
 ### 2023 team pace and development
 
-Development over the season: 2.24% lap time from March to December.
+Development over the season: 1.90% lap time from March to December.
 
 - Red Bull Racing: -0.12%
-- Ferrari: -0.11%
-- Aston Martin: +0.07%
-- McLaren: +0.24%
-- Mercedes: +0.46%
+- Ferrari: -0.10%
+- Aston Martin: +0.11%
+- McLaren: +0.22%
+- Mercedes: +0.40%
 
 ## 2023
 
 45 laps. Holdout: no track had a factor from another season.
 
-Car: grip μy 1.752, downforce ClA 7.29 m², drag CdA 1.269 m², low-drag CdA 0.761 m², ICE 483 kW.
+Car: grip μy 1.802, downforce ClA 6.71 m², drag CdA 1.221 m², low-drag CdA 0.746 m², ICE 476 kW.
 
 | Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
 |---|---|---|---|---|---|
-| sakhir | 89.708 | 89.603 | -0.105 | 18.6 km/h | 0.9184 / drag 1.1496 |
-| jeddah | 88.265 | 87.978 | -0.287 | 24.8 km/h | 1.1857 / drag 1.0455 |
-| baku | 100.203 | 100.762 | +0.559 | 21.9 km/h | 1.0531 / drag 0.9642 |
-| miami | 86.841 | 87.190 | +0.349 | 14.2 km/h | 0.9462 / drag 1.057 |
-| monte-carlo | 71.365 | 71.457 | +0.092 | 17.5 km/h | 0.9554 / drag 1.1496 |
-| spielberg | 64.391 | 64.608 | +0.217 | 20.3 km/h | 1.0394 / drag 1.1496 |
-| hungaroring | 76.609 | 77.175 | +0.566 | 12.9 km/h | 0.9498 / drag 1.1496 |
-| monza | 80.294 | 80.122 | -0.172 | 19.6 km/h | 1.0134 / drag 1.0232 |
-| singapore | 90.984 | 90.750 | -0.234 | 18.7 km/h | 0.9529 / drag 1.1496 |
-| suzuka | 88.877 | 88.727 | -0.150 | 19.5 km/h | 1.0314 / drag 1.0412 |
-| lusail | 83.778 | 82.997 | -0.781 | 14.1 km/h | 1.0783 / drag 1.0822 |
-| austin | 94.723 | 94.178 | -0.545 | 19.9 km/h | 0.9918 / drag 1.0044 |
-| mexico-city | 77.166 | 77.289 | +0.123 | 12.3 km/h | 0.9216 / drag 1.1169 |
-| las-vegas | 92.726 | 93.141 | +0.415 | 12.2 km/h | 0.9872 / drag 0.9075 |
-| yas-marina-circuit | 83.445 | 83.868 | +0.423 | 18.7 km/h | 1.086 / drag 1.0555 |
+| sakhir | 89.708 | 89.577 | -0.131 | 18.6 km/h | 0.9208 / drag 1.1479 |
+| jeddah | 88.265 | 88.035 | -0.230 | 24.7 km/h | 1.1932 / drag 1.0457 |
+| baku | 100.203 | 100.775 | +0.572 | 21.7 km/h | 1.0517 / drag 0.9713 |
+| miami | 86.841 | 87.114 | +0.273 | 14.6 km/h | 0.9483 / drag 1.0597 |
+| monte-carlo | 71.365 | 71.310 | -0.055 | 17.4 km/h | 0.9555 / drag 1.1496 |
+| spielberg | 64.391 | 64.682 | +0.291 | 21 km/h | 1.0414 / drag 1.1496 |
+| hungaroring | 76.609 | 77.169 | +0.560 | 12.6 km/h | 0.9508 / drag 1.1496 |
+| monza | 80.294 | 80.114 | -0.180 | 18.9 km/h | 1.014 / drag 1.0311 |
+| singapore | 90.984 | 90.750 | -0.234 | 18.6 km/h | 0.9508 / drag 1.1496 |
+| suzuka | 88.877 | 88.717 | -0.160 | 20.3 km/h | 1.0341 / drag 1.033 |
+| lusail | 83.778 | 83.158 | -0.620 | 14.3 km/h | 1.0805 / drag 1.1004 |
+| austin | 94.723 | 94.234 | -0.489 | 20.8 km/h | 0.9819 / drag 0.9586 |
+| mexico-city | 77.166 | 77.167 | +0.001 | 12.2 km/h | 0.9196 / drag 1.1363 |
+| las-vegas | 92.726 | 93.119 | +0.393 | 12.4 km/h | 0.9817 / drag 0.9142 |
+| yas-marina-circuit | 83.445 | 83.889 | +0.444 | 18.6 km/h | 1.0821 / drag 1.0606 |
 
 ### 2024 team pace and development
 
-Development over the season: 0.93% lap time from March to December.
+Development over the season: 0.55% lap time from March to December.
 
-- Mercedes: -0.13%
+- Mercedes: -0.11%
+- Ferrari: -0.04%
 - McLaren: -0.02%
-- Ferrari: +0.01%
-- Red Bull Racing: +0.04%
-- Alpine: +0.14%
-- Aston Martin: +0.49%
+- Red Bull Racing: +0.06%
+- Alpine: +0.12%
+- Aston Martin: +0.50%
 
 ## 2024
 
 54 laps. Holdout: no track had a factor from another season.
 
-Car: grip μy 1.738, downforce ClA 8.00 m², drag CdA 1.203 m², low-drag CdA 0.772 m², ICE 476 kW.
+Car: grip μy 1.737, downforce ClA 8.00 m², drag CdA 1.202 m², low-drag CdA 0.767 m², ICE 476 kW.
 
 | Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
 |---|---|---|---|---|---|
-| sakhir | 89.179 | 89.729 | +0.550 | 17.5 km/h | 0.9184 / drag 1.1496 |
-| jeddah | 87.472 | 87.921 | +0.449 | 20.5 km/h | 1.1857 / drag 1.0455 |
-| suzuka | 88.197 | 87.725 | -0.472 | 18 km/h | 1.0314 / drag 1.0412 |
-| shanghai | 93.660 | 92.714 | -0.946 | 29.9 km/h | 1.0585 / drag 0.998 |
-| miami | 87.241 | 87.025 | -0.216 | 14.4 km/h | 0.9462 / drag 1.057 |
-| imola | 74.746 | 74.814 | +0.068 | 21.8 km/h | 1.148 / drag 1.0867 |
-| monte-carlo | 70.270 | 70.875 | +0.605 | 16.1 km/h | 0.9554 / drag 1.1496 |
-| catalunya | 71.383 | 71.984 | +0.601 | 17.3 km/h | 0.9994 / drag 1.1496 |
-| spielberg | 64.314 | 64.416 | +0.102 | 22.9 km/h | 1.0394 / drag 1.1496 |
-| zandvoort | 69.673 | 69.748 | +0.075 | 21.7 km/h | 1.0653 / drag 1.1496 |
-| monza | 79.327 | 79.442 | +0.115 | 17 km/h | 1.0134 / drag 1.0232 |
-| baku | 101.365 | 101.257 | -0.108 | 16.7 km/h | 1.0531 / drag 0.9642 |
-| singapore | 89.525 | 89.920 | +0.395 | 17.8 km/h | 0.9529 / drag 1.1496 |
-| austin | 92.330 | 92.399 | +0.069 | 16.8 km/h | 0.9918 / drag 1.0044 |
-| mexico-city | 75.946 | 75.871 | -0.075 | 13.2 km/h | 0.9216 / drag 1.1169 |
-| las-vegas | 92.312 | 92.013 | -0.299 | 15.5 km/h | 0.9872 / drag 0.9075 |
-| lusail | 80.520 | 80.972 | +0.452 | 14.4 km/h | 1.0783 / drag 1.0822 |
-| yas-marina-circuit | 82.595 | 82.521 | -0.074 | 17.3 km/h | 1.086 / drag 1.0555 |
+| sakhir | 89.179 | 89.818 | +0.639 | 17.3 km/h | 0.9208 / drag 1.1479 |
+| jeddah | 87.472 | 87.930 | +0.458 | 20.2 km/h | 1.1932 / drag 1.0457 |
+| suzuka | 88.197 | 87.719 | -0.478 | 17.9 km/h | 1.0341 / drag 1.033 |
+| shanghai | 93.660 | 92.737 | -0.923 | 29.9 km/h | 1.0616 / drag 0.9962 |
+| miami | 87.241 | 87.087 | -0.154 | 14.4 km/h | 0.9483 / drag 1.0597 |
+| imola | 74.746 | 74.825 | +0.079 | 21.7 km/h | 1.1508 / drag 1.0846 |
+| monte-carlo | 70.270 | 70.914 | +0.644 | 16.1 km/h | 0.9555 / drag 1.1496 |
+| catalunya | 71.383 | 71.985 | +0.602 | 17.3 km/h | 1.0006 / drag 1.1496 |
+| spielberg | 64.314 | 64.403 | +0.089 | 22.7 km/h | 1.0414 / drag 1.1496 |
+| zandvoort | 69.673 | 69.734 | +0.061 | 21.7 km/h | 1.0651 / drag 1.1496 |
+| monza | 79.327 | 79.462 | +0.135 | 17.1 km/h | 1.014 / drag 1.0311 |
+| baku | 101.365 | 101.243 | -0.122 | 16.8 km/h | 1.0517 / drag 0.9713 |
+| singapore | 89.525 | 89.947 | +0.422 | 17.9 km/h | 0.9508 / drag 1.1496 |
+| austin | 92.330 | 92.460 | +0.130 | 17.6 km/h | 0.9819 / drag 0.9586 |
+| mexico-city | 75.946 | 75.885 | -0.061 | 13.1 km/h | 0.9196 / drag 1.1363 |
+| las-vegas | 92.312 | 92.100 | -0.212 | 15.4 km/h | 0.9817 / drag 0.9142 |
+| lusail | 80.520 | 80.910 | +0.390 | 14.4 km/h | 1.0805 / drag 1.1004 |
+| yas-marina-circuit | 82.595 | 82.515 | -0.080 | 17.3 km/h | 1.0821 / drag 1.0606 |
 
+F1 2025: held-out second start (step 0.04) 0.725 % vs 0.755 % (spread 0.030 pp, information only)
 ### 2025 team pace and development
 
-Development over the season: 1.53% lap time from March to December.
+Development over the season: 1.18% lap time from March to December.
 
 - Mercedes: -0.09%
-- Red Bull Racing: -0.07%
+- Red Bull Racing: -0.06%
 - McLaren: -0.06%
-- Ferrari: +0.42%
+- Ferrari: +0.40%
 
 ## 2025
 
-66 laps. Holdout: predicted 20 unseen pole laps, typical error 0.73% (RMS).
+66 laps. Holdout: predicted 20 unseen pole laps, typical error 0.75% (RMS).
 
-Car: grip μy 1.775, downforce ClA 8.00 m², drag CdA 1.178 m², low-drag CdA 0.790 m², ICE 476 kW.
+Car: grip μy 1.774, downforce ClA 8.00 m², drag CdA 1.177 m², low-drag CdA 0.787 m², ICE 476 kW.
 
 | Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
 |---|---|---|---|---|---|
-| melbourne | 75.096 | 75.179 | +0.083 | 22.5 km/h | 1.0951 / drag 1.1496 |
-| shanghai | 90.641 | 91.692 | +1.051 | 31.9 km/h | 1.0585 / drag 0.998 |
-| suzuka | 86.983 | 87.018 | +0.035 | 15.9 km/h | 1.0314 / drag 1.0412 |
-| sakhir | 89.841 | 89.302 | -0.539 | 17 km/h | 0.9184 / drag 1.1496 |
-| jeddah | 87.294 | 87.311 | +0.017 | 25.1 km/h | 1.1857 / drag 1.0455 |
-| miami | 86.204 | 85.956 | -0.248 | 15.4 km/h | 0.9462 / drag 1.057 |
-| imola | 74.670 | 74.491 | -0.179 | 26.4 km/h | 1.148 / drag 1.0867 |
-| monte-carlo | 69.954 | 69.856 | -0.098 | 17.7 km/h | 0.9554 / drag 1.1496 |
-| catalunya | 71.546 | 71.486 | -0.060 | 15.8 km/h | 0.9994 / drag 1.1496 |
-| montreal | 70.899 | 70.897 | -0.002 | 16.3 km/h | 0.9992 / drag 1.1296 |
-| spielberg | 63.971 | 63.511 | -0.460 | 18.8 km/h | 1.0394 / drag 1.1496 |
-| silverstone | 84.892 | 84.986 | +0.094 | 14.3 km/h | 0.9196 / drag 1.0899 |
-| spa-francorchamps | 100.562 | 100.587 | +0.025 | 17.9 km/h | 1.0147 / drag 1.0208 |
-| hungaroring | 75.372 | 75.130 | -0.242 | 14.2 km/h | 0.9498 / drag 1.1496 |
-| zandvoort | 68.662 | 68.736 | +0.074 | 21.4 km/h | 1.0653 / drag 1.1496 |
-| monza | 78.792 | 78.699 | -0.093 | 18.1 km/h | 1.0134 / drag 1.0232 |
-| singapore | 89.158 | 89.155 | -0.003 | 16.8 km/h | 0.9529 / drag 1.1496 |
-| austin | 92.510 | 92.241 | -0.269 | 15.7 km/h | 0.9918 / drag 1.0044 |
-| mexico-city | 75.586 | 75.538 | -0.048 | 15.2 km/h | 0.9216 / drag 1.1169 |
-| interlagos | 69.511 | 69.602 | +0.091 | 13.3 km/h | 0.9594 / drag 1.1017 |
-| lusail | 79.387 | 79.874 | +0.487 | 15.5 km/h | 1.0783 / drag 1.0822 |
-| yas-marina-circuit | 82.207 | 82.160 | -0.047 | 19.9 km/h | 1.086 / drag 1.0555 |
+| melbourne | 75.096 | 75.192 | +0.096 | 22.3 km/h | 1.0998 / drag 1.1496 |
+| shanghai | 90.641 | 91.725 | +1.084 | 31.9 km/h | 1.0616 / drag 0.9962 |
+| suzuka | 86.983 | 86.992 | +0.009 | 15.8 km/h | 1.0341 / drag 1.033 |
+| sakhir | 89.841 | 89.328 | -0.513 | 16.9 km/h | 0.9208 / drag 1.1479 |
+| jeddah | 87.294 | 87.263 | -0.031 | 24.7 km/h | 1.1932 / drag 1.0457 |
+| miami | 86.204 | 86.009 | -0.195 | 15.4 km/h | 0.9483 / drag 1.0597 |
+| imola | 74.670 | 74.490 | -0.180 | 26.4 km/h | 1.1508 / drag 1.0846 |
+| monte-carlo | 69.954 | 69.928 | -0.026 | 17.7 km/h | 0.9555 / drag 1.1496 |
+| catalunya | 71.546 | 71.509 | -0.037 | 15.8 km/h | 1.0006 / drag 1.1496 |
+| montreal | 70.899 | 70.897 | -0.002 | 16.2 km/h | 1.0005 / drag 1.1278 |
+| spielberg | 63.971 | 63.493 | -0.478 | 18.7 km/h | 1.0414 / drag 1.1496 |
+| silverstone | 84.892 | 85.030 | +0.138 | 14.3 km/h | 0.92 / drag 1.0931 |
+| spa-francorchamps | 100.562 | 100.586 | +0.024 | 17.9 km/h | 1.017 / drag 1.0254 |
+| hungaroring | 75.372 | 75.081 | -0.291 | 14.2 km/h | 0.9508 / drag 1.1496 |
+| zandvoort | 68.662 | 68.728 | +0.066 | 21.5 km/h | 1.0651 / drag 1.1496 |
+| monza | 78.792 | 78.727 | -0.065 | 18.3 km/h | 1.014 / drag 1.0311 |
+| singapore | 89.158 | 89.174 | +0.016 | 16.9 km/h | 0.9508 / drag 1.1496 |
+| austin | 92.510 | 92.322 | -0.188 | 16.1 km/h | 0.9819 / drag 0.9586 |
+| mexico-city | 75.586 | 75.601 | +0.015 | 15.1 km/h | 0.9196 / drag 1.1363 |
+| interlagos | 69.511 | 69.608 | +0.097 | 13.4 km/h | 0.9566 / drag 1.1017 |
+| lusail | 79.387 | 79.819 | +0.432 | 15.5 km/h | 1.0805 / drag 1.1004 |
+| yas-marina-circuit | 82.207 | 82.175 | -0.032 | 19.8 km/h | 1.0821 / drag 1.0606 |
 
+F1 2026: held-out second start (step 0.04) 0.882 % vs 0.919 % (spread 0.037 pp, information only)
 ### 2026 team pace and development
 
-Development over the season: 2.35% lap time from March to December.
+Development over the season: 2.06% lap time from March to December.
 
-- Alpine: -0.17%
+- Alpine: -0.16%
 - McLaren: -0.15%
 - Mercedes: -0.15%
-- Red Bull Racing: -0.00%
-- Ferrari: +0.25%
+- Red Bull Racing: +0.02%
+- Ferrari: +0.23%
 
 ## 2026
 
-53 laps. Holdout: predicted 15 unseen pole laps, typical error 0.93% (RMS).
+53 laps. Holdout: predicted 15 unseen pole laps, typical error 0.92% (RMS).
 
-Car: grip μy 1.719, downforce ClA 6.65 m², drag CdA 1.889 m², low-drag CdA 1.139 m², ICE 460 kW.
+Car: grip μy 1.728, downforce ClA 6.50 m², drag CdA 1.886 m², low-drag CdA 1.123 m², ICE 460 kW.
 
 | Track | Real | Sim | Error | Corner/straight speed error | Track grip (shared) |
 |---|---|---|---|---|---|
-| melbourne | 78.518 | 78.654 | +0.136 | 27.5 km/h | 1.0951 / drag 1.1496 |
-| shanghai | 92.064 | 92.317 | +0.253 | 29 km/h | 1.0585 / drag 0.998 |
-| suzuka | 89.076 | 90.258 | +1.182 | 23.4 km/h | 1.0314 / drag 1.0412 |
-| miami | 87.798 | 87.972 | +0.174 | 20.5 km/h | 0.9462 / drag 1.057 |
-| monte-carlo | 72.051 | 71.542 | -0.509 | 17 km/h | 0.9554 / drag 1.1496 |
-| catalunya | 74.679 | 74.056 | -0.623 | 19.7 km/h | 0.9994 / drag 1.1496 |
-| spielberg | 66.113 | 65.746 | -0.367 | 22.4 km/h | 1.0394 / drag 1.1496 |
-| silverstone | 88.111 | 87.989 | -0.122 | 17.6 km/h | 0.9196 / drag 1.0899 |
-| spa-francorchamps | 104.361 | 104.499 | +0.138 | 22.9 km/h | 1.0147 / drag 1.0208 |
-| hungaroring | 77.207 | 76.991 | -0.216 | 14.8 km/h | 0.9498 / drag 1.1496 |
-| monza | 81.786 | 81.807 | +0.021 | 21.6 km/h | 1.0134 / drag 1.0232 |
-| madring | 91.824 | 91.723 | -0.101 | 18.9 km/h | 1.0897 / drag 1.1181 |
-| baku | 102.526 | 102.665 | +0.139 | 25.3 km/h | 1.0531 / drag 0.9642 |
-| kuala-lumpur | 95.130 | 95.213 | +0.083 | 17 km/h | 0.9675 / drag 1.1312 |
-| singapore | 91.373 | 91.175 | -0.198 | 17 km/h | 0.9529 / drag 1.1496 |
-| austin | 94.035 | 94.603 | +0.568 | 19.7 km/h | 0.9918 / drag 1.0044 |
-| mexico-city | 76.514 | 76.916 | +0.402 | 14.7 km/h | 0.9216 / drag 1.1169 |
-| las-vegas | 93.893 | 93.830 | -0.063 | 16.6 km/h | 0.9872 / drag 0.9075 |
+| melbourne | 78.518 | 78.638 | +0.120 | 27.6 km/h | 1.0998 / drag 1.1496 |
+| shanghai | 92.064 | 92.321 | +0.257 | 29 km/h | 1.0616 / drag 0.9962 |
+| suzuka | 89.076 | 90.260 | +1.184 | 23.3 km/h | 1.0341 / drag 1.033 |
+| miami | 87.798 | 87.963 | +0.165 | 20.5 km/h | 0.9483 / drag 1.0597 |
+| monte-carlo | 72.051 | 71.595 | -0.456 | 17 km/h | 0.9555 / drag 1.1496 |
+| catalunya | 74.679 | 74.096 | -0.583 | 19.9 km/h | 1.0006 / drag 1.1496 |
+| spielberg | 66.113 | 65.728 | -0.385 | 22.5 km/h | 1.0414 / drag 1.1496 |
+| silverstone | 88.111 | 88.000 | -0.111 | 17.9 km/h | 0.92 / drag 1.0931 |
+| spa-francorchamps | 104.361 | 104.480 | +0.119 | 23 km/h | 1.017 / drag 1.0254 |
+| hungaroring | 77.207 | 77.016 | -0.191 | 14.9 km/h | 0.9508 / drag 1.1496 |
+| monza | 81.786 | 81.800 | +0.014 | 21.9 km/h | 1.014 / drag 1.0311 |
+| madring | 91.824 | 91.717 | -0.107 | 19 km/h | 1.0909 / drag 1.1254 |
+| baku | 102.526 | 102.656 | +0.130 | 25.3 km/h | 1.0517 / drag 0.9713 |
+| kuala-lumpur | 95.130 | 95.217 | +0.087 | 16.9 km/h | 0.9674 / drag 1.1387 |
+| singapore | 91.373 | 91.189 | -0.184 | 17 km/h | 0.9508 / drag 1.1496 |
+| austin | 94.035 | 94.432 | +0.397 | 20.1 km/h | 0.9819 / drag 0.9586 |
+| mexico-city | 76.514 | 76.960 | +0.446 | 14.5 km/h | 0.9196 / drag 1.1363 |
+| las-vegas | 93.893 | 93.857 | -0.036 | 16.6 km/h | 0.9817 / drag 0.9142 |
 
 ## 2026 predictions (tracks not raced yet in 2026)
 
 | Track | Predicted pole | ± (holdout) | Last real pole | Weather from | Recharge limit |
 |---|---|---|---|---|---|
-| imola | 75.897 | ±0.71 s | 74.670 (2025) | 2025 | 7.5 MJ |
-| interlagos | 72.832 | ±0.68 s | 69.511 (2025) | 2025 | 6.5 MJ |
-| jeddah | 91.048 | ±0.85 s | 87.294 (2025) | 2025 | 7 MJ |
-| lusail | 85.225 | ±0.79 s | 79.387 (2025) | 2025 | 8 MJ |
-| montreal | 72.472 | ±0.67 s | 70.899 (2025) | 2025 | 6 MJ |
-| yas-marina-circuit | 84.923 | ±0.79 s | 82.207 (2025) | 2025 | 7 MJ |
-| zandvoort | 72.193 | ±0.67 s | 68.662 (2025) | 2025 | 7.5 MJ |
+| imola | 75.872 | ±0.70 s | 74.670 (2025) | 2025 | 7.5 MJ |
+| interlagos | 72.854 | ±0.67 s | 69.511 (2025) | 2025 | 6.5 MJ |
+| jeddah | 90.973 | ±0.84 s | 87.294 (2025) | 2025 | 7 MJ |
+| lusail | 85.310 | ±0.78 s | 79.387 (2025) | 2025 | 8 MJ |
+| montreal | 72.409 | ±0.67 s | 70.899 (2025) | 2025 | 6 MJ |
+| yas-marina-circuit | 84.898 | ±0.78 s | 82.207 (2025) | 2025 | 7 MJ |
+| zandvoort | 72.224 | ±0.66 s | 68.662 (2025) | 2025 | 7.5 MJ |
 
 ## Projections
 
-- 2027: rules -0.81% lap time, development -0.98% (historical range -0.84 to -1.25%).
-- 2028: rules -1.31% lap time, development -1.13% (historical range -0.2 to -2.13%).
+- 2027: rules -0.8% lap time, development -0.98% (historical range -0.84 to -1.25%).
+- 2028: rules -1.29% lap time, development -1.13% (historical range -0.2 to -2.13%).
 
 WEC lmh 2025: transfer track factors — holdout 0.67% → 0.99%, not used (worse) (rejected: worse on held-out rows)
-WEC lmh 2025: Timing71 rows 3 — holdout 0.67% → 0.66%, rejected: gain within noise
-WEC lmh 2025: per-event BoP — holdout 0.67% → 1.06%, rejected: worse on held-out rows
-WEC lmh 2025: held-out second start 0.667 % vs 0.667 % (spread 0.000 pp); fold iterations 97, 96, 76, 103, 99; fold bound hits clA at max (5)
+WEC lmh 2025: Timing71 rows 3 — holdout 0.67% → 0.66%, accepted: held-out error lower beyond noise
+WEC lmh 2025: per-event BoP — holdout 0.66% → 1.05%, rejected: worse on held-out rows
+WEC lmh 2025: held-out best of 0.08/0.05 0.659 % vs 0.658 % (spread 0.000 pp); fold iterations 95, 119, 90, 63, 128, 81; fold bound hits clA at max (6)
 ## WEC Hypercar LMH 2025
 
-15 laps on 5 tracks, fit score 4.094. Holdout (one track left out at a time): 0.67% RMS over 5 laps.
+18 laps on 5 tracks, fit score 3.474. Holdout (one track left out at a time): 0.66% RMS over 5 laps.
 
 Car: grip μy 1.614, downforce ClA 7.00 m², drag CdA 1.070 m² (mass 1120 kg and 500 kW fixed).
 
@@ -189,8 +191,8 @@ Car: grip μy 1.614, downforce ClA 7.00 m², drag CdA 1.070 m² (mass 1120 kg an
 | sakhir | 106.826 | 106.533 | -0.293 | 293.7 | 293.9 | 0.901 |
 
 WEC lmh 2026: transfer track factors — holdout 1.21% → 1.08%, used (rejected: gain within noise)
-WEC lmh 2026: Timing71 rows 3 — holdout 1.08% → 1.17%, rejected: worse on held-out rows
-WEC lmh 2026: held-out second start 1.084 % vs 1.084 % (spread 0.000 pp); fold iterations 147, 97, 114, 86, 76, 90; fold bound hits clA at max (2)
+WEC lmh 2026: Timing71 rows 3 — holdout 1.08% → 1.16%, rejected: worse on held-out rows
+WEC lmh 2026: held-out best of 0.08/0.05 1.084 % vs 1.084 % (spread 0.000 pp); fold iterations 92, 79, 84, 89, 76, 64; fold bound hits clA at max (2)
 ## WEC Hypercar LMH 2026
 
 18 laps on 6 tracks, fit score 0.890. Holdout (one track left out at a time): 1.08% RMS over 6 laps.
@@ -207,9 +209,9 @@ Car: grip μy 1.577, downforce ClA 6.32 m², drag CdA 0.945 m² (mass 1120 kg an
 | monza | 93.364 | 94.109 | +0.745 | 314 | 310.4 | 0.9907 |
 
 WEC lmdh 2025: transfer track factors — holdout 0.92% → 0.81%, used (rejected: gain within noise)
-WEC lmdh 2025: Timing71 rows 3 — holdout 0.81% → 0.87%, rejected: worse on held-out rows
+WEC lmdh 2025: Timing71 rows 3 — holdout 0.81% → 0.86%, rejected: worse on held-out rows
 WEC lmdh 2025: per-event BoP — holdout 0.81% → 1.19%, rejected: worse on held-out rows
-WEC lmdh 2025: held-out second start 0.818 % vs 0.811 % (spread 0.007 pp); fold iterations 75, 77, 96, 79, 102; fold bound hits clA at max (5)
+WEC lmdh 2025: held-out best of 0.08/0.05 0.810 % vs 0.810 % (spread 0.000 pp); fold iterations 100, 109, 96, 80, 102; fold bound hits clA at max (5)
 ## WEC Hypercar LMDh 2025
 
 15 laps on 5 tracks, fit score 3.606. Holdout (one track left out at a time): 0.81% RMS over 5 laps.
@@ -224,9 +226,9 @@ Car: grip μy 1.604, downforce ClA 7.00 m², drag CdA 1.087 m² (mass 1120 kg an
 | interlagos | 82.570 | 82.116 | -0.454 | 276.2 | 298.6 | 0.9823 |
 | sakhir | 107.543 | 107.802 | +0.259 | 290.5 | 292.9 | 0.8804 |
 
-WEC lmdh 2026: transfer track factors — holdout 1.24% → 0.89%, used (rejected: gain within noise)
+WEC lmdh 2026: transfer track factors — holdout 1.22% → 0.89%, used (rejected: gain within noise)
 WEC lmdh 2026: Timing71 rows 3 — holdout 0.89% → 0.96%, rejected: worse on held-out rows
-WEC lmdh 2026: held-out second start 0.900 % vs 0.893 % (spread 0.006 pp); fold iterations 103, 104, 102, 71, 91, 74; fold bound hits clA at max (2)
+WEC lmdh 2026: held-out best of 0.08/0.05 0.893 % vs 0.893 % (spread 0.000 pp); fold iterations 128, 104, 104, 71, 122, 56; fold bound hits clA at max (2)
 ## WEC Hypercar LMDh 2026
 
 18 laps on 6 tracks, fit score 0.748. Holdout (one track left out at a time): 0.89% RMS over 6 laps.
@@ -244,7 +246,7 @@ Car: grip μy 1.568, downforce ClA 6.46 m², drag CdA 0.932 m² (mass 1120 kg an
 
 WEC lmgt3 2025: transfer track factors — holdout 1.66% → 1.28%, used (accepted: held-out error lower beyond noise)
 WEC lmgt3 2025: Timing71 rows 5 — holdout 1.28% → 1.28%, rejected: gain within noise
-WEC lmgt3 2025: held-out second start 1.284 % vs 1.281 % (spread 0.003 pp); fold iterations 99, 100, 133, 140, 104; fold bound hits clA at max (5), cdA at max (1)
+WEC lmgt3 2025: held-out best of 0.08/0.05 1.281 % vs 1.281 % (spread 0.000 pp); fold iterations 101, 100, 133, 139, 104; fold bound hits clA at max (5), cdA at max (1)
 ## WEC LMGT3 2025
 
 15 laps on 5 tracks, fit score 2.329. Holdout (one track left out at a time): 1.28% RMS over 5 laps.
@@ -259,12 +261,12 @@ Car: grip μy 1.606, downforce ClA 3.50 m², drag CdA 1.300 m² (mass 1400 kg an
 | interlagos | 93.849 | 92.797 | -1.052 | 253.7 | 256.1 | 0.9823 |
 | sakhir | 121.661 | 120.799 | -0.862 | 254.4 | 254.6 | 0.8804 |
 
-WEC lmgt3 2026: transfer track factors — holdout 1.19% → 0.99%, used (rejected: gain within noise)
-WEC lmgt3 2026: Timing71 rows 5 — holdout 0.99% → 1.04%, rejected: worse on held-out rows
-WEC lmgt3 2026: held-out second start 1.125 % vs 0.994 % (spread 0.131 pp); fold iterations 179, 73, 105, 107, 161, 121; fold bound hits clA at max (6), cdA at max (3)
+WEC lmgt3 2026: transfer track factors — holdout 1.20% → 1.05%, used (rejected: gain within noise)
+WEC lmgt3 2026: Timing71 rows 5 — holdout 1.05% → 1.03%, rejected: gain within noise
+WEC lmgt3 2026: held-out best of 0.08/0.05 1.024 % vs 1.050 % (spread 0.026 pp); fold iterations 117, 73, 105, 175, 161, 139; fold bound hits clA at max (6), cdA at max (3)
 ## WEC LMGT3 2026
 
-18 laps on 6 tracks, fit score 2.838. Holdout (one track left out at a time): 0.99% RMS over 6 laps.
+18 laps on 6 tracks, fit score 2.838. Holdout (one track left out at a time): 1.05% RMS over 6 laps.
 
 Car: grip μy 1.621, downforce ClA 3.50 m², drag CdA 1.266 m² (mass 1400 kg and 380 kW fixed).
 
