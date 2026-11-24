@@ -571,6 +571,10 @@ export function lapsimKernel() {
               wA = wB; fa = fb;
             }
           } else {
+            // on the drive curve (full throttle) the step pays for its deploy and is never braking, also where drag or grade slows the
+            // car: booking deploy only when the speed rose let a car whose ERS power just balanced drag hold its speed on free energy,
+            // with the drag slow-down booked as braking regen (lapsim-mesh f1-2026 Silverstone, 2026-11-25)
+            const onDrive = (wn <= A1[1] && wn <= A1[2] && wi <= A0[1] && wi <= A0[2]) || lowAll(0);
             // Simpson: the speed at mid-step is the lowest of the accelerating curve, the braking curve and the lateral limit
             const vl = latMid(i, j, 0.5), vm = Math.max(1, Math.min(Math.sqrt(Math.max(1, Math.min(wm, bm[i]))), vl, vMaxCar));
             dt = ds / 6 * (1 / vi + 4 / vm + 1 / Math.max(vj, 1));
@@ -585,13 +589,13 @@ export function lapsimKernel() {
                 if (q < me) { virt(i, j, f); drv(Math.min(vB, vLat[n]), n, mode, al, sHy, clipOf); eB = dErs; hB = dHarv; }
                 const tq = 2 * ds / me / (vA + vB); eS += 0.5 * (eA + eB) * tq; hS += 0.5 * (hA + hB) * tq; tS += tq; vA = vB; eA = eB; hA = hB;
               }
-              if (vj > vi + 1e-6) dep = eS * dt / tS;
+              if (onDrive || vj > vi + 1e-6) dep = eS * dt / tS;
               if (throttleHarvest) thr = hS * dt / tS;
             } else {
-              if (vj > vi + 1e-6) dep = 0.5 * (e1 + e2) * dt;
-              if (throttleHarvest && vj >= vi - 1e-6) thr = 0.5 * (h1 + h2) * dt;
+              if (onDrive || vj > vi + 1e-6) dep = 0.5 * (e1 + e2) * dt;
+              if (throttleHarvest && (onDrive || vj >= vi - 1e-6)) thr = 0.5 * (h1 + h2) * dt;
             }
-            if (vj < vi - 1e-6 && ers.regenMax) brk = regenP(wi, vj * vj, ds, i) * dt;
+            if (!onDrive && vj < vi - 1e-6 && ers.regenMax) brk = regenP(wi, vj * vj, ds, i) * dt;
           }
           if (!throttleHarvest) thr = 0;
           let rpNew = null;
