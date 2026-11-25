@@ -18,7 +18,7 @@ export function diff(shipped, cand) {
   const cars = [], add = (where, x, y) => { for (const k of CAR_KEYS) if (Number.isFinite(x?.[k]) && Math.abs(x[k] - (y?.[k] ?? NaN)) > 1e-9 * Math.max(1, Math.abs(x[k]))) cars.push({where, param: k, shipped: r4(x[k]), new: r4(y?.[k])}); };
   for (const [y, s] of Object.entries(shipped.seasons || {})) add(`f1 ${y}`, s.car, cand.seasons?.[y]?.car);
   for (const [cls, ys] of Object.entries(shipped.series?.wec || {})) for (const [y, s] of Object.entries(ys)) add(`wec-${cls} ${y}`, s.car, cand.series?.wec?.[cls]?.[y]?.car);
-  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
+  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b), wec: wecDetail(a, b), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
 }
 
 // step 36: two JSON values compared, 'generated' (a date) ignored → differing paths (first 40) and their count
@@ -65,6 +65,18 @@ export function pairedHarm(a, b, limit = 0.10, rowLimit = 1.0) {
   return out;
 }
 
+// WEC per class and per track (central 2026-11-25 16:10, after step 34a's base drop): the same paired harm per class (all seasons
+// of that class) and one row per track (mean over the classes and seasons that hold it out), so a track-level term shows as one row
+export function wecDetail(a, b) {
+  const keys = Object.keys(a).filter(k => k.startsWith('wec') && k in b), h = k => Math.abs(b[k]) - Math.abs(a[k]);
+  const byClass = {}, byTrack = {};
+  for (const k of keys) { const [g, t] = k.split('|'), c = g.split('/')[0]; (byClass[c] ||= {a: {}, b: {}}); byClass[c].a[k] = a[k]; byClass[c].b[k] = b[k]; (byTrack[t] ||= []).push(h(k)); }
+  return {byClass: Object.fromEntries(Object.entries(byClass).map(([c, x]) => { const { rows, ...r } = pairedHarm(x.a, x.b).wec; return [c, r]; })),
+    byTrack: Object.entries(byTrack).map(([t, v]) => ({track: t, n: v.length, meanHarmPp: r4(v.reduce((x, y) => x + y, 0) / v.length), maxHarmPp: r4(Math.max(...v))})).sort((x, y) => y.meanHarmPp - x.meanHarmPp)};
+}
+// series that pass the ship rule ship; a failing series keeps the shipped calibration (central 16:10: WEC fails → ship F1/FE only)
+export const shipSeries = (harm, fe) => Object.entries({...harm, ...(fe ? {fe} : {})}).map(([s, x]) => ({series: s, pass: !!x?.pass}));
+
 // FE (central 2026-11-25 14:27): build-fe.mjs writes one event-hidden error per row (layout × season × rule set × session) to
 // fe-fit.json; same paired harm as F1/WEC on those rows
 export const feHeldOut = fit => Object.fromEntries(fit.rows.map(r => [`fe/${r.key}/${r.layout}/${r.season}/${r.session}`, r.event]));
@@ -90,6 +102,11 @@ const fitMd = r => [
   '## Held-out lap error (RMS %, shipped → this run)', '', '| group | n | shipped | this run |', '|---|---|---|---|',
   ...Object.entries(r.diff.heldOut).map(([g, x]) => `| ${g} | ${x.n} | ${x.base} | ${x.cand} |`), '',
   `Ship rule (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ 0.10 pp, no row worse than +1.0 pp): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
+  ...(r.diff.wec ? ['WEC per class (paired harm, all seasons of the class):', '', '| class | n | mean pp | UB pp | worse | worst pp | rows > +1.0 pp | pass |', '|---|---|---|---|---|---|---|---|',
+    ...Object.entries(r.diff.wec.byClass).map(([c, x]) => `| ${c} | ${x.n} | ${x.meanPp} | ${x.ub95Pp} | ${x.worse} | ${x.maxPp} | ${(x.overRowLimit || []).length} | ${x.pass ? 'pass' : 'FAIL'} |`), '',
+    'WEC per track (mean over the class × season rows that hold it out):', '', '| track | rows | mean harm pp | max harm pp |', '|---|---|---|---|',
+    ...r.diff.wec.byTrack.map(t => `| ${t.track} | ${t.n} | ${t.meanHarmPp} | ${t.maxHarmPp} |`), ''] : []),
+  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm).map(x => `${x.series} ${x.pass ? 'ships' : '**blocked (keeps the shipped calibration)**'}`).join(' · ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),

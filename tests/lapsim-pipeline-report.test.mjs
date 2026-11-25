@@ -50,3 +50,16 @@ test('ship rule: one row worse than +1.0 pp fails even when the UB passes; rows 
   assert.ok(h.ub95Pp <= 0.10 && !h.pass && h.overRowLimit[0] === 'fe/k/t0/2025/Q' && h.rows[0].harmPp === 1.2 && h.maxPp === 1.2);
   assert.ok(pairedHarm(a, {...a, 'fe/k/t0/2025/Q': 1.9}).fe.pass, '+0.9 pp is inside the row limit');
 });
+
+test('WEC per class and per track, and per-series shipping (central 2026-11-25 16:10)', async () => {
+  const {wecDetail, shipSeries, pairedHarm} = await import('../scripts/sim/pipeline-report.mjs');
+  const a = {'wec-lmh/2025|spa': 1, 'wec-lmh/2026|spa': -1, 'wec-lmh/2025|monza': 0.5, 'wec-lmgt3/2025|spa': 1.2, 'wec-lmgt3/2025|monza': 1, 'f1/2025|x': 1, 'f1/2025|y': 1};
+  const b = {...a, 'wec-lmh/2025|spa': 2.5, 'wec-lmgt3/2025|spa': 1.3};
+  const d = wecDetail(a, b);
+  assert.deepEqual(Object.keys(d.byClass).sort(), ['wec-lmgt3', 'wec-lmh']);
+  assert.equal(d.byClass['wec-lmh'].n, 3);
+  assert.deepEqual(d.byClass['wec-lmh'].overRowLimit, ['wec-lmh/2025|spa']);
+  assert.equal(d.byTrack[0].track, 'spa');
+  assert.equal(d.byTrack[0].maxHarmPp, 1.5);
+  assert.deepEqual(shipSeries(pairedHarm(a, b), {pass: true}), [{series: 'f1', pass: true}, {series: 'wec', pass: false}, {series: 'fe', pass: true}]);
+});
