@@ -1,0 +1,3249 @@
+{
+ "generatedAt": "2026-11-25T08:44:29.635Z",
+ "run": {
+  "mode": "research",
+  "repo": "kangjeongmin1229/f1-data-analyst-deploy",
+  "id": "45572047447",
+  "commit": "2f262f42a3085b94d97b4ccc4f6969b1df4061c3",
+  "url": "https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/45572047447"
+ },
+ "inputs": {
+  "tag": "lapsim-inputs-r45123509702",
+  "sha256": "88fbb3bceb4519c73371941e0faa2f8aee85b4f27f15109b5a13f5a0863823ca",
+  "sums": "88fbb3bceb4519c73371941e0faa2f8aee85b4f27f15109b5a13f5a0863823ca  lapsim-prep.tgz\nff8699ae27eaf7c7beeb021601cc4781d40e29165e27f340899c8077203cf640  ./.cache/lapsim/circuits.json\ne67145ddbe5581863839c9fd4303b86db2b3c0e3465e98142912f4126a5a2c5d  ./.cache/lapsim/f1-circuits.geojson\n63d4510bae463ff8d76998488ee8304d4bdfe15939e3969948480f7b2fb82ac3  ./.cache/lapsim/index.json\n9d3232cb17fefff25f629d91bddd97b037798a10c2b686e841563472f7124b2b  ./.cache/lapsim/races.json\n4942a80bf31ad4980fb6715068907f301c97a65134fb72a3a1d5e696ab39a44a  ./.cache/lapsim/races/2023-austin-race.json\n9326dcc9edf845750ff82f8d17deb8209ffec6c0e9603aee7d0c5c613b506bca  ./.cache/lapsim/races/2023-austin-sprint.json\n5071cf05df5d307c059d4dd5698a0c16f61cccaf49a69c2bfa8a5a0a08f09c56  ./.cache/lapsim/races/2023-baku-race.json\n320296c29b0b2be47edd5acd7841842b6fe8cb9f6bced80e7fb8cd18b2ef21ee  ./.cache/lapsim/races/2023-baku-sprint.json\nf3755aa5d82e231cf9c3daefe715e72c89ef3fd3c532aaef35913b503cf83c7e  ./.cache/lapsim/races/2023-catalunya-race.json\nb8ecb4d9beda53e7a0b54c7cc14f50c8a3dffb7b454b9c2340864bcd5eede9ce  ./.cache/lapsim/races/2023-hungaroring-race.json\nfbf33f26f14c39935cb0c3d6090ef86c5ba82c53886ad3ec9807ac97e64a3f26  ./.cache/lapsim/races/2023-interlagos-race.json\n14e5367f41102d7d612ba986412e5613674149554cd4ed14dd74d2e3a377b1b0  ./.cache/lapsim/races/2023-interlagos-sprint.json\n37373fd6ff976f701e386f003310719fa2c213e46efca4f90e4e1e830d8859e5  ./.cache/lapsim/races/2023-jeddah-race.json\n1cbfb3cbff322043881c99cacb74816160adc545dca0d23604e10bd3788ba56d  ./.cache/lapsim/races/2023-las-vegas-race.json\nbaf05b205dfa695baff0088c2e35b2d968e22dbbb996326a41d500b202546e4a  ./.cache/lapsim/races/2023-lusail-race.json\n9f505430ce6a807fce6fc2715960845f8787e60f68ac199867f5b8083911e0ef  ./.cache/lapsim/races/2023-lusail-sprint.json\n987b475cceff7275455e16d548def020aa89bc4b0e3127e87b6d881683ffd2f6  ./.cache/lapsim/races/2023-melbourne-race.json\na682328d3aff9122cf8ebcc69a88a678346f86786736b65a43dbae9d4cb56d8a  ./.cache/lapsim/races/2023-mexico-city-race.json\n928125c0edffe552122b8e1f81c0deaebe61e3e340e1968cdb53312a2b073403  ./.cache/lapsim/races/2023-miami-race.json\nb3f8cd975be851a026063455f12a79236c5a2aeac3615adf4769be08910044a9  ./.cache/lapsim/races/2023-monte-carlo-race.json\n7b3f239ba57249065dc2e6720178d288cf0d43fe46dce02bc2f918a52ec4be36  ./.cache/lapsim/races/2023-montreal-race.json\na4de231f306c139cbc973e12a96359886c9c46fc36071b818294df6e9411f76f  ./.cache/lapsim/races/2023-monza-race.json\nbbd1da1954d60c6209a29a1ec1c0cc4b5b91acdce71f9b19bd4f0e0713fc7da5  ./.cache/lapsim/races/2023-sakhir-race.json\n5b214a184a00f98758f35970c2083071f599fe06fec3ed91a0ceae59bc33303a  ./.cache/lapsim/races/2023-silverstone-race.json\n047e1a71b3e632f5ceb9dbb126c144082ec0303d8688e93f8fbef2d030370f0e  ./.cache/lapsim/races/2023-singapore-race.json\n513918afae7f3efafae22adbc7cda4c97e0f5f141158d0ab3d0b91c4cddcf5d8  ./.cache/lapsim/races/2023-spa-francorchamps-race.json\n9a5e3b9cf1ee70272e7da3d1bf33dda338c251902d4c2829eab359769756dc79  ./.cache/lapsim/races/2023-spa-francorchamps-sprint.json\n64ff9841778d432c298a8f3c8e9ea531c4a895512c21a13e6f071ee7cc5d60b6  ./.cache/lapsim/races/2023-spielberg-race.json\n21fa3bf26e8c8552f6985497ffa212429ab2d168dd9ad892fa179a16e4baba0f  ./.cache/lapsim/races/2023-spielberg-sprint.json\n96fd33aca7434bd1bd5ed637824bea80848b9b1040b0abfb018b6371c60abbd8  ./.cache/lapsim/races/2023-suzuka-race.json\n220502e56e5bf0848e35b5f98025a799501d02753219087e327e14e10f40215d  ./.cache/lapsim/races/2023-yas-marina-circuit-race.json\nfb2aab778ee12ec5db7f449cc31f1828981abe73bd9a4d7f0434a10519359b31  ./.cache/lapsim/races/2023-zandvoort-race.json\nd48fe28c8d19b03ce57a0d746f75e56ce11e1d1739c97eddeaa1a6fb18d2cb9a  ./.cache/lapsim/races/2024-austin-race.json\n2cf6a2297c1fb9ad676edb3082068ea8a5f1ed7232c15c54c0d09c93c8660cf0  ./.cache/lapsim/races/2024-austin-sprint.json\n0ab7c0b50512b7ae9083aa9d7bb01b98910b134f45972fd85c58fe567f13fd4c  ./.cache/lapsim/races/2024-baku-race.json\n681fafe108086a577eee791dc1f760a07b450bc906d598f9f309b69e104ee78c  ./.cache/lapsim/races/2024-catalunya-race.json\n2c3c9430895d9b272a4da8d672ebb0c05bb2bd2df313abd31fa2b4bac146526f  ./.cache/lapsim/races/2024-hungaroring-race.json\n8ec7f107fdac62b5afcb5134112658832c15dafafd08ae9a28b1003b2dda8dc9  ./.cache/lapsim/races/2024-imola-race.json\n635b4d9db9a51eb9db5121b2a4a47159bf08ddc588550208068f769550c9b592  ./.cache/lapsim/races/2024-interlagos-race.json\n97b6ed7fd0d0264614663b3508804e9a571a6fb0684d247c89d07bcb4cdf293f  ./.cache/lapsim/races/2024-interlagos-sprint.json\n27fb657fe952ec52e328176f1a92816e44998c15f26e6511cce8ee7ba6e1bf1a  ./.cache/lapsim/races/2024-jeddah-race.json\n1fdd600aa33296952e1baf7939345c2fd971b091cf5a67b691b1a8d363183d61  ./.cache/lapsim/races/2024-las-vegas-race.json\nc1b26195240ba86509785b64925629f9024570ab84d697a913ac3cdafe303e85  ./.cache/lapsim/races/2024-lusail-race.json\n450073fe007728b016ed6a7b664c3d8cd99ce5eb754e13440ad60892b28db1c8  ./.cache/lapsim/races/2024-lusail-sprint.json\nedd6e767fffb5637a205030adc5d11b47ea652cf3e69fe7267b5a3cc7da7c074  ./.cache/lapsim/races/2024-melbourne-race.json\nfb74f46f842f19d760f62c16d731ed77c7f140739fbd723c8aa28bcbd7e60503  ./.cache/lapsim/races/2024-mexico-city-race.json\n09c6b87a5c73c6aae1da02a8a776c3e92ce0f9da0c08e4a83884291241e22891  ./.cache/lapsim/races/2024-miami-race.json\naef4bc07d4075cdbadc855932090283f5720019d02559da7985559eb3578bdef  ./.cache/lapsim/races/2024-miami-sprint.json\n0ac01217847f7d25e4768b41870ca6380b424d6e68cff03c072d6ddddc91c243  ./.cache/lapsim/races/2024-monte-carlo-race.json\n2ce19ecf23a3b76431572d8b018baef0998428245365036dcc29fcf5c9075c24  ./.cache/lapsim/races/2024-montreal-race.json\nd11676512b8b7e90e804f5d98844c1040190236751ea711d256e5643a75c7a4a  ./.cache/lapsim/races/2024-monza-race.json\nd9866647709e0814965071e0f49ae2adc81a57d9dc42d2407690d0dfd590c983  ./.cache/lapsim/races/2024-sakhir-race.json\nca7f98b2e6b05764e926a2f94e4cad477ddfdb050c17d9c133405bec28a5f764  ./.cache/lapsim/races/2024-shanghai-race.json\n162798a21d5ffe465a9cdfbf17981753217341a6d2f9d68c6e45da861d6c6b31  ./.cache/lapsim/races/2024-shanghai-sprint.json\n4b039f7e88d980e196f7bd1d67cfcfd1f62c22a12c3d0f3155dc21cfc4c09d33  ./.cache/lapsim/races/2024-silverstone-race.json\n762a9ef3375556ac819265f6660fa5d6115f755eda73f03b4566c6def89e2eb2  ./.cache/lapsim/races/2024-singapore-race.json\n67b736dd3d746351b2ffea967dbb320debf599749073661f27e845c04ee006d4  ./.cache/lapsim/races/2024-spa-francorchamps-race.json\n6725537f122a722a7c4b4f1ea62dce47b7196899fd94f137268a62326d25fa59  ./.cache/lapsim/races/2024-spielberg-race.json\nd64ff1e407f98a950a8fd518f0977b1940a02660e0ab6cd1290dca94707c457a  ./.cache/lapsim/races/2024-spielberg-sprint.json\n26b0631c11b26a1f5333a526766f69ae69e5ae3745de2a62bff88fb39d2793fc  ./.cache/lapsim/races/2024-suzuka-race.json\n84e76e602b67a677f2b97aeee31c439a673a8370bbc691e75eaf7cbe8b1ab2df  ./.cache/lapsim/races/2024-yas-marina-circuit-race.json\n3407a2331e0e6902b797d8c3210360c8f344073b42ff29f0e21ab22665bcbeaf  ./.cache/lapsim/races/2024-zandvoort-race.json\n4ed0a4fac89f6e085d551f84f86ef77ebdf0aa426140e17d90c689a2f8a726b3  ./.cache/lapsim/races/2025-austin-race.json\n9d215c267c4607dd18abe8d37c8ff5e59f75e721b99616767f0620db44c7d7fc  ./.cache/lapsim/races/2025-austin-sprint.json\nda82dca9eb1d6a0a6ccd14f66f03cb81f48ed91856aaa7a47b0c62c3d9504f8a  ./.cache/lapsim/races/2025-baku-race.json\n821aa200f6d6052a60d36df14308b99a169270601ff6895db9aa801eeaf2472b  ./.cache/lapsim/races/2025-catalunya-race.json\neae15507a05e1f246044219b509cd9baa2d47cfde2cbaf2a0aee79dd041f4aaa  ./.cache/lapsim/races/2025-hungaroring-race.json\nf7fea9e34b6f2945c5a5746ac7d5cc348c89f97d349412e0d6ecbd13de2547b6  ./.cache/lapsim/races/2025-imola-race.json\n43cfb996fc8bd45956f5e982e3bdfbb92f86ecb8896ea13d466495c65c868ca7  ./.cache/lapsim/races/2025-interlagos-race.json\n91ae00f15f3b366d87db03f2ed83b149b2d2fea2f047d029ec7e6545857efeba  ./.cache/lapsim/races/2025-interlagos-sprint.json\nb54bed6543040d3fd3983ec8bc8611abd6aaf8735de33f846011b900cde3fb9d  ./.cache/lapsim/races/2025-jeddah-race.json\n7f0739a91b0936a0ac28db0fb33b0a648154dcb9142efb370c8fd937632b8efa  ./.cache/lapsim/races/2025-las-vegas-race.json\n6f33ea7eba4311c60106f8e52a43b21842f8155ae87ac4d08902f834fa2e4701  ./.cache/lapsim/races/2025-lusail-race.json\nb17934c39311a4f13c8d1610d29d85feeb5204f371d87584c8452841be0be4fb  ./.cache/lapsim/races/2025-lusail-sprint.json\nc52770b25bce16e963b59eed83cb87387affa4385d59da87d48bdfcb28582ac1  ./.cache/lapsim/races/2025-melbourne-race.json\n349ae773ad72ccdd68317283a21296c7906ad4effb1a664ca2b1c2deaad487d6  ./.cache/lapsim/races/2025-mexico-city-race.json\nad52c08f0bce1957b841bda79f8434c25f68691fa8dbe6e4442fbd36100b1c71  ./.cache/lapsim/races/2025-miami-race.json\nd33f3cd5cf4404ab9217ce6d3e77ebe30d6997fac7801e2b9b42059424eb6235  ./.cache/lapsim/races/2025-miami-sprint.json\n09570d4e020eda5aad5c7887eecd4502748397d6b37cc52d54a3108f2a23b4b1  ./.cache/lapsim/races/2025-monte-carlo-race.json\na75dd56d9c97a4026a9d94c648200284727672a8823aa75f55dd47a084b94856  ./.cache/lapsim/races/2025-montreal-race.json\nb8fcea5d436430267baf34d4db5994912a9ba2ebf6ff1a89dfe28a8ddd765d4e  ./.cache/lapsim/races/2025-monza-race.json\n0a0d9cb1e9dfd4cf26129a3f7201f66bd1e8e77948daeb1609cb6ccff8a3eac8  ./.cache/lapsim/races/2025-sakhir-race.json\nd072d1dd785f605880922d54415950e79648452d3d6f37924506aeef850ece26  ./.cache/lapsim/races/2025-shanghai-race.json\n96b6c1fcf1a02e8b04d39bf2647ff280de7af1091e6dc4c30fb3f0ae2f0293ec  ./.cache/lapsim/races/2025-shanghai-sprint.json\ncf285780aa01aa16b3bfcd6bc724cd6e9e583783ec2291a54f7e4c10c86bf496  ./.cache/lapsim/races/2025-silverstone-race.json\nb8b4f8b9c7637ccdfc683b7e92066bdc5cee9bad3908fdf865b85cced0fa5c78  ./.cache/lapsim/races/2025-singapore-race.json\ndd7b31aa537a92f3f599fa7bc1a633f0b424b798dbe68741d79c724f08550430  ./.cache/lapsim/races/2025-spa-francorchamps-race.json\nc359efcdd818fad99b79cef1f5f795665d56a682d23ccd561c8ad1131ad8ff33  ./.cache/lapsim/races/2025-spa-francorchamps-sprint.json\n0818d10957df3168b70c791b842121b18c9c929abc78f2468ae44db0c4c12f24  ./.cache/lapsim/races/2025-spielberg-race.json\n2b8994249028708bfc3a7163bf554aa912ed0094b600d92148e064b6152e0430  ./.cache/lapsim/races/2025-suzuka-race.json\n30745f821135219cf0a3f8373a5337ea7d1bd9c95f52755946a1a5941e4d5f61  ./.cache/lapsim/races/2025-yas-marina-circuit-race.json\n9bfe4506d17cba259d3079bfa03815891c20b1487e4226b7afd2d10199e7a38a  ./.cache/lapsim/races/2025-zandvoort-race.json\nc3e647948200bc4831773f8e3cd27de081a7cd9c6b1a7c85c0075574985688cc  ./.cache/lapsim/races/2026-austin-race.json\nf90559d8266f7099f0b486841127ae86ea5c4985e90f804fd060c8f66895f16c  ./.cache/lapsim/races/2026-baku-race.json\n69ed92d8b8d3aa3d8e9cbc31f4f4710c16efd939a05377aba25b892dc5c223de  ./.cache/lapsim/races/2026-catalunya-race.json\n2a2c743d95243442d02556a7202d431f115c676c92f76478de1b10b10e005375  ./.cache/lapsim/races/2026-hungaroring-race.json\ncc7cb006d6c8f170917335b6fd3135fa0da7d4f9131b71b3f54cc5d4bab2eeac  ./.cache/lapsim/races/2026-interlagos-race.json\n76e405e23553feebafa4b05ce682340b67908c2fa9da2b56019f9d737c6ab85b  ./.cache/lapsim/races/2026-kuala-lumpur-race.json\ncbf32402e8f080975f088344b2cdaccb1e5fbb80366a3652dffb59831a4b11e0  ./.cache/lapsim/races/2026-las-vegas-race.json\nf8e369e3d156d297c616bf0bf4a5142bd0994a54d1f6c50941b63ad774692d5f  ./.cache/lapsim/races/2026-madring-race.json\nff622b293812d7851b856502c23c9804559be55bf82b65c30b982358f2d94751  ./.cache/lapsim/races/2026-melbourne-race.json\na9ede38325ff28b9affbe99c1fb1259a84647887f0e233fa6dae20079e1f4049  ./.cache/lapsim/races/2026-mexico-city-race.json\n470933160324b2f4d033df5fb584973b4e394b77a7694071947e7913ccaff379  ./.cache/lapsim/races/2026-miami-race.json\n1b58afb4919bc7b8ef144de6ea8db9e1dc4cc1c15e3e32ad44f7189021b5eb09  ./.cache/lapsim/races/2026-miami-sprint.json\n3a25890158b08f461d24bd081008a23d850cb68ab8e25620502bd9c81e830451  ./.cache/lapsim/races/2026-monte-carlo-race.json\n97ea8bda6993fff50470add95c11a083ac278538ac61b8b06b021bc15891cf28  ./.cache/lapsim/races/2026-montreal-race.json\n331c70d93d4dbcd5ef3b3754bc439012c24607ca54d34d4fedd530b4ef75d43d  ./.cache/lapsim/races/2026-montreal-sprint.json\nda5518fb58fb50adfc36a79604a5561d9979832165a12a64e98e148655540d39  ./.cache/lapsim/races/2026-monza-race.json\n3ec6889f577541953fe3a0e3c0e542c54642267835f0f2e5ebf8073d2e77bef6  ./.cache/lapsim/races/2026-shanghai-race.json\ne2583973ad308c9c18a4b3fc086e50f2a34f1976f16f7a96e6440e071867071b  ./.cache/lapsim/races/2026-shanghai-sprint.json\n016155091da2e7f3eb92e16f65e50cd087b453af9b9a09372bfe933e2d12ffb2  ./.cache/lapsim/races/2026-silverstone-race.json\na9a43df96c33c09f36d10a2f6d04c5b8755cef8e3eb09b89f567eeec803fe990  ./.cache/lapsim/races/2026-silverstone-sprint.json\nedffb48fbf24b3ad4032781136df46f5d5b6e288dbe66765bc1f4aae973fd6ce  ./.cache/lapsim/races/2026-singapore-race.json\na76b68b58914e904bf5c2a09c6a60dae0e6c8598f9a27ed7bc9a5a6d92be052a  ./.cache/lapsim/races/2026-singapore-sprint.json\nbba82a3c0a1951f071e78cd9563a3cfda7067cd1e4c25f46496fd3fcdb36139e  ./.cache/lapsim/races/2026-spa-francorchamps-race.json\n7b0592bbf468f38f53be40dfebf2a99e4e1c47031fb5a42c7a4d335b1c4b4fcb  ./.cache/lapsim/races/2026-spielberg-race.json\n3cb7e4e6e19014cecbfe41dfe7cee50f4b04c649254135737a4e24b57686c6f6  ./.cache/lapsim/races/2026-suzuka-race.json\nd300438c91236ff65019c6994ef5d90e5ccfbf32260000d8265298b97ac050c2  ./.cache/lapsim/races/2026-zandvoort-race.json\n3aa103ae4ebd40e4d4628ff9d82df71e6349a997560609ef5e298d4a72eca8e2  ./.cache/lapsim/races/2026-zandvoort-sprint.json\n48f8fbd7f83fe12ff089caf276c76886dabaa541cf9788f59cf1733f37cad491  ./.cache/lapsim/sessions/2023-austin.json\n1c0f56bcc467564f4f475096edbf9517c94328ffa264068cbdc0579026879dd4  ./.cache/lapsim/sessions/2023-baku.json\n659e2639d0062f88ec6660aa0d9cae1c87cd0a9bb4adf6402ea8d6459792688d  ./.cache/lapsim/sessions/2023-catalunya.json\n82e78e7ab6ded24650c4f50787814465cdb2a7b97d2a27b3777953bcac4fa170  ./.cache/lapsim/sessions/2023-hungaroring.json\n1fe185f27718ebd93e03555c8f39fca6cb7cfe23c9b2602431b56d2872595c36  ./.cache/lapsim/sessions/2023-interlagos.json\n7e301058dcc29bac62706c2289679847d8b14f8f0b9d65c612c87f8586ed4717  ./.cache/lapsim/sessions/2023-jeddah.json\n00be332774fdcc86d9c7b34d35fa04fae2f39103d4d547868f134a4bac54edbf  ./.cache/lapsim/sessions/2023-las-vegas.json\n0a8c27dae50624c85ca12cbb27863d5bd2f5c07a5886c049aaeaecbc72ff2207  ./.cache/lapsim/sessions/2023-lusail.json\n2e4a2916abe512b8f9ceb800a4160e08bbe70dbc9a98ef8e9c6cadd4e9342bb3  ./.cache/lapsim/sessions/2023-melbourne.json\ne5cd75edac8a3a032283c785102724f3558f3f66852a9a33a0fd242a1d755a7f  ./.cache/lapsim/sessions/2023-mexico-city.json\ne46b201a0aaafa41d21de103a7564eb7d24684097124bebf04d8456de9cb3f46  ./.cache/lapsim/sessions/2023-miami.json\nf8ffd9b6e406f288cca876d23de039935190283bc643cd86ee7f7710a9008bd4  ./.cache/lapsim/sessions/2023-monte-carlo.json\n4b785086af40f8c34e953aea4c0050e1955c4c618101e808829e5a1c524616bf  ./.cache/lapsim/sessions/2023-montreal.json\nbe99f341a4feb9da81ee72b81a3f39bd8614215f89429ebb2f07808547879054  ./.cache/lapsim/sessions/2023-monza.json\na3d55284fb6e3624bbd809450aec60b86944666acddd6c2325d834d04b0ffbe2  ./.cache/lapsim/sessions/2023-sakhir.json\nb01b8f889990933229b37983f5d7fe13b31731f2766cc7c246cf7240fc538c92  ./.cache/lapsim/sessions/2023-silverstone.json\n31d696df384a739ecc40286bbc9b668d5ddfc0e25d31ded219b340a4927254c3  ./.cache/lapsim/sessions/2023-singapore.json\n1c68dd92d22a0b9efa56584cd51864d5df66206bd0a9fe17a433c663150ef087  ./.cache/lapsim/sessions/2023-spa-francorchamps.json\na56f2cf352989adc38e1cfa685d054292b7984ac111d95c16f10aa1c85283213  ./.cache/lapsim/sessions/2023-spielberg.json\n7f0f4f5e218da479fa0cc9b766079de23bf854dd5dc39e868f3f8cb8e2a25b29  ./.cache/lapsim/sessions/2023-suzuka.json\nd7ba0929d5179d26034033981e618a806fbe69608431c8ef27219af0ac45a6d7  ./.cache/lapsim/sessions/2023-yas-marina-circuit.json\n7894283de651bf74d464b3d5a13f40f6469a4c1cd70cf65888ecc2c3d9c5fdb1  ./.cache/lapsim/sessions/2023-zandvoort.json\nfd7d95a5f20f28dbed38a21a6f879027106c40a6910325482aa9c245bcb58d6b  ./.cache/lapsim/sessions/2024-austin.json\nfa79c08a919c38919f2dca927045561ae71d36f2e49c5cffafc63b37bae2df22  ./.cache/lapsim/sessions/2024-baku.json\n37021901e1728a753d3a176bb58b732e72311c162c3662cdf1cce2b615302e2c  ./.cache/lapsim/sessions/2024-catalunya.json\n98958d12f00a2d07c7353309a0f5d2e1df52cb53fb992d070297c844e628994f  ./.cache/lapsim/sessions/2024-hungaroring.json\n11339fc69dcbd58b752fade9366d8293140f668758ccffb22bc77bcaaad3c1ca  ./.cache/lapsim/sessions/2024-imola.json\n1b084c64c38ff5a61a124a5a9148882c7166e992c31ab49f66266e3045121cb6  ./.cache/lapsim/sessions/2024-interlagos.json\n311f813c0a8842f7c10613cc5f93b54e38d15460b15c327b766c2334b9ff9f68  ./.cache/lapsim/sessions/2024-jeddah.json\nd2c03c4a987d36186da462479e97f5b4f99d1f3c027c8365c701b5057b32c685  ./.cache/lapsim/sessions/2024-las-vegas.json\n937b7e586394e33fa4406f507078a5bd67ff86c178adbe1d7f1ec282dee74a83  ./.cache/lapsim/sessions/2024-lusail.json\n70b949fa9a83322d7709b817f0f3475047699e08272b0f8a353cf49e881f88f2  ./.cache/lapsim/sessions/2024-melbourne.json\nc446f2451e00ece6bb7a9605531fa52642bf99411c5cbec31b6f19e875504c2e  ./.cache/lapsim/sessions/2024-mexico-city.json\nc95fe1cff5369e36af3079149852fdc10ff01f01bb4bdd8b58b86cefbd6dac32  ./.cache/lapsim/sessions/2024-miami.json\n20a07f3daef5756eff69f0af1a367c9af69307c94b36245370f8011e95abc1ea  ./.cache/lapsim/sessions/2024-monte-carlo.json\nf96a87c1d211b52c801a8f23d556a14d2967982351e27aabe7437c822c403f83  ./.cache/lapsim/sessions/2024-montreal.json\nd8436c432f03793e313d513795b430b3a11024da512fa6683826ddd32354a801  ./.cache/lapsim/sessions/2024-monza.json\nea9720c41d4ab69f0f88369ad171f973739c1acaacec6a794e6d670ffed5d115  ./.cache/lapsim/sessions/2024-sakhir.json\n2a8b45d1515a650c72f7f9f641dcb97e51b7baac4229ce6c55659d3910b71977  ./.cache/lapsim/sessions/2024-shanghai.json\nd74f7c23fd03633281b79e6be8111eaab6a2840f3229c5663df771cacbe7e77f  ./.cache/lapsim/sessions/2024-silverstone.json\n19a5e5b5c8903fee292365740f3271a5f9b2f7b74803744a6c7caf921288dd89  ./.cache/lapsim/sessions/2024-singapore.json\na5f584edbfa744a5a426a1795129737ed03346e9412c5881756b68eae2d6dbb4  ./.cache/lapsim/sessions/2024-spa-francorchamps.json\nc27fa41d7262baa75d90468f936b0f76699b927f97056e1439d4de7a71a551e8  ./.cache/lapsim/sessions/2024-spielberg.json\nf4a92cca1e33f66f71ec112ddd364673e94c92ad2ff91dc8cd139ced45201786  ./.cache/lapsim/sessions/2024-suzuka.json\nbb5d731d9a89607449988b9e78f6906c4ed00f56502203a8c3a4d1ab4a7429d0  ./.cache/lapsim/sessions/2024-yas-marina-circuit.json\na19f4adc3e2d39592f93c536024771c7496e4a62543f2688b129c224fff75bf4  ./.cache/lapsim/sessions/2024-zandvoort.json\ne58416f8cdf1ccdaaaa98a3c660e34b08de7e1c7a4a1f3cd5dc8c4a039da2314  ./.cache/lapsim/sessions/2025-austin.json\n070747f25c8b541744f33a753073f94d5a483cc7cec52c08d841c3d432360cd8  ./.cache/lapsim/sessions/2025-catalunya.json\n40923efac75df129a99dcaaaaa7d0e2c54513c8ae925451c42144914f55466c2  ./.cache/lapsim/sessions/2025-hungaroring.json\n10c0a57e8716712636c27022e118e85905d2608ff073d26a79f23583224a67d8  ./.cache/lapsim/sessions/2025-imola.json\n50d82ed592919cc101d4d92a9995132effcd97a2d36281c42570f4f568f852c6  ./.cache/lapsim/sessions/2025-interlagos.json\n502a02c7a532a557b78e9395759ea3da9288cae202525944f7ae168ca0cfc432  ./.cache/lapsim/sessions/2025-jeddah.json\n4dc8425078fbf7dc03a3ee5f6526479abca8d52e3f99275a79d165d913c4e944  ./.cache/lapsim/sessions/2025-las-vegas.json\nd16246dbb6f67a190910ae29cdec169191cb9eccde6a1e359098817c37aab697  ./.cache/lapsim/sessions/2025-lusail.json\ndffcf901f81073e67d21bb53793c3d0898c7280ab04020126ce401da040ab06d  ./.cache/lapsim/sessions/2025-melbourne.json\nb69cc7eeeff33a1491b142ae888f01c4cf1bf4b5ad89739231674d1c0c838bcb  ./.cache/lapsim/sessions/2025-mexico-city.json\n333c6c8aee2ad2149255f412752a56b67e358566ca8a2b45c8da9d7cf7f91579  ./.cache/lapsim/sessions/2025-miami.json\n90bc6ac6eb66bb8d765e8d7f5b3f2be1427dad4edc287e4d021505783053e0dc  ./.cache/lapsim/sessions/2025-monte-carlo.json\na4f2a8fed1f524a1cb471ef9b99d5db716fa05df550fb17174f9ac6fb05b2e0a  ./.cache/lapsim/sessions/2025-montreal.json\nb52d7c727299cf8af68e179d0b2df1716767ea34b15d9e086cd5afbf288acaf6  ./.cache/lapsim/sessions/2025-monza.json\n8ad87b6cfacf5ad3efd5cdff4c52bc7d708d6e3772c821a10135184053e70211  ./.cache/lapsim/sessions/2025-sakhir.json\n56eb3bfe1e74307dc14104362cc09d10055ad5fd06883d2a2217d4b91e226a27  ./.cache/lapsim/sessions/2025-shanghai.json\nf681a82ef250eb4a8ce1827870ccdc3fc57e3875803cc0fa60f59540bd3123f4  ./.cache/lapsim/sessions/2025-silverstone.json\n3a0affaa8425ea104a28a188190dafde73f8a55b4d476ccd3c8deb3b4d3cfcc4  ./.cache/lapsim/sessions/2025-singapore.json\n85274fb77a52269793ec8354f62c3cc324c847bcf02b26d28d9f50a099ad0719  ./.cache/lapsim/sessions/2025-spa-francorchamps.json\n0ff853aba97094e7f4200ae5d3b63dac55e9ac6623636d4a282a246e910825bb  ./.cache/lapsim/sessions/2025-spielberg.json\n1492219999b3e73c145c7193a71cf86f40b8b8cf56365a3219ce1906355b87ff  ./.cache/lapsim/sessions/2025-suzuka.json\n83eb4155d58ef8d6607b472fa2a7651a554e7ed2d3d35d7cb367392190aa3826  ./.cache/lapsim/sessions/2025-yas-marina-circuit.json\ne60fac69011b308c01d32c1ed22cd11a21b5a756cf0745d34772b3d7a55e0164  ./.cache/lapsim/sessions/2025-zandvoort.json\ncc819a91a45f3d967f5824fcc901e234c649a419ef599548f677a6db77d8bc2f  ./.cache/lapsim/sessions/2026-austin.json\n1319453aae55b6278ca93d68d301a0f037dfe1843aa4aca7a645327c05da1f50  ./.cache/lapsim/sessions/2026-baku.json\nbad9edba2c762be31a86c17169e80b198738905fd2127be0c24baa407b1f562d  ./.cache/lapsim/sessions/2026-catalunya.json\n68db8933ab37f5e6cbeecfcb504b5147ab3c1a192136f803505e67f76eb9b446  ./.cache/lapsim/sessions/2026-hungaroring.json\n58b55d14372bdc4315926ae68f02ff4b08c6de7729b398492a92f1764a21b5e3  ./.cache/lapsim/sessions/2026-interlagos.json\n07bd6f6c5801db2baf3de0aa4fdffe0bc5ec91d6c7884d49e9a0ccf4ce76bcf1  ./.cache/lapsim/sessions/2026-kuala-lumpur.json\na6b0771614ce7a09163c1f3b9ea001764e86f62a2dda34f9ad9fac8e8ad73173  ./.cache/lapsim/sessions/2026-las-vegas.json\nb6dc298f768d3b1b6431c3be5fa4b579f2d353c4d757ea31946c31dfd8672ee9  ./.cache/lapsim/sessions/2026-madring.json\n8c08036f2be0a761d122cdb48b15a58273089a6491c4fd2e482595f542f625ca  ./.cache/lapsim/sessions/2026-melbourne.json\n3f64e9aecd3682a8dba16fe845fdfd1ab875dc451d7570c03ad8a530db55c1b1  ./.cache/lapsim/sessions/2026-mexico-city.json\n5c079a5b110db158ecaffee917673c131318b7a2daee6eb08a8e2a1dcd2b4a32  ./.cache/lapsim/sessions/2026-miami.json\n1e82e7274dd02211a47d70367fec20bc63787150c548a4041f47a050261ed1d6  ./.cache/lapsim/sessions/2026-monte-carlo.json\n1a524a7146ca7577545ce2fd8013a04200e49c7e3f2badf09b122202d8c63449  ./.cache/lapsim/sessions/2026-montreal.json\nc5b6194fa2c33a4cb77b2f9682c5bd4df63baeb2feb005aa937f6fd58d58783c  ./.cache/lapsim/sessions/2026-monza.json\n960652d63f52323f72849dca9f260eaf309a55d32202d1b3ca7a6b5a17d6449c  ./.cache/lapsim/sessions/2026-shanghai.json\n4fc35c688e2c6cb4a2a4110d6271d529b71c8b6ce701ae30c72fb3c32f03b25a  ./.cache/lapsim/sessions/2026-silverstone.json\n1d008f2f57141e8173230a290986d1264a542d47b55cb7365f61afacc8359490  ./.cache/lapsim/sessions/2026-singapore.json\n4549ba16450b94100a822a3df388dfad25288ca5b5480786b361940e6bff49fe  ./.cache/lapsim/sessions/2026-spa-francorchamps.json\n8bb3799b0d8498cf0e63c3e05c555551cbf047b162aa549bcfdc3afcbcfdc9fa  ./.cache/lapsim/sessions/2026-spielberg.json\n6d81f2a4dcd1eea5d5ad2466fbbeb7827f7db6a6ec7bde483008161f674b9f4c  ./.cache/lapsim/sessions/2026-suzuka.json\n5e85b6b7573e21e2f0d6bdcc282b3d16041ba5da0c1d512084cc787821936a2f  ./.cache/lapsim/sessions/2026-zandvoort.json\n652acf668ea2d10c7fdcebd6b0f01b5b4c3cab4e13b9138a070a36616082d9d3  ./.cache/lapsim/traces.json\n321bddb688a03589cc62bc912b959188b00479f0a92a36ad5f02f2d9a418c187  ./.cache/lapsim/tracks-built.mjs\n89904c781f91bb360f1aa4b5569b61f3cb869dd72388c4574f0286282dd0b733  ./.cache/lapsim/wec.json\n7395a69b43e357982fd6a8bbc62b41494026e65b3545bea8df67c9007800c845  ./worker/lapsim/wec-poles-data.js\n"
+ },
+ "settings": {
+  "LAPSIM_FIA_ZONES": "on",
+  "LAPSIM_PU_QUALI": "on",
+  "LAPSIM_PU_RAMP": "on",
+  "LAPSIM_BRAKE_ENV_HYPER": "8.63,0.003234",
+  "LAPSIM_TRACE_MASK": "1"
+ },
+ "seeds": "fit: none (deterministic Nelder–Mead / BCD); condition-report bootstrap seed 7; gate.mjs sign-flip / bootstrap seed 1",
+ "fit": "failure",
+ "diff": {
+  "heldOut": {
+   "all": {
+    "n": 68,
+    "base": 0.901,
+    "cand": 0.915,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "f1": {
+    "n": 35,
+    "base": 0.823,
+    "cand": 0.836,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "wec": {
+    "n": 33,
+    "base": 0.977,
+    "cand": 0.992,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "f1/2025": {
+    "n": 20,
+    "base": 0.734,
+    "cand": 0.791,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "f1/2026": {
+    "n": 15,
+    "base": 0.93,
+    "cand": 0.892,
+    "reason": "rejected: gain within noise"
+   },
+   "wec-lmh/2025": {
+    "n": 5,
+    "base": 0.667,
+    "cand": 0.658,
+    "reason": "rejected: gain within noise"
+   },
+   "wec-lmh/2026": {
+    "n": 6,
+    "base": 1.084,
+    "cand": 1.145,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "wec-lmdh/2025": {
+    "n": 5,
+    "base": 0.811,
+    "cand": 0.844,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "wec-lmdh/2026": {
+    "n": 6,
+    "base": 0.893,
+    "cand": 0.928,
+    "reason": "rejected: worse on held-out rows"
+   },
+   "wec-lmgt3/2025": {
+    "n": 5,
+    "base": 1.281,
+    "cand": 1.236,
+    "reason": "accepted: held-out error lower beyond noise"
+   },
+   "wec-lmgt3/2026": {
+    "n": 6,
+    "base": 0.994,
+    "cand": 1.008,
+    "reason": "rejected: worse on held-out rows"
+   }
+  },
+  "harm": {
+   "f1": {
+    "n": 35,
+    "meanPp": 0.0312,
+    "ub95Pp": 0.1026,
+    "worse": 17,
+    "maxPp": 0.7197,
+    "overRowLimit": [],
+    "pass": false,
+    "rows": [
+     {
+      "row": "f1/2025|silverstone",
+      "shippedPct": 0.172,
+      "newPct": -0.8917,
+      "harmPp": 0.7197
+     },
+     {
+      "row": "f1/2026|silverstone",
+      "shippedPct": -0.2769,
+      "newPct": 0.8966,
+      "harmPp": 0.6197
+     },
+     {
+      "row": "f1/2025|melbourne",
+      "shippedPct": 0.7737,
+      "newPct": 1.2091,
+      "harmPp": 0.4354
+     },
+     {
+      "row": "f1/2026|spa-francorchamps",
+      "shippedPct": -0.276,
+      "newPct": -0.6631,
+      "harmPp": 0.3871
+     },
+     {
+      "row": "f1/2026|spielberg",
+      "shippedPct": -0.3797,
+      "newPct": -0.6428,
+      "harmPp": 0.2632
+     },
+     {
+      "row": "f1/2026|monza",
+      "shippedPct": -0.3228,
+      "newPct": -0.5062,
+      "harmPp": 0.1834
+     },
+     {
+      "row": "f1/2025|shanghai",
+      "shippedPct": 1.6957,
+      "newPct": 1.8446,
+      "harmPp": 0.1489
+     },
+     {
+      "row": "f1/2026|melbourne",
+      "shippedPct": -0.4623,
+      "newPct": -0.5973,
+      "harmPp": 0.135
+     },
+     {
+      "row": "f1/2025|lusail",
+      "shippedPct": 1.0128,
+      "newPct": 1.1173,
+      "harmPp": 0.1046
+     },
+     {
+      "row": "f1/2026|singapore",
+      "shippedPct": -0.7223,
+      "newPct": -0.777,
+      "harmPp": 0.0547
+     },
+     {
+      "row": "f1/2026|catalunya",
+      "shippedPct": -1.3645,
+      "newPct": -1.4127,
+      "harmPp": 0.0482
+     },
+     {
+      "row": "f1/2025|catalunya",
+      "shippedPct": -0.3606,
+      "newPct": -0.4053,
+      "harmPp": 0.0447
+     },
+     {
+      "row": "f1/2026|mexico-city",
+      "shippedPct": 1.0743,
+      "newPct": 1.1109,
+      "harmPp": 0.0366
+     },
+     {
+      "row": "f1/2025|jeddah",
+      "shippedPct": -0.4009,
+      "newPct": -0.4273,
+      "harmPp": 0.0263
+     },
+     {
+      "row": "f1/2026|austin",
+      "shippedPct": 1.2899,
+      "newPct": 1.3048,
+      "harmPp": 0.0149
+     },
+     {
+      "row": "f1/2025|suzuka",
+      "shippedPct": 0.1644,
+      "newPct": 0.1782,
+      "harmPp": 0.0138
+     },
+     {
+      "row": "f1/2025|imola",
+      "shippedPct": -0.4393,
+      "newPct": -0.446,
+      "harmPp": 0.0067
+     },
+     {
+      "row": "f1/2025|sakhir",
+      "shippedPct": -1.2567,
+      "newPct": -1.2567,
+      "harmPp": 0
+     },
+     {
+      "row": "f1/2025|spa-francorchamps",
+      "shippedPct": -0.0845,
+      "newPct": 0.0746,
+      "harmPp": -0.0099
+     },
+     {
+      "row": "f1/2026|las-vegas",
+      "shippedPct": -0.1566,
+      "newPct": -0.1427,
+      "harmPp": -0.0138
+     },
+     {
+      "row": "f1/2025|singapore",
+      "shippedPct": -0.4419,
+      "newPct": -0.4195,
+      "harmPp": -0.0224
+     },
+     {
+      "row": "f1/2025|monza",
+      "shippedPct": -0.0736,
+      "newPct": -0.0457,
+      "harmPp": -0.0279
+     },
+     {
+      "row": "f1/2025|miami",
+      "shippedPct": -0.7679,
+      "newPct": -0.7389,
+      "harmPp": -0.029
+     },
+     {
+      "row": "f1/2025|zandvoort",
+      "shippedPct": 0.118,
+      "newPct": 0.0626,
+      "harmPp": -0.0553
+     },
+     {
+      "row": "f1/2025|hungaroring",
+      "shippedPct": -1.0972,
+      "newPct": -1.0335,
+      "harmPp": -0.0637
+     },
+     {
+      "row": "f1/2026|miami",
+      "shippedPct": 0.9533,
+      "newPct": 0.8816,
+      "harmPp": -0.0718
+     },
+     {
+      "row": "f1/2025|yas-marina-circuit",
+      "shippedPct": -0.4172,
+      "newPct": -0.3406,
+      "harmPp": -0.0766
+     },
+     {
+      "row": "f1/2025|spielberg",
+      "shippedPct": -1.0427,
+      "newPct": -0.9645,
+      "harmPp": -0.0782
+     },
+     {
+      "row": "f1/2025|austin",
+      "shippedPct": -0.6864,
+      "newPct": -0.6053,
+      "harmPp": -0.0811
+     },
+     {
+      "row": "f1/2025|mexico-city",
+      "shippedPct": -0.5821,
+      "newPct": -0.4895,
+      "harmPp": -0.0926
+     },
+     {
+      "row": "f1/2026|hungaroring",
+      "shippedPct": -0.2798,
+      "newPct": -0.158,
+      "harmPp": -0.1218
+     },
+     {
+      "row": "f1/2025|monte-carlo",
+      "shippedPct": -0.243,
+      "newPct": -0.0972,
+      "harmPp": -0.1458
+     },
+     {
+      "row": "f1/2026|baku",
+      "shippedPct": 0.2926,
+      "newPct": 0.1161,
+      "harmPp": -0.1765
+     },
+     {
+      "row": "f1/2026|monte-carlo",
+      "shippedPct": -2.1082,
+      "newPct": -1.7279,
+      "harmPp": -0.3803
+     },
+     {
+      "row": "f1/2026|shanghai",
+      "shippedPct": 1.2676,
+      "newPct": 0.5648,
+      "harmPp": -0.7028
+     }
+    ]
+   },
+   "wec": {
+    "n": 33,
+    "meanPp": 0.0112,
+    "ub95Pp": 0.0588,
+    "worse": 16,
+    "maxPp": 0.3984,
+    "overRowLimit": [],
+    "pass": true,
+    "rows": [
+     {
+      "row": "wec-lmh/2026|monza",
+      "shippedPct": 0.9918,
+      "newPct": 1.3903,
+      "harmPp": 0.3984
+     },
+     {
+      "row": "wec-lmdh/2026|monza",
+      "shippedPct": 0.7843,
+      "newPct": 1.1588,
+      "harmPp": 0.3745
+     },
+     {
+      "row": "wec-lmdh/2026|catalunya",
+      "shippedPct": -0.6399,
+      "newPct": -0.9216,
+      "harmPp": 0.2817
+     },
+     {
+      "row": "wec-lmh/2026|catalunya",
+      "shippedPct": -0.9044,
+      "newPct": -1.1778,
+      "harmPp": 0.2734
+     },
+     {
+      "row": "wec-lmgt3/2026|catalunya",
+      "shippedPct": 0.2546,
+      "newPct": 0.4389,
+      "harmPp": 0.1843
+     },
+     {
+      "row": "wec-lmdh/2025|sakhir",
+      "shippedPct": 0.2938,
+      "newPct": 0.4361,
+      "harmPp": 0.1423
+     },
+     {
+      "row": "wec-lmgt3/2026|monza",
+      "shippedPct": 0.4147,
+      "newPct": 0.5016,
+      "harmPp": 0.0869
+     },
+     {
+      "row": "wec-lmh/2025|imola",
+      "shippedPct": -0.1968,
+      "newPct": -0.2778,
+      "harmPp": 0.081
+     },
+     {
+      "row": "wec-lmdh/2025|imola",
+      "shippedPct": -0.534,
+      "newPct": -0.6108,
+      "harmPp": 0.0768
+     },
+     {
+      "row": "wec-lmgt3/2026|spa-francorchamps",
+      "shippedPct": 1.5167,
+      "newPct": 1.5709,
+      "harmPp": 0.0542
+     },
+     {
+      "row": "wec-lmgt3/2025|lusail",
+      "shippedPct": 1.6757,
+      "newPct": 1.7249,
+      "harmPp": 0.0492
+     },
+     {
+      "row": "wec-lmdh/2025|spa-francorchamps",
+      "shippedPct": -0.316,
+      "newPct": -0.3518,
+      "harmPp": 0.0358
+     },
+     {
+      "row": "wec-lmh/2025|lusail",
+      "shippedPct": 1.0086,
+      "newPct": 1.035,
+      "harmPp": 0.0264
+     },
+     {
+      "row": "wec-lmdh/2025|lusail",
+      "shippedPct": 1.5574,
+      "newPct": 1.5828,
+      "harmPp": 0.0254
+     },
+     {
+      "row": "wec-lmgt3/2026|interlagos",
+      "shippedPct": -1.7215,
+      "newPct": -1.7375,
+      "harmPp": 0.0161
+     },
+     {
+      "row": "wec-lmh/2026|interlagos",
+      "shippedPct": -1.7209,
+      "newPct": -1.7293,
+      "harmPp": 0.0084
+     },
+     {
+      "row": "wec-lmdh/2026|interlagos",
+      "shippedPct": -1.1464,
+      "newPct": -1.1344,
+      "harmPp": -0.012
+     },
+     {
+      "row": "wec-lmdh/2025|interlagos",
+      "shippedPct": -0.6237,
+      "newPct": -0.6068,
+      "harmPp": -0.017
+     },
+     {
+      "row": "wec-lmgt3/2025|imola",
+      "shippedPct": -1.1766,
+      "newPct": -1.1512,
+      "harmPp": -0.0254
+     },
+     {
+      "row": "wec-lmh/2025|spa-francorchamps",
+      "shippedPct": 0.8193,
+      "newPct": 0.7883,
+      "harmPp": -0.0309
+     },
+     {
+      "row": "wec-lmh/2025|interlagos",
+      "shippedPct": -0.5956,
+      "newPct": -0.5618,
+      "harmPp": -0.0338
+     },
+     {
+      "row": "wec-lmgt3/2026|imola",
+      "shippedPct": -0.335,
+      "newPct": -0.2965,
+      "harmPp": -0.0385
+     },
+     {
+      "row": "wec-lmgt3/2025|spa-francorchamps",
+      "shippedPct": 1.2045,
+      "newPct": 1.1501,
+      "harmPp": -0.0545
+     },
+     {
+      "row": "wec-lmdh/2026|imola",
+      "shippedPct": -0.6592,
+      "newPct": -0.5994,
+      "harmPp": -0.0597
+     },
+     {
+      "row": "wec-lmgt3/2025|interlagos",
+      "shippedPct": -1.2797,
+      "newPct": -1.2126,
+      "harmPp": -0.0671
+     },
+     {
+      "row": "wec-lmh/2026|imola",
+      "shippedPct": -0.2065,
+      "newPct": -0.1388,
+      "harmPp": -0.0677
+     },
+     {
+      "row": "wec-lmh/2025|sakhir",
+      "shippedPct": -0.3772,
+      "newPct": -0.2855,
+      "harmPp": -0.0917
+     },
+     {
+      "row": "wec-lmdh/2026|spa-francorchamps",
+      "shippedPct": 0.7332,
+      "newPct": 0.6015,
+      "harmPp": -0.1317
+     },
+     {
+      "row": "wec-lmh/2026|spa-francorchamps",
+      "shippedPct": 0.7393,
+      "newPct": 0.5719,
+      "harmPp": -0.1674
+     },
+     {
+      "row": "wec-lmh/2026|austin",
+      "shippedPct": 1.3024,
+      "newPct": 1.1025,
+      "harmPp": -0.2
+     },
+     {
+      "row": "wec-lmgt3/2025|sakhir",
+      "shippedPct": -0.9633,
+      "newPct": -0.7414,
+      "harmPp": -0.2219
+     },
+     {
+      "row": "wec-lmdh/2026|austin",
+      "shippedPct": 1.2144,
+      "newPct": 0.9806,
+      "harmPp": -0.2338
+     },
+     {
+      "row": "wec-lmgt3/2026|austin",
+      "shippedPct": -0.5587,
+      "newPct": -0.2686,
+      "harmPp": -0.2902
+     }
+    ]
+   }
+  },
+  "wec": {
+   "byClass": {
+    "wec-lmh": {
+     "n": 11,
+     "meanPp": 0.0178,
+     "ub95Pp": 0.1157,
+     "worse": 5,
+     "maxPp": 0.3984,
+     "overRowLimit": [],
+     "pass": false
+    },
+    "wec-lmdh": {
+     "n": 11,
+     "meanPp": 0.0438,
+     "ub95Pp": 0.1389,
+     "worse": 6,
+     "maxPp": 0.3745,
+     "overRowLimit": [],
+     "pass": false
+    },
+    "wec-lmgt3": {
+     "n": 11,
+     "meanPp": -0.0279,
+     "ub95Pp": 0.0457,
+     "worse": 5,
+     "maxPp": 0.1843,
+     "overRowLimit": [],
+     "pass": true
+    }
+   },
+   "byTrack": [
+    {
+     "track": "monza",
+     "n": 3,
+     "meanHarmPp": 0.2866,
+     "maxHarmPp": 0.3984
+    },
+    {
+     "track": "catalunya",
+     "n": 3,
+     "meanHarmPp": 0.2465,
+     "maxHarmPp": 0.2817
+    },
+    {
+     "track": "lusail",
+     "n": 3,
+     "meanHarmPp": 0.0337,
+     "maxHarmPp": 0.0492
+    },
+    {
+     "track": "imola",
+     "n": 6,
+     "meanHarmPp": -0.0056,
+     "maxHarmPp": 0.081
+    },
+    {
+     "track": "interlagos",
+     "n": 6,
+     "meanHarmPp": -0.0176,
+     "maxHarmPp": 0.0161
+    },
+    {
+     "track": "spa-francorchamps",
+     "n": 6,
+     "meanHarmPp": -0.0491,
+     "maxHarmPp": 0.0542
+    },
+    {
+     "track": "sakhir",
+     "n": 3,
+     "meanHarmPp": -0.0571,
+     "maxHarmPp": 0.1423
+    },
+    {
+     "track": "austin",
+     "n": 3,
+     "meanHarmPp": -0.2413,
+     "maxHarmPp": -0.2
+    }
+   ]
+  },
+  "changedRows": [
+   {
+    "row": "f1/2025|monza",
+    "shippedPct": -0.0736,
+    "newPct": -0.0457
+   },
+   {
+    "row": "f1/2025|singapore",
+    "shippedPct": -0.4419,
+    "newPct": -0.4195
+   },
+   {
+    "row": "f1/2025|austin",
+    "shippedPct": -0.6864,
+    "newPct": -0.6053
+   },
+   {
+    "row": "f1/2025|mexico-city",
+    "shippedPct": -0.5821,
+    "newPct": -0.4895
+   },
+   {
+    "row": "f1/2025|yas-marina-circuit",
+    "shippedPct": -0.4172,
+    "newPct": -0.3406
+   },
+   {
+    "row": "f1/2025|jeddah",
+    "shippedPct": -0.4009,
+    "newPct": -0.4273
+   },
+   {
+    "row": "f1/2025|miami",
+    "shippedPct": -0.7679,
+    "newPct": -0.7389
+   },
+   {
+    "row": "f1/2025|catalunya",
+    "shippedPct": -0.3606,
+    "newPct": -0.4053
+   },
+   {
+    "row": "f1/2025|spa-francorchamps",
+    "shippedPct": -0.0845,
+    "newPct": 0.0746
+   },
+   {
+    "row": "f1/2025|zandvoort",
+    "shippedPct": 0.118,
+    "newPct": 0.0626
+   },
+   {
+    "row": "f1/2025|shanghai",
+    "shippedPct": 1.6957,
+    "newPct": 1.8446
+   },
+   {
+    "row": "f1/2025|monte-carlo",
+    "shippedPct": -0.243,
+    "newPct": -0.0972
+   },
+   {
+    "row": "f1/2025|spielberg",
+    "shippedPct": -1.0427,
+    "newPct": -0.9645
+   },
+   {
+    "row": "f1/2025|hungaroring",
+    "shippedPct": -1.0972,
+    "newPct": -1.0335
+   },
+   {
+    "row": "f1/2025|lusail",
+    "shippedPct": 1.0128,
+    "newPct": 1.1173
+   },
+   {
+    "row": "f1/2025|melbourne",
+    "shippedPct": 0.7737,
+    "newPct": 1.2091
+   },
+   {
+    "row": "f1/2025|suzuka",
+    "shippedPct": 0.1644,
+    "newPct": 0.1782
+   },
+   {
+    "row": "f1/2025|imola",
+    "shippedPct": -0.4393,
+    "newPct": -0.446
+   },
+   {
+    "row": "f1/2025|silverstone",
+    "shippedPct": 0.172,
+    "newPct": -0.8917
+   },
+   {
+    "row": "f1/2026|shanghai",
+    "shippedPct": 1.2676,
+    "newPct": 0.5648
+   },
+   {
+    "row": "f1/2026|spielberg",
+    "shippedPct": -0.3797,
+    "newPct": -0.6428
+   },
+   {
+    "row": "f1/2026|austin",
+    "shippedPct": 1.2899,
+    "newPct": 1.3048
+   },
+   {
+    "row": "f1/2026|mexico-city",
+    "shippedPct": 1.0743,
+    "newPct": 1.1109
+   },
+   {
+    "row": "f1/2026|miami",
+    "shippedPct": 0.9533,
+    "newPct": 0.8816
+   },
+   {
+    "row": "f1/2026|silverstone",
+    "shippedPct": -0.2769,
+    "newPct": 0.8966
+   },
+   {
+    "row": "f1/2026|baku",
+    "shippedPct": 0.2926,
+    "newPct": 0.1161
+   },
+   {
+    "row": "f1/2026|las-vegas",
+    "shippedPct": -0.1566,
+    "newPct": -0.1427
+   },
+   {
+    "row": "f1/2026|monte-carlo",
+    "shippedPct": -2.1082,
+    "newPct": -1.7279
+   },
+   {
+    "row": "f1/2026|catalunya",
+    "shippedPct": -1.3645,
+    "newPct": -1.4127
+   },
+   {
+    "row": "f1/2026|singapore",
+    "shippedPct": -0.7223,
+    "newPct": -0.777
+   },
+   {
+    "row": "f1/2026|melbourne",
+    "shippedPct": -0.4623,
+    "newPct": -0.5973
+   },
+   {
+    "row": "f1/2026|spa-francorchamps",
+    "shippedPct": -0.276,
+    "newPct": -0.6631
+   },
+   {
+    "row": "f1/2026|hungaroring",
+    "shippedPct": -0.2798,
+    "newPct": -0.158
+   },
+   {
+    "row": "f1/2026|monza",
+    "shippedPct": -0.3228,
+    "newPct": -0.5062
+   },
+   {
+    "row": "wec-lmh/2025|imola",
+    "shippedPct": -0.1968,
+    "newPct": -0.2778
+   },
+   {
+    "row": "wec-lmh/2025|interlagos",
+    "shippedPct": -0.5956,
+    "newPct": -0.5618
+   },
+   {
+    "row": "wec-lmh/2025|lusail",
+    "shippedPct": 1.0086,
+    "newPct": 1.035
+   },
+   {
+    "row": "wec-lmh/2025|sakhir",
+    "shippedPct": -0.3772,
+    "newPct": -0.2855
+   },
+   {
+    "row": "wec-lmh/2025|spa-francorchamps",
+    "shippedPct": 0.8193,
+    "newPct": 0.7883
+   },
+   {
+    "row": "wec-lmh/2026|austin",
+    "shippedPct": 1.3024,
+    "newPct": 1.1025
+   },
+   {
+    "row": "wec-lmh/2026|catalunya",
+    "shippedPct": -0.9044,
+    "newPct": -1.1778
+   },
+   {
+    "row": "wec-lmh/2026|imola",
+    "shippedPct": -0.2065,
+    "newPct": -0.1388
+   },
+   {
+    "row": "wec-lmh/2026|interlagos",
+    "shippedPct": -1.7209,
+    "newPct": -1.7293
+   },
+   {
+    "row": "wec-lmh/2026|monza",
+    "shippedPct": 0.9918,
+    "newPct": 1.3903
+   },
+   {
+    "row": "wec-lmh/2026|spa-francorchamps",
+    "shippedPct": 0.7393,
+    "newPct": 0.5719
+   },
+   {
+    "row": "wec-lmdh/2025|imola",
+    "shippedPct": -0.534,
+    "newPct": -0.6108
+   },
+   {
+    "row": "wec-lmdh/2025|interlagos",
+    "shippedPct": -0.6237,
+    "newPct": -0.6068
+   },
+   {
+    "row": "wec-lmdh/2025|lusail",
+    "shippedPct": 1.5574,
+    "newPct": 1.5828
+   },
+   {
+    "row": "wec-lmdh/2025|sakhir",
+    "shippedPct": 0.2938,
+    "newPct": 0.4361
+   },
+   {
+    "row": "wec-lmdh/2025|spa-francorchamps",
+    "shippedPct": -0.316,
+    "newPct": -0.3518
+   },
+   {
+    "row": "wec-lmdh/2026|austin",
+    "shippedPct": 1.2144,
+    "newPct": 0.9806
+   },
+   {
+    "row": "wec-lmdh/2026|catalunya",
+    "shippedPct": -0.6399,
+    "newPct": -0.9216
+   },
+   {
+    "row": "wec-lmdh/2026|imola",
+    "shippedPct": -0.6592,
+    "newPct": -0.5994
+   },
+   {
+    "row": "wec-lmdh/2026|interlagos",
+    "shippedPct": -1.1464,
+    "newPct": -1.1344
+   },
+   {
+    "row": "wec-lmdh/2026|monza",
+    "shippedPct": 0.7843,
+    "newPct": 1.1588
+   },
+   {
+    "row": "wec-lmdh/2026|spa-francorchamps",
+    "shippedPct": 0.7332,
+    "newPct": 0.6015
+   },
+   {
+    "row": "wec-lmgt3/2025|imola",
+    "shippedPct": -1.1766,
+    "newPct": -1.1512
+   },
+   {
+    "row": "wec-lmgt3/2025|interlagos",
+    "shippedPct": -1.2797,
+    "newPct": -1.2126
+   },
+   {
+    "row": "wec-lmgt3/2025|lusail",
+    "shippedPct": 1.6757,
+    "newPct": 1.7249
+   },
+   {
+    "row": "wec-lmgt3/2025|sakhir",
+    "shippedPct": -0.9633,
+    "newPct": -0.7414
+   },
+   {
+    "row": "wec-lmgt3/2025|spa-francorchamps",
+    "shippedPct": 1.2045,
+    "newPct": 1.1501
+   },
+   {
+    "row": "wec-lmgt3/2026|austin",
+    "shippedPct": -0.5587,
+    "newPct": -0.2686
+   },
+   {
+    "row": "wec-lmgt3/2026|catalunya",
+    "shippedPct": 0.2546,
+    "newPct": 0.4389
+   },
+   {
+    "row": "wec-lmgt3/2026|imola",
+    "shippedPct": -0.335,
+    "newPct": -0.2965
+   },
+   {
+    "row": "wec-lmgt3/2026|interlagos",
+    "shippedPct": -1.7215,
+    "newPct": -1.7375
+   },
+   {
+    "row": "wec-lmgt3/2026|monza",
+    "shippedPct": 0.4147,
+    "newPct": 0.5016
+   },
+   {
+    "row": "wec-lmgt3/2026|spa-francorchamps",
+    "shippedPct": 1.5167,
+    "newPct": 1.5709
+   }
+  ],
+  "changedCarParams": [
+   {
+    "where": "f1 2023",
+    "param": "muX",
+    "shipped": 1.563,
+    "new": 1.595
+   },
+   {
+    "where": "f1 2023",
+    "param": "muY",
+    "shipped": 1.7525,
+    "new": 1.7884
+   },
+   {
+    "where": "f1 2023",
+    "param": "muXTrac",
+    "shipped": 1.8472,
+    "new": 1.885
+   },
+   {
+    "where": "f1 2023",
+    "param": "clA",
+    "shipped": 7.2873,
+    "new": 6.9842
+   },
+   {
+    "where": "f1 2023",
+    "param": "cdA",
+    "shipped": 1.2686,
+    "new": 1.2321
+   },
+   {
+    "where": "f1 2023",
+    "param": "cdALow",
+    "shipped": 0.7614,
+    "new": 0.7548
+   },
+   {
+    "where": "f1 2023",
+    "param": "pIce",
+    "shipped": 482526.5472,
+    "new": 476000
+   },
+   {
+    "where": "f1 2024",
+    "param": "muX",
+    "shipped": 1.5501,
+    "new": 1.557
+   },
+   {
+    "where": "f1 2024",
+    "param": "muY",
+    "shipped": 1.738,
+    "new": 1.7457
+   },
+   {
+    "where": "f1 2024",
+    "param": "muXTrac",
+    "shipped": 1.8319,
+    "new": 1.8401
+   },
+   {
+    "where": "f1 2024",
+    "param": "cdA",
+    "shipped": 1.2029,
+    "new": 1.2062
+   },
+   {
+    "where": "f1 2024",
+    "param": "cdALow",
+    "shipped": 0.7717,
+    "new": 0.7728
+   },
+   {
+    "where": "f1 2025",
+    "param": "muX",
+    "shipped": 1.583,
+    "new": 1.5884
+   },
+   {
+    "where": "f1 2025",
+    "param": "muY",
+    "shipped": 1.7749,
+    "new": 1.781
+   },
+   {
+    "where": "f1 2025",
+    "param": "muXTrac",
+    "shipped": 1.8708,
+    "new": 1.8772
+   },
+   {
+    "where": "f1 2025",
+    "param": "cdA",
+    "shipped": 1.178,
+    "new": 1.1728
+   },
+   {
+    "where": "f1 2025",
+    "param": "cdALow",
+    "shipped": 0.79,
+    "new": 0.7949
+   },
+   {
+    "where": "f1 2026",
+    "param": "muX",
+    "shipped": 1.5329,
+    "new": 1.4768
+   },
+   {
+    "where": "f1 2026",
+    "param": "muY",
+    "shipped": 1.7187,
+    "new": 1.6558
+   },
+   {
+    "where": "f1 2026",
+    "param": "muXTrac",
+    "shipped": 1.8116,
+    "new": 1.7453
+   },
+   {
+    "where": "f1 2026",
+    "param": "clA",
+    "shipped": 6.6455,
+    "new": 7.4686
+   },
+   {
+    "where": "f1 2026",
+    "param": "cdA",
+    "shipped": 1.889,
+    "new": 1.803
+   },
+   {
+    "where": "f1 2026",
+    "param": "cdALow",
+    "shipped": 1.1394,
+    "new": 1.1475
+   },
+   {
+    "where": "wec-lmh 2025",
+    "param": "muX",
+    "shipped": 1.4759,
+    "new": 1.4713
+   },
+   {
+    "where": "wec-lmh 2025",
+    "param": "muY",
+    "shipped": 1.6143,
+    "new": 1.6093
+   },
+   {
+    "where": "wec-lmh 2025",
+    "param": "muXTrac",
+    "shipped": 1.5682,
+    "new": 1.5633
+   },
+   {
+    "where": "wec-lmh 2025",
+    "param": "cdA",
+    "shipped": 1.0695,
+    "new": 1.0218
+   },
+   {
+    "where": "wec-lmh 2025",
+    "param": "cdALow",
+    "shipped": 1.0695,
+    "new": 1.0218
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "muX",
+    "shipped": 1.4419,
+    "new": 1.4208
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "muY",
+    "shipped": 1.5771,
+    "new": 1.554
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "muXTrac",
+    "shipped": 1.532,
+    "new": 1.5096
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "clA",
+    "shipped": 6.315,
+    "new": 7
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "cdA",
+    "shipped": 0.9454,
+    "new": 1.0158
+   },
+   {
+    "where": "wec-lmh 2026",
+    "param": "cdALow",
+    "shipped": 0.9454,
+    "new": 1.0158
+   },
+   {
+    "where": "wec-lmdh 2025",
+    "param": "muX",
+    "shipped": 1.4665,
+    "new": 1.4628
+   },
+   {
+    "where": "wec-lmdh 2025",
+    "param": "muY",
+    "shipped": 1.604,
+    "new": 1.5999
+   },
+   {
+    "where": "wec-lmdh 2025",
+    "param": "muXTrac",
+    "shipped": 1.5582,
+    "new": 1.5542
+   },
+   {
+    "where": "wec-lmdh 2025",
+    "param": "cdA",
+    "shipped": 1.0871,
+    "new": 1.0448
+   },
+   {
+    "where": "wec-lmdh 2025",
+    "param": "cdALow",
+    "shipped": 1.0871,
+    "new": 1.0448
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "muX",
+    "shipped": 1.4335,
+    "new": 1.4205
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "muY",
+    "shipped": 1.5679,
+    "new": 1.5536
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "muXTrac",
+    "shipped": 1.5231,
+    "new": 1.5092
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "clA",
+    "shipped": 6.4628,
+    "new": 6.994
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "cdA",
+    "shipped": 0.9318,
+    "new": 0.9993
+   },
+   {
+    "where": "wec-lmdh 2026",
+    "param": "cdALow",
+    "shipped": 0.9318,
+    "new": 0.9993
+   },
+   {
+    "where": "wec-lmgt3 2025",
+    "param": "muX",
+    "shipped": 1.5021,
+    "new": 1.4991
+   },
+   {
+    "where": "wec-lmgt3 2025",
+    "param": "muY",
+    "shipped": 1.6057,
+    "new": 1.6025
+   },
+   {
+    "where": "wec-lmgt3 2025",
+    "param": "muXTrac",
+    "shipped": 1.5539,
+    "new": 1.5508
+   },
+   {
+    "where": "wec-lmgt3 2025",
+    "param": "cdA",
+    "shipped": 1.3,
+    "new": 1.2408
+   },
+   {
+    "where": "wec-lmgt3 2025",
+    "param": "cdALow",
+    "shipped": 1.3,
+    "new": 1.2408
+   },
+   {
+    "where": "wec-lmgt3 2026",
+    "param": "muX",
+    "shipped": 1.5166,
+    "new": 1.5268
+   },
+   {
+    "where": "wec-lmgt3 2026",
+    "param": "muY",
+    "shipped": 1.6212,
+    "new": 1.6321
+   },
+   {
+    "where": "wec-lmgt3 2026",
+    "param": "muXTrac",
+    "shipped": 1.5689,
+    "new": 1.5795
+   },
+   {
+    "where": "wec-lmgt3 2026",
+    "param": "cdA",
+    "shipped": 1.2659,
+    "new": 1.2631
+   },
+   {
+    "where": "wec-lmgt3 2026",
+    "param": "cdALow",
+    "shipped": 1.2659,
+    "new": 1.2631
+   }
+  ],
+  "identical": false
+ },
+ "feHarm": {
+  "n": 32,
+  "meanPp": 0,
+  "ub95Pp": 0.0065,
+  "worse": 8,
+  "maxPp": 0.08,
+  "overRowLimit": [],
+  "pass": true,
+  "rows": [
+   {
+    "row": "fe/fe-gen3evo/jarama/2026/Qualifying Duel Final",
+    "shippedPct": 3.35,
+    "newPct": 3.43,
+    "harmPp": 0.08
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-miami-2025/2025/Qualifying Duel Quarter-Final 1",
+    "shippedPct": 0.33,
+    "newPct": 0.36,
+    "harmPp": 0.03
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-mexico/2026/Qualifying Duel Semi-Final 1",
+    "shippedPct": -1.23,
+    "newPct": -1.24,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/monte-carlo/2025/Qualifying Duel Semi-Final 2",
+    "shippedPct": 0.9,
+    "newPct": 0.91,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-sao-paulo/2025/Qualifying Duel Final",
+    "shippedPct": 0.66,
+    "newPct": 0.67,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3/fe-tokyo/2024/Qualifying Duel Semi-Final 1",
+    "shippedPct": 5.82,
+    "newPct": 5.83,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3/fe-sao-paulo/2024/Qualifying Duel Semi-Final 1",
+    "shippedPct": -0.14,
+    "newPct": -0.15,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3/fe-sao-paulo/2023/Qualifying Duel Quarter-Final 4",
+    "shippedPct": -0.95,
+    "newPct": -0.96,
+    "harmPp": 0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-tokyo/2026/Qualifying Duel Final",
+    "shippedPct": -2.58,
+    "newPct": -2.58,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/monte-carlo/2026/Qualifying Duel Semi-Final 1",
+    "shippedPct": 0.75,
+    "newPct": 0.75,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-berlin/2026/Qualifying Group B",
+    "shippedPct": -0.99,
+    "newPct": -0.99,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-jeddah/2026/Qualifying Duel Semi-Final 2",
+    "shippedPct": 0.15,
+    "newPct": 0.15,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-sao-paulo/2026/Qualifying Duel Semi-Final 2",
+    "shippedPct": 0.53,
+    "newPct": 0.53,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-berlin/2025/Qualifying Group B",
+    "shippedPct": 0.83,
+    "newPct": 0.83,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-tokyo/2025/Qualifying Duel Semi-Final 1",
+    "shippedPct": -2.21,
+    "newPct": -2.21,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-jeddah/2025/Qualifying Duel Final",
+    "shippedPct": -0.38,
+    "newPct": -0.38,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-mexico-2023/2025/Qualifying Duel Semi-Final 2",
+    "shippedPct": 1.92,
+    "newPct": 1.92,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/monte-carlo/2024/Qualifying Duel Quarter-Final 2",
+    "shippedPct": -0.66,
+    "newPct": -0.66,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/fe-mexico-2023/2024/Qualifying Duel Quarter-Final 4",
+    "shippedPct": -0.28,
+    "newPct": -0.28,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/fe-london/2023/Qualifying Duel Quarter-Final 3",
+    "shippedPct": 0.59,
+    "newPct": 0.59,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/fe-jakarta/2023/Qualifying Duel Final",
+    "shippedPct": -3.76,
+    "newPct": -3.76,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/monte-carlo/2023/Qualifying Duel Semi-Final 1",
+    "shippedPct": -1.24,
+    "newPct": -1.24,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3/fe-mexico-2023/2023/Qualifying Duel Semi-Final 2",
+    "shippedPct": -1.46,
+    "newPct": -1.46,
+    "harmPp": 0
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-london/2026/Qualifying Duel Final",
+    "shippedPct": 0.17,
+    "newPct": 0.16,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-shanghai/2026/Qualifying Duel Quarter-Final 4",
+    "shippedPct": -0.7,
+    "newPct": -0.69,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-london/2025/Qualifying Duel Quarter-Final 4",
+    "shippedPct": 0.28,
+    "newPct": 0.27,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-jakarta/2025/Qualifying Duel Final",
+    "shippedPct": 3.87,
+    "newPct": 3.86,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-shanghai/2025/Qualifying Duel Final",
+    "shippedPct": -2.27,
+    "newPct": -2.26,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3/fe-london/2024/Qualifying Duel Final",
+    "shippedPct": -0.77,
+    "newPct": -0.76,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3/fe-shanghai/2024/Qualifying Duel Final",
+    "shippedPct": 3.15,
+    "newPct": 3.14,
+    "harmPp": -0.01
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-miami/2026/Qualifying Group B",
+    "shippedPct": -0.78,
+    "newPct": -0.75,
+    "harmPp": -0.03
+   },
+   {
+    "row": "fe/fe-gen3evo/fe-sanya/2026/Qualifying Duel Semi-Final 2",
+    "shippedPct": 0.9,
+    "newPct": 0.83,
+    "harmPp": -0.07
+   }
+  ]
+ },
+ "trackState": {
+  "effects": [],
+  "identical": true,
+  "registryTracksChanged": [],
+  "pairsChanged": false,
+  "cases": {
+   "n": 121,
+   "circuits": 18,
+   "skipped": 33,
+   "skippedWhy": {
+    "|r − 1| ≥ 0.1": 11,
+    "wet or < 2 clean laps": 16,
+    "layout change between years": 3,
+    "no earlier TI session": 2,
+    "corner map from another layout": 1
+   }
+  }
+ },
+ "levelC": {
+  "shipped": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.093,
+    "medAbsPct": 2.725
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 2.695,
+    "medAbsPct": 2.621
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 1.889,
+    "medAbsPct": 1.21
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 1.658,
+    "medAbsPct": 0.945
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 1.858,
+    "medAbsPct": 1.232
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.92,
+    "medAbsPct": 2.635
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 1.805,
+    "medAbsPct": 0.976
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.625,
+    "medAbsPct": 1.982
+   }
+  },
+  "new": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.072,
+    "medAbsPct": 2.635
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 2.573,
+    "medAbsPct": 2.333
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 1.938,
+    "medAbsPct": 1.098
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 1.7,
+    "medAbsPct": 0.869
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 1.858,
+    "medAbsPct": 1.2
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.858,
+    "medAbsPct": 2.543
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 1.835,
+    "medAbsPct": 0.894
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.584,
+    "medAbsPct": 1.864
+   }
+  }
+ },
+ "forward": {
+  "shipped": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.181,
+    "medAbsPct": 2.16
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 1.302,
+    "medAbsPct": 0.696
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 0.917,
+    "medAbsPct": 0.568
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 0.699,
+    "medAbsPct": 0.233
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 0.882,
+    "medAbsPct": 0.667
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.516,
+    "medAbsPct": 1.446
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 0.838,
+    "medAbsPct": 0.476
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.141,
+    "medAbsPct": 0.939
+   }
+  },
+  "new": {
+   "f1-2025": {
+    "n": 22,
+    "rmsPct": 3.158,
+    "medAbsPct": 2.06
+   },
+   "f1-2026": {
+    "n": 18,
+    "rmsPct": 1.258,
+    "medAbsPct": 0.611
+   },
+   "wec-lmh": {
+    "n": 6,
+    "rmsPct": 1.02,
+    "medAbsPct": 0.626
+   },
+   "wec-lmdh": {
+    "n": 6,
+    "rmsPct": 0.798,
+    "medAbsPct": 0.246
+   },
+   "wec-lmgt3": {
+    "n": 6,
+    "rmsPct": 0.891,
+    "medAbsPct": 0.736
+   },
+   "f1": {
+    "n": 40,
+    "rmsPct": 2.49,
+    "medAbsPct": 1.313
+   },
+   "wec": {
+    "n": 18,
+    "rmsPct": 0.908,
+    "medAbsPct": 0.578
+   },
+   "all": {
+    "n": 58,
+    "rmsPct": 2.128,
+    "medAbsPct": 0.963
+   }
+  }
+ },
+ "endurance": {
+  "rows": 2621,
+  "events": 316,
+  "layouts": 56,
+  "models": 59,
+  "byGroup": {
+   "gt3": {
+    "models": 2144,
+    "before": 2.62,
+    "events": 278,
+    "beforeClass": 2.69,
+    "raw": 2.73,
+    "rawClass": 2.69,
+    "inSample": 0.75,
+    "inSampleClass": 0.62,
+    "eventOut": 1.09,
+    "eventOutClass": 0.97,
+    "layoutOut": 2.67,
+    "layoutOutClass": 2.6,
+    "modelOut": 0.94,
+    "modelOutClass": 0.98
+   },
+   "lmp2": {
+    "models": 101,
+    "before": 4.19,
+    "events": 101,
+    "beforeClass": 4.19,
+    "raw": 3.98,
+    "rawClass": 3.98,
+    "inSample": 0.67,
+    "inSampleClass": 0.67,
+    "eventOut": 1.11,
+    "eventOutClass": 1.11,
+    "layoutOut": 2.36,
+    "layoutOutClass": 2.36,
+    "modelOut": 2.88,
+    "modelOutClass": 2.88
+   },
+   "lmdh": {
+    "models": 249,
+    "before": 1.91,
+    "events": 61,
+    "beforeClass": 1.81,
+    "raw": 2.18,
+    "rawClass": 2.22,
+    "inSample": 0.6,
+    "inSampleClass": 0.52,
+    "eventOut": 0.97,
+    "eventOutClass": 0.91,
+    "layoutOut": 1.95,
+    "layoutOutClass": 1.9,
+    "modelOut": 0.86,
+    "modelOutClass": 0.8
+   },
+   "lmh": {
+    "models": 127,
+    "before": 1.96,
+    "events": 44,
+    "beforeClass": 1.62,
+    "raw": 2.43,
+    "rawClass": 2.53,
+    "inSample": 0.61,
+    "inSampleClass": 0.65,
+    "eventOut": 1.06,
+    "eventOutClass": 1.06,
+    "layoutOut": 1.92,
+    "layoutOutClass": 2.03,
+    "modelOut": 1.56,
+    "modelOutClass": 1.62
+   }
+  },
+  "byGroupSeries": {
+   "gt3 imsa": {
+    "models": 594,
+    "before": 1.73,
+    "events": 64,
+    "beforeClass": 1.96,
+    "raw": 1.93,
+    "rawClass": 1.9,
+    "inSample": 0.75,
+    "inSampleClass": 0.59,
+    "eventOut": 1.01,
+    "eventOutClass": 0.88,
+    "layoutOut": 2.5,
+    "layoutOutClass": 2.28,
+    "modelOut": 0.89,
+    "modelOutClass": 0.9
+   },
+   "lmp2 imsa": {
+    "models": 40,
+    "before": 5.27,
+    "events": 40,
+    "beforeClass": 5.27,
+    "raw": 4.73,
+    "rawClass": 4.73,
+    "inSample": 0.58,
+    "inSampleClass": 0.58,
+    "eventOut": 0.81,
+    "eventOutClass": 0.81,
+    "layoutOut": 2.02,
+    "layoutOutClass": 2.02,
+    "modelOut": 3.78,
+    "modelOutClass": 3.78
+   },
+   "lmdh imsa": {
+    "models": 145,
+    "before": 2.26,
+    "events": 34,
+    "beforeClass": 2.26,
+    "raw": 2.11,
+    "rawClass": 2.06,
+    "inSample": 0.62,
+    "inSampleClass": 0.49,
+    "eventOut": 0.87,
+    "eventOutClass": 0.71,
+    "layoutOut": 2.14,
+    "layoutOutClass": 2.06,
+    "modelOut": 0.91,
+    "modelOutClass": 0.84
+   },
+   "lmh imsa": {
+    "models": 17,
+    "before": 2.09,
+    "events": 17,
+    "beforeClass": 2.09,
+    "raw": 2.19,
+    "rawClass": 2.19,
+    "inSample": 0.6,
+    "inSampleClass": 0.6,
+    "eventOut": 0.84,
+    "eventOutClass": 0.84,
+    "layoutOut": 2.32,
+    "layoutOutClass": 2.32,
+    "modelOut": 1.41,
+    "modelOutClass": 1.41
+   },
+   "lmp2 wec": {
+    "models": 21,
+    "before": 3.9,
+    "events": 21,
+    "beforeClass": 3.9,
+    "raw": 4.28,
+    "rawClass": 4.28,
+    "inSample": 0.67,
+    "inSampleClass": 0.67,
+    "eventOut": 1.08,
+    "eventOutClass": 1.08,
+    "layoutOut": 2.83,
+    "layoutOutClass": 2.83,
+    "modelOut": 2.53,
+    "modelOutClass": 2.53
+   },
+   "lmdh wec": {
+    "models": 104,
+    "before": 1.28,
+    "events": 27,
+    "beforeClass": 1,
+    "raw": 2.27,
+    "rawClass": 2.4,
+    "inSample": 0.58,
+    "inSampleClass": 0.56,
+    "eventOut": 1.09,
+    "eventOutClass": 1.11,
+    "layoutOut": 1.66,
+    "layoutOutClass": 1.67,
+    "modelOut": 0.79,
+    "modelOutClass": 0.76
+   },
+   "lmh wec": {
+    "models": 110,
+    "before": 1.94,
+    "events": 27,
+    "beforeClass": 1.24,
+    "raw": 2.47,
+    "rawClass": 2.72,
+    "inSample": 0.61,
+    "inSampleClass": 0.68,
+    "eventOut": 1.09,
+    "eventOutClass": 1.17,
+    "layoutOut": 1.86,
+    "layoutOutClass": 1.82,
+    "modelOut": 1.59,
+    "modelOutClass": 1.74
+   },
+   "gt3 wec": {
+    "models": 198,
+    "before": 1.56,
+    "events": 22,
+    "beforeClass": 1.01,
+    "raw": 2.62,
+    "rawClass": 2.41,
+    "inSample": 0.75,
+    "inSampleClass": 0.49,
+    "eventOut": 0.96,
+    "eventOutClass": 0.67,
+    "layoutOut": 1.35,
+    "layoutOutClass": 1.12,
+    "modelOut": 0.85,
+    "modelOutClass": 0.87
+   },
+   "lmp2 elms": {
+    "models": 27,
+    "before": 2.96,
+    "events": 27,
+    "beforeClass": 2.96,
+    "raw": 3.04,
+    "rawClass": 3.04,
+    "inSample": 0.86,
+    "inSampleClass": 0.86,
+    "eventOut": 1.51,
+    "eventOutClass": 1.51,
+    "layoutOut": 2.83,
+    "layoutOutClass": 2.83,
+    "modelOut": 1.74,
+    "modelOutClass": 1.74
+   },
+   "gt3 elms": {
+    "models": 54,
+    "before": 2.03,
+    "events": 11,
+    "beforeClass": 1.71,
+    "raw": 1.87,
+    "rawClass": 1.86,
+    "inSample": 0.68,
+    "inSampleClass": 0.55,
+    "eventOut": 1.02,
+    "eventOutClass": 0.95,
+    "layoutOut": 2.54,
+    "layoutOutClass": 2.51,
+    "modelOut": 0.9,
+    "modelOutClass": 0.74
+   },
+   "gt3 alms": {
+    "models": 84,
+    "before": 1.95,
+    "events": 12,
+    "beforeClass": 1.92,
+    "raw": 1.93,
+    "rawClass": 1.75,
+    "inSample": 0.46,
+    "inSampleClass": 0.36,
+    "eventOut": 0.77,
+    "eventOutClass": 0.69,
+    "layoutOut": 1.02,
+    "layoutOutClass": 1.02,
+    "modelOut": 0.84,
+    "modelOutClass": 0.89
+   },
+   "lmp2 alms": {
+    "models": 13,
+    "before": 2.81,
+    "events": 13,
+    "beforeClass": 2.81,
+    "raw": 2.42,
+    "rawClass": 2.42,
+    "inSample": 0.47,
+    "inSampleClass": 0.47,
+    "eventOut": 0.98,
+    "eventOutClass": 0.98,
+    "layoutOut": 1.12,
+    "layoutOutClass": 1.12,
+    "modelOut": 1.97,
+    "modelOutClass": 1.97
+   },
+   "gt3 x-gtworldcheu-pwrd-by-aws-endurance-cup": {
+    "models": 61,
+    "before": 5.78,
+    "events": 6,
+    "beforeClass": 6.08,
+    "raw": 5.22,
+    "rawClass": 5.54,
+    "inSample": 0.31,
+    "inSampleClass": 0.22,
+    "eventOut": 0.58,
+    "eventOutClass": 0.52,
+    "layoutOut": 4.83,
+    "layoutOutClass": 4.79,
+    "modelOut": 0.54,
+    "modelOutClass": 0.7
+   },
+   "gt3 igtc": {
+    "models": 72,
+    "before": 1.41,
+    "events": 10,
+    "beforeClass": 1.86,
+    "raw": 1.25,
+    "rawClass": 1.49,
+    "inSample": 0.43,
+    "inSampleClass": 0.4,
+    "eventOut": 1.02,
+    "eventOutClass": 0.81,
+    "layoutOut": 1.97,
+    "layoutOutClass": 1.57,
+    "modelOut": 0.81,
+    "modelOutClass": 1.31
+   },
+   "gt3 x-crowdstrike-24-hours-of-spa": {
+    "models": 19,
+    "before": 1.97,
+    "events": 2,
+    "beforeClass": 2.49,
+    "raw": 2.3,
+    "rawClass": 2.85,
+    "inSample": 0.35,
+    "inSampleClass": 0.39,
+    "eventOut": 0.83,
+    "eventOutClass": 0.58,
+    "layoutOut": 0.94,
+    "layoutOutClass": 1.11,
+    "modelOut": 0.81,
+    "modelOutClass": 1.04
+   },
+   "gt3 nur": {
+    "models": 36,
+    "before": 2.98,
+    "events": 6,
+    "beforeClass": 1.84,
+    "raw": 3.31,
+    "rawClass": 2.2,
+    "inSample": 1.12,
+    "inSampleClass": 0.58,
+    "eventOut": 1.73,
+    "eventOutClass": 1.34,
+    "layoutOut": 4.22,
+    "layoutOutClass": 3.55,
+    "modelOut": 1.45,
+    "modelOutClass": 1.21
+   },
+   "gt3 gtwc": {
+    "models": 712,
+    "before": 3.35,
+    "events": 93,
+    "beforeClass": 3.53,
+    "raw": 3.38,
+    "rawClass": 3.46,
+    "inSample": 0.81,
+    "inSampleClass": 0.69,
+    "eventOut": 1.21,
+    "eventOutClass": 1.09,
+    "layoutOut": 3.18,
+    "layoutOutClass": 3.3,
+    "modelOut": 1.03,
+    "modelOutClass": 1.05
+   },
+   "gt3 x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup": {
+    "models": 18,
+    "before": 2.34,
+    "events": 2,
+    "beforeClass": 2.82,
+    "raw": 3.13,
+    "rawClass": 3.6,
+    "inSample": 0.31,
+    "inSampleClass": 0.13,
+    "eventOut": 0.41,
+    "eventOutClass": 0.16,
+    "layoutOut": 2.46,
+    "layoutOutClass": 2.59,
+    "modelOut": 0.68,
+    "modelOutClass": 0.9
+   },
+   "gt3 x-gtworldcheu-pwrd-by-aws-sprint-cup": {
+    "models": 17,
+    "before": 3.84,
+    "events": 2,
+    "beforeClass": 4.36,
+    "raw": 3.74,
+    "rawClass": 4.24,
+    "inSample": 0.31,
+    "inSampleClass": 0.17,
+    "eventOut": 2.31,
+    "eventOutClass": 2.46,
+    "layoutOut": 3.11,
+    "layoutOutClass": 3.11,
+    "modelOut": 0.58,
+    "modelOutClass": 0.82
+   },
+   "gt3 x-suzuka-1000km-intercontinental-gt-challenge": {
+    "models": 9,
+    "before": 2.43,
+    "events": 1,
+    "beforeClass": 3.19,
+    "raw": 2.05,
+    "rawClass": 2.74,
+    "inSample": 0.61,
+    "inSampleClass": 0.46,
+    "eventOut": 1,
+    "eventOutClass": 0.3,
+    "layoutOut": 0.79,
+    "layoutOutClass": 0.61,
+    "modelOut": 1.34,
+    "modelOutClass": 0.91
+   },
+   "gt3 britishgt": {
+    "models": 270,
+    "before": 1.91,
+    "events": 47,
+    "beforeClass": 1.81,
+    "raw": 1.98,
+    "rawClass": 1.78,
+    "inSample": 0.79,
+    "inSampleClass": 0.73,
+    "eventOut": 1.02,
+    "eventOutClass": 0.95,
+    "layoutOut": 1.86,
+    "layoutOutClass": 1.78,
+    "modelOut": 0.95,
+    "modelOutClass": 0.97
+   }
+  },
+  "fitDiffs": 3010,
+  "pageDiffs": 5165,
+  "fitDiff": [
+   {
+    "path": "rows",
+    "shipped": 2574,
+    "new": 2621
+   },
+   {
+    "path": "events",
+    "shipped": 317,
+    "new": 316
+   },
+   {
+    "path": "skipped.SRO lap far below the event bests of its layout",
+    "shipped": 2393,
+    "new": 2394
+   },
+   {
+    "path": "skipped.lap does not fit the layout found by lap time",
+    "shipped": 5523,
+    "new": 5543
+   },
+   {
+    "path": "skipped.layout not resolved: no layout of barber fits the lap time",
+    "shipped": 26,
+    "new": 30
+   },
+   {
+    "path": "skipped.not a push lap (>10 % off the event class best)",
+    "shipped": 1,
+    "new": 2
+   },
+   {
+    "path": "skipped.slow session (wet or disrupted), listed",
+    "shipped": 99,
+    "new": 98
+   },
+   {
+    "path": "slowSessions.4.slowerPct",
+    "shipped": 7.5,
+    "new": 6.9
+   },
+   {
+    "path": "slowSessions.5.slowerPct",
+    "shipped": 8.7,
+    "new": 8.1
+   },
+   {
+    "path": "slowSessions.6.session",
+    "shipped": "elms|2025|paul-ricard|gt3",
+    "new": "elms|2023|paul-ricard|lmp2"
+   },
+   {
+    "path": "slowSessions.6.cars",
+    "shipped": 6,
+    "new": 1
+   },
+   {
+    "path": "slowSessions.6.slowerPct",
+    "shipped": 4.4,
+    "new": 4.2
+   },
+   {
+    "path": "slowSessions.7.session",
+    "shipped": "elms|2025|imola|lmp2",
+    "new": "elms|2025|paul-ricard|gt3"
+   },
+   {
+    "path": "slowSessions.7.cars",
+    "shipped": 1,
+    "new": 6
+   },
+   {
+    "path": "slowSessions.7.slowerPct",
+    "shipped": 6.4,
+    "new": 4.3
+   },
+   {
+    "path": "slowSessions.8.session",
+    "shipped": "elms|2025|spa-francorchamps|gt3",
+    "new": "elms|2025|imola|lmp2"
+   },
+   {
+    "path": "slowSessions.8.cars",
+    "shipped": 6,
+    "new": 1
+   },
+   {
+    "path": "slowSessions.8.slowerPct",
+    "shipped": 9.6,
+    "new": 7.8
+   },
+   {
+    "path": "slowSessions.9.session",
+    "shipped": "elms|2025|spa-francorchamps|lmp2",
+    "new": "elms|2025|spa-francorchamps|gt3"
+   },
+   {
+    "path": "slowSessions.9.cars",
+    "shipped": 1,
+    "new": 6
+   },
+   {
+    "path": "slowSessions.9.slowerPct",
+    "shipped": 8.7,
+    "new": 9.7
+   },
+   {
+    "path": "slowSessions.10.session",
+    "shipped": "elms|2025|silverstone|gt3",
+    "new": "elms|2025|spa-francorchamps|lmp2"
+   },
+   {
+    "path": "slowSessions.10.cars",
+    "shipped": 6,
+    "new": 1
+   },
+   {
+    "path": "slowSessions.10.slowerPct",
+    "shipped": 7.6,
+    "new": 9.9
+   },
+   {
+    "path": "slowSessions.11.session",
+    "shipped": "elms|2026|paul-ricard|gt3",
+    "new": "elms|2025|silverstone|gt3"
+   },
+   {
+    "path": "slowSessions.11.slowerPct",
+    "shipped": 5.4,
+    "new": 7.6
+   },
+   {
+    "path": "slowSessions.12.session",
+    "shipped": "elms|2026|paul-ricard|lmp2",
+    "new": "elms|2026|paul-ricard|gt3"
+   },
+   {
+    "path": "slowSessions.12.cars",
+    "shipped": 1,
+    "new": 6
+   },
+   {
+    "path": "slowSessions.12.slowerPct",
+    "shipped": 2.7,
+    "new": 5.4
+   },
+   {
+    "path": "slowSessions.13.session",
+    "shipped": "alms|2026|sepang|gt3",
+    "new": "elms|2026|paul-ricard|lmp2"
+   },
+   {
+    "path": "slowSessions.13.cars",
+    "shipped": 6,
+    "new": 1
+   },
+   {
+    "path": "slowSessions.13.slowerPct",
+    "shipped": 10.5,
+    "new": 3.9
+   },
+   {
+    "path": "slowSessions.14.session",
+    "shipped": "macau|2023|70th Macau Grand Prix | Macau GT Cup - FIA GT World Cup|gt3",
+    "new": "alms|2026|sepang|gt3"
+   },
+   {
+    "path": "slowSessions.14.cars",
+    "shipped": 4,
+    "new": 6
+   },
+   {
+    "path": "slowSessions.14.slowerPct",
+    "shipped": 8.3,
+    "new": 10.5
+   },
+   {
+    "path": "slowSessions.15.session",
+    "shipped": "x-gtworldcheu-pwrd-by-aws-endurance-cup|2025|GTWorldChEU pwrd by AWS Endurance Cup | Barcelona 16 Turn|gt3",
+    "new": "wec|2026|catalunya|lmh"
+   },
+   {
+    "path": "slowSessions.15.cars",
+    "shipped": 10,
+    "new": 4
+   },
+   {
+    "path": "slowSessions.15.slowerPct",
+    "shipped": 4.2,
+    "new": 5.7
+   },
+   {
+    "path": "slowSessions.16.session",
+    "shipped": "x-gtworldcheu-pwrd-by-aws-endurance-cup|2026|GTWorldChEU pwrd by AWS Endurance Cup | Portimao|gt3",
+    "new": "wec|2026|catalunya|lmdh"
+   },
+   {
+    "path": "slowSessions.16.cars",
+    "shipped": 10,
+    "new": 4
+   }
+  ],
+  "pageDiff": [
+   {
+    "path": "heldOutPct.lmh.event",
+    "shipped": 0.8,
+    "new": 1.06
+   },
+   {
+    "path": "heldOutPct.lmh.eventModel",
+    "shipped": 0.84,
+    "new": 1.06
+   },
+   {
+    "path": "heldOutPct.lmh.model",
+    "shipped": 1.53,
+    "new": 1.56
+   },
+   {
+    "path": "heldOutPct.lmh.before",
+    "shipped": 1.77,
+    "new": 1.62
+   },
+   {
+    "path": "heldOutPct.lmh.n",
+    "shipped": 41,
+    "new": 44
+   },
+   {
+    "path": "heldOutPct.lmdh.event",
+    "shipped": 0.73,
+    "new": 0.91
+   },
+   {
+    "path": "heldOutPct.lmdh.eventModel",
+    "shipped": 0.83,
+    "new": 0.97
+   },
+   {
+    "path": "heldOutPct.lmdh.model",
+    "shipped": 0.82,
+    "new": 0.86
+   },
+   {
+    "path": "heldOutPct.lmdh.before",
+    "shipped": 1.58,
+    "new": 1.81
+   },
+   {
+    "path": "heldOutPct.lmdh.n",
+    "shipped": 59,
+    "new": 61
+   },
+   {
+    "path": "heldOutPct.gt3.event",
+    "shipped": 0.96,
+    "new": 0.97
+   },
+   {
+    "path": "heldOutPct.gt3.eventModel",
+    "shipped": 1.07,
+    "new": 1.09
+   },
+   {
+    "path": "heldOutPct.gt3.before",
+    "shipped": 2.56,
+    "new": 2.69
+   },
+   {
+    "path": "models.0.rel",
+    "shipped": 1.00544,
+    "new": 1.00352
+   },
+   {
+    "path": "models.1.rel",
+    "shipped": 0.99828,
+    "new": 0.99645
+   },
+   {
+    "path": "models.2.rows",
+    "shipped": 7,
+    "new": 6
+   },
+   {
+    "path": "models.2.rel",
+    "shipped": 1.01334,
+    "new": 1.01174
+   },
+   {
+    "path": "models.3.rel",
+    "shipped": 0.98973,
+    "new": 0.98814
+   },
+   {
+    "path": "models.4.rows",
+    "shipped": 52,
+    "new": 51
+   },
+   {
+    "path": "models.4.rel",
+    "shipped": 1.00175,
+    "new": 1.00033
+   },
+   {
+    "path": "models.5.rel",
+    "shipped": 0.99959,
+    "new": 0.99807
+   },
+   {
+    "path": "models.6.rel",
+    "shipped": 1.00254,
+    "new": 1.00107
+   },
+   {
+    "path": "models.7.rel",
+    "shipped": 0.9996,
+    "new": 0.99809
+   },
+   {
+    "path": "models.8.rows",
+    "shipped": 51,
+    "new": 50
+   },
+   {
+    "path": "models.8.rel",
+    "shipped": 1.00116,
+    "new": 0.9996
+   },
+   {
+    "path": "models.9.rel",
+    "shipped": 0.99948,
+    "new": 0.99811
+   },
+   {
+    "path": "models.10.rel",
+    "shipped": 0.99388,
+    "new": 0.99239
+   },
+   {
+    "path": "models.11.rel",
+    "shipped": 0.99165,
+    "new": 0.99036
+   },
+   {
+    "path": "models.12.rel",
+    "shipped": 0.99984,
+    "new": 0.99824
+   },
+   {
+    "path": "models.13.rows",
+    "shipped": 37,
+    "new": 36
+   },
+   {
+    "path": "models.13.rel",
+    "shipped": 1.00003,
+    "new": 0.99822
+   },
+   {
+    "path": "models.14.rel",
+    "shipped": 0.99501,
+    "new": 0.99383
+   },
+   {
+    "path": "models.15.rel",
+    "shipped": 0.99709,
+    "new": 0.99556
+   },
+   {
+    "path": "models.16.rel",
+    "shipped": 1.00261,
+    "new": 1.00131
+   },
+   {
+    "path": "models.17.rel",
+    "shipped": 1.00291,
+    "new": 1.00159
+   },
+   {
+    "path": "models.18.season",
+    "shipped": 2024,
+    "new": 2025
+   },
+   {
+    "path": "models.18.rows",
+    "shipped": 1,
+    "new": 2
+   },
+   {
+    "path": "models.18.rel",
+    "shipped": 0.99988,
+    "new": 0.99449
+   },
+   {
+    "path": "models.19.rows",
+    "shipped": 13,
+    "new": 14
+   },
+   {
+    "path": "models.19.rel",
+    "shipped": 1.00405,
+    "new": 1.00284
+   }
+  ],
+  "identical": false
+ },
+ "rep": {
+  "note": "σ_meas per class group and series: rep = one best qualifying lap (repeat-lap estimator), ses = median best − ideal. Measured tables read only.",
+  "seed": 20261125,
+  "draws": 2000,
+  "rows": 5802,
+  "floors": {
+   "gt3 elms": {
+    "rows": 185,
+    "events": 15,
+    "medianLapS": 105.786,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 185,
+     "medianPct": 0.119,
+     "pi90Pct": [
+      0.1017,
+      0.1338
+     ],
+     "medianS": 0.1258
+    }
+   },
+   "gt3 imsa": {
+    "rows": 1609,
+    "events": 66,
+    "medianLapS": 104.66,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 1609,
+     "medianPct": 0.0695,
+     "pi90Pct": [
+      0.0621,
+      0.0782
+     ],
+     "medianS": 0.0728
+    }
+   },
+   "gt3 wec": {
+    "rows": 923,
+    "events": 32,
+    "medianLapS": 116.248,
+    "rep": {
+     "lap": {
+      "pairs": 191,
+      "events": 19,
+      "sigmaPct": 0.2803,
+      "pi90Pct": [
+       0.2259,
+       0.3426
+      ],
+      "sigmaS": 0.3259
+     },
+     "s1": {
+      "pairs": 191,
+      "events": 19,
+      "sigmaPct": 0.3528,
+      "pi90Pct": [
+       0.2923,
+       0.4328
+      ],
+      "sigmaS": 0.1084
+     },
+     "s2": {
+      "pairs": 191,
+      "events": 19,
+      "sigmaPct": 0.4329,
+      "pi90Pct": [
+       0.3362,
+       0.5294
+      ],
+      "sigmaS": 0.1975
+     },
+     "s3": {
+      "pairs": 191,
+      "events": 19,
+      "sigmaPct": 0.4205,
+      "pi90Pct": [
+       0.3196,
+       0.5226
+      ],
+      "sigmaS": 0.165
+     }
+    },
+    "ses": {
+     "cars": 923,
+     "medianPct": 0,
+     "pi90Pct": [
+      0,
+      0.0338
+     ],
+     "medianS": 0
+    }
+   },
+   "lmdh imsa": {
+    "rows": 358,
+    "events": 35,
+    "medianLapS": 75.348,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 358,
+     "medianPct": 0.064,
+     "pi90Pct": [
+      0.0492,
+      0.0811
+     ],
+     "medianS": 0.0482
+    }
+   },
+   "lmdh wec": {
+    "rows": 554,
+    "events": 41,
+    "medianLapS": 100.3635,
+    "rep": {
+     "lap": {
+      "pairs": 112,
+      "events": 20,
+      "sigmaPct": 0.2131,
+      "pi90Pct": [
+       0.1778,
+       0.2704
+      ],
+      "sigmaS": 0.2139
+     },
+     "s1": {
+      "pairs": 112,
+      "events": 20,
+      "sigmaPct": 0.4092,
+      "pi90Pct": [
+       0.3247,
+       0.5104
+      ],
+      "sigmaS": 0.1231
+     },
+     "s2": {
+      "pairs": 112,
+      "events": 20,
+      "sigmaPct": 0.2899,
+      "pi90Pct": [
+       0.2214,
+       0.3598
+      ],
+      "sigmaS": 0.1171
+     },
+     "s3": {
+      "pairs": 112,
+      "events": 20,
+      "sigmaPct": 0.3407,
+      "pi90Pct": [
+       0.277,
+       0.4344
+      ],
+      "sigmaS": 0.1159
+     }
+    },
+    "ses": {
+     "cars": 554,
+     "medianPct": 0,
+     "pi90Pct": [
+      0,
+      0
+     ],
+     "medianS": 0
+    }
+   },
+   "lmh imsa": {
+    "rows": 18,
+    "events": 17,
+    "medianLapS": 75.506,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 18,
+     "medianPct": 0.0112,
+     "pi90Pct": [
+      0,
+      0.084
+     ],
+     "medianS": 0.0085
+    }
+   },
+   "lmh wec": {
+    "rows": 494,
+    "events": 41,
+    "medianLapS": 99.72,
+    "rep": {
+     "lap": {
+      "pairs": 91,
+      "events": 19,
+      "sigmaPct": 0.217,
+      "pi90Pct": [
+       0.1451,
+       0.2902
+      ],
+      "sigmaS": 0.2164
+     },
+     "s1": {
+      "pairs": 91,
+      "events": 19,
+      "sigmaPct": 0.2868,
+      "pi90Pct": [
+       0.2489,
+       0.3703
+      ],
+      "sigmaS": 0.085
+     },
+     "s2": {
+      "pairs": 91,
+      "events": 19,
+      "sigmaPct": 0.3319,
+      "pi90Pct": [
+       0.2356,
+       0.4179
+      ],
+      "sigmaS": 0.1319
+     },
+     "s3": {
+      "pairs": 91,
+      "events": 19,
+      "sigmaPct": 0.3499,
+      "pi90Pct": [
+       0.2042,
+       0.4257
+      ],
+      "sigmaS": 0.118
+     }
+    },
+    "ses": {
+     "cars": 494,
+     "medianPct": 0,
+     "pi90Pct": [
+      0,
+      0
+     ],
+     "medianS": 0
+    }
+   },
+   "lmp2 alms": {
+    "rows": 150,
+    "events": 13,
+    "medianLapS": 109.3165,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 150,
+     "medianPct": 0.1253,
+     "pi90Pct": [
+      0.0909,
+      0.1606
+     ],
+     "medianS": 0.137
+    }
+   },
+   "lmp2 elms": {
+    "rows": 609,
+    "events": 32,
+    "medianLapS": 98.625,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 609,
+     "medianPct": 0.0625,
+     "pi90Pct": [
+      0.0457,
+      0.0836
+     ],
+     "medianS": 0.0616
+    }
+   },
+   "lmp2 imsa": {
+    "rows": 393,
+    "events": 41,
+    "medianLapS": 98.501,
+    "rep": {
+     "lap": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s1": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s2": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     },
+     "s3": {
+      "pairs": 0,
+      "note": "fewer than 20 pairs or 3 events: no estimate"
+     }
+    },
+    "ses": {
+     "cars": 393,
+     "medianPct": 0.115,
+     "pi90Pct": [
+      0.093,
+      0.1347
+     ],
+     "medianS": 0.1132
+    }
+   },
+   "lmp2 wec": {
+    "rows": 509,
+    "events": 34,
+    "medianLapS": 111.407,
+    "rep": {
+     "lap": {
+      "pairs": 49,
+      "events": 5,
+      "sigmaPct": 0.3254,
+      "pi90Pct": [
+       0.1663,
+       0.6114
+      ],
+      "sigmaS": 0.3626
+     },
+     "s1": {
+      "pairs": 49,
+      "events": 5,
+      "sigmaPct": 0.5157,
+      "pi90Pct": [
+       0.3411,
+       0.7153
+      ],
+      "sigmaS": 0.1735
+     },
+     "s2": {
+      "pairs": 49,
+      "events": 5,
+      "sigmaPct": 0.3195,
+      "pi90Pct": [
+       0.2436,
+       0.4161
+      ],
+      "sigmaS": 0.1777
+     },
+     "s3": {
+      "pairs": 49,
+      "events": 5,
+      "sigmaPct": 0.4305,
+      "pi90Pct": [
+       0.2429,
+       0.7158
+      ],
+      "sigmaS": 0.1749
+     }
+    },
+    "ses": {
+     "cars": 451,
+     "medianPct": 0.0116,
+     "pi90Pct": [
+      0,
+      0.0353
+     ],
+     "medianS": 0.0129
+    }
+   }
+  },
+  "split": {
+   "gt3 elms": {
+    "cars": 95,
+    "events": 15,
+    "medianLapS": 105.239,
+    "lap": {
+     "sigmaPct": 0.2723,
+     "pi90Pct": [
+      0.2162,
+      0.3334
+     ],
+     "sigmaS": 0.2865
+    },
+    "s1": {
+     "sigmaPct": 0.3368,
+     "pi90Pct": [
+      0.242,
+      0.4039
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.3211,
+     "pi90Pct": [
+      0.21,
+      0.3788
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.3828,
+     "pi90Pct": [
+      0.3266,
+      0.4531
+     ]
+    }
+   },
+   "gt3 imsa": {
+    "cars": 820,
+    "events": 61,
+    "medianLapS": 84.482,
+    "lap": {
+     "sigmaPct": 0.197,
+     "pi90Pct": [
+      0.1821,
+      0.2116
+     ],
+     "sigmaS": 0.1665
+    },
+    "s1": {
+     "sigmaPct": 0.2931,
+     "pi90Pct": [
+      0.2664,
+      0.3233
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.2344,
+     "pi90Pct": [
+      0.2184,
+      0.2583
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.3099,
+     "pi90Pct": [
+      0.2871,
+      0.3299
+     ]
+    }
+   },
+   "gt3 wec": {
+    "cars": 91,
+    "events": 15,
+    "medianLapS": 104.355,
+    "lap": {
+     "sigmaPct": 0.1916,
+     "pi90Pct": [
+      0.1237,
+      0.2501
+     ],
+     "sigmaS": 0.2
+    },
+    "s1": {
+     "sigmaPct": 0.2537,
+     "pi90Pct": [
+      0.2168,
+      0.304
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.278,
+     "pi90Pct": [
+      0.2326,
+      0.3353
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.2676,
+     "pi90Pct": [
+      0.2315,
+      0.3457
+     ]
+    }
+   },
+   "lmdh imsa": {
+    "cars": 154,
+    "events": 31,
+    "medianLapS": 73.443,
+    "lap": {
+     "sigmaPct": 0.1664,
+     "pi90Pct": [
+      0.1294,
+      0.2013
+     ],
+     "sigmaS": 0.1222
+    },
+    "s1": {
+     "sigmaPct": 0.2988,
+     "pi90Pct": [
+      0.246,
+      0.3466
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.226,
+     "pi90Pct": [
+      0.1755,
+      0.279
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.2477,
+     "pi90Pct": [
+      0.1871,
+      0.3014
+     ]
+    }
+   },
+   "lmdh wec": {
+    "cars": 20,
+    "events": 7,
+    "medianLapS": 204.991,
+    "lap": {
+     "sigmaPct": 0.225,
+     "pi90Pct": [
+      0.0852,
+      0.2642
+     ],
+     "sigmaS": 0.4612
+    },
+    "s1": {
+     "sigmaPct": 0.4629,
+     "pi90Pct": [
+      0.2621,
+      0.6377
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.1533,
+     "pi90Pct": [
+      0.0454,
+      0.2623
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.2913,
+     "pi90Pct": [
+      0.2042,
+      0.5655
+     ]
+    }
+   },
+   "lmh imsa": {
+    "cars": 6,
+    "events": 6,
+    "medianLapS": 73.392,
+    "note": "fewer than 20 cars or 3 events: no estimate"
+   },
+   "lmh wec": {
+    "cars": 12,
+    "events": 8,
+    "medianLapS": 204.514,
+    "note": "fewer than 20 cars or 3 events: no estimate"
+   },
+   "lmp2 elms": {
+    "cars": 137,
+    "events": 23,
+    "medianLapS": 96.075,
+    "lap": {
+     "sigmaPct": 0.2462,
+     "pi90Pct": [
+      0.1896,
+      0.304
+     ],
+     "sigmaS": 0.2365
+    },
+    "s1": {
+     "sigmaPct": 0.3709,
+     "pi90Pct": [
+      0.3085,
+      0.457
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.3129,
+     "pi90Pct": [
+      0.2449,
+      0.3548
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.3274,
+     "pi90Pct": [
+      0.2708,
+      0.374
+     ]
+    }
+   },
+   "lmp2 imsa": {
+    "cars": 281,
+    "events": 36,
+    "medianLapS": 97.519,
+    "lap": {
+     "sigmaPct": 0.222,
+     "pi90Pct": [
+      0.1992,
+      0.2578
+     ],
+     "sigmaS": 0.2165
+    },
+    "s1": {
+     "sigmaPct": 0.4123,
+     "pi90Pct": [
+      0.3497,
+      0.4799
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.311,
+     "pi90Pct": [
+      0.2766,
+      0.3483
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.3033,
+     "pi90Pct": [
+      0.2587,
+      0.3681
+     ]
+    }
+   },
+   "lmp2 wec": {
+    "cars": 66,
+    "events": 10,
+    "medianLapS": 210.754,
+    "lap": {
+     "sigmaPct": 0.3169,
+     "pi90Pct": [
+      0.2117,
+      0.4084
+     ],
+     "sigmaS": 0.6679
+    },
+    "s1": {
+     "sigmaPct": 0.2889,
+     "pi90Pct": [
+      0.1393,
+      0.4129
+     ]
+    },
+    "s2": {
+     "sigmaPct": 0.294,
+     "pi90Pct": [
+      0.1779,
+      0.4112
+     ]
+    },
+    "s3": {
+     "sigmaPct": 0.3364,
+     "pi90Pct": [
+      0.2498,
+      0.4292
+     ]
+    }
+   }
+  }
+ },
+ "noise": null,
+ "noiseJson": null,
+ "delta": [
+  {
+   "name": "F1 DRS Δ v1 per stint (cases sha256 7b2c16ff…)",
+   "result": "0 model rows (every case stopped on noise in step 24: no kept case)"
+  },
+  {
+   "name": "F1 pooled DRS Δ v2 (cases sha256 5a153cf1…)",
+   "result": "n 125, pass rate 0.008, bias -0.2767 s [-0.3018, -0.2529], sign errors 12, median pred -0.4183 s vs meas -0.1264 s; baseline CSV differs from the shipped baseline-pooled-2026-11-24.csv"
+  },
+  {
+   "name": "F1 2022 LOCKED (cases sha256 92a9f542…)",
+   "result": "locked, not scored"
+  },
+  {
+   "name": "WEC BoP Δ v2 (step 21)",
+   "result": "not on main; report-only after the σ_meas stop (0.82 s > 0.1 s)"
+  }
+ ]
+}
