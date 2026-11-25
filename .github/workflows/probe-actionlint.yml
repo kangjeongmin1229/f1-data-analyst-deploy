@@ -1,0 +1,21 @@
+name: probe actionlint
+# Research only (step 36 round 3): see actionlint's result on main's workflows before the check goes into the test workflow. Never merged.
+on:
+  push:
+    branches: ['probe/step36-actionlint']
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          bash <(curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/v1.7.7/scripts/download-actionlint.bash) 1.7.7
+          ./actionlint -no-color > actionlint.txt 2>&1 || true
+          ./actionlint -no-color -shellcheck= > actionlint-noshellcheck.txt 2>&1 || true
+          wc -l actionlint*.txt; cat actionlint-noshellcheck.txt | head -100
+          gh release create step36-actionlint --prerelease --title "step 36 actionlint probe" --notes probe 2>/dev/null || true
+          gh release upload step36-actionlint actionlint.txt actionlint-noshellcheck.txt --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}

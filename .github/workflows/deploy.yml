@@ -11,6 +11,16 @@ concurrency:
   group: f1-${{ github.event_name == 'pull_request' && github.ref || 'main-tests' }}
   cancel-in-progress: true
 jobs:
+  # every workflow file checked by actionlint (with shellcheck on run: scripts, preinstalled on the runner)
+  actionlint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: actionlint
+        run: |
+          bash <(curl -sSL https://raw.githubusercontent.com/rhysd/actionlint/v1.7.7/scripts/download-actionlint.bash) 1.7.7
+          ./actionlint -color
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
