@@ -1,0 +1,257 @@
+{
+ "mesh5a": [
+  {
+   "id": "monte-carlo",
+   "laps": [
+    67.76679967916162,
+    67.76362054672401,
+    67.76563479210981
+   ],
+   "ok": true
+  },
+  {
+   "id": "suzuka",
+   "laps": [
+    85.45787678774971,
+    85.45298462830083,
+    85.45289468729267
+   ],
+   "ok": true
+  },
+  {
+   "id": "monza",
+   "laps": [
+    77.2000885424023,
+    77.19829752278639,
+    77.19754068540587
+   ],
+   "ok": true
+  },
+  {
+   "id": "jeddah",
+   "laps": [
+    91.81472051876987,
+    91.80916037974221,
+    91.80943746052704
+   ],
+   "ok": true
+  },
+  {
+   "id": "silverstone",
+   "laps": [
+    81.96731970536904,
+    81.96636264267197,
+    81.9672749530629
+   ],
+   "ok": true
+  },
+  {
+   "id": "spa-francorchamps",
+   "laps": [
+    99.531434759452,
+    99.53099070697559,
+    99.53288203772055
+   ],
+   "ok": true
+  },
+  {
+   "id": "hungaroring",
+   "laps": [
+    71.10585983444325,
+    71.10692348036655,
+    71.10770748913824
+   ],
+   "ok": true
+  },
+  {
+   "id": "singapore",
+   "laps": [
+    86.4863272032062,
+    86.48066880327764,
+    86.48613611464032
+   ],
+   "ok": true
+  }
+ ],
+ "energy": [
+  {
+   "id": "monte-carlo",
+   "ok": true
+  },
+  {
+   "id": "suzuka",
+   "ok": true
+  },
+  {
+   "id": "monza",
+   "ok": true
+  },
+  {
+   "id": "jeddah",
+   "ok": true
+  },
+  {
+   "id": "silverstone",
+   "ok": true
+  },
+  {
+   "id": "spa-francorchamps",
+   "ok": true
+  },
+  {
+   "id": "hungaroring",
+   "ok": true
+  },
+  {
+   "id": "singapore",
+   "ok": true
+  }
+ ],
+ "cont5b": [
+  {
+   "id": "austin",
+   "cand_kph": 0.27295042885944554,
+   "base_kph": 0.28103979951220026,
+   "ok": true
+  },
+  {
+   "id": "baku",
+   "cand_kph": 0.17915639707981088,
+   "base_kph": 0.2589464260993168,
+   "ok": true
+  },
+  {
+   "id": "catalunya",
+   "cand_kph": 0.22642696263115455,
+   "base_kph": 0.20138029662795134,
+   "ok": true
+  },
+  {
+   "id": "hungaroring",
+   "cand_kph": 0.35104701235025004,
+   "base_kph": 0.25730910671475726,
+   "ok": true
+  },
+  {
+   "id": "imola",
+   "cand_kph": 0.19550546243698932,
+   "base_kph": 0.20002347676332308,
+   "ok": true
+  },
+  {
+   "id": "interlagos",
+   "cand_kph": 0.3335646465305217,
+   "base_kph": 0.275155819179372,
+   "ok": true
+  },
+  {
+   "id": "jeddah",
+   "cand_kph": 0.18090383581168795,
+   "base_kph": 0.22511517057694733,
+   "ok": true
+  },
+  {
+   "id": "las-vegas",
+   "cand_kph": 0.18199663863737783,
+   "base_kph": 0.34547321533798653,
+   "ok": true
+  },
+  {
+   "id": "lusail",
+   "cand_kph": 0.228870285875081,
+   "base_kph": 0.22446731172023535,
+   "ok": true
+  },
+  {
+   "id": "melbourne",
+   "cand_kph": 0.18874000828056411,
+   "base_kph": 0.27133697409516916,
+   "ok": true
+  },
+  {
+   "id": "mexico-city",
+   "cand_kph": 0.16924252121746122,
+   "base_kph": 0.22104074580482233,
+   "ok": true
+  },
+  {
+   "id": "miami",
+   "cand_kph": 0.31850954738920906,
+   "base_kph": 0.18238374999850748,
+   "ok": true
+  },
+  {
+   "id": "monte-carlo",
+   "cand_kph": 0.20590920827694534,
+   "base_kph": 0.24450807647860415,
+   "ok": true
+  },
+  {
+   "id": "montreal",
+   "cand_kph": 0.2505622623726424,
+   "base_kph": 0.20715065043123104,
+   "ok": true
+  },
+  {
+   "id": "monza",
+   "cand_kph": 0.22992133019116068,
+   "base_kph": 0.30338509117976287,
+   "ok": true
+  },
+  {
+   "id": "sakhir",
+   "cand_kph": 0.3939406431860505,
+   "base_kph": 0.22953469845512586,
+   "ok": true
+  },
+  {
+   "id": "shanghai",
+   "cand_kph": 0.33812097445787687,
+   "base_kph": 0.2915756760761696,
+   "ok": true
+  },
+  {
+   "id": "silverstone",
+   "cand_kph": 0.20973023801154797,
+   "base_kph": 0.2741726190052191,
+   "ok": true
+  },
+  {
+   "id": "singapore",
+   "cand_kph": 0.22342361878323233,
+   "base_kph": 0.2786439424237983,
+   "ok": true
+  },
+  {
+   "id": "spa-francorchamps",
+   "cand_kph": 0.17849403749807494,
+   "base_kph": 0.24059520404306908,
+   "ok": true
+  },
+  {
+   "id": "spielberg",
+   "cand_kph": 0.2236026486177991,
+   "base_kph": 0.16335661063421583,
+   "ok": true
+  },
+  {
+   "id": "suzuka",
+   "cand_kph": 0.22762944820605072,
+   "base_kph": 0.25485120917971926,
+   "ok": true
+  },
+  {
+   "id": "yas-marina-circuit",
+   "cand_kph": 0.199796373893156,
+   "base_kph": 0.2276024382923083,
+   "ok": true
+  },
+  {
+   "id": "zandvoort",
+   "cand_kph": 0.2553468490197247,
+   "base_kph": 0.18980726668463604,
+   "ok": true
+  }
+ ],
+ "pass": true
+}
