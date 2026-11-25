@@ -1,0 +1,13 @@
+{
+ "note": "Step 32 A2.0: measured inputs (read-only). sha256 recorded when the inputs were fixed; tests/step32-measured-readonly.test.mjs and the run check them. Renewed 2026-11-25 for A7.7: traces-top10.json gained the xs/sp sample metadata; every earlier field checked byte-equal. Renewed again 2026-11-25 for C3: flatout-top10.json added (throttle/brake flags of the same laps); every earlier entry unchanged.",
+ "files": {
+  "worker/lapsim/f1-real-telemetry-data.js": "1593b18e912a13b400a1a29c9b6276c82e5515902750e2e2929e1a8e515f133f",
+  "worker/lapsim/f1-wet-quali-data.js": "f490bdcae439c3ffb1df779b7c82ce6b37adef9314940933b245b7a1743ce6db",
+  "scripts/sim/data/f1-envelope/traces.json": "17638e29b7f57ff0b45c463b418f7dfbb41bec68f4a7c8c943788fa6765156fe",
+  "scripts/sim/data/step32/traces-top10.json": "edbec2e59017f66398e150f27cbdacaad2f4b3d3530b23c397bdb5306ccbc14a",
+  "scripts/sim/data/step32/traces-2026.json": "15b797cc92282eeed29d9a46854d1da1dedc1f2953e893e0f0d823491b389798",
+  "scripts/sim/data/f1-delta/f1-delta-cases-pooled-2026-11-24.csv": "5a153cf140a7888ae32ee775a2cab53f740f1cebfb8d096b0eb70297d2edcc97",
+  "scripts/sim/data/f1-delta/zone-mapping-table.csv": "078fd58840aab451eb7723e2d635d6f5083995abbb319853acf42af361926d17",
+  "scripts/sim/data/step32/flatout-top10.json": "95dc43a9756c48c212a07e2482b4a3e865b4ba2c2b193b02352eb0f285579ae1"
+ }
+}
