@@ -227,7 +227,7 @@ jobs:
     if: github.event_name == 'push' && startsWith(github.ref_name, 'lapsim-pipeline/step32')
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    env: {STEP32_BASE: 'e5b4768'}  # base of the series-isolation manifest (A4.1; C3: REGEN FIX e5b4768)
+    env: {STEP32_BASE: '2512d18'}  # base of the series-isolation manifest (A4.1; C3.0: REGEN FIX 2 2512d18)
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 0}

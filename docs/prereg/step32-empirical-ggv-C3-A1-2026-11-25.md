@@ -1,0 +1,2 @@
+# Step 32 C3 amendment A1 (one line, per C3.0; written before any C3 number)
+REGEN FIX 2 **2512d18** is at the top of claude/status-2026-11-25-refit.md before 15:00 KST, so the judged C3 run (pre-reg 7c63edea…) is on 2512d18: A2 baseline traces 8c158b35… (unchanged), power-top10.json 87e44aa8… apex 120–240 n 23, SD 2.61, MDE 1.62 km/h (unchanged); 2026 MDE 4.535 (report-only); no verification run is needed (C3.0 second case does not apply).
