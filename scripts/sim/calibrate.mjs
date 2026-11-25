@@ -378,6 +378,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     let laps = lapsWith(f1Grip);
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
+    if (E.LAPSIM_CLA_SPEED_C) base.clASpeed = {c: Number(E.LAPSIM_CLA_SPEED_C), vRef: 220 / 3.6}; // screen S4 (report-only): ClA(v), v_ref 220 km/h
     // owner 2026-11-17 (rule 14): Hypercar braking capped at the iRacing GTP envelope, LAPSIM_BRAKE_ENV_HYPER="a0,a2" (m/s², 1/m;
     // experiment 44043761033 BE1, hypercar holdout mean 1.24 -> 1.16 %)
     if (cls !== 'lmgt3' && E.LAPSIM_BRAKE_ENV_HYPER) base.brakeEnv = E.LAPSIM_BRAKE_ENV_HYPER.split(',').map(Number);
