@@ -98,6 +98,10 @@ if (E.LAPSIM_KAPPA_CAP_G && !ONLY_WEC) for (const [id, d] of Object.entries(laps
 if (Number(E.LAPSIM_KAPPA_MED_M) > 0 && !ONLY_WEC) {
   for (const d of Object.values(lapsimTracks)) if (d.kappa?.length) d.kappa = medianKappa(d.kappa, d.ds, Number(E.LAPSIM_KAPPA_MED_M));
   if (E.LAPSIM_KAPPA_MED_WRITE === 'on') await writeFile('worker/lapsim/tracks-data.js', (await readFile('worker/lapsim/tracks-data.js', 'utf8')).replace(/export const lapsimTracks=[\s\S]*?;\n/, () => `export const lapsimTracks=${JSON.stringify(lapsimTracks)};\n`)); }
+// LAPSIM_TRACK_QA=on: geometry QA data correction (worker/lapsim/track-qa-data.js; spec A1 56fbd495…) on the build's tracks, written back
+// so later steps (page, tool, reports, tests) use the corrected line. Off: byte-identical.
+if (E.LAPSIM_TRACK_QA === 'on') { const {applyTrackQa} = await import('../../worker/lapsim/track-qa-data.js'); for (const l of applyTrackQa(lapsimTracks)) console.log(l);
+  await writeFile('worker/lapsim/tracks-data.js', (await readFile('worker/lapsim/tracks-data.js', 'utf8')).replace(/export const lapsimTracks=[\s\S]*?;\n/, () => `export const lapsimTracks=${JSON.stringify(lapsimTracks)};\n`)); }
 const tracks = Object.fromEntries(Object.entries(lapsimTracks).map(([id, d]) => [id, trackFromData(d)]));
 // F1 cars open DRS (to 2025) or Straight Mode (2026) only in the FIA zones of the event notes (f1-zones-data.js); without a
 // document the automatic straight finder stands in. LAPSIM_FIA_ZONES=on (2026-11-15: the finder gave Jeddah 880 m of DRS, the FIA 2025 m)
