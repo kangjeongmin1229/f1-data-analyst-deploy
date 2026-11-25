@@ -1,0 +1,7 @@
+{
+ "note": "Step 34 A1 §6 (Project claude/prereg-step34-A1-2026-11-25.md): the WEC final hold-out is opened once, after central approval of a passing variant. set = event list fixed at approval; opened = {run, date} written by scripts/sim/wec-final-holdout.mjs; the script refuses a second opening.",
+ "set": null,
+ "set_sha256": null,
+ "approved_run": "",
+ "opened": null
+}
