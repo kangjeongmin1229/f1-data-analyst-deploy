@@ -310,3 +310,31 @@ jobs:
           scripts/publish-refresh.sh -m "LapSim Δ ranges from lapsim-pipeline run $RUN (step 29b)" -b lapsim-learn/delta-ranges \
             -g "[ \"\$(sha256sum worker/lapsim/calibration-data.js | cut -c1-64)\" = $(cat ranges/calibration.sha256) ] && node scripts/sim/delta-intervals.mjs --run $RUN --mode production" \
             -- worker/lapsim/delta-intervals-data.js
+
+  # step 34a (central 2026-11-25 15:05): the run's report and run facts committed to the fork branch results/step34a (no workflow
+  # triggers on results/**), readable with an anonymous `git fetch`. Path: <arm>/<run id>/.
+  results-34a:
+    needs: [snapshot, report]
+    if: ${{ !cancelled() && needs.report.result == 'success' && startsWith(github.ref_name, 's34a/') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: {contents: write}
+    steps:
+      - uses: actions/download-artifact@v4
+        with: {name: pipeline-report, path: out}
+      - name: Commit to results/step34a
+        env: {GH_TOKEN: '${{ github.token }}', RUN: '${{ github.run_id }}', SHA: '${{ github.sha }}', REF: '${{ github.ref_name }}', MODE: '${{ inputs.mode }}', WEC_ONLY: '${{ inputs.wec_only }}'}
+        run: |
+          set -euo pipefail
+          A="${REF#s34a/}"; A="${A%-2026-11-25}"; D="$A/$RUN"
+          git init -q r && cd r && git config user.name 'github-actions[bot]' && git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for i in 1 2 3; do
+            if git fetch -q --depth 1 origin results/step34a; then git checkout -q -B results FETCH_HEAD; else git checkout -q --orphan results; fi
+            mkdir -p "$D" && cp ../out/pipeline-report.json ../out/pipeline-report.md "$D/"
+            jq -n --arg run "$RUN" --arg commit "$SHA" --arg branch "$REF" --arg arm "$A" --arg mode "$MODE" --arg wec_only "$WEC_ONLY" \
+              '{run: $run, commit: $commit, branch: $branch, arm: $arm, mode: $mode, wec_only: $wec_only, url: ("https://github.com/" + env.GITHUB_REPOSITORY + "/actions/runs/" + $run)}' > "$D/run.json"
+            git add -A && git commit -qm "step 34a $A: report of run $RUN ($SHA)" && git push -q origin HEAD:refs/heads/results/step34a && break
+            sleep $((i * 10)); cd .. && rm -rf r && git init -q r && cd r && git config user.name 'github-actions[bot]' && git config user.email '41898282+github-actions[bot]@users.noreply.github.com' && git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          done
+          echo "results/step34a: $D" >> "$GITHUB_STEP_SUMMARY"
