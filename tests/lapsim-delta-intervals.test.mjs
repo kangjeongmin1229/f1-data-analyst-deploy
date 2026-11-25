@@ -1,10 +1,12 @@
 // Step 29b: ± range and check status on LapSim Δ answers (rule docs/prereg/step29b-delta-intervals-2026-11-25.md)
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync, writeFileSync, mkdtempSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
-import {quantile} from '../scripts/sim/delta-intervals.mjs';
+import {quantile, runSource} from '../scripts/sim/delta-intervals.mjs';
 import {lapsimDeltaIntervals as D} from '../worker/lapsim/delta-intervals-data.js';
 import {lapsimCalibration} from '../worker/lapsim/calibration-data.js';
 import {deltaCheck, deltaStale, DELTA_TYPES} from '../worker/lapsim/delta-intervals.js';
@@ -75,4 +77,17 @@ test('29b: LMDh lap check carries the regen-cap assumption range; the range file
   assert.equal(withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmh'})).uncertainty.lap_check.assumption_range, undefined);
   const s = spawnSync(process.execPath, ['scripts/sim/lmdh-regen-range.mjs', '--check'], {encoding: 'utf8'});
   assert.equal(s.status, 0, s.stderr);
+});
+
+// refit (central 2026-11-25 14:27): the 29b rebuild takes the run being shipped as a parameter (--report, --drs), never a research run
+test('29b rebuild: built on the shipped run given by its report; a research, push or local run is refused', () => {
+  const report = mode => ({run: {id: '123', mode, commit: 'abc'}, diff: {heldOut: {all: {cand: 0.9}, f1: {cand: 0.8}, wec: {cand: 1.0}}}});
+  for (const mode of ['research', 'push check', 'local', undefined]) assert.throws(() => runSource(report(mode), 'x.csv'), /refused: .*not production/);
+  assert.throws(() => runSource({run: {id: '9', mode: 'production'}}, 'x.csv'), /no fit output/);
+  assert.throws(() => runSource(report('production')), /--drs/);
+  const s = runSource(report('production'), 'dl/v2pooled/baseline.csv');
+  assert.deepEqual(s.tie, {all: 0.9, f1: 0.8, wec: 1.0}); assert.equal(s.drsRun, '123'); assert.equal(s.lapRun, '123');
+  const f = join(mkdtempSync(join(tmpdir(), 'r29b-')), 'pipeline-report.json'); writeFileSync(f, JSON.stringify(report('research')));
+  const cli = spawnSync(process.execPath, ['scripts/sim/delta-intervals.mjs', '--check', '--report', f, '--drs', 'x.csv'], {encoding: 'utf8'});
+  assert.notEqual(cli.status, 0); assert.match(cli.stderr, /refused/);
 });

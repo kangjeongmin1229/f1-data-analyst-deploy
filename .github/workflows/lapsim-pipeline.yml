@@ -195,6 +195,10 @@ jobs:
           python -I scripts/sim/f1-delta-report.py dl/v2pooled/baseline.csv dl/v2pooled/f1-delta-cases-2026-11-24.csv dl/v2pooled/report.json > /dev/null
           if [ -n "${F1_DELTA_LOCKED_APPROVED}" ]; then mkdir -p dl/locked2022 && cp dl/zones.csv dl/locked2022/ && cp "$(jq -r .delta.locked2022.path $P)" dl/locked2022/f1-delta-cases-2026-11-24.csv \
             && node scripts/sim/f1-delta-bench.mjs model dl/locked2022 && python -I scripts/sim/f1-delta-report.py dl/locked2022/baseline.csv dl/locked2022/f1-delta-cases-2026-11-24.csv dl/locked2022/report.json > /dev/null; fi
+      # FE ship rule: build-fe.mjs (seconds) on this run's kernel; event-hidden paired harm per row vs the committed fe-fit.json
+      - name: FE rebuild on this run's kernel (paired harm)
+        continue-on-error: true
+        run: cp scripts/sim/data/learn/fe-fit.json /tmp/shipped/fe-fit.json && node scripts/sim/learn/build-fe.mjs > out/build-fe.log && cp scripts/sim/data/learn/fe-fit.json out/fe-fit.json && mkdir -p out/fe && cp worker/lapsim/fe-data.js worker/lapsim/fe-tracks-data.js worker/lapsim/fe-zones-data.js out/fe/
       # refit ship rule (claude/status-2026-11-25-refit.md): mesh at every mesh and per-lap energy closure on this run's calibration;
       # a failure does not stop the report, it is written into it (out/ship-checks.txt) and the refit does not ship
       - name: Ship checks on this run's calibration (mesh, energy closure)
@@ -213,6 +217,8 @@ jobs:
           SNAPSHOT_SUMS: snap/SHA256SUMS
           DELTA_DIR: dl
           TRACK_STATE_DIFF: ts/track-state-diff.json
+          FE_FIT_SHIPPED: /tmp/shipped/fe-fit.json
+          FE_FIT_NEW: out/fe-fit.json
         run: |
           node scripts/sim/pipeline-report.mjs fit/worker/lapsim/calibration-data.js /tmp/shipped/calibration-data.js out > /dev/null
           cp -r dl out/delta
