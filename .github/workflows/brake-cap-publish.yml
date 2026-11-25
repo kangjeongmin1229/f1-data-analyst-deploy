@@ -11,7 +11,7 @@ jobs:
   verdict:
     runs-on: ubuntu-latest
     timeout-minutes: 350
-    env: {RUNB: '45581133428', RUNC: '45581137208', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+    env: {RUNB: '45581133428', RUNC: '45581137208', RUNF: '45582930115', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -23,11 +23,11 @@ jobs:
       - run: python -m pip install -q numpy scipy
       - name: Wait for both refits
         run: |
-          for i in $(seq 1 160); do a=$(gh run view $RUNB -R $R --json status -q .status); b=$(gh run view $RUNC -R $R --json status -q .status); echo "$(date -u +%H:%M) $a $b"
-            [ "$a" = completed ] && [ "$b" = completed ] && exit 0; sleep 120; done; exit 1
+          for i in $(seq 1 165); do a=$(gh run view $RUNB -R $R --json status -q .status); b=$(gh run view $RUNC -R $R --json status -q .status); c=$(gh run view $RUNF -R $R --json status -q .status); echo "$(date -u +%H:%M) $a $b $c"
+            [ "$a" = completed ] && [ "$b" = completed ] && [ "$c" = completed ] && exit 0; sleep 120; done; exit 1
       - name: Calibrations
         run: |
-          gh run download $RUNB -R $R -n calibration-output -D calB; gh run download $RUNC -R $R -n calibration-output -D calC
+          gh run download $RUNB -R $R -n calibration-output -D calB; gh run download $RUNC -R $R -n calibration-output -D calC; gh run download $RUNF -R $R -n calibration-output -D calF || echo 'per-fold run has no calibration'
           ls calB/worker/lapsim/calibration-data.js calC/worker/lapsim/calibration-data.js
       - name: Braking test (both refits) and lap guard
         run: |
@@ -36,9 +36,17 @@ jobs:
             (cd s32 && node scripts/sim/learn/brake-cap-test.mjs $L ../scripts/sim/data/brake-cap-measured.json ../pub/$L.json) | tail -c 2000; done
           node --input-type=module -e "import {diff} from './scripts/sim/pipeline-report.mjs'; import {pathToFileURL} from 'node:url'; import {writeFileSync} from 'node:fs';
             const b=(await import(pathToFileURL('calB/worker/lapsim/calibration-data.js'))).lapsimCalibration, c=(await import(pathToFileURL('calC/worker/lapsim/calibration-data.js'))).lapsimCalibration;
-            const d=diff(b,c); writeFileSync('pub/harm.json', JSON.stringify({harm:d.harm, changedCarParams:d.changedCarParams, heldOut:d.heldOut}));"
+            const d=diff(b,c); writeFileSync('pub/harm.json', JSON.stringify({harm:d.harm, changedCarParams:d.changedCarParams, heldOut:d.heldOut}));
+            let f=null; try { f=(await import(pathToFileURL('calF/worker/lapsim/calibration-data.js'))).lapsimCalibration; } catch {}
+            const car=(x,y)=>x?.seasons?.[y]?.car, row=(x,y)=>({clA:car(x,y)?.clA, muY:car(x,y)?.muY, cdA:car(x,y)?.cdA, pIce:car(x,y)?.pIce});
+            const leak={note:'report-only (central 18:10): all-track cap vs per-fold cap without the held-out tracks; the judged test is unchanged', run_perfold:process.env.RUNF,
+              lap_guard:{all_track:d.harm.f1, per_fold:f?diff(b,f).harm.f1:null}, joint:{}, folds:{}};
+            for (const y of ['2023','2024','2025','2026']) { leak.joint[y]={baseline:row(b,y), all_track:row(c,y), per_fold_run:row(f,y)}; leak.folds[y]=f?.seasons?.[y]?.holdout?.foldCars ?? null; }
+            for (const k of ['all_track','per_fold']) if (leak.lap_guard[k]) delete leak.lap_guard[k].rows;
+            writeFileSync('pub/leak.json', JSON.stringify(leak, null, 1));"
           python -I scripts/sim/brakecap/brake_cap_verdict.py pub/base.json pub/cand.json pub/harm.json pub/verdict.json $RUNB $RUNC | tee pub/verdict.log
           gh run view $RUNB -R $R --json conclusion,headSha,url -q . > pub/run-base.json; gh run view $RUNC -R $R --json conclusion,headSha,url -q . > pub/run-cand.json
+          { echo "## Leak report (all-track vs per-fold cap)"; echo '```json'; head -c 20000 pub/leak.json; echo '```'; } > pub/leak.md
           { echo "# Brake cap verdict — baseline $RUNB, candidate $RUNC"; echo; echo "- verdict: **$(jq -r .verdict pub/verdict.json)**"; echo '```'; head -c 40000 pub/verdict.log; echo '```'; } > pub/summary.md
           cat pub/summary.md >> "$GITHUB_STEP_SUMMARY"; rm -f pub/base.json pub/cand.json
       - name: Commit to results/brake-cap
