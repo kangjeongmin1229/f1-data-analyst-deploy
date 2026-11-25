@@ -1,0 +1,72 @@
+# Step 32 night N4 (central 21:15, report-only, no attempt): load-sensitivity scan k ∈ {0.08, 0.12, 0.16, 0.20, 0.25}.
+# Waits for 36's candidate run 45610315477; success → scan on step36-cand code (n4/k*), else on the base car (n4b/k*, "base car").
+# Dispatches five research refits, waits (one infra retry each), runs step36-rows (straight-end, braking) + n4-rows on each calibration
+# and on the reference run, and commits to results/step32-night (n4/). Push to publish/step32-n4 only.
+name: Step 32 N4 scan
+on:
+  push:
+    branches: ['publish/step32-n4']
+permissions: {contents: write, actions: write}
+concurrency: {group: step32-n4, cancel-in-progress: false}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}', CAND: '45610315477', BASE: '45598951567', KS: '008 012 016 020 025'}
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    outputs: {set: '${{ steps.g.outputs.set }}', ref: '${{ steps.g.outputs.ref }}', runs: '${{ steps.d.outputs.runs }}'}
+    steps:
+      - id: g
+        name: Wait for 36's candidate
+        run: |
+          for i in $(seq 1 160); do s=$(gh run view $CAND -R $R --json status -q .status); echo "$(date -u +%H:%M) $s"; [ "$s" = completed ] && break; sleep 120; done
+          c=$(gh run view $CAND -R $R --json conclusion -q .conclusion); echo "candidate conclusion: $c"
+          if [ "$c" = success ]; then echo set=n4 >> $GITHUB_OUTPUT; echo ref=$CAND >> $GITHUB_OUTPUT; else echo set=n4b >> $GITHUB_OUTPUT; echo ref=$BASE >> $GITHUB_OUTPUT; fi
+      - id: d
+        name: Dispatch the five research refits
+        run: |
+          runs=""; for k in $KS; do b=${{ steps.g.outputs.set }}/k$k; gh workflow run lapsim-pipeline.yml -R $R --ref $b -f mode=research -f fit=yes; done; sleep 40
+          for k in $KS; do b=${{ steps.g.outputs.set }}/k$k; id=$(gh run list -R $R -w lapsim-pipeline.yml -b $b -L 1 --json databaseId -q '.[0].databaseId'); echo "$b $id"; runs="$runs $k:$id"; done
+          echo "runs=$runs" >> $GITHUB_OUTPUT
+  publish:
+    needs: gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env: {SET: '${{ needs.gate.outputs.set }}', REF: '${{ needs.gate.outputs.ref }}', RUNS: '${{ needs.gate.outputs.runs }}'}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: '${{ needs.gate.outputs.set }}/k-scan', path: t}
+      - uses: actions/checkout@v4
+        with: {ref: step36-mde, path: m}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Wait for the refits (one infra retry each)
+        run: |
+          wait_all() { for i in $(seq 1 150); do n=0; for kr in $RUNS; do s=$(gh run view ${kr#*:} -R $R --json status -q .status); [ "$s" = completed ] && n=$((n+1)); done; echo "$(date -u +%H:%M) $n/5"; [ $n = 5 ] && return 0; sleep 120; done; return 1; }
+          wait_all || echo 'timeout waiting'; again=0
+          for kr in $RUNS; do c=$(gh run view ${kr#*:} -R $R --json conclusion -q .conclusion); echo "${kr%%:*} ${kr#*:} $c"; if [ "$c" != success ]; then gh run rerun ${kr#*:} -R $R --failed && again=1 || echo "rerun refused"; fi; done
+          if [ $again = 1 ]; then sleep 60; wait_all || echo 'timeout waiting'; fi
+      - name: Rows per k and reference
+        run: |
+          cp -r m/scripts/sim/learn/step32-*.mjs m/scripts/sim/learn/step36-rows.mjs t/scripts/sim/learn/; cp -r m/scripts/sim/data/step32 t/scripts/sim/data/
+          mkdir -p pub; cd t
+          for kr in ref:$REF $RUNS; do k=${kr%%:*}; id=${kr#*:}; gh run view $id -R $R --json conclusion,headBranch,headSha,url -q . > ../pub/run-$k.json
+            if gh run download $id -R $R -n calibration-output -D ../cal-$k; then C=../cal-$k/worker/lapsim/calibration-data.js
+              node scripts/sim/learn/step36-rows.mjs $C ../pub/rows36-$k.json > /dev/null || echo "rows36 failed $k"
+              node scripts/sim/night/n4-rows.mjs $C ../pub/n4-$k.json > /dev/null || echo "n4-rows failed $k"
+            else echo "no calibration for $k ($id)"; fi; done
+          cd ..; node --input-type=module -e "
+            import {readFileSync, existsSync, writeFileSync} from 'node:fs'; const J = f => existsSync(f) ? JSON.parse(readFileSync(f)) : null, r2 = x => x == null || !Number.isFinite(x) ? '–' : (+x).toFixed(3);
+            const ks = ['ref', ...process.env.RUNS.trim().split(/\s+/).map(x => x.split(':')[0])], L = ['# Step 32 N4 load-sensitivity scan — ' + (process.env.SET === 'n4' ? 'measured-car candidate (step36-cand)' : '**base car**'), '',
+              '| k | run | lap held-out RMS % (all / 23 / 24 / 25) | corner RMS 120–240 | bias <120 / 120–200 / >200 | per-track slope (median) | straight-end RMS | braking p95 excess g | ClA 23 / 24 / 25 | μY 23 / 24 / 25 | bound hits (0.5 %) |', '|' + '---|'.repeat(11)];
+            const all = {};
+            for (const k of ks) { const a = J('pub/n4-' + k + '.json'), b = J('pub/rows36-' + k + '.json'), r = J('pub/run-' + k + '.json'); all[k] = {run: r, n4: a, rows36: b}; if (!a) { L.push('| ' + k + ' | ' + (r?.url ?? '') + ' ' + (r?.conclusion ?? '') + ' | no result |'); continue; }
+              const s = a.seasons, h = a.lapHeldOutRmsPct, y = ['2023', '2024', '2025'];
+              L.push('| ' + (k === 'ref' ? 'ref (dmu −5e-5)' : '0.' + k.slice(1)) + ' | ' + r?.url?.split('/').pop() + ' | ' + [h.all, ...y.map(q => h[q]?.rmsPct)].map(r2).join(' / ') + ' | ' + r2(a.cornerRms120to240Kph.rms) + ' | ' + ['<120', '120-200', '>200'].map(q => r2(a.speedBins[q].meanBiasKph)).join(' / ') + ' | ' + r2(a.perTrackSlope.median) + ' | ' + r2(b?.straightEndRmsKph?.base) + ' | ' + r2(b?.brakingP95MeanExcessG?.base) + ' | ' + y.map(q => r2(s[q]?.clA)).join(' / ') + ' | ' + y.map(q => r2(s[q]?.muY)).join(' / ') + ' | ' + (a.boundHits_0p5pct.map(x => x.season + ' ' + x.key + (x.foldCar ? ' (fold ' + x.fold + ')' : '') + ' @' + x.bound).join(', ') || 'none') + ' |'); }
+            writeFileSync('pub/n4-scan.json', JSON.stringify(all, null, 1)); writeFileSync('pub/summary.md', L.join('\n') + '\n'); console.log(L.join('\n'));"
+          cat pub/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit to results/step32-night
+        run: |
+          cd pub && git init -q -b results/step32-night && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
+          if git fetch -q origin results/step32-night; then git reset -q FETCH_HEAD && git checkout -q -- .; fi
+          d=n4-${{ github.run_id }}; mkdir -p $d && mv *.json summary.md $d/ && git add -A && git commit -q -m "Step 32 N4 scan (run ${{ github.run_id }}, $SET)" && git push -q origin HEAD:results/step32-night
