@@ -336,9 +336,12 @@ const WEC_SEL = E.LAPSIM_WEC_SEL ? new Set(E.LAPSIM_WEC_SEL.split(',')) : null;
 // (w_k · (r_k / σ_rep,k)²) together, lap weight 0; Hypercar power fixed at the event BoP kW as wheel power (assumption) and mass = BoP kg
 // + 80 kg driver (assumption; TR Art. 4.1: BoP weight without fuel and driver); priors (x0, sd) as pre-reg §3; per-fold values and
 // Hessian stored. Unset = before.
-const JOINT = ['on', 'S'].includes(E.LAPSIM_WEC_JOINT) ? E.LAPSIM_WEC_JOINT : null;
+const JOINT = ['on', 'S', 'X3'].includes(E.LAPSIM_WEC_JOINT) ? E.LAPSIM_WEC_JOINT : null;
+// X3 (report only, central 22:20): as V, but the lap term back at the base weight (wTime 2), ClA prior sd 50 %, ClA bounds [2, 12]
+// (LMGT3 [0.6, 12]), μy bounds [1.0, 2.6]
+const X3 = JOINT === 'X3';
 const SIG_REP = {lmh: [0.085, 0.1319], lmdh: [0.1231, 0.1171], lmgt3: [0.1084, 0.1975]}; // σ_rep S1, S2 (s), run 45562051769
-const WEC_HOJ = JOINT ? {...WEC_HO, wTime: 0, wTrap: (3.6 / 2) ** 2, joint: true} : WEC_HO;
+const WEC_HOJ = JOINT ? {...WEC_HO, wTime: X3 ? 2 : 0, wTrap: (3.6 / 2) ** 2, joint: true} : WEC_HO;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
 const t71Extra = existsSync('scripts/sim/data/t71-wec-extra.json') ? JSON.parse(await readFile('scripts/sim/data/t71-wec-extra.json', 'utf8')).rows : [];
 const wecYears = new Set(wec.map(w => +w.year));
@@ -390,8 +393,9 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const params = DECOUPLED ? Object.entries(DPRI).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0 ?? base[k], step: 0.08, min: lo, max: hi, ...(x0 != null ? {prior: {x0, sd, w: 0.5}} : {})}))
       : Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
     // step 34b joint: priors and starting values (pre-reg §3); LMGT3 P at the wheel prior 334 kW sd 8 %, bound [250, 420] kW, kernel pIce = P / etaDrive
-    const ETA = base.etaDrive ?? 0.95, JP = !JOINT ? null : HY ? {muY: [1.75, 0.15, def.bounds.muY], clA: [4.15, 0.05, def.bounds.clA], cdA: [1.04, 0.10, def.bounds.cdA]}
-      : {muY: [1.55, 0.15, def.bounds.muY], clA: [1.4, 0.25, def.bounds.clA], cdA: [1.16, 0.15, def.bounds.cdA], pIce: [334e3 / ETA, 0.08, [250e3 / ETA, 420e3 / ETA]]};
+    const ETA = base.etaDrive ?? 0.95, MUB = X3 ? [1.0, 2.6] : def.bounds.muY, CLB = X3 ? [def.bounds.clA[0], 12] : def.bounds.clA;
+    const JP = !JOINT ? null : HY ? {muY: [1.75, 0.15, MUB], clA: [4.15, X3 ? 0.50 : 0.05, CLB], cdA: [1.04, 0.10, def.bounds.cdA]}
+      : {muY: [1.55, 0.15, MUB], clA: [1.4, X3 ? 0.50 : 0.25, CLB], cdA: [1.16, 0.15, def.bounds.cdA], pIce: [334e3 / ETA, 0.08, [250e3 / ETA, 420e3 / ETA]]};
     if (JP) { params.splice(0, params.length, ...Object.entries(JP).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0, step: 0.08, min: lo, max: hi, prior: {x0, sd, w: 0.5}})));
       for (const [k, [x0]] of Object.entries(JP)) base[k] = x0; }
     // Hypercar: event BoP kW per car as wheel power (S: as before the driveline), mass BoP kg + 80 kg; events without a public table (2026):
@@ -459,8 +463,9 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const h05 = h.noise ? h.noise : WEC_HO.nm && h.n ? holdout(laps, base, params, {...WEC_HOJ, step0: WEC_START2, folds: 99, gripFor: GF}) : null;
     const noiseLabel = h.noise ? `best of ${h.noise.starts.join('/')}` : `start ${WEC_START2}`;
     if (h05) report.push(`WEC ${cls} ${year}: held-out ${noiseLabel} ${h05.rmsPct.toFixed(3)} % vs ${h.rmsPct.toFixed(3)} % (spread ${Math.abs(h05.rmsPct - h.rmsPct).toFixed(3)} pp); fold iterations ${h.fits.map(f => f.iters).join(', ')}; fold bound hits ${boundHits(h.fits).map(b => `${b.key} at ${b.bound} (${b.folds.length})`).join(', ') || 'none'}`);
-    const fit = fitSeason(laps, base, params, {iters: ITERS, ...(JOINT ? {wTime: 0, wTrap: WEC_HOJ.wTrap} : {})});
+    const fit = fitSeason(laps, base, params, {iters: ITERS, ...(JOINT ? {wTime: WEC_HOJ.wTime, wTrap: WEC_HOJ.wTrap} : {})});
     const joint = JOINT ? {arm: JOINT, priors: JP, flags: jointFlags, full: {vals: fit.vals, hess: hessianAt(fit.objective, fit.x)},
+      secInfo: Object.fromEntries(laps.filter(l => l.sec && (l.weight ?? 1) >= 1).map(l => [l.name, {real: l.sec.real, lines: l.sec.lines, lenM: l.track.kappa.length * l.track.ds}])),
       folds: h.fits.map(f => ({test: f.test, vals: f.vals, bounds: f.bounds, hess: f.hess ? {sd: f.hess.sd, corr: f.hess.corr, cond: f.hess.cond} : null}))} : null;
     const car = fit.car; delete car.linkMu;
     const perTrack = {};
