@@ -20,7 +20,9 @@ jobs:
         run: |
           for i in $(seq 1 160); do s=$(gh run view $CAND -R $R --json status -q .status); echo "$(date -u +%H:%M) $s"; [ "$s" = completed ] && break; sleep 120; done
           c=$(gh run view $CAND -R $R --json conclusion -q .conclusion); echo "candidate conclusion: $c"
-          if [ "$c" = success ]; then echo set=n4 >> $GITHUB_OUTPUT; echo ref=$CAND >> $GITHUB_OUTPUT; else echo set=n4b >> $GITHUB_OUTPUT; echo ref=$BASE >> $GITHUB_OUTPUT; fi
+          # "finished" = the fit produced a calibration (the Test step fails on base and candidate alike: known C5.12/staleness tests)
+          a=$(gh api repos/$R/actions/runs/$CAND/artifacts -q '[.artifacts[].name]|index("calibration-output")'); echo "calibration-output index: $a"
+          if [ "$a" != null ]; then echo set=n4 >> $GITHUB_OUTPUT; echo ref=$CAND >> $GITHUB_OUTPUT; else echo set=n4b >> $GITHUB_OUTPUT; echo ref=$BASE >> $GITHUB_OUTPUT; fi
       - id: d
         name: Dispatch the five research refits
         run: |
