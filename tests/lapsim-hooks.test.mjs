@@ -27,7 +27,7 @@ for (const kernelStep of [1, 2]) {
     assert.ok(K.simulateLap(track, car25, {windAt: s => ({speed: s < 2000 ? 6 : 3, fromDeg: 120})}, o).lapTime !== K.simulateLap(track, car25, env, o).lapTime);
   });
   test(`ers.law (step ${kernelStep}): the default deploy and regen laws reproduce the lap; no deploy is slower`, () => {
-    const law = {deploy: c => c.pErs, regen: c => Math.min(c.regenMax, c.share * c.pBrake * c.eta)};
+    const law = {deploy: c => c.pErs, regen: c => Math.min(c.regenMax, c.share * c.pTyre * c.eta)}; // the default: tyre part only (10b)
     const base = K.simulateLap(track, car26, {}, o), withLaw = K.simulateLap(track, {...car26, ers: {...car26.ers, law}}, {}, o);
     assert.ok(Math.abs(withLaw.lapTime - base.lapTime) < 1e-6 * base.lapTime, `${withLaw.lapTime} vs ${base.lapTime}`);
     assert.ok(Math.abs(withLaw.energy.regenJ - base.energy.regenJ) < 1e-6 * base.energy.regenJ);

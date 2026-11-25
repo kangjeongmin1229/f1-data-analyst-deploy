@@ -6,6 +6,7 @@ import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {heldOut, compare} from './exp-compare.mjs';
+import {kForVariants} from './gate.mjs';
 
 const CAR_KEYS = ['muX', 'muY', 'muXTrac', 'clA', 'cdA', 'cdALow', 'pIce'];
 const r4 = x => Number.isFinite(x) ? +x.toFixed(4) : null;
@@ -17,7 +18,7 @@ export function diff(shipped, cand) {
   const cars = [], add = (where, x, y) => { for (const k of CAR_KEYS) if (Number.isFinite(x?.[k]) && Math.abs(x[k] - (y?.[k] ?? NaN)) > 1e-9 * Math.max(1, Math.abs(x[k]))) cars.push({where, param: k, shipped: r4(x[k]), new: r4(y?.[k])}); };
   for (const [y, s] of Object.entries(shipped.seasons || {})) add(`f1 ${y}`, s.car, cand.seasons?.[y]?.car);
   for (const [cls, ys] of Object.entries(shipped.series?.wec || {})) for (const [y, s] of Object.entries(ys)) add(`wec-${cls} ${y}`, s.car, cand.series?.wec?.[cls]?.[y]?.car);
-  return {heldOut: compare(shipped, cand), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
+  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
 }
 
 // step 36: two JSON values compared, 'generated' (a date) ignored → differing paths (first 40) and their count
@@ -47,6 +48,28 @@ const trapMd = r => !r.traps ? [] : ['## WEC speed trap (sim − real, km/h; shi
 const repMd = n => !n ? [] : ['## σ_meas per class (step 34: Q → Hyperpole repeat; IMSA split-half)', '', '| class series | σ_rep lap % [90 %] | pairs |', '|---|---|---|',
   ...Object.entries(n.floors || {}).map(([k, o]) => `| ${k} | ${o.rep.lap.sigmaPct ?? '–'} ${o.rep.lap.pi90Pct ? '[' + o.rep.lap.pi90Pct.join(', ') + ']' : ''} | ${o.rep.lap.pairs} |`),
   ...Object.entries(n.split || {}).map(([k, o]) => `| ${k} (split-half) | ${o.lap?.sigmaPct ?? '–'} | ${o.cars ?? o.n ?? '–'} cars |`), ''];
+// refit ship rule (central 2026-11-25): per held-out track/event, harm = |refit error| − |shipped error| (pp); one-sided 95 % upper
+// bound of the mean harm per series must be ≤ 0.10 pp (t quantile 0.95 with n − 1 dof: kForVariants at m = 3.2), and no single row may
+// be worse than +1.0 pp (central 2026-11-25 14:48; a row above it fails the rule until it is explained in the refit PR)
+export function pairedHarm(a, b, limit = 0.10, rowLimit = 1.0) {
+  const out = {};
+  for (const ser of ['f1', 'wec', 'fe']) {
+    if (ser === 'fe' && !Object.keys(a).some(k => k.startsWith('fe/'))) continue; // FE rows only come from feHeldOut()
+    const keys = Object.keys(a).filter(k => k.startsWith(ser === 'wec' ? 'wec' : ser + '/') && k in b), h = keys.map(k => Math.abs(b[k]) - Math.abs(a[k])), n = h.length;
+    if (n < 2) { out[ser] = {n, pass: false}; continue; }
+    const mean = h.reduce((x, y) => x + y, 0) / n, sd = Math.sqrt(h.reduce((x, y) => x + (y - mean) ** 2, 0) / (n - 1)), ub = mean + kForVariants(3.2, n) * sd / Math.sqrt(n);
+    const rows = keys.map((k, i) => ({row: k, shippedPct: r4(a[k]), newPct: r4(b[k]), harmPp: r4(h[i])})).sort((x, y) => y.harmPp - x.harmPp);
+    const over = rows.filter(r => r.harmPp > rowLimit).map(r => r.row);
+    out[ser] = {n, meanPp: r4(mean), ub95Pp: r4(ub), worse: h.filter(x => x > 1e-9).length, maxPp: rows[0].harmPp, overRowLimit: over, pass: ub <= limit && !over.length, rows};
+  }
+  return out;
+}
+
+// FE (central 2026-11-25 14:27): build-fe.mjs writes one event-hidden error per row (layout × season × rule set × session) to
+// fe-fit.json; same paired harm as F1/WEC on those rows
+export const feHeldOut = fit => Object.fromEntries(fit.rows.map(r => [`fe/${r.key}/${r.layout}/${r.season}/${r.session}`, r.event]));
+export const feHarm = (shippedFit, candFit) => pairedHarm(feHeldOut(shippedFit), feHeldOut(candFit)).fe;
+
 const sum = f => existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')).summary ?? null : null;
 const md = r => [
   `# LapSim pipeline report — run ${r.run.id}`, '',
@@ -54,6 +77,7 @@ const md = r => [
   `Fit settings (.github/lapsim-fit.env): ${Object.entries(r.settings).map(([k, v]) => `${k}=${v}`).join(', ') || 'none'}. Seeds: ${r.seeds}.`, '',
   `Fit job: ${r.fit}.`, '',
   ...(r.diff ? fitMd(r) : ['No fit output in this run.', '']),
+  ...(r.feHarm ? [`FE ship rule (event-hidden paired harm per row vs shipped, build-fe.mjs on this run's kernel): n ${r.feHarm.n}, mean ${r.feHarm.meanPp} pp, UB ${r.feHarm.ub95Pp} pp, worse ${r.feHarm.worse}, worst row +${r.feHarm.maxPp} pp (limit +1.0) → ${r.feHarm.pass ? 'pass' : '**FAIL**'}.`, ''] : []),
   '## Change-effects table (track-state build on the pinned inputs)', '',
   ...(r.trackState ? [`Effects ${r.trackState.identical ? '**identical** to the shipped table' : `**${r.trackState.effects.length} fields differ**`}; registry tracks changed: ${r.trackState.registryTracksChanged.join(', ') || 'none'}; year pairs changed: ${r.trackState.pairsChanged}.` + (r.trackState.cases ? ` Cases ${r.trackState.cases.n} on ${r.trackState.cases.circuits} circuits, skipped ${r.trackState.cases.skipped} (${Object.entries(r.trackState.cases.skippedWhy).map(([k, v]) => `${k} ${v}`).join(', ')}).` : ''), '',
     ...(r.trackState.effects.length ? ['| type | field | shipped | this run |', '|---|---|---|---|', ...r.trackState.effects.map(e => `| ${e.type} | ${e.field} | ${JSON.stringify(e.shipped)} | ${JSON.stringify(e.new)} |`), ''] : [])] : ['Not run.', '']),
@@ -65,6 +89,7 @@ const md = r => [
 const fitMd = r => [
   '## Held-out lap error (RMS %, shipped → this run)', '', '| group | n | shipped | this run |', '|---|---|---|---|',
   ...Object.entries(r.diff.heldOut).map(([g, x]) => `| ${g} | ${x.n} | ${x.base} | ${x.cand} |`), '',
+  `Ship rule (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ 0.10 pp, no row worse than +1.0 pp): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),
@@ -87,6 +112,8 @@ if (process.argv[1]?.endsWith('pipeline-report.mjs')) {
     settings, seeds: 'fit: none (deterministic Nelder–Mead / BCD); condition-report bootstrap seed 7; gate.mjs sign-flip / bootstrap seed 1',
     fit: E.FIT_RESULT || 'local',
     diff: existsSync(newF) ? diff(await load(shippedF), await load(newF)) : null,
+    // FE_FIT_SHIPPED / FE_FIT_NEW: fe-fit.json before and after build-fe.mjs on this run's kernel
+    feHarm: E.FE_FIT_NEW && existsSync(E.FE_FIT_NEW) && existsSync(E.FE_FIT_SHIPPED || '') ? feHarm(JSON.parse(readFileSync(E.FE_FIT_SHIPPED, 'utf8')), JSON.parse(readFileSync(E.FE_FIT_NEW, 'utf8'))) : null,
     trackState: E.TRACK_STATE_DIFF && existsSync(E.TRACK_STATE_DIFF) ? JSON.parse(readFileSync(E.TRACK_STATE_DIFF, 'utf8')) : null,
     // SHIPPED_DIR: the committed level C / forward files, copied before the run's outputs overwrite docs/
     levelC: {shipped: sum(`${E.SHIPPED_DIR}/lapsim-level-c.json`), new: sum('docs/lapsim-level-c.json')},

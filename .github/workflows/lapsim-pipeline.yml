@@ -256,6 +256,19 @@ jobs:
           python -I scripts/sim/f1-delta-report.py dl/v2pooled/baseline.csv dl/v2pooled/f1-delta-cases-2026-11-24.csv dl/v2pooled/report.json > /dev/null
           if [ -n "${F1_DELTA_LOCKED_APPROVED}" ]; then mkdir -p dl/locked2022 && cp dl/zones.csv dl/locked2022/ && cp "$(jq -r .delta.locked2022.path $P)" dl/locked2022/f1-delta-cases-2026-11-24.csv \
             && node scripts/sim/f1-delta-bench.mjs model dl/locked2022 && python -I scripts/sim/f1-delta-report.py dl/locked2022/baseline.csv dl/locked2022/f1-delta-cases-2026-11-24.csv dl/locked2022/report.json > /dev/null; fi
+      # FE ship rule: the pipeline's one FE rebuild (fe-rebuild.mjs → build-fe.mjs, seconds) on this run's kernel; event-hidden paired
+      # harm per row vs the committed fe-fit.json. Step 35's FE checks read out/fe/ from this step, they do not rebuild.
+      - name: FE rebuild on this run's kernel (paired harm)
+        continue-on-error: true
+        run: node scripts/sim/learn/fe-rebuild.mjs out
+      # refit ship rule (claude/status-2026-11-25-refit.md): mesh at every mesh and per-lap energy closure on this run's calibration;
+      # a failure does not stop the report, it is written into it (out/ship-checks.txt) and the refit does not ship
+      - name: Ship checks on this run's calibration (mesh, energy closure)
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node --test tests/lapsim-mesh.test.mjs tests/lapsim-energy-closure.test.mjs 2>&1 | tee /tmp/ship.txt | tail -5
+          { echo "ship checks (mesh, energy closure) on this run's calibration:"; grep -E '^# (tests|pass|fail)|^not ok' /tmp/ship.txt; } > out/ship-checks.txt
       - name: Report
         env:
           SHIPPED_DIR: /tmp/shipped
@@ -268,9 +281,12 @@ jobs:
           TRACK_STATE_DIFF: ts/track-state-diff.json
           ENDURANCE_DIR: end
           NOISE_DIR: noise
+          FE_FIT_SHIPPED: out/fe-fit-shipped.json
+          FE_FIT_NEW: out/fe/fe-fit.json
         run: |
           node scripts/sim/pipeline-report.mjs fit/worker/lapsim/calibration-data.js /tmp/shipped/calibration-data.js out > /dev/null
           cp -r dl out/delta
+          [ -f out/ship-checks.txt ] && { echo; echo '```'; cat out/ship-checks.txt; echo '```'; } >> out/pipeline-report.md
           cat out/pipeline-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with: {name: pipeline-report, path: out/, retention-days: 90}
@@ -278,7 +294,9 @@ jobs:
       - name: Attach the report to the releases
         run: |
           id=${{ github.run_id }}; cp out/pipeline-report.json "pipeline-report-$id.json"; cp out/pipeline-report.md "pipeline-report-$id.md"
-          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+          # the fit's own outputs (calibration-data.js, reports) next to the report: a refit PR commits exactly these files
+          if [ -d fit ]; then tar czf "calibration-output-$id.tgz" -C fit . ; set -- "calibration-output-$id.tgz"; else set --; fi
+          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" "$@" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
 
   # step 29b: Δ ranges (± on lapsim_simulate / the page) rebuilt from this run: held-out rows of the run's calibration and the Δ bench

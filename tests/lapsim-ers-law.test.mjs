@@ -57,9 +57,11 @@ for (const kernelStep of [1, 2]) {
     assert.ok(base.energy.cutoffKph != null && b.lapTime < base.lapTime && b.energy.deployJ > base.energy.deployJ);
     if (kernelStep === 1) for (let i = 0; i < b.v.length; i++) if (b.limit[i] === 2) assert.ok(b.flow.dep[i] > 0, `no deploy at power-limited point ${i}`);
   });
-  test(`regen from the braking force (step ${kernelStep}): never above the kinetic-energy formula; the identity holds per zone`, () => {
+  // since 10b (2026-11-25) the default regen is the brake-force part too, so law (b) and the default agree to the grade term (law (b)
+  // leaves m·g·sinθ out) and the deploy plan: within 1 % (Suzuka +0.39 / +0.47 %)
+  test(`regen from the braking force (step ${kernelStep}): law (b) matches the default brake-force regen within 1 %; the identity holds per zone`, () => {
     const c = withErsLaw(car26), b = K.simulateLap(track, c, {}, o), base = K.simulateLap(track, car26, {}, o);
-    assert.ok(b.energy.regenJ - b.energy.throttleHarvestJ < base.energy.regenJ - base.energy.throttleHarvestJ);
+    assert.ok(Math.abs((b.energy.regenJ - b.energy.throttleHarvestJ) / (base.energy.regenJ - base.energy.throttleHarvestJ) - 1) < 0.01);
     assert.ok(b.energy.deployJ <= b.energy.budgetJ + 1.5e3);
     if (kernelStep === 1) { const Z = regenIdentity(b, c, {}, track.ds); assert.ok(Z.length > 10); for (const z of Z) assert.ok(z.ok, JSON.stringify(z)); }
   });
