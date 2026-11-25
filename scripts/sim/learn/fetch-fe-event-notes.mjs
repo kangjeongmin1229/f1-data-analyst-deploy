@@ -25,7 +25,7 @@ const items = async id => { const j = await get(IDX + id.split('/').map(encodeUR
 const out = [], tmp = mkdtempSync('/tmp/fe-note-');
 const ROOT = await items('formula-e/files/noticeboard'); log.push('root: ' + JSON.stringify(ROOT.slice(0, 2)).slice(0, 300));
 for (const s of ROOT.filter(x => SEASONS.test(x.title + ' ')))
-  for (const ev of (await items(s.id)).filter(x => !x.extention)) {
+  for (const ev of (await items(s.id)).filter(x => x.extention === 'catalog')) {
     let files = []; try { files = await items(ev.id); } catch (e) { log.push(`${ev.title}: ${e.message}`); continue; }
     const notes = files.filter(f => f.extention === 'pdf' && /Event Note/i.test(f.title) && /Race Information/i.test(f.title));
     if (!notes.length) out.push({season: s.title, event: ev.title, note: null});
