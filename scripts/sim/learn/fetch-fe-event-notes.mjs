@@ -17,9 +17,12 @@ if (process.argv[2] === '--selftest') {
   const p = parseNote('80% of Race (Lap): 24 Laps ATTACK MODE RACE (Article 37.3.b) 350kW Power Mode time: 480 seconds (8 minutes) total Number of activations: 2 activations Number of armings: Maximum 5');
   if (p.amKW !== 350 || p.amTimeS !== 480 || p.activations !== 2 || p.armingsMax !== 5 || p.lapAt80pct !== 24) throw new Error('selftest ' + JSON.stringify(p));
   console.log('selftest ok'); process.exit(0); }
+const log = [];
 const get = async (url, kind = 'json') => { for (let i = 0; ; i++) { try { const r = await fetch(url); if (!r.ok) throw new Error(r.status + ' ' + url); return kind === 'json' ? r.json() : Buffer.from(await r.arrayBuffer()); } catch (e) { if (i >= 2) throw e; await new Promise(z => setTimeout(z, 1500 * (i + 1))); } } };
-const items = async id => (await get(IDX + id.split('/').map(encodeURIComponent).join('/') + '/index.json')).items || [];
-const out = [], log = [], tmp = mkdtempSync('/tmp/fe-note-');
+const items = async id => { const j = await get(IDX + id.split('/').map(encodeURIComponent).join('/') + '/index.json'), a = j.items || j.catalogs || j.files || [];
+  if (!a.length) log.push(`${id}: empty index, keys ${Object.keys(j).join(',')}`);
+  return a.map(x => ({...x, title: x.title ?? x.name ?? '', extention: x.extention ?? x.extension ?? x.format})); };
+const out = [], tmp = mkdtempSync('/tmp/fe-note-');
 for (const s of (await items('formula-e/files/noticeboard')).filter(x => SEASONS.test(x.title + ' ')))
   for (const ev of (await items(s.id)).filter(x => !x.extention)) {
     let files = []; try { files = await items(ev.id); } catch (e) { log.push(`${ev.title}: ${e.message}`); continue; }

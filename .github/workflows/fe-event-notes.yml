@@ -27,4 +27,5 @@ jobs:
           id=${{ github.run_id }}; cp fe-event-notes.json fe-event-notes-r$id.json; sha256sum fe-event-notes-r$id.json > SHA256SUMS-notes-r$id
           gh release view fe-inputs-event-notes >/dev/null 2>&1 || gh release create fe-inputs-event-notes --prerelease --title "Formula E event notes (Attack Mode per race)" --notes "Parsed facts only (numbers + document URL); no PDF, no text."
           gh release upload fe-inputs-event-notes fe-event-notes-r$id.json SHA256SUMS-notes-r$id --clobber
-          echo "::notice title=FE notes::$(node -p "const j=require('./fe-event-notes.json');j.rows.length+' rows, '+j.rows.filter(r=>r.amTimeS).length+' with AM time, '+j.rows.filter(r=>!r.note).length+' events without a note, '+j.log.length+' errors'")"
+          node -p "JSON.stringify(require('./fe-event-notes.json').log.slice(0,3))" | sed "s/^/::notice title=FE log::/"
+          echo "::notice title=FE notes::$(node -p "const j=require('./fe-event-notes.json');console.error(JSON.stringify(j.log.slice(0,5)));j.rows.length+' rows, '+j.rows.filter(r=>r.amTimeS).length+' with AM time, '+j.rows.filter(r=>!r.note).length+' events without a note, '+j.log.length+' errors'")"
