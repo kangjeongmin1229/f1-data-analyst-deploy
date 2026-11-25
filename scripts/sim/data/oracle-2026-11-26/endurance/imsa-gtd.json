@@ -1,0 +1,39 @@
+[
+ {
+  "row": "imsa-gtd.csv",
+  "unit": "%",
+  "n_rows": 53,
+  "n_tracks": 13,
+  "held_rms": 0.891,
+  "held_ci90": [
+   0.733,
+   1.076
+  ],
+  "floor": 0.359,
+  "ratio": 2.48,
+  "gap_to_1_2_floor": 0.461,
+  "mde": 0.308,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.918,
+    "ci90": [
+     0.729,
+     1.114
+    ],
+    "ratio": 2.56,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.918,
+    "ci90": [
+     0.729,
+     1.114
+    ],
+    "ratio": 2.56,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

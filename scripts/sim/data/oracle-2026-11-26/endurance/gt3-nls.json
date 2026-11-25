@@ -1,0 +1,39 @@
+[
+ {
+  "row": "gt3-nls.csv",
+  "unit": "%",
+  "n_rows": 6,
+  "n_tracks": 1,
+  "held_rms": 1.33,
+  "held_ci90": [
+   1.33,
+   1.33
+  ],
+  "floor": 1.0,
+  "ratio": 1.33,
+  "gap_to_1_2_floor": 0.13,
+  "mde": NaN,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 1.407,
+    "ci90": [
+     1.407,
+     1.407
+    ],
+    "ratio": 1.41,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 1.407,
+    "ci90": [
+     1.407,
+     1.407
+    ],
+    "ratio": 1.41,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

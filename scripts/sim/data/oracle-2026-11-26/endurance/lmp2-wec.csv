@@ -1,0 +1,16 @@
+row,track,group,season,err
+wec|2021|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2021,1.7335
+wec|2021|autodromo-do-algarve|lmp2,portimao,lmp2,2021,1.5129
+wec|2021|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2021,-2.0631
+wec|2021|le-mans|lmp2,le-mans,lmp2,2021,0.4009
+wec|2021|bahrain-international-circuit-6-hours|lmp2,sakhir,lmp2,2021,-0.9949
+wec|2021|bahrain-international-circuit-8-hours|lmp2,sakhir,lmp2,2021,-0.5958
+wec|2023|sebring|lmp2,sebring,lmp2,2023,1.278
+wec|2023|autodromo-do-algarve|lmp2,portimao,lmp2,2023,-0.7949
+wec|2023|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2023,0.881
+wec|2023|le-mans|lmp2,le-mans,lmp2,2023,-0.1553
+wec|2023|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2023,-1.4415
+wec|2023|fuji-speedway|lmp2,fuji,lmp2,2023,-0.0636
+wec|2024|le-mans|lmp2,le-mans,lmp2,2024,-0.6265
+wec|2025|le-mans|lmp2,le-mans,lmp2,2025,-1.925
+wec|2026|le-mans|lmp2,le-mans,lmp2,2026,-0.3582

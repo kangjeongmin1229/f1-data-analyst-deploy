@@ -1,0 +1,39 @@
+[
+ {
+  "row": "lmp2-wec.csv",
+  "unit": "%",
+  "n_rows": 15,
+  "n_tracks": 7,
+  "held_rms": 1.167,
+  "held_ci90": [
+   0.958,
+   1.412
+  ],
+  "floor": 0.263,
+  "ratio": 4.44,
+  "gap_to_1_2_floor": 0.851,
+  "mde": 0.508,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.887,
+    "ci90": [
+     0.377,
+     1.115
+    ],
+    "ratio": 3.37,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.887,
+    "ci90": [
+     0.377,
+     1.115
+    ],
+    "ratio": 3.37,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

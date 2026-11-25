@@ -1,0 +1,39 @@
+[
+ {
+  "row": "gt3-elms.csv",
+  "unit": "%",
+  "n_rows": 11,
+  "n_tracks": 6,
+  "held_rms": 0.954,
+  "held_ci90": [
+   0.606,
+   1.339
+  ],
+  "floor": 0.488,
+  "ratio": 1.96,
+  "gap_to_1_2_floor": 0.369,
+  "mde": 0.778,
+  "b_mde_gt_gap": true,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.766,
+    "ci90": [
+     0.27,
+     1.063
+    ],
+    "ratio": 1.57,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.766,
+    "ci90": [
+     0.27,
+     1.063
+    ],
+    "ratio": 1.57,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

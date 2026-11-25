@@ -1,0 +1,39 @@
+[
+ {
+  "row": "gt3-wec.csv",
+  "unit": "%",
+  "n_rows": 22,
+  "n_tracks": 10,
+  "held_rms": 0.666,
+  "held_ci90": [
+   0.45,
+   0.841
+  ],
+  "floor": 0.322,
+  "ratio": 2.07,
+  "gap_to_1_2_floor": 0.28,
+  "mde": 0.26,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.719,
+    "ci90": [
+     0.322,
+     1.021
+    ],
+    "ratio": 2.23,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.719,
+    "ci90": [
+     0.322,
+     1.021
+    ],
+    "ratio": 2.23,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

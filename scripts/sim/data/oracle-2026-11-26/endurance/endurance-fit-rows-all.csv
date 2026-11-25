@@ -1,0 +1,484 @@
+row,track,group,season,series,real,pred,err
+imsa|2021|roar-before-the-24|gt3,daytona,gt3,2021,imsa,106.831,106.0692,-0.7131
+imsa|2021|roar-before-the-24|lmp2,daytona,lmp2,2021,imsa,97.368,97.4083,0.0414
+imsa|2021|sebring-international-raceway|gt3,sebring,gt3,2021,imsa,119.247,120.1275,0.7384
+imsa|2021|sebring-international-raceway|lmp2,sebring,lmp2,2021,imsa,111.025,110.6482,-0.3394
+imsa|2021|mid-ohio-sports-car-course|gt3,mid-ohio,gt3,2021,imsa,80.083,81.5216,1.7964
+imsa|2021|6h---watkins-glen-international|gt3,watkins-glen,gt3,2021,imsa,105.081,105.768,0.6538
+imsa|2021|6h---watkins-glen-international|lmp2,watkins-glen,lmp2,2021,imsa,95.304,94.7499,-0.5814
+imsa|2021|weathertech-240---wgi|gt3,watkins-glen,gt3,2021,imsa,106.988,105.5788,-1.3172
+imsa|2021|weathertech-240---wgi|lmp2,watkins-glen,lmp2,2021,imsa,94.969,95.1011,0.1391
+imsa|2021|lime-rock-park|gt3,lime-rock,gt3,2021,imsa,51.545,51.1193,-0.8258
+imsa|2021|road-america|gt3,road-america,gt3,2021,imsa,127.195,125.8907,-1.0254
+imsa|2021|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2021,imsa,83.805,84.5533,0.8929
+imsa|2021|weathertech-raceway-laguna-seca|lmp2,laguna-seca,lmp2,2021,imsa,77.227,77.7489,0.6758
+imsa|2021|long-beach-street-circuit|gt3,long-beach,gt3,2021,imsa,78.957,78.4368,-0.6588
+imsa|2021|virginia-international-raceway|gt3,vir,gt3,2021,imsa,103.356,105.2372,1.8201
+imsa|2021|road-atlanta|gt3,road-atlanta,gt3,2021,imsa,78.843,79.3972,0.703
+imsa|2021|road-atlanta|lmp2,road-atlanta,lmp2,2021,imsa,72.229,72.357,0.1772
+imsa|2022|roar-before-the-24|lmp2,daytona,lmp2,2022,imsa,97.296,97.0783,-0.2238
+imsa|2022|roar-before-the-24|gt3,daytona,gt3,2022,imsa,106.136,106.1856,0.0467
+imsa|2022|sebring-international-raceway|gt3,sebring,gt3,2022,imsa,119.414,119.6605,0.2064
+imsa|2022|sebring-international-raceway|lmp2,sebring,lmp2,2022,imsa,109.954,110.332,0.3438
+imsa|2022|long-beach-street-circuit|gt3,long-beach,gt3,2022,imsa,78.048,78.4864,0.5617
+imsa|2022|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2022,imsa,83.142,84.1116,1.1662
+imsa|2022|weathertech-raceway-laguna-seca|lmp2,laguna-seca,lmp2,2022,imsa,77.571,76.7465,-1.0628
+imsa|2022|mid-ohio-sports-car-course|gt3,mid-ohio,gt3,2022,imsa,80.525,79.5697,-1.1864
+imsa|2022|mid-ohio-sports-car-course|lmp2,mid-ohio,lmp2,2022,imsa,74.34,73.9313,-0.5498
+imsa|2022|watkins-glen-international|gt3,watkins-glen,gt3,2022,imsa,104.755,105.4327,0.647
+imsa|2022|watkins-glen-international|lmp2,watkins-glen,lmp2,2022,imsa,93.93,94.7149,0.8356
+imsa|2022|canadian-tire-motorsport-park|gt3,mosport,gt3,2022,imsa,75.468,75.412,-0.0743
+imsa|2022|lime-rock-park|gt3,lime-rock,gt3,2022,imsa,51.079,51.0965,0.0343
+imsa|2022|road-america|gt3,road-america,gt3,2022,imsa,125.365,127.8037,1.9453
+imsa|2022|road-america|lmp2,road-america,lmp2,2022,imsa,114.137,115.8536,1.504
+imsa|2022|virginia-international-raceway|gt3,vir,gt3,2022,imsa,103.953,104.6863,0.7054
+imsa|2022|road-atlanta|gt3,road-atlanta,gt3,2022,imsa,78.835,78.8012,-0.0429
+imsa|2022|road-atlanta|lmp2,road-atlanta,lmp2,2022,imsa,71.939,71.945,0.0083
+imsa|2023|roar-before-the-24|lmdh,daytona,lmdh,2023,imsa,94.031,93.3848,-0.6872
+imsa|2023|roar-before-the-24|gt3,daytona,gt3,2023,imsa,106.093,106.1602,0.0633
+imsa|2023|roar-before-the-24|lmp2,daytona,lmp2,2023,imsa,100.541,99.2584,-1.2757
+imsa|2023|sebring-international-raceway|lmdh,sebring,lmdh,2023,imsa,105.836,106.5436,0.6686
+imsa|2023|sebring-international-raceway|gt3,sebring,gt3,2023,imsa,119.315,119.6608,0.2898
+imsa|2023|sebring-international-raceway|lmp2,sebring,lmp2,2023,imsa,111.78,113.0596,1.1448
+imsa|2023|long-beach-street-circuit|lmdh,long-beach,lmdh,2023,imsa,69.909,71.0584,1.6441
+imsa|2023|long-beach-street-circuit|gt3,long-beach,gt3,2023,imsa,77.811,78.5629,0.9664
+imsa|2023|weathertech-raceway-laguna-seca|lmdh,laguna-seca,lmdh,2023,imsa,74.774,75.0771,0.4054
+imsa|2023|weathertech-raceway-laguna-seca|lmp2,laguna-seca,lmp2,2023,imsa,78.891,79.2225,0.4202
+imsa|2023|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2023,imsa,84.529,83.493,-1.2256
+imsa|2023|watkins-glen-international|gt3,watkins-glen,gt3,2023,imsa,104.43,105.1305,0.6708
+imsa|2023|canadian-tire-motorsport-park|lmdh,mosport,lmdh,2023,imsa,65.653,64.9481,-1.0737
+imsa|2023|canadian-tire-motorsport-park|gt3,mosport,gt3,2023,imsa,75.029,75.3056,0.3686
+imsa|2023|lime-rock-park|gt3,lime-rock,gt3,2023,imsa,50.593,51.258,1.3144
+imsa|2023|road-america|lmdh,road-america,lmdh,2023,imsa,107.73,106.8796,-0.7894
+imsa|2023|road-america|lmp2,road-america,lmp2,2023,imsa,113.621,114.0827,0.4064
+imsa|2023|road-america|gt3,road-america,gt3,2023,imsa,122.918,123.3568,0.357
+imsa|2023|virginia-international-raceway|gt3,vir,gt3,2023,imsa,104.78,104.2012,-0.5524
+imsa|2023|indianapolis-motor-speedway-rc|lmdh,indianapolis,lmdh,2023,imsa,73.672,73.9078,0.32
+imsa|2023|indianapolis-motor-speedway-rc|lmp2,indianapolis,lmp2,2023,imsa,77.95,77.8887,-0.0786
+imsa|2023|indianapolis-motor-speedway-rc|gt3,indianapolis,gt3,2023,imsa,83.075,83.4686,0.4738
+imsa|2023|road-atlanta|lmp2,road-atlanta,lmp2,2023,imsa,73.859,73.2601,-0.8108
+imsa|2024|roar-before-the-24|lmdh,daytona,lmdh,2024,imsa,92.656,93.9196,1.3638
+imsa|2024|roar-before-the-24|gt3,daytona,gt3,2024,imsa,104.382,104.9923,0.5847
+imsa|2024|roar-before-the-24|lmp2,daytona,lmp2,2024,imsa,98.501,98.3747,-0.1283
+imsa|2024|sebring-international-raceway|lmdh,sebring,lmdh,2024,imsa,108.038,106.5352,-1.391
+imsa|2024|sebring-international-raceway|gt3,sebring,gt3,2024,imsa,118.714,118.0707,-0.5419
+imsa|2024|sebring-international-raceway|lmp2,sebring,lmp2,2024,imsa,112.142,111.5316,-0.5443
+imsa|2024|long-beach-street-circuit|lmdh,long-beach,lmdh,2024,imsa,71.388,71.4496,0.0863
+imsa|2024|long-beach-street-circuit|gt3,long-beach,gt3,2024,imsa,77.357,77.4938,0.1769
+imsa|2024|weathertech-raceway-laguna-seca|lmdh,laguna-seca,lmdh,2024,imsa,72.445,72.8131,0.5081
+imsa|2024|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2024,imsa,79.727,80.1901,0.5809
+imsa|2024|detroit-street-course|lmdh,detroit,lmdh,2024,imsa,65.39,66.4008,1.5458
+imsa|2024|detroit-street-course|gt3,detroit,gt3,2024,imsa,69.092,70.7209,2.3576
+imsa|2024|watkins-glen-international|lmdh,watkins-glen,lmdh,2024,imsa,92.209,91.4311,-0.8436
+imsa|2024|watkins-glen-international|gt3,watkins-glen,gt3,2024,imsa,104.203,104.3389,0.1304
+imsa|2024|watkins-glen-international|lmp2,watkins-glen,lmp2,2024,imsa,95.925,95.9254,0.0004
+imsa|2024|canadian-tire-motorsport-park|lmp2,mosport,lmp2,2024,imsa,69.582,69.2922,-0.4165
+imsa|2024|canadian-tire-motorsport-park|gt3,mosport,gt3,2024,imsa,74.373,74.5886,0.2898
+imsa|2024|road-america|lmdh,road-america,lmdh,2024,imsa,108.601,108.4333,-0.1544
+imsa|2024|road-america|gt3,road-america,gt3,2024,imsa,122.198,122.6562,0.3749
+imsa|2024|road-america|lmp2,road-america,lmp2,2024,imsa,113.738,113.9277,0.1668
+imsa|2024|virginia-international-raceway|gt3,vir,gt3,2024,imsa,103.206,103.7489,0.526
+imsa|2024|tire-rack.com-battle-on-the-bricks|lmdh,indianapolis,lmdh,2024,imsa,74.592,74.756,0.2199
+imsa|2024|tire-rack.com-battle-on-the-bricks|gt3,indianapolis,gt3,2024,imsa,83.15,82.3604,-0.9496
+imsa|2024|tire-rack.com-battle-on-the-bricks|lmp2,indianapolis,lmp2,2024,imsa,77.618,77.7652,0.1897
+imsa|2024|road-atlanta|lmdh,road-atlanta,lmdh,2024,imsa,69.639,69.7151,0.1092
+imsa|2024|road-atlanta|gt3,road-atlanta,gt3,2024,imsa,77.881,78.246,0.4687
+imsa|2024|road-atlanta|lmp2,road-atlanta,lmp2,2024,imsa,72.739,73.1708,0.5937
+imsa|2025|daytona-international-speedway|gt3,daytona,gt3,2025,imsa,105.523,105.6415,0.1123
+imsa|2025|daytona-international-speedway|lmp2,daytona,lmp2,2025,imsa,98.676,97.8805,-0.8062
+imsa|2025|daytona-international-speedway|lmdh,daytona,lmdh,2025,imsa,93.895,93.5853,-0.3298
+imsa|2025|sebring-international-raceway|gt3,sebring,gt3,2025,imsa,119.131,119.4484,0.2664
+imsa|2025|sebring-international-raceway|lmp2,sebring,lmp2,2025,imsa,111.804,111.7815,-0.0201
+imsa|2025|sebring-international-raceway|lmdh,sebring,lmdh,2025,imsa,107.091,107.2665,0.1639
+imsa|2025|sebring-international-raceway|lmh,sebring,lmh,2025,imsa,109.4,108.5552,-0.7722
+imsa|2025|long-beach-street-circuit|gt3,long-beach,gt3,2025,imsa,77.877,78.7725,1.1499
+imsa|2025|long-beach-street-circuit|lmdh,long-beach,lmdh,2025,imsa,71.539,71.819,0.3914
+imsa|2025|long-beach-street-circuit|lmh,long-beach,lmh,2025,imsa,73.392,73.036,-0.4851
+imsa|2025|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2025,imsa,80.608,81.3618,0.9352
+imsa|2025|weathertech-raceway-laguna-seca|lmdh,laguna-seca,lmdh,2025,imsa,72.854,73.2709,0.5723
+imsa|2025|weathertech-raceway-laguna-seca|lmh,laguna-seca,lmh,2025,imsa,73.718,74.6626,1.2814
+imsa|2025|detroit-street-course|gt3,detroit,gt3,2025,imsa,70.922,69.726,-1.6864
+imsa|2025|detroit-street-course|lmdh,detroit,lmdh,2025,imsa,65.762,65.6478,-0.1736
+imsa|2025|detroit-street-course|lmh,detroit,lmh,2025,imsa,67.907,66.5605,-1.9828
+imsa|2025|watkins-glen-international|gt3,watkins-glen,gt3,2025,imsa,104.595,105.4329,0.8011
+imsa|2025|watkins-glen-international|lmp2,watkins-glen,lmp2,2025,imsa,95.878,95.7258,-0.1588
+imsa|2025|watkins-glen-international|lmdh,watkins-glen,lmdh,2025,imsa,91.558,91.6978,0.1527
+imsa|2025|watkins-glen-international|lmh,watkins-glen,lmh,2025,imsa,93.36,92.7111,-0.695
+imsa|2025|canadian-tire-motorsport-park|gt3,mosport,gt3,2025,imsa,75.046,75.2703,0.2989
+imsa|2025|canadian-tire-motorsport-park|lmp2,mosport,lmp2,2025,imsa,68.888,69.7602,1.2661
+imsa|2025|road-america|gt3,road-america,gt3,2025,imsa,123.745,123.834,0.072
+imsa|2025|road-america|lmp2,road-america,lmp2,2025,imsa,113.24,114.2645,0.9047
+imsa|2025|road-america|lmdh,road-america,lmdh,2025,imsa,108.628,109.1278,0.4601
+imsa|2025|road-america|lmh,road-america,lmh,2025,imsa,109.309,110.5616,1.146
+imsa|2025|virginia-international-raceway|gt3,vir,gt3,2025,imsa,104.433,104.2088,-0.2147
+imsa|2025|indianapolis-motor-speedway-rc|gt3,indianapolis,gt3,2025,imsa,83.088,83.2694,0.2183
+imsa|2025|indianapolis-motor-speedway-rc|lmp2,indianapolis,lmp2,2025,imsa,77.846,77.3177,-0.6787
+imsa|2025|indianapolis-motor-speedway-rc|lmdh,indianapolis,lmdh,2025,imsa,74.569,74.7397,0.2289
+imsa|2025|indianapolis-motor-speedway-rc|lmh,indianapolis,lmh,2025,imsa,75.434,76.0121,0.7664
+imsa|2025|road-atlanta|gt3,road-atlanta,gt3,2025,imsa,78.316,78.8557,0.6891
+imsa|2025|road-atlanta|lmp2,road-atlanta,lmp2,2025,imsa,73.157,72.803,-0.4839
+imsa|2025|road-atlanta|lmdh,road-atlanta,lmdh,2025,imsa,69.628,69.7031,0.1078
+imsa|2025|road-atlanta|lmh,road-atlanta,lmh,2025,imsa,70.254,70.5875,0.4747
+imsa|2026|daytona-international-speedway|gt3,daytona,gt3,2026,imsa,105.106,106.2222,1.0619
+imsa|2026|daytona-international-speedway|lmp2,daytona,lmp2,2026,imsa,99.952,98.1501,-1.8027
+imsa|2026|daytona-international-speedway|lmdh,daytona,lmdh,2026,imsa,93.939,94.2329,0.3129
+imsa|2026|daytona-international-speedway|lmh,daytona,lmh,2026,imsa,95.382,94.9696,-0.4324
+imsa|2026|sebring-international-raceway|gt3,sebring,gt3,2026,imsa,118.48,118.5492,0.0584
+imsa|2026|sebring-international-raceway|lmp2,sebring,lmp2,2026,imsa,110.941,111.2134,0.2455
+imsa|2026|sebring-international-raceway|lmdh,sebring,lmdh,2026,imsa,106.153,106.9743,0.7737
+imsa|2026|sebring-international-raceway|lmh,sebring,lmh,2026,imsa,107.363,108.0603,0.6495
+imsa|2026|long-beach-street-circuit|lmdh,long-beach,lmdh,2026,imsa,71.626,71.3846,-0.337
+imsa|2026|long-beach-street-circuit|gt3,long-beach,gt3,2026,imsa,78.411,77.6545,-0.9648
+imsa|2026|long-beach-street-circuit|lmh,long-beach,lmh,2026,imsa,71.997,72.5397,0.7537
+imsa|2026|weathertech-raceway-laguna-seca|gt3,laguna-seca,gt3,2026,imsa,81.228,80.6385,-0.7257
+imsa|2026|weathertech-raceway-laguna-seca|lmdh,laguna-seca,lmdh,2026,imsa,73.221,72.5629,-0.8987
+imsa|2026|weathertech-raceway-laguna-seca|lmh,laguna-seca,lmh,2026,imsa,73.939,73.7337,-0.2776
+imsa|2026|detroit-street-course|gt3,detroit,gt3,2026,imsa,69.354,70.2475,1.2883
+imsa|2026|detroit-street-course|lmdh,detroit,lmdh,2026,imsa,65.313,65.7679,0.6966
+imsa|2026|detroit-street-course|lmh,detroit,lmh,2026,imsa,67.27,66.5432,-1.0805
+imsa|2026|watkins-glen-international|gt3,watkins-glen,gt3,2026,imsa,103.701,105.1029,1.3518
+imsa|2026|watkins-glen-international|lmp2,watkins-glen,lmp2,2026,imsa,95.124,96.2585,1.1927
+imsa|2026|watkins-glen-international|lmdh,watkins-glen,lmdh,2026,imsa,91.284,92.2535,1.0621
+imsa|2026|watkins-glen-international|lmh,watkins-glen,lmh,2026,imsa,92.626,93.075,0.4848
+imsa|2026|canadian-tire-motorsport-park|lmp2,mosport,lmp2,2026,imsa,67.904,69.7182,2.6718
+imsa|2026|canadian-tire-motorsport-park|gt3,mosport,gt3,2026,imsa,74.382,75.2528,1.1707
+imsa|2026|road-america|gt3,road-america,gt3,2026,imsa,124.042,123.8183,-0.1803
+imsa|2026|road-america|lmp2,road-america,lmp2,2026,imsa,114.212,113.8491,-0.3177
+imsa|2026|road-america|lmdh,road-america,lmdh,2026,imsa,109.233,109.0244,-0.191
+imsa|2026|road-america|lmh,road-america,lmh,2026,imsa,110.525,109.9708,-0.5014
+imsa|2026|virginia-international-raceway|gt3,vir,gt3,2026,imsa,104.773,103.6228,-1.0978
+imsa|2026|indianapolis-motor-speedway-rc|lmp2,indianapolis,lmp2,2026,imsa,77.555,77.0307,-0.6761
+imsa|2026|indianapolis-motor-speedway-rc|lmdh,indianapolis,lmdh,2026,imsa,74.674,74.4976,-0.2362
+imsa|2026|indianapolis-motor-speedway-rc|lmh,indianapolis,lmh,2026,imsa,75.578,75.5343,-0.0578
+imsa|2026|road-atlanta|gt3,road-atlanta,gt3,2026,imsa,78.194,78.4359,0.3094
+imsa|2026|road-atlanta|lmp2,road-atlanta,lmp2,2026,imsa,72.944,72.7055,-0.327
+imsa|2026|road-atlanta|lmdh,road-atlanta,lmdh,2026,imsa,69.703,69.669,-0.0487
+imsa|2026|road-atlanta|lmh,road-atlanta,lmh,2026,imsa,70.363,70.3686,0.008
+wec|2021|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2021,wec,122.404,124.5258,1.7335
+wec|2021|autodromo-do-algarve|lmp2,portimao,lmp2,2021,wec,91.21,92.59,1.5129
+wec|2021|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2021,wec,98.527,96.4943,-2.0631
+wec|2021|le-mans|lmp2,le-mans,lmp2,2021,wec,207.95,208.7836,0.4009
+wec|2021|bahrain-international-circuit-6-hours|lmp2,sakhir,lmp2,2021,wec,109.885,108.7917,-0.9949
+wec|2021|bahrain-international-circuit-8-hours|lmp2,sakhir,lmp2,2021,wec,109.525,108.8724,-0.5958
+wec|2022|sebring|lmp2,sebring,lmp2,2022,wec,109.688,109.1964,-0.4482
+wec|2022|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2022,wec,124.246,125.2225,0.786
+wec|2022|le-mans|lmp2,le-mans,lmp2,2022,wec,208.394,211.1034,1.3001
+wec|2022|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2022,wec,98.403,97.5898,-0.8264
+wec|2022|fuji-speedway|lmp2,fuji,lmp2,2022,wec,91.649,90.9195,-0.796
+wec|2022|bahrain-international-circuit|lmp2,sakhir,lmp2,2022,wec,110.33,110.287,-0.039
+wec|2023|sebring|lmp2,sebring,lmp2,2023,wec,109.974,111.3795,1.278
+wec|2023|sebring|lmdh,sebring,lmdh,2023,wec,106.082,107.5466,1.3806
+wec|2023|sebring|lmh,sebring,lmh,2023,wec,105.067,106.6907,1.5454
+wec|2023|autodromo-do-algarve|lmp2,portimao,lmp2,2023,wec,94.284,93.5345,-0.7949
+wec|2023|autodromo-do-algarve|lmdh,portimao,lmdh,2023,wec,92.404,90.3214,-2.2538
+wec|2023|autodromo-do-algarve|lmh,portimao,lmh,2023,wec,90.171,89.6769,-0.5479
+wec|2023|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2023,wec,125.979,127.0889,0.881
+wec|2023|spa-francorchamps|lmdh,spa-francorchamps,lmdh,2023,wec,121.043,122.7602,1.4187
+wec|2023|spa-francorchamps|lmh,spa-francorchamps,lmh,2023,wec,120.777,121.7021,0.766
+wec|2023|le-mans|lmp2,le-mans,lmp2,2023,wec,212.923,212.5922,-0.1553
+wec|2023|le-mans|lmdh,le-mans,lmdh,2023,wec,204.531,204.4198,-0.0544
+wec|2023|le-mans|lmh,le-mans,lmh,2023,wec,202.982,203.1825,0.0988
+wec|2023|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2023,wec,99.354,97.9218,-1.4415
+wec|2023|autodromo-nazionale-di-monza|lmdh,monza,lmdh,2023,wec,95.72,94.0849,-1.7082
+wec|2023|autodromo-nazionale-di-monza|lmh,monza,lmh,2023,wec,95.358,93.5003,-1.9481
+wec|2023|fuji-speedway|lmp2,fuji,lmp2,2023,wec,92.182,92.1234,-0.0636
+wec|2023|fuji-speedway|lmdh,fuji,lmdh,2023,wec,88.687,89.6474,1.0829
+wec|2023|fuji-speedway|lmh,fuji,lmh,2023,wec,87.794,88.5802,0.8955
+wec|2024|losail|gt3,lusail,gt3,2024,wec,114.372,114.9563,0.5109
+wec|2024|losail|lmh,lusail,lmh,2024,wec,99.511,99.0781,-0.4351
+wec|2024|losail|lmdh,lusail,lmdh,2024,wec,99.154,99.022,-0.1331
+wec|2024|imola|gt3,imola,gt3,2024,wec,102.365,103.262,0.8762
+wec|2024|imola|lmh,imola,lmh,2024,wec,89.466,90.564,1.2273
+wec|2024|imola|lmdh,imola,lmdh,2024,wec,90.101,90.652,0.6115
+wec|2024|spa-francorchamps|gt3,spa-francorchamps,gt3,2024,wec,140.527,138.7159,-1.2888
+wec|2024|spa-francorchamps|lmh,spa-francorchamps,lmh,2024,wec,122.462,120.4211,-1.6666
+wec|2024|spa-francorchamps|lmdh,spa-francorchamps,lmdh,2024,wec,122.675,120.6734,-1.6316
+wec|2024|le-mans|lmp2,le-mans,lmp2,2024,wec,212.827,211.4937,-0.6265
+wec|2024|le-mans|lmh,le-mans,lmh,2024,wec,204.731,203.0228,-0.8343
+wec|2024|le-mans|lmdh,le-mans,lmdh,2024,wec,204.465,204.2783,-0.0913
+wec|2024|le-mans|gt3,le-mans,gt3,2024,wec,235.263,235.4915,0.0971
+wec|2024|sao-paulo|gt3,interlagos,gt3,2024,wec,94.413,94.9468,0.5654
+wec|2024|sao-paulo|lmh,interlagos,lmh,2024,wec,83.14,83.4836,0.4133
+wec|2024|sao-paulo|lmdh,interlagos,lmdh,2024,wec,83.263,83.5727,0.372
+wec|2024|circuit-of-the-americas|gt3,austin,gt3,2024,wec,125.587,126.724,0.9053
+wec|2024|circuit-of-the-americas|lmdh,austin,lmdh,2024,wec,110.68,112.788,1.9046
+wec|2024|circuit-of-the-americas|lmh,austin,lmh,2024,wec,110.39,112.5587,1.9646
+wec|2024|fuji-speedway|gt3,fuji,gt3,2024,wec,100.893,100.8452,-0.0473
+wec|2024|fuji-speedway|lmdh,fuji,lmdh,2024,wec,88.901,88.8396,-0.0691
+wec|2024|fuji-speedway|lmh,fuji,lmh,2024,wec,88.942,88.7307,-0.2376
+wec|2024|bahrain-international-circuit|gt3,sakhir,gt3,2024,wec,122.201,123.0907,0.728
+wec|2024|bahrain-international-circuit|lmdh,sakhir,lmdh,2024,wec,107.234,107.9313,0.6502
+wec|2024|bahrain-international-circuit|lmh,sakhir,lmh,2024,wec,106.714,107.9137,1.1243
+wec|2025|losail|gt3,lusail,gt3,2025,wec,113.861,114.9346,0.9429
+wec|2025|losail|lmh,lusail,lmh,2025,wec,98.359,99.8503,1.5162
+wec|2025|losail|lmdh,lusail,lmdh,2025,wec,98.495,99.7412,1.2653
+wec|2025|imola|gt3,imola,gt3,2025,wec,102.326,102.284,-0.041
+wec|2025|imola|lmh,imola,lmh,2025,wec,88.92,90.1845,1.422
+wec|2025|imola|lmdh,imola,lmdh,2025,wec,89.885,89.9477,0.0698
+wec|2025|spa-francorchamps|gt3,spa-francorchamps,gt3,2025,wec,137.732,138.4116,0.4934
+wec|2025|spa-francorchamps|lmh,spa-francorchamps,lmh,2025,wec,119.617,120.603,0.8243
+wec|2025|spa-francorchamps|lmdh,spa-francorchamps,lmdh,2025,wec,120.246,120.6058,0.2992
+wec|2025|le-mans|gt3,le-mans,gt3,2025,wec,232.789,233.367,0.2483
+wec|2025|le-mans|lmp2,le-mans,lmp2,2025,wec,214.657,210.5248,-1.925
+wec|2025|le-mans|lmh,le-mans,lmh,2025,wec,203.163,202.1234,-0.5117
+wec|2025|le-mans|lmdh,le-mans,lmdh,2025,wec,202.742,202.4662,-0.136
+wec|2025|sao-paulo|gt3,interlagos,gt3,2025,wec,93.849,94.2651,0.4434
+wec|2025|sao-paulo|lmh,interlagos,lmh,2025,wec,82.948,82.6056,-0.4128
+wec|2025|sao-paulo|lmdh,interlagos,lmdh,2025,wec,82.57,82.8322,0.3175
+wec|2025|fuji-speedway|gt3,fuji,gt3,2025,wec,99.981,100.0583,0.0773
+wec|2025|fuji-speedway|lmh,fuji,lmh,2025,wec,88.705,88.0429,-0.7465
+wec|2025|fuji-speedway|lmdh,fuji,lmdh,2025,wec,88.236,88.164,-0.0816
+wec|2025|bahrain-international-circuit|gt3,sakhir,gt3,2025,wec,121.661,121.755,0.0772
+wec|2025|bahrain-international-circuit|lmh,sakhir,lmh,2025,wec,106.826,106.6904,-0.1269
+wec|2025|bahrain-international-circuit|lmdh,sakhir,lmdh,2025,wec,107.543,106.7814,-0.7082
+wec|2026|imola|gt3,imola,gt3,2026,wec,101.181,102.0688,0.8774
+wec|2026|imola|lmh,imola,lmh,2026,wec,90.088,90.4429,0.3939
+wec|2026|imola|lmdh,imola,lmdh,2026,wec,90.419,90.1446,-0.3034
+wec|2026|spa-francorchamps|gt3,spa-francorchamps,gt3,2026,wec,136.612,138.725,1.5467
+wec|2026|spa-francorchamps|lmh,spa-francorchamps,lmh,2026,wec,120.653,120.7684,0.0957
+wec|2026|spa-francorchamps|lmdh,spa-francorchamps,lmdh,2026,wec,120.696,120.6379,-0.0481
+wec|2026|le-mans|gt3,le-mans,gt3,2026,wec,232.41,231.8148,-0.2561
+wec|2026|le-mans|lmp2,le-mans,lmp2,2026,wec,212.855,212.0925,-0.3582
+wec|2026|le-mans|lmh,le-mans,lmh,2026,wec,203.406,202.8386,-0.2789
+wec|2026|le-mans|lmdh,le-mans,lmdh,2026,wec,202.559,201.8333,-0.3583
+elms|2021|barcelona-catalunya|lmp2,catalunya-4675,lmp2,2021,elms,91.867,94.0585,2.3855
+elms|2021|red-bull-ring|lmp2,spielberg,lmp2,2021,elms,80.596,78.1212,-3.0707
+elms|2021|paul-ricard|lmp2,paul-ricard-2021,lmp2,2021,elms,102.323,101.7905,-0.5204
+elms|2021|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2021,elms,97.893,95.97,-1.9644
+elms|2021|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2021,elms,124.384,122.9558,-1.1482
+elms|2021|autodromo-do-algarve|lmp2,portimao,lmp2,2021,elms,90.812,92.4747,1.8309
+elms|2022|paul-ricard|lmp2,paul-ricard-2021,lmp2,2022,elms,103.038,102.9503,-0.0851
+elms|2022|imola|lmp2,imola,lmp2,2022,elms,92.269,92.4081,0.1508
+elms|2022|autodromo-nazionale-di-monza|lmp2,monza,lmp2,2022,elms,98.032,96.8972,-1.1575
+elms|2022|barcelona-catalunya|lmp2,catalunya-4675,lmp2,2022,elms,94.802,92.5314,-2.3951
+elms|2022|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2022,elms,123.544,125.898,1.9054
+elms|2022|autodromo-do-algarve|lmp2,portimao,lmp2,2022,elms,92.375,93.0463,0.7267
+elms|2023|barcelona-catalunya|lmp2,catalunya,lmp2,2023,elms,89.396,89.2356,-0.1794
+elms|2023|circuito-motorland-aragon|lmp2,aragon,lmp2,2023,elms,106.801,105.9192,-0.8257
+elms|2023|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2023,elms,123.564,123.8309,0.216
+elms|2024|barcelona-catalunya|gt3,catalunya,gt3,2024,elms,101.85,102.1424,0.2871
+elms|2024|barcelona-catalunya|lmp2,catalunya,lmp2,2024,elms,88.071,87.6853,-0.4379
+elms|2024|paul-ricard|gt3,paul-ricard-2021,gt3,2024,elms,116.003,117.9713,1.6967
+elms|2024|paul-ricard|lmp2,paul-ricard-2021,lmp2,2024,elms,100.104,100.6263,0.5218
+elms|2024|imola|gt3,imola,gt3,2024,elms,103.349,102.2247,-1.0879
+elms|2024|imola|lmp2,imola,lmp2,2024,elms,90.829,89.9202,-1.0005
+elms|2024|spa-francorchamps|gt3,spa-francorchamps,gt3,2024,elms,137.873,140.551,1.9424
+elms|2024|spa-francorchamps|lmp2,spa-francorchamps,lmp2,2024,elms,121.253,122.5796,1.094
+elms|2024|mugello|gt3,mugello,gt3,2024,elms,107.891,107.9409,0.0463
+elms|2024|mugello|lmp2,mugello,lmp2,2024,elms,92.829,92.1187,-0.7651
+elms|2024|autodromo-do-algarve|gt3,portimao,gt3,2024,elms,102.408,102.2584,-0.1461
+elms|2024|autodromo-do-algarve|lmp2,portimao,lmp2,2024,elms,90.727,90.6131,-0.1255
+elms|2025|barcelona-catalunya|gt3,catalunya,gt3,2025,elms,102.257,102.9363,0.6643
+elms|2025|barcelona-catalunya|lmp2,catalunya,lmp2,2025,elms,87.664,88.0512,0.4417
+elms|2025|imola|gt3,imola,gt3,2025,elms,103.799,103.5607,-0.2296
+elms|2025|silverstone|lmp2,silverstone,lmp2,2025,elms,102.343,101.8637,-0.4683
+elms|2025|autodromo-do-algarve|gt3,portimao,gt3,2025,elms,103.446,103.9992,0.5348
+elms|2025|autodromo-do-algarve|lmp2,portimao,lmp2,2025,elms,90.771,90.5735,-0.2176
+elms|2026|barcelona-catalunya|gt3,catalunya,gt3,2026,elms,102.289,102.3557,0.0652
+elms|2026|barcelona-catalunya|lmp2,catalunya,lmp2,2026,elms,88.368,88.6535,0.3231
+elms|2026|imola|gt3,imola,gt3,2026,elms,102.339,103.5042,1.1385
+elms|2026|imola|lmp2,imola,lmp2,2026,elms,90.866,90.6816,-0.203
+alms|2022|dubai-autodrome|gt3,dubai,gt3,2022,alms,115.217,115.9271,0.6163
+alms|2022|dubai-autodrome|lmp2,dubai,lmp2,2022,alms,105.248,106.2631,0.9645
+alms|2022|yas-marina|gt3,yas-marina-circuit,gt3,2022,alms,110.557,110.137,-0.3799
+alms|2022|yas-marina|lmp2,yas-marina-circuit,lmp2,2022,alms,99.804,99.0401,-0.7654
+alms|2023|dubai-autodrome|gt3,dubai,gt3,2023,alms,117.701,118.1618,0.3915
+alms|2023|dubai-autodrome|lmp2,dubai,lmp2,2023,alms,108.58,109.0729,0.454
+alms|2023|yas-marina|gt3,yas-marina-circuit,gt3,2023,alms,112.776,112.8391,0.056
+alms|2023|yas-marina|lmp2,yas-marina-circuit,lmp2,2023,alms,102.644,102.1165,-0.5139
+alms|2024|sepang|gt3,kuala-lumpur,gt3,2024,alms,123.998,124.4823,0.3906
+alms|2024|sepang|lmp2,kuala-lumpur,lmp2,2024,alms,113.653,113.9429,0.2551
+alms|2024|dubai-autodrome|gt3,dubai,gt3,2024,alms,118.28,117.8613,-0.354
+alms|2024|dubai-autodrome|lmp2,dubai,lmp2,2024,alms,108.873,106.8947,-1.8171
+alms|2024|yas-marina|gt3,yas-marina-circuit,gt3,2024,alms,112.673,113.0179,0.3061
+alms|2024|yas-marina|lmp2,yas-marina-circuit,lmp2,2024,alms,100.72,102.3204,1.5889
+alms|2025|sepang|gt3,kuala-lumpur,gt3,2025,alms,125.092,126.0149,0.7378
+alms|2025|sepang|lmp2,kuala-lumpur,lmp2,2025,alms,113.197,114.4356,1.0942
+alms|2025|dubai-autodrome|gt3,dubai,gt3,2025,alms,118.891,119.5301,0.5376
+alms|2025|dubai-autodrome|lmp2,dubai,lmp2,2025,alms,107.569,107.28,-0.2687
+alms|2025|yas-marina|gt3,yas-marina-circuit,gt3,2025,alms,114.668,113.3126,-1.1821
+alms|2025|yas-marina|lmp2,yas-marina-circuit,lmp2,2025,alms,101.392,100.7546,-0.6286
+alms|2026|sepang|lmp2,kuala-lumpur,lmp2,2026,alms,115.614,114.0088,-1.3884
+alms|2026|dubai-autodrome|gt3,dubai,gt3,2026,alms,119.595,118.2703,-1.1077
+alms|2026|dubai-autodrome|lmp2,dubai,lmp2,2026,alms,107.996,109.017,0.9454
+alms|2026|yas-marina|gt3,yas-marina-circuit,gt3,2026,alms,113.307,114.538,1.0864
+alms|2026|yas-marina|lmp2,yas-marina-circuit,lmp2,2026,alms,102.179,102.3626,0.1797
+wec|2026|interlagos|gt3,interlagos,gt3,2026,wec,93.35,93.8018,0.484
+wec|2026|interlagos|lmh,interlagos,lmh,2026,wec,83.387,82.8584,-0.634
+wec|2026|interlagos|lmdh,interlagos,lmdh,2026,wec,83.041,82.9113,-0.1562
+wec|2026|austin|gt3,austin,gt3,2026,wec,125.103,124.393,-0.5675
+wec|2026|austin|lmh,austin,lmh,2026,wec,112.02,109.8087,-1.9741
+wec|2026|austin|lmdh,austin,lmdh,2026,wec,112.074,109.6936,-2.1239
+wec|2026|catalunya|gt3,catalunya,gt3,2026,wec,100.933,101.2477,0.3118
+wec|2026|monza|gt3,monza,gt3,2026,wec,107.065,106.7114,-0.3303
+wec|2026|monza|lmh,monza,lmh,2026,wec,93.364,96.0704,2.8988
+wec|2026|monza|lmdh,monza,lmdh,2026,wec,93.46,95.9238,2.6362
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2025|GTWorldChEU pwrd by AWS Endurance Cup | Nuerburgring GP NGK|gt3,nurburgring-gp,gt3,2025,x-gtworldcheu-pwrd-by-aws-endurance-cup,113.612,113.68,0.0598
+igtc|2025|2025 Meguiar's Bathurst 12 Hour | 2025 Meguiar's Bathurst 12 Hour Qualifying Part 1 (Q1)|gt3,bathurst,gt3,2025,igtc,121.926,121.1644,-0.6246
+x-crowdstrike-24-hours-of-spa|2025|CrowdStrike 24 Hours of Spa | Spa GT3|gt3,spa-francorchamps,gt3,2025,x-crowdstrike-24-hours-of-spa,135.792,135.5749,-0.1599
+igtc|2025|2025 Meguiar's Bathurst 12 Hour | 2025 Meguiar's Bathurst 12 Hour Qualifying Part 3|gt3,bathurst,gt3,2025,igtc,121.276,121.4317,0.1284
+nur|2024|ADAC 24h Nürburgring Qualifiers | Nürburgring|gt3,nurburgring-24h,gt3,2024,nur,489.591,490.6933,0.2252
+nur|2025|ADAC 24h Nürburgring Qualifiers | Nürburgring|gt3,nurburgring-24h,gt3,2025,nur,491.855,506.3855,2.9542
+nur|2026|ADAC 24h Nürburgring Qualifiers | Nürburgring|gt3,nurburgring-24h,gt3,2026,nur,494.059,497.5378,0.7041
+gtwc|2025|GT World Challenge America powered by AWS | Virginia International Raceway|gt3,vir,gt3,2025,gtwc,105.004,106.2709,1.2065
+nur|2025|53. ADAC RAVENOL 24h Nürburgring | Nürburgring|gt3,nurburgring-24h,gt3,2025,nur,498.738,494.066,-0.9368
+x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup|2024|Fanatec GTWorldChEU pwrd by AWS Endurance Cup | Nuerburgring GP NGK|gt3,nurburgring-gp,gt3,2024,x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup,113.36,113.3663,0.0055
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2026|GTWorldChEU pwrd by AWS Endurance Cup | Spa GT3|gt3,spa-francorchamps,gt3,2026,x-gtworldcheu-pwrd-by-aws-endurance-cup,136.817,135.5089,-0.9561
+igtc|2025|IGTC Indianapolis 8 Hour | Indy|gt3,indianapolis,gt3,2025,igtc,82.271,83.3498,1.3113
+nur|2023|ADAC TotalEnergies 24h Nürburgring | Nürburgring|gt3,nurburgring-24h,gt3,2023,nur,496.609,493.4722,-0.6316
+x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup|2024|Fanatec GTWorldChEU pwrd by AWS Endurance Cup | Monza|gt3,monza,gt3,2024,x-fanatec-gtworldcheu-pwrd-by-aws-endurance-cup,104.922,105.1533,0.2205
+x-crowdstrike-24-hours-of-spa|2024|CrowdStrike 24 Hours of Spa | Spa GT3|gt3,spa-francorchamps,gt3,2024,x-crowdstrike-24-hours-of-spa,134.903,135.9808,0.7989
+x-gtworldcheu-pwrd-by-aws-sprint-cup|2026|GTWorldChEu pwrd by AWS Sprint Cup | Misano|gt3,misano,gt3,2026,x-gtworldcheu-pwrd-by-aws-sprint-cup,92.154,89.9882,-2.3502
+igtc|2025|IGTC Indianapolis 8 Hour | Indy - Pre|gt3,indianapolis,gt3,2025,igtc,83.265,83.1532,-0.1343
+x-suzuka-1000km-intercontinental-gt-challenge|2025|Suzuka 1000km Intercontinental GT Challenge | Suzuka|gt3,suzuka,gt3,2025,x-suzuka-1000km-intercontinental-gt-challenge,119.936,119.4107,-0.438
+gtwc|2026|GT World Challenge America powered by AWS | Sonoma Raceway|gt3,sonoma,gt3,2026,gtwc,92.673,93.5129,0.9063
+igtc|2026|2026 Meguiar's Bathurst 12 Hour | 2026 Meguiar's Bathurst 12 Hour|gt3,bathurst,gt3,2026,igtc,121.563,121.7098,0.1207
+nur|2024|ADAC RAVENOL 24h Nürburgring | Nürburgring|gt3,nurburgring-24h,gt3,2024,nur,491.406,490.1734,-0.2508
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2025|GTWorldChEU pwrd by AWS Endurance Cup | Barcelona 16 Turn|gt3,catalunya,gt3,2025,x-gtworldcheu-pwrd-by-aws-endurance-cup,99.241,99.6256,0.3875
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2026|GTWorldChEU pwrd by AWS Endurance Cup | Monza|gt3,monza,gt3,2026,x-gtworldcheu-pwrd-by-aws-endurance-cup,105.323,105.5139,0.1813
+x-gtworldcheu-pwrd-by-aws-sprint-cup|2025|GTWorldChEu pwrd by AWS Sprint Cup | Magny-Cours|gt3,magny-cours,gt3,2025,x-gtworldcheu-pwrd-by-aws-sprint-cup,95.911,98.3126,2.504
+gtwc|2024|2024 Fanatec GT World Challenge Asia powered by AWS | Suzuka|gt3,suzuka,gt3,2024,gtwc,120.608,121.0122,0.3351
+gtwc|2026|GT World Challenge America powered by AWS | Circuit Of The Americas|gt3,austin,gt3,2026,gtwc,123.563,123.2784,-0.2303
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2026|GTWorldChEU pwrd by AWS Endurance Cup | Paul Ricard|gt3,paul-ricard-5821,gt3,2026,x-gtworldcheu-pwrd-by-aws-endurance-cup,113.049,113.762,0.6307
+x-gtworldcheu-pwrd-by-aws-endurance-cup|2025|GTWorldChEU pwrd by AWS Endurance Cup | Paul Ricard Short|gt3,paul-ricard-5821,gt3,2025,x-gtworldcheu-pwrd-by-aws-endurance-cup,113.091,112.6645,-0.3772
+gtwc|2026|GT World Challenge America powered by AWS | Michelin Raceway Road Atlanta|gt3,road-atlanta,gt3,2026,gtwc,80.501,78.9218,-1.9617
+gtwc|2026|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2026,gtwc,82.676,82.4841,-0.2321
+gtwc|2026|gt-world-challenge-europe | Zandvoort|gt3,zandvoort,gt3,2026,gtwc,93.192,92.249,-1.0119
+gtwc|2025|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2025,gtwc,83.24,82.2535,-1.1851
+gtwc|2025|gt-world-challenge-europe | Monza|gt3,monza,gt3,2025,gtwc,105,106.3782,1.3126
+gtwc|2024|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2024,gtwc,82.393,82.9586,0.6865
+gtwc|2024|gt-world-challenge-europe | Misano|gt3,misano,gt3,2024,gtwc,91.437,91.8418,0.4427
+gtwc|2024|gt-world-challenge-europe | Jeddah|gt3,jeddah,gt3,2024,gtwc,119,118.451,-0.4614
+gtwc|2023|gt-world-challenge-europe | Monza|gt3,monza,gt3,2023,gtwc,105.957,105.5378,-0.3957
+gtwc|2023|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2023,gtwc,81.716,82.9562,1.5177
+gtwc|2023|gt-world-challenge-europe | Misano|gt3,misano,gt3,2023,gtwc,90.762,91.7422,1.08
+gtwc|2023|gt-world-challenge-europe | Circuit Ricardo Tormo Valencia|gt3,fe-valencia,gt3,2023,gtwc,90.486,90.6641,0.1969
+gtwc|2023|gt-world-challenge-europe | Zandvoort|gt3,zandvoort,gt3,2023,gtwc,92.29,93.3521,1.1508
+gtwc|2022|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2022,gtwc,81.37,82.7669,1.7168
+gtwc|2022|gt-world-challenge-europe | Zandvoort|gt3,zandvoort,gt3,2022,gtwc,92.093,93.0323,1.0199
+gtwc|2022|gt-world-challenge-europe | Misano|gt3,misano,gt3,2022,gtwc,90.942,91.4404,0.548
+gtwc|2022|gt-world-challenge-europe | Circuit Ricardo Tormo Valencia|gt3,fe-valencia,gt3,2022,gtwc,90.467,90.168,-0.3305
+gtwc|2022|gt-world-challenge-europe | Barcelona|gt3,catalunya-4675,gt3,2022,gtwc,103.955,103.7032,-0.2422
+gtwc|2021|gt-world-challenge-europe | Monza|gt3,monza,gt3,2021,gtwc,106.442,106.3999,-0.0395
+gtwc|2021|gt-world-challenge-europe | Zandvoort|gt3,zandvoort,gt3,2021,gtwc,93.586,93.795,0.2233
+gtwc|2021|gt-world-challenge-europe | Misano|gt3,misano,gt3,2021,gtwc,91.687,92.7066,1.1121
+gtwc|2021|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2021,gtwc,83.66,83.0827,-0.6901
+gtwc|2021|gt-world-challenge-europe | Barcelona|gt3,catalunya-4675,gt3,2021,gtwc,104.528,104.8425,0.3009
+gtwc|2020|gt-world-challenge-europe | Misano|gt3,misano,gt3,2020,gtwc,91.841,91.2487,-0.645
+gtwc|2020|gt-world-challenge-europe | Barcelona|gt3,catalunya-4655,gt3,2020,gtwc,103.296,104.2914,0.9636
+gtwc|2019|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2019,gtwc,83.261,83.5484,0.3452
+gtwc|2019|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2019,gtwc,118.89,117.9852,-0.761
+gtwc|2019|gt-world-challenge-europe | Misano|gt3,misano,gt3,2019,gtwc,93.595,92.2288,-1.4597
+gtwc|2019|gt-world-challenge-europe | Hungaroring|gt3,hungaroring,gt3,2019,gtwc,102.994,101.83,-1.1302
+gtwc|2019|gt-world-challenge-europe | Barcelona|gt3,catalunya-4655,gt3,2019,gtwc,104.598,105.4855,0.8485
+gtwc|2018|gt-world-challenge-europe | Zolder|gt3,zolder,gt3,2018,gtwc,88.363,88.6518,0.3268
+gtwc|2018|gt-world-challenge-europe | Monza|gt3,monza,gt3,2018,gtwc,108.018,105.2635,-2.55
+gtwc|2018|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2018,gtwc,83.46,83.6416,0.2176
+gtwc|2018|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2018,gtwc,116.637,119.0955,2.1078
+gtwc|2018|gt-world-challenge-europe | Misano|gt3,misano,gt3,2018,gtwc,93.212,92.3298,-0.9465
+gtwc|2018|gt-world-challenge-europe | Hungaroring|gt3,hungaroring,gt3,2018,gtwc,102.688,102.1776,-0.4971
+gtwc|2018|gt-world-challenge-europe | Barcelona|gt3,catalunya-4655,gt3,2018,gtwc,103.667,105.5468,1.8133
+gtwc|2017|gt-world-challenge-europe | Misano|gt3,misano,gt3,2017,gtwc,92.319,92.904,0.6336
+gtwc|2017|gt-world-challenge-europe | Monza|gt3,monza,gt3,2017,gtwc,107.423,107.1444,-0.2594
+gtwc|2017|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2017,gtwc,82.891,83.9882,1.3237
+gtwc|2017|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2017,gtwc,119.072,118.7346,-0.2833
+gtwc|2017|gt-world-challenge-europe | Zolder|gt3,zolder,gt3,2017,gtwc,89.025,88.7305,-0.3308
+gtwc|2017|gt-world-challenge-europe | Hungaroring|gt3,hungaroring,gt3,2017,gtwc,102.359,102.9264,0.5543
+gtwc|2017|gt-world-challenge-europe | Barcelona|gt3,catalunya-4655,gt3,2017,gtwc,106.019,105.0746,-0.8907
+gtwc|2016|gt-world-challenge-europe | Misano|gt3,misano,gt3,2016,gtwc,93.262,92.8863,-0.4028
+gtwc|2016|gt-world-challenge-europe | Monza|gt3,monza,gt3,2016,gtwc,107.509,107.436,-0.0679
+gtwc|2016|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2016,gtwc,83.26,84.2587,1.1995
+gtwc|2016|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2016,gtwc,118.469,119.0647,0.5029
+gtwc|2016|gt-world-challenge-europe | Hungaroring|gt3,hungaroring,gt3,2016,gtwc,102.433,103.1141,0.6649
+gtwc|2016|gt-world-challenge-europe | Barcelona|gt3,catalunya-4655,gt3,2016,gtwc,106.493,105.2679,-1.1504
+gtwc|2015|gt-world-challenge-europe | Monza|gt3,monza,gt3,2015,gtwc,107.275,107.7015,0.3976
+gtwc|2015|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2015,gtwc,83.269,84.2716,1.204
+gtwc|2015|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2015,gtwc,120.829,118.852,-1.6362
+gtwc|2015|gt-world-challenge-europe | Zolder|gt3,zolder,gt3,2015,gtwc,88.716,88.7011,-0.0168
+gtwc|2015|gt-world-challenge-europe | Misano|gt3,misano,gt3,2015,gtwc,92.774,92.1702,-0.6508
+gtwc|2014|gt-world-challenge-europe | Monza|gt3,monza,gt3,2014,gtwc,107.603,108.6475,0.9707
+gtwc|2014|gt-world-challenge-europe | Brands Hatch|gt3,brands-hatch,gt3,2014,gtwc,83.865,84.269,0.4817
+gtwc|2014|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2014,gtwc,121.063,119.4793,-1.3082
+gtwc|2014|gt-world-challenge-europe | Zolder|gt3,zolder,gt3,2014,gtwc,88.58,88.9812,0.453
+gtwc|2013|gt-world-challenge-europe | Monza|gt3,monza,gt3,2013,gtwc,108.298,108.9926,0.6414
+gtwc|2013|gt-world-challenge-europe | Zolder|gt3,zolder,gt3,2013,gtwc,89.74,90.1555,0.463
+gtwc|2013|gt-world-challenge-europe | Silverstone|gt3,silverstone,gt3,2013,gtwc,121.14,120.2718,-0.7167
+gtwc|2025|gt-world-challenge-america | Sonoma Raceway|gt3,sonoma,gt3,2025,gtwc,93.445,92.2507,-1.2781
+gtwc|2026|gt-world-challenge-asia | Mandalika International Circuit|gt3,mandalika,gt3,2026,gtwc,87.681,88.0171,0.3833
+gtwc|2026|gt-world-challenge-asia | Fuji International Speedway|gt3,fuji,gt3,2026,gtwc,97.85,99.2294,1.4097
+gtwc|2026|gt-world-challenge-asia | Shanghai International Circuit|gt3,shanghai,gt3,2026,gtwc,119.188,121.7319,2.1344
+gtwc|2025|gt-world-challenge-asia | Mandalika International Circuit|gt3,mandalika,gt3,2025,gtwc,88.145,88.0492,-0.1086
+gtwc|2025|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2025,gtwc,93.696,92.8324,-0.9217
+gtwc|2024|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2024,gtwc,93.347,93.0376,-0.3314
+gtwc|2024|gt-world-challenge-asia | Shanghai International Circuit|gt3,shanghai,gt3,2024,gtwc,120.285,118.6057,-1.3961
+gtwc|2023|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2023,gtwc,94.022,92.9764,-1.1121
+gtwc|2023|gt-world-challenge-asia | Fuji International Speedway|gt3,fuji,gt3,2023,gtwc,98.825,99.2096,0.3891
+gtwc|2023|gt-world-challenge-asia | Suzuka International Circuit|gt3,suzuka,gt3,2023,gtwc,120.344,120.4356,0.0761
+gtwc|2023|gt-world-challenge-asia | Motegi|gt3,motegi,gt3,2023,gtwc,110.26,109.5055,-0.6843
+gtwc|2022|gt-world-challenge-asia | Suzuka International Circuit|gt3,suzuka,gt3,2022,gtwc,118.745,120.5065,1.4834
+gtwc|2022|gt-world-challenge-asia | Fuji International Speedway|gt3,fuji,gt3,2022,gtwc,99.68,98.2401,-1.4446
+gtwc|2019|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2019,gtwc,92.731,94.3608,1.7575
+gtwc|2019|gt-world-challenge-asia | Suzuka International Circuit|gt3,suzuka,gt3,2019,gtwc,121.233,121.5019,0.2218
+gtwc|2019|gt-world-challenge-asia | Shanghai International Circuit|gt3,shanghai,gt3,2019,gtwc,125.155,128.3342,2.5402
+gtwc|2018|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2018,gtwc,92.852,94.6567,1.9437
+gtwc|2018|gt-world-challenge-asia | Suzuka International Circuit|gt3,suzuka,gt3,2018,gtwc,121.504,121.7545,0.2062
+gtwc|2018|gt-world-challenge-asia | Shanghai International Circuit|gt3,shanghai,gt3,2018,gtwc,127.489,124.7251,-2.168
+gtwc|2017|gt-world-challenge-asia | Chang International Circuit|gt3,buriram,gt3,2017,gtwc,93.576,94.6462,1.1437
+gtwc|2017|gt-world-challenge-asia | Suzuka International Circuit|gt3,suzuka,gt3,2017,gtwc,121.851,122.0931,0.1987
+britishgt|2026|britishgt | Silverstone GP|gt3,silverstone,gt3,2026,britishgt,117.214,117.5863,0.3176
+britishgt|2026|britishgt | Oulton Park|gt3,oulton-park,gt3,2026,britishgt,92.218,92.6521,0.4708
+britishgt|2026|britishgt | Snetterton 300|gt3,snetterton,gt3,2026,britishgt,105.737,106.0513,0.2973
+britishgt|2026|britishgt | Donington Park GP|gt3,donington,gt3,2026,britishgt,85.528,85.5675,0.0462
+britishgt|2026|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2026,britishgt,82.962,82.6107,-0.4235
+britishgt|2025|britishgt | Donington Park GP|gt3,donington,gt3,2025,britishgt,84.311,85.5338,1.4504
+britishgt|2025|britishgt | Oulton Park|gt3,oulton-park,gt3,2025,britishgt,91.881,92.4204,0.587
+britishgt|2025|britishgt | Snetterton 300|gt3,snetterton,gt3,2025,britishgt,105.282,105.7455,0.4402
+britishgt|2025|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2025,britishgt,82.687,82.3248,-0.4381
+britishgt|2025|britishgt | Donington Park GP 2|gt3,donington,gt3,2025,britishgt,85.788,84.903,-1.0316
+britishgt|2024|britishgt | Oulton Park|gt3,oulton-park,gt3,2024,britishgt,92.777,92.2522,-0.5657
+britishgt|2024|britishgt | Silverstone GP|gt3,silverstone,gt3,2024,britishgt,116.602,117.6517,0.9003
+britishgt|2024|britishgt | Donington Park GP|gt3,donington,gt3,2024,britishgt,84.973,85.5753,0.7088
+britishgt|2024|britishgt | Snetterton 300|gt3,snetterton,gt3,2024,britishgt,105.373,106.0778,0.6689
+britishgt|2024|britishgt | Donington Park GP 2|gt3,donington,gt3,2024,britishgt,85.645,85.3455,-0.3497
+britishgt|2024|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2024,britishgt,82.196,82.7174,0.6344
+britishgt|2023|britishgt | Oulton Park|gt3,oulton-park,gt3,2023,britishgt,91.713,91.9991,0.312
+britishgt|2023|britishgt | Donington Park GP|gt3,donington,gt3,2023,britishgt,83.689,85.4513,2.1058
+britishgt|2023|britishgt | Snetterton 300|gt3,snetterton,gt3,2023,britishgt,104.793,105.5556,0.7277
+britishgt|2023|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2023,britishgt,83.126,81.7158,-1.6965
+britishgt|2023|britishgt | Donington Park GP 2|gt3,donington,gt3,2023,britishgt,87.071,84.4449,-3.016
+britishgt|2022|britishgt | Oulton Park|gt3,oulton-park,gt3,2022,britishgt,92.384,92.5431,0.1722
+britishgt|2022|britishgt | Silverstone GP|gt3,silverstone,gt3,2022,britishgt,116.765,117.2508,0.4161
+britishgt|2022|britishgt | Donington Park GP|gt3,donington,gt3,2022,britishgt,85.46,85.5984,0.1619
+britishgt|2022|britishgt | Snetterton 300|gt3,snetterton,gt3,2022,britishgt,105.858,106.0758,0.2057
+britishgt|2022|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2022,britishgt,82.969,82.6592,-0.3734
+britishgt|2021|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2021,britishgt,83.763,83.6039,-0.1899
+britishgt|2021|britishgt | Silverstone GP|gt3,silverstone,gt3,2021,britishgt,117.757,118.7383,0.8334
+britishgt|2021|britishgt | Donington Park GP|gt3,donington,gt3,2021,britishgt,86.67,86.5311,-0.1602
+britishgt|2021|britishgt | Snetterton 300|gt3,snetterton,gt3,2021,britishgt,107.652,107.197,-0.4227
+britishgt|2021|britishgt | Oulton Park|gt3,oulton-park,gt3,2021,britishgt,93.924,93.5856,-0.3603
+britishgt|2021|britishgt | Donington Park GP 2|gt3,donington,gt3,2021,britishgt,86.093,86.7418,0.7536
+britishgt|2020|britishgt | Oulton Park|gt3,oulton-park,gt3,2020,britishgt,93.44,93.5027,0.0671
+britishgt|2020|britishgt | Donington Park GP|gt3,donington,gt3,2020,britishgt,86.584,86.4307,-0.177
+britishgt|2020|britishgt | Brands Hatch GP|gt3,brands-hatch,gt3,2020,britishgt,83.463,83.524,0.0731
+britishgt|2020|britishgt | Donington Park GP 2|gt3,donington,gt3,2020,britishgt,86.715,86.1384,-0.6649
+britishgt|2020|britishgt | Silverstone GP|gt3,silverstone,gt3,2020,britishgt,117.162,118.9009,1.4841
+britishgt|2019|britishgt | Oulton Park|gt3,oulton-park,gt3,2019,britishgt,95.061,95.0755,0.0153
+britishgt|2019|britishgt | Snetterton 300|gt3,snetterton,gt3,2019,britishgt,109.129,109.2435,0.1049
+britishgt|2018|britishgt | Oulton Park|gt3,oulton-park,gt3,2018,britishgt,92.869,93.9035,1.1139
+britishgt|2018|britishgt | Snetterton 300|gt3,snetterton,gt3,2018,britishgt,107.385,106.521,-0.8046
+britishgt|2017|britishgt | Oulton Park|gt3,oulton-park,gt3,2017,britishgt,92.993,94.1452,1.239
+britishgt|2017|britishgt | Snetterton 300|gt3,snetterton,gt3,2017,britishgt,107.332,106.5744,-0.7058
+britishgt|2016|britishgt | Oulton Park|gt3,oulton-park,gt3,2016,britishgt,93.606,93.9646,0.3831
+britishgt|2016|britishgt | Snetterton 300|gt3,snetterton,gt3,2016,britishgt,107.167,107.8354,0.6237
+britishgt|2016|britishgt | Donington Park GP|gt3,donington,gt3,2016,britishgt,89.377,86.7578,-2.9305
+britishgt|2015|britishgt | Oulton Park|gt3,oulton-park,gt3,2015,britishgt,93.877,94.3336,0.4864
+igtc|2024|igtc | repco-bathurst-12-hour|gt3,bathurst,gt3,2024,igtc,120.882,121.0776,0.1618
+igtc|2023|igtc | liqui-moly-bathurst-12-hour|gt3,bathurst,gt3,2023,igtc,120.882,121.1579,0.2282
+igtc|2022|igtc | liqui-moly-bathurst-12-hour|gt3,bathurst,gt3,2022,igtc,121.286,120.4793,-0.6651
+igtc|2020|igtc | liqui-moly-bathurst-12-hour|gt3,bathurst,gt3,2020,igtc,121.286,121.5897,0.2504
+igtc|2019|igtc | liqui-moly-bathurst-12-hour|gt3,bathurst,gt3,2019,igtc,121.286,123.6182,1.9229
+gtwc|2025|gt-world-challenge-australia | Phillip Island Grand Prix Circuit|gt3,phillip-island,gt3,2025,gtwc,85.538,87.0115,1.7226
+gtwc|2024|gt-world-challenge-australia | Phillip Island Grand Prix Circuit|gt3,phillip-island,gt3,2024,gtwc,85.171,86.495,1.5545
+gtwc|2024|gt-world-challenge-australia | Mount Panorama Circuit|gt3,bathurst,gt3,2024,gtwc,121.831,123.9323,1.7247
+gtwc|2023|gt-world-challenge-australia | Mount Panorama Circuit|gt3,bathurst,gt3,2023,gtwc,122.848,123.2638,0.3385
+gtwc|2023|gt-world-challenge-australia | Phillip Island Grand Prix Circuit|gt3,phillip-island,gt3,2023,gtwc,87.455,85.3514,-2.4053

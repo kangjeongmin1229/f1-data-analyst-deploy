@@ -1,0 +1,39 @@
+[
+ {
+  "row": "hypercar-wec.csv",
+  "unit": "%",
+  "n_rows": 54,
+  "n_tracks": 11,
+  "held_rms": 1.153,
+  "held_ci90": [
+   0.821,
+   1.47
+  ],
+  "floor": 0.307,
+  "ratio": 3.75,
+  "gap_to_1_2_floor": 0.784,
+  "mde": 0.483,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 1.312,
+    "ci90": [
+     0.773,
+     1.75
+    ],
+    "ratio": 4.27,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 1.167,
+    "ci90": [
+     0.743,
+     1.536
+    ],
+    "ratio": 3.8,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

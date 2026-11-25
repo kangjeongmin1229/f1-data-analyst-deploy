@@ -1,0 +1,39 @@
+[
+ {
+  "row": "lmp2-elms.csv",
+  "unit": "%",
+  "n_rows": 20,
+  "n_tracks": 11,
+  "held_rms": 1.195,
+  "held_ci90": [
+   0.81,
+   1.643
+  ],
+  "floor": 0.409,
+  "ratio": 2.92,
+  "gap_to_1_2_floor": 0.704,
+  "mde": 0.664,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.857,
+    "ci90": [
+     0.471,
+     1.094
+    ],
+    "ratio": 2.1,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.857,
+    "ci90": [
+     0.471,
+     1.094
+    ],
+    "ratio": 2.1,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]
