@@ -224,6 +224,8 @@ export function lapsimKernel() {
     const cRoll = car.cRoll ?? 0.012;
     const k = Math.max(1, car.frictionExp ?? 2);
     const aeroFactor = 0.5 * rho;
+    // car.clASpeed = {c, vRef} (step 32 screen S4, report-only): ClA(v) = ClA0·(1 + c·((v_air/vRef)² − 1)); unset → factor 1 (byte-identical)
+    const clS = car.clASpeed, clv = clS ? va => 1 + clS.c * ((va / clS.vRef) ** 2 - 1) : () => 1;
 
     // Per-point constants
     // every per-point array has one more slot, n: a point inside a step (step 2 substeps, virt())
@@ -238,7 +240,7 @@ export function lapsimKernel() {
     // Same law as worker/lapsim/ers-law.js ersLaw(); a function object in car.ers.law is the plug-in hook (docs/lapsim-hooks.md).
     const lawB = car.ers?.law === 'b';
     const law = lawB ? (car.ers.regenMax ? {regen: c => { if (!(c.pBrake > 0) || !(c.v > 0)) return 0;
-      const f = c.pBrake / c.v - (aeroFactor * car.cdA * c.v * c.v + cRoll * (mg + aeroFactor * car.clA * c.v * c.v));
+      const f = c.pBrake / c.v - (aeroFactor * car.cdA * c.v * c.v + cRoll * (mg + aeroFactor * car.clA * c.v * c.v * clv(c.v)));
       return Math.min(c.regenMax, c.share * Math.max(0, f) * c.v * c.eta); }} : null) : (car.ers?.law || null);
     for (let i = 0; i < n; i++) {
       if (windAt) { const w = windAt(i * ds, prev ? prev.time[i] : null) || {}; tail[i] = heading ? tailwind(heading[i], w.speed || 0, w.fromDeg || 0) : 0; } else
@@ -286,7 +288,7 @@ export function lapsimKernel() {
       if (kap < 1e-5) { vLat[i] = vMaxCar; continue; }
       const m = muAt(i), cl = car.clA;
       const f = v => {
-        const va = vAir(v, i), L = aeroFactor * cl * va * va;
+        const va = vAir(v, i), L = aeroFactor * cl * va * va * clv(va);
         return m * latCap(v, i, L) - (bank ? bankLat(v, i) : t.m * v * v * kap);
       };
       let lo = 1, hi = vMaxCar;
@@ -300,7 +302,7 @@ export function lapsimKernel() {
       const kap = Math.abs(kapX[i]);
       if (kap < 1e-6) return 1;
       const ay = bank ? bankLat(v, i) / t.m : v * v * kap;
-      const va = vAir(v, i), L = aeroFactor * car.clA * va * va;
+      const va = vAir(v, i), L = aeroFactor * car.clA * va * va * clv(va);
       const ayMax = muAt(i) * latCap(v, i, L) / t.m;
       const r = Math.min(1, ay / ayMax);
       return Math.pow(Math.max(0, 1 - Math.pow(r, k)), 1 / k);
@@ -326,7 +328,7 @@ export function lapsimKernel() {
       return Math.min(a, aa);
     };
     const brakeAcc = (v, i) => {
-      const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
+      const va = vAir(v, i), L = aeroFactor * car.clA * va * va * clv(va), N = normalAt(v, i, L);
       const fx = dc ? muAt(i) * t.m * (dc.b0 + dc.b2 * va * va) * ellipse(v, i) : muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellipse(v, i);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
       // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
@@ -346,7 +348,7 @@ export function lapsimKernel() {
       return k === 2 ? Math.sqrt(Math.max(0, 1 - r * r)) : Math.pow(Math.max(0, 1 - Math.pow(r, k)), 1 / k);
     };
     const brakeAcc2 = (v, i) => {
-      const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
+      const va = vAir(v, i), L = aeroFactor * car.clA * va * va * clv(va), N = normalAt(v, i, L);
       const fx = dc ? muAt(i) * t.m * (dc.b0 + dc.b2 * va * va) * ellN(v, i, L, N) : muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellN(v, i, L, N);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
       // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
@@ -407,7 +409,7 @@ export function lapsimKernel() {
     // regen can recover; drag and rolling energy is dissipated (item 10b, central 2026-11-25). Default: min(regenMax, share·pTyre·η).
     // ers.law.regen({pBrake, pTyre, v, i, s, regenMax, share, eta}) → DC W replaces the default (law (b) does its own split from pBrake)
     const regenP = (w0, w1, len, i) => { const vm = 0.5 * (Math.sqrt(w0) + Math.sqrt(w1)), pBrake = t.m * t.inertia * (w0 - w1) / (2 * len) * vm;
-      const va = vAir(vm, i), L = aeroFactor * car.clA * va * va, res = aeroFactor * car.cdA * va * va + cRoll * normalAt(vm, i, L);
+      const va = vAir(vm, i), L = aeroFactor * car.clA * va * va * clv(va), res = aeroFactor * car.cdA * va * va + cRoll * normalAt(vm, i, L);
       const pTyre = Math.max(0, pBrake - (res + mg * sinG[i]) * vm), share = ers.regenShare ?? 0.6;
       return law && law.regen ? law.regen({pBrake, pTyre, v: vm, i, s: i * ds, regenMax: ers.regenMax, share, eta: etaRegen}) : Math.min(ers.regenMax, share * pTyre * etaRegen); };
     // 2026+ F1: the battery is tracked point by point on the final pass (qualifying lap from a full
@@ -429,7 +431,7 @@ export function lapsimKernel() {
         for (let c = 0; c < n; c++) {
           const i = (start + c) % n, j = (i + 1) % n;
           const vi = Math.max(v[i], 1);
-          const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vi, i, L);
+          const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va * clv(va), N = normalAt(vi, i, L);
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]), env.erskKnots);
           let pErs = below(vi, vCut) && (!track || soc > 0) ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
           if (ramp && track && pErs > 0) pErs = Math.min(pErs, fundCap(soc, i));
@@ -512,7 +514,7 @@ export function lapsimKernel() {
     let dErs = 0, dHarv = 0, dPl = 0, dEl = 1, dF = 0, dR = 0; // outputs of drv(): DC deploy power (W), power recovered on throttle (W), power-limited flag, friction-ellipse share left
     // drive rate (m/s²) at speed vv on point i with the step's decisions: mode 0 no deploy, 1 deploy to the limit, 2 ramp ceiling al
     const drv = (vv, i, mode, al, hyOn, clipOf) => {
-      const va = vAir(vv, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vv, i, L);
+      const va = vAir(vv, i), L = aeroFactor * clF[i] * va * va * clv(va), N = normalAt(vv, i, L);
       let pErs = 0;
       const q = i === n ? vSrc : i, ot = otOn === true || !!(otOn && otOn[q]);
       if (mode) { const lim = erskLimitW(ers.rule, vv, ers.pMax || 0, ot, env.erskKnots); pErs = mode === 2 ? Math.min(lim, al) : Math.min(lim, ersCap ? ersCap[q] : Infinity); }
