@@ -269,12 +269,17 @@ jobs:
         run: node scripts/sim/learn/fe-rebuild.mjs out
       # refit ship rule (claude/status-2026-11-25-refit.md): mesh at every mesh and per-lap energy closure on this run's calibration;
       # a failure does not stop the report, it is written into it (out/ship-checks.txt) and the refit does not ship
-      - name: Ship checks on this run's calibration (mesh, energy closure)
+      # 29b (central 17:20): the Δ ranges are regenerated on this run's calibration and kernel BEFORE the 29b test runs, so the test
+      # checks the ranges that ship with this calibration (the fit job's refit-mode file; rebuilt here when the fit was skipped)
+      - name: Ship checks on this run's calibration (mesh, energy closure, 29b ranges)
         continue-on-error: true
         run: |
           set -o pipefail
-          node --test tests/lapsim-mesh.test.mjs tests/lapsim-energy-closure.test.mjs 2>&1 | tee /tmp/ship.txt | tail -5
-          { echo "ship checks (mesh, energy closure) on this run's calibration:"; grep -E '^# (tests|pass|fail)|^not ok' /tmp/ship.txt; } > out/ship-checks.txt
+          if [ -f fit/worker/lapsim/delta-intervals-data.js ]; then cp fit/worker/lapsim/delta-intervals-data.js worker/lapsim/
+          else node scripts/sim/delta-intervals.mjs --run ${{ github.run_id }} --mode refit; fi
+          cp worker/lapsim/delta-intervals-data.js out/
+          node --test tests/lapsim-mesh.test.mjs tests/lapsim-energy-closure.test.mjs tests/lapsim-delta-intervals.test.mjs 2>&1 | tee /tmp/ship.txt | tail -5
+          { echo "ship checks (mesh, energy closure, 29b ranges) on this run's calibration:"; grep -E '^# (tests|pass|fail)|^not ok' /tmp/ship.txt; } > out/ship-checks.txt
       - name: Report
         env:
           SHIPPED_DIR: /tmp/shipped
@@ -313,7 +318,7 @@ jobs:
           git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           if git fetch -q --depth 1 origin $B; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs
-          mkdir -p run-$id && cp ../out/pipeline-report.md ../out/pipeline-report.json run-$id/ && cp ../out/ship-checks.txt run-$id/ 2>/dev/null || true
+          mkdir -p run-$id && cp ../out/pipeline-report.md ../out/pipeline-report.json run-$id/ && cp ../out/ship-checks.txt ../out/delta-intervals-data.js run-$id/ 2>/dev/null || true
           [ -d ../out/fe ] && cp -r ../out/fe run-$id/fe && cp ../out/fe-fit-shipped.json run-$id/fe/ 2>/dev/null || true
           [ -f ../fit/worker/lapsim/calibration-data.js ] && cp ../fit/worker/lapsim/calibration-data.js run-$id/ || true
           echo "run $id, ref ${{ github.ref_name }} ${{ github.sha }}, mode ${{ inputs.mode }}" > run-$id/RUN.txt

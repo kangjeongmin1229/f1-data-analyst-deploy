@@ -61,5 +61,21 @@ test('WEC per class and per track, and per-series shipping (central 2026-11-25 1
   assert.deepEqual(d.byClass['wec-lmh'].overRowLimit, ['wec-lmh/2025|spa']);
   assert.equal(d.byTrack[0].track, 'spa');
   assert.equal(d.byTrack[0].maxHarmPp, 1.5);
-  assert.deepEqual(shipSeries(pairedHarm(a, b), {pass: true}), [{series: 'f1', pass: true}, {series: 'wec', pass: false}, {series: 'fe', pass: true}]);
+  const ship = shipSeries(pairedHarm(a, b), {pass: true}, d, 1.3);
+  assert.deepEqual(ship.map(x => [x.series, x.pass]), [['f1', true], ['wec', false], ['fe', true]]);
+  const w = ship.find(x => x.series === 'wec').why;
+  assert.ok(w.includes('class wec-lmh') && w.includes('track spa') && w.some(x => x.startsWith('held-out RMS 1.3')), w.join('|'));
+  // WEC passing every rule and at the kernel-only RMS ships
+  const same = {...a}, ok = shipSeries(pairedHarm(a, same), null, wecDetail(a, same), 0.99);
+  assert.equal(ok.find(x => x.series === 'wec').pass, true);
+});
+
+test('car table: ClA and other parameters on a fit bound, μx/μy (central 2026-11-25 17:18)', async () => {
+  const {carTable} = await import('../scripts/sim/pipeline-report.mjs');
+  const c = {seasons: {2025: {car: {muX: 1.4, muY: 2, clA: 8, cdA: 1.0}}}, series: {wec: {lmgt3: {2025: {car: {muX: 1.4, muY: 1.6, clA: 3.5, cdA: 0.9}}}, lmh: {2026: {car: {muX: 1.5, muY: 1.8, clA: 6.3, cdA: 1.0}}}}}};
+  const t = Object.fromEntries(carTable(c).map(r => [r.where, r]));
+  assert.deepEqual(t['f1/2025'].atBound, {clA: 'max'});
+  assert.deepEqual(t['wec-lmgt3/2025'].atBound, {clA: 'max'});
+  assert.deepEqual(t['wec-lmh/2026'].atBound, {});
+  assert.equal(t['f1/2025'].muXOverMuY, 0.7);
 });

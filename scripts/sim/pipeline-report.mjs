@@ -7,6 +7,8 @@ import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {heldOut, compare} from './exp-compare.mjs';
 import {kForVariants} from './gate.mjs';
+import {F1_BOUNDS} from './exp-physics.mjs';
+import {SERIES} from '../../worker/lapsim/series.js';
 
 const CAR_KEYS = ['muX', 'muY', 'muXTrac', 'clA', 'cdA', 'cdALow', 'pIce'];
 const r4 = x => Number.isFinite(x) ? +x.toFixed(4) : null;
@@ -74,8 +76,31 @@ export function wecDetail(a, b) {
   return {byClass: Object.fromEntries(Object.entries(byClass).map(([c, x]) => { const { rows, ...r } = pairedHarm(x.a, x.b).wec; return [c, r]; })),
     byTrack: Object.entries(byTrack).map(([t, v]) => ({track: t, n: v.length, meanHarmPp: r4(v.reduce((x, y) => x + y, 0) / v.length), maxHarmPp: r4(Math.max(...v))})).sort((x, y) => y.meanHarmPp - x.meanHarmPp)};
 }
-// series that pass the ship rule ship; a failing series keeps the shipped calibration (central 16:10: WEC fails → ship F1/FE only)
-export const shipSeries = (harm, fe) => Object.entries({...harm, ...(fe ? {fe} : {})}).map(([s, x]) => ({series: s, pass: !!x?.pass}));
+// fitted car parameters on a fit bound (rule 3.4: a value at its bound is a finding; central 17:18: flag ClA at bound per class), and
+// (F1 pIce bounds are a scale on the prior, not watts: left out) and μx/μy per series (central 17:18: 0.66–0.73, reported as a feature, not a fit target)
+export function carTable(cal) {
+  const at = (v, [lo, hi]) => !Number.isFinite(v) ? null : v <= lo * (1 + 1e-6) ? 'min' : v >= hi * (1 - 1e-6) ? 'max' : null;
+  const row = (where, car, bounds) => ({where, muX: r4(car?.muX), muY: r4(car?.muY), muXOverMuY: r4(car?.muX / car?.muY), clA: r4(car?.clA),
+    atBound: Object.fromEntries(Object.entries(bounds).map(([k, b]) => [k, at(car?.[k], b)]).filter(([, v]) => v))});
+  return [...Object.entries(cal.seasons || {}).map(([y, s]) => row(`f1/${y}`, s.car, (({pIce, ...b}) => b)(F1_BOUNDS))),
+    ...Object.entries(cal.series?.wec || {}).flatMap(([c, ys]) => Object.entries(ys).map(([y, s]) => row(`wec-${c}/${y}`, s.car, SERIES.wec.classes[c]?.bounds || {})))];
+}
+
+// series that pass the ship rule ship; a failing series keeps the shipped calibration (central 16:10: WEC fails → ship F1/FE only).
+// WEC also needs (central 17:20): every class passing, no track row over +1.0 pp, and held-out RMS within ±0.05 pp of step 34a's
+// kernel-only WEC result (0.992 %, central decision 17:18)
+export const WEC_KERNEL_ONLY = {rmsPct: 0.992, tolPp: 0.05};
+export function shipSeries(harm, fe, wec, wecRmsPct) {
+  const out = Object.entries({...harm, ...(fe ? {fe} : {})}).map(([s, x]) => ({series: s, pass: !!x?.pass, why: x?.pass ? [] : ['series rule']}));
+  const w = out.find(x => x.series === 'wec');
+  if (w && wec) {
+    for (const [c, x] of Object.entries(wec.byClass)) if (!x.pass) w.why.push(`class ${c}`);
+    for (const t of wec.byTrack) if (t.maxHarmPp > 1.0) w.why.push(`track ${t.track}`);
+    if (!(Math.abs(wecRmsPct - WEC_KERNEL_ONLY.rmsPct) <= WEC_KERNEL_ONLY.tolPp)) w.why.push(`held-out RMS ${wecRmsPct} % not within ±${WEC_KERNEL_ONLY.tolPp} pp of ${WEC_KERNEL_ONLY.rmsPct} %`);
+    w.pass = !w.why.length;
+  }
+  return out;
+}
 
 // FE (central 2026-11-25 14:27): build-fe.mjs writes one event-hidden error per row (layout × season × rule set × session) to
 // fe-fit.json; same paired harm as F1/WEC on those rows
@@ -106,7 +131,9 @@ const fitMd = r => [
     ...Object.entries(r.diff.wec.byClass).map(([c, x]) => `| ${c} | ${x.n} | ${x.meanPp} | ${x.ub95Pp} | ${x.worse} | ${x.maxPp} | ${(x.overRowLimit || []).length} | ${x.pass ? 'pass' : 'FAIL'} |`), '',
     'WEC per track (mean over the class × season rows that hold it out):', '', '| track | rows | mean harm pp | max harm pp |', '|---|---|---|---|',
     ...r.diff.wec.byTrack.map(t => `| ${t.track} | ${t.n} | ${t.meanHarmPp} | ${t.maxHarmPp} |`), ''] : []),
-  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm).map(x => `${x.series} ${x.pass ? 'ships' : '**blocked (keeps the shipped calibration)**'}`).join(' · ')}.`, '',
+  ...(r.cars ? ['Fitted cars (this run): μx, μy, μx/μy, ClA and every parameter on a fit bound:', '', '| car | μx | μy | μx/μy | ClA | at bound |', '|---|---|---|---|---|---|',
+    ...r.cars.map(c => `| ${c.where} | ${c.muX} | ${c.muY} | ${c.muXOverMuY} | ${c.clA} | ${Object.entries(c.atBound).map(([k, b]) => `**${k} at ${b}**`).join(', ') || '–'} |`), ''] : []),
+  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm, r.diff.wec, r.diff.heldOut.wec?.cand).map(x => `${x.series} ${x.pass ? 'ships' : `**blocked (keeps the shipped calibration): ${x.why.join('; ')}**`}`).join(' · ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),
@@ -129,6 +156,8 @@ if (process.argv[1]?.endsWith('pipeline-report.mjs')) {
     settings, seeds: 'fit: none (deterministic Nelder–Mead / BCD); condition-report bootstrap seed 7; gate.mjs sign-flip / bootstrap seed 1',
     fit: E.FIT_RESULT || 'local',
     diff: existsSync(newF) ? diff(await load(shippedF), await load(newF)) : null,
+    cars: existsSync(newF) ? carTable(await load(newF)) : null,
+    carsShipped: carTable(await load(shippedF)),
     // FE_FIT_SHIPPED / FE_FIT_NEW: fe-fit.json before and after build-fe.mjs on this run's kernel
     feHarm: E.FE_FIT_NEW && existsSync(E.FE_FIT_NEW) && existsSync(E.FE_FIT_SHIPPED || '') ? feHarm(JSON.parse(readFileSync(E.FE_FIT_SHIPPED, 'utf8')), JSON.parse(readFileSync(E.FE_FIT_NEW, 'utf8'))) : null,
     trackState: E.TRACK_STATE_DIFF && existsSync(E.TRACK_STATE_DIFF) ? JSON.parse(readFileSync(E.TRACK_STATE_DIFF, 'utf8')) : null,
