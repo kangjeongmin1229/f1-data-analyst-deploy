@@ -145,6 +145,31 @@ jobs:
         if: steps.s.outputs.ok == 'true'
         with: {name: track-state-check, path: out/, retention-days: 90}
 
+  # step 35 (docs/prereg/step35-fe-2026-11-25.md): Formula E on its pinned repo inputs. build-fe.mjs is rebuilt (no network), the
+  # rebuild is compared with the shipped fe-data.js, fe-step35.mjs reports σ_meas, geometry quality, the V1 check, energy and compute
+  # time. The measured FE files must be byte-identical before and after (sha256 check twice). Nothing is committed.
+  fe:
+    if: github.event_name == 'push' || github.repository == 'MisterKinn/f1-data-analyst' || inputs.mode == 'research'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Pinned FE inputs, rebuild, step 35 checks
+        run: |
+          set -euo pipefail
+          chk() { jq -r '.fe.inputs[] | "\(.sha256)  \(.path)"' .github/lapsim-snapshot.json | sha256sum --check; }
+          chk; mkdir -p out/fe; cp worker/lapsim/fe-data.js out/fe/fe-data-shipped.js
+          node scripts/sim/learn/build-fe.mjs > out/fe/build-fe.log
+          cp worker/lapsim/fe-data.js out/fe/fe-data-rebuilt.js; git diff --stat -- worker/lapsim/fe-data.js worker/lapsim/fe-tracks-data.js > out/fe/rebuild-files.txt
+          node -e "Promise.all([import('./out/fe/fe-data-shipped.js'),import('./out/fe/fe-data-rebuilt.js')]).then(([a,b])=>{const s=JSON.stringify(a.lapsimFe.heldOutPct),r=JSON.stringify(b.lapsimFe.heldOutPct);console.log('::notice title=FE rebuild::shipped '+s+' rebuilt '+r)})"
+          node scripts/sim/learn/fe-step35.mjs out/fe | tee out/fe/fe-step35.log | head -1
+          chk
+          cat out/fe/rebuild-files.txt >> "$GITHUB_STEP_SUMMARY"; head -1 out/fe/fe-step35.log >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with: {name: fe-report, path: out/fe/, retention-days: 90}
+
   fit:
     needs: snapshot
     if: needs.snapshot.result == 'success' && github.event_name != 'push' && inputs.fit != 'no'
@@ -154,7 +179,7 @@ jobs:
       wec_only: ${{ inputs.wec_only == 'yes' }}
 
   report:
-    needs: [snapshot, track-state, fit]
+    needs: [snapshot, track-state, fit, fe]
     if: ${{ !cancelled() && needs.snapshot.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -195,6 +220,9 @@ jobs:
           python -I scripts/sim/f1-delta-report.py dl/v2pooled/baseline.csv dl/v2pooled/f1-delta-cases-2026-11-24.csv dl/v2pooled/report.json > /dev/null
           if [ -n "${F1_DELTA_LOCKED_APPROVED}" ]; then mkdir -p dl/locked2022 && cp dl/zones.csv dl/locked2022/ && cp "$(jq -r .delta.locked2022.path $P)" dl/locked2022/f1-delta-cases-2026-11-24.csv \
             && node scripts/sim/f1-delta-bench.mjs model dl/locked2022 && python -I scripts/sim/f1-delta-report.py dl/locked2022/baseline.csv dl/locked2022/f1-delta-cases-2026-11-24.csv dl/locked2022/report.json > /dev/null; fi
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with: {name: fe-report, path: fe}
       - name: Report
         env:
           SHIPPED_DIR: /tmp/shipped
@@ -208,6 +236,7 @@ jobs:
         run: |
           node scripts/sim/pipeline-report.mjs fit/worker/lapsim/calibration-data.js /tmp/shipped/calibration-data.js out > /dev/null
           cp -r dl out/delta
+          [ -d fe ] && cp -r fe out/fe && cp fe/fe-step35-report.json "out/fe-step35-report-${{ github.run_id }}.json" || true
           cat out/pipeline-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with: {name: pipeline-report, path: out/, retention-days: 90}
@@ -216,6 +245,7 @@ jobs:
         run: |
           id=${{ github.run_id }}; cp out/pipeline-report.json "pipeline-report-$id.json"; cp out/pipeline-report.md "pipeline-report-$id.md"
           gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+          [ ! -f "out/fe-step35-report-$id.json" ] || gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "out/fe-step35-report-$id.json" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
 
   # step 29b: Δ ranges (± on lapsim_simulate / the page) rebuilt from this run: held-out rows of the run's calibration and the Δ bench

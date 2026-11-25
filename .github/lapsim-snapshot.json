@@ -40,5 +40,30 @@
       "sha256": "59adb10aae47e35887e2ad4971e1376795ee820b0fd9152c8d3f56456d17dfa9",
       "note": "step 29a F1 race stint cases 2023-25 (report-only, PR #511); pinned by central 2026-11-25"
     }
+  },
+  "fe": {
+    "note": "Step 35 (docs/prereg/step35-fe-2026-11-25.md): Formula E inputs committed in the repo, pinned by sha256. The fe job rebuilds build-fe.mjs on them and runs fe-step35.mjs; the measured files must be byte-identical before and after. Changing a pin is a reviewed data change.",
+    "inputs": [
+      {
+        "path": "scripts/sim/data/learn/fe-cars.csv.gz",
+        "sha256": "9cdc95548d97629f51250de8ab963e97a891205639836a6a9c989682a871875b"
+      },
+      {
+        "path": "scripts/sim/data/learn/fe-duels.csv",
+        "sha256": "7c041983f99f596eca3b621e12c33b2ad351015aaff6971521c105297fee41c1"
+      },
+      {
+        "path": "scripts/sim/data/learn/fe-maps.json",
+        "sha256": "a60811d33b7fc2ffddeefb4208570776bf38386e86575481b2f103eb48e96379"
+      },
+      {
+        "path": "scripts/sim/data/tracks/fe-osm-lines.json",
+        "sha256": "e21f39dc88a71fe769d79e8f9df416da718ee86fc81cebe27089a87dcc9e685b"
+      },
+      {
+        "path": "scripts/sim/data/learn/fe-race-w12.json",
+        "sha256": "42341025b3b4366c1a0faeb6dcb157b57f487b1719aa72f39efe1c2f95921308"
+      }
+    ]
   }
 }
