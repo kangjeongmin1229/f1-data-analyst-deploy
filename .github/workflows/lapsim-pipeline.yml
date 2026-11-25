@@ -278,6 +278,8 @@ jobs:
           if [ -f fit/worker/lapsim/delta-intervals-data.js ]; then cp fit/worker/lapsim/delta-intervals-data.js worker/lapsim/
           else node scripts/sim/delta-intervals.mjs --run ${{ github.run_id }} --mode refit; fi
           cp worker/lapsim/delta-intervals-data.js out/
+          # derived from the calibration like the fit job's rebuild (its artifact carries only calibration-data.js): LMDh range, maker data
+          node scripts/sim/lmdh-regen-range.mjs && node scripts/sim/learn/hypercar-makers.mjs --write
           node --test tests/lapsim-mesh.test.mjs tests/lapsim-energy-closure.test.mjs tests/lapsim-delta-intervals.test.mjs 2>&1 | tee /tmp/ship.txt | tail -5
           { echo "ship checks (mesh, energy closure, 29b ranges) on this run's calibration:"; grep -E '^# (tests|pass|fail)|^not ok' /tmp/ship.txt; } > out/ship-checks.txt
       - name: Report
@@ -318,7 +320,7 @@ jobs:
           id=${{ github.run_id }}; B=results/refit-combined; mkdir -p pub && cd pub && git init -q -b $B
           git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-          if git fetch -q --depth 1 origin $B; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs
+          if git fetch -q --depth 1 origin $B; then git reset -q --hard FETCH_HEAD; fi  # keep earlier runs (a fresh repo has an empty index: --soft + checkout found nothing, run 45626772704)
           mkdir -p run-$id && cp ../out/pipeline-report.md ../out/pipeline-report.json run-$id/ && cp ../out/ship-checks.txt ../out/delta-intervals-data.js run-$id/ 2>/dev/null || true
           [ -d ../out/fe ] && cp -r ../out/fe run-$id/fe && cp ../out/fe-fit-shipped.json run-$id/fe/ 2>/dev/null || true
           [ -f ../fit/worker/lapsim/calibration-data.js ] && cp ../fit/worker/lapsim/calibration-data.js run-$id/ || true
