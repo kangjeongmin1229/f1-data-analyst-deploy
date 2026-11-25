@@ -23,6 +23,7 @@ import {lapsimWecTrackGrip} from './wec-track-grip-data.js';
 import {lapsimF1WetQuali} from './f1-wet-quali-data.js';
 import {lapsimKernel} from './kernel.js';
 import {lapsimAllTracks} from './tracks.js';
+import {lapsimStep32Limits} from './step32-limits-data.js';
 import {lapsimHypercarMakers} from './hypercar-maker-data.js';
 import {withIceDensity} from './ice-density.js';
 
@@ -34,6 +35,12 @@ export const HYPER_KEYS = HYPERCARS.filter(m => m.make).map(m => 'hyper-' + m.ke
 export const CAR_ORDER = ['base2019', '2025', '2026', '2027', '2028', 'wec-lmh', 'wec-lmdh', 'wec-lmgt3', ...(lapsimLearned?.models || []).map(m => m.key), ...Object.keys(FE_GENS)];
 
 // grip: the per-track factor fitted with that season's car (absorbs asphalt and line differences)
+// step 32 flag (A4.3): learned F1 limits for the 2025/2026 F1 entries only; null = off. The setter is for tests and the ship package.
+let step32Limits = lapsimStep32Limits;
+export function setStep32Limits(x) { step32Limits = x; }
+// A7: car-level physical fields (muY, muX, muXTrac, clA, clALow, pIce) + cdA scale and DRS cut; per-track drag trims kept
+const withStep32 = (y, e) => { const L = step32Limits?.[y]?.car; if (!L) return e; const c = e.car, k = L.cdAScale ?? 1, {cdAScale, cdALowRatio, ...f} = L;
+  return {...e, grip: 1, kind: e.kind + '+model (learned from public telemetry)', car: {...c, ...f, cdA: c.cdA * k, cdALow: cdALowRatio != null ? c.cdA * k * cdALowRatio : (c.cdALow ?? c.cdA) * k}}; };
 export function carsFor(id) {
   const s = lapsimCalibration?.seasons || {}, p = lapsimCalibration?.projections || {};
   const gripOf = y => [y, ...Object.keys(s).sort().reverse()].map(k => s[k]?.tracks?.[id]?.grip).find(g => g != null) ?? lapsimExtraTracks[id]?.trackFactor?.grip ?? 1; // extra circuit: factor learned from its real laps, if any
@@ -41,7 +48,7 @@ export function carsFor(id) {
   const drag = [...Object.keys(s).sort().reverse()].map(k => s[k]?.tracks?.[id]?.drag).find(d => d != null) ?? 1;
   const withDrag = c => drag === 1 ? c : {...c, cdA: c.cdA * drag, cdALow: (c.cdALow ?? c.cdA) * drag};
   const out = {base2019: {car: TUM_2019, grip: 1, kind: 'base', year: 2019}};
-  for (const y of [2025, 2026]) out[y] = {car: s[y]?.car ? withDrag(s[y].car) : PRIOR[y], grip: s[y]?.car ? gripOf(y) : 1, kind: s[y]?.car ? 'calibrated' : 'prior', year: y};
+  for (const y of [2025, 2026]) out[y] = withStep32(y, {car: s[y]?.car ? withDrag(s[y].car) : PRIOR[y], grip: s[y]?.car ? gripOf(y) : 1, kind: s[y]?.car ? 'calibrated' : 'prior', year: y});
   // projected cars are rebuilt from the current regulation values (rules-data.js) plus the fitted
   // development factor, so a regulation update applies without a new calibration run
   for (const y of [2027, 2028]) {
