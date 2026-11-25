@@ -18,10 +18,11 @@ jobs:
             cp log.txt $d/screen27-runs.txt; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com add -A; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -q -m "screen 27 runs" && git -C $d push -q origin HEAD:results/screens || echo "log push failed"; rm -rf $d; }
           go() { gh workflow run lapsim-pipeline.yml -R $R --ref "$1" -f mode=research -f fit=yes -f wec_only="$2"; sleep 45; gh run list -R $R -w lapsim-pipeline.yml -b "$1" -L 1 --json databaseId -q '.[0].databaseId'; }
           st() { gh run view $1 -R $R --json status -q .status; }
-          fitok() { gh run view $1 -R $R --json jobs -q '[.jobs[]|select(.name=="fit")|.conclusion][0]'; }
+          # a run is "fit ok" when it made a calibration (calibration-output artifact); a failed test step alone is not an infra failure
+          fitok() { [ "$(gh api repos/$R/actions/runs/$1/artifacts -q '[.artifacts[].name]|index("calibration-output")')" != null ] && echo success || echo nocal; }
           Q="S8-0.60:screen/s8-mu060-2026-11-26:no S8-0.80:screen/s8-mu080-2026-11-26:no S8-0.90:screen/s8-mu090-2026-11-26:no"
           # restart 07:40 KST (central 07:38): S0 already dispatched (45712552853 F1, 45712669641 WEC); they hold the two slots until done
-          declare -A RUN RETRY; RUN[S0-F1]=45712552853; RUN[S0-WEC]=45712669641; running=(S0-F1 S0-WEC); : > log.txt
+          declare -A RUN RETRY; RUN[S0-F1]=45712552853; running=(S0-F1)  # restart 08:20 KST: S0-WEC 45712669641 done (calibration made); publish bug fixed on screen/* (; after esac); : > log.txt
           for item in $Q; do
             while [ ${#running[@]} -ge 2 ]; do sleep 120; keep=()
               for k in "${running[@]}"; do id=${RUN[$k]}
