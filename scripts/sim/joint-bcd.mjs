@@ -43,7 +43,8 @@ export const poleMult = (a, tau) => a ? 1 + Math.min(0, ...Object.values(a.teams
 export function lapScore(l, car, f, o, mult = 1) {
   let c = f.drag && f.drag !== 1 ? {...car, cdA: car.cdA * f.drag, cdALow: (car.cdALow ?? car.cdA) * f.drag} : car;
   // step 36 measured car: fixed per-lap inputs (measured per-track CdA and power ratios; ICE air-density cut off where power is per-track)
-  const m = l.carMod; if (m) c = {...c, cdA: c.cdA * m.cd, cdALow: (c.cdALow ?? c.cdA) * m.cd, pIce: c.pIce * m.p, ...(m.iceOff ? {iceDensityOff: true} : {})};
+  const m = l.carMod; if (m) c = {...c, cdA: c.cdA * m.cd, cdALow: (c.cdALow ?? c.cdA) * m.cd, pIce: c.pIce * m.p, ...(m.iceOff ? {iceDensityOff: true} : {}), ...(m.ls ? {latScale: m.ls} : {})};
+  if (m?.lowR) c = {...c, cdALow: c.cdA * m.lowR}; if (m?.dz) c = {...c, drsZones: m.dz}; // screen S10: per-track low-drag ratio, per-zone flap delay
   const e = lapError(withGrip(l.track, f.grip), c, l.env, l.obs, l.lapSeconds / mult, {wTime: o.wTime * (l.timeScale ?? 1), trapKph: l.trapKph});
   let sec = 0;
   if (o.wSector && l.sectors && e.res.sectors) for (let k = 0; k < 3; k++) if (Number.isFinite(l.sectors[k])) sec += (e.res.sectors[k] - l.sectors[k] / mult) ** 2;

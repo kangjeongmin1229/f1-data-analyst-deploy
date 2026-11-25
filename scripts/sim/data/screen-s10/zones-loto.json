@@ -1,0 +1,1510 @@
+{
+ "label": "measured (32b telemetry delay; step 2a per-track ratio), leave one event out",
+ "events": {
+  "2023|yas-marina-circuit": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1671,
+     "atSim": 1622,
+     "d": 80.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2833,
+     "atSim": 2835,
+     "d": 42.6,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7438,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|melbourne": {
+   "zones": [
+    {
+     "zone": 2,
+     "at": 3495,
+     "atSim": 3496,
+     "d": 31.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 4792,
+     "atSim": 4799,
+     "d": 41.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 4,
+     "at": 466,
+     "atSim": 468,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -292 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.738,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|spielberg": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 542,
+     "atSim": 539,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -292 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 1472,
+     "atSim": 1473,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -289 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 4061,
+     "atSim": 4054,
+     "d": 25.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7693,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|baku": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 674,
+     "atSim": 674,
+     "d": 47.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5315,
+     "atSim": 5401,
+     "d": 77.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8508,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|sakhir": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 928,
+     "atSim": 932,
+     "d": 49.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2702,
+     "atSim": 2689,
+     "d": 80.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5164,
+     "atSim": 5167,
+     "d": 48.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7721,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|spa-francorchamps": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1567,
+     "atSim": 1484,
+     "d": 69.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 6771,
+     "atSim": 6771,
+     "d": 55.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8043,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2023|silverstone": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1253,
+     "atSim": 1251,
+     "d": 49.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4115,
+     "atSim": 4118,
+     "d": 35.2,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7978,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|montreal": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1368,
+     "atSim": 1369,
+     "d": 60.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2954,
+     "atSim": 2952,
+     "d": 44.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3926,
+     "atSim": 3927,
+     "d": 50,
+     "src": "pooled other events (same-zone -289 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.8015,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|zandvoort": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2501,
+     "atSim": 2502,
+     "d": 98,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 3477,
+     "atSim": 3464,
+     "d": 97,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7025,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|hungaroring": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 4069,
+     "atSim": 4074,
+     "d": 111.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 628,
+     "atSim": 628,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -293 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7421,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2023|monza": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2997,
+     "atSim": 2998,
+     "d": 47.4,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 12,
+     "atSim": 115,
+     "d": 7.3,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8466,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|suzuka": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5672,
+     "atSim": 5671,
+     "d": 50,
+     "src": "pooled other events (same-zone -11 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.797,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|las-vegas": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 663,
+     "atSim": 687,
+     "d": 75.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4263,
+     "atSim": 4232,
+     "d": 61.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8652,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2023|mexico-city": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3110,
+     "atSim": 3113,
+     "d": 17.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 56,
+     "atSim": 4228,
+     "d": 102.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 1434,
+     "atSim": 1436,
+     "d": 21.2,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7962,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|miami": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2249,
+     "atSim": 2260,
+     "d": 60,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4027,
+     "atSim": 4033,
+     "d": 45.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5290,
+     "atSim": 5182,
+     "d": 37.7,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8337,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|monte-carlo": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2952,
+     "atSim": 2952,
+     "d": 56.4,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7476,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|lusail": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5220,
+     "atSim": 5122,
+     "d": 112,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7377,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|jeddah": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3594,
+     "atSim": 3589,
+     "d": 38.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4590,
+     "atSim": 4692,
+     "d": 49.5,
+     "src": "pooled other events (same-zone -26 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 5719,
+     "atSim": 5721,
+     "d": 88.6,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8083,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|singapore": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 979,
+     "atSim": 986,
+     "d": 71.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 3061,
+     "atSim": 3060,
+     "d": 52.7,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3627,
+     "atSim": 4745,
+     "d": 49.5,
+     "src": "pooled other events (same-zone -294 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7844,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|catalunya": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2912,
+     "atSim": 2894,
+     "d": 88.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4455,
+     "atSim": 4348,
+     "d": 77.3,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7452,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2023|interlagos": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 642,
+     "atSim": 660,
+     "d": 49.8,
+     "src": "pooled other events (same-zone 155 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 3813,
+     "atSim": 3811,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -48 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7563,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2023|austin": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2857,
+     "atSim": 2766,
+     "d": 65.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5336,
+     "atSim": 5337,
+     "d": 19,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7704,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|yas-marina-circuit": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1671,
+     "atSim": 1672,
+     "d": 79.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2833,
+     "atSim": 2835,
+     "d": 44.9,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7379,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|melbourne": {
+   "zones": [
+    {
+     "zone": 2,
+     "at": 3495,
+     "atSim": 3496,
+     "d": 32.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 4792,
+     "atSim": 4799,
+     "d": 42.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 4,
+     "at": 466,
+     "atSim": 468,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -293 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7359,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|spielberg": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 542,
+     "atSim": 539,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -292 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 1472,
+     "atSim": 1473,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -290 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 4061,
+     "atSim": 4054,
+     "d": 27.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7661,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|baku": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 674,
+     "atSim": 674,
+     "d": 51,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5315,
+     "atSim": 5301,
+     "d": 79.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8526,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|sakhir": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 928,
+     "atSim": 932,
+     "d": 54.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2702,
+     "atSim": 2689,
+     "d": 90.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5164,
+     "atSim": 5167,
+     "d": 51.6,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7924,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|spa-francorchamps": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1567,
+     "atSim": 1559,
+     "d": 71.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 6771,
+     "atSim": 6771,
+     "d": 78.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8042,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|silverstone": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1253,
+     "atSim": 1251,
+     "d": 53,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4115,
+     "atSim": 4118,
+     "d": 34.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8184,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|montreal": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1368,
+     "atSim": 1369,
+     "d": 63.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2954,
+     "atSim": 2952,
+     "d": 45.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3926,
+     "atSim": 3927,
+     "d": 50,
+     "src": "pooled other events (same-zone -290 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.822,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|shanghai": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3786,
+     "atSim": 3885,
+     "d": 146.4,
+     "src": "same zone, 1 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5275,
+     "atSim": 5275,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -1 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7956,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|zandvoort": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2501,
+     "atSim": 2502,
+     "d": 49.5,
+     "src": "pooled other events (same-zone 192 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 3477,
+     "atSim": 3464,
+     "d": 49.5,
+     "src": "pooled other events (same-zone 191 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7224,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|imola": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 4791,
+     "atSim": 4790,
+     "d": 25.9,
+     "src": "same zone, 1 other season(s)"
+    }
+   ],
+   "lowR": 0.7816,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|hungaroring": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 4069,
+     "atSim": 4074,
+     "d": 113,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 628,
+     "atSim": 628,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -293 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7483,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|monza": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2997,
+     "atSim": 2998,
+     "d": 46.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 12,
+     "atSim": 12,
+     "d": 6.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8484,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|suzuka": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5672,
+     "atSim": 5671,
+     "d": 50,
+     "src": "pooled other events (same-zone -7 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7894,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|las-vegas": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 663,
+     "atSim": 687,
+     "d": 63.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4263,
+     "atSim": 4232,
+     "d": 47.9,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8494,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|mexico-city": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3110,
+     "atSim": 3113,
+     "d": 19.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 56,
+     "atSim": 60,
+     "d": 102,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 1434,
+     "atSim": 1436,
+     "d": 22.4,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7939,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|miami": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2249,
+     "atSim": 2260,
+     "d": 60.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4027,
+     "atSim": 4033,
+     "d": 50.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5290,
+     "atSim": 5182,
+     "d": 39.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8347,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|monte-carlo": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2952,
+     "atSim": 2952,
+     "d": 53.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7805,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|lusail": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5220,
+     "atSim": 5222,
+     "d": 111.7,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7359,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|jeddah": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3594,
+     "atSim": 3589,
+     "d": 46,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4590,
+     "atSim": 4692,
+     "d": 50,
+     "src": "pooled other events (same-zone -21 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 5719,
+     "atSim": 5721,
+     "d": 93.4,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8052,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|singapore": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 979,
+     "atSim": 986,
+     "d": 78.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 3061,
+     "atSim": 3060,
+     "d": 53.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3627,
+     "atSim": 3642,
+     "d": 49.5,
+     "src": "pooled other events (same-zone -119 m outside [0, 150])"
+    },
+    {
+     "zone": 4,
+     "at": 4795,
+     "atSim": 4745,
+     "d": 55.9,
+     "src": "same zone, 1 other season(s)"
+    }
+   ],
+   "lowR": 0.7791,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|catalunya": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2912,
+     "atSim": 2894,
+     "d": 89.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4455,
+     "atSim": 4453,
+     "d": 82.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7386,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2024|interlagos": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 642,
+     "atSim": 660,
+     "d": 49.8,
+     "src": "pooled other events (same-zone 155 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 3813,
+     "atSim": 3811,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -47 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7571,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2024|austin": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2857,
+     "atSim": 2861,
+     "d": 65.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5336,
+     "atSim": 5337,
+     "d": 20.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.77,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|yas-marina-circuit": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1671,
+     "atSim": 1672,
+     "d": 77.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2833,
+     "atSim": 2835,
+     "d": 41.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7308,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|melbourne": {
+   "zones": [
+    {
+     "zone": 2,
+     "at": 3495,
+     "atSim": 3496,
+     "d": 25.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 4792,
+     "atSim": 4799,
+     "d": 42.9,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 4,
+     "at": 466,
+     "atSim": 468,
+     "d": 50.1,
+     "src": "pooled other events (same-zone -293 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7379,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|spielberg": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 542,
+     "atSim": 539,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -292 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 1472,
+     "atSim": 1473,
+     "d": 50.2,
+     "src": "pooled other events (same-zone -290 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 4061,
+     "atSim": 4054,
+     "d": 27.4,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7513,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|baku": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 674,
+     "atSim": 674,
+     "d": 49.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5315,
+     "atSim": 5301,
+     "d": 77.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8252,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|sakhir": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 928,
+     "atSim": 932,
+     "d": 53.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2702,
+     "atSim": 2689,
+     "d": 84.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5164,
+     "atSim": 5167,
+     "d": 51.7,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7791,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|spa-francorchamps": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1567,
+     "atSim": 1559,
+     "d": 67.2,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 6771,
+     "atSim": 6771,
+     "d": 78.9,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8041,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|silverstone": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1253,
+     "atSim": 1251,
+     "d": 53.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4115,
+     "atSim": 4118,
+     "d": 34.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7771,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|montreal": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 1368,
+     "atSim": 1369,
+     "d": 61.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 2954,
+     "atSim": 2952,
+     "d": 43.7,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3926,
+     "atSim": 3927,
+     "d": 50,
+     "src": "pooled other events (same-zone -290 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.781,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|shanghai": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3786,
+     "atSim": 3810,
+     "d": 148.7,
+     "src": "same zone, 1 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5275,
+     "atSim": 5275,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -6 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7907,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|zandvoort": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2501,
+     "atSim": 2502,
+     "d": 49.5,
+     "src": "pooled other events (same-zone 190 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 3477,
+     "atSim": 3464,
+     "d": 49.5,
+     "src": "pooled other events (same-zone 191 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.6826,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|imola": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 4791,
+     "atSim": 4790,
+     "d": 26.3,
+     "src": "same zone, 1 other season(s)"
+    }
+   ],
+   "lowR": 0.7915,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|hungaroring": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 4069,
+     "atSim": 4074,
+     "d": 112.6,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 628,
+     "atSim": 628,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -293 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7546,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|monza": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2997,
+     "atSim": 2998,
+     "d": 44.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 12,
+     "atSim": 12,
+     "d": 5.4,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8418,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|suzuka": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5672,
+     "atSim": 5671,
+     "d": 50,
+     "src": "pooled other events (same-zone -7 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7866,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|las-vegas": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 663,
+     "atSim": 687,
+     "d": 81.8,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4263,
+     "atSim": 4232,
+     "d": 67.7,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8573,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|mexico-city": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3110,
+     "atSim": 3113,
+     "d": 19.4,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 56,
+     "atSim": 60,
+     "d": 104.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 1434,
+     "atSim": 1436,
+     "d": 23.1,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7977,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|miami": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2249,
+     "atSim": 2185,
+     "d": 60.1,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4027,
+     "atSim": 4033,
+     "d": 51,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 5290,
+     "atSim": 5182,
+     "d": 42,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8278,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|monte-carlo": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2952,
+     "atSim": 2952,
+     "d": 51.7,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7705,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|lusail": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 5220,
+     "atSim": 5222,
+     "d": 112.2,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7341,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|jeddah": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 3594,
+     "atSim": 3589,
+     "d": 44.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4590,
+     "atSim": 4692,
+     "d": 50,
+     "src": "pooled other events (same-zone -22 m outside [0, 150])"
+    },
+    {
+     "zone": 3,
+     "at": 5719,
+     "atSim": 5721,
+     "d": 89.8,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.8004,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|singapore": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 979,
+     "atSim": 986,
+     "d": 78.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 3061,
+     "atSim": 3060,
+     "d": 51,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 3,
+     "at": 3627,
+     "atSim": 3642,
+     "d": 49.5,
+     "src": "pooled other events (same-zone -119 m outside [0, 150])"
+    },
+    {
+     "zone": 4,
+     "at": 4795,
+     "atSim": 4745,
+     "d": 52,
+     "src": "same zone, 1 other season(s)"
+    }
+   ],
+   "lowR": 0.7694,
+   "lowRSrc": "same track, 2 other season(s)"
+  },
+  "2025|catalunya": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2912,
+     "atSim": 2894,
+     "d": 92.5,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 4455,
+     "atSim": 4453,
+     "d": 84.5,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7517,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|interlagos": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 642,
+     "atSim": 660,
+     "d": 49.8,
+     "src": "pooled other events (same-zone 155 m outside [0, 150])"
+    },
+    {
+     "zone": 2,
+     "at": 3813,
+     "atSim": 3811,
+     "d": 49.8,
+     "src": "pooled other events (same-zone -47 m outside [0, 150])"
+    }
+   ],
+   "lowR": 0.7579,
+   "lowRSrc": "same track, 1 other season(s)"
+  },
+  "2025|austin": {
+   "zones": [
+    {
+     "zone": 1,
+     "at": 2857,
+     "atSim": 2861,
+     "d": 66.3,
+     "src": "same zone, 2 other season(s)"
+    },
+    {
+     "zone": 2,
+     "at": 5336,
+     "atSim": 5337,
+     "d": 21.1,
+     "src": "same zone, 2 other season(s)"
+    }
+   ],
+   "lowR": 0.7428,
+   "lowRSrc": "same track, 2 other season(s)"
+  }
+ }
+}
