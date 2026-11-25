@@ -1,14 +1,14 @@
-# Step 36 pre-registration — F1 measured car (2026-11-25) — DRAFT, not hashed for a run
+# Step 36 pre-registration — F1 measured car (2026-11-25) — FINAL (hashed before any run)
 
-Status: **draft r2 for central (19:45 spec, 19:50 decisions).** No candidate code has run, no number of this candidate exists. Step 32's
-polar FAILED (run 45579972896): §5 takes the "ClA per season" branch. The final hash is made after step 32's braking verdict selects
-§6's branch. Family "F1 measured car", new, **attempt 1 of 3**, one attempt now. Gate: claude/decision-central-gate-honest-2026-11-25.md.
+Status: **final** (central 19:45 spec, 19:50 and 19:55 decisions). No candidate code has run, no number of this candidate exists.
+Step 32's polar FAILED (run 45579972896): §5 = "ClA per season". Step 32's braking verdict FAILED (49.95 % vs 50 %): §6 = μx/μy 0.70.
+Branches were fixed in draft r1 before either verdict; they are not changed after the results. No run before central says go. Family "F1 measured car", new, **attempt 1 of 3**, one attempt now. Gate: claude/decision-central-gate-honest-2026-11-25.md.
 Measured data are read only. 2022 LOCKED stays closed. Skills: experimental-method-and-error-analysis, model-building-and-approximation,
 ponytail.
 
 ## 1. Scope and flag
 - Flag `LAPSIM_F1_MEASURED_CAR=on` (calibrate.mjs). Unset = byte-identical calibration (proved in the PR by a run-off diff).
-- Base code: `refit/combined-2026-11-25` head at hash time (today 48a28d0). Judged: F1 2023–25.
+- Base code: `refit/combined-2026-11-25` head at hash time: **7c7166e**. Judged: F1 2023–25.
 - WEC, FE: byte-identical. 2026 F1: no measured input (no measured car for the new rules); its car is fitted as today. Per-track grip
   stays one shared set over 2023–26 as today (central 19:50: no split, no extra free parameters), so 2026 rows can move. They are
   **report-only and not in the gate**.
@@ -40,13 +40,12 @@ ponytail.
 - One ClA per season, fitted, bounds [2.5, 8] (unchanged).
 - Report-only: L/D = ClA / CdA per season (median track), window 2.5–4.5.
 
-## 6. Braking (one input only; branch chosen by step 32's braking verdict)
-- Braking PASS: the measured braking cap from that pre-reg; μx/μy keeps today's link.
-- Braking FAIL: μx/μy = 0.70 (measured midpoint of 0.66–0.73), labelled "measured utilisation"; no cap.
-- Never both.
+## 6. Braking (one input only; step 32 braking verdict FAILED)
+- μx/μy = 0.70 (measured midpoint of 0.66–0.73), labelled "measured utilisation". The measured braking cap is **not** used (one braking
+  input only; branch rule of draft r1).
 
 ## 7. Fit
-- Fitted per season 2023–25: μ_y (μ_x, μ_xTrac linked as today, or by §6), ClA, θ_s, k_s; per-track grip (one shared 2023–26 set,
+- Fitted per season 2023–25: μ_y (μ_x = 0.70 μ_y by §6; μ_xTrac linked as today), ClA, θ_s, k_s; per-track grip (one shared 2023–26 set,
   existing log prior, weight 8, as today); team offsets and development (existing closed form). 2026: as today.
 - Car priors (k_s, θ_s) enter as laps × ((ln x − ln x0) / sd)², the same convention as the existing grip prior (laps × wPrior × (ln g)²).
 - Objective: today's F1 objective, unchanged (central 19:50): lap (wTime 20), sectors (wSector 2), speed-trace RMS and speed trap with
@@ -68,7 +67,8 @@ ponytail.
 ## 9. "Better" per row (m = 3, α = 0.05/3 one-sided each, power 0.8; gain ≥ MDE)
 - Rows: (a) DRS bias on held-out tracks (32b rule: 125 pooled cases, no own-track factor, event bootstrap 2000, seed 7);
   (b) straight-end speed RMS over tracks (step 32's committed top-10 traces and normalisation, fork `step32-empirical`, same
-  straight-end extraction as the scoreboard row); (c) braking p95 deceleration by speed vs measured (step 32 D2 bins).
+  straight-end extraction as the scoreboard row); (c) braking p95 deceleration by speed vs measured (step 32 D2 bins). Row (c) is also shown next to step 32's cap result (0.483 g),
+  information only (no test against it).
 - MDE = (z_{1−0.05/3} + z_{0.8}) × SE_base = 2.97 × SE of the row statistic from the base run (event/track bootstrap, seed 7),
   computed and recorded before the candidate is opened. A row whose MDE > 30 % of its base value is report-only.
 - Corner speed 120–240 is secondary, report-only.
