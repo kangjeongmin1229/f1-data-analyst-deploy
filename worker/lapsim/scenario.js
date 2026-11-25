@@ -115,7 +115,7 @@ export function carsFor(id) {
   // the maker the BoP makes fastest here leads the list on the page (owner: "the car most likely fastest as the reference, the others to choose")
   if (lapsimAllTracks[id] && Object.keys(out).some(k => k.startsWith('hyper-'))) { const r = hypercarRanking(HK ||= lapsimKernel(), id, lapsimAllTracks[id], out);
     r.forEach((x, i) => { out[x.key].bopRank = i + 1; }); if (r[0]) out[r[0].key].bopFastest = true; }
-  for (const c of Object.values(out)) { c.car = withPowertrain(c.car, c); c.unc = uncertainty(c, id); } // engine curve and gears (powertrains.js)
+  for (const c of Object.values(out)) { c.car = withPowertrain(c.car, c); c.unc = uncertainty(c, id); const b = claAtBound(c); if (b) c.unc.claAtBound = b; } // engine curve and gears (powertrains.js)
   return withIceDensity(out); // LAPSIM_ICE_BETA=measured only (step 13-prep)
 }
 
@@ -123,6 +123,14 @@ export function carsFor(id) {
 // On a track the car was fitted on: the season's in-sample lap-time error (RMS over its tracks).
 // On a track it was not fitted on: the holdout error (tracks left out of the fit, predicted).
 // Projections add half the historical development range for each projected year.
+// central 2026-11-25 17:30: a fitted car whose downforce ClA sits on its fit bound ships labelled (known, step 32 load-sensitivity work).
+// Bounds: F1 calibrate.mjs BOUNDS.clA, WEC classes series.js bounds.clA. Returns 'max' | 'min' | null.
+const F1_CLA = [2.5, 8];
+export function claAtBound(c) {
+  if (c.kind !== 'calibrated' || !Number.isFinite(c.car?.clA)) return null;
+  const b = c.series === 'wec' ? SERIES.wec.classes[c.cls]?.bounds?.clA : c.series ? null : F1_CLA; if (!b) return null;
+  return c.car.clA >= b[1] * (1 - 1e-6) ? 'max' : c.car.clA <= b[0] * (1 + 1e-6) ? 'min' : null;
+}
 export function uncertainty(c, id) {
   const cal = lapsimCalibration || {};
   if (c.kind === 'base' || c.kind === 'prior') return {pct: null, confidence: 'not-fitted'};

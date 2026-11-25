@@ -203,7 +203,8 @@ export function simulate(args = {}, opts = {}) {
     result: {...summary(res, d, sel.car), ...(res.sectorCorrection ? {sector_correction_s: res.sectorCorrection.map(r3), sector_correction_note: 'real pole sectors minus the simulated ones in the real pole weather (track-specific model bias)'} : {})},
     uncertainty: {error_range_s: sel.unc?.pct ? r3(res.lapTime * sel.unc.pct / 100) : null, error_range_pct: sel.unc?.pct ?? null, confidence: sel.unc?.confidence,
       basis: sel.unc?.basis === 'fit' ? 'one-sigma lap-time error of the fit over the tracks this car was fitted on' : 'one-sigma error from the holdout test (tracks left out of the fit, predicted)', holdout_error_pct: sel.unc?.holdoutPct ?? null,
-      note: 'projections add half the historical development range'}};
+      note: 'projections add half the historical development range',
+      ...(sel.unc?.claAtBound ? {model_flag: `ClA at bound (known, step 32 load-sensitivity work): this car's fitted downforce sits on its fit ${sel.unc.claAtBound === 'max' ? 'upper' : 'lower'} limit, so it compensates for something the model lacks (fast corners)`} : {})}};
   // sensitivity table (common rule, as Formula Student teams report it): lap-time change for +10%
   const plus = (k, f) => { const c = structuredClone(sel.car); if (k === 'muY') { c.muX *= f; c.muY *= f; c.muXTrac = (c.muXTrac ?? c.muX) * f; } else if (k === 'clA') { c.clA *= f; c.clALow = (c.clALow ?? c.clA) * f; } else if (k === 'cdA') { c.cdA *= f; c.cdALow = (c.cdALow ?? c.cdA) * f; } else c[k] *= f; return c; };
   // the change is measured against the same bare simulation (no real-lap correction), scaled like the shown lap: comparing with the
