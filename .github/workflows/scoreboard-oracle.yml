@@ -1,0 +1,36 @@
+# Data-limit protocol v1 (DRAFT): report-only oracle ceilings for the step 33 scoreboard. No model code, no writes to main.
+name: scoreboard-oracle
+on:
+  push:
+    branches: ['scoreboard/oracle-*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  oracle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inputs (read-only, pinned by branch head; sha256 logged)
+        run: |
+          set -euo pipefail
+          mkdir -p in out
+          git fetch -q --depth 1 https://github.com/kangjeongmin1229/f1-data-analyst-deploy step32-empirical
+          for f in a2-baseline-traces-69c7385 traces-top10 normalisation; do git show "FETCH_HEAD:scripts/sim/data/step32/$f.json" > "in/$f.json"; done
+          git fetch -q --depth 1 https://github.com/kangjeongmin1229/f1-data-analyst-deploy results/refit-combined
+          git show FETCH_HEAD:run-45572047447/pipeline-report.json > in/pipeline-report-45572047447.json
+          cp scripts/sim/data/f1-delta/baseline-pooled-2026-11-24.csv in/
+          sha256sum in/* | tee out/inputs-sha256.txt
+      - name: Oracle ceilings
+        run: |
+          set -euo pipefail
+          s=scripts/sim/scoreboard/oracle.py
+          python3 -I $s lap in/pipeline-report-45572047447.json > out/lap.json
+          python3 -I $s drs in/baseline-pooled-2026-11-24.csv > out/drs.json
+          python3 -I $s corner in/a2-baseline-traces-69c7385.json in/traces-top10.json in/normalisation.json > out/corner.json
+          sha256sum in/* | diff - out/inputs-sha256.txt   # inputs unchanged by the run
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scoreboard-oracle
+          path: out/
