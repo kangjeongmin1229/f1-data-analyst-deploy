@@ -172,6 +172,8 @@ jobs:
           FE_GEOM_AUDIT=out/fe/fe-geometry-audit.json node scripts/sim/learn/fe-step35.mjs out/fe > out/fe/fe-step35.log; head -2 out/fe/fe-step35.log
           echo "::notice title=FE step 35 A1::$(sed -n 3p out/fe/fe-step35.log)"
           echo "::notice title=FE step 35 sectors::$(sed -n 2p out/fe/fe-step35.log)"
+          node scripts/sim/learn/fe-sector-diagnosis.mjs out/fe > out/fe/fe-sector-diagnosis.log
+          echo "::notice title=FE step 35 A2::$(node -p "const j=require('./out/fe/fe-sector-diagnosis.json');JSON.stringify({n:j.nRows,layouts:j.nLayouts,means:j.sectorMeans,rms:j.sectorRms,verdict:j.verdict,alone:j.alone.map(a=>[a.use[0],a.r2,a.coef[a.use[0]]]),split:j.widthSplit.coef})")"
           chk
           cat out/fe/rebuild-files.txt >> "$GITHUB_STEP_SUMMARY"; head -2 out/fe/fe-step35.log >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
