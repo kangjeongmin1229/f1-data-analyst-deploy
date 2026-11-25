@@ -1,0 +1,224 @@
+{
+ "calibration": "../cal-012/worker/lapsim/calibration-data.js",
+ "lapHeldOutRmsPct": {
+  "2023": {
+   "rmsPct": 1.084259755538503,
+   "n": 15
+  },
+  "2024": {
+   "rmsPct": 1.1773535895315397,
+   "n": 18
+  },
+  "2025": {
+   "rmsPct": 0.9305260715218205,
+   "n": 20
+  },
+  "all": 1.0631279072830437,
+  "n": 53
+ },
+ "cornerRms120to240Kph": {
+  "n": 1691,
+  "rms": 28.78451865827251,
+  "meanBias": -17.306302746984485
+ },
+ "speedBins": {
+  "<120": {
+   "n": 1786,
+   "meanBiasKph": -2.1955876967335484,
+   "rmsKph": 10.319385683035026
+  },
+  "120-200": {
+   "n": 1379,
+   "meanBiasKph": -16.430113890205163,
+   "rmsKph": 26.57535946148583
+  },
+  ">200": {
+   "n": 484,
+   "meanBiasKph": -18.153736559238165,
+   "rmsKph": 32.749576376788994
+  }
+ },
+ "perTrackSlope": {
+  "median": -0.15329998939719908,
+  "mean": -0.17807348543909463,
+  "nTracks": 24,
+  "tracks": [
+   {
+    "track": "austin",
+    "n": 182,
+    "slopeKphPerKph": -0.11866856683615669
+   },
+   {
+    "track": "baku",
+    "n": 207,
+    "slopeKphPerKph": -0.13676463092711677
+   },
+   {
+    "track": "catalunya",
+    "n": 196,
+    "slopeKphPerKph": -0.007213520580084132
+   },
+   {
+    "track": "hungaroring",
+    "n": 274,
+    "slopeKphPerKph": 0.07211702310520357
+   },
+   {
+    "track": "imola",
+    "n": 112,
+    "slopeKphPerKph": -0.4746246851700556
+   },
+   {
+    "track": "interlagos",
+    "n": 109,
+    "slopeKphPerKph": -0.06958624807817182
+   },
+   {
+    "track": "jeddah",
+    "n": 154,
+    "slopeKphPerKph": -0.1658348494802643
+   },
+   {
+    "track": "las-vegas",
+    "n": 113,
+    "slopeKphPerKph": -0.1501972936566254
+   },
+   {
+    "track": "lusail",
+    "n": 227,
+    "slopeKphPerKph": -0.19117812148607513
+   },
+   {
+    "track": "melbourne",
+    "n": 174,
+    "slopeKphPerKph": -0.21978663970177822
+   },
+   {
+    "track": "mexico-city",
+    "n": 106,
+    "slopeKphPerKph": -0.046793649895483014
+   },
+   {
+    "track": "miami",
+    "n": 135,
+    "slopeKphPerKph": -0.09545599446508277
+   },
+   {
+    "track": "monte-carlo",
+    "n": 181,
+    "slopeKphPerKph": -0.30441682932632813
+   },
+   {
+    "track": "montreal",
+    "n": 114,
+    "slopeKphPerKph": -0.4011312403811722
+   },
+   {
+    "track": "monza",
+    "n": 150,
+    "slopeKphPerKph": -0.001044601123822368
+   },
+   {
+    "track": "sakhir",
+    "n": 136,
+    "slopeKphPerKph": -0.217176540737911
+   },
+   {
+    "track": "shanghai",
+    "n": 96,
+    "slopeKphPerKph": -0.8450826487966409
+   },
+   {
+    "track": "silverstone",
+    "n": 65,
+    "slopeKphPerKph": 0.04680018026809316
+   },
+   {
+    "track": "singapore",
+    "n": 229,
+    "slopeKphPerKph": -0.25662151559336477
+   },
+   {
+    "track": "spa-francorchamps",
+    "n": 77,
+    "slopeKphPerKph": -0.04294483399163806
+   },
+   {
+    "track": "spielberg",
+    "n": 132,
+    "slopeKphPerKph": -0.22202222768923308
+   },
+   {
+    "track": "suzuka",
+    "n": 172,
+    "slopeKphPerKph": -0.2211334743128921
+   },
+   {
+    "track": "yas-marina-circuit",
+    "n": 168,
+    "slopeKphPerKph": -0.15640268513777278
+   },
+   {
+    "track": "zandvoort",
+    "n": 140,
+    "slopeKphPerKph": -0.04860005654389783
+   }
+  ]
+ },
+ "seasons": {
+  "2023": {
+   "muY": 1.9045740670902886,
+   "muX": 1.3332018469632019,
+   "clA": 6.499170459071903,
+   "cdA": 1.591094848837776,
+   "pIce": 544659.6131934881,
+   "theta_s": 0.9870315439440298,
+   "k_s": 1.0085121873736616,
+   "loadK": 0.12
+  },
+  "2024": {
+   "muY": 1.8222765998104118,
+   "muX": 1.2755936198672881,
+   "clA": 8,
+   "cdA": 1.5574012366004957,
+   "pIce": 539692.3295220825,
+   "theta_s": 0.9907132548349209,
+   "k_s": 0.9964317184806507,
+   "loadK": 0.12
+  },
+  "2025": {
+   "muY": 1.8470852610630133,
+   "muX": 1.2929596827441092,
+   "clA": 8,
+   "cdA": 1.5320908256976358,
+   "pIce": 539083.0103422859,
+   "theta_s": 0.9859014322378609,
+   "k_s": 0.9981863401778236,
+   "loadK": 0.12
+  },
+  "2026": {
+   "muY": 1.7733273526274196,
+   "muX": 1.5816162874785094,
+   "clA": 5.96480619579906,
+   "cdA": 1.8136552919687896,
+   "pIce": 452766.35567669204,
+   "theta_s": null,
+   "k_s": null,
+   "loadK": null
+  }
+ },
+ "boundHits_0p5pct": [
+  {
+   "season": "2024",
+   "key": "clA",
+   "value": 8,
+   "bound": 8
+  },
+  {
+   "season": "2025",
+   "key": "clA",
+   "value": 8,
+   "bound": 8
+  }
+ ]
+}
