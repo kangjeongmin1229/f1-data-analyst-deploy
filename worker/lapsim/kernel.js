@@ -298,11 +298,13 @@ export function lapsimKernel() {
     for (let i = 0; i < n; i++) { const low = lowAt(i); clF[i] = clAt(i, low); cdF[i] = cdAt(i, low); muXF[i] = muAt(i) * (t.muXTrac / t.muY0); }
     // 2) Backward pass (braking): independent of the ERS strategy, so computed once.
     //    Straight Mode is closed under braking: corner-mode aero.
+    let bF = 0, bR = 0; // tyre braking force and drag + rolling (N) of the last brake-rate call (read by opts.probe)
     const brakeAcc = (v, i) => {
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
       const fx = muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellipse(v, i);
-      const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N;
-      let a = (fx + drag + roll) / t.m + G * sinG[i];
+      const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
+      // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
+      let a = (fx + drag + roll) / (t.m * t.inertia) + G * sinG[i] / t.inertia;
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
       // speed-dependent peak deceleration [a0 m/s², a2 1/m]: a ≤ a0 + a2·v² (Hypercar: the iRacing GTP envelope, owner rule 14, "model"; unset = no cap)
       if (car.brakeEnv) a = Math.min(a, car.brakeEnv[0] + car.brakeEnv[1] * v * v);
@@ -319,8 +321,9 @@ export function lapsimKernel() {
     const brakeAcc2 = (v, i) => {
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
       const fx = muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellN(v, i, L, N);
-      const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N;
-      let a = (fx + drag + roll) / t.m + G * sinG[i];
+      const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
+      // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
+      let a = (fx + drag + roll) / (t.m * t.inertia) + G * sinG[i] / t.inertia;
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
       if (car.brakeEnv) a = Math.min(a, car.brakeEnv[0] + car.brakeEnv[1] * v * v);
       return a;
@@ -427,7 +430,7 @@ export function lapsimKernel() {
           // replaces engine power rather than adding to it; it can only drive above its deploy speed
           if (ers.rule === 'hypercar') ersUsed[i] = vi > (ers.deployFrom || 0) && below(vi, vCut) ? Math.min(ers.eMax || 0, fDrive * vi / etaD) : 0;
           const drag = aeroFactor * cdF[i] * va * va, roll = cRoll * N;
-          const a = (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i];
+          const a = (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i] / t.inertia;
           const vn = Math.sqrt(Math.max(1, vi * vi + 2 * a * ds));
           v[j] = Math.min(vn, vLat[j], vMaxCar, vBack[j]);
           if (ramp) { if (v[j] > vi + 1e-6) { pPrev = ersUsed[i]; if (rp) rp.t += ds / vi; } else { pPrev = 0; rp = null; } }
@@ -469,7 +472,7 @@ export function lapsimKernel() {
     // Per-step time and energy (sDt, sDep, sBrk, sThr) are stored; the lap account and the flow arrays are their sums.
     const sDt = STEP === 2 ? new Float64Array(n) : null, sDep = STEP === 2 ? new Float64Array(n) : null;
     const sBrk = STEP === 2 ? new Float64Array(n) : null, sThr = STEP === 2 ? new Float64Array(n) : null;
-    let dErs = 0, dHarv = 0, dPl = 0, dEl = 1; // outputs of drv(): DC deploy power (W), power recovered on throttle (W), power-limited flag, friction-ellipse share left
+    let dErs = 0, dHarv = 0, dPl = 0, dEl = 1, dF = 0, dR = 0; // outputs of drv(): DC deploy power (W), power recovered on throttle (W), power-limited flag, friction-ellipse share left
     // drive rate (m/s²) at speed vv on point i with the step's decisions: mode 0 no deploy, 1 deploy to the limit, 2 ramp ceiling al
     const drv = (vv, i, mode, al, hyOn, clipOf) => {
       const va = vAir(vv, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vv, i, L);
@@ -490,14 +493,17 @@ export function lapsimKernel() {
       }
       dErs = pErs > 0 ? Math.min(pErs, Math.max(0, fDrive * vv - pI * etaD) / (etaK * etaD)) : 0;
       if (ers.rule === 'hypercar') dErs = hyOn ? Math.min(ers.eMax || 0, fDrive * vv / etaD) : 0;
-      const drag = aeroFactor * cdF[i] * va * va, roll = cRoll * N;
-      return (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i];
+      const drag = aeroFactor * cdF[i] * va * va, roll = cRoll * N; dF = fDrive; dR = drag + roll;
+      return (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i] / t.inertia;
     };
     // braking power at the wheels from w0 to w1 over len metres, and the DC power recovered (the step-1 formula)
     const regenP = (w0, w1, len, i) => { const vm = 0.5 * (Math.sqrt(w0) + Math.sqrt(w1)), pB = t.m * (w0 - w1) / (2 * len) * vm;
       return law && law.regen ? regenLaw(pB, vm, i) : Math.min(ers.regenMax, (ers.regenShare ?? 0.6) * pB * etaRegen); };
     // step state read by the rate functions below (one set of closures for the whole lap, no allocation per step)
     let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1;
+    // test hook (energy closure): tyre force and drag + rolling (N) at speed v on point i, braking curve and drive curve without deploy
+    if (opts.probe && STEP === 2) opts.probe({m: t.m, mEff: t.m * t.inertia, sinG, brake: (v, i) => { const a = brakeAcc2(v, i); return {fx: bF, res: bR, a}; },
+      drive: (v, i) => (drv(v, i, 0, 0, false, () => false), {fx: dF, res: dR})});
     const clipOf = () => { if (sCd < 0) sCd = sVi > sVH ? (sVi < vhHi && (vhHi = sVi), 1) : (sVi > vhLo && (vhLo = sVi), 0); return sCd === 1; };
     const Ri = x => drv(Math.min(x, vLat[sI]), sI, sMode, sAl, sHy, clipOf), Rj = x => drv(Math.min(x, vLat[sJ]), sJ, sMode, sAl, sHy, clipOf);
     const Rf = (x, f) => f === 0 ? Ri(x) : f === 1 ? Rj(x) : (virt(sI, sJ, f), drv(Math.min(x, vLat[n]), n, sMode, sAl, sHy, clipOf));
