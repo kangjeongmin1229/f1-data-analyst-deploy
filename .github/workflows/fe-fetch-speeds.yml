@@ -1,0 +1,32 @@
+name: Formula E speed columns fetch (Al Kamel Analysis → release asset)
+
+# Step 35 (central decision 2026-11-25 item 2): top speed / trap / intermediate-speed columns of the Formula E Analysis CSVs, which the
+# lap table drops. Push to fe-fetch/speeds** or manual run. Derived table only (rule 2.9); nothing is committed.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['fe-fetch/speeds**']
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --silent
+      - name: Fetch
+        run: |
+          set -euo pipefail
+          node scripts/sim/learn/fetch-fe-speeds.mjs | tail -3
+          id=${{ github.run_id }}; mv fe-speeds.csv fe-speeds-r$id.csv; mv fe-speed-headers.json fe-speed-headers-r$id.json
+          sha256sum fe-speeds-r$id.csv fe-speed-headers-r$id.json > SHA256SUMS-speeds-r$id
+          echo "::notice title=FE speeds::$(($(wc -l < fe-speeds-r$id.csv) - 1)) rows; columns: $(jq -c '[.headers[] | map(select(test("KPH|SPEED";"i")))] | unique' fe-speed-headers-r$id.json)"
+          gh release view fe-inputs-speeds >/dev/null 2>&1 || gh release create fe-inputs-speeds --prerelease --title "Formula E Al Kamel speed columns" --notes "fetch-fe-speeds.mjs output (derived, no raw files). Source: https://results.fiaformulae.com/ (Al Kamel Systems)."
+          gh release upload fe-inputs-speeds fe-speeds-r$id.csv fe-speed-headers-r$id.json SHA256SUMS-speeds-r$id --clobber
