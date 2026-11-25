@@ -1,0 +1,33 @@
+# Step 32 night jobs (central 21:00, claude/plan-night-2026-11-25.md). Push to night/step32-* only. N3: corner covariate diagnostic
+# (rule docs/night/step32-n3-rule-2026-11-25.md, sha256 2e128de2…), report-only; result committed to results/step32-night.
+name: Step 32 night
+on:
+  push:
+    branches: ['night/step32-**']
+permissions: {contents: write, actions: read}
+jobs:
+  n3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy pandas statsmodels requests
+      - name: N3 rows, covariates, LOTO fit
+        run: |
+          mkdir -p pub && sha256sum docs/night/step32-n3-rule-2026-11-25.md > pub/rule.sha256
+          node scripts/sim/night/n3-rows.mjs pub/n3-rows.json
+          python -I scripts/sim/night/n3_fit.py pub/n3-rows.json scripts/sim/data/step32/traces-top10.json pub/n3-result.json | tee pub/n3.log
+          node --test tests/step32-measured-readonly.test.mjs | tail -3 | tee pub/measured-after.txt
+          { echo "# Step 32 night N3 — run ${{ github.run_id }}, commit ${{ github.sha }}"; echo '```json'; head -c 30000 pub/n3-result.json; echo '```'; } | tee pub/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit to results/step32-night
+        run: |
+          cd pub && git init -q -b results/step32-night && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
+          if git fetch -q origin results/step32-night; then git reset -q FETCH_HEAD && git checkout -q -- .; fi
+          mkdir -p n3-${{ github.run_id }} && mv n3-rows.json n3-result.json n3.log summary.md rule.sha256 measured-after.txt n3-${{ github.run_id }}/
+          git add -A && git commit -q -m "Step 32 night N3 (run ${{ github.run_id }})" && git push -q origin HEAD:results/step32-night
