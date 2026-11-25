@@ -184,10 +184,10 @@ function lowRatios(tr, car, r, env) { // A2.1 / G-P4: the load ratio wherever th
 // ---- scores (copied from step31-fit.mjs score) + straight-end residuals -----------------------------------------------------
 function score(e, r) {
   const n = e.n, ds = e.ds, meas = e.a.map(x => x == null ? NaN : x), vm = k => r.v[(((k - e.shift) % n) + n) % n], w = Math.trunc(40 / ds);
-  const apex = [], entry = [], exit = [], st = e.straights;
+  const apex = [], entry = [], exit = [], per = [], st = e.straights; // per: report-only per-corner residuals (C3 item 4)
   e.corners.forEach(([i], j) => {
     let vmin = Infinity; for (let q = -w; q <= w; q++) vmin = Math.min(vmin, vm(i + q));
-    apex.push({meas: meas[i], err: vmin - meas[i]});
+    apex.push({meas: meas[i], err: vmin - meas[i]}); const pc = {i, meas: meas[i], apex: vmin - meas[i], entry: null, exit: null}; per.push(pc);
     if (st.length < 2) return;
     const a0 = st[j], a1 = st[(j + 1) % st.length], seg = []; for (let q = a0; q <= a1 + (a1 <= a0 ? n : 0); q++) seg.push(q % n);
     const k0 = seg.indexOf(i); if (k0 < 0) return;
@@ -195,12 +195,12 @@ function score(e, r) {
     let lo = k0, hi = k0; const lim = 1.05 * meas[i];
     while (lo > 0 && Number.isFinite(vv[lo - 1]) && vv[lo - 1] <= lim) lo--;
     while (hi < seg.length - 1 && Number.isFinite(vv[hi + 1]) && vv[hi + 1] <= lim) hi++;
-    entry.push(dt.slice(0, lo).reduce((a, b) => a + b, 0)); exit.push(dt.slice(hi + 1).reduce((a, b) => a + b, 0));
+    entry.push(pc.entry = dt.slice(0, lo).reduce((a, b) => a + b, 0)); exit.push(pc.exit = dt.slice(hi + 1).reduce((a, b) => a + b, 0));
   });
   const rms = xs => xs.length ? Math.sqrt(xs.reduce((s, x) => s + x * x, 0) / xs.length) : null, mean = xs => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
   const band = (lo, hi) => rms(apex.filter(c => c.meas >= lo && c.meas < hi).map(c => c.err)), se = strEnd(e, r);
   return {apex60_120: band(60, 120), apex120_180: band(120, 180), apex180_240: band(180, 240), apex120_240: band(120, 240), apexAll: rms(apex.map(c => c.err)),
-    entry: rms(entry), exit: rms(exit), exitMean: mean(exit), lapErr: 100 * (r.lap - e.lap_meas_s) / e.lap_meas_s, strEndBias: mean(se), strEndRms: rms(se)};
+    entry: rms(entry), exit: rms(exit), exitMean: mean(exit), lapErr: 100 * (r.lap - e.lap_meas_s) / e.lap_meas_s, strEndBias: mean(se), strEndRms: rms(se), corners: per};
 }
 function strEnd(e, r) { // model max v within ±40 m of each measured straight end, minus the measured v there (km/h)
   const n = e.n, w = Math.trunc(40 / e.ds), vm = k => r.v[(((k - e.shift) % n) + n) % n];

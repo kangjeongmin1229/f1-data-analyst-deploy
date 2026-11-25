@@ -8,7 +8,8 @@ import numpy as np
 from scipy.stats import norm
 TRP, MOD, OUT = sys.argv[1:4]
 TR = json.load(open(TRP))['events']; M = json.load(open(MOD))
-Z = norm.ppf(1 - 0.05 / 2) + norm.ppf(0.8); BANDS = {'60-120': (60, 120), '120-180': (120, 180), '180-240': (180, 240), '120-240': (120, 240)}
+Z = norm.ppf(1 - 0.05 / 3) + norm.ppf(0.8);  # C3: m = 3 (one-sided α 0.0167, power 0.8)
+BANDS = {'60-120': (60, 120), '120-180': (120, 180), '180-240': (180, 240), '120-240': (120, 240)}
 SIG_SAMP = 1.5
 
 def lap_score(e, v_model):
@@ -65,7 +66,7 @@ for key, L in laps.items():
     n26 += 1
     if len(errs) >= 2:
         h = lambda x: math.sqrt(sum(y * y for y in x) / len(x)); terms.append((h(errs[0::2]) - h(errs[1::2])) / math.sqrt(2))
-sd26 = st.stdev(terms) if len(terms) > 1 else None; mde26 = None if sd26 is None else 2.80 * sd26 / math.sqrt(n26)
+sd26 = st.stdev(terms) if len(terms) > 1 else None; mde26 = None if sd26 is None else Z * sd26 / math.sqrt(n26)
 POW['apex_120-240_2026'] = dict(n_tracks=n26, sd_own_split_half=sd26, mde=mde26, judged=bool(mde26 is not None and n26 >= 16 and mde26 <= 3.0))
 # noise floor (A3.3): apex speed spread between drivers' laps in the same session and corner (frame: model index = k − shift)
 pool = defaultdict(lambda: [0.0, 0])

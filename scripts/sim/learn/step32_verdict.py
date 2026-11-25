@@ -13,7 +13,8 @@ F = [json.load(open(os.path.join(FD, f))) for f in sorted(os.listdir(FD)) if f.e
 if len(F) != 24: sys.exit(f'INCOMPLETE: {len(F)} of 24 folds; no verdict')
 F26 = [json.load(open(os.path.join(FD26, f))) for f in sorted(os.listdir(FD26)) if f.endswith('.json')] if os.path.isdir(FD26) else []
 TR = json.load(open(TRP))['events']; POW = json.load(open(POWP)); PRE = json.load(open(PREP)) if os.path.exists(PREP) else None
-rng = np.random.default_rng(32); ALPHA = 0.05 / 2; USEFUL = 3.0; BANDS = ['60_120', '120_180', '180_240', '120_240']
+rng = np.random.default_rng(32); ALPHA = 0.05 / 3  # C3: family attempt 3 of 3 (m = 3)
+USEFUL = 3.0; BANDS = ['60_120', '120_180', '180_240', '120_240']
 
 def flip_p(x):  # copied from step31_verdict.py
     x = np.asarray(x, float); n = len(x); obs = x.mean(); a = np.abs(x)
@@ -130,6 +131,21 @@ for s in ('2023', '2024', '2025'):
     params[f'{s}.muX_over_muY'] = [float(np.quantile([f['fits'][s]['params']['muX'] / f['fits'][s]['params']['muY'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
     params[f'{s}.stage1'] = dict(muX=float(np.median([f['fits'][s]['stage1']['muX'] for f in F])), muXTrac=float(np.median([f['fits'][s]['stage1']['muXTrac'] for f in F])))
     params[f'{s}.env_chi2_dof'] = [float(np.quantile([f['fits'][s]['envChi2Dof'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
+    params[f'{s}.muX_range_over_loads'] = [float(min(f['fits'][s]['muXRange'][0] for f in F)), float(max(f['fits'][s]['muXRange'][1] for f in F))]
+    params[f'{s}.brake_util_model'] = params[f'{s}.muX_over_muY']  # C3 item 2: μx/μy reported as the effective braking utilisation (model)
+# C3 report-only: one-sided flat-out shortfall (km/h RMS of max(0, v_meas - v_model)) per track, and per-corner residuals at Monza and Silverstone
+flat = {f['held']: dict(cand=float(np.mean([h['flat']['cand'] for h in f['heldScores']])), base=float(np.mean([h['flat']['base'] for h in f['heldScores']]))) for f in F}
+corner_table = {}
+for f in F:
+    if f['held'] not in ('monza', 'silverstone'): continue
+    rows = defaultdict(lambda: defaultdict(list))
+    for h in f['heldScores']:
+        for c, b in zip(h['cand']['corners'], h['base']['corners']):
+            r = rows[(h['year'], c.get('T') or f"i{c['i']}")]
+            for k in ('apex', 'entry', 'exit'):
+                if c[k] is not None: r[k + '_cand'].append(c[k]); r[k + '_base'].append(b[k])
+            r['meas'].append(c['meas'])
+    corner_table[f['held']] = [dict(year=y, corner=t, n=len(r['meas']), meas_vmin_kph=float(np.mean(r['meas'])), **{k: float(np.mean(v)) for k, v in r.items() if k != 'meas'}) for (y, t), r in sorted(rows.items(), key=lambda kv: (kv[0][0], int(''.join(ch for ch in kv[0][1] if ch.isdigit()) or 0), kv[0][1]))]
 # noise floor ratios (A3.3)
 NF = POW['noise_floor']; noise = {}
 for b in BANDS:
@@ -144,8 +160,11 @@ r26 = dict(n_tracks=len(g26), mean_gain_kph=float(np.mean(list(g26.values()))) i
            note='report-only (A1 own MDE 4.28 km/h > 3)', drag=[dict(held=f['held'], **f['drag']) for f in F26])
 verdict = 'PASS' if primary['pass_'] and all(s_['pass_'] for s_ in sec.values()) and lap['pass_'] and drs['pass_'] and braking['pass_'] and all(gd['pass_'] for gd in guards.values()) else 'FAIL'
 res = dict(verdict=verdict, folds=len(F), primary_apex_120_240=primary, report=report, secondary_guards=sec, guard_lap=lap, guard_drs=drs, guard_braking=braking,
-           traction_by_bin=trc, guards=guards, params=params, noise_floor=noise, group_2026=r26, per_track=per)
+           traction_by_bin=trc, guards=guards, params=params, flat_one_sided=flat, corner_table=corner_table, noise_floor=noise, group_2026=r26, per_track=per)
 json.dump(res, open(OUT, 'w'), indent=1)
-print(json.dumps({k: v for k, v in res.items() if k not in ('per_track', 'params', 'traction_by_bin')}, indent=1, default=str)[:20000])
+print(json.dumps({k: v for k, v in res.items() if k not in ('per_track', 'params', 'traction_by_bin', 'flat_one_sided', 'corner_table')}, indent=1, default=str)[:20000])
 for k, v_ in params.items(): print('param', k, json.dumps(v_))
 print('per_track', json.dumps(per))
+print('flat_one_sided', json.dumps(flat))
+for t, rows in corner_table.items():
+    for r in rows: print('corner', t, json.dumps(r))
