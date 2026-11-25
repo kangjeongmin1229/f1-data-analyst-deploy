@@ -1,0 +1,41 @@
+name: probe step36 copy the all-laps artifacts (run 42927630531) to a release
+# Research only (step 36, central 14:27 item 1): the Timing71 / WEC per-lap artifacts of "Lap simulator all-laps dataset" run 42927630531
+# expire on 2026-12-11. Copy every artifact into the DRAFT release data-all-laps-2026-11-11 on the fork (raw, never published) with a
+# per-file sha256 manifest of the files inside; publish only the manifest (names + hashes) for the pin. Never merged.
+on:
+  push:
+    branches: ['probe/step36-alllaps-copy']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+      RUN: '42927630531'
+      TAG: data-all-laps-2026-11-11
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set -euo pipefail
+          mkdir -p art up
+          gh run download "$RUN" -R "$R" -D art
+          ls art | wc -l
+          # one tar per artifact (deterministic), and the per-file manifest of every file inside
+          for d in art/*/; do n=$(basename "$d"); (cd art && find "$n" -type f | LC_ALL=C sort | tar --sort=name --mtime='2026-11-11 00:00Z' --owner=0 --group=0 --numeric-owner -cf "../up/$n.tar" -T -); done
+          node -e "
+            const fs=require('fs'),p=require('path'),c=require('crypto');
+            const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p.join(d,e.name)):[p.join(d,e.name)]);
+            const files=walk('art').sort().map(f=>({artifact:p.relative('art',f).split(p.sep)[0],path:p.relative('art',f).split(p.sep).join('/'),bytes:fs.statSync(f).size,sha256:c.createHash('sha256').update(fs.readFileSync(f)).digest('hex')}));
+            const tars=fs.readdirSync('up').sort().map(f=>({asset:f,sha256:c.createHash('sha256').update(fs.readFileSync('up/'+f)).digest('hex')}));
+            fs.writeFileSync('all-laps-manifest.json',JSON.stringify({source:'Actions artifacts of Lap simulator all-laps dataset run 42927630531 (branch lapsim-laps/all-laps-2026-11-11), copied before expiry 2026-12-11',release:process.env.TAG,artifacts:tars.length,files:files.length,tars,manifest:files},null,1));
+            console.log(tars.length,'artifacts',files.length,'files');"
+          sha256sum all-laps-manifest.json
+          gh release view "$TAG" -R "$R" >/dev/null 2>&1 || gh release create "$TAG" -R "$R" --draft --title "All-laps dataset 2026-11-11 (raw, internal; copy of run 42927630531 artifacts)" --notes "Raw per-lap files (Timing71, WEC) copied from expiring Actions artifacts. Draft only; do not publish (physics rule 9). Manifest: all-laps-manifest.json."
+          for f in up/*.tar; do gh release upload "$TAG" -R "$R" "$f" --clobber; done
+          gh release upload "$TAG" -R "$R" all-laps-manifest.json --clobber
+          gh release create step36-alllaps-manifest -R "$R" --prerelease --title "step 36 all-laps manifest (names and hashes only)" --notes probe 2>/dev/null || true
+          gh release upload step36-alllaps-manifest -R "$R" all-laps-manifest.json --clobber
