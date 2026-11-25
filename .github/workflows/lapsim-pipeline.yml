@@ -315,9 +315,10 @@ jobs:
       # combined refit (central 2026-11-25 15:26): the report, ship checks, FE rebuild and the fit's calibration on the fork branch
       # results/refit-combined (run-<id>/), readable with an anonymous git fetch; fork only, refit branches only
       - name: Publish to results/refit-combined
-        if: github.repository != 'MisterKinn/f1-data-analyst' && startsWith(github.ref_name, 'refit/combined')
+        # screens (central 2026-11-26 07:15, report-only): screen/* refs publish to results/screens, also after a failed test step
+        if: always() && github.repository != 'MisterKinn/f1-data-analyst' && (startsWith(github.ref_name, 'refit/combined') || startsWith(github.ref_name, 'screen/'))
         run: |
-          id=${{ github.run_id }}; B=results/refit-combined; mkdir -p pub && cd pub && git init -q -b $B
+          id=${{ github.run_id }}; B=results/refit-combined; case "${{ github.ref_name }}" in screen/*) B=results/screens;; esac mkdir -p pub && cd pub && git init -q -b $B
           git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
           if git fetch -q --depth 1 origin $B; then git reset -q --hard FETCH_HEAD; fi  # keep earlier runs (a fresh repo has an empty index: --soft + checkout found nothing, run 45626772704)
