@@ -1,0 +1,25 @@
+# Lane-C report for the geometry QA run (report-only; central 07:00): base N7 vs candidate. Push to publish/step32-lanec only.
+name: Step 32 lane-C report
+on:
+  push:
+    branches: ['publish/step32-lanec']
+permissions: {contents: write, actions: read}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}', BASE: '45626772704', CAND: '45700103747'}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: {ref: step36-mde, path: m}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: |
+          cp m/scripts/sim/learn/step32-*.mjs scripts/sim/learn/; cp -r m/scripts/sim/data/step32 scripts/sim/data/
+          gh run download $BASE -R $R -n calibration-output -D calB; gh run download $CAND -R $R -n calibration-output -D calC
+          mkdir -p pub; sha256sum calB/worker/lapsim/calibration-data.js calC/worker/lapsim/calibration-data.js worker/lapsim/calibration-data.js | tee pub/sha256.txt
+          ls calC/worker/lapsim/ | tee pub/cand-files.txt
+          node scripts/sim/night/lanec.mjs calB/worker/lapsim/calibration-data.js calC/worker/lapsim/calibration-data.js worker/lapsim/calibration-data.js pub/lanec.json | tee pub/lanec.log
+          git clone -q -b results/step32-night https://x-access-token:${GH_TOKEN}@github.com/$R.git rs && mkdir -p rs/lanec-${{ github.run_id }} && cp pub/* rs/lanec-${{ github.run_id }}/
+          cd rs && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com && git add -A && git commit -qm "Lane-C report geometry QA ($BASE vs $CAND)" && git push -q origin HEAD:results/step32-night
