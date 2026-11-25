@@ -36,3 +36,11 @@ test('FE ship rule: per-row event-hidden paired harm from fe-fit.json; identical
   assert.ok(!worse.pass && worse.meanPp >= 0.29);
   assert.equal(pairedHarm({'f1/x': 1, 'f1/y': 2}, {'f1/x': 1, 'f1/y': 2}).fe, undefined, 'no FE rows, no FE entry');
 });
+
+test('ship rule: one row worse than +1.0 pp fails even when the UB passes; rows are listed worst first', async () => {
+  const {pairedHarm} = await import('../scripts/sim/pipeline-report.mjs');
+  const a = Object.fromEntries(Array.from({length: 40}, (_, i) => [`fe/k/t${i}/2025/Q`, 1])), b = {...a, 'fe/k/t0/2025/Q': 2.2};
+  const h = pairedHarm(a, b).fe;
+  assert.ok(h.ub95Pp <= 0.10 && !h.pass && h.overRowLimit[0] === 'fe/k/t0/2025/Q' && h.rows[0].harmPp === 1.2 && h.maxPp === 1.2);
+  assert.ok(pairedHarm(a, {...a, 'fe/k/t0/2025/Q': 1.9}).fe.pass, '+0.9 pp is inside the row limit');
+});

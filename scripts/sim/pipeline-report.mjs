@@ -22,15 +22,18 @@ export function diff(shipped, cand) {
 }
 
 // refit ship rule (central 2026-11-25): per held-out track/event, harm = |refit error| − |shipped error| (pp); one-sided 95 % upper
-// bound of the mean harm per series must be ≤ 0.10 pp (t quantile 0.95 with n − 1 dof: kForVariants at m = 3.2)
-export function pairedHarm(a, b, limit = 0.10) {
+// bound of the mean harm per series must be ≤ 0.10 pp (t quantile 0.95 with n − 1 dof: kForVariants at m = 3.2), and no single row may
+// be worse than +1.0 pp (central 2026-11-25 14:48; a row above it fails the rule until it is explained in the refit PR)
+export function pairedHarm(a, b, limit = 0.10, rowLimit = 1.0) {
   const out = {};
   for (const ser of ['f1', 'wec', 'fe']) {
     if (ser === 'fe' && !Object.keys(a).some(k => k.startsWith('fe/'))) continue; // FE rows only come from feHeldOut()
-    const h = Object.keys(a).filter(k => k.startsWith(ser === 'wec' ? 'wec' : ser + '/') && k in b).map(k => Math.abs(b[k]) - Math.abs(a[k])), n = h.length;
+    const keys = Object.keys(a).filter(k => k.startsWith(ser === 'wec' ? 'wec' : ser + '/') && k in b), h = keys.map(k => Math.abs(b[k]) - Math.abs(a[k])), n = h.length;
     if (n < 2) { out[ser] = {n, pass: false}; continue; }
     const mean = h.reduce((x, y) => x + y, 0) / n, sd = Math.sqrt(h.reduce((x, y) => x + (y - mean) ** 2, 0) / (n - 1)), ub = mean + kForVariants(3.2, n) * sd / Math.sqrt(n);
-    out[ser] = {n, meanPp: r4(mean), ub95Pp: r4(ub), worse: h.filter(x => x > 1e-9).length, pass: ub <= limit};
+    const rows = keys.map((k, i) => ({row: k, shippedPct: r4(a[k]), newPct: r4(b[k]), harmPp: r4(h[i])})).sort((x, y) => y.harmPp - x.harmPp);
+    const over = rows.filter(r => r.harmPp > rowLimit).map(r => r.row);
+    out[ser] = {n, meanPp: r4(mean), ub95Pp: r4(ub), worse: h.filter(x => x > 1e-9).length, maxPp: rows[0].harmPp, overRowLimit: over, pass: ub <= limit && !over.length, rows};
   }
   return out;
 }
@@ -47,7 +50,7 @@ const md = r => [
   `Fit settings (.github/lapsim-fit.env): ${Object.entries(r.settings).map(([k, v]) => `${k}=${v}`).join(', ') || 'none'}. Seeds: ${r.seeds}.`, '',
   `Fit job: ${r.fit}.`, '',
   ...(r.diff ? fitMd(r) : ['No fit output in this run.', '']),
-  ...(r.feHarm ? [`FE ship rule (event-hidden paired harm per row vs shipped, build-fe.mjs on this run's kernel): n ${r.feHarm.n}, mean ${r.feHarm.meanPp} pp, UB ${r.feHarm.ub95Pp} pp, worse ${r.feHarm.worse} → ${r.feHarm.pass ? 'pass' : '**FAIL**'}.`, ''] : []),
+  ...(r.feHarm ? [`FE ship rule (event-hidden paired harm per row vs shipped, build-fe.mjs on this run's kernel): n ${r.feHarm.n}, mean ${r.feHarm.meanPp} pp, UB ${r.feHarm.ub95Pp} pp, worse ${r.feHarm.worse}, worst row +${r.feHarm.maxPp} pp (limit +1.0) → ${r.feHarm.pass ? 'pass' : '**FAIL**'}.`, ''] : []),
   '## Change-effects table (track-state build on the pinned inputs)', '',
   ...(r.trackState ? [`Effects ${r.trackState.identical ? '**identical** to the shipped table' : `**${r.trackState.effects.length} fields differ**`}; registry tracks changed: ${r.trackState.registryTracksChanged.join(', ') || 'none'}; year pairs changed: ${r.trackState.pairsChanged}.` + (r.trackState.cases ? ` Cases ${r.trackState.cases.n} on ${r.trackState.cases.circuits} circuits, skipped ${r.trackState.cases.skipped} (${Object.entries(r.trackState.cases.skippedWhy).map(([k, v]) => `${k} ${v}`).join(', ')}).` : ''), '',
     ...(r.trackState.effects.length ? ['| type | field | shipped | this run |', '|---|---|---|---|', ...r.trackState.effects.map(e => `| ${e.type} | ${e.field} | ${JSON.stringify(e.shipped)} | ${JSON.stringify(e.new)} |`), ''] : [])] : ['Not run.', '']),
@@ -56,7 +59,7 @@ const md = r => [
 const fitMd = r => [
   '## Held-out lap error (RMS %, shipped → this run)', '', '| group | n | shipped | this run |', '|---|---|---|---|',
   ...Object.entries(r.diff.heldOut).map(([g, x]) => `| ${g} | ${x.n} | ${x.base} | ${x.cand} |`), '',
-  `Ship rule (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ 0.10 pp): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
+  `Ship rule (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ 0.10 pp, no row worse than +1.0 pp): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),
