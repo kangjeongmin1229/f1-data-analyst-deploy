@@ -397,12 +397,14 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     }
     // step 34b (LAPSIM_WEC_CLA_SCAN=on, report only; central 17:20): ClA fixed at 70 … 100 % of its upper bound (6 steps), the other
     // parameters refitted; held-out (same folds and laps as above) and in-sample error per track at each step. The bound is not widened.
-    const claScan = E.LAPSIM_WEC_CLA_SCAN === 'on' ? [0.70, 0.76, 0.82, 0.88, 0.94, 1.00].map(f => {
+    // LAPSIM_WEC_CLA_SCAN=prior (central 17:36, honest-parameter test): one step, ClA fixed at the class prior (Hypercar 3.4, LMGT3 1.4).
+    const claSteps = E.LAPSIM_WEC_CLA_SCAN === 'on' ? [0.70, 0.76, 0.82, 0.88, 0.94, 1.00] : E.LAPSIM_WEC_CLA_SCAN === 'prior' ? [def.prior.clA / def.bounds.clA[1]] : null;
+    const claScan = claSteps ? claSteps.map(f => {
       const hi = def.bounds.clA[1], b2 = {...base, clA: f * hi}, p2 = params.filter(p => p.key !== 'clA');
       const hs = holdout(laps, b2, p2, {...WEC_HO, folds: 99, gripFor: l => l.grip}), fs = fitSeason(laps, b2, p2, {iters: ITERS});
-      report.push(`WEC ${cls} ${year}: ClA scan ${(f * 100).toFixed(0)} % (${(f * hi).toFixed(2)}): held-out ${hs.rmsPct?.toFixed(3)} %, in-sample score ${fs.score.toFixed(3)}, bound hits ${JSON.stringify(fs.bounds)}`);
+      report.push(`WEC ${cls} ${year}: ClA scan ${(f * 100).toFixed(0)} % (${(f * hi).toFixed(2)}): held-out ${hs.rmsPct?.toFixed(3)} %, in-sample score ${fs.score.toFixed(3)}, μy ${fs.car.muY.toFixed(3)} (free ${car.muY.toFixed(3)}), CdA ${fs.car.cdA.toFixed(3)} (free ${car.cdA.toFixed(3)}), free ClA ${car.clA.toFixed(2)}, bound hits ${JSON.stringify(fs.bounds)}`);
       return {frac: f, clA: +(f * hi).toFixed(3), heldOutRmsPct: hs.rmsPct != null ? +hs.rmsPct.toFixed(3) : null, heldOut: hs.errors.map(e => ({track: e.name, pct: +e.pct.toFixed(3)})), foldBoundHits: boundHits(hs.fits),
-        car: {muY: +fs.car.muY.toFixed(4), cdA: +fs.car.cdA.toFixed(4)}, score: +fs.score.toFixed(4), bounds: fs.bounds, inSample: [...new Map(fs.perTrack.filter(p => p.meta?.event !== 'Timing71').map(p => [p.name, +(p.dt / p.realLap * 100).toFixed(3)]))].map(([track, pct]) => ({track, pct}))}; }) : null;
+        car: {muY: +fs.car.muY.toFixed(4), cdA: +fs.car.cdA.toFixed(4)}, free: {muY: +car.muY.toFixed(4), cdA: +car.cdA.toFixed(4), clA: +car.clA.toFixed(4)}, score: +fs.score.toFixed(4), bounds: fs.bounds, inSample: [...new Map(fs.perTrack.filter(p => p.meta?.event !== 'Timing71').map(p => [p.name, +(p.dt / p.realLap * 100).toFixed(3)]))].map(([track, pct]) => ({track, pct}))}; }) : null;
     ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, ...(claScan ? {claScan} : {}), score: +fit.score.toFixed(3), laps: laps.length,
       holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
