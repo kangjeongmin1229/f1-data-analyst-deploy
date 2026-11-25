@@ -1,0 +1,36 @@
+# Step 36 X2 (report-only, central 22:20 night plan 2): a_y envelope vs speed from step 32's traces → μ and ClA_eff (lower bound).
+# Fork research branch only; publishes the result to the fork branch results/step36-x2 (anonymous git fetch).
+name: Step 36 X2 gg-v envelope
+on:
+  push:
+    branches: [step36-x2]
+permissions:
+  contents: write
+jobs:
+  x2:
+    if: github.repository != 'MisterKinn/f1-data-analyst'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy
+      - name: Extract samples and fit
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          node scripts/sim/learn/step36-x2-extract.mjs out/x2-samples.json | tee out/extract.txt
+          python -I scripts/sim/learn/step36_x2_fit.py out/x2-samples.json out/x2-result.json | tee out/fit.txt
+          sha256sum scripts/sim/data/step32/traces-top10.json scripts/sim/data/step32/normalisation.json scripts/sim/data/step32/kappa.json out/x2-samples.json out/x2-result.json > out/SHA256SUMS
+      - name: Publish to results/step36-x2
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          id=${{ github.run_id }}; B=results/step36-x2; mkdir -p pub && cd pub && git init -q -b $B
+          git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          mkdir -p run-$id && cp ../out/* run-$id/ && echo "run $id ${{ github.sha }}" > run-$id/RUN.txt
+          git add -A && git commit -q -m "step36 X2 run $id" && git push -q -f origin HEAD:$B
