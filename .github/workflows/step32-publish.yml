@@ -1,4 +1,4 @@
-# Step 32 C3: publish a run's verdict to the fork branch results/step32-c3 so it can be read with an anonymous git fetch (central 15:05).
+# Step 32 C3: publish a run's verdict to the fork branch results/step32-polar so it can be read with an anonymous git fetch (central 15:05).
 # Push to publish/** only. Waits for the run (RUN below), then commits its verdict artifact, a summary.md and the job list. No other trigger.
 name: Step 32 publish verdict
 on:
@@ -10,7 +10,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 350
-    env: {RUN: '45557649126', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+    env: {RUN: '45579972896', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
     steps:
       - name: Wait for the run to finish
         run: |
@@ -23,14 +23,14 @@ jobs:
       - name: Summary
         run: |
           V=$(ls pub/artifact/step32-verdict-*.json 2>/dev/null | head -1)
-          { echo "# Step 32 C3 verdict — run $RUN"; echo; echo "- run: $(jq -r .url pub/run.json)"; echo "- commit: $(jq -r .headSha pub/run.json)";
+          { echo "# Step 32 polar verdict — run $RUN"; echo; echo "- run: $(jq -r .url pub/run.json)"; echo "- commit: $(jq -r .headSha pub/run.json)";
             echo "- run conclusion: $(jq -r .conclusion pub/run.json)"; echo "- jobs failed: $(jq '[.jobs[]|select(.conclusion!="success" and .conclusion!="skipped")]|length' pub/run.json)";
             if [ -n "$V" ]; then echo "- verdict: **$(jq -r .verdict $V)**"; echo; echo '```json'; jq '{verdict, primary, guards}' $V | head -c 60000; echo '```'; fi; } > pub/summary.md
           cat pub/summary.md | head -40
-      - name: Commit to results/step32-c3
+      - name: Commit to results/step32-polar
         run: |
-          cd pub && git init -q -b results/step32-c3 && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          cd pub && git init -q -b results/step32-polar && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
-          if git fetch -q origin results/step32-c3; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs' folders
+          if git fetch -q origin results/step32-polar; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs' folders
           mkdir -p run-$RUN && mv artifact run.json summary.md run-$RUN/ 2>/dev/null; [ -f NO_VERDICT.txt ] && mv NO_VERDICT.txt run-$RUN/
-          git add -A && git commit -q -m "Step 32 C3 verdict of run $RUN" && git push -q origin HEAD:results/step32-c3
+          git add -A && git commit -q -m "Step 32 polar verdict of run $RUN" && git push -q origin HEAD:results/step32-polar
