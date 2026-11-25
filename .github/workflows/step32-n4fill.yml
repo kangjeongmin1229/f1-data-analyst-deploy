@@ -1,0 +1,36 @@
+# Step 32 N4 rerun (once): the k 0.16 row (refit 45618343892, attempt 2 made calibration-output; the N4 publisher's download missed it).
+# Same harness as step32-n4.yml; patches results/step32-night n4-45618304259/. Push to publish/step32-n4fill only.
+name: Step 32 N4 fill k016
+on:
+  push:
+    branches: ['publish/step32-n4fill']
+permissions: {contents: write, actions: read}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}', ID: '45618343892', D: 'n4-45618304259'}
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: n4/k-scan, path: t}
+      - uses: actions/checkout@v4
+        with: {ref: step36-mde, path: m}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Rows for k 0.16
+        run: |
+          cp m/scripts/sim/learn/step32-*.mjs m/scripts/sim/learn/step36-rows.mjs t/scripts/sim/learn/; cp -r m/scripts/sim/data/step32 t/scripts/sim/data/
+          git clone -q -b results/step32-night https://x-access-token:${GH_TOKEN}@github.com/$R.git pub
+          gh run view $ID -R $R --json conclusion,headBranch,headSha,url,attempt -q . > pub/$D/run-016.json
+          gh run download $ID -R $R -n calibration-output -D cal; ls cal/worker/lapsim/calibration-data.js
+          cd t && node scripts/sim/learn/step36-rows.mjs ../cal/worker/lapsim/calibration-data.js ../pub/$D/rows36-016.json > /dev/null && node scripts/sim/night/n4-rows.mjs ../cal/worker/lapsim/calibration-data.js ../pub/$D/n4-016.json > /dev/null
+          cd ../pub/$D && node --input-type=module -e "
+            import {readFileSync, writeFileSync} from 'node:fs'; const J = f => JSON.parse(readFileSync(f)), r2 = x => x == null || !Number.isFinite(x) ? '–' : (+x).toFixed(3);
+            const a = J('n4-016.json'), b = J('rows36-016.json'), r = J('run-016.json'), all = J('n4-scan.json'); all['016'] = {run: r, n4: a, rows36: b}; writeFileSync('n4-scan.json', JSON.stringify(all, null, 1));
+            const s = a.seasons, h = a.lapHeldOutRmsPct, y = ['2023', '2024', '2025'];
+            const row = '| 0.16 | ' + r.url.split('/').pop() + ' (attempt ' + r.attempt + ', filled by rerun) | ' + [h.all, ...y.map(q => h[q]?.rmsPct)].map(r2).join(' / ') + ' | ' + r2(a.cornerRms120to240Kph.rms) + ' | ' + ['<120', '120-200', '>200'].map(q => r2(a.speedBins[q].meanBiasKph)).join(' / ') + ' | ' + r2(a.perTrackSlope.median) + ' | ' + r2(b.straightEndRmsKph.base) + ' | ' + r2(b.brakingP95MeanExcessG.base) + ' | ' + y.map(q => r2(s[q]?.clA)).join(' / ') + ' | ' + y.map(q => r2(s[q]?.muY)).join(' / ') + ' | ' + (a.boundHits_0p5pct.map(x => x.season + ' ' + x.key + (x.foldCar ? ' (fold ' + x.fold + ')' : '') + ' @' + x.bound).join(', ') || 'none') + ' |';
+            const md = readFileSync('summary.md', 'utf8').split('\n').map(l => l.startsWith('| 016 |') ? row : l).join('\n'); writeFileSync('summary.md', md); console.log(row);"
+      - name: Commit
+        run: |
+          cd pub && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A && git commit -q -m "Step 32 N4: k 0.16 row (refit $ID, rerun once)" && git push -q origin HEAD:results/step32-night
