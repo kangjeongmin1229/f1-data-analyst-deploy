@@ -4,6 +4,8 @@
 import {readFile, writeFile, mkdir} from 'node:fs/promises';
 import {medianKappa} from './kappa-median.mjs';
 import {existsSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
+const BRAKE_CAP = process.env.LAPSIM_BRAKE_CAP_MEASURED === 'on' ? JSON.parse(readFileSync(new URL('./data/brake-cap-measured.json', import.meta.url), 'utf8')) : null;
 import {gate} from './gate.mjs';
 import {trapAt} from './wec-trap-pos.mjs';
 import {join} from 'node:path';
@@ -168,6 +170,10 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   // the measured value and not fitted (the laps do not identify power: claude/status-2026-11-24-pice-profile.md)
   const piceFixed = E.LAPSIM_PICE_FIXED && year <= 2025;
   if (piceFixed) base.pIce = Number(E.LAPSIM_PICE_FIXED) * 1e3;
+  // LAPSIM_BRAKE_CAP_MEASURED=on (pre-reg docs/prereg/brake-limit-measured-DRAFT-2026-11-25.md + A1; off by default, unset =
+  // byte-identical): F1 braking limit from the measured p95 deceleration, min(a0 + a2·v², max p95) (scripts/sim/brake_cap_measured.py);
+  // label "achieved braking (includes driver margin)"
+  if (E.LAPSIM_BRAKE_CAP_MEASURED === 'on') { const c = BRAKE_CAP.seasons[year]?.all; if (c) { base.brakeEnv = [c[0], c[1]]; base.brakeDecelMax = c[2]; } }
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce')).map(k => {
