@@ -395,7 +395,15 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       perTrack[p.name] = {grip: +p.grip.toFixed(4), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
         trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), ...(tPos(p.name) ? {trapAtM: tPos(p.name).m, trapPos: tPos(p.name).status} : {}), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
     }
-    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length,
+    // step 34b (LAPSIM_WEC_CLA_SCAN=on, report only; central 17:20): ClA fixed at 70 … 100 % of its upper bound (6 steps), the other
+    // parameters refitted; held-out (same folds and laps as above) and in-sample error per track at each step. The bound is not widened.
+    const claScan = E.LAPSIM_WEC_CLA_SCAN === 'on' ? [0.70, 0.76, 0.82, 0.88, 0.94, 1.00].map(f => {
+      const hi = def.bounds.clA[1], b2 = {...base, clA: f * hi}, p2 = params.filter(p => p.key !== 'clA');
+      const hs = holdout(laps, b2, p2, {...WEC_HO, folds: 99, gripFor: l => l.grip}), fs = fitSeason(laps, b2, p2, {iters: ITERS});
+      report.push(`WEC ${cls} ${year}: ClA scan ${(f * 100).toFixed(0)} % (${(f * hi).toFixed(2)}): held-out ${hs.rmsPct?.toFixed(3)} %, in-sample score ${fs.score.toFixed(3)}, bound hits ${JSON.stringify(fs.bounds)}`);
+      return {frac: f, clA: +(f * hi).toFixed(3), heldOutRmsPct: hs.rmsPct != null ? +hs.rmsPct.toFixed(3) : null, heldOut: hs.errors.map(e => ({track: e.name, pct: +e.pct.toFixed(3)})), foldBoundHits: boundHits(hs.fits),
+        car: {muY: +fs.car.muY.toFixed(4), cdA: +fs.car.cdA.toFixed(4)}, score: +fs.score.toFixed(4), bounds: fs.bounds, inSample: [...new Map(fs.perTrack.filter(p => p.meta?.event !== 'Timing71').map(p => [p.name, +(p.dt / p.realLap * 100).toFixed(3)]))].map(([track, pct]) => ({track, pct}))}; }) : null;
+    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, ...(claScan ? {claScan} : {}), score: +fit.score.toFixed(3), laps: laps.length,
       holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
           noise: {...(h.noise ? {starts: h.noise.starts} : {step: WEC_START2}), rmsPct: +h05.rmsPct.toFixed(3), spreadPp: +Math.abs(h05.rmsPct - h.rmsPct).toFixed(3), tracks: h05.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), boundHits: boundHits(h05.fits)}} : {})}};
