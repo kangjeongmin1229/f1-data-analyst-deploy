@@ -190,8 +190,10 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
       total += (l.weight ?? 1) * r.score;
       if (l.grip == null) { logGrip += Math.log(r.grip); free++; }
     }
+    // step 34 A1: a parameter with a published prior {x0, sd, w} costs w · (ln(x / x0) / sd)² (units of the lap score, s²)
+    const prior = params.reduce((a, p) => p.prior ? a + p.prior.w * (Math.log(p.path.split('.').reduce((o, k) => o[k], car) / p.prior.x0) / p.prior.sd) ** 2 : a, 0);
     // car grip and track grip only appear as a product: keep the average fitted track factor at 1
-    return total / prepared.length + (free ? wGrip * (logGrip / free) ** 2 : 0) + 100 * outside;
+    return total / prepared.length + (free ? wGrip * (logGrip / free) ** 2 : 0) + 100 * outside + prior;
   };
   // l.patch(car) → car for this lap (e.g. per-event BoP weight and power); no patch = season car
   const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, l.grip != null
@@ -225,7 +227,9 @@ export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, sta
   const predict = (fit, test, out) => { for (const l of laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
     const g = gripFor(l); if (g == null) continue;
     const res = simulateLap(withGrip(l.track, g), l.patch ? l.patch(fit.car) : fit.car, conditionsFromWeather(l.weather || {}));
-    out.push({name: l.name, dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100, ...(l.sec ? {sec: sectorResid(res, l.track.ds, l.lapSeconds, l.sec)} : {})});
+    out.push({name: l.name, dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100, ...(l.sec ? {sec: sectorResid(res, l.track.ds, l.lapSeconds, l.sec)} : {}),
+      // step 34 A1: held-out trap residual (sim − real, km/h), at the mapped position (straight peak ±300 m) where one exists
+      ...(Number.isFinite(l.trapKph) ? {trapKph: (l.trapAtM != null ? trapSpeed(res.v, l.track.ds, l.trapAtM) * 3.6 : res.vMaxKph) - l.trapKph} : {})});
   } };
   for (let f = 0; f < k; f++) {
     const test = new Set(names.filter((_, i) => i % k === f));

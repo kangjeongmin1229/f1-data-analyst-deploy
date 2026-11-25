@@ -307,7 +307,7 @@ const TRAP_POS = E.LAPSIM_WEC_TRAP_POS !== 'off';
 // step 34 flags (all off by default; Project claude/prereg-step34-wec-imsa-2026-11-25.md): LAPSIM_WEC_SECTORS=on (sector term in the
 // objective) | report (held-out sector residuals stored, not fitted); LAPSIM_WEC_BOP_PHYS=on (event BoP as physics, no gate);
 // LAPSIM_WEC_AERO_LD=on (Hypercar ClA = L/D × CdA, L/D in [3.8, 4.4])
-const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on';
+const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on', CDA_PRIOR = E.LAPSIM_WEC_CDA_PRIOR === 'on'; // A1: Hypercar CdA prior 1.04 m² ± 10 %
 const WEC_SEL = E.LAPSIM_WEC_SEL ? new Set(E.LAPSIM_WEC_SEL.split(',')) : null;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
 const t71Extra = existsSync('scripts/sim/data/t71-wec-extra.json') ? JSON.parse(await readFile('scripts/sim/data/t71-wec-extra.json', 'utf8')).rows : [];
@@ -350,7 +350,8 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     if (cls !== 'lmgt3' && E.LAPSIM_BRAKE_ENV_HYPER) base.brakeEnv = E.LAPSIM_BRAKE_ENV_HYPER.split(',').map(Number);
     if (AERO_LD && cls !== 'lmgt3') base.ld = 4.1; // published target "about 4, slightly higher"; window [3.8, 4.4] (pre-reg §3 V2)
     const bounds = AERO_LD && cls !== 'lmgt3' ? {muY: def.bounds.muY, ld: [3.8, 4.4], cdA: def.bounds.cdA} : def.bounds;
-    const params = Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi}));
+    // A1: published CdA prior for the Hypercar classes (CzA window mid 4.15 m² / L/D 4.0 = 1.04 m², sd 10 %, weight 0.5 s² per sd²)
+    const params = Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
     let h = holdout(laps, base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
     // Transfer track factors (F1 fit without per-track drag): used for this class-season only when its
     // leave-one-track-out error is not higher than with the F1 fit's own factors (never worse); gate verdict recorded.
@@ -405,7 +406,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
         trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), ...(tPos(p.name) ? {trapAtM: tPos(p.name).m, trapPos: tPos(p.name).status} : {}), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
     }
     ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length,
-      holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3), ...(e.sec ? {sectorSec: e.sec.map(x => +x.toFixed(4))} : {})})),
+      holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3), ...(e.sec ? {sectorSec: e.sec.map(x => +x.toFixed(4))} : {}), ...(Number.isFinite(e.trapKph) ? {trapKph: +e.trapKph.toFixed(2)} : {})})),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
           noise: {...(h.noise ? {starts: h.noise.starts} : {step: WEC_START2}), rmsPct: +h05.rmsPct.toFixed(3), spreadPp: +Math.abs(h05.rmsPct - h.rmsPct).toFixed(3), tracks: h05.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), boundHits: boundHits(h05.fits)}} : {})}};
     report.push(`## WEC ${def.label.en} ${year}`, '', `${laps.length} laps on ${Object.keys(perTrack).length} tracks, fit score ${fit.score.toFixed(3)}. Holdout (one track left out at a time): ${h.rmsPct?.toFixed(2) ?? '–'}% RMS over ${h.n} laps.`, '',
