@@ -177,7 +177,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   // low-drag CdA 0.778 × CdA, flap delay 50 m, μx/μy 0.70 ("measured utilisation"); per-track drag factor not fitted
   const MC = MEASURED_CAR && year <= 2025 ? lapsimCarMeasured.seasons[String(year)] : null;
   if (MC) {
-    const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = 0.70 * base.muY;
+    const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = Number(E.LAPSIM_MUX_RATIO || 0.70) * base.muY; // LAPSIM_MUX_RATIO: screen S8 (report-only), default 0.70
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
   if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan): μ = μ0·(1 − k·(Fz/Fz0 − 1))
