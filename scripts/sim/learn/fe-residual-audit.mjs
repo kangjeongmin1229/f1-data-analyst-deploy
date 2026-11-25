@@ -39,7 +39,7 @@ for (const g of cars) { if (g.type !== 'Q' || !/Group/i.test(g.session) || +g.ra
   const lay = FIT.layouts.find(l => l.venue === venueOf(g.event) && Math.abs(+g.lenKm * 1000 / l.lengthM - 1) < 0.004)?.id; if (!lay) continue;
   const k = `${lay}|${g.season}`; if (!grp[k] || +g.best < +grp[k].best) grp[k] = g; }
 const rows = FIT.rows.map(f => {
-  const d = f.season === 2025 ? DUEL.find(q => Math.abs(q.time - f.real) < 0.0015) : null, g = grp[`${f.layout}|${f.season}`];
+  const d = DUEL.find(q => Math.abs(q.time - f.real) < 0.0015), g0 = grp[`${f.layout}|${f.season}`], g = process.env.SAME_LAP && g0 && Math.abs(+g0.best - f.real) >= 0.0015 ? null : g0;
   const src = d ? 'duel lap' : g ? 'group best' : null, ss = d ? [d.s1, d.s2, d.s3] : g ? [+g.s1, +g.s2, +g.s3] : null;
   const S = shares(f.layout, feCarFor(f.key, f.season, f.session, 'Q'));
   const pred = f.real / (1 + f.event / 100); // event-hidden prediction (s)
