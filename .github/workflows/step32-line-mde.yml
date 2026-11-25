@@ -1,0 +1,23 @@
+# Step 32 "F1 measured line" draft (central 05:40): MDE of the corner row on the base calibration (36's candidate run 45610315477). Report-only.
+name: Step 32 line MDE
+on:
+  push:
+    branches: ['publish/step32-line-mde']
+permissions: {contents: write, actions: read}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}', BASE: '45610315477'}
+jobs:
+  mde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: {ref: step36-mde, path: m}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: |
+          cp m/scripts/sim/learn/step32-*.mjs scripts/sim/learn/; cp -r m/scripts/sim/data/step32 scripts/sim/data/
+          gh run download $BASE -R $R -n calibration-output -D cal; mkdir -p pub; sha256sum cal/worker/lapsim/calibration-data.js | tee pub/calibration.sha256
+          node scripts/sim/night/line-mde.mjs cal/worker/lapsim/calibration-data.js pub/line-mde.json | tee pub/line-mde.log
+          git clone -q -b results/step32-night https://x-access-token:${GH_TOKEN}@github.com/$R.git rs && mkdir -p rs/line-mde-${{ github.run_id }} && cp pub/* rs/line-mde-${{ github.run_id }}/
+          cd rs && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com && git add -A && git commit -qm "Step 32 line draft: corner-row MDE on base $BASE" && git push -q origin HEAD:results/step32-night
