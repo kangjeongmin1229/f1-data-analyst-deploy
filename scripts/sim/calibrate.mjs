@@ -410,6 +410,37 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
   report.push(...W.report);
   if (W.wec) (series.wec ||= {})[cls] = W.wec;
 }
+// step 34b d (LAPSIM_WEC_LMP2=base|on, research; pre-reg docs/prereg/step34b-d-2026-11-25.md): a fitted LMP2 car (Oreca 07, Gibson V8, no hybrid, spec power) from the committed Al Kamel rows
+// (scripts/sim/data/learn/endurance-cars.csv.gz: ELMS / AsLMS / WEC qualifying, top 3 Oreca 07 per event, dry), rule v2 fit,
+// hold-out leave-one-EVENT-out (fold = series|season|event); baseline = the prior car, no fit, on the same laps (base: baseline only); stored apart (series.wecLmp2) so no page reads it. Prior: spec values, labelled assumptions.
+const LMP2 = ['base', 'on'].includes(E.LAPSIM_WEC_LMP2) ? E.LAPSIM_WEC_LMP2 : null;
+if (LMP2 || PART === 'wec-lmp2') {
+  const W = await piece('wec-lmp2', async () => {
+    if (!LMP2) return null; // flag off: an empty part, so the matrix job is the same in every run
+    const {gunzipSync} = await import('node:zlib'), {readFileSync} = await import('node:fs');
+    const [h, ...L] = gunzipSync(readFileSync('scripts/sim/data/learn/endurance-cars.csv.gz')).toString().trim().split('\n'), k = h.split(',');
+    const ID = {'barcelona-catalunya': 'catalunya', 'yas-marina': 'yas-marina-circuit', imola: 'imola', 'spa-francorchamps': 'spa-francorchamps', silverstone: 'silverstone'};
+    const rows = L.map(l => Object.fromEntries(l.split(',').map((v, i) => [k[i], v]))).filter(r => /^LMP2/.test(r.cls) && /^Oreca/.test(r.vehicle) && r.type === 'Q' && +r.best > 0 && !(+r.rainShare > 0) && ID[r.event] && tracks[ID[r.event]] && f1GripOwn(ID[r.event]) != null);
+    const prior = {...structuredClone(SERIES.wec.classes.lmdh.prior), label: 'LMP2', ers: {}, mass: 950, pIce: 440e3, clA: 3.2, cdA: 0.95, clALow: 3.2, cdALow: 0.95, vMax: 340 / 3.6, linkMu: true, noLowDrag: true};
+    const bounds = {muY: [1.3, 2.2], clA: [2, 6], cdA: [0.6, 1.4]}, out = {}, rep = [];
+    for (const [year, R] of Object.entries(Object.groupBy(rows, r => r.season))) {
+      const laps = Object.values(Object.groupBy(R, r => r.series + '|' + r.event)).flatMap(ev => [...ev].sort((a, b) => a.best - b.best).slice(0, 3).map((r, i) => ({name: r.series + '|' + r.season + '|' + r.event, trackId: ID[r.event], track: tracks[ID[r.event]], lapSeconds: +r.best,
+        trapKph: null, weight: i === 0 ? 1 : 0.5, grip: f1GripOwn(ID[r.event]), weather: {airTempC: +r.airC, trackTempC: +r.trackC, humidityPct: +r.hum, pressureHpa: +r.hpa}, meta: {event: r.series + ' ' + r.event, car: r.entry, manufacturer: 'Oreca', session: r.session}})));
+      const names = new Set(laps.map(l => l.trackId)); if (names.size < 4) { rep.push(`LMP2 ${year}: ${names.size} tracks (< 4), not fitted`); continue; }
+      // baseline: the prior car (what the class has today: no fitted LMP2), main lap of each event, same grip and weather
+      const prior0 = {...prior}; delete prior0.linkMu;
+      const baseline = laps.filter(l => l.weight >= 1).map(l => { const t = simulateLap(withGrip(l.track, l.grip), prior0, conditionsFromWeather(l.weather)).lapTime; return {event: l.name, track: l.trackId, errorSec: +(t - l.lapSeconds).toFixed(3), pct: +((t / l.lapSeconds - 1) * 100).toFixed(3)}; });
+      if (LMP2 === 'base') { out[year] = {laps: laps.length, tracks: [...names], baseline}; rep.push(`## LMP2 ${year} (research, baseline only)`, '', `${baseline.length} events; prior-car RMS ${Math.sqrt(baseline.reduce((a, e) => a + e.pct ** 2, 0) / baseline.length).toFixed(3)} %`, ''); continue; }
+      const params = Object.entries(bounds).map(([key, [lo, hi]]) => ({key, path: key, base: prior[key], step: 0.08, min: lo, max: hi}));
+      const ho = holdout(laps, prior, params, {...WEC_HO, folds: 99, gripFor: l => l.grip}), fit = fitSeason(laps, prior, params, {iters: ITERS}), car = fit.car; delete car.linkMu;
+      out[year] = {car, laps: laps.length, tracks: [...names], baseline, holdout: {rmsPct: ho.rmsPct != null ? +ho.rmsPct.toFixed(3) : null, n: ho.n, events: ho.errors.map(e => ({event: e.name, errorSec: +e.dt.toFixed(3), pct: +e.pct.toFixed(3)})), boundHits: boundHits(ho.fits)},
+        perTrack: fit.perTrack.filter(p => p.meta && true).map(p => ({track: p.name, realLap: p.realLap, simLap: +p.simLap.toFixed(3), errorSec: +p.dt.toFixed(3)}))};
+      rep.push(`## LMP2 ${year} (research)`, '', `${laps.length} laps, tracks ${[...names].join(', ')}. Held-out ${out[year].holdout.rmsPct} % (n ${ho.n}); ClA ${car.clA.toFixed(2)}, CdA ${car.cdA.toFixed(3)}, μy ${car.muY.toFixed(3)}; bound hits ${JSON.stringify(out[year].holdout.boundHits)}`, '');
+    }
+    return {lmp2: out, report: rep};
+  }, null);
+  if (W) { report.push(...W.report); series.wecLmp2 = W.lmp2; }
+}
 if (PART && PART !== 'merge') throw new Error(`LapSim part ${PART} is not a piece of this run`);
 
 // aero 'fia': fitted with the FIA / estimated low-drag zones, so the page and the MCP tool use the same zones (worker/lapsim/zones.js)
