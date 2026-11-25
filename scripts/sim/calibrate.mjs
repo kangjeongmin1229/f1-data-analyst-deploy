@@ -53,7 +53,21 @@ const BCD = {rounds: Number(E.LAPSIM_ROUNDS || 5), iters: Number(E.LAPSIM_BCD_IT
 const MAX_POS = Number(E.LAPSIM_MAX_POS || 3);
 const HOLDOUT_YEARS = (E.LAPSIM_HOLDOUT_YEARS || '2025,2026').split(',').map(Number);
 const fitAll = gs => FITTER === 'bcd' ? fitJointBCD(gs, BCD) : fitJoint(gs, {iters: ITERS, wTime: WTIME});
-const holdoutOf = (gs, key, extra = {}) => FITTER === 'bcd' ? holdoutBCD(gs, key, {...BCD, rounds: Math.max(2, BCD.rounds - 1), ...extra}) : holdoutJoint(gs, key, {iters: HOLDOUT_ITERS, wTime: WTIME});
+// LAPSIM_BRAKE_CAP_FOLD=on (report-only, central 18:10; needs LAPSIM_BRAKE_CAP_MEASURED=on): in each held-out fold the held-out season's
+// cap is rebuilt from the measured histograms without that fold's test tracks (the all-track-cap leak, shown side by side)
+function capExcluding(year, skip) {
+  const H = BRAKE_CAP?.seasons?.[year]?.hist; if (!H) return null; const xs = [], ys = [], ws = [];
+  for (const lo of Object.keys(Object.values(H)[0] ?? {}).map(Number).sort((a, b) => a - b)) {
+    const cnt = new Map(); let N = 0;
+    for (const [t, bins] of Object.entries(H)) { if (skip.has(t) || !bins[lo]) continue; for (const [k, n] of Object.entries(bins[lo])) { cnt.set(+k, (cnt.get(+k) ?? 0) + n); N += n; } }
+    if (N < 200) continue; const keys = [...cnt.keys()].sort((a, b) => a - b), r = 0.95 * (N - 1); let c = 0, q = keys[keys.length - 1];
+    for (const k of keys) { c += cnt.get(k); if (c - 1 >= r) { q = k; break; } }
+    xs.push(((lo + 10) / 3.6) ** 2); ys.push((q + 0.5) * 0.05); ws.push(N); }
+  const S = (f) => xs.reduce((a, x, i) => a + ws[i] * f(x, ys[i]), 0), sw = S(() => 1), sx = S(x => x), sxx = S(x => x * x), sy = S((x, y) => y), sxy = S((x, y) => x * y);
+  const a2 = (sw * sxy - sx * sy) / (sw * sxx - sx * sx), a0 = (sy - a2 * sx) / sw; return [a0, a2, Math.max(...ys)];
+}
+const FOLD_CAP = E.LAPSIM_BRAKE_CAP_FOLD === 'on' && BRAKE_CAP ? {foldBase: (g, test) => { const c = capExcluding(g.key, test); return c ? {...g.base, brakeEnv: [c[0], c[1]], brakeDecelMax: c[2]} : g.base; }} : {};
+const holdoutOf = (gs, key, extra = {}) => FITTER === 'bcd' ? holdoutBCD(gs, key, {...BCD, rounds: Math.max(2, BCD.rounds - 1), ...FOLD_CAP, ...extra}) : holdoutJoint(gs, key, {iters: HOLDOUT_ITERS, wTime: WTIME});
 const HO_FOLDS = 4; // holdoutBCD default; the split run has one piece per (season, fold)
 const GRIP_LIMITS = E.LAPSIM_GRIP_LO ? [Number(E.LAPSIM_GRIP_LO), Number(E.LAPSIM_GRIP_HI)] : FITTER === 'bcd' ? [0.7, 1.3] : [0.85, 1.15];
 BCD.lo = GRIP_LIMITS[0]; BCD.hi = GRIP_LIMITS[1];
@@ -220,8 +234,8 @@ for (const g of groups) {
     const fs = [];
     for (let f = 0; f < HO_FOLDS; f++) fs.push(await piece(`f1-ho-${year}-${f}`, () => holdoutOf(groups, year, {fold: f}), null));
     if (fs.some(x => !x)) return null;
-    const errors = fs.flatMap(x => x.errors);
-    return {errors, rmsPct: errors.length ? Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length) : null, n: errors.length};
+    const errors = fs.flatMap(x => x.errors), foldCars = fs.flatMap(x => x.foldCars ?? []);
+    return {errors, rmsPct: errors.length ? Math.sqrt(errors.reduce((a, e) => a + e.pct ** 2, 0) / errors.length) : null, n: errors.length, ...(foldCars.length ? {foldCars} : {})};
   };
   const h = HOLDOUT_YEARS.includes(year) ? await heldOut() ?? none.h : none.h;
   const hF1b = F1_NOISE && h.n && FITTER === 'bcd' ? await piece('f1-noise-' + year, () => holdoutBCD(groups, year, {...BCD, rounds: Math.max(2, BCD.rounds - 1), nmStep: 0.04}), null) : null;
@@ -230,7 +244,7 @@ for (const g of groups) {
   if (adj) report.push(`### ${year} team pace and development`, '', `Development over the season: ${(adj.dev * 100).toFixed(2)}% lap time from March to December.`, '',
     ...Object.entries(adj.teams).sort((a, b) => a[1] - b[1]).map(([t, v]) => `- ${t}: ${v > 0 ? '+' : ''}${(v * 100).toFixed(2)}%`), '');
   seasons[year] = {car, tracks: perTrack, laps: g.laps.length, adj: adj || undefined,
-    holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})),
+    holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), ...(h.foldCars ? {foldCars: h.foldCars} : {}),
       ...(hF1b ? {noise: {step: 0.04, rmsPct: +hF1b.rmsPct.toFixed(3), spreadPp: +Math.abs(hF1b.rmsPct - h.rmsPct).toFixed(3), tracks: hF1b.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)}))}} : {})}};
   report.push(`## ${year}`, '', `${g.laps.length} laps. Holdout: ${h.n ? `predicted ${h.n} unseen pole laps, typical error ${h.rmsPct.toFixed(2)}% (RMS)` : 'no track had a factor from another season'}.`, '',
     `Car: grip μy ${car.muY.toFixed(3)}, downforce ClA ${car.clA.toFixed(2)} m², drag CdA ${car.cdA.toFixed(3)} m², low-drag CdA ${car.cdALow.toFixed(3)} m², ICE ${(car.pIce / 1e3).toFixed(0)} kW.`, '',
@@ -402,7 +416,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
         trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), ...(tPos(p.name) ? {trapAtM: tPos(p.name).m, trapPos: tPos(p.name).status} : {}), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
     }
     ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length,
-      holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})),
+      holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), ...(h.foldCars ? {foldCars: h.foldCars} : {}),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
           noise: {...(h.noise ? {starts: h.noise.starts} : {step: WEC_START2}), rmsPct: +h05.rmsPct.toFixed(3), spreadPp: +Math.abs(h05.rmsPct - h.rmsPct).toFixed(3), tracks: h05.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), boundHits: boundHits(h05.fits)}} : {})}};
     report.push(`## WEC ${def.label.en} ${year}`, '', `${laps.length} laps on ${Object.keys(perTrack).length} tracks, fit score ${fit.score.toFixed(3)}. Holdout (one track left out at a time): ${h.rmsPct?.toFixed(2) ?? '–'}% RMS over ${h.n} laps.`, '',

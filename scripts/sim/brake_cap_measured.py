@@ -28,6 +28,9 @@ def fit(year, skip=None):
 out = {'method': 'measured p95 deceleration 80-280 km/h, a0 + a2*v^2 (m/s^2, v in m/s); label: achieved braking (includes driver margin)',
        'traces_sha256': hashlib.sha256(open(TRP, 'rb').read()).hexdigest(), 'seasons': {}}
 for y in sorted(S):
-    c, info = fit(y); out['seasons'][str(y)] = {'all': c, 'fit': info, 'loto': {t: fit(y, t)[0] for t in sorted(S[y])}}
+    c, info = fit(y); out['seasons'][str(y)] = {'all': c, 'fit': info, 'loto': {t: fit(y, t)[0] for t in sorted(S[y])},
+      # per track, per bin: decel histogram at 0.05 m/s² (sparse {slot: count}) so a cap for any excluded track set can be rebuilt
+      # (per-fold report of central 18:10; calibrate.mjs capExcluding)
+      'hist': {t: {str(lo): {str(k): int(n) for k, n in zip(*np.unique(np.floor(np.array(d[lo]) / 0.05).astype(int), return_counts=True))} for lo in BINS if d[lo]} for t, d in sorted(S[y].items())}}
     print(y, 'a0 %.2f a2 %.6f max %.2f m/s2; limit g at 100/200/280:' % tuple(c), [round(min(c[0] + c[1] * (v / 3.6) ** 2, c[2]) / 9.81, 2) for v in (100, 200, 280)])
 json.dump(out, open(OUT, 'w'), indent=1, sort_keys=True)
