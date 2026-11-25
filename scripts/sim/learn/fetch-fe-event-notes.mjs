@@ -11,7 +11,7 @@ export function parseNote(text) { // facts from one Race Information note
   const g = (re, src = am) => { const x = src.match(re); return x ? num(x[1]) : null; };
   return {amKW: g(/(\d{3})\s*kW\s*Power Mode/i), amTimeS: g(/Power Mode time:?\s*(\d+)\s*seconds/i) ?? (g(/Power Mode time:?\s*(\d+(?:[.,]\d+)?)\s*min/i) * 60 || null),
     activations: g(/Number of activations:?\s*(\d+)/i), armingsMax: g(/Number of armings:?\s*(?:Maximum\s*)?(\d+)/i),
-    energyKWh: m(/(?:Net|Usable|Available)\s*Energy[^0-9]{0,40}(\d+[.,]?\d*)\s*kWh/i), pitBoost: /PIT BOOST/i.test(t) ? (m(/PIT BOOST[^]{0,200}?(\d+[.,]?\d*)\s*kWh/i) ?? true) : false,
+    energyKWh: m(/Energy[^0-9]{0,60}(\d+[.,]\d+)\s*kWh/i), pitBoost: /PIT BOOST/i.test(t), pitBoostKWh: m(/PIT BOOST[^]{0,300}?(\d+[.,]\d+)\s*kWh/i),
     lapAt80pct: m(/80%\s*of Race \(Lap\):?\s*(\d+)/i), raceDistanceLaps: m(/Race (?:Distance|Laps)[^0-9]{0,20}(\d+)\s*Laps/i), raceMinutes: m(/Race (?:Duration|Time)[^0-9]{0,20}(\d+)\s*min/i)}; }
 if (process.argv[2] === '--selftest') {
   const p = parseNote('80% of Race (Lap): 24 Laps ATTACK MODE RACE (Article 37.3.b) 350kW Power Mode time: 480 seconds (8 minutes) total Number of activations: 2 activations Number of armings: Maximum 5');
@@ -27,11 +27,13 @@ const ROOT = await items('formula-e/files/noticeboard'); log.push('root: ' + JSO
 for (const s of ROOT.filter(x => SEASONS.test(x.title + ' ')))
   for (const ev of (await items(s.id)).filter(x => x.extention === 'catalog')) {
     let files = []; try { files = await items(ev.id); } catch (e) { log.push(`${ev.title}: ${e.message}`); continue; }
-    const notes = files.filter(f => f.extention === 'pdf' && /Event Note/i.test(f.title) && /Race Information/i.test(f.title));
-    if (!notes.length) out.push({season: s.title, event: ev.title, note: null});
+    const notes = files.filter(f => f.extention === 'pdf' && (/Event Note/i.test(f.title) || /Bulletin/i.test(f.title)));
+    const n0 = out.length;
     for (const f of notes) { try { const p = `${tmp}/n.pdf`; writeFileSync(p, await get(FILES + f.url, 'buf'));
         const text = execFileSync('pdftotext', ['-layout', p, '-'], {encoding: 'utf8'});
-        out.push({season: s.title, event: ev.title, note: f.title, url: FILES + f.url, ...parseNote(text)}); }
-      catch (e) { log.push(`${ev.title} ${f.title}: ${e.message}`); } } }
+        if (!/ATTACK MODE/i.test(text)) continue; // only documents that state Attack Mode
+        out.push({season: s.title, event: ev.title, note: f.title, kind: /Bulletin/i.test(f.title) ? 'bulletin' : 'event note', lastModified: f.lastModified, url: FILES + f.url, ...parseNote(text)}); }
+      catch (e) { log.push(`${ev.title} ${f.title}: ${e.message}`); } }
+    if (out.length === n0) out.push({season: s.title, event: ev.title, note: null}); }
 writeFileSync('fe-event-notes.json', JSON.stringify({source: 'FIA Formula E noticeboard (results.formulae.fia.com), Event Note – Race Information', rows: out, log}, null, 1));
 console.log(out.length, 'rows', out.filter(r => r.amTimeS).length, 'with AM time', log.length, 'errors');
