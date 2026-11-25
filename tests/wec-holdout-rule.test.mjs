@@ -24,7 +24,7 @@ test('stop rule: Nelder–Mead stops when the relative simplex spread is < 1e-6,
 test('same setting for base and candidate: every WEC held-out call in calibrate.mjs uses the one rule constant', () => {
   const src = readFileSync(new URL('../scripts/sim/calibrate.mjs', import.meta.url), 'utf8');
   assert.equal((src.match(/holdout\([^)]*\{iters: HOLDOUT_ITERS, folds: 99/g) || []).length, 0, 'no WEC held-out with its own iteration count');
-  assert.ok((src.match(/\{\.\.\.WEC_HO, (step0: WEC_START2, )?folds: 99/g) || []).length >= 5);
+  assert.ok((src.match(/\{\.\.\.WEC_HOJ?, (step0: WEC_START2, )?folds: 99/g) || []).length >= 5);
   assert.match(src, /WEC_HO = WEC_RULE === 'legacy' \? \{iters: HOLDOUT_ITERS\} : \{iters: 400, nm: \{relTol: 1e-6\}, \.\.\.\(WEC_RULE === 'v1' \? \{\} : \{starts: WEC_STARTS\}\)\}/);
   assert.match(src, /WEC_STARTS = \[0\.08, 0\.05, 0\.12\]/);
   assert.match(src, /WEC_RULE = process\.env\.LAPSIM_WEC_HOLDOUT \|\| 'v2'/);
@@ -65,4 +65,9 @@ test('rule v2: each fold keeps the lowest-objective start of three; noise = best
   // no starts = one fit per fold, no noise field (v1 and F1-style callers unchanged)
   const h1 = holdout(laps, base, params, {iters: 30, folds: 99, gripFor: l => l.grip});
   assert.equal(h1.noise, undefined); assert.equal(h1.fits[0].scores, undefined);
+});
+
+test('step 34b joint: WEC_HOJ is WEC_HO unless LAPSIM_WEC_JOINT is set (base runs unchanged)', () => {
+  const src = readFileSync(new URL('../scripts/sim/calibrate.mjs', import.meta.url), 'utf8');
+  assert.match(src, /const WEC_HOJ = JOINT \? \{\.\.\.WEC_HO, wTime: 0, wTrap: \(3\.6 \/ 2\) \*\* 2, joint: true\} : WEC_HO;/);
 });

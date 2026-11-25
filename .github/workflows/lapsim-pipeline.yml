@@ -45,7 +45,7 @@ permissions:
 
 # a push run never queues behind a running fit (separate group per commit); fits on one ref run one at a time
 concurrency:
-  group: s34a-${{ github.ref }}   # step 34a arm branches: one group per arm, a new dispatch replaces the old one
+  group: s34b-${{ github.ref }}   # step 34b joint arms: one group per arm, a new dispatch replaces the old one
   cancel-in-progress: true
 
 jobs:

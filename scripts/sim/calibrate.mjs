@@ -15,7 +15,7 @@ import {rechargeLimitMJ} from '../../worker/lapsim/energy-limits.js';
 import {PRIOR, applyRules, applyDevelopment, RULE_CHANGES} from '../../worker/lapsim/cars.js';
 import {simulateLap} from '../../worker/lapsim/engine.js';
 import {conditionsFromWeather} from '../../worker/lapsim/atmosphere.js';
-import {fitSeason, withGrip, holdout, fitJoint, holdoutJoint, addBanking} from './calibrate-lib.mjs';
+import {fitSeason, withGrip, holdout, fitJoint, holdoutJoint, addBanking, hessianAt} from './calibrate-lib.mjs';
 import {fitJointBCD, holdoutBCD, backtestBCD, poleMult} from './joint-bcd.mjs';
 import {SERIES} from '../../worker/lapsim/series.js';
 import {lapsimF1Zones} from '../../worker/lapsim/f1-zones-data.js';
@@ -331,6 +331,14 @@ const imsaLaps = (cls, year, medTrap) => Object.values(Object.groupBy(IMSA_ROWS.
 const GF = l => l.grip ?? (l.imsa ? 1 : null);
 const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on', CDA_PRIOR = E.LAPSIM_WEC_CDA_PRIOR === 'on', DECOUPLED = E.LAPSIM_WEC_DECOUPLED === 'on'; // A1: Hypercar CdA prior 1.04 m² ± 10 %
 const WEC_SEL = E.LAPSIM_WEC_SEL ? new Set(E.LAPSIM_WEC_SEL.split(',')) : null;
+// step 34b joint (research; pre-reg docs/prereg/step34b-joint-2026-11-25.md, sha256 d72979cd…): LAPSIM_WEC_JOINT=on (V) | S (sensitivity
+// arm, Hypercar P = BoP kW read as before the driveline). μy, ClA, CdA (LMGT3 also P) fitted to traps (residual / 2 km/h) and sector lines
+// (w_k · (r_k / σ_rep,k)²) together, lap weight 0; Hypercar power fixed at the event BoP kW as wheel power (assumption) and mass = BoP kg
+// + 80 kg driver (assumption; TR Art. 4.1: BoP weight without fuel and driver); priors (x0, sd) as pre-reg §3; per-fold values and
+// Hessian stored. Unset = before.
+const JOINT = ['on', 'S'].includes(E.LAPSIM_WEC_JOINT) ? E.LAPSIM_WEC_JOINT : null;
+const SIG_REP = {lmh: [0.085, 0.1319], lmdh: [0.1231, 0.1171], lmgt3: [0.1084, 0.1975]}; // σ_rep S1, S2 (s), run 45562051769
+const WEC_HOJ = JOINT ? {...WEC_HO, wTime: 0, wTrap: (3.6 / 2) ** 2, joint: true} : WEC_HO;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
 const t71Extra = existsSync('scripts/sim/data/t71-wec-extra.json') ? JSON.parse(await readFile('scripts/sim/data/t71-wec-extra.json', 'utf8')).rows : [];
 const wecYears = new Set(wec.map(w => +w.year));
@@ -361,9 +369,9 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // step 34 data fix: where the trap position is known (Al Kamel maps), the trap is compared with the simulated speed there and
     // kept whatever its value; elsewhere the old lap-maximum rule. LAPSIM_WEC_TRAP_POS=off = before the fix.
     const tPos = id => TRAP_POS ? trapAt(id, year) : null;
-    const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
+    let lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session},
-      ...(SECTORS && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year)}, secFit: SECTORS === 'on'} : {})}))).concat(imsaLaps(cls, year, medTrap));
+      ...((SECTORS || JOINT) && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year), ...(JOINT ? {sig: SIG_REP[cls]} : {})}, secFit: SECTORS === 'on' || !!JOINT} : {})}))).concat(imsaLaps(cls, year, medTrap));
     let laps = lapsWith(f1Grip);
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
@@ -381,12 +389,36 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // A1: published CdA prior for the Hypercar classes (CzA window mid 4.15 m² / L/D 4.0 = 1.04 m², sd 10 %, weight 0.5 s² per sd²)
     const params = DECOUPLED ? Object.entries(DPRI).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0 ?? base[k], step: 0.08, min: lo, max: hi, ...(x0 != null ? {prior: {x0, sd, w: 0.5}} : {})}))
       : Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
-    let h = holdout(laps, base, params, {...WEC_HO, folds: 99, gripFor: GF});
+    // step 34b joint: priors and starting values (pre-reg §3); LMGT3 P at the wheel prior 334 kW sd 8 %, bound [250, 420] kW, kernel pIce = P / etaDrive
+    const ETA = base.etaDrive ?? 0.95, JP = !JOINT ? null : HY ? {muY: [1.75, 0.15, def.bounds.muY], clA: [4.15, 0.05, def.bounds.clA], cdA: [1.04, 0.10, def.bounds.cdA]}
+      : {muY: [1.55, 0.15, def.bounds.muY], clA: [1.4, 0.25, def.bounds.clA], cdA: [1.16, 0.15, def.bounds.cdA], pIce: [334e3 / ETA, 0.08, [250e3 / ETA, 420e3 / ETA]]};
+    if (JP) { params.splice(0, params.length, ...Object.entries(JP).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0, step: 0.08, min: lo, max: hi, prior: {x0, sd, w: 0.5}})));
+      for (const [k, [x0]] of Object.entries(JP)) base[k] = x0; }
+    // Hypercar: event BoP kW per car as wheel power (S: as before the driveline), mass BoP kg + 80 kg; events without a public table (2026):
+    // median of the class in that season, else of the latest season with a table (flagged)
+    const bopAbs = l => Object.entries(lapsimWecBop[l.name]?.[year]?.cars || {}).find(([n]) => n.split(' ')[0].toLowerCase() === String(l.meta.manufacturer || l.meta.car || '').split(' ')[0].toLowerCase())?.[1];
+    const jointFlags = {};
+    if (JOINT && HY) {
+      const med = a => { const v = [...a].sort((x, y) => x - y); return v.length ? v[v.length >> 1] : null; };
+      const ofSeason = y => Object.values(lapsimWecBop).flatMap(t => Object.values(t[y]?.cars || {})).filter(c => c.cls === cls && c.kW);
+      const yMed = [year, ...Object.keys(Object.values(lapsimWecBop)[0] || {}).sort().reverse()].find(y => ofSeason(y).length);
+      const m = yMed ? {kW: med(ofSeason(yMed).map(c => c.kW)), kg: med(ofSeason(yMed).map(c => c.kg)), season: yMed} : null;
+      const patchOf = b => car => ({...car, mass: b.kg + 80, pIce: b.kW * 1e3 / (JOINT === 'S' ? 1 : (car.etaDrive ?? 0.95))});
+      const withJ = arr => arr.map(l => { const b = bopAbs(l); if (b?.kg && b?.kW) return {...l, patch: patchOf(b), jbop: 'table'};
+        if (m) { jointFlags.medianSeason = m.season; jointFlags.median = {kW: m.kW, kg: m.kg}; return {...l, patch: patchOf(m), jbop: 'median'}; } return l; });
+      const lw = lapsWith; lapsWith = gf => withJ(lw(gf)); laps = lapsWith(f1Grip);
+    }
+    // step 34b joint: grip source and Timing71 rows as chosen by the base run 45566297648 (same laps and grip as the base; no re-gating)
+    const JOINT_GRIP = {lmh: {2025: 'f1', 2026: 'transfer'}, lmdh: {2025: 'transfer', 2026: 'transfer'}, lmgt3: {2025: 'transfer', 2026: 'transfer'}};
+    const jTransfer = JOINT && JOINT_GRIP[cls]?.[year] === 'transfer';
+    if (jTransfer) { f1Grip = transferGrip; laps = lapsWith(transferGrip); }
+    let h = holdout(laps, base, params, {...WEC_HOJ, folds: 99, gripFor: GF});
     // Transfer track factors (F1 fit without per-track drag): used for this class-season only when its
     // leave-one-track-out error is not higher than with the F1 fit's own factors (never worse); gate verdict recorded.
     let gripSource = {used: 'f1'};
-    if (TRANSFER && sessions.every(w => transferGrip(w.track) != null)) {
-      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {...WEC_HO, folds: 99, gripFor: GF});
+    if (JOINT) gripSource = {used: jTransfer ? 'transfer' : 'f1', fixed: 'base 45566297648'};
+    else if (TRANSFER && sessions.every(w => transferGrip(w.track) != null)) {
+      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {...WEC_HOJ, folds: 99, gripFor: GF});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(ht.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       const use = g.rmsNew <= g.rmsCur;
@@ -399,8 +431,8 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const extra = t71Extra.filter(r => r.cls === cls && r.year < +year && r.year >= +year - 2 && !wecYears.has(r.year) && tracks[r.track] && f1Grip(r.track) != null)
       .map(r => ({name: r.track, track: wecTrack(r.track), lapSeconds: r.lap, trapKph: r.trapKph, ...(TRAP_POS && trapAt(r.track, r.year) ? {trapAtM: trapAt(r.track, r.year).m} : {}), weight: 0.5, grip: f1Grip(r.track), weather: r.weather || {}, meta: {event: 'Timing71', car: '', manufacturer: '', session: ''}}));
     let pooled = null;
-    if (extra.length) {
-      const h2 = holdout([...laps, ...extra], base, params, {...WEC_HO, folds: 99, gripFor: GF});
+    if (extra.length && !JOINT) {
+      const h2 = holdout([...laps, ...extra], base, params, {...WEC_HOJ, folds: 99, gripFor: GF});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       pooled = {extraRows: extra.length, previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
@@ -411,7 +443,8 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     let bop = null;
     const bopOf = l => Object.entries(lapsimWecBop[l.name]?.[year]?.cars || {}).find(([n]) => n.split(' ')[0].toLowerCase() === String(l.meta.manufacturer || l.meta.car || '').split(' ')[0].toLowerCase())?.[1];
     const withBop = laps.filter(l => bopOf(l)?.kg);
-    if (cls !== 'lmgt3' && withBop.length >= laps.filter(l => !l.imsa).length * 0.8) { // A4: IMSA laps carry no WEC BoP (flagged)
+    if (JOINT) bop = {joint: JOINT, ...jointFlags, bopRows: laps.filter(l => l.jbop === 'table').length, medianRows: laps.filter(l => l.jbop === 'median').length};
+    else if (cls !== 'lmgt3' && withBop.length >= laps.filter(l => !l.imsa).length * 0.8) { // A4: IMSA laps carry no WEC BoP (flagged)
       const kg0 = withBop.reduce((a, l) => a + bopOf(l).kg, 0) / withBop.length, kw0 = withBop.reduce((a, l) => a + bopOf(l).kW, 0) / withBop.length;
       const cand = laps.map(l => { const b = bopOf(l); return b?.kg ? {...l, patch: car => ({...car, mass: car.mass + b.kg - kg0, pIce: car.pIce * b.kW / kw0})} : l; });
       const h2 = holdout(cand, base, params, {...WEC_HO, folds: 99, gripFor: GF});
@@ -423,10 +456,12 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       if (BOP_PHYS) bop.physics = true;
     } else if (BOP_PHYS && cls !== 'lmgt3') bop = {physics: true, flagged: 'event BoP not public: class median (no offset)', laps: withBop.length};
     // noise of the final WEC held-out: v2 = best of {0.08, 0.05} (stored by holdout itself); v1 = a re-run from start step 0.05
-    const h05 = h.noise ? h.noise : WEC_HO.nm && h.n ? holdout(laps, base, params, {...WEC_HO, step0: WEC_START2, folds: 99, gripFor: GF}) : null;
+    const h05 = h.noise ? h.noise : WEC_HO.nm && h.n ? holdout(laps, base, params, {...WEC_HOJ, step0: WEC_START2, folds: 99, gripFor: GF}) : null;
     const noiseLabel = h.noise ? `best of ${h.noise.starts.join('/')}` : `start ${WEC_START2}`;
     if (h05) report.push(`WEC ${cls} ${year}: held-out ${noiseLabel} ${h05.rmsPct.toFixed(3)} % vs ${h.rmsPct.toFixed(3)} % (spread ${Math.abs(h05.rmsPct - h.rmsPct).toFixed(3)} pp); fold iterations ${h.fits.map(f => f.iters).join(', ')}; fold bound hits ${boundHits(h.fits).map(b => `${b.key} at ${b.bound} (${b.folds.length})`).join(', ') || 'none'}`);
-    const fit = fitSeason(laps, base, params, {iters: ITERS});
+    const fit = fitSeason(laps, base, params, {iters: ITERS, ...(JOINT ? {wTime: 0, wTrap: WEC_HOJ.wTrap} : {})});
+    const joint = JOINT ? {arm: JOINT, priors: JP, flags: jointFlags, full: {vals: fit.vals, hess: hessianAt(fit.objective, fit.x)},
+      folds: h.fits.map(f => ({test: f.test, vals: f.vals, bounds: f.bounds, hess: f.hess ? {sd: f.hess.sd, corr: f.hess.corr, cond: f.hess.cond} : null}))} : null;
     const car = fit.car; delete car.linkMu;
     const perTrack = {};
     for (const p of fit.perTrack) if (!perTrack[p.name] && p.meta?.event !== 'Timing71') {
@@ -434,7 +469,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       perTrack[p.name] = {grip: +p.grip.toFixed(4), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
         trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), ...(tPos(p.name) ? {trapAtM: tPos(p.name).m, trapPos: tPos(p.name).status} : {}), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
     }
-    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length,
+    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length, ...(joint ? {joint} : {}),
       holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3), ...(e.sec ? {sectorSec: e.sec.map(x => +x.toFixed(4))} : {}), ...(Number.isFinite(e.trapKph) ? {trapKph: +e.trapKph.toFixed(2)} : {})})),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
           noise: {...(h.noise ? {starts: h.noise.starts} : {step: WEC_START2}), rmsPct: +h05.rmsPct.toFixed(3), spreadPp: +Math.abs(h05.rmsPct - h.rmsPct).toFixed(3), tracks: h05.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), boundHits: boundHits(h05.fits)}} : {})}};

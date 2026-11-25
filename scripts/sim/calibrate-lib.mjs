@@ -94,12 +94,13 @@ export function sectorResid(res, ds, lapReal, sec) {
   return sec.lines.map((m, k) => at(m) - real[k] - dt * real[k] / lapReal);
 }
 export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, trapAtM = null, wTrap = 0.5, sec = null, secFit = false} = {}) {
+  // step 34b joint: sec.sig = σ_rep per line (s): the line term is w_k · (r_k / σ_k)²; unset = w_k · r_k² (as before)
   const res = simulateLap(track, car, env);
   const rms = !obs ? 0 : obs.ext ? extremaRms(res.v, track.ds, obs.ext) : rmsSpeed(res.v, track.ds, obs);
   if (trapAtM != null) res.vTrapKph = trapSpeed(res.v, track.ds, trapAtM) * 3.6;
   const trap = trapKph ? ((res.vTrapKph ?? res.vMaxKph) - trapKph) / 3.6 : 0;
   const dt = res.lapTime - lapTime, r = sec ? sectorResid(res, track.ds, lapTime, sec) : null;
-  return {score: rms * rms + wTime * dt * dt + wTrap * trap * trap + (r && secFit ? r.reduce((a, x, k) => a + sec.w[k] * x * x, 0) : 0), rms, dt, trap: trap * 3.6, res, ...(r ? {sec: r} : {})};
+  return {score: rms * rms + wTime * dt * dt + wTrap * trap * trap + (r && secFit ? r.reduce((a, x, k) => a + sec.w[k] * (sec.sig ? (x / sec.sig[k]) ** 2 : x * x), 0) : 0), rms, dt, trap: trap * 3.6, res, ...(r ? {sec: r} : {})};
 }
 
 // 1-D golden-section search for the per-track grip factor (same answer for the same car, so the
@@ -153,7 +154,7 @@ export function nelderMead(f, x0, {step = 0.05, iters = 200, tol = 1e-6, relTol 
 // A lap with a fixed track factor (l.grip, e.g. shared from F1) is not given its own grip fit;
 // a lap with l.trapKph is also scored on top speed.
 // nm: extra Nelder–Mead options (relTol); step0: start step for every parameter without its own (second-start noise check)
-export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 50, log = () => {}, nm = {}, step0 = null} = {}) {
+export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wTrap = 0.5, wGrip = 50, log = () => {}, nm = {}, step0 = null} = {}) {
   const prepared = laps.map(l => {
     const env = conditionsFromWeather(l.weather || {}, l.conditionOptions);
     const lapSeconds = l.lapSeconds ?? l.trace.lap_seconds;
@@ -197,8 +198,8 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
   };
   // l.patch(car) → car for this lap (e.g. per-event BoP weight and power); no patch = season car
   const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, l.grip != null
-    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit})}
-    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}));
+    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, wTrap, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit})}
+    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, wTrap, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}));
   const x0 = params.map(() => 0);
   const result = nelderMead(objective, x0, {step: params.map(p => step0 ?? p.step ?? 0.08), iters, ...nm});
   const car = build(result.x);
@@ -211,7 +212,54 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
   // parameters on a bound (rule 3.4: a value at its bound is a finding)
   const bounds = params.flatMap(p => { const v = p.path.split('.').reduce((o, k) => o[k], car);
     return p.min != null && v <= p.min * (1 + 1e-9) ? [{key: p.key, bound: 'min', value: v}] : p.max != null && v >= p.max * (1 - 1e-9) ? [{key: p.key, bound: 'max', value: v}] : []; });
-  return {car, perTrack, score: result.value, x: result.x, iters: result.it, bounds};
+  const out = {car, perTrack, score: result.value, x: result.x, iters: result.it, bounds};
+  // step 34b joint: values of the fitted parameters, and the objective for a Hessian at the optimum (not serialised)
+  Object.defineProperty(out, 'objective', {value: objective, enumerable: false});
+  out.vals = Object.fromEntries(params.map(p => [p.key, p.path.split('.').reduce((o, k) => o[k], car)]));
+  return out;
+}
+
+// numerical Hessian of f at x in log-parameters (central differences, step h), its inverse (covariance), sd, correlation and
+// condition number (step 34b joint pre-reg §5). Returns null when H is not invertible.
+export function hessianAt(f, x, h = 0.01) {
+  const n = x.length, f0 = f(x), at = (d) => f(x.map((v, i) => v + (d[i] || 0))), H = Array.from({length: n}, () => Array(n).fill(0));
+  for (let i = 0; i < n; i++) {
+    const e = Array(n).fill(0); e[i] = h; const ep = at(e); e[i] = -h; const em = at(e);
+    H[i][i] = (ep - 2 * f0 + em) / (h * h);
+    for (let j = 0; j < i; j++) {
+      const d = (a, b) => { const v = Array(n).fill(0); v[i] = a; v[j] = b; return at(v); };
+      H[i][j] = H[j][i] = (d(h, h) - d(h, -h) - d(-h, h) + d(-h, -h)) / (4 * h * h);
+    }
+  }
+  const inv = invert(H); if (!inv) return {H, cov: null};
+  const sd = inv.map((r, i) => Math.sqrt(Math.max(0, r[i])));
+  const corr = inv.map((r, i) => r.map((v, j) => v / (sd[i] * sd[j] || NaN)));
+  const ev = jacobiEig(H), cond = Math.max(...ev.map(Math.abs)) / Math.min(...ev.map(Math.abs));
+  return {H, cov: inv, sd, corr, cond};
+}
+function invert(A) {
+  const n = A.length, M = A.map((r, i) => [...r, ...Array.from({length: n}, (_, j) => +(i === j))]);
+  for (let c = 0; c < n; c++) {
+    let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[p][c])) p = r;
+    if (Math.abs(M[p][c]) < 1e-300) return null; [M[c], M[p]] = [M[p], M[c]];
+    const d = M[c][c]; for (let k = 0; k < 2 * n; k++) M[c][k] /= d;
+    for (let r = 0; r < n; r++) if (r !== c) { const g = M[r][c]; for (let k = 0; k < 2 * n; k++) M[r][k] -= g * M[c][k]; }
+  }
+  return M.map(r => r.slice(n));
+}
+function jacobiEig(A0) {
+  const n = A0.length, A = A0.map(r => [...r]);
+  for (let sweep = 0; sweep < 100; sweep++) {
+    let off = 0; for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) if (i !== j) off += A[i][j] ** 2;
+    if (off < 1e-20) break;
+    for (let p = 0; p < n; p++) for (let q = p + 1; q < n; q++) {
+      if (Math.abs(A[p][q]) < 1e-30) continue;
+      const th = (A[q][q] - A[p][p]) / (2 * A[p][q]), t = Math.sign(th || 1) / (Math.abs(th) + Math.sqrt(th * th + 1)), c = 1 / Math.sqrt(t * t + 1), s = t * c;
+      for (let k = 0; k < n; k++) { const a = A[k][p], b = A[k][q]; A[k][p] = c * a - s * b; A[k][q] = s * a + c * b; }
+      for (let k = 0; k < n; k++) { const a = A[p][k], b = A[q][k]; A[p][k] = c * a - s * b; A[q][k] = s * a + c * b; }
+    }
+  }
+  return A.map((r, i) => r[i]);
 }
 
 // Holdout test, common to all series: refit without some tracks (folds by track name), then predict
@@ -219,7 +267,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
 // left-out lap (from another season or series); null skips that lap.
 // starts: [step, ...] (WEC held-out rule v2): each fold is fitted from every start step and keeps the start with the lowest
 // objective; `noise` = the same held-out from the best of all starts but the last (rule v2 item 2: best-of-{0.08, 0.05} vs all three).
-export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, starts = null, ...opts} = {}) {
+export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, starts = null, joint = false, ...opts} = {}) {
   const names = [...new Set(laps.map(l => l.name))].sort();
   const k = Math.min(folds, names.length), errors = [], fits = [], errors2 = [], fits2 = [];
   const rms = e => e.length ? Math.sqrt(e.reduce((a, x) => a + x.pct ** 2, 0) / e.length) : null;
@@ -235,8 +283,9 @@ export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, sta
     const test = new Set(names.filter((_, i) => i % k === f));
     const train = laps.filter(l => !test.has(l.name));
     if (new Set(train.map(l => l.name)).size < 2) continue;
-    const all = (starts || [opts.step0 ?? null]).map(s => ({step: s, ...fitSeason(train, base, params, {...opts, iters, step0: s})}));
-    const fit = best(all), row = r => ({test: [...test], iters: r.iters, bounds: r.bounds, ...(starts ? {step: r.step, scores: all.map(a => a.score)} : {})});
+    const all = (starts || [opts.step0 ?? null]).map(s => Object.assign(fitSeason(train, base, params, {...opts, iters, step0: s}), {step: s}));
+    const fit = best(all), row = r => ({test: [...test], iters: r.iters, bounds: r.bounds, ...(starts ? {step: r.step, scores: all.map(a => a.score)} : {}),
+      ...(joint ? {vals: r.vals, ...(r === fit ? {hess: hessianAt(r.objective, r.x)} : {})} : {})});
     fits.push(row(fit)); predict(fit, test, errors);
     if (starts?.length > 1) { const f2 = best(all.slice(0, -1)); fits2.push(row(f2)); predict(f2, test, errors2); }
   }
