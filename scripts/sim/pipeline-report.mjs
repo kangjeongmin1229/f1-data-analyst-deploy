@@ -14,13 +14,17 @@ const CAR_KEYS = ['muX', 'muY', 'muXTrac', 'clA', 'cdA', 'cdALow', 'pIce'];
 const r4 = x => Number.isFinite(x) ? +x.toFixed(4) : null;
 
 // shipped vs new: held-out RMS per group, the largest per-row change, and every car parameter that moved
-export function diff(shipped, cand) {
+// gates (central): old = UB ≤ 0.10 pp; honest = the 19:35 amendment for changes that put measured / rule values in (UB ≤ 0.15 pp and
+// no fitted parameter at a bound in any class/season; claude/decision-central-gate-honest-2026-11-25.md). LAPSIM_GATE picks it.
+export const GATES = {old: {name: 'old', ub: 0.10, bounds: false}, honest: {name: 'honest', ub: 0.15, bounds: true}};
+export const gateOf = (env = process.env) => GATES[env.LAPSIM_GATE] || GATES.old;
+export function diff(shipped, cand, gate = GATES.old) {
   const a = heldOut(shipped), b = heldOut(cand), rows = [];
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) if (!(k in a) || !(k in b) || Math.abs(a[k] - b[k]) > 1e-9) rows.push({row: k, shippedPct: r4(a[k]), newPct: r4(b[k])});
   const cars = [], add = (where, x, y) => { for (const k of CAR_KEYS) if (Number.isFinite(x?.[k]) && Math.abs(x[k] - (y?.[k] ?? NaN)) > 1e-9 * Math.max(1, Math.abs(x[k]))) cars.push({where, param: k, shipped: r4(x[k]), new: r4(y?.[k])}); };
   for (const [y, s] of Object.entries(shipped.seasons || {})) add(`f1 ${y}`, s.car, cand.seasons?.[y]?.car);
   for (const [cls, ys] of Object.entries(shipped.series?.wec || {})) for (const [y, s] of Object.entries(ys)) add(`wec-${cls} ${y}`, s.car, cand.series?.wec?.[cls]?.[y]?.car);
-  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b), wec: wecDetail(a, b), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
+  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b, gate.ub), wec: wecDetail(a, b, gate.ub), gate: gate.name, changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
 }
 
 // step 36: two JSON values compared, 'generated' (a date) ignored → differing paths (first 40) and their count
@@ -69,11 +73,11 @@ export function pairedHarm(a, b, limit = 0.10, rowLimit = 1.0) {
 
 // WEC per class and per track (central 2026-11-25 16:10, after step 34a's base drop): the same paired harm per class (all seasons
 // of that class) and one row per track (mean over the classes and seasons that hold it out), so a track-level term shows as one row
-export function wecDetail(a, b) {
+export function wecDetail(a, b, ub = 0.10) {
   const keys = Object.keys(a).filter(k => k.startsWith('wec') && k in b), h = k => Math.abs(b[k]) - Math.abs(a[k]);
   const byClass = {}, byTrack = {};
   for (const k of keys) { const [g, t] = k.split('|'), c = g.split('/')[0]; (byClass[c] ||= {a: {}, b: {}}); byClass[c].a[k] = a[k]; byClass[c].b[k] = b[k]; (byTrack[t] ||= []).push(h(k)); }
-  return {byClass: Object.fromEntries(Object.entries(byClass).map(([c, x]) => { const { rows, ...r } = pairedHarm(x.a, x.b).wec; return [c, r]; })),
+  return {byClass: Object.fromEntries(Object.entries(byClass).map(([c, x]) => { const { rows, ...r } = pairedHarm(x.a, x.b, ub).wec; return [c, r]; })),
     byTrack: Object.entries(byTrack).map(([t, v]) => ({track: t, n: v.length, meanHarmPp: r4(v.reduce((x, y) => x + y, 0) / v.length), maxHarmPp: r4(Math.max(...v))})).sort((x, y) => y.meanHarmPp - x.meanHarmPp)};
 }
 // fitted car parameters on a fit bound (rule 3.4: a value at its bound is a finding; central 17:18: flag ClA at bound per class), and
@@ -90,7 +94,7 @@ export function carTable(cal) {
 // WEC also needs (central 17:20): every class passing, no track row over +1.0 pp, and held-out RMS within ±0.05 pp of step 34a's
 // kernel-only WEC result (0.992 %, central decision 17:18)
 export const WEC_KERNEL_ONLY = {rmsPct: 0.992, tolPp: 0.05};
-export function shipSeries(harm, fe, wec, wecRmsPct) {
+export function shipSeries(harm, fe, wec, wecRmsPct, cars = null) {
   const out = Object.entries({...harm, ...(fe ? {fe} : {})}).map(([s, x]) => ({series: s, pass: !!x?.pass, why: x?.pass ? [] : ['series rule']}));
   const w = out.find(x => x.series === 'wec');
   if (w && wec) {
@@ -99,13 +103,16 @@ export function shipSeries(harm, fe, wec, wecRmsPct) {
     if (!(Math.abs(wecRmsPct - WEC_KERNEL_ONLY.rmsPct) <= WEC_KERNEL_ONLY.tolPp)) w.why.push(`held-out RMS ${wecRmsPct} % not within ±${WEC_KERNEL_ONLY.tolPp} pp of ${WEC_KERNEL_ONLY.rmsPct} %`);
     w.pass = !w.why.length;
   }
+  // honest gate: a fitted parameter on a bound in any class/season of the series blocks it (cars = carTable of the new calibration)
+  if (cars) for (const x of out) { const at = cars.filter(c => c.where.startsWith(x.series === 'wec' ? 'wec-' : x.series + '/') && Object.keys(c.atBound).length);
+    if (at.length) { x.why.push('at bound: ' + at.map(c => `${c.where} ${Object.entries(c.atBound).map(([k, b]) => k + ' ' + b).join('/')}`).join(', ')); x.pass = false; } }
   return out;
 }
 
 // FE (central 2026-11-25 14:27): build-fe.mjs writes one event-hidden error per row (layout × season × rule set × session) to
 // fe-fit.json; same paired harm as F1/WEC on those rows
 export const feHeldOut = fit => Object.fromEntries(fit.rows.map(r => [`fe/${r.key}/${r.layout}/${r.season}/${r.session}`, r.event]));
-export const feHarm = (shippedFit, candFit) => pairedHarm(feHeldOut(shippedFit), feHeldOut(candFit)).fe;
+export const feHarm = (shippedFit, candFit, ub = 0.10) => pairedHarm(feHeldOut(shippedFit), feHeldOut(candFit), ub).fe;
 
 const sum = f => existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')).summary ?? null : null;
 const md = r => [
@@ -126,14 +133,14 @@ const md = r => [
 const fitMd = r => [
   '## Held-out lap error (RMS %, shipped → this run)', '', '| group | n | shipped | this run |', '|---|---|---|---|',
   ...Object.entries(r.diff.heldOut).map(([g, x]) => `| ${g} | ${x.n} | ${x.base} | ${x.cand} |`), '',
-  `Ship rule (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ 0.10 pp, no row worse than +1.0 pp): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
+  `Ship rule, gate ${r.diff.gate} (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ ${(GATES[r.diff.gate] || GATES.old).ub.toFixed(2)} pp, no row worse than +1.0 pp${r.diff.gate === 'honest' ? ', no fitted parameter at a bound' : ''}): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
   ...(r.diff.wec ? ['WEC per class (paired harm, all seasons of the class):', '', '| class | n | mean pp | UB pp | worse | worst pp | rows > +1.0 pp | pass |', '|---|---|---|---|---|---|---|---|',
     ...Object.entries(r.diff.wec.byClass).map(([c, x]) => `| ${c} | ${x.n} | ${x.meanPp} | ${x.ub95Pp} | ${x.worse} | ${x.maxPp} | ${(x.overRowLimit || []).length} | ${x.pass ? 'pass' : 'FAIL'} |`), '',
     'WEC per track (mean over the class × season rows that hold it out):', '', '| track | rows | mean harm pp | max harm pp |', '|---|---|---|---|',
     ...r.diff.wec.byTrack.map(t => `| ${t.track} | ${t.n} | ${t.meanHarmPp} | ${t.maxHarmPp} |`), ''] : []),
   ...(r.cars ? ['Fitted cars (this run): μx, μy, μx/μy, ClA and every parameter on a fit bound:', '', '| car | μx | μy | μx/μy | ClA | at bound |', '|---|---|---|---|---|---|',
     ...r.cars.map(c => `| ${c.where} | ${c.muX} | ${c.muY} | ${c.muXOverMuY} | ${c.clA} | ${Object.entries(c.atBound).map(([k, b]) => `**${k} at ${b}**`).join(', ') || '–'} |`), ''] : []),
-  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm, r.diff.wec, r.diff.heldOut.wec?.cand).map(x => `${x.series} ${x.pass ? 'ships' : `**blocked (keeps the shipped calibration): ${x.why.join('; ')}**`}`).join(' · ')}.`, '',
+  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm, r.diff.wec, r.diff.heldOut.wec?.cand, r.diff.gate === 'honest' ? r.cars : null).map(x => `${x.series} ${x.pass ? 'ships' : `**blocked (keeps the shipped calibration): ${x.why.join('; ')}**`}`).join(' · ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),
@@ -155,11 +162,11 @@ if (process.argv[1]?.endsWith('pipeline-report.mjs')) {
     inputs: {tag: E.SNAPSHOT_TAG || '', sha256: E.SNAPSHOT_SHA256 || '', sums: E.SNAPSHOT_SUMS && existsSync(E.SNAPSHOT_SUMS) ? readFileSync(E.SNAPSHOT_SUMS, 'utf8') : ''},
     settings, seeds: 'fit: none (deterministic Nelder–Mead / BCD); condition-report bootstrap seed 7; gate.mjs sign-flip / bootstrap seed 1',
     fit: E.FIT_RESULT || 'local',
-    diff: existsSync(newF) ? diff(await load(shippedF), await load(newF)) : null,
+    diff: existsSync(newF) ? diff(await load(shippedF), await load(newF), gateOf(E)) : null,
     cars: existsSync(newF) ? carTable(await load(newF)) : null,
     carsShipped: carTable(await load(shippedF)),
     // FE_FIT_SHIPPED / FE_FIT_NEW: fe-fit.json before and after build-fe.mjs on this run's kernel
-    feHarm: E.FE_FIT_NEW && existsSync(E.FE_FIT_NEW) && existsSync(E.FE_FIT_SHIPPED || '') ? feHarm(JSON.parse(readFileSync(E.FE_FIT_SHIPPED, 'utf8')), JSON.parse(readFileSync(E.FE_FIT_NEW, 'utf8'))) : null,
+    feHarm: E.FE_FIT_NEW && existsSync(E.FE_FIT_NEW) && existsSync(E.FE_FIT_SHIPPED || '') ? feHarm(JSON.parse(readFileSync(E.FE_FIT_SHIPPED, 'utf8')), JSON.parse(readFileSync(E.FE_FIT_NEW, 'utf8')), gateOf(E).ub) : null,
     trackState: E.TRACK_STATE_DIFF && existsSync(E.TRACK_STATE_DIFF) ? JSON.parse(readFileSync(E.TRACK_STATE_DIFF, 'utf8')) : null,
     // SHIPPED_DIR: the committed level C / forward files, copied before the run's outputs overwrite docs/
     levelC: {shipped: sum(`${E.SHIPPED_DIR}/lapsim-level-c.json`), new: sum('docs/lapsim-level-c.json')},

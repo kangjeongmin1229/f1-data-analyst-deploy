@@ -283,6 +283,7 @@ jobs:
       - name: Report
         env:
           SHIPPED_DIR: /tmp/shipped
+          LAPSIM_GATE: honest  # combined refit: honest-parameter gate (central 19:35; docs/prereg/step27-combined-refit-2026-11-25.md)
           PIPELINE_MODE: ${{ github.event_name == 'push' && 'push check' || inputs.mode || 'production' }}
           FIT_RESULT: ${{ needs.fit.result }}
           SNAPSHOT_TAG: ${{ needs.snapshot.outputs.tag }}

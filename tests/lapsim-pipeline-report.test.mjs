@@ -79,3 +79,14 @@ test('car table: ClA and other parameters on a fit bound, μx/μy (central 2026-
   assert.deepEqual(t['wec-lmh/2026'].atBound, {});
   assert.equal(t['f1/2025'].muXOverMuY, 0.7);
 });
+
+test('honest gate (central 2026-11-25 19:35): UB ≤ 0.15 pp and no fitted parameter at a bound', async () => {
+  const {pairedHarm, shipSeries, wecDetail, carTable, GATES, gateOf} = await import('../scripts/sim/pipeline-report.mjs');
+  assert.equal(gateOf({}).ub, 0.10); assert.equal(gateOf({LAPSIM_GATE: 'honest'}).ub, 0.15);
+  const a = {'f1/2025|x': 1, 'f1/2025|y': 1, 'f1/2025|z': 1}, b = {'f1/2025|x': 1.12, 'f1/2025|y': 1.12, 'f1/2025|z': 1.12};
+  assert.equal(pairedHarm(a, b, GATES.old.ub).f1.pass, false);   // UB 0.12 fails the old gate
+  assert.equal(pairedHarm(a, b, GATES.honest.ub).f1.pass, true); // and passes 0.15
+  const cars = carTable({seasons: {2025: {car: {muX: 1.4, muY: 2, clA: 8, cdA: 1}}}, series: {}});
+  const s = shipSeries(pairedHarm(a, b, 0.15), null, null, null, cars).find(x => x.series === 'f1');
+  assert.equal(s.pass, false); assert.match(s.why.join(), /at bound: f1\/2025 clA max/);
+});
