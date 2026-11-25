@@ -458,6 +458,9 @@ export function lapsimKernel() {
           }
           // DC power the ERS-K actually supplies: whatever the ICE cannot, up to its limit
           ersUsed[i] = pErs > 0 ? Math.min(pErs, Math.max(0, fDrive * vi - pI * etaD) / (etaK * etaD)) : 0;
+          // C5.12.7 under a traction cap, as in step 2: the ERS-K falls at most at the C5.12.6 rate while above 100 kW (ICE share first)
+          const fl = ramp && pErs > 0 && pPrev > 100e3 && vi >= rampVMin(i) ? pPrev - ramp.R * ds / vi : 0;
+          if (fl >= 100e3 && fl > ersUsed[i]) { ersUsed[i] = Math.min(fl, pErs, fDrive * vi / (etaK * etaD)); harv[i] = 0; }
           // Hypercar hybrids (LMH front axle, LMDh rear axle): the BoP caps total power, so the motor
           // replaces engine power rather than adding to it; it can only drive above its deploy speed
           if (ers.rule === 'hypercar') ersUsed[i] = vi > (ers.deployFrom || 0) && below(vi, vCut) ? Math.min(ers.eMax || 0, fDrive * vi / etaD) : 0;
