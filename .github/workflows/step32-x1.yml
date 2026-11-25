@@ -16,7 +16,9 @@ jobs:
     steps:
       - id: d
         run: |
-          go() { gh workflow run lapsim-pipeline.yml -R $R --ref x1/k$1 -f mode=research -f fit=yes; sleep 40; gh run list -R $R -w lapsim-pipeline.yml -b x1/k$1 -L 1 --json databaseId -q '.[0].databaseId'; }
+          last() { gh run list -R $R -w lapsim-pipeline.yml -b x1/k$1 -L 1 --json databaseId -q '.[0].databaseId // empty'; }
+          # reuse a refit already dispatched for this branch (first publisher 45623017138 started k 0.08 and 0.16); dispatch output to stderr
+          go() { e=$(last $1); if [ -n "$e" ]; then echo $e; else gh workflow run lapsim-pipeline.yml -R $R --ref x1/k$1 -f mode=research -f fit=yes >&2; sleep 40; last $1; fi; }
           a=$(go 008); b=$(go 016); echo "k008 $a, k016 $b"; runs="008:$a 016:$b"
           for i in $(seq 1 160); do sa=$(gh run view $a -R $R --json status -q .status); sb=$(gh run view $b -R $R --json status -q .status); echo "$(date -u +%H:%M) $sa $sb"
             if [ "$sa" = completed ] || [ "$sb" = completed ]; then break; fi; sleep 120; done
