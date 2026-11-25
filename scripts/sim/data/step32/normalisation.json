@@ -1,0 +1,2699 @@
+{
+ "2023|Abu Dhabi Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.0005160843848415,
+   "McLaren": 0.9976343130501364,
+   "Mercedes": 1.0011317366316175,
+   "AlphaTauri": 1.0072304370496887,
+   "Alpine": 1.0029609808574187,
+   "Aston Martin": 1.0044958862993791,
+   "Haas F1 Team": 1.0051084868792013
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2023|Abu Dhabi Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0051084868792013,
+    "rms_kph": 5.4403550166591685
+   }
+  ],
+  "n_used": 9
+ },
+ "2023|Australian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Mercedes": 1.0035004177109441,
+   "Aston Martin": 1.0070121324619214,
+   "Ferrari": 1.0039524909254294,
+   "Haas F1 Team": 1.0009112398313214,
+   "Alpine": 1.0060366401018688,
+   "Williams": 1.007157783151843
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2023|Australian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0035004177109441,
+    "rms_kph": 5.6800337759561765
+   },
+   {
+    "lap": "2023|Australian Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0035004177109441,
+    "rms_kph": 5.827548174767694
+   },
+   {
+    "lap": "2023|Australian Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0070121324619214,
+    "rms_kph": 6.83372615248598
+   },
+   {
+    "lap": "2023|Australian Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.0039524909254294,
+    "rms_kph": 5.604531678581026
+   },
+   {
+    "lap": "2023|Australian Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.0070121324619214,
+    "rms_kph": 5.747079182854732
+   },
+   {
+    "lap": "2023|Australian Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0039524909254294,
+    "rms_kph": 5.605558642476823
+   },
+   {
+    "lap": "2023|Australian Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0009112398313214,
+    "rms_kph": 5.867921776352133
+   },
+   {
+    "lap": "2023|Australian Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0060366401018688,
+    "rms_kph": 6.695573692191078
+   }
+  ],
+  "n_used": 1
+ },
+ "2023|Austrian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Mercedes": 1.0061849127533038,
+   "Alpine": 1.012518871288105,
+   "Red Bull Racing": 1.0059155727913138
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2023|Austrian Grand Prix|PER",
+    "team": "Red Bull Racing",
+    "k": 1.0059155727913138,
+    "rms_kph": 5.386736179217013
+   }
+  ],
+  "n_used": 1
+ },
+ "2023|Azerbaijan Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 0.9993486933159652,
+   "Aston Martin": 0.9996577920744644,
+   "McLaren": 1.0135633995603301
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2023|Azerbaijan Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 0.9993486933159652,
+    "rms_kph": 5.1429623269436755
+   },
+   {
+    "lap": "2023|Azerbaijan Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 0.9996577920744644,
+    "rms_kph": 6.310666666002306
+   },
+   {
+    "lap": "2023|Azerbaijan Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 0.9996577920744644,
+    "rms_kph": 5.978758847572707
+   },
+   {
+    "lap": "2023|Azerbaijan Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0135633995603301,
+    "rms_kph": 5.247894972673292
+   }
+  ],
+  "n_used": 1
+ },
+ "2023|Bahrain Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 0.9941929072728402,
+   "Aston Martin": 1.00914400330364,
+   "Haas F1 Team": 1.0019795195858234,
+   "Alpine": 1.007338403041825
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2023|Bahrain Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 0.9941929072728402,
+    "rms_kph": 5.415135940846582
+   },
+   {
+    "lap": "2023|Bahrain Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.00914400330364,
+    "rms_kph": 5.367338248410996
+   },
+   {
+    "lap": "2023|Bahrain Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0019795195858234,
+    "rms_kph": 5.659905790282669
+   },
+   {
+    "lap": "2023|Bahrain Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.00914400330364,
+    "rms_kph": 6.279894906786365
+   },
+   {
+    "lap": "2023|Bahrain Grand Prix|OCO",
+    "team": "Alpine",
+    "k": 1.007338403041825,
+    "rms_kph": 5.654328946274048
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Hungarian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 0.9981327607132854,
+   "McLaren": 0.9986834077261487,
+   "Alfa Romeo": 1.0007685551163812,
+   "Ferrari": 1.000513535323894,
+   "Aston Martin": 1.000614227033667,
+   "Haas F1 Team": 1.002238870231637
+  },
+  "passed": 8,
+  "failed": [
+   {
+    "lap": "2023|Hungarian Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.002238870231637,
+    "rms_kph": 5.78769620705824
+   }
+  ],
+  "n_used": 10
+ },
+ "2023|Italian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.0064770353958195,
+   "Mercedes": 1.006802505474225,
+   "Williams": 1.001061108793123,
+   "McLaren": 1.0079357081206282,
+   "Aston Martin": 1.0111068150778861
+  },
+  "passed": 8,
+  "failed": [],
+  "n_used": 10
+ },
+ "2023|Japanese Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0032733311903996,
+   "Ferrari": 1.0042728201068005,
+   "Mercedes": 1.0078883648591548,
+   "AlphaTauri": 1.0094307400249143
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2023|Japanese Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0032733311903996,
+    "rms_kph": 5.280590444499579
+   },
+   {
+    "lap": "2023|Japanese Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0042728201068005,
+    "rms_kph": 5.452869923164583
+   },
+   {
+    "lap": "2023|Japanese Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0078883648591548,
+    "rms_kph": 5.155185466746428
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Las Vegas Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.0017865065635494,
+   "Mercedes": 0.9971689310714289,
+   "Alpine": 0.9999174987638664,
+   "Williams": 0.9936749622867183,
+   "Alfa Romeo": 0.999244651681252,
+   "Haas F1 Team": 1.0070237557119155,
+   "Aston Martin": 1.008849557522124
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2023|Las Vegas Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0017865065635494,
+    "rms_kph": 5.256198983438625
+   },
+   {
+    "lap": "2023|Las Vegas Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9971689310714289,
+    "rms_kph": 5.098477104386142
+   },
+   {
+    "lap": "2023|Las Vegas Grand Prix|ALB",
+    "team": "Williams",
+    "k": 0.9936749622867183,
+    "rms_kph": 6.857413486199141
+   },
+   {
+    "lap": "2023|Las Vegas Grand Prix|SAR",
+    "team": "Williams",
+    "k": 0.9936749622867183,
+    "rms_kph": 5.622934929482049
+   },
+   {
+    "lap": "2023|Las Vegas Grand Prix|BOT",
+    "team": "Alfa Romeo",
+    "k": 0.999244651681252,
+    "rms_kph": 5.024623273828599
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Mexico City Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.0038186466457397,
+   "AlphaTauri": 1.0130253691783415,
+   "Mercedes": 1.0118413703221,
+   "McLaren": 1.0105202312138728,
+   "Alfa Romeo": 1.0050215928492519
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2023|Mexico City Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0118413703221,
+    "rms_kph": 5.024838026257988
+   }
+  ],
+  "n_used": 9
+ },
+ "2023|Miami Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Aston Martin": 1.00280126575712,
+   "Ferrari": 1.009857920761094,
+   "Alpine": 1.0073921518149387,
+   "Alfa Romeo": 1.0094253572514442,
+   "Mercedes": 1.0083708542076224
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2023|Miami Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.009857920761094,
+    "rms_kph": 5.660596802423586
+   },
+   {
+    "lap": "2023|Miami Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0083708542076224,
+    "rms_kph": 6.024915376190201
+   }
+  ],
+  "n_used": 1
+ },
+ "2023|Monaco Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Aston Martin": 0.9990784471835041,
+   "Ferrari": 1.000911625911626,
+   "Alpine": 1.0042036600833486,
+   "Mercedes": 1.0054183760352968,
+   "AlphaTauri": 1.0059496391831722,
+   "McLaren": 1.0076958217661736
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2023|Monaco Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 0.9990784471835041,
+    "rms_kph": 6.414358755436986
+   },
+   {
+    "lap": "2023|Monaco Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.000911625911626,
+    "rms_kph": 5.82256103791256
+   },
+   {
+    "lap": "2023|Monaco Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.000911625911626,
+    "rms_kph": 7.235692101783759
+   },
+   {
+    "lap": "2023|Monaco Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0042036600833486,
+    "rms_kph": 5.102151993360344
+   },
+   {
+    "lap": "2023|Monaco Grand Prix|TSU",
+    "team": "AlphaTauri",
+    "k": 1.0059496391831722,
+    "rms_kph": 6.2627494713804905
+   },
+   {
+    "lap": "2023|Monaco Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0076958217661736,
+    "rms_kph": 5.915530170588731
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Qatar Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Mercedes": 1.0048228722112351,
+   "McLaren": 1.0078513571124057,
+   "Alfa Romeo": 1.011688216816422
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2023|Qatar Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0048228722112351,
+    "rms_kph": 5.091395224055548
+   },
+   {
+    "lap": "2023|Qatar Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0078513571124057,
+    "rms_kph": 5.22519771059283
+   },
+   {
+    "lap": "2023|Qatar Grand Prix|BOT",
+    "team": "Alfa Romeo",
+    "k": 1.011688216816422,
+    "rms_kph": 6.395719088874431
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Saudi Arabian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Aston Martin": 1.0099777363559386,
+   "Red Bull Racing": 0.9963785160722547,
+   "Mercedes": 1.0079418443079033,
+   "Alpine": 1.0076131818844798,
+   "McLaren": 1.0141282955443605
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2023|Saudi Arabian Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0099777363559386,
+    "rms_kph": 5.642616577354198
+   },
+   {
+    "lap": "2023|Saudi Arabian Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 0.9963785160722547,
+    "rms_kph": 5.329526214141319
+   },
+   {
+    "lap": "2023|Saudi Arabian Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.0099777363559386,
+    "rms_kph": 5.76472190138442
+   },
+   {
+    "lap": "2023|Saudi Arabian Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0141282955443605,
+    "rms_kph": 5.457105600815306
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Singapore Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Mercedes": 1.0045000069502594,
+   "McLaren": 1.000280780047621,
+   "Haas F1 Team": 1.0038413361731178,
+   "Aston Martin": 1.0077065240442442,
+   "Alpine": 1.0070283752958042,
+   "AlphaTauri": 1.013078035472294
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2023|Singapore Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0045000069502594,
+    "rms_kph": 6.509783510854049
+   },
+   {
+    "lap": "2023|Singapore Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.000280780047621,
+    "rms_kph": 5.9512172084004
+   },
+   {
+    "lap": "2023|Singapore Grand Prix|MAG",
+    "team": "Haas F1 Team",
+    "k": 1.0038413361731178,
+    "rms_kph": 5.006613551069184
+   },
+   {
+    "lap": "2023|Singapore Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0038413361731178,
+    "rms_kph": 6.393714077126816
+   },
+   {
+    "lap": "2023|Singapore Grand Prix|TSU",
+    "team": "AlphaTauri",
+    "k": 1.013078035472294,
+    "rms_kph": 5.985408233872691
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|Spanish Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.0033275050956219,
+   "McLaren": 1.007625541582117,
+   "Alpine": 1.0019820891121056,
+   "Mercedes": 1.0049721496087693,
+   "Aston Martin": 1.008839713854044,
+   "Haas F1 Team": 1.00686992881509
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2023|Spanish Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.0033275050956219,
+    "rms_kph": 5.65795323447532
+   },
+   {
+    "lap": "2023|Spanish Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.007625541582117,
+    "rms_kph": 5.462903715967567
+   },
+   {
+    "lap": "2023|Spanish Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.008839713854044,
+    "rms_kph": 5.190037034690926
+   },
+   {
+    "lap": "2023|Spanish Grand Prix|OCO",
+    "team": "Alpine",
+    "k": 1.0019820891121056,
+    "rms_kph": 5.532260068022034
+   },
+   {
+    "lap": "2023|Spanish Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.008839713854044,
+    "rms_kph": 5.270875810426837
+   }
+  ],
+  "n_used": 2
+ },
+ "2023|S\u00e3o Paulo Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 1.0062339066313575,
+   "Aston Martin": 1.0056125031190528,
+   "Ferrari": 1.0038102374373623,
+   "Mercedes": 1.0088039017209731
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2023|S\u00e3o Paulo Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0088039017209731,
+    "rms_kph": 5.2354361991038925
+   }
+  ],
+  "n_used": 9
+ },
+ "2023|United States Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "McLaren": 1.003082994203971,
+   "Mercedes": 1.0062683382235262,
+   "Red Bull Racing": 1.0081501373969524,
+   "Alpine": 1.008349367784497
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2023|United States Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.003082994203971,
+    "rms_kph": 6.092475688842706
+   },
+   {
+    "lap": "2023|United States Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0062683382235262,
+    "rms_kph": 5.22931923938978
+   },
+   {
+    "lap": "2023|United States Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0081501373969524,
+    "rms_kph": 5.749887793398367
+   },
+   {
+    "lap": "2023|United States Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0062683382235262,
+    "rms_kph": 7.591090706561173
+   },
+   {
+    "lap": "2023|United States Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.008349367784497,
+    "rms_kph": 5.285106125001895
+   },
+   {
+    "lap": "2023|United States Grand Prix|OCO",
+    "team": "Alpine",
+    "k": 1.008349367784497,
+    "rms_kph": 5.86814637121929
+   },
+   {
+    "lap": "2023|United States Grand Prix|PER",
+    "team": "Red Bull Racing",
+    "k": 1.0081501373969524,
+    "rms_kph": 5.290522016999953
+   },
+   {
+    "lap": "2023|United States Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.003082994203971,
+    "rms_kph": 6.777648698427064
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Abu Dhabi Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Ferrari": 0.9986027540637781,
+   "Haas F1 Team": 0.9968063749090291,
+   "Red Bull Racing": 0.9994053088944551,
+   "Alpine": 1.0030720111174842,
+   "Mercedes": 1.002000637302541,
+   "Aston Martin": 1.003814018414827,
+   "Kick Sauber": 1.0024326300400053
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Abu Dhabi Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.003814018414827,
+    "rms_kph": 5.315075702104272
+   },
+   {
+    "lap": "2024|Abu Dhabi Grand Prix|BOT",
+    "team": "Kick Sauber",
+    "k": 1.0024326300400053,
+    "rms_kph": 5.174016136648374
+   },
+   {
+    "lap": "2024|Abu Dhabi Grand Prix|PER",
+    "team": "Red Bull Racing",
+    "k": 0.9994053088944551,
+    "rms_kph": 5.819287425492647
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Australian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.0043581705650673,
+   "McLaren": 1.0043004068262218,
+   "Mercedes": 1.0089520348599899,
+   "Aston Martin": 1.0084902729547771,
+   "RB": 1.0088116725124272
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Australian Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.0043581705650673,
+    "rms_kph": 6.068119051923498
+   },
+   {
+    "lap": "2024|Australian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0089520348599899,
+    "rms_kph": 5.2832562233363305
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Austrian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0087707671980386,
+   "Mercedes": 1.0053024676452074,
+   "Ferrari": 1.003113596841311,
+   "Haas F1 Team": 1.002225066127071,
+   "Alpine": 1.0089854524840143
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2024|Austrian Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.003113596841311,
+    "rms_kph": 5.441237757801533
+   },
+   {
+    "lap": "2024|Austrian Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.002225066127071,
+    "rms_kph": 5.179804418885417
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Azerbaijan Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "McLaren": 1.002430775734517,
+   "Red Bull Racing": 1.0036165002825392,
+   "Mercedes": 1.0016023738872404,
+   "Aston Martin": 0.9973408675419644,
+   "Williams": 1.0076284796573878
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2024|Azerbaijan Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0016023738872404,
+    "rms_kph": 5.918424550745163
+   },
+   {
+    "lap": "2024|Azerbaijan Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0016023738872404,
+    "rms_kph": 6.435920414635587
+   },
+   {
+    "lap": "2024|Azerbaijan Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 0.9973408675419644,
+    "rms_kph": 6.462793033538894
+   },
+   {
+    "lap": "2024|Azerbaijan Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.0076284796573878,
+    "rms_kph": 6.227334498320429
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Bahrain Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.000395256916996,
+   "Mercedes": 1.0040377358490566,
+   "Aston Martin": 1.0055688492495105,
+   "Haas F1 Team": 1.0005697814720471
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2024|Bahrain Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0040377358490566,
+    "rms_kph": 5.125243334328974
+   },
+   {
+    "lap": "2024|Bahrain Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.0040377358490566,
+    "rms_kph": 6.036971734285671
+   },
+   {
+    "lap": "2024|Bahrain Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0005697814720471,
+    "rms_kph": 5.352800959586414
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Canadian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 1.0033440542890808,
+   "McLaren": 1.0055800912937212,
+   "RB": 1.00271626645337,
+   "Aston Martin": 1.001647191689783,
+   "Williams": 1.0030045260049625
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2024|Canadian Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0033440542890808,
+    "rms_kph": 5.274580291795973
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0055800912937212,
+    "rms_kph": 5.793620041773062
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0055800912937212,
+    "rms_kph": 5.311553241151359
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.001647191689783,
+    "rms_kph": 6.280280179331698
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|TSU",
+    "team": "RB",
+    "k": 1.00271626645337,
+    "rms_kph": 5.920589524264171
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.0030045260049625,
+    "rms_kph": 5.357427732448983
+   },
+   {
+    "lap": "2024|Canadian Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.001647191689783,
+    "rms_kph": 5.794275156910884
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Chinese Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Aston Martin": 0.9999851013110845,
+   "McLaren": 1.003001324401343,
+   "Ferrari": 1.0034107252698956,
+   "Mercedes": 1.004037225001771,
+   "Haas F1 Team": 0.9990553659581833,
+   "Kick Sauber": 1.0077408816873006
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Chinese Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0034107252698956,
+    "rms_kph": 5.244160856868193
+   },
+   {
+    "lap": "2024|Chinese Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.004037225001771,
+    "rms_kph": 5.047355707367346
+   },
+   {
+    "lap": "2024|Chinese Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 0.9990553659581833,
+    "rms_kph": 6.02058634290393
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Dutch Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 1.0053539431135778,
+   "Mercedes": 1.000451975387934,
+   "Ferrari": 1.0055965250402021,
+   "Aston Martin": 1.0086954996715223,
+   "Williams": 1.0141272943749267,
+   "Alpine": 1.008867835079637
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Dutch Grand Prix|PER",
+    "team": "Red Bull Racing",
+    "k": 1.0053539431135778,
+    "rms_kph": 5.878473105705262
+   },
+   {
+    "lap": "2024|Dutch Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0055965250402021,
+    "rms_kph": 5.222907952607624
+   },
+   {
+    "lap": "2024|Dutch Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.0086954996715223,
+    "rms_kph": 5.984550410220215
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Emilia Romagna Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 0.9988184747583244,
+   "Ferrari": 1.0028337290342346,
+   "Mercedes": 1.0061518652312316,
+   "RB": 1.0075227762446604
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2024|Emilia Romagna Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 0.9988184747583244,
+    "rms_kph": 5.373249443298583
+   },
+   {
+    "lap": "2024|Emilia Romagna Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0028337290342346,
+    "rms_kph": 5.250571978303909
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Hungarian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 0.9983945512040865,
+   "Ferrari": 0.9993480845189249,
+   "Mercedes": 1.0028342910389814,
+   "Aston Martin": 1.0027078155717943,
+   "RB": 1.0042835151596279
+  },
+  "passed": 7,
+  "failed": [],
+  "n_used": 9
+ },
+ "2024|Italian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Mercedes": 1.0,
+   "Ferrari": 0.9942988752982307,
+   "Red Bull Racing": 1.0008005019850965,
+   "Williams": 1.0050790804428495,
+   "Haas F1 Team": 1.0014016623614865
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Italian Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.0050790804428495,
+    "rms_kph": 5.356601151380374
+   },
+   {
+    "lap": "2024|Italian Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 1.0014016623614865,
+    "rms_kph": 5.696351560018262
+   }
+  ],
+  "n_used": 1
+ },
+ "2024|Japanese Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0033556153656835,
+   "Ferrari": 1.001621153440361,
+   "Aston Martin": 1.0008729768130802,
+   "Mercedes": 1.0047947206548415,
+   "RB": 1.0031816435873775
+  },
+  "passed": 8,
+  "failed": [],
+  "n_used": 10
+ },
+ "2024|Las Vegas Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Ferrari": 0.9937872237148089,
+   "Alpine": 0.9948831881380064,
+   "Red Bull Racing": 1.0006866185158798,
+   "McLaren": 1.0,
+   "RB": 1.0031556293510335,
+   "Haas F1 Team": 0.9969564925956567
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2024|Las Vegas Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 0.9937872237148089,
+    "rms_kph": 6.53941922339507
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9948831881380064,
+    "rms_kph": 7.149875914257008
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 0.9937872237148089,
+    "rms_kph": 7.365182485247887
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0006866185158798,
+    "rms_kph": 8.498975569289088
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0,
+    "rms_kph": 6.363492521655913
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0,
+    "rms_kph": 6.469309390015278
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|TSU",
+    "team": "RB",
+    "k": 1.0031556293510335,
+    "rms_kph": 5.185032611343794
+   },
+   {
+    "lap": "2024|Las Vegas Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 0.9969564925956567,
+    "rms_kph": 9.474939578937041
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Mexico City Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.0022126436781609,
+   "McLaren": 1.0088235294117647,
+   "Mercedes": 1.0091176939003026,
+   "Haas F1 Team": 1.0051896921975665,
+   "Alpine": 1.0063520557876202,
+   "Williams": 1.0170350673092903
+  },
+  "passed": 6,
+  "failed": [
+   {
+    "lap": "2024|Mexico City Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0088235294117647,
+    "rms_kph": 5.319924489707517
+   },
+   {
+    "lap": "2024|Mexico City Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0091176939003026,
+    "rms_kph": 5.183690575541105
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Miami Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.0030410715506048,
+   "Mercedes": 1.0009704215511217,
+   "Alpine": 0.9983631244680155,
+   "Haas F1 Team": 0.9960998170710662
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2024|Miami Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9983631244680155,
+    "rms_kph": 5.153696299844459
+   },
+   {
+    "lap": "2024|Miami Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 0.9960998170710662,
+    "rms_kph": 5.5748955421682505
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Monaco Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "McLaren": 1.0022291979436786,
+   "Mercedes": 0.9976019184652278,
+   "RB": 1.009538049082285,
+   "Alpine": 1.006235655826441
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2024|Monaco Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0022291979436786,
+    "rms_kph": 6.116380080383
+   },
+   {
+    "lap": "2024|Monaco Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9976019184652278,
+    "rms_kph": 6.206801125214946
+   },
+   {
+    "lap": "2024|Monaco Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 0.9976019184652278,
+    "rms_kph": 6.592772397784439
+   },
+   {
+    "lap": "2024|Monaco Grand Prix|TSU",
+    "team": "RB",
+    "k": 1.009538049082285,
+    "rms_kph": 6.367081287537533
+   },
+   {
+    "lap": "2024|Monaco Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.006235655826441,
+    "rms_kph": 5.10144475809136
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Qatar Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Mercedes": 0.9976948868398995,
+   "McLaren": 1.003422920892495,
+   "Ferrari": 1.0015263923893365,
+   "Aston Martin": 1.0022210743801654
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2024|Qatar Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9976948868398995,
+    "rms_kph": 5.256293001655665
+   },
+   {
+    "lap": "2024|Qatar Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 0.9976948868398995,
+    "rms_kph": 5.590082191174249
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Saudi Arabian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.0072779509372856,
+   "Aston Martin": 1.0081879716197788,
+   "McLaren": 1.0085168340682136,
+   "Mercedes": 1.005991724671024,
+   "RB": 1.0078920082324947
+  },
+  "passed": 6,
+  "failed": [
+   {
+    "lap": "2024|Saudi Arabian Grand Prix|HAM",
+    "team": "Mercedes",
+    "k": 1.005991724671024,
+    "rms_kph": 5.581102386791339
+   },
+   {
+    "lap": "2024|Saudi Arabian Grand Prix|TSU",
+    "team": "RB",
+    "k": 1.0078920082324947,
+    "rms_kph": 5.46002636304551
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Singapore Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 1.0040951402279195,
+   "Ferrari": 1.000258259372105,
+   "Mercedes": 0.999507547416121,
+   "Haas F1 Team": 0.9970368291144438,
+   "Aston Martin": 1.0025960646836918,
+   "RB": 1.0130556285914378
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2024|Singapore Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0040951402279195,
+    "rms_kph": 5.2733944502683014
+   },
+   {
+    "lap": "2024|Singapore Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.999507547416121,
+    "rms_kph": 6.310644744305115
+   },
+   {
+    "lap": "2024|Singapore Grand Prix|SAI",
+    "team": "Ferrari",
+    "k": 1.000258259372105,
+    "rms_kph": 5.535676277913759
+   },
+   {
+    "lap": "2024|Singapore Grand Prix|HUL",
+    "team": "Haas F1 Team",
+    "k": 0.9970368291144438,
+    "rms_kph": 5.414376423137753
+   },
+   {
+    "lap": "2024|Singapore Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0025960646836918,
+    "rms_kph": 6.507688325549332
+   },
+   {
+    "lap": "2024|Singapore Grand Prix|TSU",
+    "team": "RB",
+    "k": 1.0130556285914378,
+    "rms_kph": 5.608727943333087
+   }
+  ],
+  "n_used": 2
+ },
+ "2024|Spanish Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 0.999345041410598,
+   "Mercedes": 0.9951482215466186,
+   "Ferrari": 0.9973326951245018,
+   "Alpine": 1.0022008226122994
+  },
+  "passed": 8,
+  "failed": [],
+  "n_used": 9
+ },
+ "2024|United States Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Aston Martin": 1.0070289378493917,
+   "RB": 1.001401718003091
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2024|United States Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0070289378493917,
+    "rms_kph": 5.431303213003446
+   },
+   {
+    "lap": "2024|United States Grand Prix|LAW",
+    "team": "RB",
+    "k": 1.001401718003091,
+    "rms_kph": 7.112034134159175
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Abu Dhabi Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0046407204732408,
+   "Mercedes": 1.0027128677691186,
+   "Ferrari": 1.0049088545168963,
+   "Aston Martin": 1.0038883511675014,
+   "Haas F1 Team": 1.0085357831740915
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2025|Abu Dhabi Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0038883511675014,
+    "rms_kph": 5.496146194931579
+   },
+   {
+    "lap": "2025|Abu Dhabi Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 1.0027128677691186,
+    "rms_kph": 14.34769625919861
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Australian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 0.9990303386817427,
+   "Mercedes": 0.99882472251971,
+   "Racing Bulls": 1.0043729642963188,
+   "Williams": 1.0010413179307138,
+   "Ferrari": 1.0020342369129192,
+   "Alpine": 1.0049964076067406
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2025|Australian Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.0010413179307138,
+    "rms_kph": 5.261757245804197
+   }
+  ],
+  "n_used": 9
+ },
+ "2025|Austrian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Ferrari": 1.0022735646628553,
+   "Mercedes": 1.0046937354603536,
+   "Red Bull Racing": 1.0060523940374897,
+   "Kick Sauber": 1.00306807947883,
+   "Alpine": 1.004678153328137,
+   "Racing Bulls": 1.010232685076551
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2025|Austrian Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0022735646628553,
+    "rms_kph": 5.1161614428229685
+   },
+   {
+    "lap": "2025|Austrian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0046937354603536,
+    "rms_kph": 5.459791050892844
+   },
+   {
+    "lap": "2025|Austrian Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0060523940374897,
+    "rms_kph": 5.045504982043389
+   },
+   {
+    "lap": "2025|Austrian Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.004678153328137,
+    "rms_kph": 5.6381007052042325
+   },
+   {
+    "lap": "2025|Austrian Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 1.0046937354603536,
+    "rms_kph": 7.320737373604256
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Azerbaijan Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 0.9986585184081086,
+   "Ferrari": 0.9976171564733916,
+   "Racing Bulls": 1.002775739399547,
+   "Williams": 1.0094043887147335
+  },
+  "passed": 5,
+  "failed": [],
+  "n_used": 7
+ },
+ "2025|Bahrain Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0
+  },
+  "passed": 0,
+  "failed": [],
+  "n_used": 1
+ },
+ "2025|Belgian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Ferrari": 0.9967754937525191,
+   "Red Bull Racing": 1.0037561945645654,
+   "Williams": 1.0050387877909084,
+   "Mercedes": 0.9954029491849075,
+   "Racing Bulls": 1.0036581098705346,
+   "Kick Sauber": 1.0000986485153398
+  },
+  "passed": 6,
+  "failed": [
+   {
+    "lap": "2025|Belgian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9954029491849075,
+    "rms_kph": 6.121205315255438
+   },
+   {
+    "lap": "2025|Belgian Grand Prix|BOR",
+    "team": "Kick Sauber",
+    "k": 1.0000986485153398,
+    "rms_kph": 5.436013693010378
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|British Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0086872240370464,
+   "Mercedes": 1.0068892421833597,
+   "Ferrari": 1.0061846467737823,
+   "Haas F1 Team": 1.0149335877302414,
+   "Aston Martin": 1.0091538128874151,
+   "Alpine": 1.0110076806002903
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2025|British Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0086872240370464,
+    "rms_kph": 5.53382142656326
+   },
+   {
+    "lap": "2025|British Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0091538128874151,
+    "rms_kph": 5.16855348001181
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Canadian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 0.9996443913868236,
+   "McLaren": 1.0035083113740308,
+   "Ferrari": 1.0042083172049465,
+   "Aston Martin": 1.0076621778622346,
+   "Racing Bulls": 1.0070546745966378,
+   "Williams": 1.006646418766892
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2025|Canadian Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0035083113740308,
+    "rms_kph": 6.592994772756818
+   },
+   {
+    "lap": "2025|Canadian Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0042083172049465,
+    "rms_kph": 5.865833622114463
+   },
+   {
+    "lap": "2025|Canadian Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0035083113740308,
+    "rms_kph": 5.965466753394455
+   },
+   {
+    "lap": "2025|Canadian Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.006646418766892,
+    "rms_kph": 6.042119276866696
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Chinese Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Mercedes": 0.9955643061038406,
+   "Red Bull Racing": 0.9989623292375465,
+   "Ferrari": 0.9968468473737276,
+   "Racing Bulls": 1.003389289468052
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2025|Chinese Grand Prix|HAD",
+    "team": "Racing Bulls",
+    "k": 1.003389289468052,
+    "rms_kph": 5.441558781594832
+   },
+   {
+    "lap": "2025|Chinese Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 0.9955643061038406,
+    "rms_kph": 5.407042636739052
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Dutch Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 0.999480031676671,
+   "Racing Bulls": 1.008008496382438,
+   "Mercedes": 1.009385344478553,
+   "Ferrari": 1.007772455535418,
+   "Aston Martin": 1.0052047499389407,
+   "Williams": 1.0088467927924154
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2025|Dutch Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 0.999480031676671,
+    "rms_kph": 5.509678613697472
+   },
+   {
+    "lap": "2025|Dutch Grand Prix|HAD",
+    "team": "Racing Bulls",
+    "k": 1.008008496382438,
+    "rms_kph": 5.41783132786909
+   },
+   {
+    "lap": "2025|Dutch Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.007772455535418,
+    "rms_kph": 5.507446787133719
+   },
+   {
+    "lap": "2025|Dutch Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0052047499389407,
+    "rms_kph": 6.468907864314213
+   },
+   {
+    "lap": "2025|Dutch Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 1.008008496382438,
+    "rms_kph": 6.150482519466649
+   },
+   {
+    "lap": "2025|Dutch Grand Prix|SAI",
+    "team": "Williams",
+    "k": 1.0088467927924154,
+    "rms_kph": 5.6397500564006835
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Emilia Romagna Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Mercedes": 0.9989274812309216,
+   "McLaren": 1.0024218249163046,
+   "Williams": 1.0060666666666667,
+   "Aston Martin": 1.0071094280304382,
+   "Alpine": 1.0034170571036036,
+   "Racing Bulls": 1.0064981249191776
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2025|Emilia Romagna Grand Prix|SAI",
+    "team": "Williams",
+    "k": 1.0060666666666667,
+    "rms_kph": 5.37511554540685
+   },
+   {
+    "lap": "2025|Emilia Romagna Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0071094280304382,
+    "rms_kph": 5.9433818884997764
+   },
+   {
+    "lap": "2025|Emilia Romagna Grand Prix|STR",
+    "team": "Aston Martin",
+    "k": 1.0071094280304382,
+    "rms_kph": 6.124107974870995
+   },
+   {
+    "lap": "2025|Emilia Romagna Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0034170571036036,
+    "rms_kph": 5.63631588842216
+   },
+   {
+    "lap": "2025|Emilia Romagna Grand Prix|HAD",
+    "team": "Racing Bulls",
+    "k": 1.0064981249191776,
+    "rms_kph": 5.488720105653231
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Hungarian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Aston Martin": 1.0044615941155193,
+   "Mercedes": 1.002818602778337,
+   "Ferrari": 1.0030487804878048,
+   "Racing Bulls": 1.0084621747152764,
+   "Red Bull Racing": 1.0025623505295524,
+   "Kick Sauber": 1.005192953874351
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2025|Hungarian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.002818602778337,
+    "rms_kph": 6.106528614369021
+   },
+   {
+    "lap": "2025|Hungarian Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0044615941155193,
+    "rms_kph": 5.104839018757896
+   },
+   {
+    "lap": "2025|Hungarian Grand Prix|HAD",
+    "team": "Racing Bulls",
+    "k": 1.0084621747152764,
+    "rms_kph": 5.259798454248275
+   },
+   {
+    "lap": "2025|Hungarian Grand Prix|BOR",
+    "team": "Kick Sauber",
+    "k": 1.005192953874351,
+    "rms_kph": 5.194780269525023
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Italian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0037125926256425,
+   "Mercedes": 1.0044468652594984,
+   "Kick Sauber": 0.996450044058259,
+   "Aston Martin": 1.006971529700826
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2025|Italian Grand Prix|BOR",
+    "team": "Kick Sauber",
+    "k": 0.996450044058259,
+    "rms_kph": 5.133913269272012
+   }
+  ],
+  "n_used": 6
+ },
+ "2025|Japanese Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0,
+   "Mercedes": 1.0035392798126375,
+   "Racing Bulls": 1.0031171384620057,
+   "Ferrari": 1.0033670033670035,
+   "Williams": 1.002660961579202,
+   "Haas F1 Team": 1.0077010972107252
+  },
+  "passed": 6,
+  "failed": [
+   {
+    "lap": "2025|Japanese Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 1.0035392798126375,
+    "rms_kph": 5.299302305291527
+   }
+  ],
+  "n_used": 7
+ },
+ "2025|Mexico City Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0
+  },
+  "passed": 0,
+  "failed": [],
+  "n_used": 1
+ },
+ "2025|Miami Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 1.0013526358119471,
+   "Mercedes": 0.9949688621652298,
+   "Williams": 0.9984896161107615,
+   "Ferrari": 0.9993107963747889,
+   "Haas F1 Team": 1.0052357662402809
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2025|Miami Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0013526358119471,
+    "rms_kph": 5.876960291376956
+   },
+   {
+    "lap": "2025|Miami Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 0.9949688621652298,
+    "rms_kph": 5.139833390955546
+   },
+   {
+    "lap": "2025|Miami Grand Prix|SAI",
+    "team": "Williams",
+    "k": 0.9984896161107615,
+    "rms_kph": 5.199053715018692
+   },
+   {
+    "lap": "2025|Miami Grand Prix|ALB",
+    "team": "Williams",
+    "k": 0.9984896161107615,
+    "rms_kph": 7.014216881611886
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Monaco Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Ferrari": 1.000045081597692,
+   "Red Bull Racing": 1.0085050372095379,
+   "Williams": 1.0078233025252894,
+   "Racing Bulls": 1.0096845962570344,
+   "Aston Martin": 1.0082609314912407,
+   "Haas F1 Team": 1.0018996960486324
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2025|Monaco Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.000045081597692,
+    "rms_kph": 5.585408029136552
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.000045081597692,
+    "rms_kph": 6.2032026031891
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0085050372095379,
+    "rms_kph": 5.973691587002161
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|ALB",
+    "team": "Williams",
+    "k": 1.0078233025252894,
+    "rms_kph": 6.549197207869514
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|HAD",
+    "team": "Racing Bulls",
+    "k": 1.0096845962570344,
+    "rms_kph": 6.4832173584804895
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0082609314912407,
+    "rms_kph": 6.789580231215521
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|OCO",
+    "team": "Haas F1 Team",
+    "k": 1.0018996960486324,
+    "rms_kph": 6.50152319088088
+   },
+   {
+    "lap": "2025|Monaco Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 1.0096845962570344,
+    "rms_kph": 6.108934901294085
+   }
+  ],
+  "n_used": 2
+ },
+ "2025|Qatar Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Red Bull Racing": 1.005985552115583,
+   "Mercedes": 1.0019841269841272,
+   "Racing Bulls": 1.0095905293522647,
+   "Aston Martin": 1.012737957000598,
+   "Williams": 1.0079250720461095,
+   "Alpine": 1.0093364869911614,
+   "Ferrari": 1.006634537147149
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2025|Qatar Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 1.0019841269841272,
+    "rms_kph": 5.302197818685434
+   }
+  ],
+  "n_used": 9
+ },
+ "2025|Saudi Arabian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 0.9999351753605912,
+   "Ferrari": 0.9980243447777118
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2025|Saudi Arabian Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 0.9999351753605912,
+    "rms_kph": 6.005311921654628
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Singapore Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "McLaren": 1.0059483062448142,
+   "Ferrari": 1.0056041381725724,
+   "Haas F1 Team": 1.007440948174343,
+   "Aston Martin": 1.0084770910192375
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2025|Singapore Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0059483062448142,
+    "rms_kph": 6.847199929805285
+   },
+   {
+    "lap": "2025|Singapore Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0056041381725724,
+    "rms_kph": 7.8240846617137025
+   },
+   {
+    "lap": "2025|Singapore Grand Prix|BEA",
+    "team": "Haas F1 Team",
+    "k": 1.007440948174343,
+    "rms_kph": 6.406456512155504
+   },
+   {
+    "lap": "2025|Singapore Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0084770910192375,
+    "rms_kph": 7.043017587215711
+   }
+  ],
+  "n_used": 1
+ },
+ "2025|Spanish Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Mercedes": 1.0052124675948995,
+   "Red Bull Racing": 1.0032709885065838,
+   "Ferrari": 1.0040241335816087,
+   "Alpine": 1.0090655022470068,
+   "Racing Bulls": 1.0129745042349034
+  },
+  "passed": 5,
+  "failed": [
+   {
+    "lap": "2025|Spanish Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0040241335816087,
+    "rms_kph": 5.414914937935563
+   }
+  ],
+  "n_used": 7
+ },
+ "2025|S\u00e3o Paulo Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Mercedes": 1.0035889247009209,
+   "Haas F1 Team": 1.0072699627540302,
+   "Ferrari": 1.001192895945365,
+   "Alpine": 1.0076205561811382,
+   "Racing Bulls": 1.0040778909153278,
+   "Kick Sauber": 1.006248749730711
+  },
+  "passed": 7,
+  "failed": [
+   {
+    "lap": "2025|S\u00e3o Paulo Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0035889247009209,
+    "rms_kph": 5.8311289227671255
+   }
+  ],
+  "n_used": 9
+ },
+ "2025|United States Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "McLaren": 0.9997805413313826,
+   "Ferrari": 0.9998764936548614,
+   "Mercedes": 1.0013401232913428,
+   "Haas F1 Team": 1.003157093952073,
+   "Aston Martin": 1.0008106012546698
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2025|United States Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 0.9997805413313826,
+    "rms_kph": 5.056616399475675
+   },
+   {
+    "lap": "2025|United States Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 0.9998764936548614,
+    "rms_kph": 5.253580369543987
+   },
+   {
+    "lap": "2025|United States Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 0.9998764936548614,
+    "rms_kph": 6.569957922425461
+   },
+   {
+    "lap": "2025|United States Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 0.9997805413313826,
+    "rms_kph": 5.217452349997185
+   },
+   {
+    "lap": "2025|United States Grand Prix|BEA",
+    "team": "Haas F1 Team",
+    "k": 1.003157093952073,
+    "rms_kph": 5.863485544630772
+   },
+   {
+    "lap": "2025|United States Grand Prix|ALO",
+    "team": "Aston Martin",
+    "k": 1.0008106012546698,
+    "rms_kph": 6.131437692394308
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Austrian Grand Prix": {
+  "choice": "normalised",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 1.0025345874726006
+  },
+  "passed": 1,
+  "failed": [],
+  "n_used": 2
+ },
+ "2026|Azerbaijan Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Ferrari": 1.0129032258064516,
+   "McLaren": 1.0127007299270074,
+   "Red Bull Racing": 1.016803102111159,
+   "Alpine": 1.0185758513931888,
+   "Williams": 1.0140960011870317
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Azerbaijan Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0129032258064516,
+    "rms_kph": 6.730048592110013
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0127007299270074,
+    "rms_kph": 7.615982830916674
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.016803102111159,
+    "rms_kph": 6.778691205824899
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0129032258064516,
+    "rms_kph": 6.481456001126084
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0185758513931888,
+    "rms_kph": 8.24282797586173
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|SAI",
+    "team": "Williams",
+    "k": 1.0140960011870317,
+    "rms_kph": 7.178162501633271
+   },
+   {
+    "lap": "2026|Azerbaijan Grand Prix|COL",
+    "team": "Alpine",
+    "k": 1.0185758513931888,
+    "rms_kph": 7.937494915543728
+   }
+  ],
+  "n_used": 1
+ },
+ "2026|Belgian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Ferrari": 0.9994697773064687,
+   "Red Bull Racing": 1.0084953613194472
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Belgian Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 0.9994697773064687,
+    "rms_kph": 7.045564787859682
+   },
+   {
+    "lap": "2026|Belgian Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.0084953613194472,
+    "rms_kph": 6.195872310351352
+   }
+  ],
+  "n_used": 1
+ },
+ "2026|British Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Ferrari": 1.0052757793764988,
+   "Red Bull Racing": 1.0043395427603727,
+   "McLaren": 1.0058111380145276,
+   "Racing Bulls": 1.0071526351813826
+  },
+  "passed": 4,
+  "failed": [
+   {
+    "lap": "2026|British Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0043395427603727,
+    "rms_kph": 5.311523398765013
+   },
+   {
+    "lap": "2026|British Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0058111380145276,
+    "rms_kph": 5.121127017818179
+   },
+   {
+    "lap": "2026|British Grand Prix|LIN",
+    "team": "Racing Bulls",
+    "k": 1.0071526351813826,
+    "rms_kph": 5.753899600315884
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Chinese Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Ferrari": 1.0069160086404727,
+   "Alpine": 0.9989982593443594,
+   "Red Bull Racing": 1.003116554054054
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Chinese Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.0069160086404727,
+    "rms_kph": 11.537210611905685
+   },
+   {
+    "lap": "2026|Chinese Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0069160086404727,
+    "rms_kph": 10.738744320957581
+   },
+   {
+    "lap": "2026|Chinese Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9989982593443594,
+    "rms_kph": 8.257313349109694
+   },
+   {
+    "lap": "2026|Chinese Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.003116554054054,
+    "rms_kph": 11.69301564860464
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Hungarian Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "McLaren": 1.0051998571031635,
+   "Red Bull Racing": 1.0029801324503311,
+   "Mercedes": 1.0015814240530743,
+   "Racing Bulls": 1.009287561721138,
+   "Audi": 1.0116956647518287
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Hungarian Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0051998571031635,
+    "rms_kph": 5.438150326355869
+   },
+   {
+    "lap": "2026|Hungarian Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0029801324503311,
+    "rms_kph": 5.547111338578057
+   },
+   {
+    "lap": "2026|Hungarian Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0015814240530743,
+    "rms_kph": 5.947077496224719
+   },
+   {
+    "lap": "2026|Hungarian Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.0029801324503311,
+    "rms_kph": 5.98234642831563
+   },
+   {
+    "lap": "2026|Hungarian Grand Prix|LIN",
+    "team": "Racing Bulls",
+    "k": 1.009287561721138,
+    "rms_kph": 5.538047199978545
+   },
+   {
+    "lap": "2026|Hungarian Grand Prix|HUL",
+    "team": "Audi",
+    "k": 1.0116956647518287,
+    "rms_kph": 5.833884953017693
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Japanese Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Alpine": 1.0023870164954363
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Japanese Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0023870164954363,
+    "rms_kph": 7.119667918926244
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Mexico City Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Mercedes": 0.9969084913437758,
+   "Red Bull Racing": 0.9971428571428571,
+   "McLaren": 0.9995656831803573,
+   "Racing Bulls": 0.9995643869584158,
+   "Alpine": 0.9995142857142857
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2026|Mexico City Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 0.9971428571428571,
+    "rms_kph": 5.036317428372527
+   },
+   {
+    "lap": "2026|Mexico City Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 0.9971428571428571,
+    "rms_kph": 5.756385873397215
+   },
+   {
+    "lap": "2026|Mexico City Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 0.9995643869584158,
+    "rms_kph": 5.283890859300561
+   },
+   {
+    "lap": "2026|Mexico City Grand Prix|LIN",
+    "team": "Racing Bulls",
+    "k": 0.9995643869584158,
+    "rms_kph": 5.122449400141713
+   },
+   {
+    "lap": "2026|Mexico City Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9995142857142857,
+    "rms_kph": 5.721404738754728
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Miami Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 1.0056785045581509,
+   "Ferrari": 1.0067191844300276,
+   "McLaren": 1.0109763313609468,
+   "Alpine": 1.0037973565688383
+  },
+  "passed": 2,
+  "failed": [
+   {
+    "lap": "2026|Miami Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.0056785045581509,
+    "rms_kph": 7.676461908837843
+   },
+   {
+    "lap": "2026|Miami Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 1.0067191844300276,
+    "rms_kph": 6.111535594589744
+   },
+   {
+    "lap": "2026|Miami Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0109763313609468,
+    "rms_kph": 6.39540811729084
+   },
+   {
+    "lap": "2026|Miami Grand Prix|COL",
+    "team": "Alpine",
+    "k": 1.0037973565688383,
+    "rms_kph": 7.296897954725104
+   },
+   {
+    "lap": "2026|Miami Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.0056785045581509,
+    "rms_kph": 7.278689548102064
+   },
+   {
+    "lap": "2026|Miami Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0037973565688383,
+    "rms_kph": 7.145898634410591
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Monaco Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "Red Bull Racing": 1.002124067316595,
+   "Ferrari": 1.0040240705873666,
+   "McLaren": 1.0031632699173032,
+   "Alpine": 1.0027157513578755,
+   "Racing Bulls": 1.0057447511985451
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2026|Monaco Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.002124067316595,
+    "rms_kph": 6.304948152992017
+   },
+   {
+    "lap": "2026|Monaco Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 1.0027157513578755,
+    "rms_kph": 5.350143569734289
+   },
+   {
+    "lap": "2026|Monaco Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 1.0057447511985451,
+    "rms_kph": 5.724509996188903
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Singapore Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Mercedes": 0.9985375320893928,
+   "McLaren": 1.0037835161984114,
+   "Alpine": 0.9991283387035066,
+   "Racing Bulls": 1.0012069271176962
+  },
+  "passed": 1,
+  "failed": [
+   {
+    "lap": "2026|Singapore Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 0.9985375320893928,
+    "rms_kph": 5.647319170044021
+   },
+   {
+    "lap": "2026|Singapore Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9985375320893928,
+    "rms_kph": 7.392449841326317
+   },
+   {
+    "lap": "2026|Singapore Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9991283387035066,
+    "rms_kph": 14.29521410323219
+   },
+   {
+    "lap": "2026|Singapore Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 1.0012069271176962,
+    "rms_kph": 5.684390436734254
+   },
+   {
+    "lap": "2026|Singapore Grand Prix|LIN",
+    "team": "Racing Bulls",
+    "k": 1.0012069271176962,
+    "rms_kph": 5.27390523710742
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Barcelona Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 1.003647754983195,
+   "McLaren": 1.0054549562095858,
+   "Racing Bulls": 1.0089834732228518
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Barcelona Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 1.003647754983195,
+    "rms_kph": 6.616315014605969
+   },
+   {
+    "lap": "2026|Barcelona Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 1.003647754983195,
+    "rms_kph": 5.919743904626526
+   },
+   {
+    "lap": "2026|Barcelona Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0054549562095858,
+    "rms_kph": 5.54634475446138
+   },
+   {
+    "lap": "2026|Barcelona Grand Prix|LAW",
+    "team": "Racing Bulls",
+    "k": 1.0089834732228518,
+    "rms_kph": 7.303715650953434
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|United States Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Red Bull Racing",
+  "k_team": {
+   "Red Bull Racing": 1.0,
+   "Ferrari": 1.011195452497314,
+   "McLaren": 1.0052904378909742,
+   "Racing Bulls": 1.0063830437039978
+  },
+  "passed": 3,
+  "failed": [
+   {
+    "lap": "2026|United States Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 1.011195452497314,
+    "rms_kph": 5.656342029361756
+   },
+   {
+    "lap": "2026|United States Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0052904378909742,
+    "rms_kph": 5.26613844908549
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Bahrain Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Ferrari",
+  "k_team": {
+   "Ferrari": 1.0,
+   "Red Bull Racing": 0.988566466459223,
+   "McLaren": 1.001512009676862,
+   "Mercedes": 0.9974199232269838,
+   "Alpine": 0.9967321517819383,
+   "Audi": 1.006993006993007
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Bahrain Grand Prix|HAD",
+    "team": "Red Bull Racing",
+    "k": 0.988566466459223,
+    "rms_kph": 6.645279885194153
+   },
+   {
+    "lap": "2026|Bahrain Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.001512009676862,
+    "rms_kph": 5.778340715143696
+   },
+   {
+    "lap": "2026|Bahrain Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.001512009676862,
+    "rms_kph": 6.970183225896805
+   },
+   {
+    "lap": "2026|Bahrain Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 0.9974199232269838,
+    "rms_kph": 5.750890752396906
+   },
+   {
+    "lap": "2026|Bahrain Grand Prix|GAS",
+    "team": "Alpine",
+    "k": 0.9967321517819383,
+    "rms_kph": 9.244205230116329
+   },
+   {
+    "lap": "2026|Bahrain Grand Prix|BOR",
+    "team": "Audi",
+    "k": 1.006993006993007,
+    "rms_kph": 8.002217362405682
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Las Vegas Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "Mercedes",
+  "k_team": {
+   "Mercedes": 1.0,
+   "McLaren": 1.0217443458840656
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Las Vegas Grand Prix|NOR",
+    "team": "McLaren",
+    "k": 1.0217443458840656,
+    "rms_kph": 10.170098503722015
+   },
+   {
+    "lap": "2026|Las Vegas Grand Prix|PIA",
+    "team": "McLaren",
+    "k": 1.0217443458840656,
+    "rms_kph": 10.359172433957752
+   }
+  ],
+  "n_used": 2
+ },
+ "2026|Spanish Grand Prix": {
+  "choice": "pole team only",
+  "pole_team": "McLaren",
+  "k_team": {
+   "McLaren": 1.0,
+   "Mercedes": 1.0021951924075396,
+   "Red Bull Racing": 0.9957707269173949,
+   "Ferrari": 0.9998814488097747,
+   "Alpine": 1.0074889167158543,
+   "Racing Bulls": 1.0053026592396543
+  },
+  "passed": 0,
+  "failed": [
+   {
+    "lap": "2026|Spanish Grand Prix|ANT",
+    "team": "Mercedes",
+    "k": 1.0021951924075396,
+    "rms_kph": 5.993463086526102
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|VER",
+    "team": "Red Bull Racing",
+    "k": 0.9957707269173949,
+    "rms_kph": 6.612830593268976
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|HAM",
+    "team": "Ferrari",
+    "k": 0.9998814488097747,
+    "rms_kph": 5.818294222685336
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|LEC",
+    "team": "Ferrari",
+    "k": 0.9998814488097747,
+    "rms_kph": 6.16541836848227
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|RUS",
+    "team": "Mercedes",
+    "k": 1.0021951924075396,
+    "rms_kph": 6.01506404175701
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|LAW",
+    "team": "Red Bull Racing",
+    "k": 0.9957707269173949,
+    "rms_kph": 8.021619207737539
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|COL",
+    "team": "Alpine",
+    "k": 1.0074889167158543,
+    "rms_kph": 6.608766870192188
+   },
+   {
+    "lap": "2026|Spanish Grand Prix|LIN",
+    "team": "Racing Bulls",
+    "k": 1.0053026592396543,
+    "rms_kph": 7.251062816240105
+   }
+  ],
+  "n_used": 2
+ }
+}

@@ -1,6 +1,7 @@
 # Step 32 A3.1 (docs/prereg/step32-empirical-ggv-A2A3-2026-11-25.md): top-10 drivers' fastest clean quali laps per session from
 # TracingInsights at pinned commits, on the sim grid; drop rules of step 28 (f1-envelope-baseline.py one(), copied) applied per session
 # and per lap; every dropped row listed. Measured data is only read: values are resampled onto the grid in memory, never edited.
+# A6: + the pole team's second car (any rank); each lap keeps its team.
 # usage: python3 -I scripts/sim/learn/step32_top10.py <repo root> <out traces-top10.json> <out drops.json>
 import csv, json, os, sys, subprocess, hashlib, numpy as np, requests
 from concurrent.futures import ThreadPoolExecutor
@@ -53,11 +54,13 @@ def session(e):
         if not np.isfinite(t[i]): continue
         if lt.get('del') and lt['del'][i] is True: continue  # deleted lap: not clean (A3.1 "clean")
         if d not in best or t[i] < t[best[d]]: best[d] = i
-    rank = sorted(best.values(), key=lambda i: t[i])[:TOP]
+    order = sorted(best.values(), key=lambda i: t[i]); rank = order[:TOP]
+    pole_team = lt['team'][order[0]]  # A6: the pole team's second car is added even outside the top 10
+    rank += [i for i in order[TOP:] if lt['team'][i] == pole_team]
     sim = SIM[key]; ds = sim['ds']; vs = np.array(sim['v']); n = len(vs); L = n * ds; grid = np.arange(n) * ds
     laps = []
-    for r_, i in enumerate(rank):
-        tag = {'session': key, 'drv': lt['drv'][i], 'lap': lt['lap'][i], 'rank': r_ + 1}
+    for i in rank:
+        r_ = order.index(i); tag = {'session': key, 'drv': lt['drv'][i], 'lap': lt['lap'][i], 'rank': r_ + 1, 'team': lt['team'][i]}
         comp = lt['compound'][i]
         if comp not in SLICK: drops.append({**tag, 'drop': f'compound {comp}'}); continue
         tel = get(y, name, 'Qualifying', lt['drv'][i], f"{lt['lap'][i]}_tel.json")
@@ -75,7 +78,7 @@ def session(e):
             win = a[np.arange(k - w, k + w + 1) % n]
             if a[k] == np.nanmin(win) and np.nanmax(win) - a[k] >= PROM_KPH and not (segs and k - segs[-1] < w): segs.append(k)
         st_i = [int((segs[j - 1] + np.nanargmax(a[np.arange(segs[j - 1], segs[j] + (n if segs[j] <= segs[j - 1] else 0)) % n])) % n) for j in range(len(segs))] if len(segs) > 1 else []
-        laps.append({'year': y, 'event': name, 'track': tid, 'session': key, 'drv': lt['drv'][i], 'lap_no': lt['lap'][i], 'rank': r_ + 1,
+        laps.append({'year': y, 'event': name, 'track': tid, 'session': key, 'drv': lt['drv'][i], 'lap_no': lt['lap'][i], 'rank': r_ + 1, 'team': lt['team'][i], 'pole_team': pole_team,
                      'lap_meas_s': float(t[i]), 'n': n, 'ds': ds, 'shift': int(round(lag / ds)), 'w': w, 'corr': round(float(corr), 3),
                      'a': [None if not np.isfinite(x) else round(float(x), 2) for x in a], 'corners': [[k, round(float(a[k]), 1)] for k in segs],
                      'straights': st_i, 'zones': sim['zones']})
