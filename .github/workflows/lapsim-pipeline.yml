@@ -9,7 +9,9 @@ name: Lap simulator pipeline (pinned inputs → fit → report)
 # - push to lapsim-pipeline/** (any repo): only the short jobs (snapshot check, track-state check on an existing pin, tests, Δ benchmarks
 #   on the committed calibration, report), minutes not hours. The 3 h fit and the long snapshot builds (TI / fia.com fetch) run only
 #   on workflow_dispatch or a release (central 2026-11-24).
-# - mode research (dispatch on the fork): the same jobs for steps 22 / 28; the report is labelled research. Production snapshots and
+# - mode research (dispatch on the fork): the same jobs for steps 22 / 28; the report is labelled research.
+# - push to lapsim-pipeline/step32-* (fork): step 32 research jobs (check → 24 + 16 folds → verdict; docs/prereg/step32-empirical-ggv-*.md);
+#   committed, hashed inputs; numbers are research numbers of this run id, never production. Production snapshots and
 #   production numbers come only from upstream (production mode or a release).
 on:
   workflow_dispatch:
@@ -219,3 +221,88 @@ jobs:
           if [ -d fit ]; then tar czf "calibration-output-$id.tgz" -C fit . ; set -- "calibration-output-$id.tgz"; else set --; fi
           gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" "$@" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+
+  # ---- step 32 (research, fork push to lapsim-pipeline/step32-*): empirical g-g-v tables, LOTO, physics guards ----------------------
+  step32-check:
+    if: github.event_name == 'push' && startsWith(github.ref_name, 'lapsim-pipeline/step32')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env: {STEP32_BASE: '69c7385'}  # base of the series-isolation manifest (A4.1; moves with the one-line kernel-fix amendment)
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy requests
+      - name: Measured inputs byte-identical (A2.0, before)
+        run: node --test tests/step32-measured-readonly.test.mjs tests/step32-locked2022.test.mjs | tee measured-before.txt
+      - name: Flag off = byte-identical A2 baseline on 69c7385 (A8)
+        run: node scripts/sim/learn/step31-baseline.mjs /tmp/a2.json && echo "8c158b353b16250437e2572cdf38b007f047d2805b10e349e18bde517bd2d46a  /tmp/a2.json" | sha256sum --check
+      - name: Driven-line κ, aero states and A6 normalisation (A7 inputs; no table pre-check)
+        run: |
+          D=scripts/sim/data/step32; mkdir -p out
+          node scripts/sim/learn/step32-loto.mjs kappa out/kappa.json && cmp out/kappa.json $D/kappa.json
+          python -I scripts/sim/learn/step32_samples.py $D/traces-top10.json $D/kappa.json /tmp/samples.json out/normalisation.json && cmp out/normalisation.json $D/normalisation.json
+          cp $D/limits-prior.json out/limits.json
+      - name: Series isolation, flag off and on (A4.1 G-S)
+        run: |
+          git worktree add /tmp/base $STEP32_BASE
+          node scripts/sim/learn/step32-series-isolation.mjs /tmp/base out/iso-base.json
+          node scripts/sim/learn/step32-series-isolation.mjs $PWD out/iso-off.json
+          node scripts/sim/learn/step32-series-isolation.mjs $PWD out/iso-on.json out/limits.json
+          node scripts/sim/learn/step32-series-isolation.mjs compare out/iso-base.json out/iso-off.json out/iso-on.json | tee out/series-isolation.txt
+      - name: Page compute time (A6.4 G-T)
+        run: node scripts/sim/learn/step32-compute-time.mjs out/limits.json out/compute-time.json
+      - name: lapsim-mesh unchanged cars
+        run: node --test tests/lapsim-mesh.test.mjs
+      - run: cp measured-before.txt out/
+      - uses: actions/upload-artifact@v4
+        with: {name: step32-check, path: out/, retention-days: 90}
+
+  step32-fold:
+    needs: step32-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        job: [austin, baku, catalunya, hungaroring, imola, interlagos, jeddah, las-vegas, lusail, melbourne, mexico-city, miami, monte-carlo,
+              montreal, monza, sakhir, shanghai, silverstone, singapore, spa-francorchamps, spielberg, suzuka, yas-marina-circuit, zandvoort]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Fold (A7 forward fit, three seasons in parallel)
+        run: mkdir -p out/fold && node scripts/sim/learn/step32-forward.mjs fold "$HELD" "out/fold/$HELD.json"
+        env: {HELD: '${{ matrix.job }}'}
+      - uses: actions/upload-artifact@v4
+        with: {name: 'step32-${{ strategy.job-index }}', path: out/, retention-days: 90}
+
+  step32-verdict:
+    needs: [step32-check, step32-fold]
+    if: ${{ !cancelled() && needs.step32-check.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'step32-*', path: art, merge-multiple: true}
+      - name: Mesh, continuity, energy (v2 §5 5a–5c, A2.2) and verdict
+        run: |
+          mkdir -p out && ls art/fold | wc -l
+          python -I -c "import json,os,statistics as st;F=[json.load(open('art/fold/'+f)) for f in os.listdir('art/fold')];json.dump({s:{k:st.median(f['fits'][s]['params'][k] for f in F) for k in F[0]['fits'][s]['params']} for s in ('2023','2024','2025')},open('out/median-fit.json','w'))"
+          node scripts/sim/learn/step32-mesh.mjs out/median-fit.json out/mesh.json
+          node --test tests/step32-measured-readonly.test.mjs | tee out/measured-after.txt
+          python -I scripts/sim/learn/step32_verdict.py art/fold art/fold26 scripts/sim/data/step32/traces-top10.json scripts/sim/data/step32/power-top10.json \
+            art/precheck.json out/mesh.json art/series-isolation.txt art/compute-time.json out/measured-after.txt out/step32-verdict-${{ github.run_id }}.json | tee out/verdict.log
+          cp art/normalisation.json art/compute-time.json art/series-isolation.txt out/
+          { echo '## Step 32 verdict (research, run ${{ github.run_id }})'; echo '```'; head -c 60000 out/verdict.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with: {name: 'step32-verdict-${{ github.run_id }}', path: out/, retention-days: 90}
