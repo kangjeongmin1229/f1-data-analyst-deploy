@@ -1,5 +1,5 @@
 {
- "note": "Step 34 A1 \u00a74 kerb input for the WEC fit tracks: per-corner kappa scale on the step 31 corridor (TUM white lines - 1 m + official width + f x iRacing closed-wheel kerbs; 1.3 m closed-wheel default where iRacing has no kerb data), used at f = 1. Rows copied unchanged from fork commit f3cba78 scripts/sim/data/step31/corridor.json (step31_corridor.py). Not built: lusail, imola (no TUM white lines); catalunya (built, ICP map fit 7.1 m vs 1.7-4.3 m in the step 31 set; rule icp <= 5 m set after seeing it, disclosed in A2).",
+ "note": "Step 34 A1 \u00a74 kerb input for the WEC fit tracks: per-corner kappa scale on the step 31 corridor (TUM white lines - 1 m + official width + f x iRacing closed-wheel kerbs; 1.3 m closed-wheel default where iRacing has no kerb data), used at f = 1. Rows copied unchanged from fork commit f3cba78 scripts/sim/data/step31/corridor.json (step31_corridor.py). Track rule (A3 \u00a71): TUM layout = current layout AND ICP <= 4.3 m (largest of the step 31 set). Not built: see not_built.",
  "source_commit": "f3cba7831f8b056bdeb6f0301578b4ae46333c9c",
  "f": 1.0,
  "fs": [
@@ -781,6 +781,6 @@
  "not_built": {
   "lusail": "no TUM white lines",
   "imola": "no TUM white lines",
-  "catalunya": "ICP 7.1 m > 5 m (default 1.3 m kerbs, 8 corners)"
+  "catalunya": "TUM map is the pre-2021 layout (old Turn 10, Turn 14-15 chicane; current layout since 2023): geometry not current (A3 \u00a71). ICP 7.1 m."
  }
 }
