@@ -298,6 +298,20 @@ jobs:
           if [ -d fit ]; then tar czf "calibration-output-$id.tgz" -C fit . ; set -- "calibration-output-$id.tgz"; else set --; fi
           gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" "$@" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+      # combined refit (central 2026-11-25 15:26): the report, ship checks, FE rebuild and the fit's calibration on the fork branch
+      # results/refit-combined (run-<id>/), readable with an anonymous git fetch; fork only, refit branches only
+      - name: Publish to results/refit-combined
+        if: github.repository != 'MisterKinn/f1-data-analyst' && startsWith(github.ref_name, 'refit/combined')
+        run: |
+          id=${{ github.run_id }}; B=results/refit-combined; mkdir -p pub && cd pub && git init -q -b $B
+          git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          if git fetch -q --depth 1 origin $B; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs
+          mkdir -p run-$id && cp ../out/pipeline-report.md ../out/pipeline-report.json run-$id/ && cp ../out/ship-checks.txt run-$id/ 2>/dev/null || true
+          [ -d ../out/fe ] && cp -r ../out/fe run-$id/fe && cp ../out/fe-fit-shipped.json run-$id/fe/ 2>/dev/null || true
+          [ -f ../fit/worker/lapsim/calibration-data.js ] && cp ../fit/worker/lapsim/calibration-data.js run-$id/ || true
+          echo "run $id, ref ${{ github.ref_name }} ${{ github.sha }}, mode ${{ inputs.mode }}" > run-$id/RUN.txt
+          git add -A && git commit -q -m "refit-combined: pipeline run $id (${{ github.sha }})" && git push -q origin HEAD:$B
 
   # step 29b: Δ ranges (± on lapsim_simulate / the page) rebuilt from this run: held-out rows of the run's calibration and the Δ bench
   # on the pinned pooled DRS cases. Always an artifact + release asset; written to main only by a production run on main whose
