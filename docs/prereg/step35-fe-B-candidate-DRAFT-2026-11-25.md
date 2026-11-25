@@ -2,7 +2,11 @@
 
 Status: **draft**. It becomes final (hashed, ledger line) only after (1) the kernel inertia-in-braking fix lands
 (fix/kernel-deploy-accounting-2026-11-25, step 27 session) and (2) step 31/32's series-generic hooks are on main or rebased onto that fix.
-No judged run before both. Baseline = production FE output on that kernel (rebuilt with this step's start-line data fix).
+(3) the sound-speed diagnostic A3 (docs/prereg/step35-fe-A3-sound-speed-2026-11-25.md) has ended: if it passes (≥ 5 circuits), its
+corner-minimum vs straight-speed split decides which variant goes first (corners → V1 lateral; straights → a power/drag variant replaces V2);
+if it ends "sound speed not usable for FE", B goes ahead with the general published top speed (≈ 320 km/h) as a plausibility bound only.
+No judged run before all three. Power check (central 2026-11-25 09:49, units = sector × season clustered by circuit): MDE 0.43–0.86 pp at
+54 units / 11 circuits (ICC 0.45) vs a useful effect of 0.25 pp → not judgeable today; about 160–640 units needed. Baseline = production FE output on that kernel (rebuilt with this step's start-line data fix).
 
 ## Why (A2 diagnosis, fork run 45520478642, report only)
 Held-out sector share error vs features of the simulated lap (108 rows, 11 layouts, layout-clustered bootstrap):
