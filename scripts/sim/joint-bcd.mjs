@@ -224,7 +224,8 @@ export async function holdoutBCD(groups, key, {folds = 4, fold = null, ...opts} 
     const test = new Set(names.filter((_, i) => i % k === f));
     // opts.foldBase (report-only, brake-limit per-fold cap): the held-out season's car base for this fold's training tracks
     const train = groups.map(g => g.key === key ? {...g, ...(opts.foldBase ? {base: opts.foldBase(g, test)} : {}), laps: g.laps.filter(l => !test.has(l.name))} : g);
-    const fit = await fitJointBCD(train, opts); if (opts.foldBase) (foldCars ??= []).push({fold: f, test: [...test], clA: fit.cars[key].clA, muY: fit.cars[key].muY, cdA: fit.cars[key].cdA, pIce: fit.cars[key].pIce});
+    const {foldBase: _fb, ...fitOpts} = opts; // functions cannot go to the worker pool
+    const fit = await fitJointBCD(train, fitOpts); if (opts.foldBase) (foldCars ??= []).push({fold: f, test: [...test], clA: fit.cars[key].clA, muY: fit.cars[key].muY, cdA: fit.cars[key].cdA, pIce: fit.cars[key].pIce});
     const corr = opts.residual ? residualCorrector(fit, prepGroups(train), opts.residualLambda ?? 1) : () => 0, carry = carryBias(fit, train, key);
     for (const l of prepGroups([target])[0].laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
       const fa = fit.factors[l.name]; if (!fa || !train.some(g => g.laps.some(x => x.name === l.name))) continue;
