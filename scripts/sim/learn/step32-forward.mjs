@@ -63,8 +63,8 @@ export const PROF = {sim: 0, simMs: 0, env: 0, envMs: 0};
 const memo = new Map();
 function simSession(e, car, grip) { // the candidate lap of e's session (corridor, DRS +54 m, grip 1 + u)
   const key = JSON.stringify([e.session, car.muY, car.muX, car.muXTrac, car.clA, car.cdA, car.cdALow, grip]); if (memo.has(key)) return memo.get(key);
-  const t0 = Date.now(), tr = trackFor(e.track, e.zones, grip, true), env = envOf(e.track), r = K.simulateLap(tr, car, env); PROF.sim++; PROF.simMs += Date.now() - t0;
-  const o = {v: Array.from(r.v, x => x * 3.6), time: r.time, lap: r.lapTime, ds: T[e.track].ds, energyOk: energyOk(r), power: powerOk(tr, car, r, env)};
+  let PR; const t0 = Date.now(), tr = trackFor(e.track, e.zones, grip, true), env = envOf(e.track), r = K.simulateLap(tr, car, env, {kernelStep: 2, probe: p => { PR = p; }}); PROF.sim++; PROF.simMs += Date.now() - t0;
+  const o = {v: Array.from(r.v, x => x * 3.6), time: r.time, lap: r.lapTime, ds: T[e.track].ds, energyOk: energyOk(r), power: S.powerOkProbe(PR, car, r)}; // D1 fix
   if (memo.size > 300) memo.clear(); memo.set(key, o); return o;
 }
 
@@ -117,8 +117,10 @@ function seasonFit(train, s, opts = {}) {
 }
 const M_ = {g: 9.81, m: S.M_CAR};
 
-const [mode, held, a2, a3] = process.argv.slice(2);
-if (mode === 'season') { // one season of one fold (child process)
+export {processLap, simAtXs, envelope, car25, KINDS, valid, USED};
+const MAIN = process.argv[1] && new URL(import.meta.url).pathname === (await import('node:path')).resolve(process.argv[1]);
+const [mode, held, a2, a3] = MAIN ? process.argv.slice(2) : [];
+if (!MAIN) { /* imported */ } else if (mode === 'season') { // one season of one fold (child process)
   const train = EV.filter(e => e.track !== held); const t0 = Date.now(); writeFileSync(a3, JSON.stringify(seasonFit(train, +a2))); console.log(held, a2, 'done', JSON.stringify({...PROF, totalMs: Date.now() - t0}));
 } else if (mode === 'fold') {
   const test = EV.filter(e => e.track === held); if (!test.length) throw new Error('no laps for ' + held);
@@ -142,4 +144,4 @@ if (mode === 'season') { // one season of one fold (child process)
   console.log(held, 'laps', test.length, 'drs', drs.length);
 } else if (mode === 'fold26') {
   console.log('2026 forward fold: report-only group; implemented after the 2023–25 code is checked'); process.exit(3);
-} else throw new Error('mode: fold | season | fold26');
+} else if (MAIN) throw new Error('mode: fold | season | fold26');
