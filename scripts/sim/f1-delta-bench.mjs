@@ -5,6 +5,8 @@
 //   node scripts/sim/f1-delta-bench.mjs model <dir>      → production-model Δ on the kept cases (only for uses that passed the noise check)
 import {readFileSync, writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {pathToFileURL} from 'node:url';
+import {lapsimCalibration as committedCal} from '../../worker/lapsim/calibration-data.js';
 import {lapsimAllTracks as T} from '../../worker/lapsim/tracks.js';
 import {eventFor} from '../../worker/lapsim/names.js';
 import {lapsimTrackView} from '../../worker/lapsim/track-view-data.js';
@@ -73,8 +75,15 @@ if (mode === 'model') {
   const rd = f => readFileSync(f, 'utf8').trim().split(/\r?\n/).map(splitCsv), [zh, ...zr] = rd(dir + '/zones.csv'), [ch, ...cr] = rd(dir + '/f1-delta-cases-2026-11-24.csv');
   const obj = (h, r) => Object.fromEntries(h.map((k, i) => [k, r[i]])), zones = zr.map(r => obj(zh, r)), cases = cr.map(r => obj(ch, r)).filter(c => c.kept === '1');
   const withGrip = (tr, g) => ({...tr, mu: Float64Array.from(tr.mu, m => m * g)}), memo = new Map();
+  // F1_DELTA_HELDOUT=on (step 32b pre-reg): no factor of the case's own track; the 2025 car of F1_DELTA_CALIB (a calibration-data.js;
+  // default the committed one) with grip and drag = median over the other 2025 tracks of that calibration
+  const CAL = process.env.F1_DELTA_CALIB ? (await import(pathToFileURL(process.env.F1_DELTA_CALIB).href)).lapsimCalibration : null;
+  const med = a => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const heldCar = id => { const s = (CAL ?? committedCal).seasons['2025'], o = Object.entries(s.tracks).filter(([t]) => t !== id), dr = med(o.map(([, t]) => t.drag ?? 1));
+    return {car: {...s.car, cdA: s.car.cdA * dr, cdALow: (s.car.cdALow ?? s.car.cdA) * dr}, grip: med(o.map(([, t]) => t.grip))}; };
+  if (CAL && process.env.F1_DELTA_HELDOUT !== 'on') throw new Error('F1_DELTA_CALIB is read only with F1_DELTA_HELDOUT=on');
   const lapOf = (id, list) => { const k = id + JSON.stringify(list); if (memo.has(k)) return memo.get(k);
-    const d = T[id], c = carsFor(id)['2025'], conds = realConditions(id), real = conds['2025'] || conds['2026'] || Object.values(conds)[0] || {};
+    const d = T[id], c = process.env.F1_DELTA_HELDOUT === 'on' ? heldCar(id) : carsFor(id)['2025'], conds = realConditions(id), real = conds['2025'] || conds['2026'] || Object.values(conds)[0] || {};
     const pick = (key, fb) => Number.isFinite(real[key]) ? real[key] : fb;
     const env = K.conditionsFromWeather({airTempC: pick('airTempC', 25), trackTempC: pick('trackTempC', 35), humidityPct: pick('humidityPct', 50), pressureHpa: pick('pressureHpa', 1013.25), windSpeed: pick('windSpeed', 0), windFromDeg: pick('windFromDeg', 0)});
     let tr = K.trackFromData(d); tr = {...tr, aeroLow: list.length ? K.trackFromData({...d, aeroZones: list}, {aero: 'fia'}).aeroLow : new Uint8Array(d.kappa.length)};
