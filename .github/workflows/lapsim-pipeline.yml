@@ -266,7 +266,7 @@ jobs:
       # harm per row vs the committed fe-fit.json. Step 35's FE checks read out/fe/ from this step, they do not rebuild.
       - name: FE rebuild on this run's kernel (paired harm)
         continue-on-error: true
-        run: node scripts/sim/learn/fe-rebuild.mjs out
+        run: set -a; . .github/lapsim-fit.env; set +a; node scripts/sim/learn/fe-rebuild.mjs out  # FE flags (step 35 D/E) from the fit settings
       # refit ship rule (claude/status-2026-11-25-refit.md): mesh at every mesh and per-lap energy closure on this run's calibration;
       # a failure does not stop the report, it is written into it (out/ship-checks.txt) and the refit does not ship
       # 29b (central 17:20): the Δ ranges are regenerated on this run's calibration and kernel BEFORE the 29b test runs, so the test
