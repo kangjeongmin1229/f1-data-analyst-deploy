@@ -15,6 +15,16 @@ export function powertrain(car, iceFactor = 1) {
 }
 
 export function lapsimKernel() {
+  // DRS flap opening delay (car.drsDelayM; unset = unchanged): the low-drag state starts drsDelayM metres after the start of each low-drag
+  // run (telemetry first-open position after the activation line, step 32b: median 50 m over 152 zones)
+  function delayLow(low, m, ds) {
+    if (!low || !(m > 0)) return low;
+    const n = low.length, k = Math.round(m / ds), out = Float64Array.from(low);
+    const s = Array.prototype.findIndex.call(low, x => !x); // start the walk outside a run (whole-lap run: no start, unchanged)
+    if (s < 0) return low;
+    for (let j = 0, run = 0; j < n; j++) { const i = (s + j) % n; run = low[i] ? run + 1 : 0; if (run > 0 && run <= k) out[i] = 0; }
+    return out;
+  }
   // Air and wind for the lap simulator. Pure functions, shared by server and browser.
 
   const RD = 287.058;   // J/(kg·K), dry air
@@ -201,11 +211,11 @@ export function lapsimKernel() {
     const n = track.kappa.length, ds = track.ds, STEP = stepOf(opts);
     const rho = env.rho ?? RHO_REF;
     const grip = env.grip ?? 1;
-    const iceFactor = env.iceFactor ?? 1;
+    const iceFactor = car.iceDensityOff ? 1 : env.iceFactor ?? 1; // step 36: measured per-track power already holds that session's air
     const windSpeed = env.windSpeed ?? 0, windFrom = env.windFromDeg ?? 0;
     const t = makeTyre(car);
     const mg = t.m * G;
-    const mu = track.mu, vScale = track.vScale, aeroLow = track.aeroLow, grade = track.grade, heading = track.heading, otOn = track.otOn, ersCap = track.ersCap || null; // true (whole lap) or a per-point array: where the driver uses Overtake
+    const mu = track.mu, vScale = track.vScale, aeroLow = delayLow(track.aeroLow, car.drsDelayM, track.ds), grade = track.grade, heading = track.heading, otOn = track.otOn, ersCap = track.ersCap || null; // true (whole lap) or a per-point array: where the driver uses Overtake
     const etaD = car.etaDrive ?? 0.96, etaK = car.etaErs ?? 0.95;
     const pIce = car.pIce * iceFactor, pAt = powertrain(car, iceFactor); // pAt(v): engine power at road speed v (torque curve and gears; flat pIce without them)
     const ers = car.ers || {pMax: 0};
@@ -883,6 +893,7 @@ export function lapsimKernel() {
   }
 
   return {
+    delayLow,
     RD, RV, RHO_REF, saturationVapourPressure, pressureFromAltitude, airDensity, tailwind, gripFromTrackTemp, icePowerFactor, conditionsFromWeather,
     erskLimitW, makeTyre, capacity, simulateLap,
     autoStraights, trackFromData,

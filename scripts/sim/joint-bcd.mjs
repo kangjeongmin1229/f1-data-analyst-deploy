@@ -28,6 +28,7 @@ export function buildCar(g, x) {
   });
   if (g.base.linkMu) { car.muX = g.base.muX * car.muY / g.base.muY; car.muXTrac = g.base.muXTrac * car.muY / g.base.muY; }
   if (g.base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; }
+  if (g.base.drsRatio) car.cdALow = car.cdA * g.base.drsRatio; // step 36 measured car: low-drag CdA = measured ratio × CdA
   return {car, outside};
 }
 
@@ -40,7 +41,9 @@ export const poleMult = (a, tau) => a ? 1 + Math.min(0, ...Object.values(a.teams
 // Score of one lap with track factors f = {grip, drag}; the real times are divided by the lap's
 // team/development multiplier, so the car is fitted to the average-car equivalent
 export function lapScore(l, car, f, o, mult = 1) {
-  const c = f.drag && f.drag !== 1 ? {...car, cdA: car.cdA * f.drag, cdALow: (car.cdALow ?? car.cdA) * f.drag} : car;
+  let c = f.drag && f.drag !== 1 ? {...car, cdA: car.cdA * f.drag, cdALow: (car.cdALow ?? car.cdA) * f.drag} : car;
+  // step 36 measured car: fixed per-lap inputs (measured per-track CdA and power ratios; ICE air-density cut off where power is per-track)
+  const m = l.carMod; if (m) c = {...c, cdA: c.cdA * m.cd, cdALow: (c.cdALow ?? c.cdA) * m.cd, pIce: c.pIce * m.p, ...(m.iceOff ? {iceDensityOff: true} : {})};
   const e = lapError(withGrip(l.track, f.grip), c, l.env, l.obs, l.lapSeconds / mult, {wTime: o.wTime * (l.timeScale ?? 1), trapKph: l.trapKph});
   let sec = 0;
   if (o.wSector && l.sectors && e.res.sectors) for (let k = 0; k < 3; k++) if (Number.isFinite(l.sectors[k])) sec += (e.res.sectors[k] - l.sectors[k] / mult) ** 2;
@@ -55,7 +58,9 @@ export function fitGroup(g, factors, x0, o, adj) {
   const objective = x => {
     const {car, outside} = buildCar(g, x);
     let s = 0; for (const l of laps) s += (l.weight ?? 1) * lapScore(l, car, fOf(factors, l.name), o, lapMult(l, adj)).score;
-    return s / wsum + 100 * outside;
+    // step 36: Gaussian prior on ln(value) for params that carry one (same per-lap units as the grip prior)
+    const prior = g.params.reduce((a, p) => a + (p.prior ? (Math.log(car[p.path] / p.prior.x0) / p.prior.sd) ** 2 : 0), 0);
+    return s / wsum + prior + 100 * outside;
   };
   const r = nelderMead(objective, x0 || g.params.map(() => 0), {step: o.nmStep ?? 0.06, iters: o.iters}); // nmStep: second-start noise check (LAPSIM_F1_NOISE)
   return {x: r.x, value: r.value};
