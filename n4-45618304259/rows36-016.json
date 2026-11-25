@@ -1,0 +1,24 @@
+{
+ "calibration": "../cal/worker/lapsim/calibration-data.js",
+ "laps": 528,
+ "tracks": 24,
+ "bootstrap": {
+  "B": 500,
+  "seed": 7,
+  "unit": "track"
+ },
+ "straightEndRmsKph": {
+  "base": 8.9921,
+  "se": 1.1684,
+  "mde": 3.47,
+  "mdeShare": 0.386,
+  "reportOnly": true
+ },
+ "brakingP95MeanExcessG": {
+  "base": -0.226,
+  "se": 0.0785,
+  "mde": 0.2332,
+  "mdeShare": 1.032,
+  "reportOnly": true
+ }
+}

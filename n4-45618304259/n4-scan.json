@@ -769,13 +769,266 @@
  },
  "016": {
   "run": {
+   "attempt": 2,
    "conclusion": "failure",
    "headBranch": "n4/k016",
    "headSha": "bf93791f257a8404752f4a12a3b2370d307ac907",
    "url": "https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/45618343892"
   },
-  "n4": null,
-  "rows36": null
+  "n4": {
+   "calibration": "../cal/worker/lapsim/calibration-data.js",
+   "lapHeldOutRmsPct": {
+    "2023": {
+     "rmsPct": 1.1800336119622779,
+     "n": 15
+    },
+    "2024": {
+     "rmsPct": 1.2223381810989378,
+     "n": 18
+    },
+    "2025": {
+     "rmsPct": 1.0439449379536314,
+     "n": 20
+    },
+    "all": 1.1457682754255094,
+    "n": 53
+   },
+   "cornerRms120to240Kph": {
+    "n": 1691,
+    "rms": 28.21787021058063,
+    "meanBias": -17.570499871745128
+   },
+   "speedBins": {
+    "<120": {
+     "n": 1786,
+     "meanBiasKph": -1.0434279994807978,
+     "rmsKph": 10.131538423396671
+    },
+    "120-200": {
+     "n": 1379,
+     "meanBiasKph": -15.995555040729439,
+     "rmsKph": 25.93100848930984
+    },
+    ">200": {
+     "n": 484,
+     "meanBiasKph": -23.744355731128664,
+     "rmsKph": 33.90805147588593
+    }
+   },
+   "perTrackSlope": {
+    "median": -0.15765402213274693,
+    "mean": -0.207164459320223,
+    "nTracks": 24,
+    "tracks": [
+     {
+      "track": "austin",
+      "n": 182,
+      "slopeKphPerKph": -0.14519518138332438
+     },
+     {
+      "track": "baku",
+      "n": 207,
+      "slopeKphPerKph": -0.13543230682787138
+     },
+     {
+      "track": "catalunya",
+      "n": 196,
+      "slopeKphPerKph": -0.0939218030716564
+     },
+     {
+      "track": "hungaroring",
+      "n": 274,
+      "slopeKphPerKph": -0.0017903241458543863
+     },
+     {
+      "track": "imola",
+      "n": 112,
+      "slopeKphPerKph": -0.49137278662833
+     },
+     {
+      "track": "interlagos",
+      "n": 109,
+      "slopeKphPerKph": -0.08784960796161605
+     },
+     {
+      "track": "jeddah",
+      "n": 154,
+      "slopeKphPerKph": -0.1778843092514833
+     },
+     {
+      "track": "las-vegas",
+      "n": 113,
+      "slopeKphPerKph": -0.1422421091212953
+     },
+     {
+      "track": "lusail",
+      "n": 227,
+      "slopeKphPerKph": -0.24884235624277384
+     },
+     {
+      "track": "melbourne",
+      "n": 174,
+      "slopeKphPerKph": -0.2500761162886794
+     },
+     {
+      "track": "mexico-city",
+      "n": 106,
+      "slopeKphPerKph": -0.05443986815158857
+     },
+     {
+      "track": "miami",
+      "n": 135,
+      "slopeKphPerKph": -0.1301964532334538
+     },
+     {
+      "track": "monte-carlo",
+      "n": 181,
+      "slopeKphPerKph": -0.30685006859558517
+     },
+     {
+      "track": "montreal",
+      "n": 114,
+      "slopeKphPerKph": -0.40228938452311813
+     },
+     {
+      "track": "monza",
+      "n": 150,
+      "slopeKphPerKph": -0.0461370498866982
+     },
+     {
+      "track": "sakhir",
+      "n": 136,
+      "slopeKphPerKph": -0.22462124930203284
+     },
+     {
+      "track": "shanghai",
+      "n": 96,
+      "slopeKphPerKph": -0.8438856865935717
+     },
+     {
+      "track": "silverstone",
+      "n": 65,
+      "slopeKphPerKph": -0.005173388740951427
+     },
+     {
+      "track": "singapore",
+      "n": 229,
+      "slopeKphPerKph": -0.26535299324325334
+     },
+     {
+      "track": "spa-francorchamps",
+      "n": 77,
+      "slopeKphPerKph": -0.11604620085061053
+     },
+     {
+      "track": "spielberg",
+      "n": 132,
+      "slopeKphPerKph": -0.24593595948835667
+     },
+     {
+      "track": "suzuka",
+      "n": 172,
+      "slopeKphPerKph": -0.2411037758877529
+     },
+     {
+      "track": "yas-marina-circuit",
+      "n": 168,
+      "slopeKphPerKph": -0.16816661367609678
+     },
+     {
+      "track": "zandvoort",
+      "n": 140,
+      "slopeKphPerKph": -0.1471414305893971
+     }
+    ]
+   },
+   "seasons": {
+    "2023": {
+     "muY": 1.9117652547435693,
+     "muX": 1.3382356783204983,
+     "clA": 6.70782543014268,
+     "cdA": 1.5941174424769815,
+     "pIce": 541105.4679233936,
+     "theta_s": 0.9889066020328668,
+     "k_s": 1.0019311985620065,
+     "loadK": 0.16
+    },
+    "2024": {
+     "muY": 1.8473141807497604,
+     "muX": 1.2931199265248323,
+     "clA": 8,
+     "cdA": 1.5485076978423549,
+     "pIce": 541578.452176765,
+     "theta_s": 0.9850557874315234,
+     "k_s": 0.9999140589462543,
+     "loadK": 0.16
+    },
+    "2025": {
+     "muY": 1.8725757321176124,
+     "muX": 1.3108030124823284,
+     "clA": 8,
+     "cdA": 1.5259912951377688,
+     "pIce": 543216.6837761593,
+     "theta_s": 0.9819763803975345,
+     "k_s": 1.0058404050941498,
+     "loadK": 0.16
+    },
+    "2026": {
+     "muY": 1.8240215361782328,
+     "muX": 1.626830018753559,
+     "clA": 5.569393799765355,
+     "cdA": 1.9,
+     "pIce": 459999.99999999994,
+     "theta_s": null,
+     "k_s": null,
+     "loadK": null
+    }
+   },
+   "boundHits_0p5pct": [
+    {
+     "season": "2024",
+     "key": "clA",
+     "value": 8,
+     "bound": 8
+    },
+    {
+     "season": "2025",
+     "key": "clA",
+     "value": 8,
+     "bound": 8
+    },
+    {
+     "season": "2026",
+     "key": "cdA",
+     "value": 1.9,
+     "bound": 1.9
+    }
+   ]
+  },
+  "rows36": {
+   "calibration": "../cal/worker/lapsim/calibration-data.js",
+   "laps": 528,
+   "tracks": 24,
+   "bootstrap": {
+    "B": 500,
+    "seed": 7,
+    "unit": "track"
+   },
+   "straightEndRmsKph": {
+    "base": 8.9921,
+    "se": 1.1684,
+    "mde": 3.47,
+    "mdeShare": 0.386,
+    "reportOnly": true
+   },
+   "brakingP95MeanExcessG": {
+    "base": -0.226,
+    "se": 0.0785,
+    "mde": 0.2332,
+    "mdeShare": 1.032,
+    "reportOnly": true
+   }
+  }
  },
  "020": {
   "run": {
