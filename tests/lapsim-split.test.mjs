@@ -12,7 +12,7 @@ test('the parts matrix has every held-out (season, fold) and every WEC class, so
   const parts = wf.match(/part: \[([^\]]+)\]/)[1].split(',').map(x => x.trim());
   const years = cal.match(/LAPSIM_HOLDOUT_YEARS \|\| '([0-9,]+)'/)[1].split(',');
   const folds = +cal.match(/const HO_FOLDS = (\d+)/)[1];
-  assert.deepEqual(parts, [...years.flatMap(y => Array.from({length: folds}, (_, f) => `f1-ho-${y}-${f}`)), ...Object.keys(SERIES.wec.classes).map(c => 'wec-' + c)]);
+  assert.deepEqual(parts, [...years.flatMap(y => Array.from({length: folds}, (_, f) => `f1-ho-${y}-${f}`)), ...Object.keys(SERIES.wec.classes).map(c => 'wec-' + c), 'wec-lmp2']); // wec-lmp2: step 34 research piece (empty when LAPSIM_WEC_LMP2 is off)
 });
 
 test('every calibration job reads the same fit settings', () => {
