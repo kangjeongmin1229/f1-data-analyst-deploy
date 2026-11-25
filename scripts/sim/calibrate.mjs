@@ -398,7 +398,10 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // step 34b (LAPSIM_WEC_CLA_SCAN=on, report only; central 17:20): ClA fixed at 70 … 100 % of its upper bound (6 steps), the other
     // parameters refitted; held-out (same folds and laps as above) and in-sample error per track at each step. The bound is not widened.
     // LAPSIM_WEC_CLA_SCAN=prior (central 17:36, honest-parameter test): one step, ClA fixed at the class prior (Hypercar 3.4, LMGT3 1.4).
-    const claSteps = E.LAPSIM_WEC_CLA_SCAN === 'on' ? [0.70, 0.76, 0.82, 0.88, 0.94, 1.00] : E.LAPSIM_WEC_CLA_SCAN === 'prior' ? [def.prior.clA / def.bounds.clA[1]] : null;
+    const claSteps = E.LAPSIM_WEC_CLA_SCAN === 'on' ? [0.70, 0.76, 0.82, 0.88, 0.94, 1.00] : E.LAPSIM_WEC_CLA_SCAN === 'prior' ? [def.prior.clA / def.bounds.clA[1]]
+      // LAPSIM_WEC_CLA_SCAN=press (central 18:25, report only): Hypercar ClA at 4.15 m², mid of the press CzA window 4.05–4.25 m²
+      // (Racecar Engineering 2022, as in step 34 A3); LMGT3 has no published or press value, so no step
+      : E.LAPSIM_WEC_CLA_SCAN === 'press' ? (cls === 'lmgt3' ? null : [4.15 / def.bounds.clA[1]]) : null;
     const claScan = claSteps ? claSteps.map(f => {
       const hi = def.bounds.clA[1], b2 = {...base, clA: f * hi}, p2 = params.filter(p => p.key !== 'clA');
       const hs = holdout(laps, b2, p2, {...WEC_HO, folds: 99, gripFor: l => l.grip}), fs = fitSeason(laps, b2, p2, {iters: ITERS});
