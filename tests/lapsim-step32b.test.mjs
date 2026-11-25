@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {delayLow, lapsimKernel} from '../worker/lapsim/kernel.js';
+import {lapsimKernel} from '../worker/lapsim/kernel.js';
 import {biasCut} from '../scripts/sim/learn/step32b-verdict.mjs';
 import {lapsimAllTracks as T} from '../worker/lapsim/tracks.js';
 import {carsFor} from '../worker/lapsim/scenario.js';
 
+const {delayLow} = lapsimKernel();
 test('delayLow: first k points of every low-drag run are closed, wrap-around run included; unset = same array', () => {
   const a = Uint8Array.from([1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1]);
   assert.deepEqual(Array.from(delayLow(a, 10, 5)), [0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0]);

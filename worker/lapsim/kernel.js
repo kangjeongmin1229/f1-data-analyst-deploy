@@ -14,18 +14,17 @@ export function powertrain(car, iceFactor = 1) {
   return v => { let best = 0; for (const r of g) { const x = v * r * k; if (x > rpmMax * 1.0001) continue; const p = at(x); if (p > best) best = p; } return Math.min(cap, best * iceFactor); };
 }
 
-// DRS flap opening delay (step 32b, car.drsDelayM; unset = unchanged): the low-drag state starts drsDelayM metres after the start of
-// each low-drag run (measured flap-open position after the activation line, step 24 v1 mapping: median +54 m)
-export function delayLow(low, m, ds) {
-  if (!low || !(m > 0)) return low;
-  const n = low.length, k = Math.round(m / ds), out = Float64Array.from(low);
-  const s = Array.prototype.findIndex.call(low, x => !x); // start the walk outside a run (whole-lap run: no start, unchanged)
-  if (s < 0) return low;
-  for (let j = 0, run = 0; j < n; j++) { const i = (s + j) % n; run = low[i] ? run + 1 : 0; if (run > 0 && run <= k) out[i] = 0; }
-  return out;
-}
-
 export function lapsimKernel() {
+  // DRS flap opening delay (step 32b, car.drsDelayM; unset = unchanged): the low-drag state starts drsDelayM metres after the start of
+  // each low-drag run (measured flap-open position after the activation line, step 24 v1 mapping: median +54 m)
+  function delayLow(low, m, ds) {
+    if (!low || !(m > 0)) return low;
+    const n = low.length, k = Math.round(m / ds), out = Float64Array.from(low);
+    const s = Array.prototype.findIndex.call(low, x => !x); // start the walk outside a run (whole-lap run: no start, unchanged)
+    if (s < 0) return low;
+    for (let j = 0, run = 0; j < n; j++) { const i = (s + j) % n; run = low[i] ? run + 1 : 0; if (run > 0 && run <= k) out[i] = 0; }
+    return out;
+  }
   // Air and wind for the lap simulator. Pure functions, shared by server and browser.
 
   const RD = 287.058;   // J/(kg·K), dry air
@@ -866,6 +865,7 @@ export function lapsimKernel() {
   }
 
   return {
+    delayLow,
     RD, RV, RHO_REF, saturationVapourPressure, pressureFromAltitude, airDensity, tailwind, gripFromTrackTemp, icePowerFactor, conditionsFromWeather,
     erskLimitW, makeTyre, capacity, simulateLap,
     autoStraights, trackFromData,
