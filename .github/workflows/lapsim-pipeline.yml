@@ -167,9 +167,11 @@ jobs:
           node scripts/sim/learn/build-fe.mjs > out/fe/build-fe.log
           cp worker/lapsim/fe-data.js out/fe/fe-data-rebuilt.js; git diff --stat -- worker/lapsim/fe-data.js worker/lapsim/fe-tracks-data.js > out/fe/rebuild-files.txt
           node -e "Promise.all([import('./out/fe/fe-data-shipped.js'),import('./out/fe/fe-data-rebuilt.js')]).then(([a,b])=>{const s=JSON.stringify(a.lapsimFe.heldOutPct),r=JSON.stringify(b.lapsimFe.heldOutPct);console.log('::notice title=FE rebuild::shipped '+s+' rebuilt '+r)})"
+          node scripts/sim/learn/fe-sector-lines.mjs > out/fe/fe-sector-lines.log && git diff --stat -- scripts/sim/data/learn/fe-sector-lines.json >> out/fe/rebuild-files.txt
           node scripts/sim/tracks/fe-centrelines.mjs > out/fe/fe-centrelines.json && python -I scripts/sim/tracks/fe-geometry-audit.py out/fe/fe-centrelines.json out/fe/fe-geometry-audit.json > out/fe/fe-geometry-audit.log
           FE_GEOM_AUDIT=out/fe/fe-geometry-audit.json node scripts/sim/learn/fe-step35.mjs out/fe > out/fe/fe-step35.log; head -2 out/fe/fe-step35.log
-          echo "::notice title=FE step 35 A1::$(sed -n 2p out/fe/fe-step35.log)"
+          echo "::notice title=FE step 35 A1::$(sed -n 3p out/fe/fe-step35.log)"
+          echo "::notice title=FE step 35 sectors::$(sed -n 2p out/fe/fe-step35.log)"
           chk
           cat out/fe/rebuild-files.txt >> "$GITHUB_STEP_SUMMARY"; head -2 out/fe/fe-step35.log >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4

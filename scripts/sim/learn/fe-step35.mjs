@@ -123,6 +123,14 @@ const sigma = {lap: floor(pairs.map(([, e]) => Math.log(e.A.best / e.B.best))),
 
 for (const c of [c1Good, c1Unv]) c.ratio = c.rmsPct == null ? null : r(c.rmsPct / sigma.lap.measPct, 2);
 
+// step 35 item 3 (diagnostic, nothing fitted to sectors): sector shares of the lap, model vs the fastest group car (300 kW, rear drive by rule)
+const SL = JSON.parse(readFileSync(D + 'fe-sector-lines.json', 'utf8')).tracks, secRows = [];
+for (const [k, e] of pairs) for (const g of ['A', 'B']) { const c = e[g].car, lay = c && layoutOf(venueOf(c.event), +c.lenKm * 1000), sl = lay && SL[lay];
+  if (!sl || !(e[g].s.every(Number.isFinite))) continue; const ss = [+c.s1, +c.s2, +c.s3]; if (!ss.every(x => x > 0)) continue;
+  const car = {...fullCar('fe-gen3evo'), pIce: 300e3, awdAboveKph: null}, res = K.simulateLap(T(lay), car, envOf(c)), n = res.time.length, tAt = f => res.time[Math.min(n - 1, Math.round(f * n))];
+  const m = [tAt(sl.f1), tAt(sl.f2) - tAt(sl.f1), res.lapTime - tAt(sl.f2)], sm = m.reduce((a, b) => a + b), sr = ss.reduce((a, b) => a + b);
+  secRows.push({event: k, group: g, layout: lay, err: m.map((x, i) => r((x / sm) / (ss[i] / sr) * 100 - 100, 2))}); }
+const secSum = [0, 1, 2].map(i => ({rmsPct: r(rmsA(secRows.map(x => x.err[i]))), meanPct: r(mean(secRows.map(x => x.err[i]))), n: secRows.length}));
 // 5. Energy and limits on V1 laps (pre-reg §4), every good Gen3 Evo layout, default weather
 const energy = [];
 for (const id of Object.keys(geometry).filter(l => rows.some(x => x.layout === l && evo(x)))) {
@@ -169,9 +177,10 @@ const report = {step: 35, prereg: 'docs/prereg/step35-fe-2026-11-25.md', prereg_
   noDuelRows: noDuel, sigma, c1: {heldOutRmsPct: diagAll.rowsBaseRmsPct, sigmaLapPct: sigma.lap.measPct, ratio: r(diagAll.rowsBaseRmsPct / sigma.lap.measPct, 2), note: 'held-out = leave-one-event-out on all Gen3 Evo duel rows (report only)'},
   v1: {power: power && {n: nG, k: r(k1), halfWidthPp: r(power.half), judgeable}, heldOut: ho, verdict, reportOnlyAllLayouts: diagAll}, energy, attackMode: {summary: amSum, events: am}, gen4Jarama: {pressBestS: JAR, source: 'press (racer.com, autosport.com, 16 Nov 2026), not official timing', trackFactor: r(scJ, 4), modes: gen4},
   computeTime: {tracks: ct, ratio: ctRatio, pass: ctRatio <= 1.2},
+  sectors: {note: 'diagnostic: model sector share vs measured share of the fastest car per qualifying group; positions = printed I1/I2 of the official maps (fe-sector-lines.json); σ_meas,sector for scale', summary: secSum, sigma: sigma.sectors.map(x => x.measPct), rows: secRows},
   a1: {prereg_sha256: sha('docs/prereg/step35-fe-A1-2026-11-25.md'), geometryV2: geomV2, heldOutGood: c1Good, heldOutUnverified: c1Unv, trackFactorVsLineRatio: pear}};
 writeFileSync(OUT + '/fe-step35-report.json', JSON.stringify(report, null, 1));
 const line = `FE step 35: measured unchanged ${identical}; σ_lap ${sigma.lap.measPct}% (stat ${sigma.lap.statPct}, sys ${sigma.lap.sysPct}, n ${sigma.lap.n}); sectors ${sigma.sectors.map(s => s.measPct).join('/')}%; good layouts ${Object.values(geometry).filter(g => g.good).length}/${Object.keys(geometry).length}; V1 ${verdict}${power ? ` (half-width ${r(power.half)} pp, n ${nG})` : ''}${ho ? `, held-out ${ho.baseRmsPct}→${ho.candRmsPct}% UB ${ho.ubLossPp} pp` : ''}; energy ${energy.every(e => e.pass) ? 'pass' : 'FAIL'}; AM rms ${amSum?.rmsS}s; compute ×${ctRatio}`;
-console.log(line); console.log('A1 good', Object.entries(geomV2).filter(([, g]) => g.good).map(([k]) => k).join(' '), JSON.stringify({c1Good, c1Unv, pear})); console.log(JSON.stringify({geometry, sigma, v1: {...report.v1, reportOnlyAllLayouts: {...diagAll, rows: undefined}}, c1: report.c1, energy, am: amSum, gen4, ct}, null, 1));
+console.log(line); console.log('sectors', JSON.stringify(secSum)); console.log('A1 good', Object.entries(geomV2).filter(([, g]) => g.good).map(([k]) => k).join(' '), JSON.stringify({c1Good, c1Unv, pear})); console.log(JSON.stringify({geometry, sigma, v1: {...report.v1, reportOnlyAllLayouts: {...diagAll, rows: undefined}}, c1: report.c1, energy, am: amSum, gen4, ct}, null, 1));
 if (process.env.GITHUB_ACTIONS) console.log(`::notice title=FE step 35::${line}`);
 if (!identical) { console.error('measured input changed'); process.exit(1); }
