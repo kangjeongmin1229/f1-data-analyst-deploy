@@ -168,8 +168,12 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   // the measured value and not fitted (the laps do not identify power: claude/status-2026-11-24-pice-profile.md)
   const piceFixed = E.LAPSIM_PICE_FIXED && year <= 2025;
   if (piceFixed) base.pIce = Number(E.LAPSIM_PICE_FIXED) * 1e3;
-  const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
-  if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
+  // LAPSIM_DRS_C3=on (step 32b, docs/prereg/step32b-drs-2026-11-25.md; off by default): step 32 C3's DRS fix for the 2023–25 DRS cars:
+  // CdA at the C3 prior centre 1.46 m², DRS drag cut 20 %, flap open 54 m after the activation line; CdA and low-drag CdA not fitted
+  const c3 = E.LAPSIM_DRS_C3 === 'on' && year <= 2025;
+  if (c3) base.drsDelayM = 54;
+  const cdM = c3 ? 1.46 : CDA_MEASURED?.seasons?.[year]?.cdA?.value;
+  if (cdM) { base.cdA = cdM; base.cdALow = cdM * (c3 ? 0.80 : CDA_MEASURED.seasons[year].drsRatio.value); }
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce')).map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};

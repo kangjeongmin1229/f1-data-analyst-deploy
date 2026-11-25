@@ -262,6 +262,21 @@ jobs:
           python -I scripts/sim/f1-delta-report.py dl/v2pooled/baseline.csv dl/v2pooled/f1-delta-cases-2026-11-24.csv dl/v2pooled/report.json > /dev/null
           if [ -n "${F1_DELTA_LOCKED_APPROVED}" ]; then mkdir -p dl/locked2022 && cp dl/zones.csv dl/locked2022/ && cp "$(jq -r .delta.locked2022.path $P)" dl/locked2022/f1-delta-cases-2026-11-24.csv \
             && node scripts/sim/f1-delta-bench.mjs model dl/locked2022 && python -I scripts/sim/f1-delta-report.py dl/locked2022/baseline.csv dl/locked2022/f1-delta-cases-2026-11-24.csv dl/locked2022/report.json > /dev/null; fi
+      # step 32b (docs/prereg/step32b-drs-2026-11-25.md): only when the dispatched branch's fit settings carry LAPSIM_DRS_C3=on.
+      # Held-out DRS Δ (no factor of the case's own track) on the base refit calibration (run 45572047447, results/refit-combined) and on
+      # this run's calibration, then the verdict (bias cut, F1 lap-harm guard vs the base, physics checks)
+      - name: Step 32b DRS verdict (LAPSIM_DRS_C3=on only)
+        run: |
+          set -euo pipefail
+          grep -qx 'LAPSIM_DRS_C3=on' .github/lapsim-fit.env || exit 0
+          [ -f fit/worker/lapsim/calibration-data.js ] || { echo "::error::step 32b needs this run's fit"; exit 1; }
+          git fetch -q --depth 1 origin results/refit-combined && git show FETCH_HEAD:run-45572047447/calibration-data.js > /tmp/base-cal.js
+          P=scripts/sim/data/f1-delta/f1-delta-cases-pooled-2026-11-24.csv
+          for k in base cand; do mkdir -p dl/s32b-$k && cp dl/zones.csv dl/s32b-$k/ && cp $P dl/s32b-$k/f1-delta-cases-2026-11-24.csv; done
+          F1_DELTA_HELDOUT=on F1_DELTA_CALIB=/tmp/base-cal.js node scripts/sim/f1-delta-bench.mjs model dl/s32b-base
+          F1_DELTA_HELDOUT=on F1_DELTA_CALIB=fit/worker/lapsim/calibration-data.js node scripts/sim/f1-delta-bench.mjs model dl/s32b-cand
+          node scripts/sim/learn/step32b-verdict.mjs dl/s32b-base dl/s32b-cand /tmp/base-cal.js fit/worker/lapsim/calibration-data.js dl/s32b
+          sha256sum /tmp/base-cal.js fit/worker/lapsim/calibration-data.js "$P" docs/prereg/step32b-drs-2026-11-25.md > dl/s32b/inputs.sha256
       # FE ship rule: the pipeline's one FE rebuild (fe-rebuild.mjs → build-fe.mjs, seconds) on this run's kernel; event-hidden paired
       # harm per row vs the committed fe-fit.json. Step 35's FE checks read out/fe/ from this step, they do not rebuild.
       - name: FE rebuild on this run's kernel (paired harm)
@@ -298,6 +313,7 @@ jobs:
           node scripts/sim/pipeline-report.mjs fit/worker/lapsim/calibration-data.js /tmp/shipped/calibration-data.js out > /dev/null
           cp -r dl out/delta
           [ -f out/ship-checks.txt ] && { echo; echo '```'; cat out/ship-checks.txt; echo '```'; } >> out/pipeline-report.md
+          [ -f dl/s32b/step32b-verdict.json ] && { echo; echo '## Step 32b DRS verdict'; echo; echo '```'; cat dl/s32b/inputs.sha256 dl/s32b/step32b-verdict.json; echo '```'; } >> out/pipeline-report.md
           cat out/pipeline-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with: {name: pipeline-report, path: out/, retention-days: 90}
