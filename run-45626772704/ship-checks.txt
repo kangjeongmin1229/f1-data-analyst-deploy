@@ -1,0 +1,2 @@
+ship checks on this run calibration (local rerun 2026-11-26 00:2x KST, refit/combined 7c7166e + rebuilt lmdh-regen-range and hypercar maker data): mesh + energy closure + 29b: 38/38 pass; full suite 886, 884 pass, 0 fail.
+In the run itself the ship-check step failed on the stale LMDh range (not rebuilt in the report job; fixed in 6d34061) and the publish step failed on an empty index (fixed in 6d34061). Files here are the release assets of the run.
