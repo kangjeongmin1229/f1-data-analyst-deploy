@@ -29,8 +29,8 @@ const sl = perTrack.map(p => p.slopeKphPerKph).filter(Number.isFinite);
 const seasons = {}, hits = [];
 for (const y of ['2023', '2024', '2025', '2026']) { const c = cal.seasons?.[y]?.car; if (!c) continue; const mc = MCD.seasons?.[y];
   const theta = mc ? c.cdA / mc.cdA.value : null, ks = mc ? c.pIce / (mc.pWheel.value / 0.96 - 114e3) : null;
-  seasons[y] = {muY: c.muY, muX: c.muX, clA: c.clA, cdA: c.cdA, pIce: c.pIce, theta_s: theta, k_s: ks, loadK: c.loadK ?? null};
-  const B = {muY: F1_BOUNDS.muY, clA: F1_BOUNDS.clA, ...(mc ? {theta_s: [0.7, 1.3], k_s: F1_BOUNDS.pIce} : {cdA: F1_BOUNDS.cdA})};
+  seasons[y] = {muY: c.muY, muX: c.muX, clA: c.clA, cdA: c.cdA, LoverD: c.clA / c.cdA, pIce: c.pIce, theta_s: theta, k_s: ks, loadK: c.loadK ?? null};
+  const B = {muY: F1_BOUNDS.muY, clA: process.env.N4_CLA_MAX && y <= '2025' ? [F1_BOUNDS.clA[0], Number(process.env.N4_CLA_MAX)] : F1_BOUNDS.clA, ...(mc ? {theta_s: [0.7, 1.3], k_s: F1_BOUNDS.pIce} : {cdA: F1_BOUNDS.cdA})};
   for (const [k, [lo, hi]] of Object.entries(B)) { const v = k in c ? c[k] : seasons[y][k], w = 0.005 * (hi - lo);
     if (Number.isFinite(v) && (v <= lo + w || v >= hi - w)) hits.push({season: y, key: k, value: v, bound: v <= lo + w ? lo : hi}); }
   for (const f of cal.seasons[y].holdout?.fits || []) for (const b of f.bounds || []) hits.push({season: y, fold: (f.test || []).join('+'), key: b.key, bound: b.bound, foldCar: true}); }
