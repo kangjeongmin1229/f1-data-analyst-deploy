@@ -180,6 +180,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = 0.70 * base.muY;
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
+  if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan): μ = μ0·(1 − k·(Fz/Fz0 − 1))
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce') && !(MC && k === 'cdALow')).map(k => {
     const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
     const prior = MC && k === 'cdA' ? {x0: base.cdA, sd: MC.cdA.total / MC.cdA.value} : MC && k === 'pIce' ? {x0: base.pIce, sd: 0.04} : undefined;
