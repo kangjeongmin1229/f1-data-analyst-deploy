@@ -1,0 +1,39 @@
+[
+ {
+  "row": "/tmp/f1-braking-season.csv",
+  "unit": "g",
+  "n_rows": 311,
+  "n_tracks": 23,
+  "held_rms": 0.889,
+  "held_ci90": [
+   0.78,
+   0.992
+  ],
+  "floor": 0.2,
+  "ratio": 4.44,
+  "gap_to_1_2_floor": 0.649,
+  "mde": 0.158,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.294,
+    "ci90": [
+     0.229,
+     0.356
+    ],
+    "ratio": 1.47,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.551,
+    "ci90": [
+     0.449,
+     0.638
+    ],
+    "ratio": 2.75,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]
