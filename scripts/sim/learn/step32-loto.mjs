@@ -152,6 +152,10 @@ function energyOk(r) { // A2.2: ERS flows close within 0.1 %, deploy within the 
   if (!r.flow || !r.energy) return true; const sum = a => a.reduce((x, y) => x + y, 0), e = r.energy, tol = x => Math.max(1, 1e-3 * Math.abs(x));
   return Math.abs(sum(r.flow.dep) - e.deployJ) <= tol(e.deployJ) && Math.abs(sum(r.flow.brk) + sum(r.flow.thr) - e.regenJ) <= tol(e.regenJ) && e.deployJ <= e.budgetJ * 1.001;
 }
+// D1 (diagnostics f718796d…): the check as run used the step's midpoint speed and was stricter than the kernel's own step (0.01 m/s²
+// excess at 270–277 km/h, Montreal); fixed: the kernel's drive force (opts.probe) ≤ (P_ICE·η_d + P_ERS·η_k·η_d)/v at every drive step.
+function powerOkProbe(PR, car, r) { const v = r.v, n = v.length, eta = car.etaDrive ?? 0.96, pm = car.pIce * eta + (car.ers?.pMax ?? 0) * (car.etaErs ?? 0.95) * eta; let worst = -Infinity;
+  for (let i = 0; i < n; i++) { if (!(v[(i + 1) % n] > v[i]) || v[i] < 5) continue; worst = Math.max(worst, PR.drive(v[i], i).fx - pm / v[i]); } return {ok: worst <= 1, worst}; }
 function powerOk(tr, car, r, env) { // A2.1 traction (a): drive acceleration never above the power limit (full ICE + ERS, lowest drag)
   const n = r.v.length, ds = tr.ds, pmax = car.pIce * (car.etaDrive ?? 1) + (car.ers?.pMax ?? 0) * (car.etaErs ?? 1), aF = 0.5 * (env.rho ?? 1.2);
   let worst = -Infinity;
@@ -239,7 +243,7 @@ const slimFit = f => ({cdA_median_track: f.th, c_drs: f.c, zTh: f.zTh, zC: f.zC,
   decomposition: f.dec, tractionCI: f.trCI, tables: slimTb(f.tb), log: f.log});
 
 // exports for step32-forward.mjs (A7); the CLI below runs only when this file is the entry point
-export {K, T, EV, EV26, ALL, COR, cases, ZONES, FOLD, a2Grip, envOf, trackFor, withCorridor, score, strEnd, golden, drsPred, energyOk, powerOk, keyOf, rho, rng, pct, CDA_REF, P_ICE, TH, CD, VSE, BIN0, BINW, BINS, NMIN, TMIN, Q, DMU, FZ0, M_CAR, RANGE, CLA_LOW_RATIO, ship};
+export {powerOkProbe, K, T, EV, EV26, ALL, COR, cases, ZONES, FOLD, a2Grip, envOf, trackFor, withCorridor, score, strEnd, golden, drsPred, energyOk, powerOk, keyOf, rho, rng, pct, CDA_REF, P_ICE, TH, CD, VSE, BIN0, BINW, BINS, NMIN, TMIN, Q, DMU, FZ0, M_CAR, RANGE, CLA_LOW_RATIO, ship};
 const MAIN = process.argv[1] && new URL(import.meta.url).pathname === (await import('node:path')).resolve(process.argv[1]);
 const [mode, arg, arg2] = MAIN ? process.argv.slice(2) : [];
 if (!MAIN) { /* imported */ } else if (mode === 'kappa') { // driven-line κ per track + the model's low-drag state per session (A6.3: 2023–25 zones + 54 m, 2026 withZones)

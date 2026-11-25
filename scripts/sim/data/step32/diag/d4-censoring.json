@@ -1,0 +1,1055 @@
+{
+ "rule": "flat out = throttle >= 99 and brake off; bins 180-260 km/h",
+ "per_track": {
+  "austin": {
+   "2023": {
+    "samples_180_260": 4183,
+    "flat_share": 0.6151087736074587
+   },
+   "2024": {
+    "samples_180_260": 1265,
+    "flat_share": 0.6932806324110672
+   },
+   "2025": {
+    "samples_180_260": 3628,
+    "flat_share": 0.6171444321940464
+   }
+  },
+  "baku": {
+   "2023": {
+    "samples_180_260": 2299,
+    "flat_share": 0.7672901261418008
+   },
+   "2024": {
+    "samples_180_260": 2887,
+    "flat_share": 0.7686179425008659
+   },
+   "2025": {
+    "samples_180_260": 2275,
+    "flat_share": 0.7534065934065934
+   }
+  },
+  "catalunya": {
+   "2023": {
+    "samples_180_260": 3854,
+    "flat_share": 0.7740010378827192
+   },
+   "2024": {
+    "samples_180_260": 2938,
+    "flat_share": 0.7787610619469026
+   },
+   "2025": {
+    "samples_180_260": 2475,
+    "flat_share": 0.757979797979798
+   }
+  },
+  "hungaroring": {
+   "2023": {
+    "samples_180_260": 4391,
+    "flat_share": 0.7082669095877933
+   },
+   "2024": {
+    "samples_180_260": 3684,
+    "flat_share": 0.6818675352877307
+   },
+   "2025": {
+    "samples_180_260": 4083,
+    "flat_share": 0.6801371540533921
+   }
+  },
+  "imola": {
+   "2024": {
+    "samples_180_260": 2783,
+    "flat_share": 0.7391304347826086
+   },
+   "2025": {
+    "samples_180_260": 2747,
+    "flat_share": 0.7400800873680379
+   }
+  },
+  "interlagos": {
+   "2023": {
+    "samples_180_260": 2794,
+    "flat_share": 0.7261989978525412
+   },
+   "2025": {
+    "samples_180_260": 2682,
+    "flat_share": 0.6841909023117076
+   }
+  },
+  "jeddah": {
+   "2023": {
+    "samples_180_260": 3170,
+    "flat_share": 0.6977917981072556
+   },
+   "2024": {
+    "samples_180_260": 3874,
+    "flat_share": 0.6732059886422302
+   },
+   "2025": {
+    "samples_180_260": 1505,
+    "flat_share": 0.5441860465116279
+   }
+  },
+  "las-vegas": {
+   "2023": {
+    "samples_180_260": 2443,
+    "flat_share": 0.7359803520261973
+   },
+   "2024": {
+    "samples_180_260": 2336,
+    "flat_share": 0.7414383561643836
+   }
+  },
+  "lusail": {
+   "2023": {
+    "samples_180_260": 2947,
+    "flat_share": 0.6057007125890737
+   },
+   "2024": {
+    "samples_180_260": 4008,
+    "flat_share": 0.6744011976047904
+   },
+   "2025": {
+    "samples_180_260": 4141,
+    "flat_share": 0.6440473315624246
+   }
+  },
+  "melbourne": {
+   "2023": {
+    "samples_180_260": 3271,
+    "flat_share": 0.6979516967288291
+   },
+   "2024": {
+    "samples_180_260": 2828,
+    "flat_share": 0.675035360678925
+   },
+   "2025": {
+    "samples_180_260": 3030,
+    "flat_share": 0.6310231023102311
+   }
+  },
+  "mexico-city": {
+   "2023": {
+    "samples_180_260": 2535,
+    "flat_share": 0.6047337278106509
+   },
+   "2024": {
+    "samples_180_260": 2590,
+    "flat_share": 0.6258687258687259
+   },
+   "2025": {
+    "samples_180_260": 266,
+    "flat_share": 0.6353383458646616
+   }
+  },
+  "miami": {
+   "2023": {
+    "samples_180_260": 1839,
+    "flat_share": 0.6606851549755302
+   },
+   "2024": {
+    "samples_180_260": 1724,
+    "flat_share": 0.6670533642691415
+   },
+   "2025": {
+    "samples_180_260": 2202,
+    "flat_share": 0.648047229791099
+   }
+  },
+  "monte-carlo": {
+   "2023": {
+    "samples_180_260": 2745,
+    "flat_share": 0.7347905282331512
+   },
+   "2024": {
+    "samples_180_260": 2293,
+    "flat_share": 0.7335368512865242
+   },
+   "2025": {
+    "samples_180_260": 2834,
+    "flat_share": 0.7254763585038815
+   }
+  },
+  "montreal": {
+   "2024": {
+    "samples_180_260": 2738,
+    "flat_share": 0.8162892622352081
+   },
+   "2025": {
+    "samples_180_260": 2468,
+    "flat_share": 0.729740680713128
+   }
+  },
+  "monza": {
+   "2023": {
+    "samples_180_260": 3087,
+    "flat_share": 0.6287657920310982
+   },
+   "2024": {
+    "samples_180_260": 2427,
+    "flat_share": 0.6522455706633704
+   },
+   "2025": {
+    "samples_180_260": 2031,
+    "flat_share": 0.6258000984736583
+   }
+  },
+  "sakhir": {
+   "2023": {
+    "samples_180_260": 3415,
+    "flat_share": 0.7581259150805271
+   },
+   "2024": {
+    "samples_180_260": 3396,
+    "flat_share": 0.758833922261484
+   },
+   "2025": {
+    "samples_180_260": 426,
+    "flat_share": 0.7582159624413145
+   }
+  },
+  "shanghai": {
+   "2024": {
+    "samples_180_260": 3371,
+    "flat_share": 0.7327202610501334
+   },
+   "2025": {
+    "samples_180_260": 2107,
+    "flat_share": 0.5904129093497864
+   }
+  },
+  "silverstone": {
+   "2025": {
+    "samples_180_260": 2674,
+    "flat_share": 0.6458489154824233
+   }
+  },
+  "singapore": {
+   "2023": {
+    "samples_180_260": 3732,
+    "flat_share": 0.7687566988210075
+   },
+   "2024": {
+    "samples_180_260": 3724,
+    "flat_share": 0.7580558539205156
+   },
+   "2025": {
+    "samples_180_260": 1831,
+    "flat_share": 0.7411250682687056
+   }
+  },
+  "spa-francorchamps": {
+   "2025": {
+    "samples_180_260": 3479,
+    "flat_share": 0.583788444955447
+   }
+  },
+  "spielberg": {
+   "2023": {
+    "samples_180_260": 1245,
+    "flat_share": 0.6417670682730924
+   },
+   "2024": {
+    "samples_180_260": 2503,
+    "flat_share": 0.654814222932481
+   },
+   "2025": {
+    "samples_180_260": 3064,
+    "flat_share": 0.5949738903394256
+   }
+  },
+  "suzuka": {
+   "2023": {
+    "samples_180_260": 4557,
+    "flat_share": 0.5826201448321264
+   },
+   "2024": {
+    "samples_180_260": 4457,
+    "flat_share": 0.5541844289881086
+   },
+   "2025": {
+    "samples_180_260": 3598,
+    "flat_share": 0.5683713173985547
+   }
+  },
+  "yas-marina-circuit": {
+   "2023": {
+    "samples_180_260": 3226,
+    "flat_share": 0.7913825170489771
+   },
+   "2024": {
+    "samples_180_260": 3198,
+    "flat_share": 0.7811131957473421
+   },
+   "2025": {
+    "samples_180_260": 2538,
+    "flat_share": 0.7549251379038613
+   }
+  },
+  "zandvoort": {
+   "2024": {
+    "samples_180_260": 3110,
+    "flat_share": 0.6418006430868167
+   },
+   "2025": {
+    "samples_180_260": 2991,
+    "flat_share": 0.6345703778000669
+   }
+  }
+ },
+ "lateral_bins": {
+  "2023|180": {
+   "n": 3888,
+   "p95_g": 4.271196461947214,
+   "top_n": 195,
+   "top_flat_share": 0.020512820512820513,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 65,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 6,
+     "flat": 0
+    },
+    "spielberg": {
+     "n": 2,
+     "flat": 0
+    },
+    "sakhir": {
+     "n": 10,
+     "flat": 0
+    },
+    "hungaroring": {
+     "n": 5,
+     "flat": 0
+    },
+    "monza": {
+     "n": 24,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 16,
+     "flat": 0
+    },
+    "mexico-city": {
+     "n": 2,
+     "flat": 0
+    },
+    "miami": {
+     "n": 1,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 4,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 10,
+     "flat": 1
+    },
+    "jeddah": {
+     "n": 35,
+     "flat": 2
+    },
+    "catalunya": {
+     "n": 12,
+     "flat": 1
+    },
+    "interlagos": {
+     "n": 1,
+     "flat": 0
+    },
+    "austin": {
+     "n": 2,
+     "flat": 0
+    }
+   }
+  },
+  "2023|200": {
+   "n": 4609,
+   "p95_g": 4.437345352094568,
+   "top_n": 231,
+   "top_flat_share": 0.08225108225108226,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 67,
+     "flat": 5
+    },
+    "spielberg": {
+     "n": 15,
+     "flat": 0
+    },
+    "sakhir": {
+     "n": 7,
+     "flat": 0
+    },
+    "hungaroring": {
+     "n": 4,
+     "flat": 0
+    },
+    "monza": {
+     "n": 54,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 13,
+     "flat": 0
+    },
+    "las-vegas": {
+     "n": 4,
+     "flat": 0
+    },
+    "mexico-city": {
+     "n": 1,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 29,
+     "flat": 6
+    },
+    "jeddah": {
+     "n": 14,
+     "flat": 8
+    },
+    "singapore": {
+     "n": 9,
+     "flat": 0
+    },
+    "catalunya": {
+     "n": 2,
+     "flat": 0
+    },
+    "austin": {
+     "n": 12,
+     "flat": 0
+    }
+   }
+  },
+  "2023|220": {
+   "n": 5630,
+   "p95_g": 4.6897853476441105,
+   "top_n": 282,
+   "top_flat_share": 0.22340425531914893,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 27,
+     "flat": 2
+    },
+    "melbourne": {
+     "n": 18,
+     "flat": 3
+    },
+    "spielberg": {
+     "n": 12,
+     "flat": 0
+    },
+    "sakhir": {
+     "n": 4,
+     "flat": 0
+    },
+    "hungaroring": {
+     "n": 34,
+     "flat": 12
+    },
+    "monza": {
+     "n": 44,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 68,
+     "flat": 24
+    },
+    "las-vegas": {
+     "n": 16,
+     "flat": 0
+    },
+    "miami": {
+     "n": 8,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 10,
+     "flat": 10
+    },
+    "lusail": {
+     "n": 5,
+     "flat": 0
+    },
+    "jeddah": {
+     "n": 14,
+     "flat": 8
+    },
+    "singapore": {
+     "n": 2,
+     "flat": 0
+    },
+    "interlagos": {
+     "n": 10,
+     "flat": 2
+    },
+    "austin": {
+     "n": 10,
+     "flat": 2
+    }
+   }
+  },
+  "2023|240": {
+   "n": 7176,
+   "p95_g": 4.937738037975326,
+   "top_n": 359,
+   "top_flat_share": 0.6267409470752089,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 165,
+     "flat": 164
+    },
+    "melbourne": {
+     "n": 7,
+     "flat": 2
+    },
+    "spielberg": {
+     "n": 6,
+     "flat": 1
+    },
+    "hungaroring": {
+     "n": 11,
+     "flat": 4
+    },
+    "monza": {
+     "n": 2,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 33,
+     "flat": 10
+    },
+    "miami": {
+     "n": 6,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 49,
+     "flat": 12
+    },
+    "jeddah": {
+     "n": 21,
+     "flat": 0
+    },
+    "catalunya": {
+     "n": 30,
+     "flat": 30
+    },
+    "interlagos": {
+     "n": 22,
+     "flat": 0
+    },
+    "austin": {
+     "n": 7,
+     "flat": 2
+    }
+   }
+  },
+  "2024|180": {
+   "n": 3877,
+   "p95_g": 4.656769785818812,
+   "top_n": 194,
+   "top_flat_share": 0.06701030927835051,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 8,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 8,
+     "flat": 0
+    },
+    "spielberg": {
+     "n": 8,
+     "flat": 0
+    },
+    "sakhir": {
+     "n": 3,
+     "flat": 0
+    },
+    "shanghai": {
+     "n": 11,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 6,
+     "flat": 0
+    },
+    "imola": {
+     "n": 9,
+     "flat": 2
+    },
+    "hungaroring": {
+     "n": 3,
+     "flat": 0
+    },
+    "monza": {
+     "n": 1,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 43,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 4,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 14,
+     "flat": 0
+    },
+    "jeddah": {
+     "n": 21,
+     "flat": 4
+    },
+    "catalunya": {
+     "n": 51,
+     "flat": 7
+    },
+    "austin": {
+     "n": 4,
+     "flat": 0
+    }
+   }
+  },
+  "2024|200": {
+   "n": 4169,
+   "p95_g": 4.4743137035617835,
+   "top_n": 209,
+   "top_flat_share": 0.20095693779904306,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 11,
+     "flat": 1
+    },
+    "spielberg": {
+     "n": 13,
+     "flat": 0
+    },
+    "sakhir": {
+     "n": 7,
+     "flat": 0
+    },
+    "shanghai": {
+     "n": 16,
+     "flat": 13
+    },
+    "zandvoort": {
+     "n": 41,
+     "flat": 10
+    },
+    "monza": {
+     "n": 7,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 41,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 1,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 27,
+     "flat": 2
+    },
+    "jeddah": {
+     "n": 16,
+     "flat": 9
+    },
+    "singapore": {
+     "n": 6,
+     "flat": 0
+    },
+    "catalunya": {
+     "n": 18,
+     "flat": 7
+    },
+    "austin": {
+     "n": 5,
+     "flat": 0
+    }
+   }
+  },
+  "2024|220": {
+   "n": 5488,
+   "p95_g": 5.514988281676879,
+   "top_n": 275,
+   "top_flat_share": 0.23272727272727273,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 6,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 18,
+     "flat": 10
+    },
+    "spielberg": {
+     "n": 16,
+     "flat": 2
+    },
+    "sakhir": {
+     "n": 1,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 2,
+     "flat": 0
+    },
+    "imola": {
+     "n": 14,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 176,
+     "flat": 38
+    },
+    "las-vegas": {
+     "n": 8,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 2,
+     "flat": 2
+    },
+    "lusail": {
+     "n": 17,
+     "flat": 9
+    },
+    "jeddah": {
+     "n": 7,
+     "flat": 3
+    },
+    "singapore": {
+     "n": 2,
+     "flat": 0
+    },
+    "catalunya": {
+     "n": 2,
+     "flat": 0
+    },
+    "austin": {
+     "n": 4,
+     "flat": 0
+    }
+   }
+  },
+  "2024|240": {
+   "n": 7081,
+   "p95_g": 5.093103129377297,
+   "top_n": 355,
+   "top_flat_share": 0.428169014084507,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 21,
+     "flat": 21
+    },
+    "melbourne": {
+     "n": 15,
+     "flat": 7
+    },
+    "spielberg": {
+     "n": 14,
+     "flat": 8
+    },
+    "shanghai": {
+     "n": 5,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 19,
+     "flat": 0
+    },
+    "hungaroring": {
+     "n": 15,
+     "flat": 6
+    },
+    "suzuka": {
+     "n": 175,
+     "flat": 42
+    },
+    "miami": {
+     "n": 7,
+     "flat": 1
+    },
+    "lusail": {
+     "n": 26,
+     "flat": 22
+    },
+    "jeddah": {
+     "n": 23,
+     "flat": 10
+    },
+    "catalunya": {
+     "n": 35,
+     "flat": 35
+    }
+   }
+  },
+  "2025|180": {
+   "n": 4260,
+   "p95_g": 4.77577063669476,
+   "top_n": 213,
+   "top_flat_share": 0.046948356807511735,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 2,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 31,
+     "flat": 0
+    },
+    "spa-francorchamps": {
+     "n": 5,
+     "flat": 0
+    },
+    "silverstone": {
+     "n": 5,
+     "flat": 0
+    },
+    "shanghai": {
+     "n": 11,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 1,
+     "flat": 0
+    },
+    "imola": {
+     "n": 11,
+     "flat": 3
+    },
+    "hungaroring": {
+     "n": 2,
+     "flat": 0
+    },
+    "monza": {
+     "n": 3,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 31,
+     "flat": 1
+    },
+    "miami": {
+     "n": 1,
+     "flat": 0
+    },
+    "monte-carlo": {
+     "n": 6,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 68,
+     "flat": 0
+    },
+    "jeddah": {
+     "n": 9,
+     "flat": 1
+    },
+    "catalunya": {
+     "n": 26,
+     "flat": 5
+    },
+    "austin": {
+     "n": 1,
+     "flat": 0
+    }
+   }
+  },
+  "2025|200": {
+   "n": 5100,
+   "p95_g": 4.888489877399993,
+   "top_n": 255,
+   "top_flat_share": 0.050980392156862744,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 4,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 14,
+     "flat": 0
+    },
+    "spielberg": {
+     "n": 11,
+     "flat": 0
+    },
+    "spa-francorchamps": {
+     "n": 12,
+     "flat": 0
+    },
+    "shanghai": {
+     "n": 3,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 42,
+     "flat": 4
+    },
+    "imola": {
+     "n": 1,
+     "flat": 0
+    },
+    "monza": {
+     "n": 19,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 35,
+     "flat": 3
+    },
+    "lusail": {
+     "n": 70,
+     "flat": 0
+    },
+    "jeddah": {
+     "n": 9,
+     "flat": 4
+    },
+    "singapore": {
+     "n": 4,
+     "flat": 0
+    },
+    "catalunya": {
+     "n": 21,
+     "flat": 2
+    },
+    "austin": {
+     "n": 10,
+     "flat": 0
+    }
+   }
+  },
+  "2025|220": {
+   "n": 6994,
+   "p95_g": 5.377623703947345,
+   "top_n": 350,
+   "top_flat_share": 0.26571428571428574,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 3,
+     "flat": 0
+    },
+    "melbourne": {
+     "n": 68,
+     "flat": 11
+    },
+    "spielberg": {
+     "n": 17,
+     "flat": 1
+    },
+    "zandvoort": {
+     "n": 9,
+     "flat": 0
+    },
+    "imola": {
+     "n": 8,
+     "flat": 0
+    },
+    "monza": {
+     "n": 7,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 98,
+     "flat": 22
+    },
+    "monte-carlo": {
+     "n": 8,
+     "flat": 8
+    },
+    "lusail": {
+     "n": 128,
+     "flat": 48
+    },
+    "jeddah": {
+     "n": 3,
+     "flat": 3
+    },
+    "catalunya": {
+     "n": 1,
+     "flat": 0
+    }
+   }
+  },
+  "2025|240": {
+   "n": 8737,
+   "p95_g": 5.228335661040445,
+   "top_n": 437,
+   "top_flat_share": 0.2540045766590389,
+   "top_by_track": {
+    "yas-marina-circuit": {
+     "n": 9,
+     "flat": 9
+    },
+    "melbourne": {
+     "n": 110,
+     "flat": 13
+    },
+    "spielberg": {
+     "n": 8,
+     "flat": 0
+    },
+    "silverstone": {
+     "n": 12,
+     "flat": 0
+    },
+    "shanghai": {
+     "n": 3,
+     "flat": 0
+    },
+    "zandvoort": {
+     "n": 16,
+     "flat": 0
+    },
+    "hungaroring": {
+     "n": 6,
+     "flat": 4
+    },
+    "monza": {
+     "n": 1,
+     "flat": 0
+    },
+    "suzuka": {
+     "n": 182,
+     "flat": 69
+    },
+    "miami": {
+     "n": 26,
+     "flat": 0
+    },
+    "lusail": {
+     "n": 42,
+     "flat": 4
+    },
+    "jeddah": {
+     "n": 13,
+     "flat": 8
+    },
+    "catalunya": {
+     "n": 6,
+     "flat": 4
+    },
+    "interlagos": {
+     "n": 2,
+     "flat": 0
+    },
+    "austin": {
+     "n": 1,
+     "flat": 0
+    }
+   }
+  }
+ }
+}
