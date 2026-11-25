@@ -1,5 +1,8 @@
 # Step 35 B — FE sector-balance candidate: DRAFT pre-registration (2026-11-25; not final, not run)
 
+> **CLOSED 2026-11-25 (central 78/100): not judgeable, no attempt spent.** MDE 0.43–0.86 pp vs useful 0.25 pp (needs 3–12× the units).
+> FE sector balance is labelled "data limit" with its ±. Reopen only when the power check passes after new Gen4 races.
+
 Status: **draft**. It becomes final (hashed, ledger line) only after (1) the kernel inertia-in-braking fix lands
 (fix/kernel-deploy-accounting-2026-11-25, step 27 session) and (2) step 31/32's series-generic hooks are on main or rebased onto that fix.
 (3) the sound-speed diagnostic A3 (docs/prereg/step35-fe-A3-sound-speed-2026-11-25.md) has ended: if it passes (≥ 5 circuits), its
