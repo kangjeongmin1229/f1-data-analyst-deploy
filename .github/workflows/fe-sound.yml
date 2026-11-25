@@ -1,8 +1,8 @@
-name: Formula E onboard sound speed (step 35 A3)
+name: Formula E duel sector rows (step 35)
 
-# docs/prereg/step35-fe-A3-sound-speed-2026-11-25.md: YouTube audio of the listed Formula E onboard laps → FE tone tracker → derived
-# tone tracks; official duel analysis PDFs → text lines (sector times). Audio and PDFs are deleted; only derived JSON is stored as a
-# release asset. Push to fe-fetch/sound** or manual run.
+# Central 78/100: no YouTube audio (terms of service, copyright); the sound-speed method is closed as "not available: no licensed
+# audio source". This job only fetches the official duel analysis PDFs and keeps the parsed lap rows (car, lap, time, S1-S3);
+# no PDF and no text lines are stored (copyright notice). It also removes the earlier asset that held text lines.
 on:
   workflow_dispatch:
   push:
@@ -12,34 +12,25 @@ permissions:
   contents: write
 
 jobs:
-  sound:
+  sectors:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 20
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - run: npm ci --silent && python -m pip install -q numpy yt-dlp && sudo apt-get install -y -qq ffmpeg poppler-utils >/dev/null
-      - name: Duel analysis PDFs (sector times)
-        run: node scripts/sim/learn/fetch-fe-duel-pdfs.mjs
-      - name: Tone tracks
+      - run: npm ci --silent && sudo apt-get install -y -qq poppler-utils >/dev/null
+      - run: node scripts/sim/learn/fetch-fe-duel-pdfs.mjs --selftest && node scripts/sim/learn/fetch-fe-duel-pdfs.mjs
+      - name: Store parsed rows, remove the text-line asset
         run: |
-          set -uo pipefail; mkdir -p tracks
-          python -I scripts/sim/learn/fe-sound-speed.py x x --selftest
-          for id in cGhDxksiPM0 JXO2IHtKC0s e_EZVYumpTc qiqGqWL1VL8 GBKQG1YYi10 5GKIN5irq_E OlLNegFcUyo lsEBPtBhhTA CgncBZMaKIY DvRtfswHa0o RdOkTYJ13XM tMmlF3sAgk4; do
-            yt-dlp -q -f bestaudio -o "a_$id.%(ext)s" "https://www.youtube.com/watch?v=$id" 2> "tracks/$id.err" || { echo "::warning::$id download failed: $(tail -1 tracks/$id.err)"; continue; }
-            f=$(ls a_$id.* | head -1); python -I scripts/sim/learn/fe-sound-speed.py "$f" "tracks/$id.json"; rm -f a_$id.*
-          done
-          ls tracks | wc -l
-      - name: Store derived results
-        if: always()
-        run: |
-          id=${{ github.run_id }}; tar czf fe-sound-r$id.tgz tracks fe-duel-analysis.json 2>/dev/null || tar czf fe-sound-r$id.tgz tracks
-          sha256sum fe-sound-r$id.tgz > SHA256SUMS-sound-r$id
-          echo "::notice title=FE sound::$(ls tracks/*.json 2>/dev/null | wc -l) tracks; $(node -p "try{const j=require('./fe-duel-analysis.json');j.files.length+' PDFs, '+j.log.length+' errors'}catch(e){'no PDFs'}")"
-          gh release view fe-inputs-sound >/dev/null 2>&1 || gh release create fe-inputs-sound --prerelease --title "Formula E onboard sound tracks (step 35 A3)" --notes "Derived tone tracks and duel analysis text lines; no audio, no PDFs."
-          gh release upload fe-inputs-sound fe-sound-r$id.tgz SHA256SUMS-sound-r$id --clobber
+          id=${{ github.run_id }}
+          node -e "const j=require('./fe-duel-analysis.json');if(j.files.some(f=>f.lines))process.exit(1)"
+          gzip -c fe-duel-analysis.json > fe-duel-rows-r$id.json.gz; sha256sum fe-duel-rows-r$id.json.gz > SHA256SUMS-duel-r$id
+          gh release view fe-inputs-sound >/dev/null 2>&1 || gh release create fe-inputs-sound --prerelease --title "Formula E duel sector rows (step 35)" --notes "Parsed lap rows only; no audio, no PDFs, no text."
+          gh release edit fe-inputs-sound --title "Formula E duel sector rows (step 35)" --notes "Parsed lap rows (car, lap, time, S1-S3) from the Al Kamel duel analysis PDFs; no audio, no PDFs, no text. The r45521661514 asset with text lines was deleted (copyright notice)."
+          for a in fe-sound-r45521661514.tgz SHA256SUMS-sound-r45521661514; do gh release delete-asset fe-inputs-sound "$a" -y || true; done
+          gh release upload fe-inputs-sound fe-duel-rows-r$id.json.gz SHA256SUMS-duel-r$id --clobber
+          echo "::notice title=FE duel rows::$(node -p "const j=require('./fe-duel-analysis.json');j.files.length+' PDFs, '+j.files.reduce((s,f)=>s+f.rows.length,0)+' rows, '+j.log.length+' errors'")"
+          echo "::notice title=FE assets::$(gh release view fe-inputs-sound --json assets -q '[.assets[].name]|join(\" \")')"
