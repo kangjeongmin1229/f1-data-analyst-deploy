@@ -1,0 +1,32 @@
+name: probe step36 Timing71 qualifying laps (DTM, GTWC, IGTC, Nürburgring)
+# Research only (step 36 round 3): Timing71 archive replays of qualifying sessions since 2024, every lap → σ_meas v2 (derived numbers
+# published; raw laps only in a draft release). Never merged.
+on:
+  push:
+    branches: ['probe/step36-t71-laps']
+permissions:
+  contents: write
+jobs:
+  t71:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: |
+          set -uo pipefail
+          T71_KEYS=dtm,gtwc,igtc,nur T71_FROM=2024 T71_LAPS_OUT=t71laps timeout 300m node scripts/sim/t71-collect.mjs | tail -5 || true
+          ls t71laps | wc -l
+          node -e "const fs=require('fs'),z=require('zlib');const s=fs.readdirSync('t71laps').map(f=>JSON.parse(fs.readFileSync('t71laps/'+f)));fs.writeFileSync('t71-laps-full.json.gz',z.gzipSync(JSON.stringify({source:'Timing71 archive replays, qualifying; raw laps for σ_meas (step 36), never committed',sessions:s})));console.log(s.length,'sessions',[...new Set(s.map(x=>x.series))])"
+          echo "$(gunzip -c t71-laps-full.json.gz | sha256sum | cut -c1-64)  t71-laps-full.json.gz (content)" | tee t71-content.txt
+          node scripts/sim/noise-floor.mjs --laps t71-laps-full.json.gz --out noise > /dev/null
+          node -e "console.log(JSON.stringify(require('./noise/noise-floor.json').lapFiles,null,1))" | tee t71-sigma.json
+          gh release view data-series-laps -R "$R" >/dev/null 2>&1 || gh release create data-series-laps -R "$R" --draft --title "Per-lap files (raw, internal)" --notes "Raw lap times for σ_meas (step 36). Draft only; do not publish."
+          gh release upload data-series-laps -R "$R" t71-laps-full.json.gz --clobber
+          gh release create step36-series-sigma -R "$R" --prerelease --title "step 36 per-lap σ_meas (derived numbers only)" --notes probe 2>/dev/null || true
+          gh release upload step36-series-sigma -R "$R" t71-sigma.json t71-content.txt --clobber
