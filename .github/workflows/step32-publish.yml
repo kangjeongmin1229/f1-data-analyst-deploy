@@ -5,6 +5,7 @@ on:
   push:
     branches: ['publish/**']
 permissions: {contents: write, actions: read}
+concurrency: {group: step32-publish, cancel-in-progress: true}
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -30,6 +31,6 @@ jobs:
         run: |
           cd pub && git init -q -b results/step32-c3 && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
-          if git fetch -q origin results/step32-c3; then git reset -q --soft FETCH_HEAD; fi
+          if git fetch -q origin results/step32-c3; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi  # keep earlier runs' folders
           mkdir -p run-$RUN && mv artifact run.json summary.md run-$RUN/ 2>/dev/null; [ -f NO_VERDICT.txt ] && mv NO_VERDICT.txt run-$RUN/
           git add -A && git commit -q -m "Step 32 C3 verdict of run $RUN" && git push -q origin HEAD:results/step32-c3
