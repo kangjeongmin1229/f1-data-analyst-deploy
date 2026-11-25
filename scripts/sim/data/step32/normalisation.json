@@ -21,7 +21,18 @@
     "rms_kph": 5.4403550166591685
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2023|Abu Dhabi Grand Prix|VER": 1.0,
+   "2023|Abu Dhabi Grand Prix|LEC": 1.0005160843848415,
+   "2023|Abu Dhabi Grand Prix|PIA": 0.9976343130501364,
+   "2023|Abu Dhabi Grand Prix|RUS": 1.0011317366316175,
+   "2023|Abu Dhabi Grand Prix|NOR": 0.9976343130501364,
+   "2023|Abu Dhabi Grand Prix|TSU": 1.0072304370496887,
+   "2023|Abu Dhabi Grand Prix|GAS": 1.0029609808574187,
+   "2023|Abu Dhabi Grand Prix|ALO": 1.0044958862993791,
+   "2023|Abu Dhabi Grand Prix|PER": 1.0
+  }
  },
  "2023|Australian Grand Prix": {
   "choice": "pole team only",
@@ -86,7 +97,10 @@
     "rms_kph": 6.695573692191078
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2023|Australian Grand Prix|VER": 1.0
+  }
  },
  "2023|Austrian Grand Prix": {
   "choice": "pole team only",
@@ -106,7 +120,10 @@
     "rms_kph": 5.386736179217013
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2023|Austrian Grand Prix|LEC": 1.0
+  }
  },
  "2023|Azerbaijan Grand Prix": {
   "choice": "pole team only",
@@ -144,7 +161,10 @@
     "rms_kph": 5.247894972673292
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2023|Azerbaijan Grand Prix|LEC": 1.0
+  }
  },
  "2023|Bahrain Grand Prix": {
   "choice": "pole team only",
@@ -189,7 +209,11 @@
     "rms_kph": 5.654328946274048
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Bahrain Grand Prix|VER": 1.0,
+   "2023|Bahrain Grand Prix|PER": 1.0
+  }
  },
  "2023|Hungarian Grand Prix": {
   "choice": "normalised",
@@ -212,7 +236,19 @@
     "rms_kph": 5.78769620705824
    }
   ],
-  "n_used": 10
+  "n_used": 10,
+  "used": {
+   "2023|Hungarian Grand Prix|HAM": 1.0,
+   "2023|Hungarian Grand Prix|VER": 0.9981327607132854,
+   "2023|Hungarian Grand Prix|NOR": 0.9986834077261487,
+   "2023|Hungarian Grand Prix|PIA": 0.9986834077261487,
+   "2023|Hungarian Grand Prix|ZHO": 1.0007685551163812,
+   "2023|Hungarian Grand Prix|LEC": 1.000513535323894,
+   "2023|Hungarian Grand Prix|BOT": 1.0007685551163812,
+   "2023|Hungarian Grand Prix|ALO": 1.000614227033667,
+   "2023|Hungarian Grand Prix|PER": 0.9981327607132854,
+   "2023|Hungarian Grand Prix|RUS": 1.0
+  }
  },
  "2023|Italian Grand Prix": {
   "choice": "normalised",
@@ -227,7 +263,19 @@
   },
   "passed": 8,
   "failed": [],
-  "n_used": 10
+  "n_used": 10,
+  "used": {
+   "2023|Italian Grand Prix|SAI": 1.0,
+   "2023|Italian Grand Prix|VER": 1.0064770353958195,
+   "2023|Italian Grand Prix|LEC": 1.0,
+   "2023|Italian Grand Prix|RUS": 1.006802505474225,
+   "2023|Italian Grand Prix|PER": 1.0064770353958195,
+   "2023|Italian Grand Prix|ALB": 1.001061108793123,
+   "2023|Italian Grand Prix|PIA": 1.0079357081206282,
+   "2023|Italian Grand Prix|HAM": 1.006802505474225,
+   "2023|Italian Grand Prix|NOR": 1.0079357081206282,
+   "2023|Italian Grand Prix|ALO": 1.0111068150778861
+  }
  },
  "2023|Japanese Grand Prix": {
   "choice": "pole team only",
@@ -260,7 +308,11 @@
     "rms_kph": 5.155185466746428
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Japanese Grand Prix|VER": 1.0,
+   "2023|Japanese Grand Prix|PER": 1.0
+  }
  },
  "2023|Las Vegas Grand Prix": {
   "choice": "pole team only",
@@ -308,7 +360,11 @@
     "rms_kph": 5.024623273828599
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Las Vegas Grand Prix|LEC": 1.0,
+   "2023|Las Vegas Grand Prix|SAI": 1.0
+  }
  },
  "2023|Mexico City Grand Prix": {
   "choice": "normalised",
@@ -330,7 +386,18 @@
     "rms_kph": 5.024838026257988
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2023|Mexico City Grand Prix|LEC": 1.0,
+   "2023|Mexico City Grand Prix|SAI": 1.0,
+   "2023|Mexico City Grand Prix|VER": 1.0038186466457397,
+   "2023|Mexico City Grand Prix|RIC": 1.0130253691783415,
+   "2023|Mexico City Grand Prix|PER": 1.0038186466457397,
+   "2023|Mexico City Grand Prix|PIA": 1.0105202312138728,
+   "2023|Mexico City Grand Prix|RUS": 1.0118413703221,
+   "2023|Mexico City Grand Prix|BOT": 1.0050215928492519,
+   "2023|Mexico City Grand Prix|ZHO": 1.0050215928492519
+  }
  },
  "2023|Miami Grand Prix": {
   "choice": "pole team only",
@@ -358,7 +425,10 @@
     "rms_kph": 6.024915376190201
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2023|Miami Grand Prix|VER": 1.0
+  }
  },
  "2023|Monaco Grand Prix": {
   "choice": "pole team only",
@@ -411,7 +481,11 @@
     "rms_kph": 5.915530170588731
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Monaco Grand Prix|VER": 1.0,
+   "2023|Monaco Grand Prix|PER": 1.0
+  }
  },
  "2023|Qatar Grand Prix": {
   "choice": "pole team only",
@@ -443,7 +517,11 @@
     "rms_kph": 6.395719088874431
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Qatar Grand Prix|VER": 1.0,
+   "2023|Qatar Grand Prix|PER": 1.0
+  }
  },
  "2023|Saudi Arabian Grand Prix": {
   "choice": "pole team only",
@@ -483,7 +561,11 @@
     "rms_kph": 5.457105600815306
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Saudi Arabian Grand Prix|LEC": 1.0,
+   "2023|Saudi Arabian Grand Prix|SAI": 1.0
+  }
  },
  "2023|Singapore Grand Prix": {
   "choice": "pole team only",
@@ -530,7 +612,11 @@
     "rms_kph": 5.985408233872691
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Singapore Grand Prix|SAI": 1.0,
+   "2023|Singapore Grand Prix|LEC": 1.0
+  }
  },
  "2023|Spanish Grand Prix": {
   "choice": "pole team only",
@@ -577,7 +663,11 @@
     "rms_kph": 5.270875810426837
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|Spanish Grand Prix|VER": 1.0,
+   "2023|Spanish Grand Prix|PER": 1.0
+  }
  },
  "2023|S\u00e3o Paulo Grand Prix": {
   "choice": "normalised",
@@ -598,7 +688,18 @@
     "rms_kph": 5.2354361991038925
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2023|S\u00e3o Paulo Grand Prix|NOR": 1.0,
+   "2023|S\u00e3o Paulo Grand Prix|VER": 1.0062339066313575,
+   "2023|S\u00e3o Paulo Grand Prix|PER": 1.0062339066313575,
+   "2023|S\u00e3o Paulo Grand Prix|ALO": 1.0056125031190528,
+   "2023|S\u00e3o Paulo Grand Prix|SAI": 1.0038102374373623,
+   "2023|S\u00e3o Paulo Grand Prix|HAM": 1.0088039017209731,
+   "2023|S\u00e3o Paulo Grand Prix|LEC": 1.0038102374373623,
+   "2023|S\u00e3o Paulo Grand Prix|PIA": 1.0,
+   "2023|S\u00e3o Paulo Grand Prix|STR": 1.0056125031190528
+  }
  },
  "2023|United States Grand Prix": {
   "choice": "pole team only",
@@ -661,7 +762,11 @@
     "rms_kph": 6.777648698427064
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2023|United States Grand Prix|LEC": 1.0,
+   "2023|United States Grand Prix|SAI": 1.0
+  }
  },
  "2024|Abu Dhabi Grand Prix": {
   "choice": "pole team only",
@@ -697,7 +802,11 @@
     "rms_kph": 5.819287425492647
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Abu Dhabi Grand Prix|NOR": 1.0,
+   "2024|Abu Dhabi Grand Prix|PIA": 1.0
+  }
  },
  "2024|Australian Grand Prix": {
   "choice": "pole team only",
@@ -725,7 +834,11 @@
     "rms_kph": 5.2832562233363305
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Australian Grand Prix|VER": 1.0,
+   "2024|Australian Grand Prix|PER": 1.0
+  }
  },
  "2024|Austrian Grand Prix": {
   "choice": "pole team only",
@@ -753,7 +866,11 @@
     "rms_kph": 5.179804418885417
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Austrian Grand Prix|VER": 1.0,
+   "2024|Austrian Grand Prix|PER": 1.0
+  }
  },
  "2024|Azerbaijan Grand Prix": {
   "choice": "pole team only",
@@ -793,7 +910,11 @@
     "rms_kph": 6.227334498320429
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Azerbaijan Grand Prix|LEC": 1.0,
+   "2024|Azerbaijan Grand Prix|SAI": 1.0
+  }
  },
  "2024|Bahrain Grand Prix": {
   "choice": "pole team only",
@@ -826,7 +947,11 @@
     "rms_kph": 5.352800959586414
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Bahrain Grand Prix|LEC": 1.0,
+   "2024|Bahrain Grand Prix|SAI": 1.0
+  }
  },
  "2024|Canadian Grand Prix": {
   "choice": "pole team only",
@@ -884,7 +1009,11 @@
     "rms_kph": 5.794275156910884
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Canadian Grand Prix|RUS": 1.0,
+   "2024|Canadian Grand Prix|HAM": 1.0
+  }
  },
  "2024|Chinese Grand Prix": {
   "choice": "pole team only",
@@ -919,7 +1048,11 @@
     "rms_kph": 6.02058634290393
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Chinese Grand Prix|VER": 1.0,
+   "2024|Chinese Grand Prix|PER": 1.0
+  }
  },
  "2024|Dutch Grand Prix": {
   "choice": "pole team only",
@@ -954,7 +1087,11 @@
     "rms_kph": 5.984550410220215
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Dutch Grand Prix|NOR": 1.0,
+   "2024|Dutch Grand Prix|PIA": 1.0
+  }
  },
  "2024|Emilia Romagna Grand Prix": {
   "choice": "pole team only",
@@ -981,7 +1118,11 @@
     "rms_kph": 5.250571978303909
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Emilia Romagna Grand Prix|VER": 1.0,
+   "2024|Emilia Romagna Grand Prix|PER": 1.0
+  }
  },
  "2024|Hungarian Grand Prix": {
   "choice": "normalised",
@@ -996,7 +1137,18 @@
   },
   "passed": 7,
   "failed": [],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2024|Hungarian Grand Prix|NOR": 1.0,
+   "2024|Hungarian Grand Prix|PIA": 1.0,
+   "2024|Hungarian Grand Prix|VER": 0.9983945512040865,
+   "2024|Hungarian Grand Prix|SAI": 0.9993480845189249,
+   "2024|Hungarian Grand Prix|HAM": 1.0028342910389814,
+   "2024|Hungarian Grand Prix|LEC": 0.9993480845189249,
+   "2024|Hungarian Grand Prix|ALO": 1.0027078155717943,
+   "2024|Hungarian Grand Prix|TSU": 1.0042835151596279,
+   "2024|Hungarian Grand Prix|RIC": 1.0042835151596279
+  }
  },
  "2024|Italian Grand Prix": {
   "choice": "pole team only",
@@ -1024,7 +1176,10 @@
     "rms_kph": 5.696351560018262
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2024|Italian Grand Prix|NOR": 1.0
+  }
  },
  "2024|Japanese Grand Prix": {
   "choice": "normalised",
@@ -1039,7 +1194,19 @@
   },
   "passed": 8,
   "failed": [],
-  "n_used": 10
+  "n_used": 10,
+  "used": {
+   "2024|Japanese Grand Prix|VER": 1.0,
+   "2024|Japanese Grand Prix|PER": 1.0,
+   "2024|Japanese Grand Prix|NOR": 1.0033556153656835,
+   "2024|Japanese Grand Prix|SAI": 1.001621153440361,
+   "2024|Japanese Grand Prix|ALO": 1.0008729768130802,
+   "2024|Japanese Grand Prix|PIA": 1.0033556153656835,
+   "2024|Japanese Grand Prix|HAM": 1.0047947206548415,
+   "2024|Japanese Grand Prix|LEC": 1.001621153440361,
+   "2024|Japanese Grand Prix|RUS": 1.0047947206548415,
+   "2024|Japanese Grand Prix|TSU": 1.0031816435873775
+  }
  },
  "2024|Las Vegas Grand Prix": {
   "choice": "pole team only",
@@ -1104,7 +1271,11 @@
     "rms_kph": 9.474939578937041
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Las Vegas Grand Prix|RUS": 1.0,
+   "2024|Las Vegas Grand Prix|HAM": 1.0
+  }
  },
  "2024|Mexico City Grand Prix": {
   "choice": "pole team only",
@@ -1133,7 +1304,11 @@
     "rms_kph": 5.183690575541105
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Mexico City Grand Prix|SAI": 1.0,
+   "2024|Mexico City Grand Prix|LEC": 1.0
+  }
  },
  "2024|Miami Grand Prix": {
   "choice": "pole team only",
@@ -1160,7 +1335,11 @@
     "rms_kph": 5.5748955421682505
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Miami Grand Prix|VER": 1.0,
+   "2024|Miami Grand Prix|PER": 1.0
+  }
  },
  "2024|Monaco Grand Prix": {
   "choice": "pole team only",
@@ -1205,7 +1384,11 @@
     "rms_kph": 5.10144475809136
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Monaco Grand Prix|LEC": 1.0,
+   "2024|Monaco Grand Prix|SAI": 1.0
+  }
  },
  "2024|Qatar Grand Prix": {
   "choice": "pole team only",
@@ -1232,7 +1415,11 @@
     "rms_kph": 5.590082191174249
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Qatar Grand Prix|VER": 1.0,
+   "2024|Qatar Grand Prix|PER": 1.0
+  }
  },
  "2024|Saudi Arabian Grand Prix": {
   "choice": "pole team only",
@@ -1260,7 +1447,11 @@
     "rms_kph": 5.46002636304551
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Saudi Arabian Grand Prix|VER": 1.0,
+   "2024|Saudi Arabian Grand Prix|PER": 1.0
+  }
  },
  "2024|Singapore Grand Prix": {
   "choice": "pole team only",
@@ -1313,7 +1504,11 @@
     "rms_kph": 5.608727943333087
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2024|Singapore Grand Prix|NOR": 1.0,
+   "2024|Singapore Grand Prix|PIA": 1.0
+  }
  },
  "2024|Spanish Grand Prix": {
   "choice": "normalised",
@@ -1327,7 +1522,18 @@
   },
   "passed": 8,
   "failed": [],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2024|Spanish Grand Prix|NOR": 1.0,
+   "2024|Spanish Grand Prix|VER": 0.999345041410598,
+   "2024|Spanish Grand Prix|HAM": 0.9951482215466186,
+   "2024|Spanish Grand Prix|RUS": 0.9951482215466186,
+   "2024|Spanish Grand Prix|LEC": 0.9973326951245018,
+   "2024|Spanish Grand Prix|SAI": 0.9973326951245018,
+   "2024|Spanish Grand Prix|GAS": 1.0022008226122994,
+   "2024|Spanish Grand Prix|PER": 0.999345041410598,
+   "2024|Spanish Grand Prix|OCO": 1.0022008226122994
+  }
  },
  "2024|United States Grand Prix": {
   "choice": "pole team only",
@@ -1352,7 +1558,10 @@
     "rms_kph": 7.112034134159175
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2024|United States Grand Prix|VER": 1.0
+  }
  },
  "2025|Abu Dhabi Grand Prix": {
   "choice": "pole team only",
@@ -1380,7 +1589,10 @@
     "rms_kph": 14.34769625919861
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Abu Dhabi Grand Prix|VER": 1.0
+  }
  },
  "2025|Australian Grand Prix": {
   "choice": "normalised",
@@ -1403,7 +1615,18 @@
     "rms_kph": 5.261757245804197
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2025|Australian Grand Prix|NOR": 1.0,
+   "2025|Australian Grand Prix|PIA": 1.0,
+   "2025|Australian Grand Prix|VER": 0.9990303386817427,
+   "2025|Australian Grand Prix|RUS": 0.99882472251971,
+   "2025|Australian Grand Prix|TSU": 1.0043729642963188,
+   "2025|Australian Grand Prix|LEC": 1.0020342369129192,
+   "2025|Australian Grand Prix|HAM": 1.0020342369129192,
+   "2025|Australian Grand Prix|SAI": 1.0010413179307138,
+   "2025|Australian Grand Prix|GAS": 1.0049964076067406
+  }
  },
  "2025|Austrian Grand Prix": {
   "choice": "pole team only",
@@ -1450,7 +1673,11 @@
     "rms_kph": 7.320737373604256
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Austrian Grand Prix|NOR": 1.0,
+   "2025|Austrian Grand Prix|PIA": 1.0
+  }
  },
  "2025|Azerbaijan Grand Prix": {
   "choice": "normalised",
@@ -1464,7 +1691,16 @@
   },
   "passed": 5,
   "failed": [],
-  "n_used": 7
+  "n_used": 7,
+  "used": {
+   "2025|Azerbaijan Grand Prix|VER": 1.0,
+   "2025|Azerbaijan Grand Prix|NOR": 0.9986585184081086,
+   "2025|Azerbaijan Grand Prix|LEC": 0.9976171564733916,
+   "2025|Azerbaijan Grand Prix|LAW": 1.002775739399547,
+   "2025|Azerbaijan Grand Prix|SAI": 1.0094043887147335,
+   "2025|Azerbaijan Grand Prix|HAD": 1.002775739399547,
+   "2025|Azerbaijan Grand Prix|TSU": 1.0
+  }
  },
  "2025|Bahrain Grand Prix": {
   "choice": "pole team only",
@@ -1474,7 +1710,10 @@
   },
   "passed": 0,
   "failed": [],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Bahrain Grand Prix|TSU": 1.0
+  }
  },
  "2025|Belgian Grand Prix": {
   "choice": "pole team only",
@@ -1503,7 +1742,11 @@
     "rms_kph": 5.436013693010378
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Belgian Grand Prix|NOR": 1.0,
+   "2025|Belgian Grand Prix|PIA": 1.0
+  }
  },
  "2025|British Grand Prix": {
   "choice": "pole team only",
@@ -1532,7 +1775,11 @@
     "rms_kph": 5.16855348001181
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|British Grand Prix|VER": 1.0,
+   "2025|British Grand Prix|TSU": 1.0
+  }
  },
  "2025|Canadian Grand Prix": {
   "choice": "pole team only",
@@ -1573,7 +1820,11 @@
     "rms_kph": 6.042119276866696
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Canadian Grand Prix|RUS": 1.0,
+   "2025|Canadian Grand Prix|ANT": 1.0
+  }
  },
  "2025|Chinese Grand Prix": {
   "choice": "pole team only",
@@ -1600,7 +1851,10 @@
     "rms_kph": 5.407042636739052
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Chinese Grand Prix|PIA": 1.0
+  }
  },
  "2025|Dutch Grand Prix": {
   "choice": "pole team only",
@@ -1653,7 +1907,11 @@
     "rms_kph": 5.6397500564006835
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Dutch Grand Prix|PIA": 1.0,
+   "2025|Dutch Grand Prix|NOR": 1.0
+  }
  },
  "2025|Emilia Romagna Grand Prix": {
   "choice": "pole team only",
@@ -1700,7 +1958,10 @@
     "rms_kph": 5.488720105653231
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Emilia Romagna Grand Prix|VER": 1.0
+  }
  },
  "2025|Hungarian Grand Prix": {
   "choice": "pole team only",
@@ -1741,7 +2002,11 @@
     "rms_kph": 5.194780269525023
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Hungarian Grand Prix|NOR": 1.0,
+   "2025|Hungarian Grand Prix|PIA": 1.0
+  }
  },
  "2025|Italian Grand Prix": {
   "choice": "normalised",
@@ -1762,7 +2027,15 @@
     "rms_kph": 5.133913269272012
    }
   ],
-  "n_used": 6
+  "n_used": 6,
+  "used": {
+   "2025|Italian Grand Prix|VER": 1.0,
+   "2025|Italian Grand Prix|NOR": 1.0037125926256425,
+   "2025|Italian Grand Prix|PIA": 1.0037125926256425,
+   "2025|Italian Grand Prix|ANT": 1.0044468652594984,
+   "2025|Italian Grand Prix|ALO": 1.006971529700826,
+   "2025|Italian Grand Prix|TSU": 1.0
+  }
  },
  "2025|Japanese Grand Prix": {
   "choice": "normalised",
@@ -1785,7 +2058,16 @@
     "rms_kph": 5.299302305291527
    }
   ],
-  "n_used": 7
+  "n_used": 7,
+  "used": {
+   "2025|Japanese Grand Prix|VER": 1.0,
+   "2025|Japanese Grand Prix|NOR": 1.0,
+   "2025|Japanese Grand Prix|PIA": 1.0,
+   "2025|Japanese Grand Prix|HAD": 1.0031171384620057,
+   "2025|Japanese Grand Prix|HAM": 1.0033670033670035,
+   "2025|Japanese Grand Prix|ALB": 1.002660961579202,
+   "2025|Japanese Grand Prix|BEA": 1.0077010972107252
+  }
  },
  "2025|Mexico City Grand Prix": {
   "choice": "pole team only",
@@ -1795,7 +2077,10 @@
   },
   "passed": 0,
   "failed": [],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Mexico City Grand Prix|RUS": 1.0
+  }
  },
  "2025|Miami Grand Prix": {
   "choice": "pole team only",
@@ -1835,7 +2120,11 @@
     "rms_kph": 7.014216881611886
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Miami Grand Prix|VER": 1.0,
+   "2025|Miami Grand Prix|TSU": 1.0
+  }
  },
  "2025|Monaco Grand Prix": {
   "choice": "pole team only",
@@ -1900,7 +2189,11 @@
     "rms_kph": 6.108934901294085
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|Monaco Grand Prix|NOR": 1.0,
+   "2025|Monaco Grand Prix|PIA": 1.0
+  }
  },
  "2025|Qatar Grand Prix": {
   "choice": "normalised",
@@ -1924,7 +2217,18 @@
     "rms_kph": 5.302197818685434
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2025|Qatar Grand Prix|PIA": 1.0,
+   "2025|Qatar Grand Prix|NOR": 1.0,
+   "2025|Qatar Grand Prix|VER": 1.005985552115583,
+   "2025|Qatar Grand Prix|RUS": 1.0019841269841272,
+   "2025|Qatar Grand Prix|HAD": 1.0095905293522647,
+   "2025|Qatar Grand Prix|ALO": 1.012737957000598,
+   "2025|Qatar Grand Prix|SAI": 1.0079250720461095,
+   "2025|Qatar Grand Prix|GAS": 1.0093364869911614,
+   "2025|Qatar Grand Prix|LEC": 1.006634537147149
+  }
  },
  "2025|Saudi Arabian Grand Prix": {
   "choice": "pole team only",
@@ -1943,7 +2247,10 @@
     "rms_kph": 6.005311921654628
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Saudi Arabian Grand Prix|VER": 1.0
+  }
  },
  "2025|Singapore Grand Prix": {
   "choice": "pole team only",
@@ -1982,7 +2289,10 @@
     "rms_kph": 7.043017587215711
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2025|Singapore Grand Prix|RUS": 1.0
+  }
  },
  "2025|Spanish Grand Prix": {
   "choice": "normalised",
@@ -2004,7 +2314,16 @@
     "rms_kph": 5.414914937935563
    }
   ],
-  "n_used": 7
+  "n_used": 7,
+  "used": {
+   "2025|Spanish Grand Prix|PIA": 1.0,
+   "2025|Spanish Grand Prix|NOR": 1.0,
+   "2025|Spanish Grand Prix|RUS": 1.0052124675948995,
+   "2025|Spanish Grand Prix|VER": 1.0032709885065838,
+   "2025|Spanish Grand Prix|ANT": 1.0052124675948995,
+   "2025|Spanish Grand Prix|GAS": 1.0090655022470068,
+   "2025|Spanish Grand Prix|HAD": 1.0129745042349034
+  }
  },
  "2025|S\u00e3o Paulo Grand Prix": {
   "choice": "normalised",
@@ -2027,7 +2346,18 @@
     "rms_kph": 5.8311289227671255
    }
   ],
-  "n_used": 9
+  "n_used": 9,
+  "used": {
+   "2025|S\u00e3o Paulo Grand Prix|NOR": 1.0,
+   "2025|S\u00e3o Paulo Grand Prix|ANT": 1.0035889247009209,
+   "2025|S\u00e3o Paulo Grand Prix|BEA": 1.0072699627540302,
+   "2025|S\u00e3o Paulo Grand Prix|LEC": 1.001192895945365,
+   "2025|S\u00e3o Paulo Grand Prix|PIA": 1.0,
+   "2025|S\u00e3o Paulo Grand Prix|GAS": 1.0076205561811382,
+   "2025|S\u00e3o Paulo Grand Prix|HAD": 1.0040778909153278,
+   "2025|S\u00e3o Paulo Grand Prix|LAW": 1.0040778909153278,
+   "2025|S\u00e3o Paulo Grand Prix|HUL": 1.006248749730711
+  }
  },
  "2025|United States Grand Prix": {
   "choice": "pole team only",
@@ -2079,7 +2409,11 @@
     "rms_kph": 6.131437692394308
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2025|United States Grand Prix|VER": 1.0,
+   "2025|United States Grand Prix|TSU": 1.0
+  }
  },
  "2026|Austrian Grand Prix": {
   "choice": "normalised",
@@ -2090,7 +2424,11 @@
   },
   "passed": 1,
   "failed": [],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Austrian Grand Prix|ANT": 1.0,
+   "2026|Austrian Grand Prix|VER": 1.0025345874726006
+  }
  },
  "2026|Azerbaijan Grand Prix": {
   "choice": "pole team only",
@@ -2148,7 +2486,10 @@
     "rms_kph": 7.937494915543728
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2026|Azerbaijan Grand Prix|RUS": 1.0
+  }
  },
  "2026|Belgian Grand Prix": {
   "choice": "pole team only",
@@ -2173,7 +2514,10 @@
     "rms_kph": 6.195872310351352
    }
   ],
-  "n_used": 1
+  "n_used": 1,
+  "used": {
+   "2026|Belgian Grand Prix|NOR": 1.0
+  }
  },
  "2026|British Grand Prix": {
   "choice": "pole team only",
@@ -2206,7 +2550,11 @@
     "rms_kph": 5.753899600315884
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|British Grand Prix|ANT": 1.0,
+   "2026|British Grand Prix|RUS": 1.0
+  }
  },
  "2026|Chinese Grand Prix": {
   "choice": "pole team only",
@@ -2244,7 +2592,11 @@
     "rms_kph": 11.69301564860464
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Chinese Grand Prix|ANT": 1.0,
+   "2026|Chinese Grand Prix|RUS": 1.0
+  }
  },
  "2026|Hungarian Grand Prix": {
   "choice": "pole team only",
@@ -2296,7 +2648,11 @@
     "rms_kph": 5.833884953017693
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Hungarian Grand Prix|HAM": 1.0,
+   "2026|Hungarian Grand Prix|LEC": 1.0
+  }
  },
  "2026|Japanese Grand Prix": {
   "choice": "pole team only",
@@ -2314,7 +2670,11 @@
     "rms_kph": 7.119667918926244
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Japanese Grand Prix|LEC": 1.0,
+   "2026|Japanese Grand Prix|HAM": 1.0
+  }
  },
  "2026|Mexico City Grand Prix": {
   "choice": "pole team only",
@@ -2360,7 +2720,11 @@
     "rms_kph": 5.721404738754728
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Mexico City Grand Prix|HAM": 1.0,
+   "2026|Mexico City Grand Prix|LEC": 1.0
+  }
  },
  "2026|Miami Grand Prix": {
   "choice": "pole team only",
@@ -2411,7 +2775,11 @@
     "rms_kph": 7.145898634410591
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Miami Grand Prix|ANT": 1.0,
+   "2026|Miami Grand Prix|RUS": 1.0
+  }
  },
  "2026|Monaco Grand Prix": {
   "choice": "pole team only",
@@ -2445,7 +2813,11 @@
     "rms_kph": 5.724509996188903
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Monaco Grand Prix|ANT": 1.0,
+   "2026|Monaco Grand Prix|RUS": 1.0
+  }
  },
  "2026|Singapore Grand Prix": {
   "choice": "pole team only",
@@ -2490,7 +2862,11 @@
     "rms_kph": 5.27390523710742
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Singapore Grand Prix|LEC": 1.0,
+   "2026|Singapore Grand Prix|HAM": 1.0
+  }
  },
  "2026|Barcelona Grand Prix": {
   "choice": "pole team only",
@@ -2528,7 +2904,11 @@
     "rms_kph": 7.303715650953434
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Barcelona Grand Prix|HAM": 1.0,
+   "2026|Barcelona Grand Prix|LEC": 1.0
+  }
  },
  "2026|United States Grand Prix": {
   "choice": "pole team only",
@@ -2554,7 +2934,11 @@
     "rms_kph": 5.26613844908549
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|United States Grand Prix|VER": 1.0,
+   "2026|United States Grand Prix|HAD": 1.0
+  }
  },
  "2026|Bahrain Grand Prix": {
   "choice": "pole team only",
@@ -2606,7 +2990,11 @@
     "rms_kph": 8.002217362405682
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Bahrain Grand Prix|HAM": 1.0,
+   "2026|Bahrain Grand Prix|LEC": 1.0
+  }
  },
  "2026|Las Vegas Grand Prix": {
   "choice": "pole team only",
@@ -2630,7 +3018,11 @@
     "rms_kph": 10.359172433957752
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Las Vegas Grand Prix|ANT": 1.0,
+   "2026|Las Vegas Grand Prix|RUS": 1.0
+  }
  },
  "2026|Spanish Grand Prix": {
   "choice": "pole team only",
@@ -2694,6 +3086,10 @@
     "rms_kph": 7.251062816240105
    }
   ],
-  "n_used": 2
+  "n_used": 2,
+  "used": {
+   "2026|Spanish Grand Prix|NOR": 1.0,
+   "2026|Spanish Grand Prix|PIA": 1.0
+  }
  }
 }

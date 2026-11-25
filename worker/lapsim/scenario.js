@@ -38,9 +38,9 @@ export const CAR_ORDER = ['base2019', '2025', '2026', '2027', '2028', 'wec-lmh',
 // step 32 flag (A4.3): learned F1 limits for the 2025/2026 F1 entries only; null = off. The setter is for tests and the ship package.
 let step32Limits = lapsimStep32Limits;
 export function setStep32Limits(x) { step32Limits = x; }
-const withStep32 = (y, e) => { const L = step32Limits?.[y]?.car; if (!L) return e; const c = e.car, k = L.cdAScale ?? 1;
-  return {...e, grip: 1, kind: e.kind + '+model (learned from public telemetry)', car: {...c, pIce: L.pIce ?? c.pIce, cdA: c.cdA * k, cdALow: L.cdALowRatio != null ? c.cdA * k * L.cdALowRatio : (c.cdALow ?? c.cdA) * k,
-    clALow: L.clALow ?? c.clALow, lateralCap: L.lateralCap, decoupled: L.decoupled}}; };
+// A7: car-level physical fields (muY, muX, muXTrac, clA, clALow, pIce) + cdA scale and DRS cut; per-track drag trims kept
+const withStep32 = (y, e) => { const L = step32Limits?.[y]?.car; if (!L) return e; const c = e.car, k = L.cdAScale ?? 1, {cdAScale, cdALowRatio, ...f} = L;
+  return {...e, grip: 1, kind: e.kind + '+model (learned from public telemetry)', car: {...c, ...f, cdA: c.cdA * k, cdALow: cdALowRatio != null ? c.cdA * k * cdALowRatio : (c.cdALow ?? c.cdA) * k}}; };
 export function carsFor(id) {
   const s = lapsimCalibration?.seasons || {}, p = lapsimCalibration?.projections || {};
   const gripOf = y => [y, ...Object.keys(s).sort().reverse()].map(k => s[k]?.tracks?.[id]?.grip).find(g => g != null) ?? lapsimExtraTracks[id]?.trackFactor?.grip ?? 1; // extra circuit: factor learned from its real laps, if any

@@ -238,8 +238,11 @@ const slimTb = tb => Object.fromEntries(Object.entries(tb).filter(([, t]) => t).
 const slimFit = f => ({cdA_median_track: f.th, c_drs: f.c, zTh: f.zTh, zC: f.zC, thAtEnd: f.thAtEnd, cAtEnd: f.cAtEnd, profileTh: f.profileTh, profileC: f.profileC,
   decomposition: f.dec, tractionCI: f.trCI, tables: slimTb(f.tb), log: f.log});
 
-const [mode, arg, arg2] = process.argv.slice(2);
-if (mode === 'kappa') { // driven-line κ per track + the model's low-drag state per session (A6.3: 2023–25 zones + 54 m, 2026 withZones)
+// exports for step32-forward.mjs (A7); the CLI below runs only when this file is the entry point
+export {K, T, EV, EV26, ALL, COR, cases, ZONES, FOLD, a2Grip, envOf, trackFor, withCorridor, score, strEnd, golden, drsPred, energyOk, powerOk, keyOf, rho, rng, pct, CDA_REF, P_ICE, TH, CD, VSE, BIN0, BINW, BINS, NMIN, TMIN, Q, DMU, FZ0, M_CAR, RANGE, CLA_LOW_RATIO, ship};
+const MAIN = process.argv[1] && new URL(import.meta.url).pathname === (await import('node:path')).resolve(process.argv[1]);
+const [mode, arg, arg2] = MAIN ? process.argv.slice(2) : [];
+if (!MAIN) { /* imported */ } else if (mode === 'kappa') { // driven-line κ per track + the model's low-drag state per session (A6.3: 2023–25 zones + 54 m, 2026 withZones)
   const ids = [...new Set(ALL.map(e => e.track))], low = {};
   for (const e of ALL) if (!low[e.session]) low[e.session] = Array.from(e.year === 2026 ? stage26(e.track).tr.aeroLow : trackFor(e.track, e.zones, 1, true).aeroLow, x => Math.min(1, Math.max(0, Number(x) || 0)));
   writeFileSync(arg, JSON.stringify({kappa: Object.fromEntries(ids.map(id => [id, Array.from(withCorridor(id, K.trackFromData(T[id])).kappa)])), low}));
@@ -297,4 +300,4 @@ if (mode === 'kappa') { // driven-line κ per track + the model's low-drag state
   const car = {pIce: P_ICE, cdAScale: TH.prior[0] / CDA_REF, cdALowRatio: 1 - CD.prior[0], ...withTables({}, tb, pre.decomposition)};
   writeFileSync(arg2, JSON.stringify({2025: {car}, 2026: {car: {lateralCap: car.lateralCap, decoupled: car.decoupled}}}));
   console.log('limits written');
-} else throw new Error('mode: kappa | precheck | limits | fold | fold26');
+} else if (MAIN) throw new Error('mode: kappa | precheck | limits | fold | fold26');

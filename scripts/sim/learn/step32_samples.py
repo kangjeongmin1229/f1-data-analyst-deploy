@@ -40,7 +40,7 @@ for s, L in sess.items():
         (passed if 0.97 <= kk <= 1.03 and rms <= 5.0 else failed).append({'lap': k, 'team': e['team'], 'k': kk, 'rms_kph': rms})
     others = len(passed) + len(failed); use_norm = others > 0 and len(passed) / others >= 0.8
     keep = {k for k, e in L if e['team'] == pole_team} | ({p['lap'] for p in passed} if use_norm else set())
-    norm[s] = {'choice': 'normalised' if use_norm else 'pole team only', 'pole_team': pole_team, 'k_team': kt, 'passed': len(passed), 'failed': failed, 'n_used': len(keep)}
+    norm[s] = {'choice': 'normalised' if use_norm else 'pole team only', 'pole_team': pole_team, 'k_team': kt, 'passed': len(passed), 'failed': failed, 'n_used': len(keep), 'used': {k: kt[e['team']] for k, e in L if k in keep}}
     for k, e in L:
         if k not in keep: continue
         n, ds, sh = e['n'], e['ds'], e['shift']; kap = np.array(KD[e['track']], float); low = np.array(LOW[s], float); assert len(kap) == n == len(low)

@@ -240,15 +240,12 @@ jobs:
         run: node --test tests/step32-measured-readonly.test.mjs tests/step32-locked2022.test.mjs | tee measured-before.txt
       - name: Flag off = byte-identical A2 baseline (v2 §3)
         run: node scripts/sim/learn/step31-baseline.mjs /tmp/a2.json && echo "7427e195a72753547e0c5ceaca3b18f39988af7f405de3452f047e4021c30c85  /tmp/a2.json" | sha256sum --check
-      - name: Samples, all-track tables, feasibility pre-check (A2.5; infeasible = not started, no attempt)
+      - name: Driven-line κ, aero states and A6 normalisation (A7 inputs; no table pre-check)
         run: |
           D=scripts/sim/data/step32; mkdir -p out
-          node scripts/sim/learn/step32-loto.mjs kappa out/kappa.json
-          python -I scripts/sim/learn/step32_samples.py $D/traces-top10.json out/kappa.json $D/samples.json out/normalisation.json
-          node scripts/sim/learn/step32-loto.mjs precheck out/precheck.json
-          node scripts/sim/learn/step32-loto.mjs limits out/precheck.json out/limits.json
-          cp $D/samples.json out/
-          node -e "const p=require('./out/precheck.json');if(!p.feasible){console.error('A2.5 pre-check failed: LOTO not started, no attempt');process.exit(1)}"
+          node scripts/sim/learn/step32-loto.mjs kappa out/kappa.json && cmp out/kappa.json $D/kappa.json
+          python -I scripts/sim/learn/step32_samples.py $D/traces-top10.json $D/kappa.json /tmp/samples.json out/normalisation.json && cmp out/normalisation.json $D/normalisation.json
+          cp $D/limits-prior.json out/limits.json
       - name: Series isolation, flag off and on (A4.1 G-S)
         run: |
           git worktree add /tmp/base $STEP32_BASE
@@ -271,23 +268,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        job: [fold:austin, fold:baku, fold:catalunya, fold:hungaroring, fold:imola, fold:interlagos, fold:jeddah, fold:las-vegas, fold:lusail,
-              fold:melbourne, fold:mexico-city, fold:miami, fold:monte-carlo, fold:montreal, fold:monza, fold:sakhir, fold:shanghai, fold:silverstone,
-              fold:singapore, fold:spa-francorchamps, fold:spielberg, fold:suzuka, fold:yas-marina-circuit, fold:zandvoort,
-              fold26:austin, fold26:baku, fold26:catalunya, fold26:hungaroring, fold26:kuala-lumpur, fold26:las-vegas, fold26:madring, fold26:mexico-city,
-              fold26:miami, fold26:monte-carlo, fold26:shanghai, fold26:silverstone, fold26:singapore, fold26:spa-francorchamps, fold26:spielberg, fold26:suzuka]
+        job: [austin, baku, catalunya, hungaroring, imola, interlagos, jeddah, las-vegas, lusail, melbourne, mexico-city, miami, monte-carlo,
+              montreal, monza, sakhir, shanghai, silverstone, singapore, spa-francorchamps, spielberg, suzuka, yas-marina-circuit, zandvoort]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
-      - uses: actions/download-artifact@v4
-        with: {name: step32-check, path: chk}
-      - name: Fold
-        run: |
-          cp chk/samples.json scripts/sim/data/step32/samples.json
-          mode=${MATRIX_JOB%%:*}; held=${MATRIX_JOB#*:}; mkdir -p out/$mode
-          node scripts/sim/learn/step32-loto.mjs $mode $held out/$mode/$held.json
-        env: {MATRIX_JOB: '${{ matrix.job }}'}
+      - name: Fold (A7 forward fit, three seasons in parallel)
+        run: mkdir -p out/fold && node scripts/sim/learn/step32-forward.mjs fold "$HELD" "out/fold/$HELD.json"
+        env: {HELD: '${{ matrix.job }}'}
       - uses: actions/upload-artifact@v4
         with: {name: 'step32-${{ strategy.job-index }}', path: out/, retention-days: 90}
 
@@ -307,13 +296,13 @@ jobs:
         with: {pattern: 'step32-*', path: art, merge-multiple: true}
       - name: Mesh, continuity, energy (v2 §5 5a–5c, A2.2) and verdict
         run: |
-          mkdir -p out && ls art/fold | wc -l && ls art/fold26 | wc -l
-          python -I -c "import json,os,statistics as st;F=[json.load(open('art/fold/'+f)) for f in os.listdir('art/fold')];json.dump({s:{'th':st.median(f['fits'][s]['cdA_median_track'] for f in F),'c':st.median(f['fits'][s]['c_drs'] for f in F)} for s in ('2023','2024','2025')},open('out/median-fit.json','w'))"
-          node scripts/sim/learn/step32-mesh.mjs art/precheck.json out/median-fit.json "art/fold26/$(ls art/fold26 | head -1)" out/mesh.json
+          mkdir -p out && ls art/fold | wc -l
+          python -I -c "import json,os,statistics as st;F=[json.load(open('art/fold/'+f)) for f in os.listdir('art/fold')];json.dump({s:{k:st.median(f['fits'][s]['params'][k] for f in F) for k in F[0]['fits'][s]['params']} for s in ('2023','2024','2025')},open('out/median-fit.json','w'))"
+          node scripts/sim/learn/step32-mesh.mjs out/median-fit.json out/mesh.json
           node --test tests/step32-measured-readonly.test.mjs | tee out/measured-after.txt
           python -I scripts/sim/learn/step32_verdict.py art/fold art/fold26 scripts/sim/data/step32/traces-top10.json scripts/sim/data/step32/power-top10.json \
             art/precheck.json out/mesh.json art/series-isolation.txt art/compute-time.json out/measured-after.txt out/step32-verdict-${{ github.run_id }}.json | tee out/verdict.log
-          cp art/normalisation.json art/precheck.json art/compute-time.json art/series-isolation.txt out/
+          cp art/normalisation.json art/compute-time.json art/series-isolation.txt out/
           { echo '## Step 32 verdict (research, run ${{ github.run_id }})'; echo '```'; head -c 60000 out/verdict.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with: {name: 'step32-verdict-${{ github.run_id }}', path: out/, retention-days: 90}

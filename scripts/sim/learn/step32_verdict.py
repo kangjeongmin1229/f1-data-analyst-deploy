@@ -1,5 +1,6 @@
 # Step 32 verdict (v2 + A1–A6) from the fold files and the guard outputs. Unit = track for every test and CI (A6.2). No 2022 data.
 # Laps → session mean → track mean. Sign-flip and bootstrap code copied from step31_verdict.py (seed 32 here).
+# A7: forward-model folds (fits[s].params/z/checks/stage1; processed held-out traction for G-TR).
 # usage: python3 -I scripts/sim/learn/step32_verdict.py <folds dir> <folds26 dir> <traces-top10.json> <power-top10.json> <precheck.json>
 #        <mesh.json> <series-isolation.txt> <compute-time.json> <measured-check.txt> <out.json>
 import json, sys, os, math
@@ -11,7 +12,7 @@ FD, FD26, TRP, POWP, PREP, MESHP, ISOP, CTP, MEAP, OUT = sys.argv[1:11]
 F = [json.load(open(os.path.join(FD, f))) for f in sorted(os.listdir(FD)) if f.endswith('.json')]
 if len(F) != 24: sys.exit(f'INCOMPLETE: {len(F)} of 24 folds; no verdict')
 F26 = [json.load(open(os.path.join(FD26, f))) for f in sorted(os.listdir(FD26)) if f.endswith('.json')] if os.path.isdir(FD26) else []
-TR = json.load(open(TRP))['events']; POW = json.load(open(POWP)); PRE = json.load(open(PREP))
+TR = json.load(open(TRP))['events']; POW = json.load(open(POWP)); PRE = json.load(open(PREP)) if os.path.exists(PREP) else None
 rng = np.random.default_rng(32); ALPHA = 0.05 / 2; USEFUL = 3.0; BANDS = ['60_120', '120_180', '180_240', '120_240']
 
 def flip_p(x):  # copied from step31_verdict.py
@@ -91,31 +92,44 @@ braking = dict(bins=brk, pass_=all(b['ok'] for b in brk))
 sb = {f['held']: track_val(f, 'strEndBias', 'cand') for f in F}; sbb = {f['held']: track_val(f, 'strEndBias', 'base') for f in F}
 v = np.array([x for x in sb.values() if x is not None]); ci = boot(v)
 g_sb = dict(mean_kph=float(v.mean()), ci95=ci, base_mean_kph=float(np.mean([x for x in sbb.values() if x is not None])), base_ci95=boot([x for x in sbb.values() if x is not None]), pass_=bool(-2 <= ci[0] and ci[1] <= 2))
-g_tr = dict(fails=[dict(held=f['held'], season=s, **b) for f in F for s, fit in f['fits'].items() for b in fit['tractionCI'] if not b['ok']]); g_tr['pass_'] = not g_tr['fails']
+def proc_bins(which):  # held-out processed exit traction (a_x > 0, exit) per track → {track: [(v, ax)]}
+    out = defaultdict(list)
+    for f in F:
+        for h in f['heldScores']:
+            for v_, ax, ex, st_ in h[which]:
+                if ex and ax > 0 and not st_: out[f['held']].append((v_, ax))
+    return out
+PM, PC, PB = proc_bins('procMeas'), proc_bins('procCand'), proc_bins('procBase'); tr_rows = []; trk_h = sorted(PM)
+def p95bin(D, tracks, lo):
+    x = [a for t in tracks for v_, a in D.get(t, []) if lo <= v_ < lo + 20]; return (float(np.percentile(x, 95)) / 9.81, len(x)) if len(x) >= 200 else (None, len(x))
+for lo in range(60, 240, 20):
+    m, nm = p95bin(PM, trk_h, lo); c, nc = p95bin(PC, trk_h, lo); bb, _ = p95bin(PB, trk_h, lo)
+    if m is None or c is None: continue
+    bs = [p95bin(PM, list(rng.choice(trk_h, len(trk_h))), lo)[0] for _ in range(1000)]; bs = [x for x in bs if x is not None]
+    lo95, hi95 = float(np.quantile(bs, 0.025)), float(np.quantile(bs, 0.975))
+    tr_rows.append(dict(bin=lo, meas_g=m, meas_ci95=[lo95, hi95], cand_g=c, base_g=bb, ok=bool(lo95 <= c <= hi95)))
+g_tr = dict(bins=tr_rows, pass_=bool(tr_rows) and all(r['ok'] for r in tr_rows))
 # physics guards per fold (A2.5)
 phys = []
 for f in F:
-    for s, fit in f['fits'].items(): phys.append(dict(held=f['held'], season=s, **fit['decomposition']['checks']))
+    for s, fit in f['fits'].items(): phys.append(dict(held=f['held'], season=s, **fit['checks']))  # A7.6 P1, P2, P4 + G-BT (A7.5)
     for h in f['heldScores']:
         c = h['checks']; phys.append(dict(held=f['held'], lap=h['key'], P3a=bool(c['power']['ok']), P4=bool(c['lowR']['ok']) if c['lowR'] else True, E=bool(c['energyCand'] and c['energyBase'])))
 phys_fail = [r for r in phys if not all(v for k, v in r.items() if k not in ('held', 'season', 'lap'))]
 MESH = json.load(open(MESHP)); ISO = open(ISOP).read(); CT = json.load(open(CTP)); MEA = open(MEAP).read()
 guards = dict(G_P=dict(n_checks=len(phys), fails=phys_fail[:50], n_fails=len(phys_fail), pass_=not phys_fail), G_mesh=dict(pass_=MESH['pass']),
               G_S=dict(pass_='G-S PASS' in ISO), G_T=dict(**CT, pass_=CT['pass']), G_M0=dict(pass_='# fail 0' in MEA and '# pass' in MEA), G_SB=g_sb, G_TR=g_tr)
-# parameters vs priors (A3.4): θ, c per season; decomposition per season over folds
+# parameters vs priors (A3.4, A7.2): every fitted parameter per season over folds; > 2σ or physics range = model error
 params = {}
 for s in ('2023', '2024', '2025'):
-    for k, z, end, prof in (('cdA_median_track', 'zTh', 'thAtEnd', 'profileTh'), ('c_drs', 'zC', 'cAtEnd', 'profileC')):
-        vals = np.array([f['fits'][s][k] for f in F]); zs = np.array([f['fits'][s][z] for f in F])
-        params[f'{s}.{k}'] = dict(median=float(np.median(vals)), fold90=[float(np.quantile(vals, 0.05)), float(np.quantile(vals, 0.95))], z_median=float(np.median(zs)),
-                                  z_maxabs=float(np.abs(zs).max()), at_range_end=int(sum(f['fits'][s][end] for f in F)),
-                                  profile90_median=[float(np.median([f['fits'][s][prof]['interval90'][i] for f in F if f['fits'][s][prof]['interval90']])) for i in (0, 1)],
-                                  model_error=bool(np.median(np.abs(zs)) > 2 or any(f['fits'][s][end] for f in F)))
-    d = [f['fits'][s]['decomposition'] for f in F]
-    params[f'{s}.decomposition'] = dict(clA=[float(np.quantile([x['clA'] for x in d], q)) for q in (0.05, 0.5, 0.95)], mu0=[float(np.quantile([x['mu0'] for x in d], q)) for q in (0.05, 0.5, 0.95)],
-        muY_range=[float(min(min(m['muY'] for m in x['muY']) for x in d)), float(max(max(m['muY'] for m in x['muY']) for x in d))],
-        muRatio_range=[float(min(min([m['ratio'] for m in x['muRatio']] or [np.nan]) for x in d)), float(max(max([m['ratio'] for m in x['muRatio']] or [np.nan]) for x in d))],
-        all_track_bootstrap90=PRE['seasons'][s]['bootstrap90'])
+    for k in F[0]['fits'][s]['params']:
+        vals = np.array([f['fits'][s]['params'][k] for f in F]); zs = np.array([f['fits'][s]['z'][k] for f in F])
+        params[f'{s}.{k}'] = dict(median=float(np.median(vals)), fold90=[float(np.quantile(vals, 0.05)), float(np.quantile(vals, 0.95))], prior=F[0]['fits'][s]['prior'][k],
+                                  z_median=float(np.median(zs)), z_maxabs=float(np.abs(zs).max()), model_error=bool(np.median(np.abs(zs)) > 2))
+    params[f'{s}.muY_range_over_loads'] = [float(min(f['fits'][s]['muYRange'][0] for f in F)), float(max(f['fits'][s]['muYRange'][1] for f in F))]
+    params[f'{s}.muX_over_muY'] = [float(np.quantile([f['fits'][s]['params']['muX'] / f['fits'][s]['params']['muY'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
+    params[f'{s}.stage1'] = dict(muX=float(np.median([f['fits'][s]['stage1']['muX'] for f in F])), muXTrac=float(np.median([f['fits'][s]['stage1']['muXTrac'] for f in F])))
+    params[f'{s}.env_chi2_dof'] = [float(np.quantile([f['fits'][s]['envChi2Dof'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
 # noise floor ratios (A3.3)
 NF = POW['noise_floor']; noise = {}
 for b in BANDS:

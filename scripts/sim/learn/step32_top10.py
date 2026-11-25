@@ -1,6 +1,7 @@
 # Step 32 A3.1 (docs/prereg/step32-empirical-ggv-A2A3-2026-11-25.md): top-10 drivers' fastest clean quali laps per session from
 # TracingInsights at pinned commits, on the sim grid; drop rules of step 28 (f1-envelope-baseline.py one(), copied) applied per session
 # and per lap; every dropped row listed. Measured data is only read: values are resampled onto the grid in memory, never edited.
+# A7.3: + each lap's raw sample positions xs and speeds sp (metadata for identical processing).
 # A6: + the pole team's second car (any rank); each lap keeps its team.
 # usage: python3 -I scripts/sim/learn/step32_top10.py <repo root> <out traces-top10.json> <out drops.json>
 import csv, json, os, sys, subprocess, hashlib, numpy as np, requests
@@ -81,7 +82,8 @@ def session(e):
         laps.append({'year': y, 'event': name, 'track': tid, 'session': key, 'drv': lt['drv'][i], 'lap_no': lt['lap'][i], 'rank': r_ + 1, 'team': lt['team'][i], 'pole_team': pole_team,
                      'lap_meas_s': float(t[i]), 'n': n, 'ds': ds, 'shift': int(round(lag / ds)), 'w': w, 'corr': round(float(corr), 3),
                      'a': [None if not np.isfinite(x) else round(float(x), 2) for x in a], 'corners': [[k, round(float(a[k]), 1)] for k in segs],
-                     'straights': st_i, 'zones': sim['zones']})
+                     'straights': st_i, 'zones': sim['zones'],
+                     'xs': [round(float(x), 4) for x in s * L / s[-1] / ds], 'sp': [float(x) for x in sp]})  # A7.3: raw sample positions (grid index units) and speeds, read-only
     return laps, drops
 res = list(ThreadPoolExecutor(12).map(session, ev))
 laps = [l for r in res for l in r[0]]; drops = [d for r in res for d in r[1]]
