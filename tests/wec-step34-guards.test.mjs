@@ -36,6 +36,8 @@ test('Hypercar hybrid: deploy speed, power and energy close on every calibrated 
 
 // G-B (A1 §5): measured learning tables equal their sha256 pins
 test('measured endurance tables are byte-identical to their pins', () => {
-  for (const f of JSON.parse(readFileSync('.github/lapsim-snapshot.json', 'utf8')).endurance.files)
-    assert.equal(createHash('sha256').update(readFileSync(f.path)).digest('hex'), f.sha256, f.path);
+  // step 36 moved the pins to a {path: sha256} map; older snapshots used [{path, sha256}]
+  const files = JSON.parse(readFileSync('.github/lapsim-snapshot.json', 'utf8')).endurance.files;
+  for (const [path, sha256] of Array.isArray(files) ? files.map(f => [f.path, f.sha256]) : Object.entries(files))
+    assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'), sha256, path);
 });

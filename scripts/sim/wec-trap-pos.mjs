@@ -23,9 +23,10 @@ export function trapTable(file = 'scripts/sim/data/fia-docs/wec-timing-lines-202
 // geometry (±50 m after the 4230/4309 length scale), the trap (125 m) is on our main straight 110 m before its end, and the grade of
 // that straight matches an independent DEM line (geom-indep a3); the +20 to +42 km/h model-vs-trap gap is not a mapping error.
 export const TRAP_FIX = {sakhir: {2023: 536, 2024: 561, 2025: 561}};
+// LAPSIM_WEC_TRAP_FIX=off (screen S2, report only): printed positions without the mapping fix.
 let T = null;
 export function trapAt(track, year) {
-  if (!T) { T = trapTable(); for (const [id, ys] of Object.entries(TRAP_FIX)) for (const [y, m] of Object.entries(ys)) if (T[id]?.[y]) T[id][y] = {...T[id][y], m, status: 'geometry fix', printed: T[id][y].m}; }
+  if (!T) { T = trapTable(); if (process.env.LAPSIM_WEC_TRAP_FIX !== 'off') for (const [id, ys] of Object.entries(TRAP_FIX)) for (const [y, m] of Object.entries(ys)) if (T[id]?.[y]) T[id][y] = {...T[id][y], m, status: 'geometry fix', printed: T[id][y].m}; }
   const t = T[track]; if (!t) return null;
   if (t[year]) return t[year];
   const v = Object.values(t); return v.length >= 2 && v.every(x => x.m === v[0].m) ? {...v[0], carried: true} : null;
