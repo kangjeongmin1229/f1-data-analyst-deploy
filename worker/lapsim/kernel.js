@@ -523,13 +523,16 @@ export function lapsimKernel() {
         else if (pErs === 0 && clipOf()) { const pc = Math.min(clipMax, pI); fDrive -= pc * etaD / vv; dHarv = pc * etaRegen; }
       }
       dErs = pErs > 0 ? Math.min(pErs, Math.max(0, fDrive * vv - pI * etaD) / (etaK * etaD)) : 0;
+      // C5.12.7: ERS-K DC power may not fall faster than the C5.12.6 rate, also when the tyres (not the power) cap the drive: the ICE
+      // gives up its share first; the ERS-K may drop further only to keep the ICE power from going negative (sFl = 0: no floor)
+      if (sFl > dErs && pErs > 0) { dErs = Math.min(sFl, pErs, fDrive * vv / (etaK * etaD)); dHarv = 0; }
       if (ers.rule === 'hypercar') dErs = hyOn ? Math.min(ers.eMax || 0, fDrive * vv / etaD) : 0;
       const drag = aeroFactor * cdF[i] * va * va, roll = cRoll * N; dF = fDrive; dR = drag + roll;
       return (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i] / t.inertia;
     };
     // braking power at the wheels from w0 to w1 over len metres, and the DC power recovered (the step-1 formula)
     // step state read by the rate functions below (one set of closures for the whole lap, no allocation per step)
-    let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1;
+    let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1, sFl = 0;
     // test hook (energy closure): tyre force and drag + rolling (N) at speed v on point i, braking curve and drive curve without deploy
     if (opts.probe && STEP === 2) opts.probe({m: t.m, mEff: t.m * t.inertia, sinG, brake: (v, i) => { const a = brakeAcc2(v, i); return {fx: bF, res: bR, a}; },
       drive: (v, i) => (drv(v, i, 0, 0, false, () => false), {fx: dF, res: dR})});
@@ -574,9 +577,12 @@ export function lapsimKernel() {
           // the deploy ceiling binds: deploy to it (a ceiling like the ramp's, mode 2); when it does not bind the step is unchanged
           if (mode === 1 && pErs < pFull) { mode = 2; al = pErs; }
           sI = i; sJ = j; sMode = mode; sAl = al; sVi = vi; sCd = -1;
+          // C5.12.7 floor for this step: last step's ERS-K power less the rate over this step, while it stays above 100 kW at or
+          // above the rule's speed (below 100 kW, or slower, it may stop at once)
+          sFl = ramp && mode && pPrev > 100e3 && vi >= rampVMin(i) ? pPrev - ramp.R * ds / vi : 0; if (sFl < 100e3) sFl = 0;
           sHy = ers.rule === 'hypercar' && vi > (ers.deployFrom || 0) && below(vi, vCut);
           // Heun step; rate speeds capped at the lateral limit of their end
-          const reuse = nK === nK && nMode === mode && nAl === al && nHy === sHy;
+          const reuse = nK === nK && nMode === mode && nAl === al && nHy === sHy && !sFl;
           const k1 = reuse ? nK : Ri(vi), e1 = reuse ? nE : dErs, h1 = reuse ? nH : dHarv; powerLimited[i] = reuse ? nPl : dPl; harv[i] = h1; ersUsed[i] = e1; const el1 = reuse ? nEl : dEl;
           const wP = wi + 2 * k1 * ds, vP = Math.sqrt(Math.max(1, wP)), cdBefore = sCd;
           const k2 = Rj(Math.min(vP, vLat[j])), e2 = dErs, h2 = dHarv, pl2 = dPl, el2 = dEl; nK = NaN;
