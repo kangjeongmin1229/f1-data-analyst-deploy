@@ -138,7 +138,7 @@ export function lapsimKernel() {
     const m = car.mass, wb = car.wheelbase ?? 3.6, h = car.cogHeight ?? 0.3;
     return {
       m, hOverWb: h / wb,
-      muX0: car.muX, muY0: car.muY, dmu: car.dmuDfz ?? -5e-5, fz0: car.fz0 ?? 3000,
+      muX0: car.muX, muY0: car.muY, dmu: car.loadK != null ? -car.loadK * car.muY / (car.fz0 ?? 3000) : car.dmuDfz ?? -5e-5, fz0: car.fz0 ?? 3000, // loadK: μ = μ0·(1 − k·(Fz/Fz0 − 1)) (step 32 N4 scan)
       rearStatic: car.rearWeight ?? 0.55, rearAero: car.rearAero ?? 0.55,
       muXTrac: car.muXTrac ?? car.muX, inertia: car.inertiaFactor ?? 1.0, awdAbove: car.awdAboveKph != null ? car.awdAboveKph / 3.6 : null,
       axle: !!car.axle, q: car.loadExp ?? 0.85, hOverTw: h / (car.trackWidth ?? 1.6), rollFront: car.rollFront ?? 0.5,

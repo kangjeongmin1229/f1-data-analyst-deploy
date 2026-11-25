@@ -170,6 +170,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   if (piceFixed) base.pIce = Number(E.LAPSIM_PICE_FIXED) * 1e3;
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
+  if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan, base car): μ = μ0·(1 − k·(Fz/Fz0 − 1))
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce')).map(k => {
     const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
