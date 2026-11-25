@@ -1,0 +1,46 @@
+name: probe step36 noise debug
+on:
+  push:
+    branches: ['probe/step36-noise-debug']
+permissions:
+  contents: write
+jobs:
+  noise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --omit=dev --ignore-scripts
+      - run: |
+          exec > >(tee noise-log.txt) 2>&1
+          set -euxo pipefail
+          P=.github/lapsim-snapshot.json; mkdir -p ti noise
+          jq -r '.noise.files | to_entries[] | "\(.value)  \(.key)"' $P | sha256sum --check
+          gh release download "$(jq -r .trackState.tag $P)" -R "$(jq -r .trackState.repo $P)" -p ti-raw.tgz -D .
+          echo "$(jq -r .noise.tiRaw $P)  ti-raw.tgz" | sha256sum --check
+          # only the seasons used; 2022 is the LOCKED set and is never extracted (noise-floor.mjs skips it as well)
+          tar xzf ti-raw.tgz -C ti ti/2023 ti/2024 ti/2025 ti/2026
+          # a draft release has no tag lookup: find the asset in the release list (drafts are listed for this repo's token)
+          # each repo reads its own draft (upstream: production copy, fork: research copy); the pin is the content: every file of the manifest
+          A=''; echo "$(jq -r .noise.alkamel.manifest_sha256 $P)  $(jq -r .noise.alkamel.manifest $P)" | sha256sum --check
+          id=$(gh api "repos/${{ github.repository }}/releases?per_page=100" -q '.[] | select(.tag_name=="data-alkamel-full-laps") | .assets[] | select(.name=="alkamel-full-laps.tar") | .id' 2>/dev/null | head -1 || true)
+          if [ -n "$id" ]; then mkdir -p .cache && gh api -H 'Accept: application/octet-stream' "repos/${{ github.repository }}/releases/assets/$id" > .cache/alkamel-full-laps.tar
+            tar -xf .cache/alkamel-full-laps.tar -C .cache && node scripts/sim/noise-floor.mjs --check-alkamel .cache/alkamel-full-laps && A='--alkamel .cache/alkamel-full-laps'
+          else echo "::notice::no data-alkamel-full-laps release here: Al Kamel within-driver σ not measured"; fi
+          # Timing71 per-lap rows (SRO GT3, DTM, NLS …): the laps-t71-* artifacts of run 42927630531, kept in the draft release allLaps.tag (they
+          # expired as artifacts on 2026-12-11); every file checked against the per-file manifest. A repo that cannot see the draft says not measured.
+          T=''; AL=$(jq -r .allLaps.repo $P); mkdir -p .cache/t71-rows
+          echo "$(jq -r .allLaps.manifest_sha256 $P)  $(jq -r .allLaps.manifest $P)" | sha256sum --check
+          ids=$(gh api "repos/$AL/releases?per_page=100" -q ".[] | select(.tag_name==\"$(jq -r .allLaps.tag $P)\") | .assets[] | select(.name|test(\"^laps-t71-.*[.]tar$\")) | .id" 2>/dev/null || true)
+          if [ -n "$ids" ]; then for id in $ids; do gh api -H 'Accept: application/octet-stream' "repos/$AL/releases/assets/$id" | tar -x -C .cache/t71-rows; done
+            node scripts/sim/noise-floor.mjs --check-files .cache/t71-rows --manifest "$(jq -r .allLaps.manifest $P)" --prefix laps-t71- && T='--t71 .cache/t71-rows'
+          else echo "::notice::Timing71 lap rows (release $(jq -r .allLaps.tag $P) of $AL) not readable here: not measured"; fi
+          node --max-old-space-size=6000 scripts/sim/noise-floor.mjs --ti ti/ti $A $T --out noise | tee -a "$GITHUB_STEP_SUMMARY"
+      - if: always()
+        run: |
+          gh release create step36-noise-debug --prerelease --title "step 36 noise debug log" --notes probe 2>/dev/null || true
+          tail -c 200000 noise-log.txt > noise-log-tail.txt; gh release upload step36-noise-debug noise-log-tail.txt --clobber
