@@ -1,0 +1,19 @@
+{
+ "step": "34a",
+ "check": "base drop attribution (report-only, central 16:10)",
+ "runs": {
+  "neither": "45515126810 (shipped kernel, kerbs off, trap at position)",
+  "kernel_only": "45566297648 (REGEN FIX 2, kerbs off; s34a/kerbsoff @ b10702c)",
+  "kerbs_only": "45566300656 (shipped kernel, kerbs on; s34a/shipk-kerbs @ c16e30a)",
+  "both": "45557705662 (REGEN FIX 2, kerbs on; s34a/base @ 1e32d00)"
+ },
+ "wecHeldOutPct": {
+  "neither": 1.006,
+  "kernel_only": 0.992,
+  "kerbs_only": 1.802,
+  "both": 1.774,
+  "shipped": 0.977
+ },
+ "finding": "the drop comes from the kerbs (5 tracks); the kernel fixes change WEC held-out by -0.01 to -0.03 pp",
+ "clA": "at its upper bound in all four cells and in the shipped car (Hypercar 7.0, LMGT3 3.5; lmdh 2026 6.99 without kerbs)"
+}
