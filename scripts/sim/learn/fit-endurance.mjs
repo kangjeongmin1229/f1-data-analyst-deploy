@@ -207,6 +207,11 @@ if (process.argv[1]?.endsWith('fit-endurance.mjs')) {
     sensitivity: sens, coef: Object.fromEntries(Object.entries(full.coef).map(([k, v]) => [k, +v.toFixed(5)])),
     worst: rows.map((r, i) => ({...r, e: preds.eventOut[i] / r.real - 1})).sort((a, b) => Math.abs(b.e) - Math.abs(a.e)).slice(0, 25).map(r => `${r.eventKey} ${r.group} ${r.model} real ${r.real} err ${(r.e * 100).toFixed(2)} %`)};
   writeFileSync(OUT, JSON.stringify(res, null, 1));
+  // Signed per-row errors for the data-limit oracle (central 2026-11-26 05:55; scripts/sim/scoreboard/oracle.py generic): the class-best
+  // lap of each event × class with that event hidden (the rows behind eventOutClass), err = predicted / real − 1 in %. A new file only.
+  const csvCell = v => /[",\n]/.test(String(v)) ? '"' + String(v).replaceAll('"', '""') + '"' : String(v);
+  writeFileSync(OUT.replace(/\.json$/, '') + '-rows.csv', 'row,track,group,season,series,real,pred,err\n' + classBest(rows, preds.eventOut)
+    .map(c => [c.r.eventKey + '|' + c.r.group, c.r.layout, c.r.group, c.r.season, c.r.series, c.real, +c.pred.toFixed(4), +((c.pred / c.real - 1) * 100).toFixed(4)].map(csvCell).join(',')).join('\n') + '\n');
   // ---- what the page and the tool read: worker/lapsim/learned-data.js ----
   // Lap-time factors on the class car with NO track factor (grip 1), standard weather handled by the simulator as usual.
   // Class cars (regulation level: LMH, LMDh, LMGT3) = level of the latest WEC season + layout + the fastest current model.
