@@ -1,0 +1,33 @@
+name: probe step36 per-lap files (NLS, Al Kamel USAC/ELMS/ALMS)
+# Research only (step 36 round 3): run the NLS and Al Kamel fetchers with their per-lap outputs on, store the laps as a DRAFT release
+# data-series-laps on the fork (raw, never published or committed), and publish only derived σ_meas numbers. Never merged.
+on:
+  push:
+    branches: ['probe/step36-series-laps']
+permissions:
+  contents: write
+jobs:
+  laps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - run: |
+          set -uo pipefail
+          mkdir -p out
+          NLS_LAPS_OUT=out/nls-laps-full.json.gz node scripts/sim/learn/fetch-nls.mjs | tail -15
+          ALKAMEL_LAPS_OUT=out/alkamel-laps-full.json.gz node scripts/sim/learn/fetch-alkamel-laps.mjs | tail -15
+          for f in out/*.json.gz; do echo "$(gunzip -c "$f" | sha256sum | cut -c1-64)  $(basename "$f") (content: gunzipped JSON)"; done | tee out/content-sha256.txt
+          node scripts/sim/noise-floor.mjs --laps out/nls-laps-full.json.gz --laps out/alkamel-laps-full.json.gz --out noise > /dev/null
+          node -e "const n=require('./noise/noise-floor.json');console.log(JSON.stringify(n.lapFiles,null,1))" | tee out/lapfiles-sigma.json
+          gh release view data-series-laps -R "$R" >/dev/null 2>&1 || gh release create data-series-laps -R "$R" --draft --title "Per-lap files (raw, internal; NLS + Al Kamel USAC/ELMS/ALMS)" --notes "Raw lap times for σ_meas (step 36). Draft only; do not publish (physics rule 9)."
+          gh release upload data-series-laps -R "$R" out/nls-laps-full.json.gz out/alkamel-laps-full.json.gz out/content-sha256.txt --clobber
+          gh release create step36-series-sigma -R "$R" --prerelease --title "step 36 per-lap σ_meas (derived numbers only)" --notes probe 2>/dev/null || true
+          gh release upload step36-series-sigma -R "$R" out/lapfiles-sigma.json out/content-sha256.txt --clobber
