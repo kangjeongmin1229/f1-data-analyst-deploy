@@ -43,3 +43,28 @@ for (const [name, car] of Object.entries(CARS)) test(`energy closes per lap with
     assert.ok(c.steps > 500 && Math.abs(c.residualPct) <= 0.1, `${name} ${id}: residual ${c.residualPct.toFixed(3)} % on ${c.steps} steps`);
   }
 });
+
+// Regen (central 2026-11-25 11:28): regen is a braking force, so the braking power it draws from is m·k·(−Δv²)/(2 ds)·v̄, the same
+// m_eff as the braking pass. On steps that follow the braking curve for the whole step, the kernel's recovered energy must equal
+// min(regenMax, share·η·m_eff·(−Δv²)/(2 ds)·v̄)·dt. With the bare mass: −1.8 to −2.7 % (F1 2026), −0.3 to −1.3 % (Hypercar LMH).
+// FE recovers in fe-gen4.js lapEnergy() (already m·k); the kernel FE car has no ERS channel.
+function regenClosure(track, car) {
+  let P; const r = K.simulateLap(track, car, {}, {kernelStep: 2, probe: p => { P = p; }}), v = r.v, n = v.length, ds = track.ds, e = car.ers;
+  const dw = i => v[i] * v[i] - v[(i + 1) % n] ** 2;
+  let kern = 0, want = 0, steps = 0;
+  for (let i = 0; i < n; i++) { const j = (i + 1) % n;
+    // inside a braking zone (the first step is split at the meeting point, the kernel books regen only on its braking part)
+    if (!(dw(i) > 1e-6) || dw((i + n - 1) % n) < 0.5 * dw(i) || dw(j) < 0.5 * dw(i) || r.flow.brk[i] <= 0) continue;
+    const aB = 0.5 * (P.brake(v[i], i).a + P.brake(v[j], j).a); // braking-curve deceleration (tyre or decel envelope)
+    if (Math.abs(dw(i) / (2 * ds) - aB) > 0.02 * aB) continue; // part of the step on the lateral limit or the drive curve
+    const dt = (j ? r.time[j] : r.lapTime) - r.time[i], vm = 0.5 * (v[i] + v[j]);
+    want += Math.min(e.regenMax, (e.regenShare ?? 0.6) * P.mEff * dw(i) / (2 * ds) * vm * (e.etaRegen ?? 0.9)) * dt; kern += r.flow.brk[i]; steps++; }
+  return {residualPct: 100 * (kern - want) / want, steps};
+}
+const REGEN = {'F1 2026': C.seasons['2026'].car, 'Hypercar LMH': C.series.wec.lmh['2025'].car, 'LMDh': C.series.wec.lmdh['2025'].car};
+for (const [name, car] of Object.entries(REGEN)) test(`braking regen uses m_eff: recovered energy within 0.1 % (${name})`, () => {
+  for (const id of ['monza', 'suzuka', 'monte-carlo', 'spa-francorchamps', 'silverstone']) {
+    const c = regenClosure(K.trackFromData(lapsimTracks[id]), car);
+    assert.ok(c.steps > 15 && Math.abs(c.residualPct) <= 0.1, `${name} ${id}: regen residual ${c.residualPct.toFixed(3)} % on ${c.steps} steps`);
+  }
+});
