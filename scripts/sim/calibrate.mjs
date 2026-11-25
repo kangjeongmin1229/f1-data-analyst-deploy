@@ -181,6 +181,8 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
   if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan): μ = μ0·(1 − k·(Fz/Fz0 − 1))
+  if (E.LAPSIM_CLA_SPEED_C && year <= 2025) base.clASpeed = {c: Number(E.LAPSIM_CLA_SPEED_C), vRef: 250 / 3.6}; // screen S4 (report-only): ClA(v), v_ref 250 km/h
+  if (E.LAPSIM_FRICTION_EXP && year <= 2025) base.frictionExp = Number(E.LAPSIM_FRICTION_EXP); // screen S6 (report-only): grip-circle exponent n
   // LAPSIM_CLA_MAX (step 32 X1, report-only build): F1 2023–25 ClA upper bound lifted
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce') && !(MC && k === 'cdALow')).map(k => {
     const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : k === 'clA' && E.LAPSIM_CLA_MAX && year <= 2025 ? [BOUNDS.clA[0], Number(E.LAPSIM_CLA_MAX)] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
