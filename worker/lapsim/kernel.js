@@ -210,6 +210,11 @@ export function lapsimKernel() {
     const ramp = pr ? {R: (pr.rateKWs || 100) * 1e3} : null, HOLD_MIN = 100e3;
     const rampStep = i => { const b = inZ(pr.bigCut, i * track.ds); return b ? (b.maxKW || 350) * 1e3 : 150e3; };
     const rampVMin = i => { const z = inZ(pr.speed, i * track.ds); return (z ? z.kph : 210) / 3.6; };
+    // C5.12 deploy ceiling (central 2026-11-25 17:58): deploy never rises above the highest power P whose cut (P − rampStep, held 1 s,
+    // then the ramp to 100 kW) the charge left can still pay for: soc ≥ eR(P − rampStep), solved for P (eR as in the ramp start below).
+    // A cut that lands at or below 100 kW is free (C5.12.7, HOLD_MIN), so the ceiling is never below rampStep + 100 kW. Without it a car
+    // that leaves a corner with ~40 kJ ramps 0 → 350 kW and then cannot hold (Hungaroring 2026, refit car, 183 kW cut at 3101 m).
+    const fundCap = (soc, i) => rampStep(i) + Math.max(100e3, Math.sqrt(ramp.R * ramp.R + 2 * ramp.R * Math.max(0, soc) + 1e10) - ramp.R);
     const vMaxCar = car.vMax ?? 110;
     const cRoll = car.cRoll ?? 0.012;
     const k = Math.max(1, car.frictionExp ?? 2);
@@ -404,6 +409,7 @@ export function lapsimKernel() {
           const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vi, i, L);
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]), env.erskKnots);
           let pErs = below(vi, vCut) && (!track || soc > 0) ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
+          if (ramp && track && pErs > 0) pErs = Math.min(pErs, fundCap(soc, i));
           // C5.12 (2026 PU documents): a voluntary cut of ERS-K power while accelerating is one step of at most 150 kW (the event's
           // value in a listed corner zone) held 1 s, then a ramp at rateKWs down to 100 kW; below 100 kW it may stop at once
           // (C5.12.4/6/7). Done here, inside the deployment, so the cut-off speed is solved with the ramp's energy included (the
@@ -534,7 +540,7 @@ export function lapsimKernel() {
           // decisions at the step start (same rules and order as step 1)
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]), env.erskKnots);
           let mode = below(vi, vCut) && (!track || soc > 0) ? 1 : 0, al = 0;
-          const pErs = mode ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
+          const pFull = mode ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0, pErs = ramp && track && mode ? Math.min(pFull, fundCap(soc, i)) : pFull;
           if (ramp) {
             if (!rp && pPrev > 100e3) { const P1 = pPrev - rampStep(i), lo = Math.min(P1, 100e3), eR = P1 + 0.5 * (P1 - lo) * (P1 + lo) / ramp.R;
               const cut = pErs < pPrev - 200 * ds && vi >= rampVMin(i);
@@ -545,6 +551,8 @@ export function lapsimKernel() {
             if (rp) { const a0 = rp.t < 1 ? rp.P1 : rp.P1 - ramp.R * (rp.t - 1), tm = rp.t + 0.5 * ds / vi; // ceiling at mid-step time
               if (rp.t >= 1 && a0 <= 100e3) rp = null; else if (!track || soc > 0) { mode = 2; al = Math.max(Math.min(a0, 100e3), tm < 1 ? rp.P1 : rp.P1 - ramp.R * (tm - 1)); } }
           }
+          // the deploy ceiling binds: deploy to it (a ceiling like the ramp's, mode 2); when it does not bind the step is unchanged
+          if (mode === 1 && pErs < pFull) { mode = 2; al = pErs; }
           sI = i; sJ = j; sMode = mode; sAl = al; sVi = vi; sCd = -1;
           sHy = ers.rule === 'hypercar' && vi > (ers.deployFrom || 0) && below(vi, vCut);
           // Heun step; rate speeds capped at the lateral limit of their end
