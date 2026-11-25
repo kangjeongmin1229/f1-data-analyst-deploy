@@ -1,0 +1,49 @@
+# Brake-limit A1 (docs/prereg/brake-limit-measured-*.md): wait for the pair of research refits, run the braking test on both
+# calibrations (step 32 checkout) and the lap guard (pipeline-report pairedHarm), and commit the result to results/brake-cap
+# (anonymous git fetch). Push to publish/brake-cap only.
+name: Brake cap verdict
+on:
+  push:
+    branches: ['publish/brake-cap']
+permissions: {contents: write, actions: read}
+concurrency: {group: brake-cap-publish, cancel-in-progress: true}
+jobs:
+  verdict:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env: {RUNB: '45581133428', RUNC: '45581137208', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with: {ref: step32-empirical, path: s32}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy
+      - name: Wait for both refits
+        run: |
+          for i in $(seq 1 160); do a=$(gh run view $RUNB -R $R --json status -q .status); b=$(gh run view $RUNC -R $R --json status -q .status); echo "$(date -u +%H:%M) $a $b"
+            [ "$a" = completed ] && [ "$b" = completed ] && exit 0; sleep 120; done; exit 1
+      - name: Calibrations
+        run: |
+          gh run download $RUNB -R $R -n calibration-output -D calB; gh run download $RUNC -R $R -n calibration-output -D calC
+          ls calB/worker/lapsim/calibration-data.js calC/worker/lapsim/calibration-data.js
+      - name: Braking test (both refits) and lap guard
+        run: |
+          mkdir -p pub; cp scripts/sim/brakecap/brake-cap-test.mjs s32/scripts/sim/learn/
+          for L in base cand; do D=calB; [ $L = cand ] && D=calC; cp $D/worker/lapsim/calibration-data.js s32/worker/lapsim/calibration-data.js
+            (cd s32 && node scripts/sim/learn/brake-cap-test.mjs $L ../scripts/sim/data/brake-cap-measured.json ../pub/$L.json) | tail -c 2000; done
+          node --input-type=module -e "import {diff} from './scripts/sim/pipeline-report.mjs'; import {pathToFileURL} from 'node:url'; import {writeFileSync} from 'node:fs';
+            const b=(await import(pathToFileURL('calB/worker/lapsim/calibration-data.js'))).lapsimCalibration, c=(await import(pathToFileURL('calC/worker/lapsim/calibration-data.js'))).lapsimCalibration;
+            const d=diff(b,c); writeFileSync('pub/harm.json', JSON.stringify({harm:d.harm, changedCarParams:d.changedCarParams, heldOut:d.heldOut}));"
+          python -I scripts/sim/brakecap/brake_cap_verdict.py pub/base.json pub/cand.json pub/harm.json pub/verdict.json $RUNB $RUNC | tee pub/verdict.log
+          gh run view $RUNB -R $R --json conclusion,headSha,url -q . > pub/run-base.json; gh run view $RUNC -R $R --json conclusion,headSha,url -q . > pub/run-cand.json
+          { echo "# Brake cap verdict — baseline $RUNB, candidate $RUNC"; echo; echo "- verdict: **$(jq -r .verdict pub/verdict.json)**"; echo '```'; head -c 40000 pub/verdict.log; echo '```'; } > pub/summary.md
+          cat pub/summary.md >> "$GITHUB_STEP_SUMMARY"; rm -f pub/base.json pub/cand.json
+      - name: Commit to results/brake-cap
+        run: |
+          cd pub && git init -q -b results/brake-cap && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
+          if git fetch -q origin results/brake-cap; then git reset -q --soft FETCH_HEAD && git checkout -q -- .; fi
+          mkdir -p run-$RUNC && mv *.json *.md *.log run-$RUNC/ 2>/dev/null; git add -A && git commit -q -m "Brake cap verdict ($RUNB vs $RUNC)" && git push -q origin HEAD:results/brake-cap
