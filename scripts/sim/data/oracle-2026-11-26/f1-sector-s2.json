@@ -1,0 +1,39 @@
+[
+ {
+  "row": "exp/f1-sector-s2.csv",
+  "unit": "% of lap",
+  "n_rows": 35,
+  "n_tracks": 22,
+  "held_rms": 1.148,
+  "held_ci90": [
+   0.83,
+   1.442
+  ],
+  "floor": 0.17,
+  "ratio": 6.75,
+  "gap_to_1_2_floor": 0.944,
+  "mde": 0.365,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.618,
+    "ci90": [
+     0.391,
+     0.812
+    ],
+    "ratio": 3.63,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.618,
+    "ci90": [
+     0.391,
+     0.812
+    ],
+    "ratio": 3.63,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

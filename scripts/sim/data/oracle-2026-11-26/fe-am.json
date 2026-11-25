@@ -1,0 +1,39 @@
+[
+ {
+  "row": "exp/fe-am.csv",
+  "unit": "s",
+  "n_rows": 24,
+  "n_tracks": 13,
+  "held_rms": 1.047,
+  "held_ci90": [
+   0.924,
+   1.149
+  ],
+  "floor": 0.19,
+  "ratio": 5.51,
+  "gap_to_1_2_floor": 0.819,
+  "mde": 0.308,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": {
+    "rms": 0.336,
+    "ci90": [
+     0.155,
+     0.452
+    ],
+    "ratio": 1.77,
+    "c_above_1_2_floor": true
+   },
+   "per track": {
+    "rms": 0.336,
+    "ci90": [
+     0.155,
+     0.452
+    ],
+    "ratio": 1.77,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

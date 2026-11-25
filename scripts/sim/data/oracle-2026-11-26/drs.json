@@ -1,0 +1,48 @@
+[
+ {
+  "row": "F1 DRS (pooled cases)",
+  "unit": "s per zone",
+  "n_rows": 125,
+  "n_tracks": 23,
+  "held_rms": 0.322,
+  "held_ci90": [
+   0.289,
+   0.357
+  ],
+  "floor": 0.0437,
+  "ratio": 7.37,
+  "gap_to_1_2_floor": 0.269,
+  "mde": 0.062,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per zone (shared over seasons)": {
+    "rms": 0.046,
+    "ci90": [
+     0.041,
+     0.052
+    ],
+    "ratio": 1.06,
+    "c_above_1_2_floor": false
+   },
+   "per track": {
+    "rms": 0.099,
+    "ci90": [
+     0.079,
+     0.118
+    ],
+    "ratio": 2.27,
+    "c_above_1_2_floor": true
+   },
+   "one global scale-free offset": {
+    "rms": 0.136,
+    "ci90": [
+     0.117,
+     0.154
+    ],
+    "ratio": 3.1,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": false
+ }
+]

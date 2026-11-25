@@ -1,0 +1,41 @@
+row,track,group,season,err
+2026|London|A,fe-london,A,2026,-4.44
+2026|London|B,fe-london,B,2026,-4.2
+2026|Tokyo|A,fe-tokyo,A,2026,-2.1
+2026|Tokyo|B,fe-tokyo,B,2026,-1.76
+2026|Shanghai|A,fe-shanghai,A,2026,-1.12
+2026|Shanghai|B,fe-shanghai,B,2026,-0.89
+2026|Sanya|A,fe-sanya,A,2026,-3.86
+2026|Sanya|B,fe-sanya,B,2026,-4.09
+2026|Monaco|A,monte-carlo,A,2026,1.11
+2026|Monaco|B,monte-carlo,B,2026,1.04
+2026|Berlin|A,fe-berlin,A,2026,-0.1
+2026|Berlin|B,fe-berlin,B,2026,-0.57
+2026|Madrid|A,jarama,A,2026,6.86
+2026|Madrid|B,jarama,B,2026,7.93
+2026|Jeddah|A,fe-jeddah,A,2026,2.6
+2026|Jeddah|B,fe-jeddah,B,2026,2.69
+2026|Mexico|A,fe-mexico,A,2026,-1.47
+2026|Mexico|B,fe-mexico,B,2026,-1.47
+2026|São Paulo|A,fe-sao-paulo,A,2026,-7.33
+2026|São Paulo|B,fe-sao-paulo,B,2026,-7.21
+2025|London|A,fe-london,A,2025,-3.94
+2025|London|B,fe-london,B,2025,-4.39
+2025|Berlin|A,fe-berlin,A,2025,-0.38
+2025|Berlin|B,fe-berlin,B,2025,-0.88
+2025|Jakarta|A,fe-jakarta,A,2025,0.29
+2025|Jakarta|B,fe-jakarta,B,2025,-0.33
+2025|Shanghai|A,fe-shanghai,A,2025,-0.78
+2025|Shanghai|B,fe-shanghai,B,2025,-1.16
+2025|Tokyo|A,fe-tokyo,A,2025,-3.18
+2025|Tokyo|B,fe-tokyo,B,2025,-2.13
+2025|Monaco|A,monte-carlo,A,2025,0.96
+2025|Monaco|B,monte-carlo,B,2025,0.82
+2025|Miami|A,fe-miami-2025,A,2025,-2.72
+2025|Miami|B,fe-miami-2025,B,2025,-2.64
+2025|Jeddah|A,fe-jeddah,A,2025,1.87
+2025|Jeddah|B,fe-jeddah,B,2025,2.26
+2025|Mexico|A,fe-mexico-2023,A,2025,-1.73
+2025|Mexico|B,fe-mexico-2023,B,2025,-0.59
+2025|São Paolo|A,fe-sao-paulo,A,2025,-7.39
+2025|São Paolo|B,fe-sao-paulo,B,2025,-7.26

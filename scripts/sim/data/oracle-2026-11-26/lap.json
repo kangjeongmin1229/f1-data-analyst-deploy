@@ -1,0 +1,150 @@
+[
+ {
+  "row": "lap f1",
+  "unit": "% of lap",
+  "n_rows": 35,
+  "n_tracks": 22,
+  "held_rms": 0.823,
+  "held_ci90": [
+   0.654,
+   0.974
+  ],
+  "floor": 0.365,
+  "ratio": 2.26,
+  "gap_to_1_2_floor": 0.385,
+  "mde": 0.23,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per track (shared over seasons)": {
+    "rms": 0.816,
+    "ci90": [
+     0.574,
+     1.014
+    ],
+    "ratio": 2.23,
+    "c_above_1_2_floor": true
+   },
+   "per season (series level)": {
+    "rms": 0.831,
+    "ci90": [
+     0.635,
+     1.001
+    ],
+    "ratio": 2.28,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ },
+ {
+  "row": "lap wec-lmh",
+  "unit": "% of lap",
+  "n_rows": 11,
+  "n_tracks": 8,
+  "held_rms": 0.918,
+  "held_ci90": [
+   0.689,
+   1.112
+  ],
+  "floor": 0.307,
+  "ratio": 2.99,
+  "gap_to_1_2_floor": 0.55,
+  "mde": 0.347,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per track (shared over seasons)": {
+    "rms": 0.461,
+    "ci90": [
+     0.004,
+     0.733
+    ],
+    "ratio": 1.5,
+    "c_above_1_2_floor": true
+   },
+   "per season (series level)": {
+    "rms": 1.01,
+    "ci90": [
+     0.749,
+     1.239
+    ],
+    "ratio": 3.29,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ },
+ {
+  "row": "lap wec-lmdh",
+  "unit": "% of lap",
+  "n_rows": 11,
+  "n_tracks": 8,
+  "held_rms": 0.857,
+  "held_ci90": [
+   0.652,
+   1.057
+  ],
+  "floor": 0.307,
+  "ratio": 2.79,
+  "gap_to_1_2_floor": 0.488,
+  "mde": 0.354,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per track (shared over seasons)": {
+    "rms": 0.481,
+    "ci90": [
+     0.057,
+     0.712
+    ],
+    "ratio": 1.57,
+    "c_above_1_2_floor": true
+   },
+   "per season (series level)": {
+    "rms": 0.945,
+    "ci90": [
+     0.733,
+     1.142
+    ],
+    "ratio": 3.08,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ },
+ {
+  "row": "lap wec-lmgt3",
+  "unit": "% of lap",
+  "n_rows": 11,
+  "n_tracks": 8,
+  "held_rms": 1.134,
+  "held_ci90": [
+   0.842,
+   1.342
+  ],
+  "floor": 0.322,
+  "ratio": 3.52,
+  "gap_to_1_2_floor": 0.747,
+  "mde": 0.464,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per track (shared over seasons)": {
+    "rms": 0.408,
+    "ci90": [
+     0.141,
+     0.583
+    ],
+    "ratio": 1.27,
+    "c_above_1_2_floor": true
+   },
+   "per season (series level)": {
+    "rms": 1.249,
+    "ci90": [
+     0.912,
+     1.496
+    ],
+    "ratio": 3.88,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]
