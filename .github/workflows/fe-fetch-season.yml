@@ -1,0 +1,38 @@
+name: Formula E season fetch (Al Kamel timing → release asset)
+
+# Step 35 item 4: the official Al Kamel files of a new season (Season 13: Jarama Gen4 test, 16-20 Nov 2026) are not reachable from a
+# cloud session, so this fetches them in Actions with scripts/sim/learn/fetch-fe.mjs and stores the derived car-session table as a
+# release asset (raw files are not stored, rule 2.9). Push to fe-fetch/** or manual run. Nothing is committed; a pin is a separate
+# reviewed data change.
+on:
+  workflow_dispatch:
+    inputs:
+      from_season: {description: 'First season number (13 = 2026-27)', required: false, default: '13'}
+  push:
+    branches: ['fe-fetch/**']
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      FE_FROM_SEASON: ${{ inputs.from_season || '13' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --silent
+      - name: Fetch
+        run: |
+          set -euo pipefail
+          node scripts/sim/learn/fetch-fe.mjs | tail -5
+          id=${{ github.run_id }}; s=$FE_FROM_SEASON
+          cp scripts/sim/data/learn/fe-cars.csv "fe-cars-s$s-r$id.csv"; cp scripts/sim/data/learn/fe-files.json "fe-files-s$s-r$id.json"
+          sha256sum "fe-cars-s$s-r$id.csv" "fe-files-s$s-r$id.json" | tee SHA256SUMS-r$id
+          echo "::notice title=FE fetch::season $s: $(($(wc -l < fe-cars-s$s-r$id.csv) - 1)) car-session rows; $(jq -r '.log | length' fe-files-s$s-r$id.json) errors"
+          gh release view "fe-inputs-s$s" >/dev/null 2>&1 || gh release create "fe-inputs-s$s" --prerelease --title "Formula E Al Kamel car-session table, season $s" --notes "fetch-fe.mjs output (derived table, no raw files). Source: https://results.fiaformulae.com/ (Al Kamel Systems)."
+          gh release upload "fe-inputs-s$s" "fe-cars-s$s-r$id.csv" "fe-files-s$s-r$id.json" "SHA256SUMS-r$id" --clobber
