@@ -1,5 +1,5 @@
 {
- "note": "Step 34 A1 \u00a74 kerb input for the WEC fit tracks: per-corner kappa scale on the step 31 corridor (TUM white lines - 1 m + official width + f x iRacing closed-wheel kerbs; 1.3 m closed-wheel default where iRacing has no kerb data), used at f = 1. Rows copied unchanged from fork commit f3cba78 scripts/sim/data/step31/corridor.json (step31_corridor.py). Not built: lusail, imola (no TUM white lines); catalunya (built, ICP map fit 7.1 m > the 4.3 m worst of the step 31 set: rejected by the rule fixed before any WEC fit, icp <= 5 m).",
+ "note": "Step 34 A1 \u00a74 kerb input for the WEC fit tracks: per-corner kappa scale on the step 31 corridor (TUM white lines - 1 m + official width + f x iRacing closed-wheel kerbs; 1.3 m closed-wheel default where iRacing has no kerb data), used at f = 1. Rows copied unchanged from fork commit f3cba78 scripts/sim/data/step31/corridor.json (step31_corridor.py). Not built: lusail, imola (no TUM white lines); catalunya (built, ICP map fit 7.1 m vs 1.7-4.3 m in the step 31 set; rule icp <= 5 m set after seeing it, disclosed in A2).",
  "source_commit": "f3cba7831f8b056bdeb6f0301578b4ae46333c9c",
  "f": 1.0,
  "fs": [
