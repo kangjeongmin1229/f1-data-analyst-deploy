@@ -1,0 +1,35 @@
+# Step 32 C3: publish a run's verdict to the fork branch results/step32-c3 so it can be read with an anonymous git fetch (central 15:05).
+# Push to publish/** only. Waits for the run (RUN below), then commits its verdict artifact, a summary.md and the job list. No other trigger.
+name: Step 32 publish verdict
+on:
+  push:
+    branches: ['publish/**']
+permissions: {contents: write, actions: read}
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env: {RUN: '45557649126', GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+    steps:
+      - name: Wait for the run to finish
+        run: |
+          for i in $(seq 1 165); do s=$(gh run view $RUN -R $R --json status -q .status); echo "$(date -u +%H:%M) $s"; [ "$s" = completed ] && exit 0; sleep 120; done; exit 1
+      - name: Download the verdict artifact
+        run: |
+          mkdir -p pub && gh run download $RUN -R $R -n step32-verdict-$RUN -D pub/artifact || echo "no verdict artifact" > pub/NO_VERDICT.txt
+          gh run view $RUN -R $R --json conclusion,headSha,headBranch,createdAt,updatedAt,url,jobs \
+            -q '{conclusion,headSha,headBranch,createdAt,updatedAt,url,jobs:[.jobs[]|{name,conclusion}]}' > pub/run.json
+      - name: Summary
+        run: |
+          V=$(ls pub/artifact/step32-verdict-*.json 2>/dev/null | head -1)
+          { echo "# Step 32 C3 verdict — run $RUN"; echo; echo "- run: $(jq -r .url pub/run.json)"; echo "- commit: $(jq -r .headSha pub/run.json)";
+            echo "- run conclusion: $(jq -r .conclusion pub/run.json)"; echo "- jobs failed: $(jq '[.jobs[]|select(.conclusion!="success" and .conclusion!="skipped")]|length' pub/run.json)";
+            if [ -n "$V" ]; then echo "- verdict: **$(jq -r .verdict $V)**"; echo; echo '```json'; jq '{verdict, primary, guards}' $V | head -c 60000; echo '```'; fi; } > pub/summary.md
+          cat pub/summary.md | head -40
+      - name: Commit to results/step32-c3
+        run: |
+          cd pub && git init -q -b results/step32-c3 && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
+          if git fetch -q origin results/step32-c3; then git reset -q --soft FETCH_HEAD; fi
+          mkdir -p run-$RUN && mv artifact run.json summary.md run-$RUN/ 2>/dev/null; [ -f NO_VERDICT.txt ] && mv NO_VERDICT.txt run-$RUN/
+          git add -A && git commit -q -m "Step 32 C3 verdict of run $RUN" && git push -q origin HEAD:results/step32-c3
