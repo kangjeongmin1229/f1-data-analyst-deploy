@@ -1,2 +1,4 @@
 2026-11-25T22:22Z S0-F1 dispatched https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/45712552853
 45712552853 ref screen/f1-base-2026-11-26 wec_only=no
+2026-11-25T22:23Z S0-WEC dispatched https://github.com/kangjeongmin1229/f1-data-analyst-deploy/actions/runs/45712669641
+45712669641 ref screen/wec-base-2026-11-26 wec_only=yes
