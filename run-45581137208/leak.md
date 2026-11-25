@@ -2,7 +2,7 @@
 ```json
 {
  "note": "report-only (central 18:10): all-track cap vs per-fold cap without the held-out tracks; the judged test is unchanged",
- "run_perfold": "45582930115",
+ "run_perfold": "45598024591",
  "lap_guard": {
   "all_track": {
    "n": 35,
@@ -13,7 +13,15 @@
    "overRowLimit": [],
    "pass": true
   },
-  "per_fold": null
+  "per_fold": {
+   "n": 35,
+   "meanPp": 0.0063,
+   "ub95Pp": 0.0484,
+   "worse": 15,
+   "maxPp": 0.3601,
+   "overRowLimit": [],
+   "pass": true
+  }
  },
  "joint": {
   "2023": {
@@ -29,7 +37,12 @@
     "cdA": 1.2165011948463846,
     "pIce": 476000
    },
-   "per_fold_run": {}
+   "per_fold_run": {
+    "clA": 6.875936487378656,
+    "muY": 1.8068519048984089,
+    "cdA": 1.2165011948463846,
+    "pIce": 476000
+   }
   },
   "2024": {
    "baseline": {
@@ -44,7 +57,12 @@
     "cdA": 1.2239768343598445,
     "pIce": 476000
    },
-   "per_fold_run": {}
+   "per_fold_run": {
+    "clA": 8,
+    "muY": 1.7633889990386218,
+    "cdA": 1.2239768343598445,
+    "pIce": 476000
+   }
   },
   "2025": {
    "baseline": {
@@ -59,7 +77,12 @@
     "cdA": 1.1893839520928777,
     "pIce": 476000
    },
-   "per_fold_run": {}
+   "per_fold_run": {
+    "clA": 8,
+    "muY": 1.795549085837826,
+    "cdA": 1.1893839520928777,
+    "pIce": 476000
+   }
   },
   "2026": {
    "baseline": {
@@ -74,13 +97,132 @@
     "cdA": 1.870824547598799,
     "pIce": 459999.99999999994
    },
-   "per_fold_run": {}
+   "per_fold_run": {
+    "clA": 6.73994494113308,
+    "muY": 1.7393717441428262,
+    "cdA": 1.870824547598799,
+    "pIce": 459999.99999999994
+   }
   }
  },
  "folds": {
   "2023": null,
   "2024": null,
-  "2025": null,
-  "2026": null
+  "2025": [
+   {
+    "fold": 0,
+    "test": [
+     "austin",
+     "interlagos",
+     "mexico-city",
+     "monza",
+     "singapore",
+     "yas-marina-circuit"
+    ],
+    "clA": 8,
+    "muY": 1.8014467891979724,
+    "cdA": 1.1735699390200371,
+    "pIce": 476000
+   },
+   {
+    "fold": 1,
+    "test": [
+     "catalunya",
+     "jeddah",
+     "miami",
+     "sakhir",
+     "spa-francorchamps",
+     "zandvoort"
+    ],
+    "clA": 8,
+    "muY": 1.7881047080164392,
+    "cdA": 1.1588323338998767,
+    "pIce": 476000
+   },
+   {
+    "fold": 2,
+    "test": [
+     "hungaroring",
+     "lusail",
+     "monte-carlo",
+     "shanghai",
+     "spielberg"
+    ],
+    "clA": 8,
+    "muY": 1.789908554996024,
+    "cdA": 1.190543522829472,
+    "pIce": 476000
+   },
+   {
+    "fold": 3,
+    "test": [
+     "imola",
+     "melbourne",
+     "montreal",
+     "silverstone",
+     "suzuka"
+    ],
+    "clA": 8,
+    "muY": 1.7770751512114102,
+    "cdA": 1.1283766251069387,
+    "pIce": 476000
+   }
+  ],
+  "2026": [
+   {
+    "fold": 0,
+    "test": [
+     "austin",
+     "kuala-lumpur",
+     "mexico-city",
+     "shanghai",
+     "spielberg"
+    ],
+    "clA": 7.686148006384087,
+    "muY": 1.6495785573254806,
+    "cdA": 1.8899087423661785,
+    "pIce": 459999.99999999994
+   },
+   {
+    "fold": 1,
+    "test": [
+     "baku",
+     "las-vegas",
+     "miami",
+     "silverstone",
+     "suzuka"
+    ],
+    "clA": 7.233376338040823,
+    "muY": 1.6807457480939785,
+    "cdA": 1.9,
+    "pIce": 459999.99999999994
+   },
+   {
+    "fold": 2,
+    "test": [
+     "catalunya",
+     "madring",
+     "monte-carlo",
+     "singapore"
+    ],
+    "clA": 6.009101023384093,
+    "muY": 1.815919483103242,
+    "cdA": 1.8425666043302555,
+    "pIce": 456828.4927817726
+   },
+   {
+    "fold": 3,
+    "test": [
+     "hungaroring",
+     "melbourne",
+     "monza",
+     "spa-francorchamps"
+    ],
+    "clA": 7.081180129706646,
+    "muY": 1.6962032184445568,
+    "cdA": 1.8621734392210945,
+    "pIce": 459999.99999999994
+   }
+  ]
  }
 }```
