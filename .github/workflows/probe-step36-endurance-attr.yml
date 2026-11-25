@@ -1,0 +1,42 @@
+name: probe step36 endurance attribution
+# Research only (step 36): which change since the shipped fit (5ddad64, 2026-11-21) moves fit-endurance's outputs. Never merged.
+on:
+  push:
+    branches: ['probe/step36-endurance-attr']
+permissions:
+  contents: write
+jobs:
+  attr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        v: [v0-old, v1-tables, v2-worker, v3-fitcode]
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: |
+          set -euo pipefail
+          NEW=$(git rev-parse HEAD); OLD=5ddad64; git remote add up https://github.com/MisterKinn/f1-data-analyst && git fetch -q up main
+          mkdir -p /tmp/o && git show $OLD:scripts/sim/data/learn/endurance-fit.json > /tmp/o/shipped-endurance-fit.json && git show $OLD:worker/lapsim/learned-data.js > /tmp/o/shipped-learned-data.js
+          git checkout -q $OLD
+          T='scripts/sim/data/learn/endurance-cars.csv.gz scripts/sim/data/learn/wec-alkamel-cars.csv.gz scripts/sim/data/learn/t71-gt3-cars.csv.gz scripts/sim/data/learn/sro-gt3-cars.csv.gz scripts/sim/data/learn/sro-pdf-cars.csv.gz scripts/sim/data/track-registry.json'
+          case ${{ matrix.v }} in
+            v1-tables) git checkout -q $NEW -- $T ;;
+            v2-worker) git checkout -q $NEW -- worker/lapsim ;;
+            v3-fitcode) git checkout -q $NEW -- scripts/sim/learn/fit-endurance.mjs scripts/sim/learn/wec-bop-input.mjs ;;
+          esac
+          git status --short | head -30
+          node scripts/sim/learn/fit-endurance.mjs > /tmp/o/log.txt 2>&1 || { tail -40 /tmp/o/log.txt; exit 1; }
+          cp scripts/sim/data/learn/endurance-fit.json worker/lapsim/learned-data.js /tmp/o/
+          git show $NEW:scripts/sim/pipeline-report.mjs > /tmp/pr.mjs; sed -i "s#from './exp-compare.mjs'#from '$PWD/scripts/sim/exp-compare.mjs'#" /tmp/pr.mjs
+          node -e "import('/tmp/pr.mjs').then(m=>{const e=m.endurance('/tmp/o');const g=x=>Object.fromEntries(['gt3','lmh','lmdh','lmp2'].map(k=>[k,x[k]&&[x[k].eventOut,x[k].eventOutClass,x[k].modelOut]]));console.log(JSON.stringify({v:'${{ matrix.v }}',rows:e.rows,fitDiffs:e.fitDiffs,pageDiffs:e.pageDiffs,identical:e.identical,byGroup:g(e.byGroup),first:e.fitDiff.slice(0,8)}))})" | tee /tmp/o/attr.json >> "$GITHUB_STEP_SUMMARY"
+      - env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          gh release create step36-attr -R ${{ github.repository }} --prerelease --title "step 36 endurance attribution (research)" --notes "probe outputs" 2>/dev/null || true
+          cp /tmp/o/attr.json attr-${{ matrix.v }}.json; gh release upload step36-attr -R ${{ github.repository }} attr-${{ matrix.v }}.json --clobber
+      - uses: actions/upload-artifact@v4
+        with: {name: attr-${{ matrix.v }}, path: /tmp/o/, retention-days: 30}
