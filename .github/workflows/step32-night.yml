@@ -21,13 +21,15 @@ jobs:
         run: |
           mkdir -p pub && sha256sum docs/night/step32-n3-rule-2026-11-25.md > pub/rule.sha256
           node scripts/sim/night/n3-rows.mjs pub/n3-rows.json
-          python -I scripts/sim/night/n3_fit.py pub/n3-rows.json scripts/sim/data/step32/traces-top10.json pub/n3-result.json | tee pub/n3.log
+          sha256sum docs/night/step32-n5-sharpness-rule-2026-11-26.md >> pub/rule.sha256
+          node scripts/sim/night/n5-geom.mjs pub/n5-geom.json
+          python -I scripts/sim/night/n5_fit.py pub/n3-rows.json pub/n5-geom.json scripts/sim/data/step32/traces-top10.json - pub/n5-result.json | tee pub/n5.log
           node --test tests/step32-measured-readonly.test.mjs | tail -3 | tee pub/measured-after.txt
-          { echo "# Step 32 night N3 — run ${{ github.run_id }}, commit ${{ github.sha }}"; echo '```json'; head -c 30000 pub/n3-result.json; echo '```'; } | tee pub/summary.md >> "$GITHUB_STEP_SUMMARY"
+          { echo "# Step 32 N5 — run ${{ github.run_id }}, commit ${{ github.sha }}"; echo '```json'; head -c 30000 pub/n5-result.json; echo '```'; } | tee pub/summary.md >> "$GITHUB_STEP_SUMMARY"
       - name: Commit to results/step32-night
         run: |
           cd pub && git init -q -b results/step32-night && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
           if git fetch -q origin results/step32-night; then git reset -q FETCH_HEAD && git checkout -q -- .; fi
-          mkdir -p n3-${{ github.run_id }} && mv n3-rows.json n3-result.json n3.log summary.md rule.sha256 measured-after.txt n3-${{ github.run_id }}/
-          git add -A && git commit -q -m "Step 32 night N3 (run ${{ github.run_id }})" && git push -q origin HEAD:results/step32-night
+          mkdir -p n5-${{ github.run_id }} && mv n3-rows.json n5-result.json n5.log summary.md rule.sha256 measured-after.txt n5-${{ github.run_id }}/ && rm -f n5-geom.json
+          git add -A && git commit -q -m "Step 32 N5 (run ${{ github.run_id }})" && git push -q origin HEAD:results/step32-night
