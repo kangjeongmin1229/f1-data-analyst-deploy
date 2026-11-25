@@ -117,7 +117,7 @@ function seasonFit(train, s, opts = {}) {
 }
 const M_ = {g: 9.81, m: S.M_CAR};
 
-export {processLap, simAtXs, envelope, car25, KINDS, valid, USED};
+export {processLap, simAtXs, envelope, car25, simSession, KINDS, valid, USED};
 const MAIN = process.argv[1] && new URL(import.meta.url).pathname === (await import('node:path')).resolve(process.argv[1]);
 const [mode, held, a2, a3] = MAIN ? process.argv.slice(2) : [];
 if (!MAIN) { /* imported */ } else if (mode === 'season') { // one season of one fold (child process)

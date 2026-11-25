@@ -261,6 +261,31 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: {name: step32-check, path: out/, retention-days: 90}
 
+  # ---- step 32 D1 ledger note (push to lapsim-pipeline/s32d1-*): run-45524888217 verdict with the fixed power check, no refit -------
+  step32-d1-recheck:
+    if: github.event_name == 'push' && startsWith(github.ref_name, 'lapsim-pipeline/s32d1')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install -q numpy scipy
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'step32-*', path: art, merge-multiple: true, run-id: '45524888217', github-token: '${{ github.token }}'}
+      - name: Power check redone on the held laps (kernel forces), verdict recomputed
+        run: |
+          mkdir -p out && sha256sum art/fold/*.json > out/fold-in.sha256
+          node scripts/sim/learn/step32-d1-recheck.mjs art/fold out/fold | tee out/recheck.log
+          node --test tests/step32-measured-readonly.test.mjs | tee out/measured-after.txt
+          python -I scripts/sim/learn/step32_verdict.py out/fold art/fold26 scripts/sim/data/step32/traces-top10.json scripts/sim/data/step32/power-top10.json \
+            art/precheck.json art/mesh.json art/series-isolation.txt art/compute-time.json out/measured-after.txt out/step32-verdict-d1-${{ github.run_id }}.json | tee out/verdict.log
+          { echo '## Step 32 D1 recheck of run 45524888217 (run ${{ github.run_id }})'; echo '```'; cat out/recheck.log; head -c 60000 out/verdict.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with: {name: 'step32-d1-recheck-${{ github.run_id }}', path: out/, retention-days: 90}
+
   step32-fold:
     needs: step32-check
     runs-on: ubuntu-latest
