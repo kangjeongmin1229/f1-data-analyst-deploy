@@ -17,12 +17,15 @@ export function powertrain(car, iceFactor = 1) {
 export function lapsimKernel() {
   // DRS flap opening delay (car.drsDelayM; unset = unchanged): the low-drag state starts drsDelayM metres after the start of each low-drag
   // run (telemetry first-open position after the activation line, step 32b: median 50 m over 152 zones)
-  function delayLow(low, m, ds) {
-    if (!low || !(m > 0)) return low;
-    const n = low.length, k = Math.round(m / ds), out = Float64Array.from(low);
+  // zones [{at, d}] (screen S10, report-only; unset = today): per-zone delay d (m) for the run that starts nearest to `at` (m, ≤ 150 m
+  // away); other runs keep m
+  function delayLow(low, m, ds, zones) {
+    if (!low || !(m > 0 || zones?.length)) return low;
+    const n = low.length, k0 = Math.round((m || 0) / ds), out = Float64Array.from(low), L = n * ds;
     const s = Array.prototype.findIndex.call(low, x => !x); // start the walk outside a run (whole-lap run: no start, unchanged)
     if (s < 0) return low;
-    for (let j = 0, run = 0; j < n; j++) { const i = (s + j) % n; run = low[i] ? run + 1 : 0; if (run > 0 && run <= k) out[i] = 0; }
+    const kOf = i => { let b = null, bd = 150; for (const z of zones || []) { const d = Math.abs(z.at - i * ds) % L, dd = Math.min(d, L - d); if (dd <= bd) { bd = dd; b = z; } } return b ? Math.round(Math.max(0, b.d) / ds) : k0; };
+    for (let j = 0, run = 0, k = k0; j < n; j++) { const i = (s + j) % n; if (low[i]) { if (!run && zones) k = kOf(i); run++; } else run = 0; if (run > 0 && run <= k) out[i] = 0; }
     return out;
   }
   // Air and wind for the lap simulator. Pure functions, shared by server and browser.
@@ -215,7 +218,7 @@ export function lapsimKernel() {
     const windSpeed = env.windSpeed ?? 0, windFrom = env.windFromDeg ?? 0;
     const t = makeTyre(car);
     const mg = t.m * G;
-    const mu = track.mu, vScale = track.vScale, aeroLow = delayLow(track.aeroLow, car.drsDelayM, track.ds), grade = track.grade, heading = track.heading, otOn = track.otOn, ersCap = track.ersCap || null; // true (whole lap) or a per-point array: where the driver uses Overtake
+    const mu = track.mu, vScale = track.vScale, aeroLow = delayLow(track.aeroLow, car.drsDelayM, track.ds, car.drsZones), grade = track.grade, heading = track.heading, otOn = track.otOn, ersCap = track.ersCap || null; // true (whole lap) or a per-point array: where the driver uses Overtake
     const etaD = car.etaDrive ?? 0.96, etaK = car.etaErs ?? 0.95;
     const pIce = car.pIce * iceFactor, pAt = powertrain(car, iceFactor); // pAt(v): engine power at road speed v (torque curve and gears; flat pIce without them)
     const ers = car.ers || {pMax: 0};
@@ -285,6 +288,10 @@ export function lapsimKernel() {
     const muP = new Float64Array(N1); for (let i = 0; i < n; i++) muP[i] = gh ? grip * (mu ? mu[i] : 1) * gh[i] : grip * (mu ? mu[i] : 1);
     const muAt = i => muP[i];
     const vAir = (v, i) => Math.max(0, v - tail[i]);
+    // car.latScale {kph: [...], f: [...]} (screen S3, report-only; unset = today): speed-dependent scale on the lateral capacity
+    // (linear in km/h, flat outside the table); the braking capacity is not scaled
+    const lsT = car.latScale || null, latS = v => { if (!lsT) return 1; const x = v * 3.6, K = lsT.kph, F = lsT.f; if (x <= K[0]) return F[0];
+      for (let j = 1; j < K.length; j++) if (x <= K[j]) return F[j - 1] + (F[j] - F[j - 1]) * (x - K[j - 1]) / (K[j] - K[j - 1]); return F[F.length - 1]; };
 
     // 1) Lateral limit per point (aero in corner mode; the driver closes Straight Mode for corners)
     const vLat = new Float64Array(N1);
@@ -294,7 +301,7 @@ export function lapsimKernel() {
       const m = muAt(i), cl = car.clA;
       const f = v => {
         const va = vAir(v, i), L = aeroFactor * cl * va * va;
-        return m * latCap(v, i, L) - (bank ? bankLat(v, i) : t.m * v * v * kap);
+        return m * latCap(v, i, L) * latS(v) - (bank ? bankLat(v, i) : t.m * v * v * kap);
       };
       let lo = 1, hi = vMaxCar;
       if (f(hi) >= 0) { vLat[i] = vMaxCar; continue; }
@@ -308,7 +315,7 @@ export function lapsimKernel() {
       if (kap < 1e-6) return 1;
       const ay = bank ? bankLat(v, i) / t.m : v * v * kap;
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va;
-      const ayMax = muAt(i) * latCap(v, i, L) / t.m;
+      const ayMax = muAt(i) * latCap(v, i, L) * latS(v) / t.m;
       const r = Math.min(1, ay / ayMax);
       return Math.pow(Math.max(0, 1 - Math.pow(r, k)), 1 / k);
     };
@@ -349,7 +356,7 @@ export function lapsimKernel() {
       const kap = Math.abs(kapX[i]); if (kap < 1e-6) return 1;
       const ay = bank ? bankLat(v, i) / t.m : v * v * kap, W = N - L;
       const lcN = lc ? lcCap(v, i, L) : !t.axle ? capacity(t.muY0, t.dmu, t.fz0, N) : axleLateral(t, t.muY0, W * (1 - t.rearStatic) + L * (1 - t.rearAero), W * t.rearStatic + L * t.rearAero, v * v * kap);
-      const r = Math.min(1, ay / (muAt(i) * lcN / t.m));
+      const r = Math.min(1, ay / (muAt(i) * lcN * latS(v) / t.m));
       return k === 2 ? Math.sqrt(Math.max(0, 1 - r * r)) : Math.pow(Math.max(0, 1 - Math.pow(r, k)), 1 / k);
     };
     const brakeAcc2 = (v, i) => {
@@ -548,7 +555,8 @@ export function lapsimKernel() {
     let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1, sFl = 0;
     // test hook (energy closure): tyre force and drag + rolling (N) at speed v on point i, braking curve and drive curve without deploy
     if (opts.probe && STEP === 2) opts.probe({m: t.m, mEff: t.m * t.inertia, sinG, brake: (v, i) => { const a = brakeAcc2(v, i); return {fx: bF, res: bR, a}; },
-      drive: (v, i) => (drv(v, i, 0, 0, false, () => false), {fx: dF, res: dR})});
+      drive: (v, i) => (drv(v, i, 0, 0, false, () => false), {fx: dF, res: dR}),
+      lat: (v, i) => muAt(i) * latCap(v, i, aeroFactor * car.clA * vAir(v, i) ** 2) / t.m}); // lateral capacity (m/s², unscaled)
     const clipOf = () => { if (sCd < 0) sCd = sVi > sVH ? (sVi < vhHi && (vhHi = sVi), 1) : (sVi > vhLo && (vhLo = sVi), 0); return sCd === 1; };
     const Ri = x => drv(Math.min(x, vLat[sI]), sI, sMode, sAl, sHy, clipOf), Rj = x => drv(Math.min(x, vLat[sJ]), sJ, sMode, sAl, sHy, clipOf);
     const Rf = (x, f) => f === 0 ? Ri(x) : f === 1 ? Rj(x) : (virt(sI, sJ, f), drv(Math.min(x, vLat[n]), n, sMode, sAl, sHy, clipOf));

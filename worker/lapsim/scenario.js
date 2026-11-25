@@ -42,7 +42,7 @@ export function carsFor(id) {
   const withDrag = c => drag === 1 ? c : {...c, cdA: c.cdA * drag, cdALow: (c.cdALow ?? c.cdA) * drag};
   const out = {base2019: {car: TUM_2019, grip: 1, kind: 'base', year: 2019}};
   // step 36 measured car: fixed per-track CdA and power ratios of that season's track row (absent = unchanged)
-  const withMeasured = (y, c) => { const t = s[y]?.tracks?.[id]; return t?.cdMult == null ? c : {...c, cdA: c.cdA * t.cdMult, cdALow: (c.cdALow ?? c.cdA) * t.cdMult, pIce: c.pIce * t.pIceMult, ...(t.iceDensityOff ? {iceDensityOff: true} : {})}; };
+  const withMeasured = (y, c) => { const t = s[y]?.tracks?.[id]; return t?.cdMult == null ? c : {...c, cdA: c.cdA * t.cdMult, cdALow: (c.cdALow ?? c.cdA) * t.cdMult, pIce: c.pIce * t.pIceMult, ...(t.iceDensityOff ? {iceDensityOff: true} : {}), ...(t.latScale ? {latScale: t.latScale} : {}), ...(t.lowR ? {cdALow: c.cdA * t.cdMult * t.lowR} : {}), ...(t.drsZones ? {drsZones: t.drsZones} : {})}; };
   for (const y of [2025, 2026]) out[y] = {car: s[y]?.car ? withMeasured(y, withDrag(s[y].car)) : PRIOR[y], grip: s[y]?.car ? gripOf(y) : 1, kind: s[y]?.car ? 'calibrated' : 'prior', year: y};
   // projected cars are rebuilt from the current regulation values (rules-data.js) plus the fitted
   // development factor, so a regulation update applies without a new calibration run

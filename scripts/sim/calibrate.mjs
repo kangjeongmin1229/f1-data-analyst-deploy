@@ -3,7 +3,7 @@
 // build-geometry.mjs); writes worker/lapsim/calibration-data.js and docs/lapsim-report.md.
 import {readFile, writeFile, mkdir} from 'node:fs/promises';
 import {medianKappa} from './kappa-median.mjs';
-import {existsSync} from 'node:fs';
+import {existsSync, readFileSync} from 'node:fs';
 import {gate} from './gate.mjs';
 import {trapAt} from './wec-trap-pos.mjs';
 import {join} from 'node:path';
@@ -180,6 +180,12 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = Number(E.LAPSIM_MUX_RATIO || 0.70) * base.muY; // LAPSIM_MUX_RATIO: screen S8 (report-only), default 0.70
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
+  // screen S3 (report-only, central 07:15 26 Nov): lateral capacity × (1 − s·(1 − u(v))), u from measured traces, leave one track out
+  if (MC && E.LAPSIM_LAT_U) { const U = JSON.parse(readFileSync(E.LAPSIM_LAT_U, 'utf8')), s = Number(E.LAPSIM_LAT_S), Y = U.seasons[year];
+    for (const l of laps) { const u = Y[l.name] ?? Y.__all; l.carMod.ls = {kph: U.kph, f: u.map(x => +(1 - s * (1 - x)).toFixed(5))}; } }
+  // screen S10 (report-only): per-zone flap delay and per-track low-drag ratio, leave one event out (scripts/sim/learn/screen-s10-zones.mjs)
+  if (MC && E.LAPSIM_DRS_ZONES) { const Z = JSON.parse(readFileSync(E.LAPSIM_DRS_ZONES, 'utf8')).events;
+    for (const l of laps) { const e = Z[year + '|' + l.name]; if (e) { l.carMod.lowR = e.lowR; l.carMod.dz = e.zones.map(z => ({at: z.at, d: z.d})); } } }
   // LAPSIM_F1_CLA_LD=on (Stage 2a H0, central 11:15; CLAUDE.md "Model honesty"): F1 2023–25 ClA held in the L/D window, ClA ∈ [2.5, 4.5] ×
   // the season measured CdA, prior at L/D 3.5 (sd 15 %, on ln); a value within 0.5 % of an edge is reported as "data want outside", never widened
   const LD = MC && E.LAPSIM_F1_CLA_LD === 'on' ? MC.cdA.value : 0; if (LD) base.clA = 3.5 * LD;
@@ -218,7 +224,7 @@ for (const g of groups) {
     if (p.meta?.position !== 1 && perTrack[p.name]) continue;
     const trace = traces.find(t => t.year === year && t.track === p.name && t.session_key === p.meta?.sessionKey && t.position === p.meta?.position);
     const cm = g.laps.find(l => l.name === p.name)?.carMod; // step 36: the fixed measured per-track inputs ship with the track row
-    perTrack[p.name] = {grip: +p.grip.toFixed(4), drag: p.drag != null && p.drag !== 1 ? +p.drag.toFixed(4) : undefined, ...(cm ? {cdMult: +cm.cd.toFixed(5), pIceMult: +cm.p.toFixed(5), iceDensityOff: cm.iceOff || undefined} : {}), rmsKph: +p.rmsKph.toFixed(1), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
+    perTrack[p.name] = {grip: +p.grip.toFixed(4), drag: p.drag != null && p.drag !== 1 ? +p.drag.toFixed(4) : undefined, ...(cm ? {cdMult: +cm.cd.toFixed(5), pIceMult: +cm.p.toFixed(5), iceDensityOff: cm.iceOff || undefined, latScale: cm.ls, lowR: cm.lowR, drsZones: cm.dz} : {}), rmsKph: +p.rmsKph.toFixed(1), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
       sessionKey: p.meta?.sessionKey, driver: p.meta?.driver, position: p.meta?.position ?? 1, weather: trace?.weather || null,
       realSectors: trace?.sectors?.length === 3 && trace.sectors.every(Number.isFinite) ? trace.sectors.map(x => +x.toFixed(3)) : undefined};
   }
