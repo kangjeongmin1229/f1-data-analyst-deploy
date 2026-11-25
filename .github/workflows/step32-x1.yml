@@ -1,0 +1,78 @@
+# Step 32 night X1 (central 22:20, report-only, no attempt): N4 code + F1 2023–25 ClA upper bound 14, k ∈ {0.08, 0.16, 0.25}.
+# At most two X1 refits at once; a refit not started by 03:30 KST (18:30Z) is "not run". Same harness as N4; one table with N4's rows.
+# Push to publish/step32-x1 only.
+name: Step 32 X1 scan
+on:
+  push:
+    branches: ['publish/step32-x1']
+permissions: {contents: write, actions: write}
+concurrency: {group: step32-x1, cancel-in-progress: false}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}', N4PUB: '45618304259'}
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    outputs: {runs: '${{ steps.d.outputs.runs }}'}
+    steps:
+      - id: d
+        run: |
+          go() { gh workflow run lapsim-pipeline.yml -R $R --ref x1/k$1 -f mode=research -f fit=yes; sleep 40; gh run list -R $R -w lapsim-pipeline.yml -b x1/k$1 -L 1 --json databaseId -q '.[0].databaseId'; }
+          a=$(go 008); b=$(go 016); echo "k008 $a, k016 $b"; runs="008:$a 016:$b"
+          for i in $(seq 1 160); do sa=$(gh run view $a -R $R --json status -q .status); sb=$(gh run view $b -R $R --json status -q .status); echo "$(date -u +%H:%M) $sa $sb"
+            if [ "$sa" = completed ] || [ "$sb" = completed ]; then break; fi; sleep 120; done
+          if [ "$(date -u +%H%M)" -lt 1830 ]; then c=$(go 025); echo "k025 $c"; runs="$runs 025:$c"; else echo "k025 not run (after 03:30 KST)"; runs="$runs 025:notrun"; fi
+          echo "runs=$runs" >> $GITHUB_OUTPUT
+  publish:
+    needs: dispatch
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env: {RUNS: '${{ needs.dispatch.outputs.runs }}', N4_CLA_MAX: '14'}
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: x1/k-scan, path: t}
+      - uses: actions/checkout@v4
+        with: {ref: step36-mde, path: m}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Wait for the X1 refits (one infra retry each)
+        run: |
+          ids() { for kr in $RUNS; do [ "${kr#*:}" != notrun ] && echo ${kr#*:}; done; }
+          wait_all() { for i in $(seq 1 150); do n=0; t=0; for id in $(ids); do t=$((t+1)); [ "$(gh run view $id -R $R --json status -q .status)" = completed ] && n=$((n+1)); done; echo "$(date -u +%H:%M) $n/$t"; [ $n = $t ] && return 0; sleep 120; done; return 1; }
+          wait_all || echo 'timeout waiting'; again=0
+          for id in $(ids); do c=$(gh run view $id -R $R --json conclusion -q .conclusion); a=$(gh api repos/$R/actions/runs/$id/artifacts -q '[.artifacts[].name]|index("calibration-output")'); echo "$id $c cal=$a"
+            if [ "$a" = null ]; then gh run rerun $id -R $R --failed && again=1 || echo "rerun refused"; fi; done
+          if [ $again = 1 ]; then sleep 60; wait_all || echo 'timeout waiting'; fi
+      - name: Rows (X1) and the joint N4 + X1 table
+        run: |
+          cp m/scripts/sim/learn/step32-*.mjs m/scripts/sim/learn/step36-rows.mjs t/scripts/sim/learn/; cp -r m/scripts/sim/data/step32 t/scripts/sim/data/
+          mkdir -p pub; cd t
+          for kr in $RUNS; do k=${kr%%:*}; id=${kr#*:}; [ $id = notrun ] && continue; gh run view $id -R $R --json conclusion,headBranch,headSha,url -q . > ../pub/x1-run-$k.json
+            if gh run download $id -R $R -n calibration-output -D ../cal-$k; then C=../cal-$k/worker/lapsim/calibration-data.js
+              node scripts/sim/learn/step36-rows.mjs $C ../pub/x1-rows36-$k.json > /dev/null || echo "rows36 failed $k"
+              node scripts/sim/night/n4-rows.mjs $C ../pub/x1-n4-$k.json > /dev/null || echo "n4-rows failed $k"
+            else echo "no calibration for $k ($id)"; fi; done
+          cd ..; for i in $(seq 1 60); do git clone -q --depth 1 -b results/step32-night https://github.com/$R.git rs 2>/dev/null && [ -f rs/n4-$N4PUB/n4-scan.json ] && break; rm -rf rs; echo "waiting for N4 results"; sleep 120; done
+          node --input-type=module -e "
+            import {readFileSync, existsSync, writeFileSync} from 'node:fs'; const J = f => existsSync(f) ? JSON.parse(readFileSync(f)) : null, r2 = x => x == null || !Number.isFinite(x) ? '–' : (+x).toFixed(3);
+            const n4 = J('rs/n4-' + process.env.N4PUB + '/n4-scan.json') || {}, rows = [];
+            for (const [k, v] of Object.entries(n4)) rows.push({set: 'N4 (ClA ≤ 8)', k: k === 'ref' ? 'ref (dmu −5e-5)' : '0.' + k.slice(1), ...v});
+            for (const kr of process.env.RUNS.trim().split(/\s+/)) { const [k, id] = kr.split(':');
+              rows.push({set: 'X1 (ClA ≤ 14)', k: '0.' + k.slice(1), notrun: id === 'notrun', run: J('pub/x1-run-' + k + '.json'), n4: J('pub/x1-n4-' + k + '.json'), rows36: J('pub/x1-rows36-' + k + '.json')}); }
+            const y = ['2023', '2024', '2025'], L = ['# Step 32 N4 + X1 load-sensitivity scan (report-only) — measured-car candidate code (step36-cand 645dfd9)', '',
+              '| set | k | run | ClA 23/24/25 | L/D 23/24/25 | μY 23/24/25 | θ_s 23/24/25 | k_s 23/24/25 | lap held-out RMS % all/23/24/25 | corner RMS 120–240 | bias <120 / 120–200 / >200 | per-track slope (median) | straight-end RMS | braking p95 excess g | bound hits (0.5 %) |', '|' + '---|'.repeat(15)];
+            for (const r of rows) { const a = r.n4, b = r.rows36, id = r.run?.url?.split('/').pop() ?? '';
+              if (r.notrun) { L.push('| ' + r.set + ' | ' + r.k + ' | not run (not started by 03:30 KST) |'); continue; }
+              if (!a) { L.push('| ' + r.set + ' | ' + r.k + ' | ' + id + ' ' + (r.run?.conclusion ?? '') + ' | no result |'); continue; }
+              const s = a.seasons, h = a.lapHeldOutRmsPct, f = key => y.map(q => r2(s[q]?.[key])).join(' / ');
+              L.push('| ' + [r.set, r.k, id, f('clA'), y.map(q => r2(s[q] ? s[q].clA / s[q].cdA : null)).join(' / '), f('muY'), f('theta_s'), f('k_s'), [h.all, ...y.map(q => h[q]?.rmsPct)].map(r2).join(' / '),
+                r2(a.cornerRms120to240Kph.rms), ['<120', '120-200', '>200'].map(q => r2(a.speedBins[q].meanBiasKph)).join(' / '), r2(a.perTrackSlope.median), r2(b?.straightEndRmsKph?.base), r2(b?.brakingP95MeanExcessG?.base),
+                a.boundHits_0p5pct.map(x => x.season + ' ' + x.key + (x.foldCar ? ' (fold ' + x.fold + ')' : '') + ' @' + x.bound).join(', ') || 'none'].join(' | ') + ' |'); }
+            L.push('', 'L/D = ClA / CdA of the season fit car. Physical range asked by central: 2.5–4.5. X1 bounds: ClA [2.5, 14] for 2023–25 (2026 unchanged).');
+            writeFileSync('pub/x1-scan.json', JSON.stringify(rows, null, 1)); writeFileSync('pub/summary.md', L.join('\n') + '\n'); console.log(L.join('\n'));"
+          cat pub/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit to results/step32-night
+        run: |
+          cd pub && git init -q -b results/step32-night && git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git
+          if git fetch -q origin results/step32-night; then git reset -q FETCH_HEAD && git checkout -q -- .; fi
+          d=x1-${{ github.run_id }}; mkdir -p $d && mv *.json summary.md $d/ && git add -A && git commit -q -m "Step 32 X1 scan + N4 table (run ${{ github.run_id }})" && git push -q origin HEAD:results/step32-night
