@@ -51,7 +51,7 @@ export function regenIdentity(res, car, env = {}, ds) {
     const j = (i + 1) % n, vi = res.v[i], vj = res.v[j];
     if (vj < vi - 1e-6) {
       z ||= {i0: i, dKE: 0, dragRoll: 0, posWork: 0, regen: 0, lift: 0};
-      const vm = 0.5 * (vi + vj), dKE = car.mass * (vi * vi - vj * vj) / 2, w = l.dragRoll(vm) * ds;
+      const vm = 0.5 * (vi + vj), dKE = car.mass * (car.inertiaFactor ?? 1) * (vi * vi - vj * vj) / 2, w = l.dragRoll(vm) * ds; // m·k, as the kernel
       z.dKE += dKE; z.dragRoll += w; z.posWork += Math.max(0, dKE - w); if (dKE < w) z.lift++;
       z.regen += res.flow.brk[i];
     } else if (z) { zones.push(z); z = null; }

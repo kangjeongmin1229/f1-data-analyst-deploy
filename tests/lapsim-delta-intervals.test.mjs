@@ -84,3 +84,13 @@ test('a research build never overwrites the production ranges', () => {
   for (const g of ["github.repository == 'MisterKinn/f1-data-analyst'", "github.event_name != 'push'", "github.ref == 'refs/heads/main'", "env.MODE == 'production'"]) assert.ok(pub.split('\n')[1].includes(g), g);
   assert.equal((job.match(/scripts\/publish-refresh\.sh/g) || []).length, 1);
 });
+
+// LMDh regen cap 50 kW is an assumption (central 2026-11-25 13:48): its 50 vs 200 kW range is reported beside the LMDh lap range
+test('29b: LMDh lap check carries the regen-cap assumption range; the range file is not stale', () => {
+  const r = withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmdh'}));
+  const a = r.uncertainty.lap_check.assumption_range;
+  assert.ok(a && /assumed \(no published rule; Equity Model not public\)/.test(a.name) && a.plus_minus_s >= 0, JSON.stringify(r.uncertainty.lap_check));
+  assert.equal(withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmh'})).uncertainty.lap_check.assumption_range, undefined);
+  const s = spawnSync(process.execPath, ['scripts/sim/lmdh-regen-range.mjs', '--check'], {encoding: 'utf8'});
+  assert.equal(s.status, 0, s.stderr);
+});
