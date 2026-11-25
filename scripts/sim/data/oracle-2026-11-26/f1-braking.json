@@ -1,0 +1,31 @@
+[
+ {
+  "row": "scripts/sim/data/oracle-2026-11-26/f1-braking.csv",
+  "unit": "g",
+  "n_rows": 241,
+  "n_tracks": 24,
+  "held_rms": 0.905,
+  "held_ci90": [
+   0.795,
+   1.014
+  ],
+  "floor": 0.2,
+  "ratio": 4.52,
+  "gap_to_1_2_floor": 0.665,
+  "mde": 0.163,
+  "b_mde_gt_gap": false,
+  "oracles": {
+   "per group (shared over seasons)": "not identifiable (one row per group)",
+   "per track": {
+    "rms": 0.573,
+    "ci90": [
+     0.485,
+     0.654
+    ],
+    "ratio": 2.87,
+    "c_above_1_2_floor": true
+   }
+  },
+  "c_all_levels_above": true
+ }
+]

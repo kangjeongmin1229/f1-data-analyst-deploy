@@ -3,3 +3,4 @@
 1151e4269ccfeb88976688f100dfc4ecd39a07a18f3affe10f66085377e3a8ef  in/normalisation.json
 eb72ba443b41c34e45ed3bc34048788751db7c9362dc54a00f1709f6cb18266a  in/pipeline-report-45572047447.json
 edbec2e59017f66398e150f27cbdacaad2f4b3d3530b23c397bdb5306ccbc14a  in/traces-top10.json
+f1-braking.csv 99896ba852f253841d335b5b6df17ece9a9f46a9fc0fce7345e9df9e7330d8cc  (base calibration run 45598951567, sha256 64cf6da4c15378a240da7029c63a0d0a9a6951b94dd6754254a212ec5651e34e; step 32 traces-top10 edbec2e5…, normalisation 1151e426…; adapter scripts/sim/learn/step36-braking-rows.mjs, needs step 32's learn scripts and data from fork step36-mde @ ec85ead)
