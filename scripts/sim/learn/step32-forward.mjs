@@ -12,6 +12,13 @@ import {regrid, deriv} from './step32-process.mjs';
 import * as S from './step32-loto.mjs';
 import {stage26, a2Grip26} from './step32-stage2026.mjs';
 import {carsFor} from '../../../worker/lapsim/scenario.js';
+import {lapsimCarMeasured} from '../../../worker/lapsim/car-measured-data.js';
+// Wing-level polar (pre-reg wing-level-polar DRAFT cfcd6d4a… + A1 2a2c3b96…): measured wing level r = CdA_track / CdA_season (step 2a,
+// car-measured-data.js), input only. Prediction mode (judged): mean r of the track's OTHER seasons; replay (report-only): same season.
+const MS = lapsimCarMeasured.seasons, RAT = {};
+for (const y of ['2023', '2024', '2025']) for (const [t, q] of Object.entries(MS[y].perTrack)) (RAT[t] ??= {})[y] = q.cdA.value / MS[y].cdA.value;
+const wingR = (t, y, mode = 'pred') => { const r = RAT[t] || {}; if (mode === 'replay') return r[y] ?? 1;
+  const o = Object.entries(r).filter(([k]) => +k !== +y).map(([, v]) => v); return o.length ? o.reduce((a, b) => a + b, 0) / o.length : 1; };
 
 const {K, T, EV, EV26, keyOf, golden, score, strEnd, trackFor, withCorridor, envOf, a2Grip, drsPred, energyOk, powerOk, rng, pct, cases} = S;
 const here = new URL('../data/step32/', import.meta.url), G = 9.81;
@@ -20,7 +27,7 @@ const USED = Object.assign({}, ...Object.values(NORM).map(s => s.used)); // lap 
 const ITERS = +(process.env.STEP32_SMOKE_ITERS || 300), BOOT1 = +(process.env.STEP32_SMOKE_BOOT || 50), SIGFLOOR = 0.05 * G;
 // A7.2 priors (2023–25): μ_y, ClA, θ (CdA level), c_DRS; μ_x and μ_xTrac from stage 1. C3: θ ~ N(1.46, 0.12²), midpoint of the published 1.35
 // and the step 2a measurement 1.55–1.61 (central decision item 1; chosen after seeing the step 32 straight bias, disclosed in the pre-reg)
-const PRI = {muY: [1.80, 0.20], clA: [6.75, 1.125], th: [1.46, 0.12], c: [0.20, 0.015]};
+const PRI = {muY: [1.80, 0.20], clA: [6.75, 0.40], th: [1.46, 0.12], c: [0.20, 0.015], b: [4.0, 1.5]}; // polar: clA = a_s (tight prior), b = ΔClA/ΔCdA
 // C3 flat-out flags (throttle >= 99 and brake off), one char per raw sample, read-only like xs; grid point → its next raw sample (as D4)
 const FLAT = JSON.parse(readFileSync(new URL('flatout-top10.json', here))).laps, FLATG = new Map();
 function flatGrid(e) { const k = keyOf(e); if (FLATG.has(k)) return FLATG.get(k); const f = FLAT[k], n = e.n, xs = e.xs, out = new Uint8Array(n);
@@ -60,7 +67,7 @@ function binPoints(samples, track) { // [kind][bin] → values; track ids per bi
   const B = Object.fromEntries(KINDS.map(k => [k, Array.from({length: S.BINS}, () => ({a: [], t: new Set()}))]));
   for (const [v, ax, ay, ex, st, fl] of samples) { const j = Math.floor((v - S.BIN0) / S.BINW); if (j < 0 || j >= S.BINS) continue;
     const put = k => { B[k][j].a.push(k === 'brk' ? -ax : k === 'lat' ? ay : ax); B[k][j].t.add(track); };
-    if (!st) { if (!fl) put('lat'); if (ax < 0) put('brk'); } // C3: flat-out samples are not limit samples, out of the lateral target (both sides)
+    if (!st) { put('lat'); if (ax < 0) put('brk'); } // polar: lateral target as V1 (flat-out samples kept; residual audit)
     if (ex && ax > 0) put(st ? 'trc1' : 'trc0'); }
   return B;
 }
@@ -73,8 +80,12 @@ const valid = b => b && b.n >= S.NMIN && b.tracks >= S.TMIN;
 
 // ---- cars ------------------------------------------------------------------------------------------------------------------------
 const SHIP = {}, ship25 = id => (SHIP[id] ??= carsFor(id)['2025'].car);
-function car25(id, p) { const s = ship25(id), cdA = s.cdA * p.th / S.CDA_REF;
-  return {...s, pIce: S.P_ICE, muY: p.muY, muX: p.muX, muXTrac: p.muXTrac, clA: p.clA, clALow: p.clA * S.CLA_LOW_RATIO, cdA, cdALow: cdA * (1 - p.c)}; }
+function car25(id, p, y, mode = 'pred') { const s = ship25(id);
+  if (p.b == null) { const cdA = s.cdA * p.th / S.CDA_REF; // pre-polar form (diagnostics)
+    return {...s, pIce: S.P_ICE, muY: p.muY, muX: p.muX, muXTrac: p.muXTrac, clA: p.clA, clALow: p.clA * S.CLA_LOW_RATIO, cdA, cdALow: cdA * (1 - p.c)}; }
+  if (y == null) throw new Error('polar car needs a season');
+  const r = wingR(id, y, mode), cdA = p.th * r, clA = p.clA + p.b * p.th * (r - 1); // one polar per season: CdA = θ·r, ClA = a + b·θ·(r − 1)
+  return {...s, pIce: S.P_ICE, muY: p.muY, muX: p.muX, muXTrac: p.muXTrac, clA, clALow: clA * S.CLA_LOW_RATIO, cdA, cdALow: cdA * (1 - p.c)}; }
 export const PROF = {sim: 0, simMs: 0, env: 0, envMs: 0};
 const memo = new Map(), POWER = new Map(); let probeRuns = 0; // POWER: fixed power check per lap key (small, never cleared)
 function simSession(e, car, grip) { // the candidate lap of e's session (corridor, DRS +54 m, grip 1 + u)
@@ -96,16 +107,15 @@ function seasonFit(train, s, opts = {}) {
   const sig = Object.fromEntries(KINDS.map(k => [k, M[k].map((_, j) => { const xs = boots.map(B => B[k][j].p95).filter(x => x != null); if (xs.length < 2) return SIGFLOOR;
     const m = xs.reduce((a, b) => a + b, 0) / xs.length; return Math.max(SIGFLOOR, Math.sqrt(xs.reduce((a, x) => a + (x - m) ** 2, 0) / (xs.length - 1))); })]));
   const u = Object.fromEntries(tracks.map(t => [t, 0]));
-  const simEnv = (p, laps) => envelope(laps.map(e => ({track: e.track, samples: processLap(e, simAtXs(e, simSession(e, car25(e.track, p), 1 + u[e.track]).v))})));
+  const simEnv = (p, laps) => envelope(laps.map(e => ({track: e.track, samples: processLap(e, simAtXs(e, simSession(e, car25(e.track, p, e.year), 1 + u[e.track]).v))})));
   let BINSET = null; // fixed at the first evaluation: measured-valid bins that are also valid for the prior-mean car (mechanical, see status)
   const envTerm = (p, kinds, laps = envLaps, Mx = M, sg = sig) => { const Sm = simEnv(p, laps); if (!BINSET) BINSET = Object.fromEntries(KINDS.map(k => [k, M[k].map((b, j) => valid(b) && valid(Sm[k][j]))]));
     let z = 0, nb = 0; for (const k of kinds) Mx[k].forEach((b, j) => { if (!BINSET[k][j] || !valid(b) || Sm[k][j].p95 == null) return; z += ((Sm[k][j].p95 - b.p95) / sg[k][j]) ** 2; nb++; }); return {z, nb}; };
-  const lapTerm = p => { const by = {}; for (const e of ev) { const sc = score(e, simSession(e, car25(e.track, p), 1 + u[e.track]));
-      const Je = (sc.apexAll ?? 0) / 5 + (sc.entry ?? 0) / 0.10 + (sc.exit ?? 0) / 0.10 + (sc.strEndRms ?? 0) / 5 + Math.abs(sc.lapErr) / 0.5
-        + flatTerm(e, simSession(e, car25(e.track, p), 1 + u[e.track]).v) / V_FLAT; (by[e.session] ??= []).push(Je); } // C3 one-sided term, weight 1
+  const lapTerm = p => { const by = {}; for (const e of ev) { const sc = score(e, simSession(e, car25(e.track, p, e.year), 1 + u[e.track]));
+      const Je = (sc.apexAll ?? 0) / 5 + (sc.entry ?? 0) / 0.10 + (sc.exit ?? 0) / 0.10 + (sc.strEndRms ?? 0) / 5 + Math.abs(sc.lapErr) / 0.5; (by[e.session] ??= []).push(Je); } // as V1
     return Object.values(by).reduce((a, x) => a + x.reduce((q, y) => q + y, 0) / x.length, 0); };
   const pz = (p, pri) => Object.entries(pri).reduce((a, [k, [m, sd]]) => a + ((p[k] - m) / sd) ** 2, 0);
-  const physical = p => p.muY > 0 && p.clA > 0 && p.th > 0 && p.c > 0 && p.c < 1 && p.muX > 0 && p.muXTrac > 0;
+  const physical = p => p.muY > 0 && p.clA > 0 && p.th > 0 && p.c > 0 && p.c < 1 && p.muX > 0 && p.muXTrac > 0 && S.FOLD.every(t => car25(t, p, s).clA > 0);
   const base = Object.fromEntries(Object.entries(PRI).map(([k, [m]]) => [k, m]));
   // stage 1: μ_x, μ_xTrac on the braking and traction envelope terms only (others at prior means, u = 0)
   const st1 = (laps, Mx, sg) => { const f = x => { const p = {...base, muX: x[0], muXTrac: x[1]}; return physical(p) ? envTerm(p, ['brk', 'trc0', 'trc1'], laps, Mx, sg).z : 1e9; };
@@ -130,8 +140,10 @@ function seasonFit(train, s, opts = {}) {
   const muAt = Fz => P.muY + S.DMU * (Fz - S.FZ0);
   const muXAt = Fz => P.muX + S.DMU * (Fz - S.FZ0); // reported only: μ_x is an effective braking utilisation (tyre × driver/brake margin), model
   const checks = {P1: loads.every(F => muAt(F) >= 1.4 && muAt(F) <= 2.2) && P.clA >= 4.5 && P.clA <= 9.0, P2: P.muX / P.muY >= 0.5 && P.muX / P.muY <= 1.0, // C3: model error only if physically impossible
-    P4: S.CLA_LOW_RATIO < 1, GBT: Math.abs(z.muX) <= 2 && Math.abs(z.muXTrac) <= 2};
+    P4: S.CLA_LOW_RATIO < 1, GBT: Math.abs(z.muX) <= 2 && Math.abs(z.muXTrac) <= 2,
+    PL: P.b > 0 && S.FOLD.every(t => { const c = car25(t, P, s).clA; return c >= 4.6 && c <= 8.9; })}; // polar: every track's ClA in [4.5, 9.0], ≥ 0.1 from the ends
   return {season: s, params: P, prior: PRI2, z, stage1: {muX: s1[0], muXTrac: s1[1], sd: [sd(0), sd(1)], boot: bt.length}, u, checks,
+    claTrack: Object.fromEntries(S.FOLD.map(t => [t, car25(t, P, s).clA])), cdaTrack: Object.fromEntries(S.FOLD.map(t => [t, car25(t, P, s).cdA])),
     muYRange: [Math.min(...loads.map(muAt)), Math.max(...loads.map(muAt))], muXRange: [Math.min(...loads.map(muXAt)), Math.max(...loads.map(muXAt))], brakeUtil: P.muX / P.muY, envChi2: et.z, envBins: et.nb, envDof: dof, envChi2Dof: et.z / dof,
     measEnv: M, sig, simEnv: simEnv(P, envLaps), log};
 }
@@ -147,22 +159,25 @@ if (!MAIN) { /* imported */ } else if (mode === 'season') { // one season of one
   const kids = [2023, 2024, 2025].map(s => new Promise((res, rej) => { const f = `/tmp/s32-${held}-${s}.json`;
     import('node:child_process').then(({execFile}) => execFile('node', [new URL(import.meta.url).pathname, 'season', held, String(s), f], {maxBuffer: 1e8}, err => err ? rej(err) : res(JSON.parse(readFileSync(f, 'utf8'))))); }));
   const fits = Object.fromEntries((await Promise.all(kids)).map(f => [f.season, f]));
-  const g2 = a2Grip(held), r2 = a => a.map(x => Math.round(x * 100) / 100), cand = (id, y) => car25(id, fits[y].params), base = id => ship25(id);
+  const g2 = a2Grip(held), r2 = a => a.map(x => Math.round(x * 100) / 100), cand = (id, y, mode) => car25(id, fits[y].params, y, mode), base = id => ship25(id);
   const baseSim = e => { const tr = trackFor(e.track, e.zones, g2, false), env = envOf(e.track), r = K.simulateLap(tr, base(e.track), env); return {v: Array.from(r.v, x => x * 3.6), time: r.time, lap: r.lapTime, ds: T[e.track].ds, energyOk: energyOk(r)}; };
   const BS = {}, heldScores = test.map(e => { const rc = simSession(e, cand(e.track, e.year), 1), rb = (BS[e.session] ??= baseSim(e));
     const proc = sp => processLap(e, sp).filter(q => q[3] && q[1] > 0 || q[1] < 0).map(q => [Math.round(q[0] * 10) / 10, Math.round(q[1] * 1000) / 1000, q[3], q[4]]);
     const sc = score(e, rc), sb = score(e, rb);
     if (CORNER_TRACKS.includes(e.track)) for (const [q, c] of sc.corners.entries()) { const o = offCorner(e, c.i); c.T = o; sb.corners[q].T = o; } // report-only (C3 item 4)
+    const sr = score(e, simSession(e, cand(e.track, e.year, 'replay'), 1)); // replay mode (same-season r), report-only
     return {key: keyOf(e), session: e.session, year: e.year, rank: e.rank, cand: sc, base: sb, flat: {cand: flatTerm(e, rc.v), base: flatTerm(e, rb.v)},
+      replay: {apex120_240: sr.apex120_240, strEndRms: sr.strEndRms, strEndBias: sr.strEndBias, lapErr: sr.lapErr},
+      se: {meas: e.straights.filter(k => e.a[k] != null).map(k => e.a[k]), cand: strEnd(e, rc), base: strEnd(e, rb)}, // per straight end (sign check)
       checks: {energyCand: rc.energyOk, energyBase: rb.energyOk, power: rc.power, lowR: {ok: true}},
       procMeas: proc(e.sp), procCand: proc(simAtXs(e, rc.v)), procBase: proc(simAtXs(e, rb.v))}; });
   const sessV = {}; for (const e of test) sessV[e.session] ??= {cand: r2(simSession(e, cand(e.track, e.year), 1).v), base: r2(BS[e.session].v)};
   const drs = cases.filter(c => c.track === held).map(c => ({id: c.case_id, year: +c.year, meas: +c.meas_delta_s,
     cand: drsPred(c, zs => { const car = cand(c.track, +c.year), r = K.simulateLap(trackFor(c.track, zs, 1, true), car, envOf(c.track)); return {v: Array.from(r.v), time: r.time, lap: r.lapTime, ds: T[c.track].ds}; }),
     base: drsPred(c, zs => { const r = K.simulateLap(trackFor(c.track, zs, g2, false), base(c.track), envOf(c.track)); return {v: Array.from(r.v), time: r.time, lap: r.lapTime, ds: T[c.track].ds}; })}));
-  const slimFit = f => ({params: f.params, prior: f.prior, z: f.z, stage1: f.stage1, checks: f.checks, muYRange: f.muYRange, muXRange: f.muXRange, brakeUtil: f.brakeUtil, envChi2Dof: f.envChi2Dof, envBins: f.envBins,
+  const slimFit = f => ({claTrack: f.claTrack, cdaTrack: f.cdaTrack, params: f.params, prior: f.prior, z: f.z, stage1: f.stage1, checks: f.checks, muYRange: f.muYRange, muXRange: f.muXRange, brakeUtil: f.brakeUtil, envChi2Dof: f.envChi2Dof, envBins: f.envBins,
     measEnv: f.measEnv, simEnv: f.simEnv, sig: f.sig, log: f.log, uMean: Object.values(f.u).reduce((a, b) => a + b, 0) / Object.keys(f.u).length});
-  writeFileSync(a2, JSON.stringify({held, variant: 'V1', method: 'A7 forward', baseline: 'A2', corridor: !!S.COR.tracks[held], fits: Object.fromEntries(Object.entries(fits).map(([k, f]) => [k, slimFit(f)])), heldScores, sessV, drs}));
+  writeFileSync(a2, JSON.stringify({held, variant: 'polar', method: 'A7 forward + wing-level polar', baseline: 'A2', corridor: !!S.COR.tracks[held], fits: Object.fromEntries(Object.entries(fits).map(([k, f]) => [k, slimFit(f)])), heldScores, sessV, drs}));
   console.log(held, 'laps', test.length, 'drs', drs.length);
 } else if (mode === 'fold26') {
   console.log('2026 forward fold: report-only group; implemented after the 2023–25 code is checked'); process.exit(3);

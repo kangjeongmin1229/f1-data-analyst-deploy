@@ -247,6 +247,7 @@ jobs:
           python -I scripts/sim/learn/step32_power.py $D/traces-top10.json out/baseline-models.json out/power-top10.json && cmp out/power-top10.json $D/power-top10.json
           python -I -c "import json,sys;p=json.load(open('out/power-top10.json'))['power']['apex_120-240'];print('power',json.dumps(p));sys.exit(0 if p['mde']<=3.0 else 1)"
           python -I scripts/sim/learn/step32_flatout.py $D/traces-top10.json out/flatout-top10.json && cmp out/flatout-top10.json $D/flatout-top10.json
+          node scripts/sim/learn/step32-polar-power.mjs out/polar-power.json  # wing-level polar A1 §5: stops the run if the primary is not judgeable
       - name: Driven-line κ, aero states and A6 normalisation (A7 inputs; no table pre-check)
         run: |
           D=scripts/sim/data/step32; mkdir -p out

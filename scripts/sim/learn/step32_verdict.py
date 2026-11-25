@@ -13,7 +13,7 @@ F = [json.load(open(os.path.join(FD, f))) for f in sorted(os.listdir(FD)) if f.e
 if len(F) != 24: sys.exit(f'INCOMPLETE: {len(F)} of 24 folds; no verdict')
 F26 = [json.load(open(os.path.join(FD26, f))) for f in sorted(os.listdir(FD26)) if f.endswith('.json')] if os.path.isdir(FD26) else []
 TR = json.load(open(TRP))['events']; POW = json.load(open(POWP)); PRE = json.load(open(PREP)) if os.path.exists(PREP) else None
-rng = np.random.default_rng(32); ALPHA = 0.05 / 3  # C3: family attempt 3 of 3 (m = 3)
+rng = np.random.default_rng(32); ALPHA = 0.05 / 4  # wing-level polar attempt 1: test 4 overall (A1)
 USEFUL = 3.0; BANDS = ['60_120', '120_180', '180_240', '120_240']
 
 def flip_p(x):  # copied from step31_verdict.py
@@ -35,9 +35,14 @@ def paired(key, sign=+1, sel=lambda h: True, folds=F):
     return out
 def ok(meas, pred): return pred is not None and abs(pred - meas) <= max(0.25 * abs(meas), 0.05) and (meas == 0 or pred * meas > 0)
 
+# A1 primary: straight-end RMS (lap -> session -> track), paired cut >= 30 % of the baseline mean and sign-flip p < alpha
+gs = paired('strEndRms'); xs = np.array(list(gs.values())); ps = flip_p(xs); bse = float(np.mean([track_val(f, 'strEndRms', 'base') for f in F if f['held'] in gs]))
+primary_se = dict(n_tracks=len(xs), base_mean_kph=bse, cand_mean_kph=bse - float(xs.mean()), mean_cut_kph=float(xs.mean()), cut_share=float(xs.mean()) / bse, ci95=boot(xs),
+                  p_signflip_one_sided=ps, alpha=ALPHA, need_kph=0.3 * bse, pass_=bool(len(xs) >= 5 and ps < ALPHA and xs.mean() >= 0.3 * bse))
+# A1 secondary (not judged): corner RMS 120-240; a gain only if the mean cut >= its MDE 4.6 km/h
 g = paired('apex120_240'); x = np.array(list(g.values())); p = flip_p(x)
-primary = dict(n_tracks=len(x), mean_gain_kph=float(x.mean()), ci95=boot(x), ci90=boot(x, (0.05, 0.95)), p_signflip_one_sided=p, alpha=ALPHA,
-               useful_kph=USEFUL, pass_=bool(len(x) >= 5 and p < ALPHA and x.mean() >= USEFUL))
+primary = dict(n_tracks=len(x), mean_gain_kph=float(x.mean()), ci95=boot(x), ci90=boot(x, (0.05, 0.95)), p_signflip_one_sided=p, judged=False, mde_kph=4.6,
+               counted_as_gain=bool(x.mean() >= 4.6), base_mean_kph=float(np.mean([track_val(f, 'apex120_240', 'base') for f in F if f['held'] in g])))
 gf = paired('apex120_240', sel=lambda h: h['rank'] == 1); xf = np.array(list(gf.values()))
 report = {'fastest_lap_only_120_240': dict(n_tracks=len(xf), mean_gain_kph=float(xf.mean()), ci95=boot(xf), p=flip_p(xf))}
 for b in ('120_180', '60_120', '180_240'):
@@ -110,6 +115,16 @@ for lo in range(60, 240, 20):
     lo95, hi95 = float(np.quantile(bs, 0.025)), float(np.quantile(bs, 0.975))
     tr_rows.append(dict(bin=lo, meas_g=m, meas_ci95=[lo95, hi95], cand_g=c, base_g=bb, ok=bool(lo95 <= c <= hi95)))
 g_tr = dict(bins=tr_rows, pass_=bool(tr_rows) and all(r['ok'] for r in tr_rows))
+# sign checks (draft §4): straight ends >= 300 km/h move up, < 300 move down (track means of cand - base); polar slope b > 0 is in checks.PL
+def se_shift(lo, hi):
+    by = defaultdict(list)
+    for f in F:
+        for h in f['heldScores']:
+            for m_, c_, b_ in zip(h['se']['meas'], h['se']['cand'], h['se']['base']):
+                if lo <= m_ < hi: by[f['held']].append(c_ - b_)
+    v = [np.mean(q) for q in by.values()]; return dict(n_tracks=len(v), mean_kph=float(np.mean(v)), ci95=boot(v))
+sign = dict(long_300_up=se_shift(300, 999), short_below_300_down=se_shift(0, 300))
+sign['pass_'] = bool(sign['long_300_up']['mean_kph'] > 0 and sign['short_below_300_down']['mean_kph'] < 0)
 # physics guards per fold (A2.5)
 phys = []
 for f in F:
@@ -132,6 +147,10 @@ for s in ('2023', '2024', '2025'):
     params[f'{s}.stage1'] = dict(muX=float(np.median([f['fits'][s]['stage1']['muX'] for f in F])), muXTrac=float(np.median([f['fits'][s]['stage1']['muXTrac'] for f in F])))
     params[f'{s}.env_chi2_dof'] = [float(np.quantile([f['fits'][s]['envChi2Dof'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
     params[f'{s}.muX_range_over_loads'] = [float(min(f['fits'][s]['muXRange'][0] for f in F)), float(max(f['fits'][s]['muXRange'][1] for f in F))]
+    cla = defaultdict(list)
+    for f in F:
+        for t_, c_ in f['fits'][s]['claTrack'].items(): cla[t_].append(c_)
+    params[f'{s}.claTrack'] = {t_: dict(median=float(np.median(v_)), min=float(min(v_)), max=float(max(v_)), near_bound=bool(min(v_) < 5.0 or max(v_) > 8.5)) for t_, v_ in sorted(cla.items())}
     params[f'{s}.brake_util_model'] = dict(label='model', muX_fold90=params[f'{s}.muX']['fold90'], muX_median=params[f'{s}.muX']['median'], muX_over_muY_q05_q50_q95=params[f'{s}.muX_over_muY'])  # C3: effective braking utilisation, reported
 # C3 report-only: one-sided flat-out shortfall (km/h RMS of max(0, v_meas - v_model)) per track, and per-corner residuals at Monza and Silverstone
 flat = {f['held']: dict(cand=float(np.mean([h['flat']['cand'] for h in f['heldScores']])), base=float(np.mean([h['flat']['base'] for h in f['heldScores']]))) for f in F}
@@ -154,12 +173,15 @@ for b in BANDS:
                     ratio_base=float(np.mean(base)) / NF[bb]['sigma_meas'], at_data_limit=bool(float(np.mean(cand)) / NF[bb]['sigma_meas'] <= 1.2))
 per = {f['held']: dict(corridor=f['corridor'], apex120_240_gain=g.get(f['held']), entry_harm=paired('entry', -1).get(f['held']), exit_harm=paired('exit', -1).get(f['held']),
                        exit_mean_s_cand=track_val(f, 'exitMean', 'cand'), exit_mean_s_base=track_val(f, 'exitMean', 'base'),
-                       lap_err_cand=track_val(f, 'lapErr', 'cand'), lap_err_base=track_val(f, 'lapErr', 'base'), str_end_bias_cand=sb[f['held']], str_end_bias_base=sbb[f['held']]) for f in F}
+                       lap_err_cand=track_val(f, 'lapErr', 'cand'), lap_err_base=track_val(f, 'lapErr', 'base'), str_end_rms_cand=track_val(f, 'strEndRms', 'cand'), str_end_rms_base=track_val(f, 'strEndRms', 'base'),
+                       corner_rms_cand=track_val(f, 'apex120_240', 'cand'), corner_rms_base=track_val(f, 'apex120_240', 'base'), str_end_rms_replay=track_val(f, 'strEndRms', 'replay'),
+                       corner_rms_replay=track_val(f, 'apex120_240', 'replay'), lap_err_replay=track_val(f, 'lapErr', 'replay'), str_end_bias_cand=sb[f['held']], str_end_bias_base=sbb[f['held']]) for f in F}
 g26 = paired('apex120_240', folds=F26) if F26 else {}
 r26 = dict(n_tracks=len(g26), mean_gain_kph=float(np.mean(list(g26.values()))) if g26 else None, ci95=boot(list(g26.values())) if len(g26) > 1 else None, judged=False,
            note='report-only (A1 own MDE 4.28 km/h > 3)', drag=[dict(held=f['held'], **f['drag']) for f in F26])
-verdict = 'PASS' if primary['pass_'] and all(s_['pass_'] for s_ in sec.values()) and lap['pass_'] and drs['pass_'] and braking['pass_'] and all(gd['pass_'] for gd in guards.values()) else 'FAIL'
-res = dict(verdict=verdict, folds=len(F), primary_apex_120_240=primary, report=report, secondary_guards=sec, guard_lap=lap, guard_drs=drs, guard_braking=braking,
+judged_guards = {k: guards[k] for k in ('G_P', 'G_mesh', 'G_S', 'G_T', 'G_M0')}  # A1: G_SB, G_TR, entry/exit report-only
+verdict = 'PASS' if primary_se['pass_'] and lap['pass_'] and drs['pass_'] and braking['pass_'] and sign['pass_'] and all(gd['pass_'] for gd in judged_guards.values()) else 'FAIL'
+res = dict(verdict=verdict, folds=len(F), primary_straight_end_rms=primary_se, sign_checks=sign, secondary_corner_rms_120_240=primary, report=report, secondary_guards=sec, guard_lap=lap, guard_drs=drs, guard_braking=braking,
            traction_by_bin=trc, guards=guards, params=params, flat_one_sided=flat, corner_table=corner_table, noise_floor=noise, group_2026=r26, per_track=per)
 json.dump(res, open(OUT, 'w'), indent=1)
 print(json.dumps({k: v for k, v in res.items() if k not in ('per_track', 'params', 'traction_by_bin', 'flat_one_sided', 'corner_table')}, indent=1, default=str)[:20000])
