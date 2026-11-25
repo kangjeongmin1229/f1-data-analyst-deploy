@@ -60,6 +60,8 @@ BCD.lo = GRIP_LIMITS[0]; BCD.hi = GRIP_LIMITS[1];
 // factor of a measured track is fixed to its measured wing-level ratio, and the 2023-25 season CdA and DRS CdA are fixed to the measured
 // values. Unmeasured tracks keep the free factor; 2026 keeps its fitted drag level.
 const CDA_MEASURED = E.LAPSIM_CDA_MEASURED === 'on' ? lapsimCarMeasured : null;
+const MEASURED_CAR = E.LAPSIM_F1_MEASURED_CAR === 'on';
+if (MEASURED_CAR) BCD.trackDrag = false; // step 36: the per-track drag factor is not fitted (measured per-track CdA instead)
 if (CDA_MEASURED) BCD.fixedDrag = Object.fromEntries(Object.entries(CDA_MEASURED.dragRatio).map(([id, r]) => [id, r.ratio]));
 // season progress 0 (1 March) … 1 (15 December), for in-season development
 const tauOf = (date, year) => { if (!date) return 0.5; const a = Date.UTC(year, 2, 1), b = Date.UTC(year, 11, 15); return Math.max(0, Math.min(1.1, (Date.parse(date) - a) / (b - a))); };
@@ -170,9 +172,18 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   if (piceFixed) base.pIce = Number(E.LAPSIM_PICE_FIXED) * 1e3;
   const cdM = CDA_MEASURED?.seasons?.[year]?.cdA?.value;
   if (cdM) { base.cdA = cdM; base.cdALow = cdM * CDA_MEASURED.seasons[year].drsRatio.value; }
-  const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce')).map(k => {
-    const [lo, hi] = BOUNDS[k], rel = k === 'pIce';
-    return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi};
+  // LAPSIM_F1_MEASURED_CAR=on (step 36, docs/prereg/step36-f1-measured-car-2026-11-25.md, sha256 4bf823a9…; off by default), 2023–25:
+  // CdA_t = measured per-track CdA × θ_s, pIce_t = k_s × (P_wheel,t / 0.96 − 114 kW), priors θ ~ N(1, sd_s²), k ~ N(1, 0.04²) on ln;
+  // low-drag CdA 0.778 × CdA, flap delay 50 m, μx/μy 0.70 ("measured utilisation"); per-track drag factor not fitted
+  const MC = MEASURED_CAR && year <= 2025 ? lapsimCarMeasured.seasons[String(year)] : null;
+  if (MC) {
+    const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = 0.70 * base.muY;
+    for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
+  }
+  const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce') && !(MC && k === 'cdALow')).map(k => {
+    const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
+    const prior = MC && k === 'cdA' ? {x0: base.cdA, sd: MC.cdA.total / MC.cdA.value} : MC && k === 'pIce' ? {x0: base.pIce, sd: 0.04} : undefined;
+    return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi, ...(prior ? {prior} : {})};
   });
   groups.push({key: year, laps, base, params});
 }
@@ -201,7 +212,8 @@ for (const g of groups) {
   for (const p of joint.perLap.filter(x => x.group === year)) {
     if (p.meta?.position !== 1 && perTrack[p.name]) continue;
     const trace = traces.find(t => t.year === year && t.track === p.name && t.session_key === p.meta?.sessionKey && t.position === p.meta?.position);
-    perTrack[p.name] = {grip: +p.grip.toFixed(4), drag: p.drag != null && p.drag !== 1 ? +p.drag.toFixed(4) : undefined, rmsKph: +p.rmsKph.toFixed(1), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
+    const cm = g.laps.find(l => l.name === p.name)?.carMod; // step 36: the fixed measured per-track inputs ship with the track row
+    perTrack[p.name] = {grip: +p.grip.toFixed(4), drag: p.drag != null && p.drag !== 1 ? +p.drag.toFixed(4) : undefined, ...(cm ? {cdMult: +cm.cd.toFixed(5), pIceMult: +cm.p.toFixed(5), iceDensityOff: cm.iceOff || undefined} : {}), rmsKph: +p.rmsKph.toFixed(1), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
       sessionKey: p.meta?.sessionKey, driver: p.meta?.driver, position: p.meta?.position ?? 1, weather: trace?.weather || null,
       realSectors: trace?.sectors?.length === 3 && trace.sectors.every(Number.isFinite) ? trace.sectors.map(x => +x.toFixed(3)) : undefined};
   }

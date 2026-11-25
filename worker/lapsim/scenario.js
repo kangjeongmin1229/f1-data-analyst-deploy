@@ -41,7 +41,9 @@ export function carsFor(id) {
   const drag = [...Object.keys(s).sort().reverse()].map(k => s[k]?.tracks?.[id]?.drag).find(d => d != null) ?? 1;
   const withDrag = c => drag === 1 ? c : {...c, cdA: c.cdA * drag, cdALow: (c.cdALow ?? c.cdA) * drag};
   const out = {base2019: {car: TUM_2019, grip: 1, kind: 'base', year: 2019}};
-  for (const y of [2025, 2026]) out[y] = {car: s[y]?.car ? withDrag(s[y].car) : PRIOR[y], grip: s[y]?.car ? gripOf(y) : 1, kind: s[y]?.car ? 'calibrated' : 'prior', year: y};
+  // step 36 measured car: fixed per-track CdA and power ratios of that season's track row (absent = unchanged)
+  const withMeasured = (y, c) => { const t = s[y]?.tracks?.[id]; return t?.cdMult == null ? c : {...c, cdA: c.cdA * t.cdMult, cdALow: (c.cdALow ?? c.cdA) * t.cdMult, pIce: c.pIce * t.pIceMult, ...(t.iceDensityOff ? {iceDensityOff: true} : {})}; };
+  for (const y of [2025, 2026]) out[y] = {car: s[y]?.car ? withMeasured(y, withDrag(s[y].car)) : PRIOR[y], grip: s[y]?.car ? gripOf(y) : 1, kind: s[y]?.car ? 'calibrated' : 'prior', year: y};
   // projected cars are rebuilt from the current regulation values (rules-data.js) plus the fitted
   // development factor, so a regulation update applies without a new calibration run
   for (const y of [2027, 2028]) {
