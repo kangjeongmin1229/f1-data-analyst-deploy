@@ -46,8 +46,9 @@ permissions:
 
 # a push run never queues behind a running fit (separate group per commit); fits on one ref run one at a time
 concurrency:
-  group: lapsim-pipeline-${{ github.ref }}-${{ github.event_name == 'push' && github.sha || 'fit' }}
-  cancel-in-progress: false
+  # step 34b arms (refs containing s34b): one group per arm, a new push replaces the old run
+  group: ${{ contains(github.ref, 's34b') && format('s34b-{0}', github.ref) || format('lapsim-pipeline-{0}-{1}', github.ref, github.event_name == 'push' && github.sha || 'fit') }}
+  cancel-in-progress: ${{ contains(github.ref, 's34b') }}
 
 jobs:
   # LapSim build (tracks, traces, WEC timing): release asset → this run's lapsim-prep artifact, which lapsim-data.yml reads
@@ -168,6 +169,7 @@ jobs:
           set -euo pipefail
           jq -r '.endurance.files | to_entries[] | "\(.value)  \(.key)"' .github/lapsim-snapshot.json | sha256sum --check
           mkdir -p end && cp scripts/sim/data/learn/endurance-fit.json end/shipped-endurance-fit.json && cp worker/lapsim/learned-data.js end/shipped-learned-data.js
+          export LAPSIM_END_ROWS=end/endurance-rows.json LAPSIM_END_RATING=$(sed -n 's/^LAPSIM_END_RATING=//p' .github/lapsim-fit.env)  # step 34b c
           node scripts/sim/learn/fit-endurance.mjs > end/fit-endurance.log 2>&1 || { tail -50 end/fit-endurance.log; exit 1; }
           cp scripts/sim/data/learn/endurance-fit.json worker/lapsim/learned-data.js end/
           tail -40 end/fit-endurance.log

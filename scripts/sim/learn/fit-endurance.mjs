@@ -19,7 +19,7 @@ import {modelOf} from './models.mjs';
 import {bopTable, bopFor} from './wec-bop-input.mjs';
 
 const K = lapsimKernel(), WEC = lapsimCalibration.series.wec, ALL = {...lapsimTracks, ...lapsimExtraTracks, ...lapsimFeTracks};
-export const WIDTH = {S: 0.02, SS: 0.10, SY: 0.05, T: 0.05, TG: 0.015, M: 0.015, MB: 0.010, MY: 0.007, B: 0.010, F: 1, F2: 0.05, AGE: 0.01, HOT: 0.02, TR: 0.01}, SIGMA = 0.005, HUBER = 2;
+export const WIDTH = {S: 0.02, SS: 0.10, SY: 0.05, T: 0.05, TG: 0.015, M: 0.015, MB: 0.010, MY: 0.007, B: 0.010, F: 1, F2: 0.05, AGE: 0.01, HOT: 0.02, TR: 0.01, R: 0.01}, SIGMA = 0.005, HUBER = 2;
 // Surface eras (docs/lapsim-learn.md section 12): a full resurfacing starts a new track term; the year is the first season on the
 // new asphalt, from the circuits' own announcements. AGE = years on that asphalt (new asphalt is fastest, then slows; cap 3).
 export const SURFACE = SURFACE_ERAS;
@@ -151,11 +151,17 @@ export function loadRows(files = SOURCES) {
   return {rows, skipped, zStat, records};
 }
 const kind = g => g === 'gt3' ? 'gt' : 'proto';
+// step 34b c (LAPSIM_END_RATING=on, research): FIA rating (P/G/S/B) of the driver who set a GT3 row's lap, from driver-ratings.json.gz
+// (official printed values; matched on series, season, event, entry and lap); rows without a known rating get no term. Prior width 1 %.
+const RATING = process.env.LAPSIM_END_RATING === 'on', RT = RATING || process.env.LAPSIM_END_ROWS ? await import('./driver-ratings.mjs').then(m => new Map(m.loadDriverRatings().learned
+  .filter(l => l.group === 'gt3' && l.bestLapDriver?.rating).map(l => [[l.series, l.season, l.event, l.entry].join('|'), l]))) : null;
+const ratingOf = r => { const l = RT?.get([r.series, r.season, r.event, r.entry].join('|')); return l && Math.abs(l.lap - r.real) < 0.002 ? l.bestLapDriver.rating : null; };
 const terms = r => { const f = F1G[r.sim] ?? 0, e = era(r.layout, r.season), t = [['S', r.group + '|' + r.series + '|' + r.season, 1], ['SS', r.group + '|' + r.series, 1], ['SY', r.group + '|' + r.season, 1],
   ['T', e, 1], ['TG', e + '|' + kind(r.group), 1], ['M', r.model, 1], ['MB', r.model + '|' + body(r.series), 1], ['MY', r.model + '|' + body(r.series) + '|' + r.season, 1], ['B', r.model, zc(r.z)],
   ['F', kind(r.group), f], ['F2', 'all', 10 * f * f], ['AGE', 'all', age(r.layout, r.season)]];
   if (Number.isFinite(r.w?.trackC)) t.push(['HOT', 'all', Math.max(0, r.w.trackC - 45) / 10]); // grip above 45 °C track temperature: the simulator loses too much
   if (BANKED.has(r.layout)) t.push(['TR', r.layout, 10 * drho(r.w || {})]);
+  if (RATING && r.group === 'gt3' && r.rating) t.push(['R', 'gt3|' + r.rating, 1]);
   return t; };
 // Ridge least squares with Huber weights (a wet-suspect or disrupted session is down-weighted, never deleted: rule 4.3 no. 7).
 export function fit(rows, widths = WIDTH) {
@@ -195,6 +201,7 @@ export function slowSessions(rows) {
 }
 if (process.argv[1]?.endsWith('fit-endurance.mjs')) {
   const loaded = loadRows(process.argv.length > 3 ? process.argv.slice(2, -1) : SOURCES), skipped = loaded.skipped, OUT = process.argv.length > 3 ? process.argv.at(-1) : 'scripts/sim/data/learn/endurance-fit.json'; let rows = loaded.rows;
+  if (RATING) for (const r of rows) r.rating = ratingOf(r);
   const sl = slowSessions(rows), slow = sl.slow; rows = sl.rows;
   skipped['slow session (wet or disrupted), listed'] = loaded.rows.length - rows.length;
   const full = fit(rows);
@@ -207,6 +214,10 @@ if (process.argv[1]?.endsWith('fit-endurance.mjs')) {
     sensitivity: sens, coef: Object.fromEntries(Object.entries(full.coef).map(([k, v]) => [k, +v.toFixed(5)])),
     worst: rows.map((r, i) => ({...r, e: preds.eventOut[i] / r.real - 1})).sort((a, b) => Math.abs(b.e) - Math.abs(a.e)).slice(0, 25).map(r => `${r.eventKey} ${r.group} ${r.model} real ${r.real} err ${(r.e * 100).toFixed(2)} %`)};
   writeFileSync(OUT, JSON.stringify(res, null, 1));
+  // step 34b: per-row event-hidden predictions for the paired gate (both arms; the rating comes from the same join, flag on or off)
+  if (process.env.LAPSIM_END_ROWS)
+    writeFileSync(process.env.LAPSIM_END_ROWS, JSON.stringify({rating: RATING ? 'on' : 'off', coefR: Object.fromEntries(Object.entries(full.coef).filter(([k]) => k.startsWith('R:'))),
+      rows: rows.map((r, i) => ({eventKey: r.eventKey, group: r.group, series: r.series, model: r.model, entry: r.entry, real: r.real, eventOut: +preds.eventOut[i].toFixed(4), rating: ratingOf(r)}))}));
   // ---- what the page and the tool read: worker/lapsim/learned-data.js ----
   // Lap-time factors on the class car with NO track factor (grip 1), standard weather handled by the simulator as usual.
   // Class cars (regulation level: LMH, LMDh, LMGT3) = level of the latest WEC season + layout + the fastest current model.
