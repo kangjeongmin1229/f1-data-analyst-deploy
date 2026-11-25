@@ -93,6 +93,18 @@ export function sectorResid(res, ds, lapReal, sec) {
   const dt = res.lapTime - lapReal, real = [sec.real[0], sec.real[0] + sec.real[1]];
   return sec.lines.map((m, k) => at(m) - real[k] - dt * real[k] / lapReal);
 }
+// screen S5 (report only): per-track CdA trim from that track's trap. l.trimSd = prior sd of ln(d) around the class CdA (d = 1).
+// One sim at d = 1 gives the trap speed; the cube law v ∝ (P/CdA)^(1/3) gives ln d̂ = 3·ln(v_sim / v_real); the posterior mean with
+// the trap's 2 km/h (σ_ln = 3·2 / v_real) and the prior is ln d = ln d̂ · sd² / (sd² + σ_ln²). shortcut: one cube-law step (not a full
+// solve); good where the trap is near terminal speed, coarse on short straights (Imola) — upgrade to a 1-D search if the screen ranks.
+export function trimCar(l, car, g) {
+  if (!l.trimSd || l.trapReportOnly || !Number.isFinite(l.trapKph) || g == null) return car;
+  const res = simulateLap(withGrip(l.track, g), car, l.env ?? conditionsFromWeather(l.weather || {}));
+  const v = (l.trapAtM != null ? trapSpeed(res.v, l.track.ds, l.trapAtM) : res.vMax ?? Math.max(...res.v)) * 3.6;
+  const sl = 3 * 2 / l.trapKph, lnd = 3 * Math.log(v / l.trapKph) * l.trimSd ** 2 / (l.trimSd ** 2 + sl ** 2);
+  return {...car, cdA: car.cdA * Math.exp(lnd), trimD: Math.exp(lnd)};
+}
+
 export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, trapAtM = null, wTrap = 0.5, sec = null, secFit = false} = {}) {
   // step 34b joint: sec.sig = σ_rep per line (s): the line term is w_k · (r_k / σ_k)²; unset = w_k · r_k² (as before)
   const res = simulateLap(track, car, env);
@@ -197,9 +209,9 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wTrap = 0
     return total / prepared.length + (free ? wGrip * (logGrip / free) ** 2 : 0) + 100 * outside + prior;
   };
   // l.patch(car) → car for this lap (e.g. per-event BoP weight and power); no patch = season car
-  const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, l.grip != null
-    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, wTrap, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit})}
-    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, wTrap, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}));
+  const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, car = trimCar(l, car, l.grip), l.grip != null
+    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, wTrap, trapKph: l.trapReportOnly ? null : l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit})}
+    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, wTrap, trapKph: l.trapReportOnly ? null : l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}));
   const x0 = params.map(() => 0);
   const result = nelderMead(objective, x0, {step: params.map(p => step0 ?? p.step ?? 0.08), iters, ...nm});
   const car = build(result.x);
@@ -274,8 +286,8 @@ export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, sta
   const best = fs => fs.reduce((a, b) => b.score < a.score ? b : a);
   const predict = (fit, test, out) => { for (const l of laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
     const g = gripFor(l); if (g == null) continue;
-    const res = simulateLap(withGrip(l.track, g), l.patch ? l.patch(fit.car) : fit.car, conditionsFromWeather(l.weather || {}));
-    out.push({name: l.name, dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100, ...(l.sec ? {sec: sectorResid(res, l.track.ds, l.lapSeconds, l.sec)} : {}),
+    const car = trimCar(l, l.patch ? l.patch(fit.car) : fit.car, g), res = simulateLap(withGrip(l.track, g), car, conditionsFromWeather(l.weather || {}));
+    out.push({name: l.name, ...(car.trimD ? {trimD: +car.trimD.toFixed(4)} : {}), dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100, ...(l.sec ? {sec: sectorResid(res, l.track.ds, l.lapSeconds, l.sec)} : {}),
       // step 34 A1: held-out trap residual (sim − real, km/h), at the mapped position (straight peak ±300 m) where one exists
       ...(Number.isFinite(l.trapKph) ? {trapKph: (l.trapAtM != null ? trapSpeed(res.v, l.track.ds, l.trapAtM) * 3.6 : res.vMaxKph) - l.trapKph} : {})});
   } };

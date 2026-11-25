@@ -340,6 +340,11 @@ const JOINT = ['on', 'S', 'X3'].includes(E.LAPSIM_WEC_JOINT) ? E.LAPSIM_WEC_JOIN
 // X3 (report only, central 22:20): as V, but the lap term back at the base weight (wTime 2), ClA prior sd 50 %, ClA bounds [2, 12]
 // (LMGT3 [0.6, 12]), μy bounds [1.0, 2.6]
 const X3 = JOINT === 'X3';
+// screens 26 Nov (report only; plan-screens-2026-11-26): LAPSIM_WEC_TRAP_REPORT_ONLY=interlagos (trap kept for the report, not in the
+// objective; central 05:50); LAPSIM_WEC_TRIM=<sd> (S5: per-track CdA from that track's trap, prior sd of ln d); LAPSIM_WEC_LMH_AWD=off
+// (S11: LMH without front-axle drive). Unset = before.
+const SCR_TRAP_RO = new Set((E.LAPSIM_WEC_TRAP_REPORT_ONLY || '').split(',').filter(Boolean));
+const SCR_TRIM = +E.LAPSIM_WEC_TRIM || null, SCR_AWD_OFF = E.LAPSIM_WEC_LMH_AWD === 'off';
 const SIG_REP = {lmh: [0.085, 0.1319], lmdh: [0.1231, 0.1171], lmgt3: [0.1084, 0.1975]}; // σ_rep S1, S2 (s), run 45562051769
 const WEC_HOJ = JOINT ? {...WEC_HO, wTime: X3 ? 2 : 0, wTrap: (3.6 / 2) ** 2, joint: true} : WEC_HO;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
@@ -372,12 +377,13 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // step 34 data fix: where the trap position is known (Al Kamel maps), the trap is compared with the simulated speed there and
     // kept whatever its value; elsewhere the old lap-maximum rule. LAPSIM_WEC_TRAP_POS=off = before the fix.
     const tPos = id => TRAP_POS ? trapAt(id, year) : null;
-    let lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
+    let lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), ...(SCR_TRAP_RO.has(w.track) ? {trapReportOnly: true} : {}), ...(SCR_TRIM && w.track !== 'interlagos' ? {trimSd: SCR_TRIM} : {}), /* Interlagos trap is report-only (central 05:50): no trim there */ lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session},
       ...((SECTORS || JOINT) && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year), ...(JOINT ? {sig: SIG_REP[cls]} : {})}, secFit: SECTORS === 'on' || !!JOINT} : {})}))).concat(imsaLaps(cls, year, medTrap));
     let laps = lapsWith(f1Grip);
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
+    if (SCR_AWD_OFF && cls === 'lmh') base.awdAboveKph = null; // screen S11 (report only): no front-axle drive at any speed
     // owner 2026-11-17 (rule 14): Hypercar braking capped at the iRacing GTP envelope, LAPSIM_BRAKE_ENV_HYPER="a0,a2" (m/s², 1/m;
     // experiment 44043761033 BE1, hypercar holdout mean 1.24 -> 1.16 %)
     if (cls !== 'lmgt3' && E.LAPSIM_BRAKE_ENV_HYPER) base.brakeEnv = E.LAPSIM_BRAKE_ENV_HYPER.split(',').map(Number);

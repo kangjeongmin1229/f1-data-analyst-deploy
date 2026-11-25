@@ -69,5 +69,5 @@ test('rule v2: each fold keeps the lowest-objective start of three; noise = best
 
 test('step 34b joint: WEC_HOJ is WEC_HO unless LAPSIM_WEC_JOINT is set (base runs unchanged)', () => {
   const src = readFileSync(new URL('../scripts/sim/calibrate.mjs', import.meta.url), 'utf8');
-  assert.match(src, /const WEC_HOJ = JOINT \? \{\.\.\.WEC_HO, wTime: 0, wTrap: \(3\.6 \/ 2\) \*\* 2, joint: true\} : WEC_HO;/);
+  assert.match(src, /const WEC_HOJ = JOINT \? \{\.\.\.WEC_HO, wTime: (?:X3 \? 2 : )?0, wTrap: \(3\.6 \/ 2\) \*\* 2, joint: true\} : WEC_HO;/);
 });
