@@ -65,7 +65,12 @@ export function lapsimKernel() {
   }
 
   // One call that turns session weather into simulator conditions.
+  // Weather guard (central 2026-11-25 18:30): an empty or non-numeric cell is missing (the default below), never 0. A finite pressure
+  // outside 500-1100 hPa is a reading error (an empty CSV cell read as 0 gave 0 hPa: no air, no power) and stops the caller; a fit that
+  // needs a measured pressure passes opts.requirePressure and stops when it is missing.
   function conditionsFromWeather(w = {}, opts = {}) {
+    if (Number.isFinite(w.pressureHpa) && (w.pressureHpa < 500 || w.pressureHpa > 1100)) throw new Error(`pressureHpa ${w.pressureHpa} is not a pressure (500-1100 hPa): an empty cell read as a number?`);
+    if (opts.requirePressure && !Number.isFinite(w.pressureHpa)) throw new Error('pressureHpa missing: this fit needs the measured pressure');
     const pressureHpa = Number.isFinite(w.pressureHpa) ? w.pressureHpa
       : Number.isFinite(w.altitudeM) ? pressureFromAltitude(w.altitudeM) : 1013.25;
     const tempC = Number.isFinite(w.airTempC) ? w.airTempC : 25;
@@ -210,6 +215,11 @@ export function lapsimKernel() {
     const ramp = pr ? {R: (pr.rateKWs || 100) * 1e3} : null, HOLD_MIN = 100e3;
     const rampStep = i => { const b = inZ(pr.bigCut, i * track.ds); return b ? (b.maxKW || 350) * 1e3 : 150e3; };
     const rampVMin = i => { const z = inZ(pr.speed, i * track.ds); return (z ? z.kph : 210) / 3.6; };
+    // C5.12 deploy ceiling (central 2026-11-25 17:58): deploy never rises above the highest power P whose cut (P − rampStep, held 1 s,
+    // then the ramp to 100 kW) the charge left can still pay for: soc ≥ eR(P − rampStep), solved for P (eR as in the ramp start below).
+    // A cut that lands at or below 100 kW is free (C5.12.7, HOLD_MIN), so the ceiling is never below rampStep + 100 kW. Without it a car
+    // that leaves a corner with ~40 kJ ramps 0 → 350 kW and then cannot hold (Hungaroring 2026, refit car, 183 kW cut at 3101 m).
+    const fundCap = (soc, i) => rampStep(i) + Math.max(100e3, Math.sqrt(ramp.R * ramp.R + 2 * ramp.R * Math.max(0, soc) + 1e10) - ramp.R);
     const vMaxCar = car.vMax ?? 110;
     const cRoll = car.cRoll ?? 0.012;
     const k = Math.max(1, car.frictionExp ?? 2);
@@ -299,15 +309,29 @@ export function lapsimKernel() {
     // per-point values of the passes that do not depend on speed (step 1: forward(), worked out once with the same operations)
     const clF = new Float64Array(N1), cdF = new Float64Array(N1), muXF = new Float64Array(N1);
     for (let i = 0; i < n; i++) { const low = lowAt(i); clF[i] = clAt(i, low); cdF[i] = cdAt(i, low); muXF[i] = muAt(i) * (t.muXTrac / t.muY0); }
+    // traction limit: rear axle, or four tyres when the front drives; car.frontMaxW caps the front axle's share (FE Gen3 Evo duels,
+    // SR 2024-25 33.6: front powertrain ≤ 50 kW; step 35 D, flag LAPSIM_FE_AXLE). Unset = four-tyre limit, as before.
+    const rearTrac = (muX, nRear) => muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb);
+    const awdTrac = (awd, muX, N, nRear, v) => !awd ? rearTrac(muX, nRear) : car.frontMaxW == null ? muX * N : Math.min(muX * N, rearTrac(muX, nRear) + car.frontMaxW / Math.max(v, 0.5));
     // 2) Backward pass (braking): independent of the ERS strategy, so computed once.
     //    Straight Mode is closed under braking: corner-mode aero.
     let bF = 0, bR = 0; // tyre braking force and drag + rolling (N) of the last brake-rate call (read by opts.probe)
+    // car.brakeAxle = {rearMaxW, eta} (step 35 E; unset = today): the rear axle is braked by its motor only (Formula E Gen3/Gen3 Evo:
+    // no rear friction brakes), so its braking force is capped at rearMaxW / (eta·v); the tyre force splits by axle load with braking
+    // load transfer (h/wb); the front keeps friction + regen, no power cap.
+    const ba = car.brakeAxle || null, axleCap = (a, v, i, fx, drag, roll, L, N) => {
+      let aa = a; const pCap = ba.rearMaxW / (ba.eta * Math.max(v, 1));
+      for (let k = 0; k < 3; k++) { const nr = Math.min(N, Math.max(0, (N - L) * t.rearStatic + L * t.rearAero - t.m * aa * t.hOverWb)), fr = fx * nr / N;
+        aa = (fx - fr + Math.min(fr, pCap) + drag + roll) / (t.m * t.inertia) + G * sinG[i] / t.inertia; } // m·k·a = F + m·g·sinθ, as brakeAcc
+      return Math.min(a, aa);
+    };
     const brakeAcc = (v, i) => {
       const va = vAir(v, i), L = aeroFactor * car.clA * va * va, N = normalAt(v, i, L);
       const fx = dc ? muAt(i) * t.m * (dc.b0 + dc.b2 * va * va) * ellipse(v, i) : muAt(i) * (t.muX0 / t.muY0) * (lc?.braking ? latCap(v, i, L) : pureCap(i, N)) * ellipse(v, i);
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
       // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
       let a = (fx + drag + roll) / (t.m * t.inertia) + G * sinG[i] / t.inertia;
+      if (ba) a = axleCap(a, v, i, fx, drag, roll, L, N);
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
       // speed-dependent peak deceleration [a0 m/s², a2 1/m]: a ≤ a0 + a2·v² (Hypercar: the iRacing GTP envelope, owner rule 14, "model"; unset = no cap)
       if (car.brakeEnv) a = Math.min(a, car.brakeEnv[0] + car.brakeEnv[1] * v * v);
@@ -327,6 +351,7 @@ export function lapsimKernel() {
       const drag = aeroFactor * car.cdA * va * va, roll = cRoll * N; bF = fx; bR = drag + roll;
       // rotating parts slow down with the car: m·k·a = F + m·g·sinθ (k = inertia factor), as on the drive side (step 35, 2026-11-25)
       let a = (fx + drag + roll) / (t.m * t.inertia) + G * sinG[i] / t.inertia;
+      if (ba) a = axleCap(a, v, i, fx, drag, roll, L, N);
       if (car.brakeDecelMax) a = Math.min(a, car.brakeDecelMax);
       if (car.brakeEnv) a = Math.min(a, car.brakeEnv[0] + car.brakeEnv[1] * v * v);
       return a;
@@ -407,6 +432,7 @@ export function lapsimKernel() {
           const va = vAir(vi, i), L = aeroFactor * clF[i] * va * va, N = normalAt(vi, i, L);
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]), env.erskKnots);
           let pErs = below(vi, vCut) && (!track || soc > 0) ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
+          if (ramp && track && pErs > 0) pErs = Math.min(pErs, fundCap(soc, i));
           // C5.12 (2026 PU documents): a voluntary cut of ERS-K power while accelerating is one step of at most 150 kW (the event's
           // value in a listed corner zone) held 1 s, then a ramp at rateKWs down to 100 kW; below 100 kW it may stop at once
           // (C5.12.4/6/7). Done here, inside the deployment, so the cut-off speed is solved with the ramp's energy included (the
@@ -424,7 +450,7 @@ export function lapsimKernel() {
           const muX = muXF[i] * pureCap(i, N) / N;
           // LMH hybrids also drive the front axle above a set speed (awdAboveKph): all four tyres
           const awd = t.awdAbove != null && vi > t.awdAbove;
-          const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * ellipse(vi, i);
+          const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awdTrac(awd, muX, N, nRear, vi)) * ellipse(vi, i);
           let fDrive = Math.min(fPow, fTrac);
           powerLimited[i] = fPow <= fTrac ? 1 : 0;
           harv[i] = 0;
@@ -435,6 +461,9 @@ export function lapsimKernel() {
           }
           // DC power the ERS-K actually supplies: whatever the ICE cannot, up to its limit
           ersUsed[i] = pErs > 0 ? Math.min(pErs, Math.max(0, fDrive * vi - pI * etaD) / (etaK * etaD)) : 0;
+          // C5.12.7 under a traction cap, as in step 2: the ERS-K falls at most at the C5.12.6 rate while above 100 kW (ICE share first)
+          const fl = ramp && pErs > 0 && pPrev > 100e3 && vi >= rampVMin(i) ? pPrev - ramp.R * ds / vi : 0;
+          if (fl >= 100e3 && fl > ersUsed[i]) { ersUsed[i] = Math.min(fl, pErs, fDrive * vi / (etaK * etaD)); harv[i] = 0; }
           // Hypercar hybrids (LMH front axle, LMDh rear axle): the BoP caps total power, so the motor
           // replaces engine power rather than adding to it; it can only drive above its deploy speed
           if (ers.rule === 'hypercar') ersUsed[i] = vi > (ers.deployFrom || 0) && below(vi, vCut) ? Math.min(ers.eMax || 0, fDrive * vi / etaD) : 0;
@@ -492,7 +521,7 @@ export function lapsimKernel() {
       const nRear = t.rearStatic * (kv ? N - L : mg * cosG[i]) + t.rearAero * L;
       const muX = muXF[i] * pureCap(i, N) / N;
       const awd = t.awdAbove != null && vv > t.awdAbove;
-      dEl = clF[i] === car.clA ? ellN(vv, i, L, N) : ellipse(vv, i); const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awd ? muX * N : muX * nRear / Math.max(0.2, 1 - muX * t.hOverWb)) * dEl;
+      dEl = clF[i] === car.clA ? ellN(vv, i, L, N) : ellipse(vv, i); const fTrac = (dc ? muAt(i) * t.m * dc.aTr : awdTrac(awd, muX, N, nRear, vv)) * dEl;
       let fDrive = Math.min(fPow, fTrac); dPl = fPow <= fTrac ? 1 : 0; dHarv = 0;
       if (throttleHarvest) {
         const spare = pI * etaD - fDrive * vv;
@@ -500,13 +529,16 @@ export function lapsimKernel() {
         else if (pErs === 0 && clipOf()) { const pc = Math.min(clipMax, pI); fDrive -= pc * etaD / vv; dHarv = pc * etaRegen; }
       }
       dErs = pErs > 0 ? Math.min(pErs, Math.max(0, fDrive * vv - pI * etaD) / (etaK * etaD)) : 0;
+      // C5.12.7: ERS-K DC power may not fall faster than the C5.12.6 rate, also when the tyres (not the power) cap the drive: the ICE
+      // gives up its share first; the ERS-K may drop further only to keep the ICE power from going negative (sFl = 0: no floor)
+      if (sFl > dErs && pErs > 0) { dErs = Math.min(sFl, pErs, fDrive * vv / (etaK * etaD)); dHarv = 0; }
       if (ers.rule === 'hypercar') dErs = hyOn ? Math.min(ers.eMax || 0, fDrive * vv / etaD) : 0;
       const drag = aeroFactor * cdF[i] * va * va, roll = cRoll * N; dF = fDrive; dR = drag + roll;
       return (fDrive - drag - roll) / (t.m * t.inertia) - G * sinG[i] / t.inertia;
     };
     // braking power at the wheels from w0 to w1 over len metres, and the DC power recovered (the step-1 formula)
     // step state read by the rate functions below (one set of closures for the whole lap, no allocation per step)
-    let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1;
+    let sI = 0, sJ = 0, sMode = 0, sAl = 0, sHy = false, sVi = 0, sVH = Infinity, sCd = -1, sFl = 0;
     // test hook (energy closure): tyre force and drag + rolling (N) at speed v on point i, braking curve and drive curve without deploy
     if (opts.probe && STEP === 2) opts.probe({m: t.m, mEff: t.m * t.inertia, sinG, brake: (v, i) => { const a = brakeAcc2(v, i); return {fx: bF, res: bR, a}; },
       drive: (v, i) => (drv(v, i, 0, 0, false, () => false), {fx: dF, res: dR})});
@@ -537,7 +569,7 @@ export function lapsimKernel() {
           // decisions at the step start (same rules and order as step 1)
           const lim = erskLimitW(ers.rule, vi, ers.pMax || 0, otOn === true || !!(otOn && otOn[i]), env.erskKnots);
           let mode = below(vi, vCut) && (!track || soc > 0) ? 1 : 0, al = 0;
-          const pErs = mode ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0;
+          const pFull = mode ? Math.min(lim, ersCap ? ersCap[i] : Infinity) : 0, pErs = ramp && track && mode ? Math.min(pFull, fundCap(soc, i)) : pFull;
           if (ramp) {
             if (!rp && pPrev > 100e3) { const P1 = pPrev - rampStep(i), lo = Math.min(P1, 100e3), eR = P1 + 0.5 * (P1 - lo) * (P1 + lo) / ramp.R;
               const cut = pErs < pPrev - 200 * ds && vi >= rampVMin(i);
@@ -548,10 +580,15 @@ export function lapsimKernel() {
             if (rp) { const a0 = rp.t < 1 ? rp.P1 : rp.P1 - ramp.R * (rp.t - 1), tm = rp.t + 0.5 * ds / vi; // ceiling at mid-step time
               if (rp.t >= 1 && a0 <= 100e3) rp = null; else if (!track || soc > 0) { mode = 2; al = Math.max(Math.min(a0, 100e3), tm < 1 ? rp.P1 : rp.P1 - ramp.R * (tm - 1)); } }
           }
+          // the deploy ceiling binds: deploy to it (a ceiling like the ramp's, mode 2); when it does not bind the step is unchanged
+          if (mode === 1 && pErs < pFull) { mode = 2; al = pErs; }
           sI = i; sJ = j; sMode = mode; sAl = al; sVi = vi; sCd = -1;
+          // C5.12.7 floor for this step: last step's ERS-K power less the rate over this step, while it stays above 100 kW at or
+          // above the rule's speed (below 100 kW, or slower, it may stop at once)
+          sFl = ramp && mode && pPrev > 100e3 && vi >= rampVMin(i) ? pPrev - ramp.R * ds / vi : 0; if (sFl < 100e3) sFl = 0;
           sHy = ers.rule === 'hypercar' && vi > (ers.deployFrom || 0) && below(vi, vCut);
           // Heun step; rate speeds capped at the lateral limit of their end
-          const reuse = nK === nK && nMode === mode && nAl === al && nHy === sHy;
+          const reuse = nK === nK && nMode === mode && nAl === al && nHy === sHy && !sFl;
           const k1 = reuse ? nK : Ri(vi), e1 = reuse ? nE : dErs, h1 = reuse ? nH : dHarv; powerLimited[i] = reuse ? nPl : dPl; harv[i] = h1; ersUsed[i] = e1; const el1 = reuse ? nEl : dEl;
           const wP = wi + 2 * k1 * ds, vP = Math.sqrt(Math.max(1, wP)), cdBefore = sCd;
           const k2 = Rj(Math.min(vP, vLat[j])), e2 = dErs, h2 = dHarv, pl2 = dPl, el2 = dEl; nK = NaN;
