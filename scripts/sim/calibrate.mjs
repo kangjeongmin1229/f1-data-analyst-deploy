@@ -8,7 +8,7 @@ import {gate} from './gate.mjs';
 import {trapAt} from './wec-trap-pos.mjs';
 import {sectorSpec, sectorsOk} from './wec-sector-lines.mjs';
 import {join} from 'node:path';
-import {lapsimTracks} from '../../worker/lapsim/tracks-data.js';
+import {lapsimTracks, lapsimExtraTracks} from '../../worker/lapsim/tracks-data.js';
 import {trackFromData} from '../../worker/lapsim/tracks.js';
 import {poleTrend} from '../../worker/lapsim/pole-trend.js';
 import {rechargeLimitMJ} from '../../worker/lapsim/energy-limits.js';
@@ -315,7 +315,21 @@ const wecTrack = id => { const c = WEC_COR?.tracks[id]; if (!c || !tracks[id]) r
   for (const r of c.corners) { const s = Math.min(...r.scale); // f = 1, non-increasing in f (step 31 rule)
     for (let k = 0; k < n; k++) { const d = Math.min(Math.abs(k - r.ia), n - Math.abs(k - r.ia)) * ds, mk = d <= WEC_COR.core_m ? s : d <= WEC_COR.taper_m ? s + (1 - s) * (d - WEC_COR.core_m) / (WEC_COR.taper_m - WEC_COR.core_m) : 1; if (mk < m[k]) m[k] = mk; } }
   const v = {...t, kappa: Float64Array.from(t.kappa, (x, i) => x * m[i])}; WEC_TRK.set(id, v); return v; };
-const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on', CDA_PRIOR = E.LAPSIM_WEC_CDA_PRIOR === 'on'; // A1: Hypercar CdA prior 1.04 m² ± 10 %
+// A4: IMSA qualifying events in the WEC class fit (LAPSIM_WEC_IMSA=on, base and both variants): top 3 per class from the committed
+// endurance-cars rows, own weather, extra-track geometry, free track grip (pooled), held-out IMSA track at grip 1 (u_t = 0)
+const WEC_IMSA = E.LAPSIM_WEC_IMSA === 'on', IMSA_ID = {'daytona-international-speedway': 'daytona', 'detroit-street-course': 'detroit', 'indianapolis-motor-speedway-rc': 'indianapolis',
+  'long-beach-street-circuit': 'long-beach', 'road-america': 'road-america', 'road-atlanta': 'road-atlanta', 'sebring-international-raceway': 'sebring', 'watkins-glen-international': 'watkins-glen',
+  'weathertech-raceway-laguna-seca': 'laguna-seca', 'canadian-tire-motorsport-park': 'mosport', 'virginia-international-raceway': 'vir', 'lime-rock-park': 'lime-rock'};
+const IMSA_ROWS = WEC_IMSA ? await (async () => { const {gunzipSync} = await import('node:zlib'), {readFileSync} = await import('node:fs');
+  const [h, ...L] = gunzipSync(readFileSync('scripts/sim/data/learn/endurance-cars.csv.gz')).toString().trim().split('\n'), k = h.split(',');
+  return L.map(l => Object.fromEntries(l.split(',').map((v, i) => [k[i], v]))).filter(r => r.series === 'imsa' && r.type === 'Q' && +r.best > 0 && !(+r.rainShare > 0) && IMSA_ID[r.event] && lapsimExtraTracks[IMSA_ID[r.event]]); })() : [];
+const IMSA_TRK = new Map(), imsaTrack = id => IMSA_TRK.get(id) || IMSA_TRK.set(id, trackFromData(lapsimExtraTracks[id])).get(id);
+const imsaClass = r => r.cls === 'GTP' ? (SERIES.wec.classes.lmh.manufacturers.test(r.manufacturer || r.vehicle || '') ? 'lmh' : 'lmdh') : /^(GTD|GTDPRO)$/.test(r.cls) ? 'lmgt3' : null;
+const imsaLaps = (cls, year, medTrap) => Object.values(Object.groupBy(IMSA_ROWS.filter(r => +r.season === +year && imsaClass(r) === cls), r => r.event)).flatMap(ev => [...ev].sort((a, b) => a.best - b.best).slice(0, 3).map((r, i) => ({
+  name: 'imsa:' + IMSA_ID[r.event], imsa: true, track: imsaTrack(IMSA_ID[r.event]), lapSeconds: +r.best, trapKph: +r.trapKph >= 0.92 * medTrap ? +r.trapKph : null, weight: i === 0 ? 1 : 0.5, grip: null,
+  weather: {airTempC: +r.airC, trackTempC: +r.trackC, humidityPct: +r.hum, pressureHpa: +r.hpa}, meta: {event: 'IMSA ' + r.event, car: r.entry, manufacturer: r.manufacturer, session: r.session}})));
+const GF = l => l.grip ?? (l.imsa ? 1 : null);
+const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on', CDA_PRIOR = E.LAPSIM_WEC_CDA_PRIOR === 'on', DECOUPLED = E.LAPSIM_WEC_DECOUPLED === 'on'; // A1: Hypercar CdA prior 1.04 m² ± 10 %
 const WEC_SEL = E.LAPSIM_WEC_SEL ? new Set(E.LAPSIM_WEC_SEL.split(',')) : null;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
 const t71Extra = existsSync('scripts/sim/data/t71-wec-extra.json') ? JSON.parse(await readFile('scripts/sim/data/t71-wec-extra.json', 'utf8')).rows : [];
@@ -349,23 +363,30 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const tPos = id => TRAP_POS ? trapAt(id, year) : null;
     const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session},
-      ...(SECTORS && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year)}, secFit: SECTORS === 'on'} : {})})));
+      ...(SECTORS && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year)}, secFit: SECTORS === 'on'} : {})}))).concat(imsaLaps(cls, year, medTrap));
     let laps = lapsWith(f1Grip);
     if (new Set(laps.map(l => l.name)).size < 3) { report.push(`WEC ${cls} ${year}: not enough tracks (${new Set(laps.map(l => l.name)).size})`); continue; }
     const base = {...structuredClone(def.prior), linkMu: true, ...AXLE(cls === 'lmgt3' ? 1.62 : 1.65)};
     // owner 2026-11-17 (rule 14): Hypercar braking capped at the iRacing GTP envelope, LAPSIM_BRAKE_ENV_HYPER="a0,a2" (m/s², 1/m;
     // experiment 44043761033 BE1, hypercar holdout mean 1.24 -> 1.16 %)
     if (cls !== 'lmgt3' && E.LAPSIM_BRAKE_ENV_HYPER) base.brakeEnv = E.LAPSIM_BRAKE_ENV_HYPER.split(',').map(Number);
+    // A3 §2 V2: decoupled lateral (lateralCap quad a0 + k·v²), braking (b0 + b2·v²) and traction (aTr) limits, × track grip, with the
+    // published / weak priors of A3 (x0, sd); the decoupled braking replaces the GTP envelope cap (that envelope is its prior). LMGT3 b2
+    // is fixed at 0 (A3: x0 = 0, a log prior cannot hold 0) and LMGT3 CdA has no prior (data limit).
+    const HY = cls !== 'lmgt3', DPRI = HY ? {'lateralCap.a0': [16.7, 0.15, [8, 25]], 'lateralCap.k': [0.0040, 0.20, [0.0005, 0.012]], 'decoupled.b0': [8.63, 0.15, [4, 20]], 'decoupled.b2': [0.003234, 0.15, [0.0003, 0.01]], 'decoupled.aTr': [9.8, 0.30, [4, 20]], cdA: [1.04, 0.10, def.bounds.cdA]}
+      : {'lateralCap.a0': [14.7, 0.15, [8, 25]], 'lateralCap.k': [0.0015, 0.50, [0.0002, 0.008]], 'decoupled.b0': [13.7, 0.30, [6, 20]], 'decoupled.aTr': [9.8, 0.30, [4, 20]], cdA: [null, null, def.bounds.cdA]};
+    if (DECOUPLED) { base.lateralCap = {kind: 'quad', a0: DPRI['lateralCap.a0'][0], k: DPRI['lateralCap.k'][0], rhoRef: 1.2}; base.decoupled = {b0: DPRI['decoupled.b0'][0], b2: HY ? DPRI['decoupled.b2'][0] : 0, aTr: DPRI['decoupled.aTr'][0]}; delete base.brakeEnv; }
     if (AERO_LD && cls !== 'lmgt3') base.ld = 4.1; // published target "about 4, slightly higher"; window [3.8, 4.4] (pre-reg §3 V2)
     const bounds = AERO_LD && cls !== 'lmgt3' ? {muY: def.bounds.muY, ld: [3.8, 4.4], cdA: def.bounds.cdA} : def.bounds;
     // A1: published CdA prior for the Hypercar classes (CzA window mid 4.15 m² / L/D 4.0 = 1.04 m², sd 10 %, weight 0.5 s² per sd²)
-    const params = Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
-    let h = holdout(laps, base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
+    const params = DECOUPLED ? Object.entries(DPRI).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0 ?? base[k], step: 0.08, min: lo, max: hi, ...(x0 != null ? {prior: {x0, sd, w: 0.5}} : {})}))
+      : Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
+    let h = holdout(laps, base, params, {...WEC_HO, folds: 99, gripFor: GF});
     // Transfer track factors (F1 fit without per-track drag): used for this class-season only when its
     // leave-one-track-out error is not higher than with the F1 fit's own factors (never worse); gate verdict recorded.
     let gripSource = {used: 'f1'};
     if (TRANSFER && sessions.every(w => transferGrip(w.track) != null)) {
-      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
+      const lt = lapsWith(transferGrip), ht = holdout(lt, base, params, {...WEC_HO, folds: 99, gripFor: GF});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(ht.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       const use = g.rmsNew <= g.rmsCur;
@@ -379,7 +400,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       .map(r => ({name: r.track, track: wecTrack(r.track), lapSeconds: r.lap, trapKph: r.trapKph, ...(TRAP_POS && trapAt(r.track, r.year) ? {trapAtM: trapAt(r.track, r.year).m} : {}), weight: 0.5, grip: f1Grip(r.track), weather: r.weather || {}, meta: {event: 'Timing71', car: '', manufacturer: '', session: ''}}));
     let pooled = null;
     if (extra.length) {
-      const h2 = holdout([...laps, ...extra], base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
+      const h2 = holdout([...laps, ...extra], base, params, {...WEC_HO, folds: 99, gripFor: GF});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       pooled = {extraRows: extra.length, previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
@@ -390,10 +411,10 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     let bop = null;
     const bopOf = l => Object.entries(lapsimWecBop[l.name]?.[year]?.cars || {}).find(([n]) => n.split(' ')[0].toLowerCase() === String(l.meta.manufacturer || l.meta.car || '').split(' ')[0].toLowerCase())?.[1];
     const withBop = laps.filter(l => bopOf(l)?.kg);
-    if (cls !== 'lmgt3' && withBop.length >= laps.length * 0.8) {
+    if (cls !== 'lmgt3' && withBop.length >= laps.filter(l => !l.imsa).length * 0.8) { // A4: IMSA laps carry no WEC BoP (flagged)
       const kg0 = withBop.reduce((a, l) => a + bopOf(l).kg, 0) / withBop.length, kw0 = withBop.reduce((a, l) => a + bopOf(l).kW, 0) / withBop.length;
       const cand = laps.map(l => { const b = bopOf(l); return b?.kg ? {...l, patch: car => ({...car, mass: car.mass + b.kg - kg0, pIce: car.pIce * b.kW / kw0})} : l; });
-      const h2 = holdout(cand, base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
+      const h2 = holdout(cand, base, params, {...WEC_HO, folds: 99, gripFor: GF});
       const a = Object.fromEntries(h.errors.map(e => [e.name, e.pct])), b = Object.fromEntries(h2.errors.map(e => [e.name, e.pct])), names = Object.keys(a).filter(n => n in b);
       const g = gate(names.map(n => a[n]), names.map(n => b[n]), {minRows: 4});
       bop = {laps: withBop.length, refKg: +kg0.toFixed(1), refKW: +kw0.toFixed(1), previousRmsPct: +g.rmsCur.toFixed(2), candidateRmsPct: +g.rmsNew.toFixed(2), reason: g.reason, used: g.accept};
@@ -402,7 +423,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       if (BOP_PHYS) bop.physics = true;
     } else if (BOP_PHYS && cls !== 'lmgt3') bop = {physics: true, flagged: 'event BoP not public: class median (no offset)', laps: withBop.length};
     // noise of the final WEC held-out: v2 = best of {0.08, 0.05} (stored by holdout itself); v1 = a re-run from start step 0.05
-    const h05 = h.noise ? h.noise : WEC_HO.nm && h.n ? holdout(laps, base, params, {...WEC_HO, step0: WEC_START2, folds: 99, gripFor: l => l.grip}) : null;
+    const h05 = h.noise ? h.noise : WEC_HO.nm && h.n ? holdout(laps, base, params, {...WEC_HO, step0: WEC_START2, folds: 99, gripFor: GF}) : null;
     const noiseLabel = h.noise ? `best of ${h.noise.starts.join('/')}` : `start ${WEC_START2}`;
     if (h05) report.push(`WEC ${cls} ${year}: held-out ${noiseLabel} ${h05.rmsPct.toFixed(3)} % vs ${h.rmsPct.toFixed(3)} % (spread ${Math.abs(h05.rmsPct - h.rmsPct).toFixed(3)} pp); fold iterations ${h.fits.map(f => f.iters).join(', ')}; fold bound hits ${boundHits(h.fits).map(b => `${b.key} at ${b.bound} (${b.folds.length})`).join(', ') || 'none'}`);
     const fit = fitSeason(laps, base, params, {iters: ITERS});
