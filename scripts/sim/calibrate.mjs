@@ -420,12 +420,14 @@ if (LMP2 || PART === 'wec-lmp2') {
     const {gunzipSync} = await import('node:zlib'), {readFileSync} = await import('node:fs');
     const [h, ...L] = gunzipSync(readFileSync('scripts/sim/data/learn/endurance-cars.csv.gz')).toString().trim().split('\n'), k = h.split(',');
     const ID = {'barcelona-catalunya': 'catalunya', 'yas-marina': 'yas-marina-circuit', imola: 'imola', 'spa-francorchamps': 'spa-francorchamps', silverstone: 'silverstone'};
-    const rows = L.map(l => Object.fromEntries(l.split(',').map((v, i) => [k[i], v]))).filter(r => /^LMP2/.test(r.cls) && /^Oreca/.test(r.vehicle) && r.type === 'Q' && +r.best > 0 && !(+r.rainShare > 0) && ID[r.event] && tracks[ID[r.event]] && f1GripOwn(ID[r.event]) != null);
+    const rows = L.map(l => Object.fromEntries(l.split(',').map((v, i) => [k[i], v]))).filter(r => /^LMP2/.test(r.cls) && /^Oreca 07/.test(r.vehicle) && r.type === 'Q' && +r.best > 0 && !(+r.rainShare > 0) && ID[r.event] && tracks[ID[r.event]] && f1GripOwn(ID[r.event]) != null);
+    // A1: an empty weather cell is unknown (kernel default), not 0 (+'' = 0 gave 0 hPa: no air, no power, 2 700-4 700 s laps)
+    const wx = r => Object.fromEntries([['airTempC', r.airC], ['trackTempC', r.trackC], ['humidityPct', r.hum], ['pressureHpa', r.hpa]].filter(([, v]) => v !== '' && v != null).map(([k, v]) => [k, +v]));
     const prior = {...structuredClone(SERIES.wec.classes.lmdh.prior), label: 'LMP2', ers: {}, mass: 950, pIce: 440e3, clA: 3.2, cdA: 0.95, clALow: 3.2, cdALow: 0.95, vMax: 340 / 3.6, linkMu: true, noLowDrag: true};
     const bounds = {muY: [1.3, 2.2], clA: [2, 6], cdA: [0.6, 1.4]}, out = {}, rep = [];
     for (const [year, R] of Object.entries(Object.groupBy(rows, r => r.season))) {
       const laps = Object.values(Object.groupBy(R, r => r.series + '|' + r.event)).flatMap(ev => [...ev].sort((a, b) => a.best - b.best).slice(0, 3).map((r, i) => ({name: r.series + '|' + r.season + '|' + r.event, trackId: ID[r.event], track: tracks[ID[r.event]], lapSeconds: +r.best,
-        trapKph: null, weight: i === 0 ? 1 : 0.5, grip: f1GripOwn(ID[r.event]), weather: {airTempC: +r.airC, trackTempC: +r.trackC, humidityPct: +r.hum, pressureHpa: +r.hpa}, meta: {event: r.series + ' ' + r.event, car: r.entry, manufacturer: 'Oreca', session: r.session}})));
+        trapKph: null, weight: i === 0 ? 1 : 0.5, grip: f1GripOwn(ID[r.event]), weather: wx(r), meta: {event: r.series + ' ' + r.event, car: r.entry, manufacturer: 'Oreca', session: r.session}})));
       const names = new Set(laps.map(l => l.trackId)); if (names.size < 4) { rep.push(`LMP2 ${year}: ${names.size} tracks (< 4), not fitted`); continue; }
       // baseline: the prior car (what the class has today: no fitted LMP2), main lap of each event, same grip and weather
       const prior0 = {...prior}; delete prior0.linkMu;
