@@ -144,8 +144,10 @@ function tractionCI(pts, tb) {
 }
 
 // ---- cars, sims, checks -------------------------------------------------------------------------------------------------------
-const rho = id => envOf(id).rho ?? 1.2, INERTIA = carsFor(FOLD[0])['2025'].car.inertiaFactor ?? 1;
-const cdaCar = (id, th, c) => { const s = carsFor(id)['2025'].car, k = th / CDA_REF; return {...s, pIce: P_ICE, cdA: s.cdA * k, cdALow: s.cdA * k * (1 - c), clALow: s.clA * CLA_LOW_RATIO}; };
+const RHO = {}, rho = id => (RHO[id] ??= envOf(id).rho ?? 1.2), INERTIA = carsFor(FOLD[0])['2025'].car.inertiaFactor ?? 1;
+const SHIP = {}, ship = (id, y) => (SHIP[id + y] ??= carsFor(id)[y].car); // carsFor is costly; the shipped car per track is fixed
+const CDA_MEMO = new Map(), cdaCar = (id, th, c) => { const key = id + '|' + th + '|' + c; if (CDA_MEMO.has(key)) return CDA_MEMO.get(key);
+  const s = ship(id, '2025'), k = th / CDA_REF, o = {...s, pIce: P_ICE, cdA: s.cdA * k, cdALow: s.cdA * k * (1 - c), clALow: s.clA * CLA_LOW_RATIO}; if (CDA_MEMO.size > 5000) CDA_MEMO.clear(); CDA_MEMO.set(key, o); return o; };
 function energyOk(r) { // A2.2: ERS flows close within 0.1 %, deploy within the budget
   if (!r.flow || !r.energy) return true; const sum = a => a.reduce((x, y) => x + y, 0), e = r.energy, tol = x => Math.max(1, 1e-3 * Math.abs(x));
   return Math.abs(sum(r.flow.dep) - e.deployJ) <= tol(e.deployJ) && Math.abs(sum(r.flow.brk) + sum(r.flow.thr) - e.regenJ) <= tol(e.regenJ) && e.deployJ <= e.budgetJ * 1.001;
@@ -271,9 +273,9 @@ if (mode === 'kappa') { // driven-line κ per track + the model's low-drag state
   console.log(held, 'laps', test.length, 'drs', drs.length);
 } else if (mode === 'fold26') { // 2026 group (report-only, own MDE 4.28 > 3): own LOTO and tables; CdA and CdA_low per aero state (A6.3)
   const held = arg, train = EV26.filter(e => e.track !== held), test = EV26.filter(e => e.track === held); if (!test.length) throw new Error('no 2026 laps for ' + held);
-  const ship = carsFor(held)['2026'].car, rho26 = id => stage26(id).env.rho ?? 1.2, PR = {cd: [ship.cdA, 0.1 * ship.cdA], cdl: [ship.cdALow ?? ship.cdA, 0.1 * (ship.cdALow ?? ship.cdA)]};
-  const car26 = (id, cd, cdl) => { const c = carsFor(id)['2026'].car, f = cd / ship.cdA, fl = cdl / (ship.cdALow ?? ship.cdA); return {...c, cdA: c.cdA * f, cdALow: (c.cdALow ?? c.cdA) * fl}; }; // per-track trims kept
-  const build = (cd, cdl) => { const pts = pointsFor(train.map(keyOf), (id, vk, low) => drOf(car26(id, cd, cdl), rho26)(id, vk, low), ship.inertiaFactor ?? 1), tb = tablesOf(pts); return {pts, tb, dec: decompose(tb)}; };
+  const shipC = carsFor(held)['2026'].car, R26 = {}, rho26 = id => (R26[id] ??= stage26(id).env.rho ?? 1.2), PR = {cd: [shipC.cdA, 0.1 * shipC.cdA], cdl: [shipC.cdALow ?? shipC.cdA, 0.1 * (shipC.cdALow ?? shipC.cdA)]};
+  const car26 = (id, cd, cdl) => { const c = ship(id, '2026'), f = cd / shipC.cdA, fl = cdl / (shipC.cdALow ?? shipC.cdA); return {...c, cdA: c.cdA * f, cdALow: (c.cdALow ?? c.cdA) * fl}; }; // per-track trims kept
+  const build = (cd, cdl) => { const pts = pointsFor(train.map(keyOf), (id, vk, low) => drOf(car26(id, cd, cdl), rho26)(id, vk, low), shipC.inertiaFactor ?? 1), tb = tablesOf(pts); return {pts, tb, dec: decompose(tb)}; };
   const memo26 = new Map();
   const run = (cand, id, car, keyx) => { const k = cand + id + keyx; if (memo26.has(k)) return memo26.get(k); const s = stage26(id), tr0 = cand ? withCorridor(id, s.tr) : s.tr, g = cand ? 1 : a2Grip26(id);
     const tr = {...tr0, mu: Float64Array.from(tr0.mu, m => m * g)}, r = K.simulateLap(tr, car, s.env);
