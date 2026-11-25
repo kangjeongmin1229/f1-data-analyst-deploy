@@ -1,0 +1,45 @@
+name: probe step36 Al Kamel full laps to the fork
+# Research only (step 36, central 2026-11-25 item 2): the upstream draft data-alkamel-full-laps is not readable from the fork, and no
+# token here can copy it byte for byte. This rebuilds it on the fork with the same fetcher (same URLs, robots.txt, one request at a time),
+# checks every file against the sha256 in the committed manifest, and stores the result as a DRAFT release on the fork (raw files stay
+# unpublished, physics rule 9). Never merged.
+on:
+  push:
+    branches: ['probe/step36-alkamel-copy']
+permissions:
+  contents: write
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: data-alkamel-full-laps
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm ci --ignore-scripts
+      - run: |
+          set -euo pipefail
+          cp scripts/sim/data/learn/alkamel-full-laps-manifest.json /tmp/pinned-manifest.json
+          node scripts/sim/learn/fetch-alkamel-full-laps.mjs --years=2023,2024,2025 --series=wec,imsa,elms | tail -20
+          # every file of the pinned (upstream) manifest must be here with the same sha256 of its raw bytes
+          node -e "
+            const a=require('/tmp/pinned-manifest.json').files, b=new Map(require('./scripts/sim/data/learn/alkamel-full-laps-manifest.json').files.map(f=>[f.path,f]));
+            const miss=a.filter(f=>!b.has(f.path)).map(f=>f.path), diff=a.filter(f=>b.has(f.path)&&b.get(f.path).sha256!==f.sha256).map(f=>f.path);
+            const extra=[...b.keys()].filter(p=>!a.some(f=>f.path===p));
+            const o={pinned:a.length,same:a.length-miss.length-diff.length,missing:miss,changed:diff,extra};
+            require('fs').writeFileSync('copy-check.json',JSON.stringify(o,null,1)); console.log(JSON.stringify({...o,missing:miss.length,changed:diff.length,extra:extra.length}));
+            if(miss.length||diff.length) process.exit(1);"
+          # keep only the pinned files (a newer upstream file would change the data set)
+          node -e "
+            const fs=require('fs'),p=require('path'),keep=new Set(require('/tmp/pinned-manifest.json').files.map(f=>f.path));
+            const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(p.join(d,e.name)):[p.join(d,e.name)]);
+            for(const f of walk('.cache/alkamel-full-laps')) if(!keep.has(p.relative('.cache/alkamel-full-laps',f).split(p.sep).join('/'))) fs.rmSync(f);"
+          (cd .cache && find alkamel-full-laps -type f | LC_ALL=C sort | tar --sort=name --mtime='2026-11-23 00:00Z' --owner=0 --group=0 --numeric-owner -cf alkamel-full-laps.tar -T -)
+          (cd .cache && sha256sum alkamel-full-laps.tar) > SHA256SUMS; cat SHA256SUMS; du -h .cache/alkamel-full-laps.tar
+          gh release view "$TAG" -R ${{ github.repository }} >/dev/null 2>&1 || gh release create "$TAG" -R ${{ github.repository }} --draft --title "Al Kamel full lap files (raw, internal; fork copy)" \
+            --notes "Rebuilt on the fork with fetch-alkamel-full-laps.mjs; every file matches the sha256 of the committed manifest (copy-check.json). Raw Al Kamel timing files for internal analysis. Do not publish or redistribute (ASSET_SOURCES.md)."
+          gh release upload "$TAG" -R ${{ github.repository }} .cache/alkamel-full-laps.tar SHA256SUMS copy-check.json --clobber
+          { echo '### Al Kamel fork copy'; cat SHA256SUMS; } >> "$GITHUB_STEP_SUMMARY"
