@@ -1,0 +1,40 @@
+{
+ "step": "34a",
+ "check": "power (A5 §5, r1 §5)",
+ "run": "45557705662",
+ "reading": "r1 'r_k²' read as per-track sector RMS (% of lap), class-seasons pooled per track",
+ "sector": {
+  "nTracks": 6,
+  "nValues": 54,
+  "baseSectorRmsPct": 1.0142,
+  "sdTrackRmsPct": 0.4246,
+  "mdePct": 0.319,
+  "limitPct": 0.1014,
+  "judgeable": false
+ },
+ "trap": {
+  "lmh": {
+   "n": 11,
+   "biasKph": -0.15,
+   "half95Kph": 13.97,
+   "resolvable": false
+  },
+  "lmdh": {
+   "n": 11,
+   "biasKph": -0.07,
+   "half95Kph": 13.23,
+   "resolvable": false
+  },
+  "lmgt3": {
+   "n": 11,
+   "biasKph": -0.67,
+   "half95Kph": 5.86,
+   "resolvable": false
+  }
+ },
+ "judgeable": false,
+ "outcome": "not judgeable: V not opened, no attempt spent",
+ "commit": "1e32d00",
+ "branch": "s34a/base-2026-11-25",
+ "script_sha256": "1ff48019b7e39326e7adf72b71feb69561fa29c1c5e40c935bbad74b15aecc71"
+}
