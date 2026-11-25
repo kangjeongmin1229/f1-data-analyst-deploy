@@ -132,7 +132,7 @@ for s in ('2023', '2024', '2025'):
     params[f'{s}.stage1'] = dict(muX=float(np.median([f['fits'][s]['stage1']['muX'] for f in F])), muXTrac=float(np.median([f['fits'][s]['stage1']['muXTrac'] for f in F])))
     params[f'{s}.env_chi2_dof'] = [float(np.quantile([f['fits'][s]['envChi2Dof'] for f in F], q)) for q in (0.05, 0.5, 0.95)]
     params[f'{s}.muX_range_over_loads'] = [float(min(f['fits'][s]['muXRange'][0] for f in F)), float(max(f['fits'][s]['muXRange'][1] for f in F))]
-    params[f'{s}.brake_util_model'] = params[f'{s}.muX_over_muY']  # C3 item 2: μx/μy reported as the effective braking utilisation (model)
+    params[f'{s}.brake_util_model'] = dict(label='model', muX_fold90=params[f'{s}.muX']['fold90'], muX_median=params[f'{s}.muX']['median'], muX_over_muY_q05_q50_q95=params[f'{s}.muX_over_muY'])  # C3: effective braking utilisation, reported
 # C3 report-only: one-sided flat-out shortfall (km/h RMS of max(0, v_meas - v_model)) per track, and per-corner residuals at Monza and Silverstone
 flat = {f['held']: dict(cand=float(np.mean([h['flat']['cand'] for h in f['heldScores']])), base=float(np.mean([h['flat']['base'] for h in f['heldScores']]))) for f in F}
 corner_table = {}

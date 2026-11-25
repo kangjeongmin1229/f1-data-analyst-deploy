@@ -128,8 +128,8 @@ function seasonFit(train, s, opts = {}) {
   // A7.6 physics checks on the fitted parameters
   const loads = [...Array.from({length: 14}, (_, i) => 60 + i * 20), 330].map(v => (M_.g + 0.5 * 1.2 * P.clA * (v / 3.6) ** 2 / M_.m) * M_.m / 4); // per-tyre Fz, 60–330 km/h
   const muAt = Fz => P.muY + S.DMU * (Fz - S.FZ0);
-  const muXAt = Fz => P.muX + S.DMU * (Fz - S.FZ0); // C3 P2 (central item 2, option ii): μ_x inside the slick range of P1 at the same loads
-  const checks = {P1: loads.every(F => muAt(F) >= 1.4 && muAt(F) <= 2.2) && P.clA >= 4.5 && P.clA <= 9.0, P2: loads.every(F => muXAt(F) >= 1.4 && muXAt(F) <= 2.2),
+  const muXAt = Fz => P.muX + S.DMU * (Fz - S.FZ0); // reported only: μ_x is an effective braking utilisation (tyre × driver/brake margin), model
+  const checks = {P1: loads.every(F => muAt(F) >= 1.4 && muAt(F) <= 2.2) && P.clA >= 4.5 && P.clA <= 9.0, P2: P.muX / P.muY >= 0.5 && P.muX / P.muY <= 1.0, // C3: model error only if physically impossible
     P4: S.CLA_LOW_RATIO < 1, GBT: Math.abs(z.muX) <= 2 && Math.abs(z.muXTrac) <= 2};
   return {season: s, params: P, prior: PRI2, z, stage1: {muX: s1[0], muXTrac: s1[1], sd: [sd(0), sd(1)], boot: bt.length}, u, checks,
     muYRange: [Math.min(...loads.map(muAt)), Math.max(...loads.map(muAt))], muXRange: [Math.min(...loads.map(muXAt)), Math.max(...loads.map(muXAt))], brakeUtil: P.muX / P.muY, envChi2: et.z, envBins: et.nb, envDof: dof, envChi2Dof: et.z / dof,
