@@ -14,7 +14,7 @@ permissions:
 jobs:
   sectors:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: '22'}
       - run: npm ci --silent && sudo apt-get install -y -qq poppler-utils >/dev/null
-      - run: node scripts/sim/learn/fetch-fe-duel-pdfs.mjs --selftest && node scripts/sim/learn/fetch-fe-duel-pdfs.mjs
+      - run: node scripts/sim/learn/fetch-fe-duel-pdfs.mjs --selftest && FE_SEASONS="Season (9|10|11|12)" node scripts/sim/learn/fetch-fe-duel-pdfs.mjs
       - name: Store parsed rows, remove the text-line asset
         run: |
           id=${{ github.run_id }}
