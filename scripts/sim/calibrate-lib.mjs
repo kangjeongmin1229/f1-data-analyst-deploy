@@ -180,6 +180,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wTrap = 0
     });
     if (base.linkMu) { car.muX = base.muX * car.muY / base.muY; car.muXTrac = base.muXTrac * car.muY / base.muY; }
     if (base.ld != null) car.clA = car.ld * car.cdA; // step 34 V2: downforce tied to drag by the published L/D window
+    if (base.loadK != null) car.dmuDfz = -base.loadK * car.muY / (car.fz0 ?? 3000); // step 34b N5: μ = μ0·(1 − k·(Fz/Fz0 − 1)), dμ = −k·μ0/Fz0
     if (base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; } // no DRS / straight mode
     return car;
   };

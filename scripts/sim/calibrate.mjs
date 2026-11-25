@@ -463,13 +463,25 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     const joint = JOINT ? {arm: JOINT, priors: JP, flags: jointFlags, full: {vals: fit.vals, hess: hessianAt(fit.objective, fit.x)},
       folds: h.fits.map(f => ({test: f.test, vals: f.vals, bounds: f.bounds, hess: f.hess ? {sd: f.hess.sd, corr: f.hess.corr, cond: f.hess.cond} : null}))} : null;
     const car = fit.car; delete car.linkMu;
+    // step 34b N5 (report only, no attempt; central 21:00, plan-night N5): LAPSIM_WEC_LOADK=0.08,0.15,0.25 — Hypercar ClA fixed at 4.15 m²
+    // (as run 45584390225), tyre load sensitivity k (dμ = −k·μ0/Fz0, μ0 = the fitted μy) fixed per step, μy and CdA refitted to the lap
+    // (same laps, folds, starts, grip as above); held-out lap and sector-line residuals per track, fold values for the 0.5 % bound rule.
+    const loadScan = E.LAPSIM_WEC_LOADK && cls !== 'lmgt3' ? E.LAPSIM_WEC_LOADK.split(',').map(Number).map(k => {
+      const b2 = {...base, clA: 4.15, loadK: k}, p2 = params.filter(p => p.key !== 'clA');
+      const hs = holdout(laps, b2, p2, {...WEC_HO, folds: 99, gripFor: GF, joint: true}), fs = fitSeason(laps, b2, p2, {iters: ITERS});
+      report.push(`WEC ${cls} ${year}: N5 k ${k} (ClA 4.15): held-out ${hs.rmsPct?.toFixed(3)} %, μy ${fs.car.muY.toFixed(3)}, CdA ${fs.car.cdA.toFixed(3)}, bounds ${JSON.stringify(fs.bounds)}`);
+      const lapOf = n => laps.find(l => l.name === n && (l.weight ?? 1) >= 1);
+      return {k, clA: 4.15, heldOutRmsPct: hs.rmsPct != null ? +hs.rmsPct.toFixed(3) : null, car: {muY: +fs.car.muY.toFixed(4), cdA: +fs.car.cdA.toFixed(4)}, bounds: fs.bounds,
+        folds: hs.fits.map(f => ({test: f.test, vals: f.vals, bounds: f.bounds})),
+        heldOut: hs.errors.map(e => { const l = lapOf(e.name); return {track: e.name, pct: +e.pct.toFixed(3), ...(e.sec && l?.sec ? {sec: e.sec.map(x => +x.toFixed(4)), real: l.sec.real, lines: l.sec.lines, lenM: l.track.kappa.length * l.track.ds} : {})}; })};
+    }) : null;
     const perTrack = {};
     for (const p of fit.perTrack) if (!perTrack[p.name] && p.meta?.event !== 'Timing71') {
       const w = sessions.find(x => x.track === p.name);
       perTrack[p.name] = {grip: +p.grip.toFixed(4), errorSec: +p.dt.toFixed(3), simLap: +p.simLap.toFixed(3), realLap: p.realLap,
         trapKph: p.vMaxReal, simTopKph: +p.vMaxSim.toFixed(1), ...(tPos(p.name) ? {trapAtM: tPos(p.name).m, trapPos: tPos(p.name).status} : {}), event: p.meta.event, car: p.meta.car, manufacturer: p.meta.manufacturer, weather: w?.weather || null};
     }
-    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length, ...(joint ? {joint} : {}),
+    ((series.wec ||= {})[cls] ||= {})[year] = {car, tracks: perTrack, pooled, bop, gripSource, score: +fit.score.toFixed(3), laps: laps.length, ...(joint ? {joint} : {}), ...(loadScan ? {loadScan} : {}),
       holdout: {rmsPct: h.rmsPct != null ? +h.rmsPct.toFixed(2) : null, n: h.n, tracks: h.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3), ...(e.sec ? {sectorSec: e.sec.map(x => +x.toFixed(4))} : {}), ...(Number.isFinite(e.trapKph) ? {trapKph: +e.trapKph.toFixed(2)} : {})})),
         ...(h05 ? {rule: h.noise ? 'best-of-starts' : 'converged', iters: h.fits.map(f => f.iters), boundHits: boundHits(h.fits), ...(h.noise ? {starts: WEC_STARTS, chosenStarts: h.fits.map(f => f.step)} : {}),
           noise: {...(h.noise ? {starts: h.noise.starts} : {step: WEC_START2}), rmsPct: +h05.rmsPct.toFixed(3), spreadPp: +Math.abs(h05.rmsPct - h.rmsPct).toFixed(3), tracks: h05.errors.map(e => ({track: e.name, errorSec: +e.dt.toFixed(3)})), boundHits: boundHits(h05.fits)}} : {})}};
