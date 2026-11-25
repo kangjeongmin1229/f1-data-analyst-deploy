@@ -52,7 +52,7 @@ for (const [name, car] of Object.entries(CARS)) test(`energy closes per lap with
 function regenClosure(track, car) {
   let P; const r = K.simulateLap(track, car, {}, {kernelStep: 2, probe: p => { P = p; }}), v = r.v, n = v.length, ds = track.ds, e = car.ers;
   const dw = i => v[i] * v[i] - v[(i + 1) % n] ** 2;
-  let kern = 0, want = 0, steps = 0;
+  let kern = 0, want = 0, steps = 0, below = 0;
   for (let i = 0; i < n; i++) { const j = (i + 1) % n;
     // inside a braking zone (the first step is split at the meeting point, the kernel books regen only on its braking part)
     if (!(dw(i) > 1e-6) || dw((i + n - 1) % n) < 0.5 * dw(i) || dw(j) < 0.5 * dw(i) || r.flow.brk[i] <= 0) continue;
@@ -61,8 +61,9 @@ function regenClosure(track, car) {
     const dt = (j ? r.time[j] : r.lapTime) - r.time[i], vm = 0.5 * (v[i] + v[j]);
     // the tyre (brake) part of the deceleration force: m·k·a − drag − rolling − m·g·sinθ (drag and rolling energy is dissipated)
     const fT = P.mEff * dw(i) / (2 * ds) - 0.5 * (P.brake(v[i], i).res + P.brake(v[j], j).res) - P.m * 9.81 * 0.5 * (P.sinG[i] + P.sinG[j]);
-    want += Math.min(e.regenMax, (e.regenShare ?? 0.6) * Math.max(0, fT) * vm * (e.etaRegen ?? 0.9)) * dt; kern += r.flow.brk[i]; steps++; }
-  return {residualPct: 100 * (kern - want) / want, steps};
+    const pw = (e.regenShare ?? 0.6) * Math.max(0, fT) * vm * (e.etaRegen ?? 0.9); if (pw < e.regenMax) below++;
+    want += Math.min(e.regenMax, pw) * dt; kern += r.flow.brk[i]; steps++; }
+  return {residualPct: 100 * (kern - want) / want, steps, below};
 }
 // Before the fix (regen from the whole deceleration, drag and rolling included): F1 2026 +5.2 to +9.6 %, 2027 car +5.3 to +9.5 %,
 // LMH +0.3 to +1.9 %. LMDh passes either way: its rear regen sits at the cap on these steps (see the cap source in series.js).
@@ -92,8 +93,19 @@ test('FE: lapEnergy() agrees with the kernel lap within 0.5 % (out, regen, net; 
   }
 });
 
+// LMDh light braking (central 2026-11-25 13:48): at full braking the LMDh rear regen sits at its 50 kW cap, so the test above cannot see the
+// formula. With the deceleration held to 3 m/s² (brakeDecelMax, a lift-and-brake zone) most braking steps stay below the cap. The old
+// formula (whole deceleration, drag included) gave +40 to +113 %; now within 0.1 %.
+test('braking regen, LMDh light braking below the cap: recovered energy within 0.1 %', () => {
+  const car = {...C.series.wec.lmdh['2025'].car, brakeDecelMax: 3};
+  for (const id of ['monza', 'suzuka', 'monte-carlo', 'spa-francorchamps', 'silverstone']) {
+    const c = regenClosure(K.trackFromData(lapsimTracks[id]), car);
+    assert.ok(c.below > 0.5 * c.steps && Math.abs(c.residualPct) <= 0.1, `LMDh light ${id}: residual ${c.residualPct.toFixed(3)} % on ${c.steps} steps, ${c.below} below the cap`);
+  }
+});
+
 // The Hypercar regen caps and their sources (central 2026-11-25 12:25; see the comments in worker/lapsim/series.js).
-test('Hypercar regen caps: LMH 200 kW (front MGU rule), LMDh 50 kW model prior (rule: Equity Model, not public; hardware 200 kW)', () => {
+test('Hypercar regen caps: LMH 200 kW (front MGU rule), LMDh 50 kW assumed (no published rule; Equity Model not public)', () => {
   // LMH: 2024 Le Mans Hypercar Technical Regulations (FIA/ACO, WMSC 2023-10-19) Art. 5.3.2: "The electrical DC power of the MGU-K
   // must not exceed 200 kW." (DC, both directions; the kernel's regenMax is a DC limit)
   for (const y of ['2025', '2026']) assert.equal(C.series.wec.lmh[y].car.ers.regenMax, 200e3);

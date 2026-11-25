@@ -66,3 +66,13 @@ test('another calibration makes every checked range stale', () => {
   assert.equal(deltaStale(c), true);
   assert.equal(deltaStale(lapsimCalibration), sha('worker/lapsim/calibration-data.js') !== D.calibration.sha256);
 });
+
+// LMDh regen cap 50 kW is an assumption (central 2026-11-25 13:48): its 50 vs 200 kW range is reported beside the LMDh lap range
+test('29b: LMDh lap check carries the regen-cap assumption range; the range file is not stale', () => {
+  const r = withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmdh'}));
+  const a = r.uncertainty.lap_check.assumption_range;
+  assert.ok(a && /assumed \(no published rule; Equity Model not public\)/.test(a.name) && a.plus_minus_s >= 0, JSON.stringify(r.uncertainty.lap_check));
+  assert.equal(withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmh'})).uncertainty.lap_check.assumption_range, undefined);
+  const s = spawnSync(process.execPath, ['scripts/sim/lmdh-regen-range.mjs', '--check'], {encoding: 'utf8'});
+  assert.equal(s.status, 0, s.stderr);
+});

@@ -2,6 +2,7 @@
 // Flag LAPSIM_DELTA_PM=on (off by default): without it nothing is added to the connector output or the page.
 import {lapsimDeltaIntervals as D} from './delta-intervals-data.js';
 import {lapsimCalibration} from './calibration-data.js';
+import {lmdhRegenRange as LR} from './lmdh-regen-range-data.js';
 
 // the calibration the ranges were built on: generatedAt + every held-out row (a refit changes them); another calibration = stale
 export function calFingerprint(c) {
@@ -49,7 +50,10 @@ export function lapCheck(car, lapS) {
   if (g && deltaStale()) return STALE;
   if (!g || !Number.isFinite(lapS)) return {status: 'unchecked', reason: 'this car is not in the held-out rows of the lap check'};
   const q = D.lap[g], lo = lapS / (1 + q.q95), hi = lapS / (1 + q.q05);
-  return {status: 'checked', range_s: [r2(lo), r2(hi)], plus_s: r2(hi - lapS), minus_s: r2(lapS - lo), level: D.level, basis: CHECK,
+  // LMDh: the regen cap is an assumption, not a rule (series.js); its range is reported beside the lap range, not added to it
+  const assumption = car.cls === 'lmdh' ? {assumption_range: {name: `LMDh regen cap ${LR.capKW} kW (${LR.label})`, alt: `${LR.altKW} kW (hardware capability)`,
+    plus_minus_s: LR.lapPlusMinusS, basis: `${LR.rows.length} laps, shipped calibration (scripts/sim/lmdh-regen-range.mjs); the regen energy changes ×3, the lap does not (BoP total power cap: the MGU replaces engine power)`}} : {};
+  return {...assumption, status: 'checked', range_s: [r2(lo), r2(hi)], plus_s: r2(hi - lapS), minus_s: r2(lapS - lo), level: D.level, basis: CHECK,
     reason: `${q.n} held-out ${g.toUpperCase()} rows (tracks left out of the fit, run ${D.lap.source.run}); about 2 rows per tail, so the range is rough; on a raced track the default lap reproduces the real lap, the range is for what the fit has not seen`};
 }
 
