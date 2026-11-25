@@ -20,6 +20,7 @@ export const SERIES = {
         label: {ko: '하이퍼카 LMH', en: 'Hypercar LMH'},
         manufacturers: /toyota|ferrari|peugeot|aston|glickenhaus|isotta|vanwall/i,
         hybrid: {axle: 'front', maxKW: 200, deployFromKph: 190},
+        // LMH: 2024 Le Mans Hypercar TR (FIA/ACO, WMSC 2023-10-19) Art. 5.3.2: "The electrical DC power of the MGU-K must not exceed 200 kW."
         prior: {...common, label: 'LMH', awdAboveKph: 190, ers: {rule: 'hypercar', axle: 'front', eMax: 200e3, deployFrom: 190 / 3.6, regenMax: 200e3, regenShare: 0.6, etaRegen: 0.9}, mass: 1120, wheelbase: 3.15, cogHeight: 0.32, rearWeight: 0.53, rearAero: 0.52,
           clA: 3.4, cdA: 1.05, clALow: 3.4, cdALow: 1.05, muX: 1.6, muY: 1.75, muXTrac: 1.7, pIce: 500e3, vMax: 345 / 3.6, noLowDrag: true},
         bounds: {muY: [1.3, 2.2], clA: [2, 7], cdA: [0.7, 1.6]},
@@ -28,6 +29,10 @@ export const SERIES = {
         label: {ko: '하이퍼카 LMDh', en: 'Hypercar LMDh'},
         manufacturers: /porsche|cadillac|bmw|alpine|lamborghini|acura|genesis|mclaren|ford/i,
         hybrid: {axle: 'rear', maxKW: 50, deployFromKph: 0},
+        // LMDh spec hybrid (Bosch MGU, rear axle). Deploy 50 kW: Bosch Motorsport press release on the WEC debut (2023): "In drive mode, it
+        // delivers a permanent output of 50 kW, and up to 200 kW in recuperation mode". LMDh Technical Regulations (ACO/IMSA, rev.
+        // 2024-10-22) Art. 5.3.10 c) and d): deployment and regeneration power are "subject to conditions dictated by Equity Model"
+        // (values not public). So regenMax 50 kW below is a model prior, not a published limit; the hardware recovers up to 200 kW.
         prior: {...common, label: 'LMDh', ers: {rule: 'hypercar', axle: 'rear', eMax: 50e3, deployFrom: 0, regenMax: 50e3, regenShare: 0.4, etaRegen: 0.9}, mass: 1120, wheelbase: 3.15, cogHeight: 0.32, rearWeight: 0.53, rearAero: 0.52,
           clA: 3.4, cdA: 1.05, clALow: 3.4, cdALow: 1.05, muX: 1.6, muY: 1.75, muXTrac: 1.7, pIce: 500e3, vMax: 345 / 3.6, noLowDrag: true},
         bounds: {muY: [1.3, 2.2], clA: [2, 7], cdA: [0.7, 1.6]},

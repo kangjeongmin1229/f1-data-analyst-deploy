@@ -103,7 +103,8 @@ export function straightLine(car, {rho = 1.225, dt = 0.001, tMax = 60} = {}) {
 
 // Battery energy of one simulated lap (kWh): drive energy out, braking energy recovered inside the 700 kW limit,
 // and the net value that counts against the race allowance. result: simulateLap() output; track: kernel track.
-export function lapEnergy(result, car, track, {rho = 1.225} = {}) {
+// rho: the air density the lap was simulated with (kernel RHO_REF 1.18 for env {}); the old 1.225 gave 0.4 % less net energy than the lap's own forces
+export function lapEnergy(result, car, track, {rho = 1.18} = {}) {
   const n = result.v.length, ds = track.ds, g = 9.81, m = car.mass, mEff = m * (car.inertiaFactor ?? 1);
   const rg = car.regen || {maxW: 0, share: 0, eta: 0};
   let out = 0, regen = 0;

@@ -51,9 +51,10 @@ Number of runs of the lap (default 1). Run k sees run k − 1 in `state.v`, `sta
 - `deploy({i, s, v, lim, pErs, soc})` → DC deploy power allowed (W). In: point, distance (m), speed (m/s), the rule's ERS-K limit
   at that speed (W), the power today's logic allows there (W, after the cut-off, Overtake cap and C5.12 ramp), and the state of
   charge (J; step 1 causal pass only, else `null`). Default: `pErs`.
-- `regen({pBrake, v, i, s, regenMax, share, eta})` → DC power recovered under braking (W). In: braking power at the wheels from the
-  kinetic-energy drop (W), mean speed of the step (m/s), point, distance (m), the car's DC limit (W), braking share and efficiency.
-  Default: `min(regenMax, share · pBrake · eta)` (the step-1 formula; step 10b replaces it).
+- `regen({pBrake, pTyre, v, i, s, regenMax, share, eta})` → DC power recovered under braking (W). In: braking power at the wheels from
+  the kinetic-energy drop, m·k·(−Δv²)/(2 ds)·v̄ (W); its tyre (brake) part pTyre = pBrake − (drag + rolling + m·g·sinθ)·v̄ (W, ≥ 0);
+  mean speed of the step (m/s), point, distance (m), the car's DC limit (W), braking share and efficiency.
+  Default: `min(regenMax, share · pTyre · eta)`: drag and rolling energy is dissipated, not recovered (step 10b, 2026-11-25).
 - Either may be omitted. The energy strategy (cut-off search, super-clipping, budgets) is unchanged.
 - **`car.ers.law = 'b'`** (data, step 10b; `withErsLaw(car)` in `worker/lapsim/ers-law.js`): law (b) built into the kernel.
   Regen from the tyres' braking force above drag and rolling resistance: `min(regenMax, share·max(0, m·a − D − R)·v·η)`,
