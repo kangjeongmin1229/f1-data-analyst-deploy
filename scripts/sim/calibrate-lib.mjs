@@ -86,13 +86,20 @@ export function withGrip(track, g) {
 // centreline differ from the event map by tens of metres, and a trap sits just before a braking zone (point reading: RMS 60 km/h).
 export const TRAP_WIN_M = 300;
 export const trapSpeed = (v, ds, atM, win = TRAP_WIN_M) => { const i0 = Math.round(atM / ds), w = Math.round(win / ds); let m = 0; for (let j = i0 - w; j <= i0 + w; j++) m = Math.max(m, v[((j % v.length) + v.length) % v.length]); return m; };
-export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, trapAtM = null, wTrap = 0.5} = {}) {
+// WEC sector shape residual (step 34 V1 = step 21 r1 §3): r_k = (T_sim,k − T_real,k) − dt·T_real,k/T_real,lap at the printed lines
+// k = 1, 2. sec = {real: [s1, s2, s3], lines: [m1, m2], w: [w1, w2]}. Simulated time at a distance: linear in res.time.
+export function sectorResid(res, ds, lapReal, sec) {
+  const at = m => { const x = m / ds, i = Math.min(res.time.length - 2, Math.floor(x)), f = x - i; return res.time[i] + f * (res.time[i + 1] - res.time[i]); };
+  const dt = res.lapTime - lapReal, real = [sec.real[0], sec.real[0] + sec.real[1]];
+  return sec.lines.map((m, k) => at(m) - real[k] - dt * real[k] / lapReal);
+}
+export function lapError(track, car, env, obs, lapTime, {wTime = 2, trapKph = null, trapAtM = null, wTrap = 0.5, sec = null, secFit = false} = {}) {
   const res = simulateLap(track, car, env);
   const rms = !obs ? 0 : obs.ext ? extremaRms(res.v, track.ds, obs.ext) : rmsSpeed(res.v, track.ds, obs);
   if (trapAtM != null) res.vTrapKph = trapSpeed(res.v, track.ds, trapAtM) * 3.6;
   const trap = trapKph ? ((res.vTrapKph ?? res.vMaxKph) - trapKph) / 3.6 : 0;
-  const dt = res.lapTime - lapTime;
-  return {score: rms * rms + wTime * dt * dt + wTrap * trap * trap, rms, dt, trap: trap * 3.6, res};
+  const dt = res.lapTime - lapTime, r = sec ? sectorResid(res, track.ds, lapTime, sec) : null;
+  return {score: rms * rms + wTime * dt * dt + wTrap * trap * trap + (r && secFit ? r.reduce((a, x, k) => a + sec.w[k] * x * x, 0) : 0), rms, dt, trap: trap * 3.6, res, ...(r ? {sec: r} : {})};
 }
 
 // 1-D golden-section search for the per-track grip factor (same answer for the same car, so the
@@ -171,6 +178,7 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
       if (p.max != null && o[last] > p.max) { outside += Math.log(o[last] / p.max) ** 2; o[last] = p.max; }
     });
     if (base.linkMu) { car.muX = base.muX * car.muY / base.muY; car.muXTrac = base.muXTrac * car.muY / base.muY; }
+    if (base.ld != null) car.clA = car.ld * car.cdA; // step 34 V2: downforce tied to drag by the published L/D window
     if (base.noLowDrag) { car.clALow = car.clA; car.cdALow = car.cdA; } // no DRS / straight mode
     return car;
   };
@@ -187,8 +195,8 @@ export function fitSeason(laps, base, params, {iters = 120, wTime = 2, wGrip = 5
   };
   // l.patch(car) → car for this lap (e.g. per-event BoP weight and power); no patch = season car
   const evalLap = (l, car) => (car = l.patch ? l.patch(car) : car, l.grip != null
-    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM})}
-    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM}));
+    ? {grip: l.grip, ...lapError(withGrip(l.track, l.grip), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit})}
+    : fitGrip(l.track, car, l.env, l.obs, l.lapSeconds, 0.85, 1.15, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}));
   const x0 = params.map(() => 0);
   const result = nelderMead(objective, x0, {step: params.map(p => step0 ?? p.step ?? 0.08), iters, ...nm});
   const car = build(result.x);
@@ -217,7 +225,7 @@ export function holdout(laps, base, params, {folds = 4, iters = 40, gripFor, sta
   const predict = (fit, test, out) => { for (const l of laps.filter(x => test.has(x.name) && (x.weight ?? 1) >= 1)) {
     const g = gripFor(l); if (g == null) continue;
     const res = simulateLap(withGrip(l.track, g), l.patch ? l.patch(fit.car) : fit.car, conditionsFromWeather(l.weather || {}));
-    out.push({name: l.name, dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100});
+    out.push({name: l.name, dt: res.lapTime - l.lapSeconds, pct: (res.lapTime / l.lapSeconds - 1) * 100, ...(l.sec ? {sec: sectorResid(res, l.track.ds, l.lapSeconds, l.sec)} : {})});
   } };
   for (let f = 0; f < k; f++) {
     const test = new Set(names.filter((_, i) => i % k === f));
@@ -257,7 +265,7 @@ export function fitJoint(groups, {iters = 90, wTime = 2, wGrip = 50, lo = 0.85, 
   // best shared grip for one track, given the cars
   const trackFit = (name, cars) => {
     const laps = prep.flatMap((g, k) => g.laps.filter(l => l.name === name).map(l => ({l, car: cars[k]})));
-    const f = gr => { let s = 0; const r = laps.map(({l, car}) => { const e = lapError(withGrip(l.track, gr), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM}); s += (l.weight ?? 1) * e.score; return e; }); return {grip: gr, score: s, r}; };
+    const f = gr => { let s = 0; const r = laps.map(({l, car}) => { const e = lapError(withGrip(l.track, gr), car, l.env, l.obs, l.lapSeconds, {wTime, trapKph: l.trapKph, trapAtM: l.trapAtM, sec: l.sec, secFit: l.secFit}); s += (l.weight ?? 1) * e.score; return e; }); return {grip: gr, score: s, r}; };
     let a = lo, b = hi, c = f(b - phi * (b - a)), d = f(a + phi * (b - a));
     for (let it = 0; it < 14; it++) { if (c.score < d.score) { b = d.grip; d = c; c = f(b - phi * (b - a)); } else { a = c.grip; c = d; d = f(a + phi * (b - a)); } }
     const best = c.score < d.score ? c : d;

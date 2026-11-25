@@ -220,7 +220,7 @@ jobs:
       fail-fast: false
       matrix:
         # F1 held-out: one job per (season, fold) of holdoutBCD (4 folds; ~30-60 min each with production settings)
-        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, f1-ho-2026-0, f1-ho-2026-1, f1-ho-2026-2, f1-ho-2026-3, wec-lmh, wec-lmdh, wec-lmgt3]
+        part: [f1-ho-2025-0, f1-ho-2025-1, f1-ho-2025-2, f1-ho-2025-3, f1-ho-2026-0, f1-ho-2026-1, f1-ho-2026-2, f1-ho-2026-3, wec-lmh, wec-lmdh, wec-lmgt3, wec-lmp2]
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/lapsim-setup
