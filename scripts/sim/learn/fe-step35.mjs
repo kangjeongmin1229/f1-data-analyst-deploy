@@ -99,6 +99,18 @@ const hbA = heldOut('simBase'), hvA = heldOut('simV1'), plA = perLayout(hbA, hvA
 const diagAll = {note: 'report only: includes circuits whose geometry check failed', n: plA.length, k: r(kA), baseRmsPct: r(uA.baseRms), v1RmsPct: r(uA.candRms), ubLossPp: r(uA.ub),
   rowsBaseRmsPct: r(rmsA(hbA.filter(evo).map(b => b.e))), rowsV1RmsPct: r(rmsA(hvA.filter(evo).map(b => b.e))), medAbsBase: r(median(hbA.filter(evo).map(b => Math.abs(b.e)))), medAbsV1: r(median(hvA.filter(evo).map(b => Math.abs(b.e)))),
   rows: hbA.map((b, i) => ({...b, e: r(b.e), eV1: r(hvA[i].e)})), simShiftPct: r(mean(rows.filter(evo).map(x => (x.simV1 / x.simBase - 1) * 100)))};
+// A1 (docs/prereg/step35-fe-A1-2026-11-25.md): geometry check v2 = the centre line against an independent source
+const AUD = process.env.FE_GEOM_AUDIT ? JSON.parse(readFileSync(process.env.FE_GEOM_AUDIT, 'utf8')) : null, OSML = JSON.parse(readFileSync('scripts/sim/data/tracks/fe-osm-lines.json', 'utf8')).tracks;
+const geomV2 = {};
+for (const id of Object.keys(geometry)) { const a = AUD?.[id], o = OSML[id];
+  geomV2[id] = o ? {source: 'OSM ways matched to the FIA map', fitMedianM: o.fitMedianM, good: o.fitMedianM <= 10}
+    : id === 'monte-carlo' ? {source: 'measured driven line (OpenF1 car positions)', good: true}
+    : a?.scale ? {source: 'FIA FE map centre line vs OSM ways', scale: a.scale, medianM: a.medianM, p95M: a.p95M, within15m: a.within15m, good: Math.abs(a.scale - 1) <= 0.01 && a.medianM <= 3 && a.p95M <= 15 && a.within15m >= 0.95}
+    : {source: 'FIA FE map centre line', check: a ? (a.fit || 'no OSM ways') : 'audit not run', good: false, unverified: true}; }
+const sub = sel => { const a = hbA.filter(b => evo(b) && sel(b.layout)); return {n: a.length, layouts: new Set(a.map(b => b.layout)).size, rmsPct: a.length ? r(rmsA(a.map(b => b.e))) : null}; };
+const c1Good = sub(l => geomV2[l].good), c1Unv = sub(l => !geomV2[l].good);
+const tr = Object.keys(geometry).filter(id => lapsimFe.tracks[id]).map(id => [geometry[id].lengthRatio, lapsimFe.tracks[id].T]);
+const pear = (() => { const n = tr.length, mx = mean(tr.map(p => p[0])), my = mean(tr.map(p => p[1])); let sxy = 0, sxx = 0, syy = 0; for (const [x, y] of tr) { sxy += (x - mx) * (y - my); sxx += (x - mx) ** 2; syy += (y - my) ** 2; } return {n, r: r(sxy / Math.sqrt(sxx * syy)), slope: r(sxy / sxx)}; })();
 // 4. σ_meas (pre-reg §3): group A vs group B, Gen3 Evo dry
 const ev = {}; for (const g of base) { if (g.type !== 'Q' || +g.season < 2025 || +g.rainShare > 0.02) continue; const m = /Group ([AB])/i.exec(g.session); if (!m) continue;
   const e = (ev[g.season + '|' + g.event] ||= {}), s = (e[m[1]] ||= {best: Infinity, s: [Infinity, Infinity, Infinity], car: null});
@@ -108,6 +120,8 @@ const floor = d => ({n: d.length, statPct: r(sd(d) / Math.SQRT2 * 100), sysPct: 
 const sigma = {lap: floor(pairs.map(([, e]) => Math.log(e.A.best / e.B.best))),
   sectors: [0, 1, 2].map(i => floor(pairs.filter(([, e]) => Number.isFinite(e.A.s[i]) && Number.isFinite(e.B.s[i])).map(([, e]) => Math.log(e.A.s[i] / e.B.s[i])))),
   bestVsIdealPct: r(median(pairs.flatMap(([, e]) => [e.A.car, e.B.car]).filter(c => +c.ideal > 0).map(c => (+c.best / +c.ideal - 1) * 100)))};
+
+for (const c of [c1Good, c1Unv]) c.ratio = c.rmsPct == null ? null : r(c.rmsPct / sigma.lap.measPct, 2);
 
 // 5. Energy and limits on V1 laps (pre-reg §4), every good Gen3 Evo layout, default weather
 const energy = [];
@@ -154,9 +168,10 @@ const report = {step: 35, prereg: 'docs/prereg/step35-fe-2026-11-25.md', prereg_
   inputs: hashes1, measuredUnchanged: identical, rebuild: shipped, geometry, rows: rows.map(x => ({layout: x.layout, season: x.season, key: x.key, real: x.real, session: x.session, simBase: r(x.simBase), simV1: r(x.simV1), duelOverGroup: x.duelOverGroup})),
   noDuelRows: noDuel, sigma, c1: {heldOutRmsPct: diagAll.rowsBaseRmsPct, sigmaLapPct: sigma.lap.measPct, ratio: r(diagAll.rowsBaseRmsPct / sigma.lap.measPct, 2), note: 'held-out = leave-one-event-out on all Gen3 Evo duel rows (report only)'},
   v1: {power: power && {n: nG, k: r(k1), halfWidthPp: r(power.half), judgeable}, heldOut: ho, verdict, reportOnlyAllLayouts: diagAll}, energy, attackMode: {summary: amSum, events: am}, gen4Jarama: {pressBestS: JAR, source: 'press (racer.com, autosport.com, 16 Nov 2026), not official timing', trackFactor: r(scJ, 4), modes: gen4},
-  computeTime: {tracks: ct, ratio: ctRatio, pass: ctRatio <= 1.2}};
+  computeTime: {tracks: ct, ratio: ctRatio, pass: ctRatio <= 1.2},
+  a1: {prereg_sha256: sha('docs/prereg/step35-fe-A1-2026-11-25.md'), geometryV2: geomV2, heldOutGood: c1Good, heldOutUnverified: c1Unv, trackFactorVsLineRatio: pear}};
 writeFileSync(OUT + '/fe-step35-report.json', JSON.stringify(report, null, 1));
 const line = `FE step 35: measured unchanged ${identical}; σ_lap ${sigma.lap.measPct}% (stat ${sigma.lap.statPct}, sys ${sigma.lap.sysPct}, n ${sigma.lap.n}); sectors ${sigma.sectors.map(s => s.measPct).join('/')}%; good layouts ${Object.values(geometry).filter(g => g.good).length}/${Object.keys(geometry).length}; V1 ${verdict}${power ? ` (half-width ${r(power.half)} pp, n ${nG})` : ''}${ho ? `, held-out ${ho.baseRmsPct}→${ho.candRmsPct}% UB ${ho.ubLossPp} pp` : ''}; energy ${energy.every(e => e.pass) ? 'pass' : 'FAIL'}; AM rms ${amSum?.rmsS}s; compute ×${ctRatio}`;
-console.log(line); console.log(JSON.stringify({geometry, sigma, v1: {...report.v1, reportOnlyAllLayouts: {...diagAll, rows: undefined}}, c1: report.c1, energy, am: amSum, gen4, ct}, null, 1));
+console.log(line); console.log('A1 good', Object.entries(geomV2).filter(([, g]) => g.good).map(([k]) => k).join(' '), JSON.stringify({c1Good, c1Unv, pear})); console.log(JSON.stringify({geometry, sigma, v1: {...report.v1, reportOnlyAllLayouts: {...diagAll, rows: undefined}}, c1: report.c1, energy, am: amSum, gen4, ct}, null, 1));
 if (process.env.GITHUB_ACTIONS) console.log(`::notice title=FE step 35::${line}`);
 if (!identical) { console.error('measured input changed'); process.exit(1); }
