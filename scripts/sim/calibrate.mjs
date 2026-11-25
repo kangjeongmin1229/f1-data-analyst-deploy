@@ -307,6 +307,14 @@ const TRAP_POS = E.LAPSIM_WEC_TRAP_POS !== 'off';
 // step 34 flags (all off by default; Project claude/prereg-step34-wec-imsa-2026-11-25.md): LAPSIM_WEC_SECTORS=on (sector term in the
 // objective) | report (held-out sector residuals stored, not fitted); LAPSIM_WEC_BOP_PHYS=on (event BoP as physics, no gate);
 // LAPSIM_WEC_AERO_LD=on (Hypercar ClA = L/D × CdA, L/D in [3.8, 4.4])
+// A1 §4 kerbs (input in every step 34 arm): LAPSIM_WEC_KERBS=on → WEC fit tracks use the step 31 corridor at f = 1 (iRacing closed-wheel
+// kerbs, 1.3 m default), scripts/sim/data/step34/wec-corridor.json: κ × scale within ±60 m of each apex, back to 1 at ±120 m
+const WEC_COR = E.LAPSIM_WEC_KERBS === 'on' ? JSON.parse(await readFile('scripts/sim/data/step34/wec-corridor.json', 'utf8')) : null, WEC_TRK = new Map();
+const wecTrack = id => { const c = WEC_COR?.tracks[id]; if (!c || !tracks[id]) return tracks[id]; if (WEC_TRK.has(id)) return WEC_TRK.get(id);
+  const t = tracks[id], n = t.kappa.length, ds = t.ds, m = new Float64Array(n).fill(1);
+  for (const r of c.corners) { const s = Math.min(...r.scale); // f = 1, non-increasing in f (step 31 rule)
+    for (let k = 0; k < n; k++) { const d = Math.min(Math.abs(k - r.ia), n - Math.abs(k - r.ia)) * ds, mk = d <= WEC_COR.core_m ? s : d <= WEC_COR.taper_m ? s + (1 - s) * (d - WEC_COR.core_m) / (WEC_COR.taper_m - WEC_COR.core_m) : 1; if (mk < m[k]) m[k] = mk; } }
+  const v = {...t, kappa: Float64Array.from(t.kappa, (x, i) => x * m[i])}; WEC_TRK.set(id, v); return v; };
 const SECTORS = ['on', 'report'].includes(E.LAPSIM_WEC_SECTORS) ? E.LAPSIM_WEC_SECTORS : null, BOP_PHYS = E.LAPSIM_WEC_BOP_PHYS === 'on', AERO_LD = E.LAPSIM_WEC_AERO_LD === 'on', CDA_PRIOR = E.LAPSIM_WEC_CDA_PRIOR === 'on'; // A1: Hypercar CdA prior 1.04 m² ± 10 %
 const WEC_SEL = E.LAPSIM_WEC_SEL ? new Set(E.LAPSIM_WEC_SEL.split(',')) : null;
 const wec = process.env.LAPSIM_SKIP_WEC ? [] : JSON.parse(await readFile(join(CACHE, 'wec.json'), 'utf8').catch(() => '[]')).filter(w => !WEC_SEL || WEC_SEL.has(`${w.cls}:${w.year}`));
@@ -339,7 +347,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // step 34 data fix: where the trap position is known (Al Kamel maps), the trap is compared with the simulated speed there and
     // kept whatever its value; elsewhere the old lap-maximum rule. LAPSIM_WEC_TRAP_POS=off = before the fix.
     const tPos = id => TRAP_POS ? trapAt(id, year) : null;
-    const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: tracks[w.track], lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
+    const lapsWith = gf => sessions.flatMap(w => w.laps.map((l, i) => ({name: w.track, track: wecTrack(w.track), lapSeconds: l.lap, ...(tPos(w.track) ? {trapAtM: tPos(w.track).m, trapKph: Number.isFinite(l.topSpeedKph) ? l.topSpeedKph : null} : {trapKph: l.topSpeedKph >= 0.92 * medTrap ? l.topSpeedKph : null}),
       weight: i === 0 ? 1 : 0.5, grip: gf(w.track), weather: w.weather || {}, meta: {event: w.event, car: l.car, manufacturer: l.manufacturer, session: l.session},
       ...(SECTORS && sectorSpec(cls, w.track, year) && sectorsOk(l.lap, l.sectors) ? {sec: {real: l.sectors, ...sectorSpec(cls, w.track, year)}, secFit: SECTORS === 'on'} : {})})));
     let laps = lapsWith(f1Grip);
@@ -368,7 +376,7 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
     // Timing71 rows of the two seasons before (only seasons with no Al Kamel data), half weight; kept only if the
     // leave-one-track-out error on this season improves beyond noise (gate, docs/lapsim-t71.md)
     const extra = t71Extra.filter(r => r.cls === cls && r.year < +year && r.year >= +year - 2 && !wecYears.has(r.year) && tracks[r.track] && f1Grip(r.track) != null)
-      .map(r => ({name: r.track, track: tracks[r.track], lapSeconds: r.lap, trapKph: r.trapKph, ...(TRAP_POS && trapAt(r.track, r.year) ? {trapAtM: trapAt(r.track, r.year).m} : {}), weight: 0.5, grip: f1Grip(r.track), weather: r.weather || {}, meta: {event: 'Timing71', car: '', manufacturer: '', session: ''}}));
+      .map(r => ({name: r.track, track: wecTrack(r.track), lapSeconds: r.lap, trapKph: r.trapKph, ...(TRAP_POS && trapAt(r.track, r.year) ? {trapAtM: trapAt(r.track, r.year).m} : {}), weight: 0.5, grip: f1Grip(r.track), weather: r.weather || {}, meta: {event: 'Timing71', car: '', manufacturer: '', session: ''}}));
     let pooled = null;
     if (extra.length) {
       const h2 = holdout([...laps, ...extra], base, params, {...WEC_HO, folds: 99, gripFor: l => l.grip});
