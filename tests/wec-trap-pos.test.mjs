@@ -34,3 +34,9 @@ test('frozen sector weights and seasons', () => {
   assert.ok(Math.abs(weight(0.10) - 1) < 1e-12);
   assert.ok(sectorsOk(98.359, [35.705, 33.082, 29.572]) && !sectorsOk(98.359, [35.705, 33.082]));
 });
+
+test('step 34b mapping fix: Sakhir trap on our main straight (description-constrained), measured values untouched', () => {
+  assert.deepEqual(trapAt('sakhir', 2025), {m: 561, status: 'geometry fix', printed: 650});
+  assert.equal(trapAt('sakhir', 2023).m, 536);
+  assert.equal(trapAt('interlagos', 2025).m, 125); // no change
+});
