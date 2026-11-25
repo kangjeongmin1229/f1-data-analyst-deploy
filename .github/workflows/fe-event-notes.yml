@@ -1,0 +1,30 @@
+name: Formula E event notes (Attack Mode per race)
+
+# Parsed facts only from the FIA Event Note – Race Information PDFs (Seasons 9-12); no PDF or text is stored. Push to
+# fe-fetch/event-notes** or manual run. Output: release asset on fe-inputs-event-notes.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['fe-fetch/event-notes**']
+
+permissions:
+  contents: write
+
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: sudo apt-get install -y -qq poppler-utils >/dev/null
+      - run: node scripts/sim/learn/fetch-fe-event-notes.mjs --selftest && node scripts/sim/learn/fetch-fe-event-notes.mjs
+      - name: Store
+        run: |
+          id=${{ github.run_id }}; cp fe-event-notes.json fe-event-notes-r$id.json; sha256sum fe-event-notes-r$id.json > SHA256SUMS-notes-r$id
+          gh release view fe-inputs-event-notes >/dev/null 2>&1 || gh release create fe-inputs-event-notes --prerelease --title "Formula E event notes (Attack Mode per race)" --notes "Parsed facts only (numbers + document URL); no PDF, no text."
+          gh release upload fe-inputs-event-notes fe-event-notes-r$id.json SHA256SUMS-notes-r$id --clobber
+          echo "::notice title=FE notes::$(node -p "const j=require('./fe-event-notes.json');j.rows.length+' rows, '+j.rows.filter(r=>r.amTimeS).length+' with AM time, '+j.rows.filter(r=>!r.note).length+' events without a note, '+j.log.length+' errors'")"
