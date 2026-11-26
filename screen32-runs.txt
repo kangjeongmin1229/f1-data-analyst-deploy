@@ -5,3 +5,4 @@
 2026-11-26T00:35Z S4-F1-c+0.2 45716878873 done calibration=yes conclusion=failure
 2026-11-26T00:35Z S4-F1-c+0.4 45716984878 done calibration=yes conclusion=failure
 2026-11-26T00:36Z S4-WEC-c-0.2 dispatched 45729846539 ref screen/s4-wec-cm02-2026-11-26 wec_only=yes
+2026-11-26T00:37Z S4-WEC-c+0.2 dispatched 45729941530 ref screen/s4-wec-cp02-2026-11-26 wec_only=yes
