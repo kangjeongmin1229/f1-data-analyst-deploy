@@ -394,7 +394,8 @@ for (const [cls, def] of Object.entries(SERIES.wec.classes)) {
       : Object.entries(bounds).map(([k, [lo, hi]]) => ({key: k, path: k, base: base[k], step: 0.08, min: lo, max: hi, ...(CDA_PRIOR && cls !== 'lmgt3' && k === 'cdA' ? {prior: {x0: 1.04, sd: 0.10, w: 0.5}} : {})}));
     // step 34b joint: priors and starting values (pre-reg §3); LMGT3 P at the wheel prior 334 kW sd 8 %, bound [250, 420] kW, kernel pIce = P / etaDrive
     const ETA = base.etaDrive ?? 0.95, MUB = X3 ? [1.0, 2.6] : def.bounds.muY, CLB = X3 ? [def.bounds.clA[0], 12] : def.bounds.clA;
-    const JP = !JOINT ? null : HY ? {muY: [1.75, 0.15, MUB], clA: [4.15, X3 ? 0.50 : 0.05, CLB], cdA: [1.04, 0.10, def.bounds.cdA]}
+    // LAPSIM_WEC_HY_CLA=press (Stage 2a H0, central 11:15; CLAUDE.md "Model honesty"): Hypercar ClA prior 4.15 sd 2.4 %, bounds [4.05, 4.25] (press window)
+    const JP = !JOINT ? null : HY ? {muY: [1.75, 0.15, MUB], clA: E.LAPSIM_WEC_HY_CLA === 'press' ? [4.15, 0.024, [4.05, 4.25]] : [4.15, X3 ? 0.50 : 0.05, CLB], cdA: [1.04, 0.10, def.bounds.cdA]}
       : {muY: [1.55, 0.15, MUB], clA: [1.4, X3 ? 0.50 : 0.25, CLB], cdA: [1.16, 0.15, def.bounds.cdA], pIce: [334e3 / ETA, 0.08, [250e3 / ETA, 420e3 / ETA]]};
     if (JP) { params.splice(0, params.length, ...Object.entries(JP).map(([k, [x0, sd, [lo, hi]]]) => ({key: k, path: k, base: x0, step: 0.08, min: lo, max: hi, prior: {x0, sd, w: 0.5}})));
       for (const [k, [x0]] of Object.entries(JP)) base[k] = x0; }
