@@ -17,11 +17,12 @@ jobs:
     steps:
       - name: fetch and commit
         run: |
+          set -x
           git clone -q --depth 1 -b results/screens "https://x-access-token:${GH_TOKEN}@github.com/${R}.git" res
           for id in 45714264395 45714379901 45712552853; do
             d=res/run-$id; [ -f $d/pipeline-report.json ] && continue; mkdir -p $d tmp-$id
             gh run download $id -R $R -n pipeline-report -D tmp-$id/rep && gh run download $id -R $R -n calibration-output -D tmp-$id/cal || { echo "skip $id"; continue; }
-            cp tmp-$id/rep/* $d/ 2>/dev/null; cp -r tmp-$id/cal/. $d/
+            cp -r tmp-$id/rep/. $d/; cp -r tmp-$id/cal/. $d/
             gh run view $id -R $R --json headBranch,headSha,conclusion -q '"run \(.headBranch) \(.headSha) conclusion \(.conclusion)"' | sed "s/^run /run $id, ref /" > $d/RUN.txt
           done
           cd res && git config user.name screen36 && git config user.email screen36@users.noreply.github.com && git add -A && git commit -qm "screen 36 fetch (S3 runs + S0-F1)" && for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
