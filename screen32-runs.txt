@@ -11,3 +11,4 @@
 2026-11-26T00:59Z S6-n1.6 dispatched 45732509990 ref screen/s6-n16-2026-11-26 wec_only=no
 2026-11-26T01:01Z S4-WEC-c+0.2 45729941530 done calibration=yes conclusion=failure
 2026-11-26T01:01Z S4-WEC-c+0.4 45730037717 done calibration=yes conclusion=failure
+2026-11-26T01:02Z S6-n2.6 dispatched 45732856089 ref screen/s6-n26-2026-11-26 wec_only=no
