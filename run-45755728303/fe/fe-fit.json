@@ -1,0 +1,1196 @@
+{
+ "generated": "2026-11-26",
+ "byKey": {
+  "fe-gen3evo": {
+   "rows": 21,
+   "before": 3.24,
+   "event": 1.59,
+   "layoutOut": 3.1,
+   "inSample": 0.78
+  },
+  "fe-gen3": {
+   "rows": 11,
+   "before": 4.82,
+   "event": 2.36,
+   "layoutOut": 4.35,
+   "inSample": 1.36
+  }
+ },
+ "byLayout": {
+  "fe-london": {
+   "rows": 4,
+   "before": 6.62,
+   "event": 0.5,
+   "layoutOut": 5.09,
+   "inSample": 0.35
+  },
+  "fe-tokyo": {
+   "rows": 3,
+   "before": 7.31,
+   "event": 3.89,
+   "layoutOut": 6.1,
+   "inSample": 2.34
+  },
+  "fe-shanghai": {
+   "rows": 3,
+   "before": 2.02,
+   "event": 2.18,
+   "layoutOut": 3.33,
+   "inSample": 1.34
+  },
+  "fe-sanya": {
+   "rows": 1,
+   "before": 2.19,
+   "event": 0.79,
+   "layoutOut": 0.79,
+   "inSample": 0.03
+  },
+  "monte-carlo": {
+   "rows": 4,
+   "before": 2.52,
+   "event": 0.97,
+   "layoutOut": 4.71,
+   "inSample": 0.69
+  },
+  "fe-berlin": {
+   "rows": 2,
+   "before": 1.16,
+   "event": 0.88,
+   "layoutOut": 2.71,
+   "inSample": 0.45
+  },
+  "jarama": {
+   "rows": 1,
+   "before": 4.76,
+   "event": 3.52,
+   "layoutOut": 3.52,
+   "inSample": 0.12
+  },
+  "fe-jeddah": {
+   "rows": 2,
+   "before": 1.58,
+   "event": 0.29,
+   "layoutOut": 3.2,
+   "inSample": 0.15
+  },
+  "fe-miami": {
+   "rows": 1,
+   "before": 0.48,
+   "event": 1.03,
+   "layoutOut": 1.03,
+   "inSample": 0.04
+  },
+  "fe-mexico": {
+   "rows": 1,
+   "before": 0.36,
+   "event": 1.15,
+   "layoutOut": 1.15,
+   "inSample": 0.04
+  },
+  "fe-sao-paulo": {
+   "rows": 4,
+   "before": 3.41,
+   "event": 0.65,
+   "layoutOut": 1.73,
+   "inSample": 0.46
+  },
+  "fe-jakarta": {
+   "rows": 2,
+   "before": 1.94,
+   "event": 3.54,
+   "layoutOut": 1.86,
+   "inSample": 1.64
+  },
+  "fe-miami-2025": {
+   "rows": 1,
+   "before": 1.93,
+   "event": 0.52,
+   "layoutOut": 0.52,
+   "inSample": 0.02
+  },
+  "fe-mexico-2023": {
+   "rows": 3,
+   "before": 1.78,
+   "event": 1.4,
+   "layoutOut": 1.03,
+   "inSample": 0.86
+  }
+ },
+ "rows": [
+  {
+   "layout": "fe-london",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 66.925,
+   "sim": 62.98005545420614,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": 0.13,
+   "before": 6.26,
+   "inSample": 0.09,
+   "layoutOut": 5.14
+  },
+  {
+   "layout": "fe-tokyo",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 71.863,
+   "sim": 68.71757077559423,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": -2.57,
+   "before": 4.58,
+   "inSample": -1.68,
+   "layoutOut": 3.31
+  },
+  {
+   "layout": "fe-shanghai",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 68.955,
+   "sim": 70.20563915935521,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 4",
+   "event": -0.62,
+   "before": -1.78,
+   "inSample": -0.41,
+   "layoutOut": -3.48
+  },
+  {
+   "layout": "fe-sanya",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 65.425,
+   "sim": 64.02268752704028,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": 0.79,
+   "before": 2.19,
+   "inSample": 0.03,
+   "layoutOut": 0.79
+  },
+  {
+   "layout": "monte-carlo",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 86.217,
+   "sim": 88.20467351691633,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": 0.81,
+   "before": -2.25,
+   "inSample": 0.58,
+   "layoutOut": -3.91
+  },
+  {
+   "layout": "fe-berlin",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 58.337,
+   "sim": 59.23283267888257,
+   "kW": 300,
+   "session": "Qualifying Group B",
+   "event": -0.96,
+   "before": -1.51,
+   "inSample": -0.49,
+   "layoutOut": -3.1
+  },
+  {
+   "layout": "jarama",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 97.14099999999999,
+   "sim": 92.72500327893012,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": 3.52,
+   "before": 4.76,
+   "inSample": 0.12,
+   "layoutOut": 3.52
+  },
+  {
+   "layout": "fe-jeddah",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 75.06,
+   "sim": 76.15697255112988,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": 0.15,
+   "before": -1.44,
+   "inSample": 0.07,
+   "layoutOut": -3.07
+  },
+  {
+   "layout": "fe-miami",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 56.562,
+   "sim": 56.29350036935536,
+   "kW": 300,
+   "session": "Qualifying Group B",
+   "event": -1.03,
+   "before": 0.48,
+   "inSample": -0.04,
+   "layoutOut": -1.03
+  },
+  {
+   "layout": "fe-mexico",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 65.049,
+   "sim": 64.81765822212202,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": -1.15,
+   "before": 0.36,
+   "inSample": -0.04,
+   "layoutOut": -1.15
+  },
+  {
+   "layout": "fe-sao-paulo",
+   "season": 2026,
+   "key": "fe-gen3evo",
+   "real": 69.804,
+   "sim": 67.51465774217972,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": 0.52,
+   "before": 3.39,
+   "inSample": 0.37,
+   "layoutOut": 2.08
+  },
+  {
+   "layout": "fe-london",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 67.021,
+   "sim": 63.02740048739197,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 4",
+   "event": 0.23,
+   "before": 6.34,
+   "inSample": 0.16,
+   "layoutOut": 5.21
+  },
+  {
+   "layout": "fe-berlin",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 59.048,
+   "sim": 59.4250844864152,
+   "kW": 300,
+   "session": "Qualifying Group B",
+   "event": 0.78,
+   "before": -0.63,
+   "inSample": 0.4,
+   "layoutOut": -2.24
+  },
+  {
+   "layout": "fe-jakarta",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 66.713,
+   "sim": 64.93613106728021,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": 3.58,
+   "before": 2.74,
+   "inSample": 1.65,
+   "layoutOut": 1.32
+  },
+  {
+   "layout": "fe-shanghai",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 68.234,
+   "sim": 70.20325423491725,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": -2.21,
+   "before": -2.81,
+   "inSample": -1.44,
+   "layoutOut": -4.49
+  },
+  {
+   "layout": "fe-tokyo",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 72.007,
+   "sim": 68.68688456542773,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": -2.2,
+   "before": 4.83,
+   "inSample": -1.44,
+   "layoutOut": 3.56
+  },
+  {
+   "layout": "monte-carlo",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 86.315,
+   "sim": 88.2091858805583,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": 0.97,
+   "before": -2.15,
+   "inSample": 0.68,
+   "layoutOut": -3.81
+  },
+  {
+   "layout": "fe-miami-2025",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 83,
+   "sim": 81.42700004533164,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 1",
+   "event": 0.52,
+   "before": 1.93,
+   "inSample": 0.02,
+   "layoutOut": 0.52
+  },
+  {
+   "layout": "fe-jeddah",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 74.804,
+   "sim": 76.10089628411441,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": -0.38,
+   "before": -1.7,
+   "inSample": -0.19,
+   "layoutOut": -3.33
+  },
+  {
+   "layout": "fe-mexico-2023",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 70.739,
+   "sim": 69.11714822853213,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": 1.93,
+   "before": 2.35,
+   "inSample": 1.14,
+   "layoutOut": 0.92
+  },
+  {
+   "layout": "fe-sao-paulo",
+   "season": 2025,
+   "key": "fe-gen3evo",
+   "real": 69.851,
+   "sim": 67.48274158777856,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": 0.69,
+   "before": 3.51,
+   "inSample": 0.48,
+   "layoutOut": 2.2
+  },
+  {
+   "layout": "fe-london",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 69.871,
+   "sim": 65.67706989107444,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": -0.73,
+   "before": 6.39,
+   "inSample": -0.52,
+   "layoutOut": 4.47
+  },
+  {
+   "layout": "fe-shanghai",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 73.322,
+   "sim": 72.53345379790801,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": 3,
+   "before": 1.09,
+   "inSample": 1.76,
+   "layoutOut": -1.02
+  },
+  {
+   "layout": "monte-carlo",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 89.725,
+   "sim": 92.12089957739215,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 2",
+   "event": -0.72,
+   "before": -2.6,
+   "inSample": -0.51,
+   "layoutOut": -5.24
+  },
+  {
+   "layout": "fe-tokyo",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 78.855,
+   "sim": 71.18437279682665,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": 5.82,
+   "before": 10.78,
+   "inSample": 3.39,
+   "layoutOut": 9.38
+  },
+  {
+   "layout": "fe-sao-paulo",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 72.566,
+   "sim": 70.01165209886013,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": -0.15,
+   "before": 3.65,
+   "inSample": -0.11,
+   "layoutOut": 1.42
+  },
+  {
+   "layout": "fe-mexico-2023",
+   "season": 2024,
+   "key": "fe-gen3",
+   "real": 73.103,
+   "sim": 71.84719719495224,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 4",
+   "event": -0.28,
+   "before": 1.75,
+   "inSample": -0.18,
+   "layoutOut": -0.63
+  },
+  {
+   "layout": "fe-london",
+   "season": 2023,
+   "key": "fe-gen3",
+   "real": 70.493,
+   "sim": 65.62970822576469,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 3",
+   "event": 0.63,
+   "before": 7.41,
+   "inSample": 0.44,
+   "layoutOut": 5.48
+  },
+  {
+   "layout": "fe-jakarta",
+   "season": 2023,
+   "key": "fe-gen3",
+   "real": 67.753,
+   "sim": 67.65512514476075,
+   "kW": 350,
+   "session": "Qualifying Duel Final",
+   "event": -3.5,
+   "before": 0.14,
+   "inSample": -1.63,
+   "layoutOut": -2.27
+  },
+  {
+   "layout": "monte-carlo",
+   "season": 2023,
+   "key": "fe-gen3",
+   "real": 88.773,
+   "sim": 91.51938483458153,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 1",
+   "event": -1.29,
+   "before": -3,
+   "inSample": -0.92,
+   "layoutOut": -5.63
+  },
+  {
+   "layout": "fe-sao-paulo",
+   "season": 2023,
+   "key": "fe-gen3",
+   "real": 71.843,
+   "sim": 69.71346429200727,
+   "kW": 350,
+   "session": "Qualifying Duel Quarter-Final 4",
+   "event": -0.96,
+   "before": 3.05,
+   "inSample": -0.68,
+   "layoutOut": 0.84
+  },
+  {
+   "layout": "fe-mexico-2023",
+   "season": 2023,
+   "key": "fe-gen3",
+   "real": 72.595,
+   "sim": 71.89992255279155,
+   "kW": 350,
+   "session": "Qualifying Duel Semi-Final 2",
+   "event": -1.46,
+   "before": 0.97,
+   "inSample": -0.95,
+   "layoutOut": -1.39
+  }
+ ],
+ "geometry": [
+  {
+   "id": "fe-london",
+   "from": "Season 12 - 2025-26 R17 London",
+   "turn": -360,
+   "length": 2002
+  },
+  {
+   "id": "fe-tokyo",
+   "from": "Season 12 - 2025-26 R15 Tokyo",
+   "turn": 360,
+   "length": 2500
+  },
+  {
+   "id": "fe-shanghai",
+   "from": "Season 11 - 2024-25 R11 Shanghai",
+   "turn": -360,
+   "length": 2981
+  },
+  {
+   "id": "fe-sanya",
+   "from": "Season 12 - 2025-26 R11 Sanya",
+   "turn": 360,
+   "length": 2472
+  },
+  {
+   "id": "monte-carlo",
+   "from": "existing simulator track"
+  },
+  {
+   "id": "fe-berlin",
+   "from": "Season 12 - 2025-26 R08 Berlin",
+   "turn": 360,
+   "length": 2325
+  },
+  {
+   "id": "jarama",
+   "from": "Season 12 - 2025-26 R06 Madrid",
+   "turn": -360,
+   "length": 3859
+  },
+  {
+   "id": "fe-jeddah",
+   "from": "Season 12 - 2025-26 R05 Jeddah",
+   "turn": 360,
+   "length": 2933
+  },
+  {
+   "id": "fe-miami",
+   "from": "Season 12 - 2025-26 R03 Miami",
+   "turn": 360,
+   "length": 2276
+  },
+  {
+   "id": "fe-mexico",
+   "from": "Season 12 - 2025-26 R02 Mexico",
+   "turn": -360,
+   "length": 2549
+  },
+  {
+   "id": "fe-sao-paulo",
+   "from": "Season 11 - 2024-25 R01 São Paolo",
+   "turn": -360,
+   "length": 2884
+  },
+  {
+   "id": "fe-valencia",
+   "from": "Season 12 - 2025-26 R00 Valencia",
+   "turn": 360,
+   "length": 3316
+  },
+  {
+   "id": "fe-jakarta",
+   "from": "Season 11 - 2024-25 R12 Jakarta",
+   "turn": -360,
+   "length": 2310
+  },
+  {
+   "id": "fe-miami-2025",
+   "from": "Season 11 - 2024-25 R05 Miami",
+   "turn": 360,
+   "length": 3503
+  },
+  {
+   "id": "fe-mexico-2023",
+   "from": "Season 11 - 2024-25 R02 Mexico",
+   "turn": -360,
+   "length": 2559
+  },
+  {
+   "id": "jarama-2025",
+   "from": "Season 11 - 2024-25 R00 Jarama",
+   "turn": -360,
+   "length": 3849
+  },
+  {
+   "id": "fe-portland",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-berlin-2024",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-misano",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-diriyah",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-london-2023",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-rome",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-berlin-2023",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-cape-town",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-hyderabad",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-seoul",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-london-2022",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-new-york",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-marrakesh",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-london-2021",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-monaco-2021",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-valencia-2021",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-berlin-2020",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-santiago",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-bern",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-monaco-2019",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-paris",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-rome-2019",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-sanya-2019",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-hong-kong",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  },
+  {
+   "id": "fe-mexico-2019",
+   "from": "not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)"
+  }
+ ],
+ "skipped": {
+  "London 1969": 1,
+  "London 1971": 1,
+  "Portland 3190": 158,
+  "Portland 3191": 61,
+  "Portland 3189": 64,
+  "Berlin 2344": 36,
+  "Berlin 2343": 98,
+  "Berlin 2342": 47,
+  "Misano 3382": 78,
+  "Misano 3383": 56,
+  "Misano 3381": 45,
+  "Diriyah 2496": 182,
+  "Diriyah 2494": 281,
+  "Diriyah 2495": 417,
+  "London 2087": 51,
+  "London 2086": 86,
+  "Rome 3379": 166,
+  "Rome 3380": 185,
+  "Rome 3381": 163,
+  "Berlin 2355": 477,
+  "Berlin 2354": 217,
+  "Berlin 2356": 211,
+  "Cape Town 2922": 15,
+  "Cape Town 2920": 21,
+  "Cape Town 2921": 55,
+  "Hyderabad 2834": 21,
+  "Hyderabad 2121": 7,
+  "Hyderabad 2835": 33,
+  "Hyderabad 2122": 1,
+  "Hyderabad 2120": 3,
+  "Hyderabad 2836": 27,
+  "Seoul 2620": 53,
+  "Seoul 2621": 78,
+  "Seoul 2622": 42,
+  "London 2142": 50,
+  "London 2140": 43,
+  "London 2141": 87,
+  "New York 2319": 107,
+  "New York 2320": 243,
+  "New York 2321": 104,
+  "Marrakesh 2971": 158,
+  "Marrakesh 2972": 103,
+  "Marrakesh 2970": 87,
+  "Monaco 3319": 68,
+  "Monaco 3317": 59,
+  "Monaco 3318": 69,
+  "London 2252": 67,
+  "London 2253": 43,
+  "London 2251": 55,
+  "Puebla 2981": 53,
+  "Puebla 2982": 69,
+  "Puebla 2983": 45,
+  "Monaco 3320": 1,
+  "Rome 3382": 3,
+  "Valencia 3095": 92,
+  "Valencia 3094": 178,
+  "Valencia 3093": 99,
+  "Berlin 2487": 83,
+  "Berlin 2488": 40,
+  "Berlin 2486": 41,
+  "Santiago 2286": 20,
+  "Santiago 2287": 48,
+  "Santiago 2288": 26,
+  "Diriyah 2493": 72,
+  "Bern 2751": 20,
+  "Bern 2750": 37,
+  "Bern 2749": 8,
+  "Monaco 1765": 45,
+  "Monaco 1766": 11,
+  "Monaco 1764": 10,
+  "Paris 1540": 11,
+  "Paris 1919": 9,
+  "Paris 1920": 29,
+  "Paris 1541": 2,
+  "Paris 1921": 13,
+  "Paris 1539": 1,
+  "Rome 2871": 16,
+  "Rome 2870": 35,
+  "Rome 2869": 14,
+  "Sanya 2360": 31,
+  "Sanya 2359": 20,
+  "Sanya 2361": 12,
+  "Hong Kong 1860": 35,
+  "Hong Kong 1859": 16,
+  "Hong Kong 1861": 11,
+  "Hong Kong 1758": 1,
+  "Hong Kong 1759": 1,
+  "Hong Kong 1757": 1,
+  "Mexico 2093": 63,
+  "Mexico 2092": 28,
+  "Mexico 2094": 19,
+  "Santiago 2348": 34,
+  "Santiago 2347": 14,
+  "Santiago 2349": 18
+ },
+ "layouts": [
+  {
+   "id": "fe-london",
+   "venue": "London",
+   "lengthM": 2077,
+   "seasons": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-tokyo",
+   "venue": "Tokyo",
+   "lengthM": 2575,
+   "seasons": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-shanghai",
+   "venue": "Shanghai",
+   "lengthM": 3051,
+   "seasons": [
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-sanya",
+   "venue": "Sanya",
+   "lengthM": 2520,
+   "seasons": [
+    2026
+   ]
+  },
+  {
+   "id": "monte-carlo",
+   "venue": "Monaco",
+   "lengthM": 3337,
+   "seasons": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-berlin",
+   "venue": "Berlin",
+   "lengthM": 2374,
+   "seasons": [
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "jarama",
+   "venue": "Jarama",
+   "lengthM": 3934,
+   "seasons": [
+    2026
+   ]
+  },
+  {
+   "id": "fe-jeddah",
+   "venue": "Jeddah",
+   "lengthM": 3001,
+   "seasons": [
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-miami",
+   "venue": "Miami",
+   "lengthM": 2320,
+   "seasons": [
+    2026
+   ]
+  },
+  {
+   "id": "fe-mexico",
+   "venue": "Mexico",
+   "lengthM": 2608,
+   "seasons": [
+    2020,
+    2022,
+    2026
+   ]
+  },
+  {
+   "id": "fe-sao-paulo",
+   "venue": "São Paulo",
+   "lengthM": 2933,
+   "seasons": [
+    2023,
+    2024,
+    2025,
+    2026
+   ]
+  },
+  {
+   "id": "fe-valencia",
+   "venue": "Valencia",
+   "lengthM": 3376,
+   "seasons": [
+    2021,
+    2022,
+    2024,
+    2026
+   ]
+  },
+  {
+   "id": "fe-jakarta",
+   "venue": "Jakarta",
+   "lengthM": 2370,
+   "seasons": [
+    2023,
+    2025
+   ]
+  },
+  {
+   "id": "fe-miami-2025",
+   "venue": "Miami",
+   "lengthM": 3551,
+   "seasons": [
+    2025
+   ]
+  },
+  {
+   "id": "fe-mexico-2023",
+   "venue": "Mexico",
+   "lengthM": 2630,
+   "seasons": [
+    2023,
+    2024,
+    2025
+   ]
+  },
+  {
+   "id": "jarama-2025",
+   "venue": "Jarama",
+   "lengthM": 3915,
+   "seasons": [
+    2025
+   ]
+  },
+  {
+   "id": "fe-portland",
+   "venue": "Portland",
+   "lengthM": 3190,
+   "seasons": [
+    2023,
+    2024
+   ]
+  },
+  {
+   "id": "fe-berlin-2024",
+   "venue": "Berlin",
+   "lengthM": 2345,
+   "seasons": [
+    2024
+   ]
+  },
+  {
+   "id": "fe-misano",
+   "venue": "Misano",
+   "lengthM": 3382,
+   "seasons": [
+    2024
+   ]
+  },
+  {
+   "id": "fe-diriyah",
+   "venue": "Diriyah",
+   "lengthM": 2495,
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+   ]
+  },
+  {
+   "id": "fe-london-2023",
+   "venue": "London",
+   "lengthM": 2086,
+   "seasons": [
+    2023
+   ]
+  },
+  {
+   "id": "fe-rome",
+   "venue": "Rome",
+   "lengthM": 3380,
+   "seasons": [
+    2021,
+    2022,
+    2023
+   ]
+  },
+  {
+   "id": "fe-berlin-2023",
+   "venue": "Berlin",
+   "lengthM": 2355,
+   "seasons": [
+    2020,
+    2021,
+    2022,
+    2023
+   ]
+  },
+  {
+   "id": "fe-cape-town",
+   "venue": "Cape Town",
+   "lengthM": 2921,
+   "seasons": [
+    2023
+   ]
+  },
+  {
+   "id": "fe-hyderabad",
+   "venue": "Hyderabad",
+   "lengthM": 2835,
+   "seasons": [
+    2023
+   ]
+  },
+  {
+   "id": "fe-seoul",
+   "venue": "Seoul",
+   "lengthM": 2621,
+   "seasons": [
+    2022
+   ]
+  },
+  {
+   "id": "fe-london-2022",
+   "venue": "London",
+   "lengthM": 2141,
+   "seasons": [
+    2022
+   ]
+  },
+  {
+   "id": "fe-new-york",
+   "venue": "New York",
+   "lengthM": 2320,
+   "seasons": [
+    2019,
+    2021,
+    2022
+   ]
+  },
+  {
+   "id": "fe-marrakesh",
+   "venue": "Marrakesh",
+   "lengthM": 2971,
+   "seasons": [
+    2020,
+    2022
+   ]
+  },
+  {
+   "id": "fe-london-2021",
+   "venue": "London",
+   "lengthM": 2252,
+   "seasons": [
+    2021
+   ]
+  },
+  {
+   "id": "fe-monaco-2021",
+   "venue": "Monaco",
+   "lengthM": 3318,
+   "seasons": [
+    2021
+   ]
+  },
+  {
+   "id": "fe-valencia-2021",
+   "venue": "Valencia",
+   "lengthM": 3138,
+   "seasons": [
+    2021
+   ]
+  },
+  {
+   "id": "fe-berlin-2020",
+   "venue": "Berlin",
+   "lengthM": 2505,
+   "seasons": [
+    2020
+   ]
+  },
+  {
+   "id": "fe-santiago",
+   "venue": "Santiago",
+   "lengthM": 2287,
+   "seasons": [
+    2020
+   ]
+  },
+  {
+   "id": "fe-bern",
+   "venue": "Bern",
+   "lengthM": 2750,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-monaco-2019",
+   "venue": "Monaco",
+   "lengthM": 1765,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-paris",
+   "venue": "Paris",
+   "lengthM": 1920,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-rome-2019",
+   "venue": "Rome",
+   "lengthM": 2870,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-sanya-2019",
+   "venue": "Sanya",
+   "lengthM": 2236,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-hong-kong",
+   "venue": "Hong Kong",
+   "lengthM": 1860,
+   "seasons": [
+    2019
+   ]
+  },
+  {
+   "id": "fe-mexico-2019",
+   "venue": "Mexico",
+   "lengthM": 2093,
+   "seasons": [
+    2019
+   ]
+  }
+ ]
+}
