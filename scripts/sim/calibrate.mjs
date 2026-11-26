@@ -313,7 +313,10 @@ const WEC_COR = E.LAPSIM_WEC_KERBS === 'on' ? JSON.parse(await readFile('scripts
 // screen 2b S12 (report only, central 11:15): LAPSIM_WEC_LINE=iracing → WEC fit uses the iRacing driving-line curvature where a line
 // exists (Spa, Austin from 3 GT3 cars; Monza from 1 GT4 car), scripts/sim/data/screens/wec-iracing-line.json, labelled model (iRacing).
 // Same length and grid as the track; elevation, width and the rest unchanged. Unset = before.
-const WEC_LINE = E.LAPSIM_WEC_LINE === 'iracing' ? JSON.parse(await readFile('scripts/sim/data/screens/wec-iracing-line.json', 'utf8')).tracks : null;
+// LAPSIM_WEC_LINE=ratio (Stage 2c, central 05:50 27 Nov): every WEC track, κ_WEC = κ_F1line × r(|κ|), r from the iRacing GT3 laps
+// (Spa, Austin, Monza), leave-one-track-out for those three; file scripts/sim/data/screens/wec-line-ratio.json, "model (iRacing GT3 line ratio)".
+const WEC_LINE_FILE = {iracing: 'wec-iracing-line.json', ratio: 'wec-line-ratio.json'}[E.LAPSIM_WEC_LINE];
+const WEC_LINE = WEC_LINE_FILE ? JSON.parse(await readFile('scripts/sim/data/screens/' + WEC_LINE_FILE, 'utf8')).tracks : null;
 const wecLine = (id, t) => { const l = WEC_LINE?.[id]; if (!l || !t) return t; if (l.n !== t.kappa.length) throw new Error(`iRacing line ${id}: n ${l.n} ≠ ${t.kappa.length}`);
   return {...t, kappa: Float64Array.from(l.kappa)}; };
 const wecTrack0 = id => { const c = WEC_COR?.tracks[id]; if (!c || !tracks[id]) return tracks[id]; if (WEC_TRK.has(id)) return WEC_TRK.get(id);
