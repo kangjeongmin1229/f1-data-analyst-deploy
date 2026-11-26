@@ -184,6 +184,7 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
   // the season measured CdA, prior at L/D 3.5 (sd 15 %, on ln); a value within 0.5 % of an edge is reported as "data want outside", never widened
   const LD = MC && E.LAPSIM_F1_CLA_LD === 'on' ? MC.cdA.value : 0; if (LD) base.clA = 3.5 * LD;
   if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan): μ = μ0·(1 − k·(Fz/Fz0 − 1))
+  if (E.LAPSIM_FRICTION_EXP && year <= 2025) base.frictionExp = Number(E.LAPSIM_FRICTION_EXP); // screen S6 (report-only): grip-circle exponent n
   // LAPSIM_CLA_MAX (step 32 X1, report-only build): F1 2023–25 ClA upper bound lifted
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce') && !(MC && k === 'cdALow')).map(k => {
     const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : LD && k === 'clA' ? [2.5 * LD, 4.5 * LD] : k === 'clA' && E.LAPSIM_CLA_MAX && year <= 2025 ? [BOUNDS.clA[0], Number(E.LAPSIM_CLA_MAX)] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
