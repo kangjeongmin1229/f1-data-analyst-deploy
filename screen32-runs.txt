@@ -14,3 +14,4 @@
 2026-11-26T01:02Z S6-n2.6 dispatched 45732856089 ref screen/s6-n26-2026-11-26 wec_only=no
 2026-11-26T01:54Z S6-n1.6 45732509990 done calibration=yes conclusion=failure
 2026-11-26T02:12Z S6-n2.6 45732856089 done calibration=yes conclusion=failure
+2026-11-26T02:12Z dispatcher end; still running: 
