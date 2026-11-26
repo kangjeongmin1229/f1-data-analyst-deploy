@@ -3,3 +3,4 @@
 2026-11-25T22:54Z S4-F1-c+0.4 dispatched 45716984878 ref screen/s4-f1-cp04-2026-11-26 wec_only=no
 2026-11-26T00:35Z S4-F1-c-0.2 45716769421 done calibration=yes conclusion=failure
 2026-11-26T00:35Z S4-F1-c+0.2 45716878873 done calibration=yes conclusion=failure
+2026-11-26T00:35Z S4-F1-c+0.4 45716984878 done calibration=yes conclusion=failure
