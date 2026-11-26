@@ -1,0 +1,4 @@
+ship checks (mesh, energy closure, 29b ranges) on this run's calibration:
+# tests 38
+# pass 38
+# fail 0
