@@ -3,12 +3,12 @@
 // bin (80–320 km/h, ≥ 50 samples) and season; leave one track out (a track's u comes from the other tracks of its season).
 // Samples: step 36 X2 run 45623025846 (step 32 top-10 quali traces, |a_x| < 0.3 g, low-drag off). Base car: worker/lapsim calibration.
 // u is capped at 1 (a margin, not extra grip); the raw value is kept next to it. Label: "model (from measured traces)".
-//   node scripts/sim/learn/screen-s3-u.mjs <x2-samples.json> <out.json>
+//   node scripts/sim/learn/screen-s3-u.mjs <x2-samples.json> <out.json> [base calibration-data.js; default: the worker's]
 import {readFileSync, writeFileSync} from 'node:fs';
 import {lapsimKernel} from '../../../worker/lapsim/kernel.js';
-import {lapsimCalibration as C} from '../../../worker/lapsim/calibration-data.js';
 
-const K = lapsimKernel(), [inp, outPath] = process.argv.slice(2), d = JSON.parse(readFileSync(inp, 'utf8')), M = d.mass;
+const K = lapsimKernel(), [inp, outPath, calPath] = process.argv.slice(2),
+  {lapsimCalibration: C} = await import(calPath ? new URL(calPath, `file://${process.cwd()}/`).href : '../../../worker/lapsim/calibration-data.js'), d = JSON.parse(readFileSync(inp, 'utf8')), M = d.mass;
 const EDGES = Array.from({length: 13}, (_, j) => 80 + 20 * j), KPH = EDGES.slice(0, -1).map(e => e + 10), NMIN = 50, Q = 0.95;
 const VG = Array.from({length: 161}, (_, j) => 40 + 2 * j); // km/h grid of the capacity curve
 let nonce = 0;
