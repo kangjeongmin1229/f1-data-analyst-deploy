@@ -1,0 +1,178 @@
+┌────────────┬──────┬────────┬───────┬───────────┬──────────┐
+│ (index)    │ rows │ before │ event │ layoutOut │ inSample │
+├────────────┼──────┼────────┼───────┼───────────┼──────────┤
+│ fe-gen3evo │ 21   │ 3.24   │ 1.59  │ 3.1       │ 0.78     │
+│ fe-gen3    │ 11   │ 4.82   │ 2.36  │ 4.35      │ 1.36     │
+└────────────┴──────┴────────┴───────┴───────────┴──────────┘
+┌────────────────┬──────┬────────┬───────┬───────────┬──────────┐
+│ (index)        │ rows │ before │ event │ layoutOut │ inSample │
+├────────────────┼──────┼────────┼───────┼───────────┼──────────┤
+│ fe-london      │ 4    │ 6.62   │ 0.5   │ 5.09      │ 0.35     │
+│ fe-tokyo       │ 3    │ 7.31   │ 3.89  │ 6.1       │ 2.34     │
+│ fe-shanghai    │ 3    │ 2.02   │ 2.18  │ 3.33      │ 1.34     │
+│ fe-sanya       │ 1    │ 2.19   │ 0.79  │ 0.79      │ 0.03     │
+│ monte-carlo    │ 4    │ 2.52   │ 0.97  │ 4.71      │ 0.69     │
+│ fe-berlin      │ 2    │ 1.16   │ 0.88  │ 2.71      │ 0.45     │
+│ jarama         │ 1    │ 4.76   │ 3.52  │ 3.52      │ 0.12     │
+│ fe-jeddah      │ 2    │ 1.58   │ 0.29  │ 3.2       │ 0.15     │
+│ fe-miami       │ 1    │ 0.48   │ 1.03  │ 1.03      │ 0.04     │
+│ fe-mexico      │ 1    │ 0.36   │ 1.15  │ 1.15      │ 0.04     │
+│ fe-sao-paulo   │ 4    │ 3.41   │ 0.65  │ 1.73      │ 0.46     │
+│ fe-jakarta     │ 2    │ 1.94   │ 3.54  │ 1.86      │ 1.64     │
+│ fe-miami-2025  │ 1    │ 1.93   │ 0.52  │ 0.52      │ 0.02     │
+│ fe-mexico-2023 │ 3    │ 1.78   │ 1.4   │ 1.03      │ 0.86     │
+└────────────────┴──────┴────────┴───────┴───────────┴──────────┘
+skipped (no layout): {
+  'London 1969': 1,
+  'London 1971': 1,
+  'Portland 3190': 158,
+  'Portland 3191': 61,
+  'Portland 3189': 64,
+  'Berlin 2344': 36,
+  'Berlin 2343': 98,
+  'Berlin 2342': 47,
+  'Misano 3382': 78,
+  'Misano 3383': 56,
+  'Misano 3381': 45,
+  'Diriyah 2496': 182,
+  'Diriyah 2494': 281,
+  'Diriyah 2495': 417,
+  'London 2087': 51,
+  'London 2086': 86,
+  'Rome 3379': 166,
+  'Rome 3380': 185,
+  'Rome 3381': 163,
+  'Berlin 2355': 477,
+  'Berlin 2354': 217,
+  'Berlin 2356': 211,
+  'Cape Town 2922': 15,
+  'Cape Town 2920': 21,
+  'Cape Town 2921': 55,
+  'Hyderabad 2834': 21,
+  'Hyderabad 2121': 7,
+  'Hyderabad 2835': 33,
+  'Hyderabad 2122': 1,
+  'Hyderabad 2120': 3,
+  'Hyderabad 2836': 27,
+  'Seoul 2620': 53,
+  'Seoul 2621': 78,
+  'Seoul 2622': 42,
+  'London 2142': 50,
+  'London 2140': 43,
+  'London 2141': 87,
+  'New York 2319': 107,
+  'New York 2320': 243,
+  'New York 2321': 104,
+  'Marrakesh 2971': 158,
+  'Marrakesh 2972': 103,
+  'Marrakesh 2970': 87,
+  'Monaco 3319': 68,
+  'Monaco 3317': 59,
+  'Monaco 3318': 69,
+  'London 2252': 67,
+  'London 2253': 43,
+  'London 2251': 55,
+  'Puebla 2981': 53,
+  'Puebla 2982': 69,
+  'Puebla 2983': 45,
+  'Monaco 3320': 1,
+  'Rome 3382': 3,
+  'Valencia 3095': 92,
+  'Valencia 3094': 178,
+  'Valencia 3093': 99,
+  'Berlin 2487': 83,
+  'Berlin 2488': 40,
+  'Berlin 2486': 41,
+  'Santiago 2286': 20,
+  'Santiago 2287': 48,
+  'Santiago 2288': 26,
+  'Diriyah 2493': 72,
+  'Bern 2751': 20,
+  'Bern 2750': 37,
+  'Bern 2749': 8,
+  'Monaco 1765': 45,
+  'Monaco 1766': 11,
+  'Monaco 1764': 10,
+  'Paris 1540': 11,
+  'Paris 1919': 9,
+  'Paris 1920': 29,
+  'Paris 1541': 2,
+  'Paris 1921': 13,
+  'Paris 1539': 1,
+  'Rome 2871': 16,
+  'Rome 2870': 35,
+  'Rome 2869': 14,
+  'Sanya 2360': 31,
+  'Sanya 2359': 20,
+  'Sanya 2361': 12,
+  'Hong Kong 1860': 35,
+  'Hong Kong 1859': 16,
+  'Hong Kong 1861': 11,
+  'Hong Kong 1758': 1,
+  'Hong Kong 1759': 1,
+  'Hong Kong 1757': 1,
+  'Mexico 2093': 63,
+  'Mexico 2092': 28,
+  'Mexico 2094': 19,
+  'Santiago 2348': 34,
+  'Santiago 2347': 14,
+  'Santiago 2349': 18
+}
+┌─────────┬────────────────────┬────────────────────────────────────────────────────────────────────────┬──────┬────────┐
+│ (index) │ id                 │ from                                                                   │ turn │ length │
+├─────────┼────────────────────┼────────────────────────────────────────────────────────────────────────┼──────┼────────┤
+│ 0       │ 'fe-london'        │ 'Season 12 - 2025-26 R17 London'                                       │ -360 │ 2002   │
+│ 1       │ 'fe-tokyo'         │ 'Season 12 - 2025-26 R15 Tokyo'                                        │ 360  │ 2500   │
+│ 2       │ 'fe-shanghai'      │ 'Season 11 - 2024-25 R11 Shanghai'                                     │ -360 │ 2981   │
+│ 3       │ 'fe-sanya'         │ 'Season 12 - 2025-26 R11 Sanya'                                        │ 360  │ 2472   │
+│ 4       │ 'monte-carlo'      │ 'existing simulator track'                                             │      │        │
+│ 5       │ 'fe-berlin'        │ 'Season 12 - 2025-26 R08 Berlin'                                       │ 360  │ 2325   │
+│ 6       │ 'jarama'           │ 'Season 12 - 2025-26 R06 Madrid'                                       │ -360 │ 3859   │
+│ 7       │ 'fe-jeddah'        │ 'Season 12 - 2025-26 R05 Jeddah'                                       │ 360  │ 2933   │
+│ 8       │ 'fe-miami'         │ 'Season 12 - 2025-26 R03 Miami'                                        │ 360  │ 2276   │
+│ 9       │ 'fe-mexico'        │ 'Season 12 - 2025-26 R02 Mexico'                                       │ -360 │ 2549   │
+│ 10      │ 'fe-sao-paulo'     │ 'Season 11 - 2024-25 R01 São Paolo'                                    │ -360 │ 2884   │
+│ 11      │ 'fe-valencia'      │ 'Season 12 - 2025-26 R00 Valencia'                                     │ 360  │ 3316   │
+│ 12      │ 'fe-jakarta'       │ 'Season 11 - 2024-25 R12 Jakarta'                                      │ -360 │ 2310   │
+│ 13      │ 'fe-miami-2025'    │ 'Season 11 - 2024-25 R05 Miami'                                        │ 360  │ 3503   │
+│ 14      │ 'fe-mexico-2023'   │ 'Season 11 - 2024-25 R02 Mexico'                                       │ -360 │ 2559   │
+│ 15      │ 'jarama-2025'      │ 'Season 11 - 2024-25 R00 Jarama'                                       │ -360 │ 3849   │
+│ 16      │ 'fe-portland'      │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 17      │ 'fe-berlin-2024'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 18      │ 'fe-misano'        │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 19      │ 'fe-diriyah'       │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 20      │ 'fe-london-2023'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 21      │ 'fe-rome'          │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 22      │ 'fe-berlin-2023'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 23      │ 'fe-cape-town'     │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 24      │ 'fe-hyderabad'     │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 25      │ 'fe-seoul'         │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 26      │ 'fe-london-2022'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 27      │ 'fe-new-york'      │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 28      │ 'fe-marrakesh'     │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 29      │ 'fe-london-2021'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 30      │ 'fe-monaco-2021'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 31      │ 'fe-valencia-2021' │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 32      │ 'fe-berlin-2020'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 33      │ 'fe-santiago'      │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 34      │ 'fe-bern'          │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 35      │ 'fe-monaco-2019'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 36      │ 'fe-paris'         │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 37      │ 'fe-rome-2019'     │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 38      │ 'fe-sanya-2019'    │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 39      │ 'fe-hong-kong'     │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+│ 40      │ 'fe-mexico-2019'   │ 'not raced by Gen3 Evo (owner 2026-11-15: Formula E from Gen3 Evo on)' │      │        │
+└─────────┴────────────────────┴────────────────────────────────────────────────────────────────────────┴──────┴────────┘
+closed fe-london: gap 18.1 m, heading 0.00°
+closed fe-tokyo: gap 11.4 m, heading -0.00°
+closed fe-shanghai: gap 8.6 m, heading -0.01°
+closed fe-sanya: gap 6.4 m, heading 0.01°
+closed fe-berlin: gap 8.5 m, heading -0.00°
+closed fe-jeddah: gap 11.2 m, heading 0.03°
+closed fe-miami: gap 5.3 m, heading 0.00°
+closed fe-mexico: gap 10.9 m, heading 0.02°
+closed fe-valencia: gap 12.3 m, heading 0.02°
+closed fe-jakarta: gap 4.5 m, heading -0.02°
+closed fe-miami-2025: gap 7.1 m, heading 0.02°
+closed fe-mexico-2023: gap 13.3 m, heading 0.03°
+closed jarama-2025: gap 8.6 m, heading -0.02°
