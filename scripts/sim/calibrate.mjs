@@ -180,11 +180,14 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     const x0 = p => (p / 0.96 - 114e3); base.cdA = MC.cdA.value; base.pIce = x0(MC.pWheel.value); base.drsRatio = 0.778; base.drsDelayM = 50; base.muX = Number(E.LAPSIM_MUX_RATIO || 0.70) * base.muY; // LAPSIM_MUX_RATIO: screen S8 (report-only), default 0.70
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
+  // LAPSIM_F1_CLA_LD=on (Stage 2a H0, central 11:15; CLAUDE.md "Model honesty"): F1 2023–25 ClA held in the L/D window, ClA ∈ [2.5, 4.5] ×
+  // the season measured CdA, prior at L/D 3.5 (sd 15 %, on ln); a value within 0.5 % of an edge is reported as "data want outside", never widened
+  const LD = MC && E.LAPSIM_F1_CLA_LD === 'on' ? MC.cdA.value : 0; if (LD) base.clA = 3.5 * LD;
   if (E.LAPSIM_LOAD_K && year <= 2025) base.loadK = Number(E.LAPSIM_LOAD_K); // step 32 N4 (report-only scan): μ = μ0·(1 − k·(Fz/Fz0 − 1))
   // LAPSIM_CLA_MAX (step 32 X1, report-only build): F1 2023–25 ClA upper bound lifted
   const params = PARAMS.filter(k => !(cdM && (k === 'cdA' || k === 'cdALow')) && !(piceFixed && k === 'pIce') && !(MC && k === 'cdALow')).map(k => {
-    const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : k === 'clA' && E.LAPSIM_CLA_MAX && year <= 2025 ? [BOUNDS.clA[0], Number(E.LAPSIM_CLA_MAX)] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
-    const prior = MC && k === 'cdA' ? {x0: base.cdA, sd: MC.cdA.total / MC.cdA.value} : MC && k === 'pIce' ? {x0: base.pIce, sd: 0.04} : undefined;
+    const [lo, hi] = MC && k === 'cdA' ? [0.7, 1.3] : LD && k === 'clA' ? [2.5 * LD, 4.5 * LD] : k === 'clA' && E.LAPSIM_CLA_MAX && year <= 2025 ? [BOUNDS.clA[0], Number(E.LAPSIM_CLA_MAX)] : BOUNDS[k], rel = k === 'pIce' || (MC && k === 'cdA');
+    const prior = MC && k === 'cdA' ? {x0: base.cdA, sd: MC.cdA.total / MC.cdA.value} : MC && k === 'pIce' ? {x0: base.pIce, sd: 0.04} : LD && k === 'clA' ? {x0: 3.5 * LD, sd: 0.15} : undefined;
     return {key: k, path: k, base: base[k], step: 0.08, min: rel ? lo * base[k] : lo, max: rel ? hi * base[k] : hi, ...(prior ? {prior} : {})};
   });
   groups.push({key: year, laps, base, params});
