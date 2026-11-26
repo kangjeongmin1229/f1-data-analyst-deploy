@@ -310,11 +310,18 @@ const TRAP_POS = E.LAPSIM_WEC_TRAP_POS !== 'off';
 // A1 §4 kerbs (input in every step 34 arm): LAPSIM_WEC_KERBS=on → WEC fit tracks use the step 31 corridor at f = 1 (iRacing closed-wheel
 // kerbs, 1.3 m default), scripts/sim/data/step34/wec-corridor.json: κ × scale within ±60 m of each apex, back to 1 at ±120 m
 const WEC_COR = E.LAPSIM_WEC_KERBS === 'on' ? JSON.parse(await readFile('scripts/sim/data/step34/wec-corridor.json', 'utf8')) : null, WEC_TRK = new Map();
-const wecTrack = id => { const c = WEC_COR?.tracks[id]; if (!c || !tracks[id]) return tracks[id]; if (WEC_TRK.has(id)) return WEC_TRK.get(id);
+// screen 2b S12 (report only, central 11:15): LAPSIM_WEC_LINE=iracing → WEC fit uses the iRacing driving-line curvature where a line
+// exists (Spa, Austin from 3 GT3 cars; Monza from 1 GT4 car), scripts/sim/data/screens/wec-iracing-line.json, labelled model (iRacing).
+// Same length and grid as the track; elevation, width and the rest unchanged. Unset = before.
+const WEC_LINE = E.LAPSIM_WEC_LINE === 'iracing' ? JSON.parse(await readFile('scripts/sim/data/screens/wec-iracing-line.json', 'utf8')).tracks : null;
+const wecLine = (id, t) => { const l = WEC_LINE?.[id]; if (!l || !t) return t; if (l.n !== t.kappa.length) throw new Error(`iRacing line ${id}: n ${l.n} ≠ ${t.kappa.length}`);
+  return {...t, kappa: Float64Array.from(l.kappa)}; };
+const wecTrack0 = id => { const c = WEC_COR?.tracks[id]; if (!c || !tracks[id]) return tracks[id]; if (WEC_TRK.has(id)) return WEC_TRK.get(id);
   const t = tracks[id], n = t.kappa.length, ds = t.ds, m = new Float64Array(n).fill(1);
   for (const r of c.corners) { const s = Math.min(...r.scale); // f = 1, non-increasing in f (step 31 rule)
     for (let k = 0; k < n; k++) { const d = Math.min(Math.abs(k - r.ia), n - Math.abs(k - r.ia)) * ds, mk = d <= WEC_COR.core_m ? s : d <= WEC_COR.taper_m ? s + (1 - s) * (d - WEC_COR.core_m) / (WEC_COR.taper_m - WEC_COR.core_m) : 1; if (mk < m[k]) m[k] = mk; } }
   const v = {...t, kappa: Float64Array.from(t.kappa, (x, i) => x * m[i])}; WEC_TRK.set(id, v); return v; };
+const WEC_LT = new Map(), wecTrack = id => { if (!WEC_LINE) return wecTrack0(id); if (!WEC_LT.has(id)) WEC_LT.set(id, wecLine(id, wecTrack0(id))); return WEC_LT.get(id); };
 // A4: IMSA qualifying events in the WEC class fit (LAPSIM_WEC_IMSA=on, base and both variants): top 3 per class from the committed
 // endurance-cars rows, own weather, extra-track geometry, free track grip (pooled), held-out IMSA track at grip 1 (u_t = 0)
 const WEC_IMSA = E.LAPSIM_WEC_IMSA === 'on', IMSA_ID = {'daytona-international-speedway': 'daytona', 'detroit-street-course': 'detroit', 'indianapolis-motor-speedway-rc': 'indianapolis',
