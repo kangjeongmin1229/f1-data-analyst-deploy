@@ -1,0 +1,38 @@
+# Step 36 screens S3 + S10 (central 2026-11-26 07:15, report-only, no attempt; copy of step 27's dispatcher): three research refits on screen/* branches,
+# at most two at once; one infra retry per run (rerun of the failed jobs when the fit job did not succeed). Each pipeline run publishes
+# its own report + calibration to results/screens (run-<id>/). This job writes the run ids to results/screens/screen2-36-runs.txt.
+name: Step 36 screen2 S3 + S10 on H0
+on:
+  push:
+    branches: ['publish/screen2-36-2026-11-26']
+permissions: {contents: write, actions: write}
+concurrency: {group: screen2-36, cancel-in-progress: false}
+env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - run: |
+          note() { echo "$(date -u +%FT%H:%MZ) $*" | tee -a log.txt; d=$(mktemp -d); git clone -q --depth 1 -b results/screens https://x-access-token:${GH_TOKEN}@github.com/$R.git $d 2>/dev/null || { git init -q -b results/screens $d; git -C $d remote add origin https://x-access-token:${GH_TOKEN}@github.com/$R.git; }
+            cp log.txt $d/screen2-36-runs.txt; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com add -A; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -q -m "screen2 36 runs" && git -C $d push -q origin HEAD:results/screens || echo "log push failed"; rm -rf $d; }
+          go() { gh workflow run lapsim-pipeline.yml -R $R --ref "$1" -f mode=research -f fit=yes -f wec_only="$2"; sleep 45; gh run list -R $R -w lapsim-pipeline.yml -b "$1" -L 1 --json databaseId -q '.[0].databaseId'; }
+          st() { gh run view $1 -R $R --json status -q .status; }
+          # fit ok = every "fit / …" job succeeded or was skipped (the run itself ends "failure" on known test rows)
+          fitok() { gh run view $1 -R $R --json jobs -q 'if ([.jobs[]|select(.name|startswith("fit /"))|select(.conclusion!="success" and .conclusion!="skipped" and .name!="fit / rebuild")]|length)==0 then "success" else "failure" end'; }
+          Q="S3-0.5:screen/h0-s3-s05-2026-11-26:no S3-1.0:screen/h0-s3-s10-2026-11-26:no S10:screen/h0-s10-drs-2026-11-26:no"
+          declare -A RUN RETRY; running=(); : > log.txt
+          for item in $Q; do
+            while [ ${#running[@]} -ge 2 ]; do sleep 120; keep=()
+              for k in "${running[@]}"; do id=${RUN[$k]}
+                if [ "$(st $id)" = completed ]; then f=$(fitok $id)
+                  if [ "$f" != success ] && [ -z "${RETRY[$k]}" ]; then RETRY[$k]=1; gh run rerun $id -R $R --failed && { note "$k $id fit=$f: retry once (infra)"; keep+=("$k"); continue; } || note "$k $id rerun refused"; fi
+                  note "$k $id done fit=$f conclusion=$(gh run view $id -R $R --json conclusion -q .conclusion)"; else keep+=("$k"); fi; done
+              running=("${keep[@]}"); done
+            k=${item%%:*}; rest=${item#*:}; ref=${rest%:*}; w=${rest##*:}; id=$(go $ref $w); RUN[$k]=$id; running+=("$k"); note "$k dispatched $id ref $ref wec_only=$w"
+          done
+          for i in $(seq 1 150); do keep=(); for k in "${running[@]}"; do id=${RUN[$k]}; if [ "$(st $id)" = completed ]; then f=$(fitok $id)
+                if [ "$f" != success ] && [ -z "${RETRY[$k]}" ]; then RETRY[$k]=1; gh run rerun $id -R $R --failed && { note "$k $id fit=$f: retry once (infra)"; keep+=("$k"); continue; }; fi
+                note "$k $id done fit=$f conclusion=$(gh run view $id -R $R --json conclusion -q .conclusion)"; else keep+=("$k"); fi; done
+            running=("${keep[@]}"); [ ${#running[@]} = 0 ] && break; sleep 120; done
+          note "dispatcher end; still running: ${running[*]}"
