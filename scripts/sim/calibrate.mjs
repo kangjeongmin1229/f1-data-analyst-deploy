@@ -181,6 +181,10 @@ for (const year of [...new Set(traces.map(t => t.year))].sort()) {
     for (const l of laps) { const t = MC.perTrack?.[l.name]; l.carMod = {cd: t?.cdA?.value ? t.cdA.value / MC.cdA.value : 1, p: t?.pOwnKW ? x0(t.pOwnKW * 1e3) / base.pIce : 1, iceOff: !!t?.pOwnKW}; }
   }
   // screen S3 (report-only, central 07:15 26 Nov): lateral capacity × (1 − s·(1 − u(v))), u from measured traces, leave one track out
+  // Stage 2c F1 candidate (pre-reg claude/prereg-36-stage2c-2026-11-27.md): grip-circle exponent n from 32's measured estimate (2023–25 fit cars;
+  // unset = today's 2) and the 2025 rule mass (TR 2025 Art. 4.1: 800 kg without fuel, + the model's 8 kg qualifying fuel = 808 kg)
+  if (E.LAPSIM_FRICTION_EXP && year <= 2025) base.frictionExp = Number(E.LAPSIM_FRICTION_EXP);
+  if (E.LAPSIM_F1_MASS_RULE === 'on' && year === 2025) base.mass = 808;
   if (MC && E.LAPSIM_LAT_U) { const U = JSON.parse(readFileSync(E.LAPSIM_LAT_U, 'utf8')), s = Number(E.LAPSIM_LAT_S), Y = U.seasons[year];
     for (const l of laps) { const u = Y[l.name] ?? Y.__all; l.carMod.ls = {kph: U.kph, f: u.map(x => +(1 - s * (1 - x)).toFixed(5))}; } }
   // screen S10 (report-only): per-zone flap delay and per-track low-drag ratio, leave one event out (scripts/sim/learn/screen-s10-zones.mjs)
