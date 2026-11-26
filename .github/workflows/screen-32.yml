@@ -1,13 +1,13 @@
-# Step 32 screens S4 (downforce vs speed, F1 + WEC) and S6 (grip-circle exponent, F1) — central 07:15 / 07:42 KST 26 Nov; report-only.
+# Step 32 screen-2 S4 on H0 (F1; WEC added later) — central 14:05 KST 26 Nov; report-only. Was: screens S4/S6 — central 07:15 / 07:42 KST 26 Nov; report-only.
 # Dispatches the 8 research refits on screen/* branches, at most 3 at once, S4 first; one infra retry per run (rerun of the failed jobs when
 # the run made no calibration-output). Each pipeline run publishes its report + calibration to results/screens/run-<id>/ (27's publish step).
 # Run log: results/screens/screen32-runs.txt.
-name: Step 32 screens S4 + S6
+name: Step 32 screen-2 S4 on H0
 on:
   push:
-    branches: ['publish/screen-32-2026-11-26']
+    branches: ['publish/screen-32-h0-2026-11-26']
 permissions: {contents: write, actions: write}
-concurrency: {group: screen-32, cancel-in-progress: false}
+concurrency: {group: screen-32-h0, cancel-in-progress: false}
 env: {GH_TOKEN: '${{ github.token }}', R: '${{ github.repository }}'}
 jobs:
   dispatch:
@@ -17,21 +17,22 @@ jobs:
       - run: |
           note() { echo "$(date -u +%FT%H:%MZ) $*" | tee -a log.txt; d=$(mktemp -d)
             git clone -q --depth 1 -b results/screens https://x-access-token:${GH_TOKEN}@github.com/$R.git $d || { echo clone failed; return 0; }
-            cp log.txt $d/screen32-runs.txt; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com add -A
+            cp log.txt $d/screen32-h0-runs.txt; git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com add -A
             git -C $d -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -q -m "screen 32 runs" && git -C $d push -q origin HEAD:results/screens || echo "log push failed"; rm -rf $d; }
           last() { gh run list -R $R -w lapsim-pipeline.yml -b "$1" -L 1 --json databaseId -q '.[0].databaseId // empty'; }
           go() { e=$(last $1); if [ -n "$e" ]; then echo $e; return; fi; gh workflow run lapsim-pipeline.yml -R $R --ref "$1" -f mode=research -f fit=yes -f wec_only="$2" >&2; sleep 45; last $1; }
           st() { gh run view $1 -R $R --json status -q .status; }
           cal() { gh api repos/$R/actions/runs/$1/artifacts -q '[.artifacts[].name]|index("calibration-output")'; }
-          Q="S4-F1-c-0.2:screen/s4-f1-cm02-2026-11-26:no S4-F1-c+0.2:screen/s4-f1-cp02-2026-11-26:no S4-F1-c+0.4:screen/s4-f1-cp04-2026-11-26:no S4-WEC-c-0.2:screen/s4-wec-cm02-2026-11-26:yes S4-WEC-c+0.2:screen/s4-wec-cp02-2026-11-26:yes S4-WEC-c+0.4:screen/s4-wec-cp04-2026-11-26:yes S6-n1.6:screen/s6-n16-2026-11-26:no S6-n2.6:screen/s6-n26-2026-11-26:no"
+          Q="S4h-F1-c+0.1:screen/s4h-f1-c01-2026-11-26:no S4h-F1-c+0.2:screen/s4h-f1-c02-2026-11-26:no S4h-F1-c+0.4:screen/s4h-f1-c04-2026-11-26:no"
           declare -A RUN RETRY; running=(); : > log.txt
+          others() { n=0; for id in 45752627710 45752630836; do [ "$(st $id)" != completed ] && n=$((n+1)); done; echo $n; }
           reap() { keep=(); for k in "${running[@]}"; do id=${RUN[$k]}
               if [ "$(st $id)" = completed ]; then c=$(cal $id)
                 if [ "$c" = null ] && [ -z "${RETRY[$k]}" ]; then RETRY[$k]=1; if gh run rerun $id -R $R --failed; then note "$k $id no calibration: retry once (infra)"; keep+=("$k"); continue; else note "$k $id rerun refused"; fi; fi
                 note "$k $id done calibration=$([ "$c" = null ] && echo no || echo yes) conclusion=$(gh run view $id -R $R --json conclusion -q .conclusion)"
               else keep+=("$k"); fi; done; running=("${keep[@]}"); }
           for item in $Q; do
-            while [ ${#running[@]} -ge 3 ]; do sleep 120; reap; done
+            while [ $(( ${#running[@]} + $(others) )) -ge 3 ]; do sleep 120; reap; done
             k=${item%%:*}; rest=${item#*:}; ref=${rest%:*}; w=${rest##*:}; id=$(go $ref $w); RUN[$k]=$id; running+=("$k"); note "$k dispatched $id ref $ref wec_only=$w"
           done
           for i in $(seq 1 160); do reap; [ ${#running[@]} = 0 ] && break; sleep 120; done
