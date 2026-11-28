@@ -6,18 +6,25 @@ import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {heldOut, compare} from './exp-compare.mjs';
+import {kForVariants} from './gate.mjs';
+import {F1_BOUNDS} from './exp-physics.mjs';
+import {SERIES} from '../../worker/lapsim/series.js';
 
 const CAR_KEYS = ['muX', 'muY', 'muXTrac', 'clA', 'cdA', 'cdALow', 'pIce'];
 const r4 = x => Number.isFinite(x) ? +x.toFixed(4) : null;
 
 // shipped vs new: held-out RMS per group, the largest per-row change, and every car parameter that moved
-export function diff(shipped, cand) {
+// gates (central): old = UB ≤ 0.10 pp; honest = the 19:35 amendment for changes that put measured / rule values in (UB ≤ 0.15 pp and
+// no fitted parameter at a bound in any class/season; claude/decision-central-gate-honest-2026-11-25.md). LAPSIM_GATE picks it.
+export const GATES = {old: {name: 'old', ub: 0.10, bounds: false}, honest: {name: 'honest', ub: 0.15, bounds: true}};
+export const gateOf = (env = process.env) => GATES[env.LAPSIM_GATE] || GATES.old;
+export function diff(shipped, cand, gate = GATES.old) {
   const a = heldOut(shipped), b = heldOut(cand), rows = [];
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) if (!(k in a) || !(k in b) || Math.abs(a[k] - b[k]) > 1e-9) rows.push({row: k, shippedPct: r4(a[k]), newPct: r4(b[k])});
   const cars = [], add = (where, x, y) => { for (const k of CAR_KEYS) if (Number.isFinite(x?.[k]) && Math.abs(x[k] - (y?.[k] ?? NaN)) > 1e-9 * Math.max(1, Math.abs(x[k]))) cars.push({where, param: k, shipped: r4(x[k]), new: r4(y?.[k])}); };
   for (const [y, s] of Object.entries(shipped.seasons || {})) add(`f1 ${y}`, s.car, cand.seasons?.[y]?.car);
   for (const [cls, ys] of Object.entries(shipped.series?.wec || {})) for (const [y, s] of Object.entries(ys)) add(`wec-${cls} ${y}`, s.car, cand.series?.wec?.[cls]?.[y]?.car);
-  return {heldOut: compare(shipped, cand), changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
+  return {heldOut: compare(shipped, cand), harm: pairedHarm(a, b, gate.ub), wec: wecDetail(a, b, gate.ub), gate: gate.name, changedRows: rows, changedCarParams: cars, identical: rows.length === 0 && cars.length === 0};
 }
 
 // step 36: two JSON values compared, 'generated' (a date) ignored → differing paths (first 40) and their count
@@ -47,6 +54,66 @@ const trapMd = r => !r.traps ? [] : ['## WEC speed trap (sim − real, km/h; shi
 const repMd = n => !n ? [] : ['## σ_meas per class (step 34: Q → Hyperpole repeat; IMSA split-half)', '', '| class series | σ_rep lap % [90 %] | pairs |', '|---|---|---|',
   ...Object.entries(n.floors || {}).map(([k, o]) => `| ${k} | ${o.rep.lap.sigmaPct ?? '–'} ${o.rep.lap.pi90Pct ? '[' + o.rep.lap.pi90Pct.join(', ') + ']' : ''} | ${o.rep.lap.pairs} |`),
   ...Object.entries(n.split || {}).map(([k, o]) => `| ${k} (split-half) | ${o.lap?.sigmaPct ?? '–'} | ${o.cars ?? o.n ?? '–'} cars |`), ''];
+// refit ship rule (central 2026-11-25): per held-out track/event, harm = |refit error| − |shipped error| (pp); one-sided 95 % upper
+// bound of the mean harm per series must be ≤ 0.10 pp (t quantile 0.95 with n − 1 dof: kForVariants at m = 3.2), and no single row may
+// be worse than +1.0 pp (central 2026-11-25 14:48; a row above it fails the rule until it is explained in the refit PR)
+export function pairedHarm(a, b, limit = 0.10, rowLimit = 1.0) {
+  const out = {};
+  for (const ser of ['f1', 'wec', 'fe']) {
+    if (ser === 'fe' && !Object.keys(a).some(k => k.startsWith('fe/'))) continue; // FE rows only come from feHeldOut()
+    const keys = Object.keys(a).filter(k => k.startsWith(ser === 'wec' ? 'wec' : ser + '/') && k in b), h = keys.map(k => Math.abs(b[k]) - Math.abs(a[k])), n = h.length;
+    if (n < 2) { out[ser] = {n, pass: false}; continue; }
+    const mean = h.reduce((x, y) => x + y, 0) / n, sd = Math.sqrt(h.reduce((x, y) => x + (y - mean) ** 2, 0) / (n - 1)), ub = mean + kForVariants(3.2, n) * sd / Math.sqrt(n);
+    const rows = keys.map((k, i) => ({row: k, shippedPct: r4(a[k]), newPct: r4(b[k]), harmPp: r4(h[i])})).sort((x, y) => y.harmPp - x.harmPp);
+    const over = rows.filter(r => r.harmPp > rowLimit).map(r => r.row);
+    out[ser] = {n, meanPp: r4(mean), ub95Pp: r4(ub), worse: h.filter(x => x > 1e-9).length, maxPp: rows[0].harmPp, overRowLimit: over, pass: ub <= limit && !over.length, rows};
+  }
+  return out;
+}
+
+// WEC per class and per track (central 2026-11-25 16:10, after step 34a's base drop): the same paired harm per class (all seasons
+// of that class) and one row per track (mean over the classes and seasons that hold it out), so a track-level term shows as one row
+export function wecDetail(a, b, ub = 0.10) {
+  const keys = Object.keys(a).filter(k => k.startsWith('wec') && k in b), h = k => Math.abs(b[k]) - Math.abs(a[k]);
+  const byClass = {}, byTrack = {};
+  for (const k of keys) { const [g, t] = k.split('|'), c = g.split('/')[0]; (byClass[c] ||= {a: {}, b: {}}); byClass[c].a[k] = a[k]; byClass[c].b[k] = b[k]; (byTrack[t] ||= []).push(h(k)); }
+  return {byClass: Object.fromEntries(Object.entries(byClass).map(([c, x]) => { const { rows, ...r } = pairedHarm(x.a, x.b, ub).wec; return [c, r]; })),
+    byTrack: Object.entries(byTrack).map(([t, v]) => ({track: t, n: v.length, meanHarmPp: r4(v.reduce((x, y) => x + y, 0) / v.length), maxHarmPp: r4(Math.max(...v))})).sort((x, y) => y.meanHarmPp - x.meanHarmPp)};
+}
+// fitted car parameters on a fit bound (rule 3.4: a value at its bound is a finding; central 17:18: flag ClA at bound per class), and
+// (F1 pIce bounds are a scale on the prior, not watts: left out) and μx/μy per series (central 17:18: 0.66–0.73, reported as a feature, not a fit target)
+export function carTable(cal) {
+  const at = (v, [lo, hi]) => !Number.isFinite(v) ? null : v <= lo * (1 + 1e-6) ? 'min' : v >= hi * (1 - 1e-6) ? 'max' : null;
+  const row = (where, car, bounds) => ({where, muX: r4(car?.muX), muY: r4(car?.muY), muXOverMuY: r4(car?.muX / car?.muY), clA: r4(car?.clA),
+    atBound: Object.fromEntries(Object.entries(bounds).map(([k, b]) => [k, at(car?.[k], b)]).filter(([, v]) => v))});
+  return [...Object.entries(cal.seasons || {}).map(([y, s]) => row(`f1/${y}`, s.car, (({pIce, ...b}) => b)(F1_BOUNDS))),
+    ...Object.entries(cal.series?.wec || {}).flatMap(([c, ys]) => Object.entries(ys).map(([y, s]) => row(`wec-${c}/${y}`, s.car, SERIES.wec.classes[c]?.bounds || {})))];
+}
+
+// series that pass the ship rule ship; a failing series keeps the shipped calibration (central 16:10: WEC fails → ship F1/FE only).
+// WEC also needs (central 17:20): every class passing, no track row over +1.0 pp, and held-out RMS within ±0.05 pp of step 34a's
+// kernel-only WEC result (0.992 %, central decision 17:18)
+export const WEC_KERNEL_ONLY = {rmsPct: 0.992, tolPp: 0.05};
+export function shipSeries(harm, fe, wec, wecRmsPct, cars = null) {
+  const out = Object.entries({...harm, ...(fe ? {fe} : {})}).map(([s, x]) => ({series: s, pass: !!x?.pass, why: x?.pass ? [] : ['series rule']}));
+  const w = out.find(x => x.series === 'wec');
+  if (w && wec) {
+    for (const [c, x] of Object.entries(wec.byClass)) if (!x.pass) w.why.push(`class ${c}`);
+    for (const t of wec.byTrack) if (t.maxHarmPp > 1.0) w.why.push(`track ${t.track}`);
+    if (!(Math.abs(wecRmsPct - WEC_KERNEL_ONLY.rmsPct) <= WEC_KERNEL_ONLY.tolPp)) w.why.push(`held-out RMS ${wecRmsPct} % not within ±${WEC_KERNEL_ONLY.tolPp} pp of ${WEC_KERNEL_ONLY.rmsPct} %`);
+    w.pass = !w.why.length;
+  }
+  // honest gate: a fitted parameter on a bound in any class/season of the series blocks it (cars = carTable of the new calibration)
+  if (cars) for (const x of out) { const at = cars.filter(c => c.where.startsWith(x.series === 'wec' ? 'wec-' : x.series + '/') && Object.keys(c.atBound).length);
+    if (at.length) { x.why.push('at bound: ' + at.map(c => `${c.where} ${Object.entries(c.atBound).map(([k, b]) => k + ' ' + b).join('/')}`).join(', ')); x.pass = false; } }
+  return out;
+}
+
+// FE (central 2026-11-25 14:27): build-fe.mjs writes one event-hidden error per row (layout × season × rule set × session) to
+// fe-fit.json; same paired harm as F1/WEC on those rows
+export const feHeldOut = fit => Object.fromEntries(fit.rows.map(r => [`fe/${r.key}/${r.layout}/${r.season}/${r.session}`, r.event]));
+export const feHarm = (shippedFit, candFit, ub = 0.10) => pairedHarm(feHeldOut(shippedFit), feHeldOut(candFit), ub).fe;
+
 const sum = f => existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')).summary ?? null : null;
 const md = r => [
   `# LapSim pipeline report — run ${r.run.id}`, '',
@@ -54,6 +121,7 @@ const md = r => [
   `Fit settings (.github/lapsim-fit.env): ${Object.entries(r.settings).map(([k, v]) => `${k}=${v}`).join(', ') || 'none'}. Seeds: ${r.seeds}.`, '',
   `Fit job: ${r.fit}.`, '',
   ...(r.diff ? fitMd(r) : ['No fit output in this run.', '']),
+  ...(r.feHarm ? [`FE ship rule (event-hidden paired harm per row vs shipped, build-fe.mjs on this run's kernel): n ${r.feHarm.n}, mean ${r.feHarm.meanPp} pp, UB ${r.feHarm.ub95Pp} pp, worse ${r.feHarm.worse}, worst row +${r.feHarm.maxPp} pp (limit +1.0) → ${r.feHarm.pass ? 'pass' : '**FAIL**'}.`, ''] : []),
   '## Change-effects table (track-state build on the pinned inputs)', '',
   ...(r.trackState ? [`Effects ${r.trackState.identical ? '**identical** to the shipped table' : `**${r.trackState.effects.length} fields differ**`}; registry tracks changed: ${r.trackState.registryTracksChanged.join(', ') || 'none'}; year pairs changed: ${r.trackState.pairsChanged}.` + (r.trackState.cases ? ` Cases ${r.trackState.cases.n} on ${r.trackState.cases.circuits} circuits, skipped ${r.trackState.cases.skipped} (${Object.entries(r.trackState.cases.skippedWhy).map(([k, v]) => `${k} ${v}`).join(', ')}).` : ''), '',
     ...(r.trackState.effects.length ? ['| type | field | shipped | this run |', '|---|---|---|---|', ...r.trackState.effects.map(e => `| ${e.type} | ${e.field} | ${JSON.stringify(e.shipped)} | ${JSON.stringify(e.new)} |`), ''] : [])] : ['Not run.', '']),
@@ -65,6 +133,14 @@ const md = r => [
 const fitMd = r => [
   '## Held-out lap error (RMS %, shipped → this run)', '', '| group | n | shipped | this run |', '|---|---|---|---|',
   ...Object.entries(r.diff.heldOut).map(([g, x]) => `| ${g} | ${x.n} | ${x.base} | ${x.cand} |`), '',
+  `Ship rule, gate ${r.diff.gate} (paired harm per held-out track/event vs shipped, one-sided 95 % UB ≤ ${(GATES[r.diff.gate] || GATES.old).ub.toFixed(2)} pp, no row worse than +1.0 pp${r.diff.gate === 'honest' ? ', no fitted parameter at a bound' : ''}): ${Object.entries(r.diff.harm).map(([s, x]) => `${s} n ${x.n}, mean ${x.meanPp} pp, UB ${x.ub95Pp} pp, worse ${x.worse}, worst row +${x.maxPp} pp${x.overRowLimit?.length ? ` (over +1.0: ${x.overRowLimit.join(", ")})` : ""} → ${x.pass ? 'PASS' : 'FAIL'}`).join('; ')}.`, '',
+  ...(r.diff.wec ? ['WEC per class (paired harm, all seasons of the class):', '', '| class | n | mean pp | UB pp | worse | worst pp | rows > +1.0 pp | pass |', '|---|---|---|---|---|---|---|---|',
+    ...Object.entries(r.diff.wec.byClass).map(([c, x]) => `| ${c} | ${x.n} | ${x.meanPp} | ${x.ub95Pp} | ${x.worse} | ${x.maxPp} | ${(x.overRowLimit || []).length} | ${x.pass ? 'pass' : 'FAIL'} |`), '',
+    'WEC per track (mean over the class × season rows that hold it out):', '', '| track | rows | mean harm pp | max harm pp |', '|---|---|---|---|',
+    ...r.diff.wec.byTrack.map(t => `| ${t.track} | ${t.n} | ${t.meanHarmPp} | ${t.maxHarmPp} |`), ''] : []),
+  ...(r.cars ? ['Fitted cars (this run): μx, μy, μx/μy, ClA and every parameter on a fit bound:', '', '| car | μx | μy | μx/μy | ClA | at bound |', '|---|---|---|---|---|---|',
+    ...r.cars.map(c => `| ${c.where} | ${c.muX} | ${c.muY} | ${c.muXOverMuY} | ${c.clA} | ${Object.entries(c.atBound).map(([k, b]) => `**${k} at ${b}**`).join(', ') || '–'} |`), ''] : []),
+  `Ships per series: ${shipSeries(r.diff.harm, r.feHarm, r.diff.wec, r.diff.heldOut.wec?.cand, r.diff.gate === 'honest' ? r.cars : null).map(x => `${x.series} ${x.pass ? 'ships' : `**blocked (keeps the shipped calibration): ${x.why.join('; ')}**`}`).join(' · ')}.`, '',
   `Reproduction: ${r.diff.identical ? '**identical** to the shipped calibration (every held-out row and car parameter).' : `**${r.diff.changedRows.length} held-out rows and ${r.diff.changedCarParams.length} car parameters differ** (tables below).`}`, '',
   ...(r.diff.changedCarParams.length ? ['| car | param | shipped | this run |', '|---|---|---|---|', ...r.diff.changedCarParams.map(c => `| ${c.where} | ${c.param} | ${c.shipped} | ${c.new} |`), ''] : []),
   ...(r.diff.changedRows.length ? ['| held-out row | shipped % | this run % |', '|---|---|---|', ...r.diff.changedRows.map(c => `| ${c.row} | ${c.shippedPct} | ${c.newPct} |`), ''] : []),
@@ -86,7 +162,11 @@ if (process.argv[1]?.endsWith('pipeline-report.mjs')) {
     inputs: {tag: E.SNAPSHOT_TAG || '', sha256: E.SNAPSHOT_SHA256 || '', sums: E.SNAPSHOT_SUMS && existsSync(E.SNAPSHOT_SUMS) ? readFileSync(E.SNAPSHOT_SUMS, 'utf8') : ''},
     settings, seeds: 'fit: none (deterministic Nelder–Mead / BCD); condition-report bootstrap seed 7; gate.mjs sign-flip / bootstrap seed 1',
     fit: E.FIT_RESULT || 'local',
-    diff: existsSync(newF) ? diff(await load(shippedF), await load(newF)) : null,
+    diff: existsSync(newF) ? diff(await load(shippedF), await load(newF), gateOf(E)) : null,
+    cars: existsSync(newF) ? carTable(await load(newF)) : null,
+    carsShipped: carTable(await load(shippedF)),
+    // FE_FIT_SHIPPED / FE_FIT_NEW: fe-fit.json before and after build-fe.mjs on this run's kernel
+    feHarm: E.FE_FIT_NEW && existsSync(E.FE_FIT_NEW) && existsSync(E.FE_FIT_SHIPPED || '') ? feHarm(JSON.parse(readFileSync(E.FE_FIT_SHIPPED, 'utf8')), JSON.parse(readFileSync(E.FE_FIT_NEW, 'utf8')), gateOf(E).ub) : null,
     trackState: E.TRACK_STATE_DIFF && existsSync(E.TRACK_STATE_DIFF) ? JSON.parse(readFileSync(E.TRACK_STATE_DIFF, 'utf8')) : null,
     // SHIPPED_DIR: the committed level C / forward files, copied before the run's outputs overwrite docs/
     levelC: {shipped: sum(`${E.SHIPPED_DIR}/lapsim-level-c.json`), new: sum('docs/lapsim-level-c.json')},

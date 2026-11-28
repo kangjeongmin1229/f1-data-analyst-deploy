@@ -262,9 +262,30 @@ jobs:
           python -I scripts/sim/f1-delta-report.py dl/v2pooled/baseline.csv dl/v2pooled/f1-delta-cases-2026-11-24.csv dl/v2pooled/report.json > /dev/null
           if [ -n "${F1_DELTA_LOCKED_APPROVED}" ]; then mkdir -p dl/locked2022 && cp dl/zones.csv dl/locked2022/ && cp "$(jq -r .delta.locked2022.path $P)" dl/locked2022/f1-delta-cases-2026-11-24.csv \
             && node scripts/sim/f1-delta-bench.mjs model dl/locked2022 && python -I scripts/sim/f1-delta-report.py dl/locked2022/baseline.csv dl/locked2022/f1-delta-cases-2026-11-24.csv dl/locked2022/report.json > /dev/null; fi
+      # FE ship rule: the pipeline's one FE rebuild (fe-rebuild.mjs → build-fe.mjs, seconds) on this run's kernel; event-hidden paired
+      # harm per row vs the committed fe-fit.json. Step 35's FE checks read out/fe/ from this step, they do not rebuild.
+      - name: FE rebuild on this run's kernel (paired harm)
+        continue-on-error: true
+        run: set -a; . .github/lapsim-fit.env; set +a; node scripts/sim/learn/fe-rebuild.mjs out  # FE flags (step 35 D/E) from the fit settings
+      # refit ship rule (claude/status-2026-11-25-refit.md): mesh at every mesh and per-lap energy closure on this run's calibration;
+      # a failure does not stop the report, it is written into it (out/ship-checks.txt) and the refit does not ship
+      # 29b (central 17:20): the Δ ranges are regenerated on this run's calibration and kernel BEFORE the 29b test runs, so the test
+      # checks the ranges that ship with this calibration (the fit job's refit-mode file; rebuilt here when the fit was skipped)
+      - name: Ship checks on this run's calibration (mesh, energy closure, 29b ranges)
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          if [ -f fit/worker/lapsim/delta-intervals-data.js ]; then cp fit/worker/lapsim/delta-intervals-data.js worker/lapsim/
+          else node scripts/sim/delta-intervals.mjs --run ${{ github.run_id }} --mode refit; fi
+          cp worker/lapsim/delta-intervals-data.js out/
+          # derived from the calibration like the fit job's rebuild (its artifact carries only calibration-data.js): LMDh range, maker data
+          node scripts/sim/lmdh-regen-range.mjs && node scripts/sim/learn/hypercar-makers.mjs --write
+          node --test tests/lapsim-mesh.test.mjs tests/lapsim-energy-closure.test.mjs tests/lapsim-delta-intervals.test.mjs 2>&1 | tee /tmp/ship.txt | tail -5
+          { echo "ship checks (mesh, energy closure, 29b ranges) on this run's calibration:"; grep -E '^# (tests|pass|fail)|^not ok' /tmp/ship.txt; } > out/ship-checks.txt
       - name: Report
         env:
           SHIPPED_DIR: /tmp/shipped
+          LAPSIM_GATE: honest  # combined refit: honest-parameter gate (central 19:35; docs/prereg/step27-combined-refit-2026-11-25.md)
           PIPELINE_MODE: ${{ github.event_name == 'push' && 'push check' || inputs.mode || 'production' }}
           FIT_RESULT: ${{ needs.fit.result }}
           SNAPSHOT_TAG: ${{ needs.snapshot.outputs.tag }}
@@ -274,9 +295,12 @@ jobs:
           TRACK_STATE_DIFF: ts/track-state-diff.json
           ENDURANCE_DIR: end
           NOISE_DIR: noise
+          FE_FIT_SHIPPED: out/fe-fit-shipped.json
+          FE_FIT_NEW: out/fe/fe-fit.json
         run: |
           node scripts/sim/pipeline-report.mjs fit/worker/lapsim/calibration-data.js /tmp/shipped/calibration-data.js out > /dev/null
           cp -r dl out/delta
+          [ -f out/ship-checks.txt ] && { echo; echo '```'; cat out/ship-checks.txt; echo '```'; } >> out/pipeline-report.md
           cat out/pipeline-report.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with: {name: pipeline-report, path: out/, retention-days: 90}
@@ -284,8 +308,24 @@ jobs:
       - name: Attach the report to the releases
         run: |
           id=${{ github.run_id }}; cp out/pipeline-report.json "pipeline-report-$id.json"; cp out/pipeline-report.md "pipeline-report-$id.md"
-          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+          # the fit's own outputs (calibration-data.js, reports) next to the report: a refit PR commits exactly these files
+          if [ -d fit ]; then tar czf "calibration-output-$id.tgz" -C fit . ; set -- "calibration-output-$id.tgz"; else set --; fi
+          gh release upload "${{ needs.snapshot.outputs.tag }}" -R ${{ github.repository }} "pipeline-report-$id.json" "pipeline-report-$id.md" "$@" --clobber
           [ "${{ github.event_name }}" != release ] || gh release upload "${{ github.event.release.tag_name }}" "pipeline-report-$id.json" "pipeline-report-$id.md" --clobber
+      # combined refit (central 2026-11-25 15:26): the report, ship checks, FE rebuild and the fit's calibration on the fork branch
+      # results/refit-combined (run-<id>/), readable with an anonymous git fetch; fork only, refit branches only
+      - name: Publish to results/refit-combined
+        if: github.repository != 'MisterKinn/f1-data-analyst' && startsWith(github.ref_name, 'refit/combined')
+        run: |
+          id=${{ github.run_id }}; B=results/refit-combined; mkdir -p pub && cd pub && git init -q -b $B
+          git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          if git fetch -q --depth 1 origin $B; then git reset -q --hard FETCH_HEAD; fi  # keep earlier runs (a fresh repo has an empty index: --soft + checkout found nothing, run 45626772704)
+          mkdir -p run-$id && cp ../out/pipeline-report.md ../out/pipeline-report.json run-$id/ && cp ../out/ship-checks.txt ../out/delta-intervals-data.js run-$id/ 2>/dev/null || true
+          [ -d ../out/fe ] && cp -r ../out/fe run-$id/fe && cp ../out/fe-fit-shipped.json run-$id/fe/ 2>/dev/null || true
+          [ -f ../fit/worker/lapsim/calibration-data.js ] && cp ../fit/worker/lapsim/calibration-data.js run-$id/ || true
+          echo "run $id, ref ${{ github.ref_name }} ${{ github.sha }}, mode ${{ inputs.mode }}" > run-$id/RUN.txt
+          git add -A && git commit -q -m "refit-combined: pipeline run $id (${{ github.sha }})" && git push -q origin HEAD:$B
 
   # step 29b: Δ ranges (± on lapsim_simulate / the page) rebuilt from this run: held-out rows of the run's calibration and the Δ bench
   # on the pinned pooled DRS cases. Always an artifact + release asset; written to main only by a production run on main whose

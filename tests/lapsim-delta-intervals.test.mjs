@@ -92,3 +92,13 @@ test('gap to floor: held-out RMS ÷ σ_meas v2 per class, null where σ_meas is 
   for (const k of ["f1", "lmh", "lmdh"]) assert.ok(Math.abs(g.classes[k].ratio - g.classes[k].heldOutRmsPct / g.classes[k].sigmaMeasPct) < 1e-3);
   assert.equal(g.classes.lmgt3.ratio, null); assert.equal(g.classes.lmh.sigmaSource, 'Al Kamel wec proto v2');
 });
+
+// LMDh regen cap 50 kW is an assumption (central 2026-11-25 13:48): its 50 vs 200 kW range is reported beside the LMDh lap range
+test('29b: LMDh lap check carries the regen-cap assumption range; the range file is not stale', () => {
+  const r = withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmdh'}));
+  const a = r.uncertainty.lap_check.assumption_range;
+  assert.ok(a && /assumed \(no published rule; Equity Model not public\)/.test(a.name) && a.plus_minus_s >= 0, JSON.stringify(r.uncertainty.lap_check));
+  assert.equal(withFlag(() => simulate({track: 'spa-francorchamps', car: 'wec-lmh'})).uncertainty.lap_check.assumption_range, undefined);
+  const s = spawnSync(process.execPath, ['scripts/sim/lmdh-regen-range.mjs', '--check'], {encoding: 'utf8'});
+  assert.equal(s.status, 0, s.stderr);
+});
